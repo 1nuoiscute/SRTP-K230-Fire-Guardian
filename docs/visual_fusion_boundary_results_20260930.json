@@ -1,0 +1,52 @@
+{
+  "role": "Technical replay on already exposed normal cooking clip; no real sensor inputs and no safety validation.",
+  "source_csv_sha256": "7c9a9abbcc11464c7c19f28e12b622d9415c48c915048a4ec422f94f2f743e64",
+  "source_model_sha256": "c44fb4f8d357ae757b30490b30d867fbed084d07573952623b0d4da50357aecf",
+  "selected_video": "3.mp4",
+  "nominal_roi": {
+    "3.mp4": {
+      "width": 720,
+      "height": 1280,
+      "roi_xyxy": [
+        184,
+        312,
+        544,
+        397
+      ],
+      "basis": "Existing manual old-video flame envelope; fixed development proxy, not abnormal-fire calibration."
+    }
+  },
+  "conversion": {
+    "development_only": true,
+    "calibrated": false,
+    "samples": 34,
+    "input_sha256": "39dbf9da273f496fc2f6386ff465e9a16c591373700b22eac5bb3be7b6b9b862",
+    "roi_sha256": "c20c45622e5c2ff24fea04c63dd5d5d2ad664d3812a89e5d855cf77ebdf7340f",
+    "config_sha256": "943d7f91c6a28633733101fcecfbd2795ba1c95cf64451a9f9701688e25e721a",
+    "output_sha256": "26ddc92ac5ea08f254fe9c9982204d28c9df570a52206ab4948fdc93609e4d72",
+    "converter_sha256": "036d66b7a664fe9f8bc4b44ff74f045d6f53f6796a0d4ae36b53d185a18e3543",
+    "selection": "Largest outside fraction among confidence-eligible boxes; same box supplies confidence and area. Otherwise highest confidence below threshold, or zeros for an empty detection list.",
+    "geometry": "Bounding-box area proxies, not segmented flame area or fire severity.",
+    "missing_channels": [
+      "smoke",
+      "temperature"
+    ],
+    "identity_limit": "Input hashes bind these replay files; they do not prove capture timestamps or video/model provenance."
+  },
+  "replay": {
+    "input_sha256": "26ddc92ac5ea08f254fe9c9982204d28c9df570a52206ab4948fdc93609e4d72",
+    "config_sha256": "943d7f91c6a28633733101fcecfbd2795ba1c95cf64451a9f9701688e25e721a",
+    "calibrated": false,
+    "development_only": true,
+    "samples": 34,
+    "clips": 1,
+    "state_samples": {
+      "UNKNOWN": 34
+    },
+    "transitions": 1,
+    "warning": "Sample counts are not independent event accuracy. Demo thresholds and synthetic data cannot establish fire-safety performance."
+  },
+  "test_result": "31 dependency-free tests passed; seven dataset-tamper tests and seven visual-conversion tests plus the existing 17.",
+  "video_sha256": "dafac36724a2a7a60e23d88cb9781e70814775b28176b672ba38e1aaa5b2c245",
+  "source_summary_sha256": "b1faf17d869fc92f73d1b7aac454ad3783e1be0a0db972bfcddabd59e507036e"
+}

@@ -16,6 +16,8 @@ def main():
     p.add_argument('--out',type=Path,required=True)
     p.add_argument('--data',type=Path,required=True)
     p.add_argument('--candidate-label',default='v5')
+    p.add_argument('--frame-reference-run',type=Path)
+    p.add_argument('--frame-reference-label',default='reference')
     args=p.parse_args();run=args.run.resolve();out=args.out.resolve();data=args.data.resolve()
     marker=out/'comparison_launch.json'
     if marker.exists(): raise SystemExit('Existing comparison launch; inspect handle/logs before restarting')
@@ -24,7 +26,7 @@ def main():
     if not any('train_hardcase_v5.py' in value for value in command) or not any(run.name in value for value in command):
         raise SystemExit('PID is not the named training run')
     created=process.create_time();out.mkdir(parents=True,exist_ok=True)
-    marker.write_text(json.dumps({'training_pid':process.pid,'process_created':created,'cmdline':command,'run':str(run)},indent=2),encoding='utf-8')
+    marker.write_text(json.dumps({'training_pid':process.pid,'process_created':created,'cmdline':command,'run':str(run),'comparison_script_sha256':sha256(Path(__file__)),'data_manifest_sha256':sha256(data/'build_manifest.json'),'frame_reference_run':str(args.frame_reference_run) if args.frame_reference_run else None,'frame_reference_label':args.frame_reference_label},indent=2),encoding='utf-8')
     print(f'Waiting for verified training PID {process.pid}',flush=True)
     while process.is_running() and process.create_time()==created:
         time.sleep(5)
@@ -54,7 +56,28 @@ def main():
             if result.returncode: raise SystemExit(f'Evaluation failed: {label}/{kind}; inspect log')
             comparison[label][kind]=json.loads((target/filename).read_text(encoding='utf-8'))
             (out/'comparison_partial.json').write_text(json.dumps(comparison,ensure_ascii=False,indent=2),encoding='utf-8')
-    result={'role':'development comparisons; no independent acceptance, no board deployment','models':comparison}
+    frame_references={}
+    if args.frame_reference_run:
+        reference=args.frame_reference_run.resolve()
+        reference_meta=json.loads((reference/'experiment_meta.json').read_text(encoding='utf-8'))
+        for name in ['best','last']:
+            weights=reference/'weights'/(name+'.pt')
+            if sha256(weights)!=reference_meta[name+'.pt_sha256']:
+                raise SystemExit('Reference checkpoint identity mismatch')
+            label=args.frame_reference_label+'_'+name
+            target=out/(label+'_reference_frames')
+            if target.exists(): raise SystemExit(f'Existing reference output: {target}')
+            command=[sys.executable,'-B',str(SRC/'eval_hardcase_frames.py'),'--weights',str(weights),
+                     '--data',str(data),'--out',str(target)]
+            print(f'Evaluating frame reference {label}',flush=True)
+            with (out/(label+'_reference_frames.log')).open('w',encoding='utf-8') as log:
+                completed=subprocess.run(command,cwd=ROOT,stdout=log,stderr=subprocess.STDOUT)
+            if completed.returncode: raise SystemExit(f'Frame reference failed: {label}; inspect log')
+            frame_references[label]=json.loads((target/'summary.json').read_text(encoding='utf-8'))
+    result={'role':'development comparisons; no independent acceptance, no board deployment',
+            'data_manifest_sha256':sha256(data/'build_manifest.json'),'models':comparison,
+            'frame_references':frame_references}
+
     (out/'comparison_complete.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
     compact={}
     for label,r in comparison.items():

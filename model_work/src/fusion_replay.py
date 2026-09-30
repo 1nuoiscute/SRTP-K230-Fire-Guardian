@@ -10,6 +10,7 @@ import argparse
 import csv
 import hashlib
 import json
+import math
 from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
@@ -252,9 +253,17 @@ def replay(input_path: Path, config_path: Path, out_dir: Path) -> None:
     if out_dir.exists():
         raise SystemExit(f"Refusing overwrite: {out_dir}")
     config = Config.read(config_path)
-    rows = list(csv.DictReader(input_path.open(encoding="utf-8-sig", newline="")))
+    with input_path.open(encoding="utf-8-sig", newline="") as stream:
+        rows = list(csv.DictReader(stream))
     if not rows:
         raise SystemExit("Empty input")
+    if "visual_prediction_index" in rows[0]:
+        metadata_path = input_path.with_suffix(input_path.suffix + ".meta.json")
+        metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+        if metadata["output_sha256"] != sha256(input_path):
+            raise ValueError("Converted input identity changed")
+        if metadata["config_sha256"] != sha256(config_path):
+            raise ValueError("Conversion/replay config differs; reconvert with the intended config")
     engines: dict[str, FusionEngine] = {}
     output = []
     transitions = []
@@ -298,27 +307,67 @@ def outside_fraction(box: list[float], roi: list[float]) -> float:
     return max(0.0, min(1.0, 1 - inside/area)) if area else 0.0
 
 
-def visual_to_fusion(input_path: Path, roi_path: Path, out_path: Path) -> None:
-    if out_path.exists():
+def select_visual_evidence(boxes, roi, width, height, confidence_min):
+    """Keep confidence and geometry from one box, prioritizing eligible outside boxes."""
+    if not (isinstance(width, int) and isinstance(height, int) and width > 0 and height > 0):
+        raise ValueError("Frame dimensions must be positive integers")
+    if not 0 < confidence_min <= 1:
+        raise ValueError("Invalid selection confidence threshold")
+    def checked_box(box, name):
+        if len(box) != 4 or any(not math.isfinite(float(v)) for v in box):
+            raise ValueError(f"{name} needs four finite coordinates")
+        x1, y1, x2, y2 = map(float, box)
+        if not (0 <= x1 < x2 <= width and 0 <= y1 < y2 <= height):
+            raise ValueError(f"{name} outside frame bounds")
+        return [x1, y1, x2, y2]
+    roi = checked_box(roi, "ROI")
+    candidates = []
+    for index, box in enumerate(boxes):
+        confidence = float(box["confidence"])
+        if not math.isfinite(confidence) or not 0 <= confidence <= 1:
+            raise ValueError("Prediction confidence must be within [0,1]")
+        xyxy = checked_box(box["xyxy"], "Prediction")
+        candidates.append({"fire_conf": confidence,
+                           "flame_outside_frac": outside_fraction(xyxy, roi),
+                           "flame_area_frac": (xyxy[2]-xyxy[0])*(xyxy[3]-xyxy[1])/(width*height),
+                           "visual_prediction_index": index})
+    eligible = [v for v in candidates if v["fire_conf"] >= confidence_min]
+    if eligible:
+        chosen = max(eligible, key=lambda v: (v["flame_outside_frac"], v["fire_conf"], v["flame_area_frac"]))
+    elif candidates:
+        chosen = max(candidates, key=lambda v: v["fire_conf"])
+    else:
+        chosen = {"fire_conf": 0.0, "flame_outside_frac": 0.0,
+                  "flame_area_frac": 0.0, "visual_prediction_index": ""}
+    return {**chosen, "visual_qualified_boxes": len(eligible)}
+
+
+def visual_to_fusion(input_path: Path, roi_path: Path, out_path: Path, config_path: Path) -> None:
+    metadata_path = out_path.with_suffix(out_path.suffix + ".meta.json")
+    if out_path.exists() or metadata_path.exists():
         raise SystemExit(f"Refusing overwrite: {out_path}")
+    config = Config.read(config_path)
     rois = json.loads(roi_path.read_text(encoding="utf-8"))
-    rows = list(csv.DictReader(input_path.open(encoding="utf-8-sig", newline="")))
+    with input_path.open(encoding="utf-8-sig", newline="") as stream:
+        rows = list(csv.DictReader(stream))
     if not rows:
         raise SystemExit("Empty visual input")
     output = []
     for row in rows:
         video = row["video"]
-        if video not in rois or len(rois[video]) != 4:
-            raise ValueError(f"Missing ROI for {video}")
-        boxes = json.loads(row["predictions_025"])
-        width, height = 720, 1280  # Four fixed development videos only.
-        output.append({"clip_id": video, "t_s": row["time_seconds"],
-                       "fire_conf": max((b["confidence"] for b in boxes), default=0.0),
-                       "flame_outside_frac": round(max((outside_fraction(b["xyxy"], rois[video])
-                                                        for b in boxes), default=0.0), 4),
-                       "flame_area_frac": round(max((((b["xyxy"][2]-b["xyxy"][0]) *
-                                                      (b["xyxy"][3]-b["xyxy"][1]))/(width*height)
-                                                     for b in boxes), default=0.0), 6),
+        roi_record = rois.get(video)
+        if not isinstance(roi_record, dict):
+            raise ValueError(f"ROI for {video} must declare width, height and roi_xyxy")
+        width, height = int(row["width"]), int(row["height"])
+        if (width, height) != (roi_record["width"], roi_record["height"]):
+            raise ValueError(f"ROI/frame dimensions differ for {video}")
+        t_s = float(row["time_seconds"])
+        if not math.isfinite(t_s) or t_s < 0:
+            raise ValueError("Visual sample time must be finite and nonnegative")
+        boxes = json.loads(row["predictions"])
+        evidence = select_visual_evidence(boxes, roi_record["roi_xyxy"], width, height, config.fire_conf_min)
+        output.append({"clip_id": video, "t_s": t_s, **evidence,
+                       "visual_frame_width": width, "visual_frame_height": height,
                        "smoke_index": "", "temp_delta_c": "", "humidity_delta_pct": "",
                        "certified_smoke_alarm": 0, "visual_ok": 1, "smoke_ok": 0,
                        "temp_ok": 0, "reset_requested": 0})
@@ -327,7 +376,16 @@ def visual_to_fusion(input_path: Path, roi_path: Path, out_path: Path) -> None:
         writer = csv.DictWriter(stream, fieldnames=list(output[0]))
         writer.writeheader()
         writer.writerows(output)
-    print(f"Converted {len(output)} development video frames; smoke and temperature explicitly missing")
+    metadata = {"development_only": True, "calibrated": config.calibrated, "samples": len(output),
+                "input_sha256": sha256(input_path), "roi_sha256": sha256(roi_path),
+                "config_sha256": sha256(config_path), "output_sha256": sha256(out_path),
+                "converter_sha256": sha256(Path(__file__)),
+                "selection": "Largest outside fraction among confidence-eligible boxes; same box supplies confidence and area. Otherwise highest confidence below threshold, or zeros for an empty detection list.",
+                "geometry": "Bounding-box area proxies, not segmented flame area or fire severity.",
+                "missing_channels": ["smoke", "temperature"],
+                "identity_limit": "Input hashes bind these replay files; they do not prove capture timestamps or video/model provenance."}
+    metadata_path.write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Converted {len(output)} development frames with same-box evidence; smoke and temperature explicitly missing")
 
 
 def main() -> None:
@@ -340,12 +398,13 @@ def main() -> None:
     convert = commands.add_parser("visual-to-fusion")
     convert.add_argument("--input", type=Path, required=True)
     convert.add_argument("--roi-json", type=Path, required=True)
+    convert.add_argument("--config", type=Path, required=True)
     convert.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
     if args.command == "replay":
         replay(args.input, args.config, args.out)
     else:
-        visual_to_fusion(args.input, args.roi_json, args.out)
+        visual_to_fusion(args.input, args.roi_json, args.out, args.config)
 
 
 if __name__ == "__main__":

@@ -21,7 +21,7 @@
 
 ## 最新实验（2026-09-30）
 
-v5 已完成训练与对照：训练曝光蓝焰帧定位改善、贴纸误报消除，但旧图明显退步，外部蓝焰未改善，拒绝替换 v3。v6 在同数据上测试较小学习率日程，仍在运行。详见 [v5 完整记录](model_work/docs/HARDCASE_V5_EXPERIMENT_20260930.md) 和 [v6 实验](model_work/docs/HARDCASE_V6_EXPERIMENT_20260930.md)。
+v5、v6 均已完成训练与对照。v6 减轻了旧图退化，但仍有贴纸误报，外部蓝焰定位未改善，继续保留 v3。v7 从 v3 开始、沿用 v6 参数，仅增补两张审核过的蓝焰来源，已启动训练。详见 [v5 记录](model_work/docs/HARDCASE_V5_EXPERIMENT_20260930.md)、[v6 完整结果](model_work/docs/HARDCASE_V6_EXPERIMENT_20260930.md) 和 [v7 实验](model_work/docs/HARDCASE_V7_EXPERIMENT_20260930.md)。
 
 ## 从这里开始
 

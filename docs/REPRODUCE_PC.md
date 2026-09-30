@@ -28,4 +28,10 @@ python -B model_work/src/fusion_replay.py replay --input model_work/data/fusion_
 
 ## 两张新蓝焰来源的开发数据扩展
 
-构建方法、人工审核和哈希见 [数据准备记录](../model_work/docs/BLUE_SOURCE_DATA_PREPARATION_20260930.md)。重复权重不增加独立照片数；v7 数据已备但训练未启动。
+构建方法、人工审核和哈希见 [数据准备记录](../model_work/docs/BLUE_SOURCE_DATA_PREPARATION_20260930.md)。重复权重不增加独立照片数；v7 数据已备并开始训练，具体配置见 [v7 实验](../model_work/docs/HARDCASE_V7_EXPERIMENT_20260930.md)。
+
+新增 dataset_preflight.py 在训练前验证实际图像/标签身份、采样权重和配置路径；带有 label_sha256 的清单会拒绝审核后的标签修改。历史 v5 清单没有逐标签哈希，记录会如实报告其绑定覆盖数，不把它当成同等强度校验。
+
+## 视觉结果转融合输入
+
+新版转换需指定 --config，输入采用带 width/height/predictions 的开发预测 CSV；ROI JSON 逐视频声明尺寸及 roi_xyxy。配置、输出哈希在回放时核验。命令和迁移说明见 [边界修复记录](../model_work/docs/VISUAL_FUSION_BOUNDARY_FIX_20260930.md)。
