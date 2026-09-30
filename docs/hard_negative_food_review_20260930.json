@@ -1,0 +1,68 @@
+{
+  "approved": true,
+  "reviewed_utc": "2026-09-30T08:02:33.564293+00:00",
+  "reviewer": "Codex visual inspection; no separate user label confirmation",
+  "review_basis": "Viewed original prediction image, lossless crop and full-frame crop context. Visible food, pot and cooking vapour/reflection occur inside crop; the visible blue flame is outside crop. No visible flame in crop.",
+  "development_only": true,
+  "items": [
+    {
+      "image": "negative_food_82f51e3_666.png",
+      "image_sha256": "5d01f8e4ce627db9176438e89d58a73b11b43eec10b47d67c894430f81a1f969",
+      "dimensions": [
+        565,
+        310
+      ],
+      "label": "negative_food_82f51e3_666.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_boxes_xyxy": [],
+      "source_image": "teammate_82f51e3_666.jpg",
+      "source_image_sha256": "fd9716469f0703404958af539536eadc7d0c5eddc2bdcb2ab43b8fa63232e328",
+      "source_image_dimensions": [
+        720,
+        1280
+      ],
+      "source_video": "82f51e33ff7ddbdcda9ea4c6754b9983.mp4",
+      "source_video_sha256": "f768e372ec81704a31e5bad7834b523b93be05a9b9c88f7040f2178261fe99fc",
+      "source_frame_index": 666,
+      "source_group": "82f51e33ff7ddbdcda9ea4c6754b9983.mp4",
+      "crop_xyxy": [
+        75,
+        240,
+        640,
+        550
+      ],
+      "crop_pixel_check": "PNG decoded pixels exactly equal the specified source JPEG decoded crop",
+      "source_dataset_manifest_sha256": "0a40ce9345652e322c8af0cd2d8a5abb1831e94432065c4b546828d64ee47a3b",
+      "failure_comparison_sha256": "ae08f2bcb768a834caaee4e63bcbe21c408155c76d0acbc5c07d2be3059f9fc5",
+      "failure_weights_sha256": "7ce5b575d5c9d0d8d2581666305198ead3b4d3a1c3b1fc53d979dea45835e851",
+      "source_frame_predictions": [
+        {
+          "confidence": 0.6923,
+          "xyxy": [
+            172.57493591308594,
+            631.2445068359375,
+            613.0787353515625,
+            731.9102783203125
+          ]
+        },
+        {
+          "confidence": 0.2795,
+          "xyxy": [
+            112.87774658203125,
+            371.70831298828125,
+            540.9194946289062,
+            491.29473876953125
+          ]
+        }
+      ],
+      "training_exposure": "Original frame was in v5/v6/v7/v8 training data; this crop is not a new independent source",
+      "label_scope": "No visible flame in this crop; does not label the full frame or cooking event as safe",
+      "review_required": "Inspect crop image and full-frame context before approval; empty YOLO label must not be inferred only from detector output"
+    }
+  ],
+  "pending_manifest_sha256": "818445a957da5b74a2b23a096dc0cba67d8d9459bc6c527ad037bb8f2295fe92",
+  "crop_context_sha256": "f21ce77aab50a03acb75daf768b77bf7e388de423dbda855069dcef5b338615c",
+  "label_scope": "Empty YOLO boxes only describe the crop. Original frame still has flame and original label remains unchanged. No safety/abnormal-event label is inferred.",
+  "admission": "Prepared for a future data experiment only; not in v8 or any training dataset at approval time.",
+  "local_review_approval_sha256": "f0ccf945d51fd40fc97bca79176130663eef94977090b038dbfcad8d1ffe5b1b"
+}
