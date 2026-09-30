@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "release": "key2-connector-20260930",
+  "as_of_utc": "2026-09-30T14:58:34.060567+00:00",
+  "status": "human accepted standalone data page and matrix KEY2 switching; persistent boot deployment pending",
+  "sources": [
+    {
+      "path": "src/board_ui_overlay/data_page.c",
+      "sha256": "fa751f39fed392972ac3e28fc152d5c037f6fe51e18ac215412543b3b9909b45"
+    },
+    {
+      "path": "src/board_ui_overlay/board_connector_profile.h",
+      "sha256": "3b739be2a4945f725559fcb243c262fa34d8a0e148bbe001ab37bce37b60f05e"
+    },
+    {
+      "path": "src/board_ui_overlay/build_key2_candidate.sh",
+      "sha256": "feb0e5b784e3f465a5e9d0f3308f5ea583629121a51b6a884ff1abc972f60ef9"
+    },
+    {
+      "path": "src/key_controls/vision_key.c",
+      "sha256": "fe8be083854a575a8d9a3dd2b6555372c7ad93bf5f8153286154454ff65dbbbc"
+    },
+    {
+      "path": "src/key_controls/key_input.c",
+      "sha256": "d006b2d55fea3750da593857c693b0dc60524cc95b1534addccccbe6317d3a21"
+    },
+    {
+      "path": "src/key_controls/key_input.h",
+      "sha256": "0ff777ba044f137f2d1fa5ff45516f69151e55d39696152c22f88fc5853dd336"
+    },
+    {
+      "path": "tools/check_key2_connector_profile.py",
+      "sha256": "6fea104b7a5124925da4311bef694909526fe65e3f743e467f66429bbfd4aae0"
+    },
+    {
+      "path": "src/key_controls/patch_stock_romfs.py",
+      "sha256": "4bcbc820aa032a316a41cb544bf3f5e774078bccfe7f9afb42628d3ed7d9ad1a"
+    },
+    {
+      "path": "src/key_controls/package_rtt_uimage.py",
+      "sha256": "83978046fe2740d2a44571c3c7186db6f1bc39213b8df41fadf452e86221c076"
+    }
+  ],
+  "artifacts": [
+    {
+      "local_path": "artifacts/key2_20260930_connector_candidate/data_page_connector_candidate.elf",
+      "bytes": 392728,
+      "sha256": "cbb468688ba9e610f5d2679a3306221942abc229b924e06694a80c5eb88e208a"
+    },
+    {
+      "local_path": "artifacts/key2_20260930_connector_candidate/vision_key_connector_candidate.elf",
+      "bytes": 301112,
+      "sha256": "8d69a1c520b6ea6ad9f02e2a91060c3ac5caefae48806d4b938c6da89dce9f30"
+    },
+    {
+      "local_path": "artifacts/key2_20260930_connector_candidate/rtt_partition_p1_key2.img",
+      "bytes": 20971520,
+      "sha256": "5cd8667b3035199fcc63d7e557c8257247bc0080f2b9cda7e3a916a3616ef1d2"
+    }
+  ],
+  "rollback_p1_sha256": "5fec5ccf0921e790357f523ba7b7a49dd177e101358ac86a8b55a85895264fa1",
+  "unchanged_vision_sha256": "ec2caafd85e56851c44c838b4c9a2a15477cae8b24ac915f1c571f1a0f9a2ac1",
+  "unchanged_kmodel_sha256": "ec475725794417e83b58c661769a915c7a0e7a71ed61a6e2d267ddc7e49096a7",
+  "evidence": {
+    "standalone_screen": "User: 页面清晰，读数和曲线正常",
+    "matrix_screen": "User: 非常好 key2做的非常完美",
+    "logged_completed_matrix_round_trips": 1,
+    "matrix_log_sha256": "5ffafddeca9e47f275c39c5d35afc4e0e500c85bd15036a10df5ab46434e7f50",
+    "initial_camera_free_buffer_warnings": 93,
+    "camera_after_data_free_buffer_warnings": 1,
+    "camera_vi_wait_stop_timeout_count": 2
+  },
+  "limitations": [
+    "KEY1 detection boxes can overlay parameter panel; unresolved, priority experiment paused by user",
+    "Long duration stability unverified",
+    "Data page alarm section not connected to real event chain"
+  ]
+}

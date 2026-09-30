@@ -17,13 +17,13 @@
 ## 当前限制
 
 - 2026-09-28 新厨房视频暴露锅下蓝焰漏检、蓝色贴纸误检；电脑端 v3 是开发基线，新权重尚未上板。
-- 全屏数据页切换曾出现乱码，候选未作为正式启动版本。
+- KEY2 全屏数据页的旧乱码已在 9 月 30 日短时实屏试验通过修复；新开机版本部署中，长时稳定性未验收。KEY1 蓝框覆盖参数区仍未解决。
 - 烟雾/燃气输入、真实事件融合、自适应标定、执行反馈和 MQTT 闭环尚未验收。
 - 旧图片集和已反复分析的视频均属于开发诊断；其帧数、mAP 或有框比例不能替代独立事件验收。
 
 ## 模型阶段收尾（2026-09-30）
 
-按用户要求停止追加模型实验，保留 v3 开发基线及 v5–v11 失败结果。新片段的未完成审核/推理已暂存，不自动继续。见 [模型收尾](docs/PC_MODEL_STAGE_CLOSURE_20260930.md) 和 [板端交接](docs/BOARD_HANDOFF_20260930.md)。本轮仅核对本地产物，ADB 无连接设备。
+按用户要求停止追加模型实验，保留 v3 开发基线及 v5–v11 失败结果。新片段的未完成审核/推理已暂存，不自动继续。见 [模型收尾](docs/PC_MODEL_STAGE_CLOSURE_20260930.md) 和 [板端交接](docs/BOARD_HANDOFF_20260930.md)。收尾提交仅核对本地产物；随后已连接板子，KEY2 页面和矩阵切换获用户确认，见 [KEY2 修复与部署](model_work/docs/KEY2_CONNECTOR_CANDIDATE_20260930.md)。
 
 ### 已完成实验
 
@@ -47,7 +47,7 @@ v11 已完成：回到 v9 数据，隔离五张问题图、加权三张原训练
 | 当前板端交接 | [上板顺序与版本边界](docs/BOARD_HANDOFF_20260930.md)、[模型阶段收尾](docs/PC_MODEL_STAGE_CLOSURE_20260930.md) |
 | 最新状态及历史 | [项目状态](docs/STATUS.md)、[路线与实验门槛](docs/ROADMAP.md) |
 | 板端实时面板 | [实机记录](model_work/docs/BOARD_UI_LIVE_INTEGRATION_20260928.md) |
-| 数据页失败及恢复 | [数据页记录](model_work/docs/BOARD_DATA_PAGE_KEY2_20260928.md) |
+| KEY2 数据页与部署 | [最新修复](model_work/docs/KEY2_CONNECTOR_CANDIDATE_20260930.md)、[历史失败](model_work/docs/BOARD_DATA_PAGE_KEY2_20260928.md) |
 | 新厨房视频失败 | [冻结模型测试](model_work/docs/TEAMMATE_NEW_VIDEO_TEST_20260928.md) |
 | 训练与数据沿革 | [模型总报告](model_work/docs/MODEL_TEST_AND_TRAINING_REPORT_20260927.md)、[视频适配](model_work/docs/USER_VIDEO_ADAPTATION_RUN_20260927.md) |
 | 电脑端运行方法 | [复现指南](docs/REPRODUCE_PC.md) |

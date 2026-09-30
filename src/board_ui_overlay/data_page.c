@@ -20,6 +20,7 @@
 #include "mpi_sys_api.h"
 #include "mpi_vb_api.h"
 #include "mpi_vo_api.h"
+#include "board_connector_profile.h"
 
 #define W 536
 #define H 960
@@ -193,7 +194,19 @@ static int quit_requested(int ms)
 
 int main(int argc, char **argv)
 {
-    if (argc != 3) { fprintf(stderr, "usage: %s data_asset_dir live_asset_dir\n", argv[0]); return 2; }
+    if (argc < 3 || argc > 4) {
+        fprintf(stderr, "usage: %s data_asset_dir live_asset_dir [max_seconds; default30, 0=until q]\n", argv[0]);
+        return 2;
+    }
+    long max_seconds = 30;
+    if (argc == 4) {
+        char *end = NULL;
+        errno = 0;
+        max_seconds = strtol(argv[3], &end, 10);
+        if (errno || !*argv[3] || *end || max_seconds < 0 || max_seconds > 3600) return 2;
+    }
+    struct timespec started;
+    if (clock_gettime(CLOCK_MONOTONIC, &started) != 0) return 2;
     unsigned char *base = load_exact(argv[1], "base.bgra", BYTES);
     unsigned char *wifi[3] = {
         load_exact(argv[1], "wifi_off.bgra", 110 * 29 * 4),
@@ -215,10 +228,9 @@ int main(int argc, char **argv)
         fprintf(stderr, "data VB init failed\n"); goto done;
     }
     vb_ready = 1;
-    k_connector_info connector = {0};
-    if (kd_mpi_get_connector_info(NT35516_MIPI_2LAN_540X960_30FPS, &connector) != 0) {
-        fprintf(stderr, "data connector info failed\n"); goto done;
-    }
+    k_connector_info connector;
+    make_board_connector(&connector);
+    printf("DATA: verified-ELF profile display540x960 canvas536x960 pclk39600 type-offset104\n");
     int connector_fd = kd_mpi_connector_open(connector.connector_name);
     if (connector_fd < 0 || kd_mpi_connector_power_set(connector_fd, K_TRUE) != 0 ||
         kd_mpi_connector_init(connector_fd, connector) != 0) {
@@ -247,6 +259,7 @@ int main(int argc, char **argv)
         kd_mpi_vo_osd_enable(K_VO_OSD0) != 0) {
         fprintf(stderr, "data OSD setup failed\n"); rc = 5; goto cleanup;
     }
+    if (connector_fd >= 0) kd_mpi_connector_close(connector_fd);
     int inserted = 0;
     unsigned long last_seq = 0;
     int stale = 3, ticks = 0;
@@ -293,6 +306,13 @@ int main(int argc, char **argv)
         }
         if (quit_requested(40)) break;
         ++ticks;
+        struct timespec now;
+        if (max_seconds > 0 && clock_gettime(CLOCK_MONOTONIC, &now) == 0 &&
+            (now.tv_sec - started.tv_sec > max_seconds ||
+             (now.tv_sec - started.tv_sec == max_seconds && now.tv_nsec >= started.tv_nsec))) {
+            puts("DATA: bounded candidate timeout");
+            break;
+        }
     }
 cleanup:
     kd_mpi_vo_osd_disable(K_VO_OSD0);

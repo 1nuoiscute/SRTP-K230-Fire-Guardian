@@ -18,7 +18,9 @@
 #define VISION_MODEL VISION_DIR "/best_vendor80_640.kmodel"
 #define UI_APP "/sharefs/srtp_clean/ui_overlay/ui_overlay_live_onebuf.elf"
 #define UI_ASSETS "/sharefs/srtp_clean/ui_overlay/live"
+#ifndef DATA_APP
 #define DATA_APP "/sharefs/srtp_clean/ui_overlay/data_page_live.elf"
+#endif
 #define DATA_ASSETS "/sharefs/srtp_clean/ui_overlay/data_page"
 #define GPIO_INPUT _IOW('G', 1, int)
 #define GPIO_OUTPUT _IOW('G', 0, int)
@@ -229,7 +231,7 @@ static int start_data(void)
         if (dup2(input_pipe[0], STDIN_FILENO) < 0) _exit(127);
         close(input_pipe[0]);
         char *const args[] = {(char *)DATA_APP, (char *)DATA_ASSETS,
-                              (char *)UI_ASSETS, NULL};
+                              (char *)UI_ASSETS, "0", NULL};
         execv(DATA_APP, args);
         perror("exec data"); _exit(127);
     }

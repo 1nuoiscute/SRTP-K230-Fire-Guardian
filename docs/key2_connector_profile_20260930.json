@@ -1,0 +1,45 @@
+{
+  "source_sha256": "ec2caafd85e56851c44c838b4c9a2a15477cae8b24ac915f1c571f1a0f9a2ac1",
+  "source_file_offset": 11274760,
+  "record_size": 112,
+  "layout": "RV64 LE pointer +26 uint32; type at104, final4 bytes padding",
+  "connector_name": "nt35516",
+  "u32_words": [
+    0,
+    0,
+    8421376,
+    10,
+    14,
+    1,
+    0,
+    0,
+    9,
+    196,
+    23,
+    163,
+    39600,
+    475200,
+    620,
+    540,
+    40,
+    20,
+    20,
+    1100,
+    960,
+    40,
+    50,
+    50,
+    5,
+    0
+  ],
+  "canvas": [
+    536,
+    960
+  ],
+  "display": [
+    540,
+    960
+  ],
+  "status": "extracted from historically working ELF; candidate not live-tested",
+  "extracted_at_utc": "2026-09-30T13:31:07.453423+00:00"
+}
