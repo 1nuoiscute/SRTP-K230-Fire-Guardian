@@ -1,0 +1,624 @@
+{
+  "decision": "Do not replace v3 or adopt v11 as demo candidate: blue localization unchanged, smoke-source false positives not reduced, full-frame food and off-flame reflection false positives confirmed. Sticker suppression remains optional.",
+  "role": "development comparisons; no independent acceptance, no board deployment",
+  "data_manifest_sha256": "858e0140b56a26f65476249896adc69f3de296856e99c21f8d3b58d0916f24e3",
+  "epochs_completed": 10,
+  "last_elapsed_seconds_csv": 1521.19,
+  "training_identity": {
+    "training_script_sha256": "753fe29d3612b0ea1b254f808b1ec543f485e04720bf0d366c3f16c07f22207c",
+    "dataset_config_sha256": "345d898be53b9770bd4588306e0700a54011fa8f04de5b3db3099d23534242c0",
+    "dataset_verification": {
+      "manifest_sha256": "858e0140b56a26f65476249896adc69f3de296856e99c21f8d3b58d0916f24e3",
+      "approval_sha256": "f4ec2324aaa39930c00e0ddba5d18809f63f1569a3d7960a51d2e1c981255c6b",
+      "train_list_sha256": "7b040899ab6bc902120c24c8b656cc9dfc6990bb6b3c4bfb9819cb408a8f9a7d",
+      "base_manifest_sha256": "00df0d72e3b967592dcd6b2f0d17dadd862a4bff6e9b56e4491ac07c1e99fd8f",
+      "images_verified": 2432,
+      "entries_verified": 2810,
+      "labels_bound_by_manifest": 2432,
+      "scope": "Bytes, labels, weights and config checked; not proof of scene independence."
+    },
+    "start_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+    "dataset_manifest_sha256": "858e0140b56a26f65476249896adc69f3de296856e99c21f8d3b58d0916f24e3",
+    "config": {
+      "data": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\data\\hardcase_v11_negative_curation_20260930\\data.yaml",
+      "epochs": 12,
+      "patience": 8,
+      "imgsz": 640,
+      "batch": 4,
+      "device": 0,
+      "workers": 0,
+      "seed": 20260930,
+      "optimizer": "AdamW",
+      "lr0": 2e-05,
+      "warmup_bias_lr": 2e-05,
+      "lrf": 0.1,
+      "weight_decay": 0.0005,
+      "hsv_h": 0.015,
+      "hsv_s": 0.3,
+      "hsv_v": 0.25,
+      "degrees": 3.0,
+      "translate": 0.05,
+      "scale": 0.2,
+      "fliplr": 0.5,
+      "mosaic": 0.2,
+      "mixup": 0.0,
+      "close_mosaic": 5,
+      "project": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs",
+      "name": "fire-binary-hardcase-v11-negative-curation-20260930",
+      "exist_ok": false,
+      "save": true,
+      "plots": true,
+      "val": true
+    },
+    "environment": {
+      "python": "3.13.13",
+      "torch": "2.12.0+cu132",
+      "ultralytics": "8.4.70",
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU"
+    },
+    "local_dependency_sha256": {
+      "data_integrity.py": "22777ca17939e2c07c5834418ac4bcf96ff3ae627053d8825feac29a6f8e59a0",
+      "dataset_preflight.py": "492a908a8f275f1bd5743dc3d832343bc918159552043995f03f9bb7afb30ac7",
+      "backbone_freeze_audit.py": "8ea746515b72efd604a9109a38cc092f59e2f3bcaf3a87dd9892fa808171fd46"
+    }
+  },
+  "models": {
+    "v3": {
+      "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+      "frames_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 1,
+          "fp": 3,
+          "fn": 12
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 5,
+          "tp": 3,
+          "fp": 5,
+          "fn": 7
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 0,
+          "fp": 3,
+          "fn": 0
+        }
+      },
+      "blue_primary": {
+        "images": 5,
+        "primary_localized_iou50": 0,
+        "role": "selected development diagnostics; approximate primary boxes; not accuracy"
+      },
+      "legacy_map50": 0.9732386254178709,
+      "commons_summary": {
+        "0.25": {
+          "blue_flame": {
+            "images": 4,
+            "detected_or_false_positive": 2,
+            "localized": 0
+          },
+          "fire": {
+            "images": 6,
+            "detected_or_false_positive": 6,
+            "localized": 5
+          },
+          "no_fire": {
+            "images": 3,
+            "detected_or_false_positive": 1,
+            "localized": 0
+          }
+        },
+        "0.5": {
+          "blue_flame": {
+            "images": 4,
+            "detected_or_false_positive": 0,
+            "localized": 0
+          },
+          "fire": {
+            "images": 6,
+            "detected_or_false_positive": 6,
+            "localized": 5
+          },
+          "no_fire": {
+            "images": 3,
+            "detected_or_false_positive": 0,
+            "localized": 0
+          }
+        }
+      },
+      "commons_source_exposure": {
+        "training_source_in_comparison": {
+          "images": 2,
+          "original_works": 2,
+          "summary": {
+            "0.25": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 1,
+                "localized": 0
+              }
+            },
+            "0.5": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 0,
+                "localized": 0
+              }
+            }
+          }
+        },
+        "untrained_source_development_diagnostic": {
+          "images": 11,
+          "original_works": 11,
+          "summary": {
+            "0.25": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 1,
+                "localized": 0
+              },
+              "fire": {
+                "images": 6,
+                "detected_or_false_positive": 6,
+                "localized": 5
+              },
+              "no_fire": {
+                "images": 3,
+                "detected_or_false_positive": 1,
+                "localized": 0
+              }
+            },
+            "0.5": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 0,
+                "localized": 0
+              },
+              "fire": {
+                "images": 6,
+                "detected_or_false_positive": 6,
+                "localized": 5
+              },
+              "no_fire": {
+                "images": 3,
+                "detected_or_false_positive": 0,
+                "localized": 0
+              }
+            }
+          }
+        }
+      },
+      "videos": {
+        "old_videos": {
+          "clips": 4,
+          "sampled_frames": 130,
+          "sampled_frames_with_any_box": 98,
+          "role": "development-exposed predictions; any-box ratios are not accuracy"
+        },
+        "teammate_videos": {
+          "clips": 5,
+          "sampled_frames": 177,
+          "sampled_frames_with_any_box": 104,
+          "role": "development-exposed predictions; any-box ratios are not accuracy"
+        }
+      }
+    },
+    "v11_best": {
+      "weights_sha256": "17ba88fbcaca0e5e1aaf436bee2c84f0b64ae4c11def96f37613d964cdb38126",
+      "frames_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 2,
+          "fp": 3,
+          "fn": 11
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 5,
+          "tp": 5,
+          "fp": 5,
+          "fn": 5
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 0,
+          "fp": 3,
+          "fn": 0
+        }
+      },
+      "blue_primary": {
+        "images": 5,
+        "primary_localized_iou50": 0,
+        "role": "selected development diagnostics; approximate primary boxes; not accuracy"
+      },
+      "legacy_map50": 0.9583802542579963,
+      "commons_summary": {
+        "0.25": {
+          "blue_flame": {
+            "images": 4,
+            "detected_or_false_positive": 2,
+            "localized": 1
+          },
+          "fire": {
+            "images": 6,
+            "detected_or_false_positive": 6,
+            "localized": 5
+          },
+          "no_fire": {
+            "images": 3,
+            "detected_or_false_positive": 1,
+            "localized": 0
+          }
+        },
+        "0.5": {
+          "blue_flame": {
+            "images": 4,
+            "detected_or_false_positive": 0,
+            "localized": 0
+          },
+          "fire": {
+            "images": 6,
+            "detected_or_false_positive": 6,
+            "localized": 5
+          },
+          "no_fire": {
+            "images": 3,
+            "detected_or_false_positive": 0,
+            "localized": 0
+          }
+        }
+      },
+      "commons_source_exposure": {
+        "training_source_in_comparison": {
+          "images": 2,
+          "original_works": 2,
+          "summary": {
+            "0.25": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 1,
+                "localized": 0
+              }
+            },
+            "0.5": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 0,
+                "localized": 0
+              }
+            }
+          }
+        },
+        "untrained_source_development_diagnostic": {
+          "images": 11,
+          "original_works": 11,
+          "summary": {
+            "0.25": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 1,
+                "localized": 1
+              },
+              "fire": {
+                "images": 6,
+                "detected_or_false_positive": 6,
+                "localized": 5
+              },
+              "no_fire": {
+                "images": 3,
+                "detected_or_false_positive": 1,
+                "localized": 0
+              }
+            },
+            "0.5": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 0,
+                "localized": 0
+              },
+              "fire": {
+                "images": 6,
+                "detected_or_false_positive": 6,
+                "localized": 5
+              },
+              "no_fire": {
+                "images": 3,
+                "detected_or_false_positive": 0,
+                "localized": 0
+              }
+            }
+          }
+        }
+      },
+      "videos": {
+        "old_videos": {
+          "clips": 4,
+          "sampled_frames": 130,
+          "sampled_frames_with_any_box": 98,
+          "role": "development-exposed predictions; any-box ratios are not accuracy"
+        },
+        "teammate_videos": {
+          "clips": 5,
+          "sampled_frames": 177,
+          "sampled_frames_with_any_box": 128,
+          "role": "development-exposed predictions; any-box ratios are not accuracy"
+        }
+      }
+    },
+    "v11_last": {
+      "weights_sha256": "cbcb5f9300679df7d10f55f2878cabb4405130b8cf0b1a6103b32329a720366c",
+      "frames_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 1,
+          "tp": 9,
+          "fp": 1,
+          "fn": 4
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 2,
+          "tp": 10,
+          "fp": 2,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 1,
+          "tp": 18,
+          "fp": 1,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 0,
+          "fp": 3,
+          "fn": 0
+        }
+      },
+      "blue_primary": {
+        "images": 5,
+        "primary_localized_iou50": 3,
+        "role": "selected development diagnostics; approximate primary boxes; not accuracy"
+      },
+      "legacy_map50": 0.9082434727646967,
+      "commons_summary": {
+        "0.25": {
+          "blue_flame": {
+            "images": 4,
+            "detected_or_false_positive": 2,
+            "localized": 2
+          },
+          "fire": {
+            "images": 6,
+            "detected_or_false_positive": 6,
+            "localized": 5
+          },
+          "no_fire": {
+            "images": 3,
+            "detected_or_false_positive": 1,
+            "localized": 0
+          }
+        },
+        "0.5": {
+          "blue_flame": {
+            "images": 4,
+            "detected_or_false_positive": 2,
+            "localized": 2
+          },
+          "fire": {
+            "images": 6,
+            "detected_or_false_positive": 6,
+            "localized": 5
+          },
+          "no_fire": {
+            "images": 3,
+            "detected_or_false_positive": 0,
+            "localized": 0
+          }
+        }
+      },
+      "commons_source_exposure": {
+        "training_source_in_comparison": {
+          "images": 2,
+          "original_works": 2,
+          "summary": {
+            "0.25": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 1,
+                "localized": 1
+              }
+            },
+            "0.5": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 1,
+                "localized": 1
+              }
+            }
+          }
+        },
+        "untrained_source_development_diagnostic": {
+          "images": 11,
+          "original_works": 11,
+          "summary": {
+            "0.25": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 1,
+                "localized": 1
+              },
+              "fire": {
+                "images": 6,
+                "detected_or_false_positive": 6,
+                "localized": 5
+              },
+              "no_fire": {
+                "images": 3,
+                "detected_or_false_positive": 1,
+                "localized": 0
+              }
+            },
+            "0.5": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 1,
+                "localized": 1
+              },
+              "fire": {
+                "images": 6,
+                "detected_or_false_positive": 6,
+                "localized": 5
+              },
+              "no_fire": {
+                "images": 3,
+                "detected_or_false_positive": 0,
+                "localized": 0
+              }
+            }
+          }
+        }
+      },
+      "videos": {
+        "old_videos": {
+          "clips": 4,
+          "sampled_frames": 130,
+          "sampled_frames_with_any_box": 98,
+          "role": "development-exposed predictions; any-box ratios are not accuracy"
+        },
+        "teammate_videos": {
+          "clips": 5,
+          "sampled_frames": 177,
+          "sampled_frames_with_any_box": 147,
+          "role": "development-exposed predictions; any-box ratios are not accuracy"
+        }
+      }
+    }
+  },
+  "frame_references": {
+    "v9_best": {
+      "commons_reviewed_blue": {
+        "images": 10,
+        "images_with_fp": 2,
+        "tp": 1,
+        "fp": 2,
+        "fn": 12
+      },
+      "food_hard_negative_crop": {
+        "images": 1,
+        "images_with_fp": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "reviewed_flame": {
+        "images": 10,
+        "images_with_fp": 4,
+        "tp": 4,
+        "fp": 4,
+        "fn": 6
+      },
+      "reviewed_old_video": {
+        "images": 24,
+        "images_with_fp": 0,
+        "tp": 18,
+        "fp": 0,
+        "fn": 0
+      },
+      "sticker_hard_negative_crop": {
+        "images": 10,
+        "images_with_fp": 2,
+        "tp": 0,
+        "fp": 2,
+        "fn": 0
+      }
+    },
+    "v9_last": {
+      "commons_reviewed_blue": {
+        "images": 10,
+        "images_with_fp": 2,
+        "tp": 7,
+        "fp": 2,
+        "fn": 6
+      },
+      "food_hard_negative_crop": {
+        "images": 1,
+        "images_with_fp": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "reviewed_flame": {
+        "images": 10,
+        "images_with_fp": 3,
+        "tp": 10,
+        "fp": 3,
+        "fn": 0
+      },
+      "reviewed_old_video": {
+        "images": 24,
+        "images_with_fp": 0,
+        "tp": 18,
+        "fp": 0,
+        "fn": 0
+      },
+      "sticker_hard_negative_crop": {
+        "images": 10,
+        "images_with_fp": 3,
+        "tp": 0,
+        "fp": 3,
+        "fn": 0
+      }
+    }
+  },
+  "manual_review": {
+    "reviewer": "Codex visual inspection of completed outputs",
+    "full_frame_food_false_positive": true,
+    "off_flame_reflection_false_positive": true,
+    "no_sticker_veto": true,
+    "details_and_private_frame_identities": "local only"
+  }
+}

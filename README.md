@@ -34,7 +34,7 @@ v9 已完成：last 五图蓝焰定位提高到 3/5，但旧图 mAP50 降到 0.9
 
 v10 已完成：蓝焰仍为 3/5，食物误检重新出现，暂不采用整来源移除方案；按来源复查发现烟雾/反光误检增加，见 [来源消融](model_work/docs/HARDCASE_V10_SOURCE_ABLATION_20260930.md)。
 
-v11 已启动：回到 v9 数据，隔离五张已审核问题图，对三张原训练烟雾无可见火焰图加权，其余通用来源和蓝焰图保留，见 [负例清理实验](model_work/docs/HARDCASE_V11_NEGATIVE_CURATION_20260930.md)。
+v11 已完成：回到 v9 数据，隔离五张问题图、加权三张原训练烟雾无可见火焰图。last 蓝焰仍 3/5，烟雾来源误检为 10 框且有食物/关火反光误检，不采用。贴纸不是否决理由，见 [完整结果](model_work/docs/HARDCASE_V11_NEGATIVE_CURATION_20260930.md)。下一步用固定权重核查 [新来源短视频](model_work/docs/PUBLIC_VIDEO_PROBE_20260930.md)。
 
 ## 从这里开始
 

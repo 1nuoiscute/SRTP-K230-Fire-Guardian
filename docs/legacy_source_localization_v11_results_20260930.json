@@ -1,0 +1,262 @@
+{
+  "role": "exposed legacy development diagnostic; fixed threshold counts, not mAP or independent acceptance",
+  "configuration": {
+    "imgsz": 640,
+    "conf": 0.25,
+    "nms_iou": 0.6,
+    "match_iou": 0.5
+  },
+  "images": 286,
+  "models": {
+    "v3": {
+      "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+      "by_provenance": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 1,
+          "images_with_fn": 0,
+          "tp": 57,
+          "fp": 1,
+          "fn": 0
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 5,
+          "images_with_fn": 2,
+          "tp": 18,
+          "fp": 5,
+          "fn": 2
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 1,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        }
+      }
+    },
+    "v9_last": {
+      "weights_sha256": "1ead79c990f0121dc779cee97a155f779deeea428a32d0cc85e56b66be5fe867",
+      "by_provenance": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 2,
+          "images_with_fn": 0,
+          "tp": 57,
+          "fp": 2,
+          "fn": 0
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 2,
+          "images_with_fn": 3,
+          "tp": 17,
+          "fp": 2,
+          "fn": 3
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 9,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 9,
+          "fn": 0
+        }
+      }
+    },
+    "v10_last": {
+      "weights_sha256": "93df0627e425d66c843abc6889d9854e3a00957014fa3699f92f293d387bfcd5",
+      "by_provenance": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 1,
+          "images_with_fn": 0,
+          "tp": 57,
+          "fp": 1,
+          "fn": 0
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 3,
+          "images_with_fn": 3,
+          "tp": 17,
+          "fp": 3,
+          "fn": 3
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 4,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 4,
+          "fn": 0
+        }
+      }
+    },
+    "v11_best": {
+      "weights_sha256": "17ba88fbcaca0e5e1aaf436bee2c84f0b64ae4c11def96f37613d964cdb38126",
+      "by_provenance": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 1,
+          "images_with_fn": 1,
+          "tp": 56,
+          "fp": 1,
+          "fn": 1
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 5,
+          "images_with_fn": 2,
+          "tp": 18,
+          "fp": 5,
+          "fn": 2
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 2,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 2,
+          "fn": 0
+        }
+      }
+    },
+    "v11_last": {
+      "weights_sha256": "cbcb5f9300679df7d10f55f2878cabb4405130b8cf0b1a6103b32329a720366c",
+      "by_provenance": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 4,
+          "images_with_fn": 0,
+          "tp": 57,
+          "fp": 4,
+          "fn": 0
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 3,
+          "images_with_fn": 3,
+          "tp": 17,
+          "fp": 3,
+          "fn": 3
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 10,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 10,
+          "fn": 0
+        }
+      }
+    }
+  }
+}
