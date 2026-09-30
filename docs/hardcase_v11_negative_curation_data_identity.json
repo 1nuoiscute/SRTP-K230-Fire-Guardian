@@ -1,0 +1,26 @@
+{
+  "role": "development negative curation, approved data; not independently accepted",
+  "dataset": "hardcase_v11_negative_curation_20260930",
+  "parent_manifest_sha256": "7a262442e6227a0da6277b03c3b9211e65effc3d8e3e68e71995922fc636ecc2",
+  "preflight": {
+    "manifest_sha256": "858e0140b56a26f65476249896adc69f3de296856e99c21f8d3b58d0916f24e3",
+    "approval_sha256": "f4ec2324aaa39930c00e0ddba5d18809f63f1569a3d7960a51d2e1c981255c6b",
+    "train_list_sha256": "7b040899ab6bc902120c24c8b656cc9dfc6990bb6b3c4bfb9819cb408a8f9a7d",
+    "base_manifest_sha256": "00df0d72e3b967592dcd6b2f0d17dadd862a4bff6e9b56e4491ac07c1e99fd8f",
+    "images_verified": 2432,
+    "entries_verified": 2810,
+    "labels_bound_by_manifest": 2432,
+    "scope": "Bytes, labels, weights and config checked; not proof of scene independence."
+  },
+  "quarantined_images": 5,
+  "confirmed_visible_fire_empty_labels": 3,
+  "unresolved_smoke_haze_fire_labels": 2,
+  "reweighted_original_negative_images": 3,
+  "negative_weight": 12,
+  "additional_reweight_entries": 33,
+  "retained_generic_source_images": 795,
+  "derived_images_unchanged": 55,
+  "builder_sha256": "8827ba959a2a6a6ff9c74b3a5c2b199de184d0cf655052faa09c10ca968d2be5",
+  "sampling_guard_sha256": "3c7c83b8d032e4f5920aa520335a059bbe26249e020386ae23c5236e3e55a18a",
+  "publication_scope": "Aggregate identities and conclusions; private per-image names/hashes, coordinates and review sheets remain local. No original labels altered."
+}

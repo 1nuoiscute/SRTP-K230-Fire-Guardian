@@ -19,15 +19,21 @@ def main():
     ap.add_argument("--data",type=Path,required=True)
     ap.add_argument("--out",type=Path,required=True)
     ap.add_argument("--seed",type=int,default=20260930)
+    ap.add_argument("--provenance",help="Optional single source to inspect instead of the original three-source profile")
+    ap.add_argument("--count",type=int,help="Required with --provenance")
     a=ap.parse_args()
     if a.out.exists(): raise SystemExit("Refusing overwrite")
     rows=list(csv.DictReader((a.data/"manifest.csv").open(encoding="utf-8-sig")))
     rng=random.Random(a.seed);selected=[]
-    for provenance,count in [("kitchen_stove_fire",24),("ks_flame",12),("generic_fire",12)]:
+    if bool(a.provenance)!=bool(a.count) or (a.count is not None and a.count<=0):
+        ap.error("Use --provenance with a positive --count")
+    profile=[(a.provenance,a.count)] if a.provenance else [("kitchen_stove_fire",24),("ks_flame",12),("generic_fire",12)]
+    for provenance,count in profile:
         pool=sorted((r for r in rows if r["split"]=="train" and r["provenance"]==provenance),key=lambda r:r["file"])
+        if len(pool)<count:raise SystemExit("Requested sample exceeds actual source size")
         selected.extend(rng.sample(pool,count))
     a.out.mkdir(parents=True);entries=[];sheets=[]
-    for page in range(4):
+    for page in range((len(selected)+11)//12):
         sheet=Image.new("RGB",(2048,1152),"#303030")
         for j,row in enumerate(selected[page*12:(page+1)*12]):
             idx=page*12+j+1;impath=a.data/"images/train"/row["file"]
@@ -39,6 +45,7 @@ def main():
                 cls,x,y,bw,bh=map(float,line.split())
                 if cls!=0: raise SystemExit("Unexpected class")
                 boxes.append([max(0,int((x-bw/2)*w)),max(0,int((y-bh/2)*h)),min(w,int((x+bw/2)*w)),min(h,int((y+bh/2)*h))])
+            if len(boxes)!=int(row["fire_boxes"]):raise SystemExit("Manifest box count mismatch")
             annotated=im.copy();draw=ImageDraw.Draw(annotated)
             for b in boxes: draw.rectangle(b,outline="#ff00ff",width=max(1,w//350))
             union=[min(b[0] for b in boxes),min(b[1] for b in boxes),max(b[2] for b in boxes),max(b[3] for b in boxes)] if boxes else [0,0,w,h]
@@ -50,7 +57,7 @@ def main():
             entries.append({"index":idx,**row,"image_path":str(impath.resolve()),"label_path":str(lp.resolve()),"label_sha256":sha(lp),"size":[w,h],"boxes_xyxy":boxes,"manual_review":None})
         out=a.out/f"sheet_{page+1:02d}.jpg";sheet.save(out,quality=95)
         sheets.append({"file":out.name,"sha256":sha(out)})
-    report={"role":"stratified diagnostic sample, not exhaustive color census or independent evaluation","seed":a.seed,"data_manifest_sha256":sha(a.data/"manifest.csv"),"script_sha256":sha(Path(__file__)),"selection":"random sample within sorted provenance, 24 stove / 12 KS / 12 generic; unequal sampling fractions","sheets":sheets,"images":entries}
+    report={"role":"stratified diagnostic sample, not exhaustive color census or independent evaluation","seed":a.seed,"data_manifest_sha256":sha(a.data/"manifest.csv"),"script_sha256":sha(Path(__file__)),"selection":{"method":"random sample within sorted provenance; no automatic color or no-fire truth assigned","profile":profile},"sheets":sheets,"images":entries}
     (a.out/"review_pending.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     print(json.dumps({"sample":len(entries),"sheets":sheets},indent=2))
 if __name__=="__main__": main()

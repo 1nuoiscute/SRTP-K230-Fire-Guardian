@@ -43,3 +43,5 @@ Commons 诊断脚本现要求 --comparison-data 指向本轮训练 build_manifes
 第二批来源和无火裁剪的构建器 build_reviewed_source_queue.py 保留父数据、排除暂缓照片，并输出未批准的数据目录。逐图复核及训练方法见 [v9 数据与实验](../model_work/docs/HARDCASE_V9_SOURCE_DATA_EXPERIMENT_20260930.md)。dataset_preflight.py 现在还核对 source_reviews 实际文件和最终新增审核图；训练记录绑定本地校验依赖脚本哈希。
 
 原训练集分层目视抽查工具 prepare_training_color_review.py 和来源移除构建器 build_reviewed_source_ablation.py 已加入。前者只生成固定抽样拼版，不产生颜色真值；后者只派生未批准数据，不自动重标或训练。具体审核、失败与身份见 [抽查](../model_work/docs/TRAINING_COLOR_QUALITY_REVIEW_20260930.md) 与 [v10](../model_work/docs/HARDCASE_V10_SOURCE_ABLATION_20260930.md)。
+
+负例审核构建器新增 --changes-review 模式，拒绝未批准采样、将有火标签当负例及身份/权重变动；审批还绑定最终负例拼版。具体身份与流程见 [v11](../model_work/docs/HARDCASE_V11_NEGATIVE_CURATION_20260930.md)。eval_legacy_source_localization.py 输出按来源的固定阈值 TP/FP/FN 与本机错误图，公开只保留汇总，见 [来源定位](../model_work/docs/LEGACY_SOURCE_LOCALIZATION_20260930.md)。

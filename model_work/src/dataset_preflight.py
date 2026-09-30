@@ -28,6 +28,8 @@ def verify_reviewed_dataset(folder, config):
             raise ValueError("Reviewed source approval/acquisition file changed")
     if "new_source_sheet_sha256" in approval and sha256(folder / "new_source_review_sheet.jpg") != approval["new_source_sheet_sha256"]:
         raise ValueError("Reviewed new source sheet changed")
+    if "negative_sample_sheet_sha256" in approval and sha256(folder / "negative_sample_review_sheet.jpg") != approval["negative_sample_sheet_sha256"]:
+        raise ValueError("Reviewed negative sample sheet changed")
     base = Path(meta["base"]).resolve()
     expected = {"path": folder, "train": folder / "train.txt", "val": base / "images/val"}
     for key, target in expected.items():

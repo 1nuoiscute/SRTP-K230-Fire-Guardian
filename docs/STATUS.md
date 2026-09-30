@@ -48,3 +48,7 @@ v9 完整对照已结束：9 轮早停，last 五图蓝焰定位 3/5、旧图 mA
 v10 来源消融已实际启动：本次微调移除 800 张 generic_fire，其余保留 1637 图/1982 条目，全部身份、标签、权重及继承审核核验通过。actual args 与 v9 仅 data/name/save_dir 不同。编码失败目录未批准未训练，修复后在新目录运行；详见 [v10 记录](../model_work/docs/HARDCASE_V10_SOURCE_ABLATION_20260930.md)。
 
 用户调整：贴纸误检不再作为必修目标，演示不安排这类干扰；v10 不改正在运行的配置，完成后按 [演示范围](DEMO_SCOPE.md) 优先评估真实火焰、连续识别及演示内其他误检。
+
+v10 完整对照完成：10 轮早停，last 蓝焰 3/5、旧图 mAP50=0.89745，完整画面食物误检重新出现，暂不采用整来源移除方案。旧 57 张厨房火焰的固定阈值匹配三模型均 57 TP/0 FN；无可见火焰/烟雾来源 v3/v9/v10 误检框为 1/9/4。见 [来源对照](../model_work/docs/LEGACY_SOURCE_LOCALIZATION_20260930.md)。
+
+v11 已实际启动：回到 v9，隔离 5 张问题图、对 3 张原有 smoke/no-visible-flame 图加权，2432 文件/2810 条目，实际参数与 v9 仅 data/name/save_dir 不同。本机 58 项测试通过（50 基础＋8 PyTorch），效果待评测。见 [v11](../model_work/docs/HARDCASE_V11_NEGATIVE_CURATION_20260930.md)。

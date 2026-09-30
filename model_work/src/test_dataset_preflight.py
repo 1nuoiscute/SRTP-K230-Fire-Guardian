@@ -93,6 +93,18 @@ class DatasetPreflightTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "new source sheet changed"):
             verify_reviewed_dataset(self.folder, self.config)
 
+    def test_bound_negative_sample_sheet_edit_rejected(self):
+        sheet = self.folder / "negative_sample_review_sheet.jpg"
+        sheet.write_bytes(b"visually reviewed negatives")
+        approval_path = self.folder / "review_approval.json"
+        approval = json.loads(approval_path.read_text(encoding="utf-8"))
+        approval["negative_sample_sheet_sha256"] = sha256(sheet)
+        approval_path.write_text(json.dumps(approval), encoding="utf-8")
+        verify_reviewed_dataset(self.folder, self.config)
+        sheet.write_bytes(b"different negatives")
+        with self.assertRaisesRegex(ValueError, "negative sample sheet changed"):
+            verify_reviewed_dataset(self.folder, self.config)
+
     def test_review_sheet_edit_rejected(self):
         self.sheet.write_bytes(b"another review")
         with self.assertRaisesRegex(ValueError, "sheet identity changed"):

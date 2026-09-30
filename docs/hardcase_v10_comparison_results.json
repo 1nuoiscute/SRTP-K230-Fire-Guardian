@@ -1,0 +1,535 @@
+{
+  "decision": "Do not adopt whole generic-source removal; food false positive returns and untrained blue diagnostics do not improve. Sticker suppression is optional per user.",
+  "role": "development comparisons; no independent acceptance, no board deployment",
+  "data_manifest_sha256": "794d7623fa422049b0d8ab6694d92afe278de67e6f16a97a31763f8a52645fde",
+  "epochs_completed": 10,
+  "last_elapsed_seconds_csv": 1163.66,
+  "training_identity": {
+    "training_script_sha256": "753fe29d3612b0ea1b254f808b1ec543f485e04720bf0d366c3f16c07f22207c",
+    "dataset_config_sha256": "04ed116b1359c2c11b16a61e4c2c94e9cbf9bbc26fc57ab3caf9c64ae8a2b494",
+    "dataset_verification": {
+      "manifest_sha256": "794d7623fa422049b0d8ab6694d92afe278de67e6f16a97a31763f8a52645fde",
+      "approval_sha256": "3f79d95f591338e3b37322f759f2faeedf24f5871d5a03ffb44076069a13a4ef",
+      "train_list_sha256": "a4c440a9ba247fabe54258dae37ccfa9d6d9b7a7d97df728b23dc27b204eda89",
+      "base_manifest_sha256": "00df0d72e3b967592dcd6b2f0d17dadd862a4bff6e9b56e4491ac07c1e99fd8f",
+      "images_verified": 1637,
+      "entries_verified": 1982,
+      "labels_bound_by_manifest": 1637,
+      "scope": "Bytes, labels, weights and config checked; not proof of scene independence."
+    },
+    "start_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+    "start": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-binary-user-video-v3\\weights\\best.pt",
+    "dataset_manifest_sha256": "794d7623fa422049b0d8ab6694d92afe278de67e6f16a97a31763f8a52645fde",
+    "config": {
+      "data": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\data\\hardcase_v10_source_ablation_utf8_20260930\\data.yaml",
+      "epochs": 12,
+      "patience": 8,
+      "imgsz": 640,
+      "batch": 4,
+      "device": 0,
+      "workers": 0,
+      "seed": 20260930,
+      "optimizer": "AdamW",
+      "lr0": 2e-05,
+      "warmup_bias_lr": 2e-05,
+      "lrf": 0.1,
+      "weight_decay": 0.0005,
+      "hsv_h": 0.015,
+      "hsv_s": 0.3,
+      "hsv_v": 0.25,
+      "degrees": 3.0,
+      "translate": 0.05,
+      "scale": 0.2,
+      "fliplr": 0.5,
+      "mosaic": 0.2,
+      "mixup": 0.0,
+      "close_mosaic": 5,
+      "project": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs",
+      "name": "fire-binary-hardcase-v10-source-ablation-20260930",
+      "exist_ok": false,
+      "save": true,
+      "plots": true,
+      "val": true
+    },
+    "environment": {
+      "python": "3.13.13",
+      "torch": "2.12.0+cu132",
+      "ultralytics": "8.4.70",
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU"
+    },
+    "role": "development candidate; all teammate videos now exposed; no board deployment",
+    "local_dependency_sha256": {
+      "data_integrity.py": "22777ca17939e2c07c5834418ac4bcf96ff3ae627053d8825feac29a6f8e59a0",
+      "dataset_preflight.py": "6908ae7b213adff69cb7c32d884778e30642a3235eae0cb04f8080c62752974b",
+      "backbone_freeze_audit.py": "8ea746515b72efd604a9109a38cc092f59e2f3bcaf3a87dd9892fa808171fd46"
+    },
+    "best.pt_sha256": "5dafd3a723d0f25c7b5d795e19da06de9866c15cc4a8169e45c8ac2aae28c30a",
+    "last.pt_sha256": "93df0627e425d66c843abc6889d9854e3a00957014fa3699f92f293d387bfcd5"
+  },
+  "models": {
+    "v3": {
+      "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+      "frames": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 1,
+          "fp": 3,
+          "fn": 12
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 5,
+          "tp": 3,
+          "fp": 5,
+          "fn": 7
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 0,
+          "fp": 3,
+          "fn": 0
+        }
+      },
+      "blue_primary_localized": 0,
+      "legacy_metrics": {
+        "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-binary-user-video-v3\\weights\\best.pt",
+        "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+        "data": "D:\\SRTP_Datasets\\kitchen_fire_binary_codex_20260927\\data.yaml",
+        "split": "test",
+        "precision": 0.9505308287375542,
+        "recall": 0.961038961038961,
+        "map50": 0.9732386254178709,
+        "map50_95": 0.27949606105054137
+      },
+      "commons_source_groups": {
+        "training_source_in_comparison": {
+          "images": 2,
+          "original_works": 2,
+          "summary": {
+            "0.25": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 1,
+                "localized": 0
+              }
+            },
+            "0.5": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 0,
+                "localized": 0
+              }
+            }
+          }
+        },
+        "untrained_source_development_diagnostic": {
+          "images": 11,
+          "original_works": 11,
+          "summary": {
+            "0.25": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 1,
+                "localized": 0
+              },
+              "fire": {
+                "images": 6,
+                "detected_or_false_positive": 6,
+                "localized": 5
+              },
+              "no_fire": {
+                "images": 3,
+                "detected_or_false_positive": 1,
+                "localized": 0
+              }
+            },
+            "0.5": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 0,
+                "localized": 0
+              },
+              "fire": {
+                "images": 6,
+                "detected_or_false_positive": 6,
+                "localized": 5
+              },
+              "no_fire": {
+                "images": 3,
+                "detected_or_false_positive": 0,
+                "localized": 0
+              }
+            }
+          }
+        }
+      },
+      "video_any_box_counts": {
+        "old_videos": {
+          "clips": 4,
+          "sampled_frames": 130,
+          "frames_with_any_box": 98,
+          "role": "any-box counts only, not localization accuracy"
+        },
+        "teammate_videos": {
+          "clips": 5,
+          "sampled_frames": 177,
+          "frames_with_any_box": 104,
+          "role": "any-box counts only, not localization accuracy"
+        }
+      }
+    },
+    "v10_best": {
+      "weights_sha256": "5dafd3a723d0f25c7b5d795e19da06de9866c15cc4a8169e45c8ac2aae28c30a",
+      "frames": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 2,
+          "tp": 2,
+          "fp": 2,
+          "fn": 11
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 5,
+          "tp": 5,
+          "fp": 5,
+          "fn": 5
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 4,
+          "tp": 0,
+          "fp": 4,
+          "fn": 0
+        }
+      },
+      "blue_primary_localized": 0,
+      "legacy_metrics": {
+        "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-binary-hardcase-v10-source-ablation-20260930\\weights\\best.pt",
+        "weights_sha256": "5dafd3a723d0f25c7b5d795e19da06de9866c15cc4a8169e45c8ac2aae28c30a",
+        "data": "D:\\SRTP_Datasets\\kitchen_fire_binary_codex_20260927\\data.yaml",
+        "split": "test",
+        "precision": 0.9099538942128654,
+        "recall": 0.91870702902128,
+        "map50": 0.9422554023553916,
+        "map50_95": 0.26910130651225184
+      },
+      "commons_source_groups": {
+        "training_source_in_comparison": {
+          "images": 2,
+          "original_works": 2,
+          "summary": {
+            "0.25": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 1,
+                "localized": 0
+              }
+            },
+            "0.5": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 0,
+                "localized": 0
+              }
+            }
+          }
+        },
+        "untrained_source_development_diagnostic": {
+          "images": 11,
+          "original_works": 11,
+          "summary": {
+            "0.25": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 1,
+                "localized": 1
+              },
+              "fire": {
+                "images": 6,
+                "detected_or_false_positive": 6,
+                "localized": 5
+              },
+              "no_fire": {
+                "images": 3,
+                "detected_or_false_positive": 1,
+                "localized": 0
+              }
+            },
+            "0.5": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 1,
+                "localized": 1
+              },
+              "fire": {
+                "images": 6,
+                "detected_or_false_positive": 6,
+                "localized": 5
+              },
+              "no_fire": {
+                "images": 3,
+                "detected_or_false_positive": 0,
+                "localized": 0
+              }
+            }
+          }
+        }
+      },
+      "video_any_box_counts": {
+        "old_videos": {
+          "clips": 4,
+          "sampled_frames": 130,
+          "frames_with_any_box": 98,
+          "role": "any-box counts only, not localization accuracy"
+        },
+        "teammate_videos": {
+          "clips": 5,
+          "sampled_frames": 177,
+          "frames_with_any_box": 133,
+          "role": "any-box counts only, not localization accuracy"
+        }
+      }
+    },
+    "v10_last": {
+      "weights_sha256": "93df0627e425d66c843abc6889d9854e3a00957014fa3699f92f293d387bfcd5",
+      "frames": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 1,
+          "tp": 9,
+          "fp": 1,
+          "fn": 4
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 2,
+          "tp": 10,
+          "fp": 2,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 2,
+          "tp": 0,
+          "fp": 2,
+          "fn": 0
+        }
+      },
+      "blue_primary_localized": 3,
+      "legacy_metrics": {
+        "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-binary-hardcase-v10-source-ablation-20260930\\weights\\last.pt",
+        "weights_sha256": "93df0627e425d66c843abc6889d9854e3a00957014fa3699f92f293d387bfcd5",
+        "data": "D:\\SRTP_Datasets\\kitchen_fire_binary_codex_20260927\\data.yaml",
+        "split": "test",
+        "precision": 0.8667769271237704,
+        "recall": 0.9294967721421271,
+        "map50": 0.8974505103349785,
+        "map50_95": 0.2491630025317239
+      },
+      "commons_source_groups": {
+        "training_source_in_comparison": {
+          "images": 2,
+          "original_works": 2,
+          "summary": {
+            "0.25": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 2,
+                "localized": 2
+              }
+            },
+            "0.5": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 1,
+                "localized": 1
+              }
+            }
+          }
+        },
+        "untrained_source_development_diagnostic": {
+          "images": 11,
+          "original_works": 11,
+          "summary": {
+            "0.25": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 1,
+                "localized": 1
+              },
+              "fire": {
+                "images": 6,
+                "detected_or_false_positive": 6,
+                "localized": 5
+              },
+              "no_fire": {
+                "images": 3,
+                "detected_or_false_positive": 0,
+                "localized": 0
+              }
+            },
+            "0.5": {
+              "blue_flame": {
+                "images": 2,
+                "detected_or_false_positive": 1,
+                "localized": 1
+              },
+              "fire": {
+                "images": 6,
+                "detected_or_false_positive": 6,
+                "localized": 5
+              },
+              "no_fire": {
+                "images": 3,
+                "detected_or_false_positive": 0,
+                "localized": 0
+              }
+            }
+          }
+        }
+      },
+      "video_any_box_counts": {
+        "old_videos": {
+          "clips": 4,
+          "sampled_frames": 130,
+          "frames_with_any_box": 98,
+          "role": "any-box counts only, not localization accuracy"
+        },
+        "teammate_videos": {
+          "clips": 5,
+          "sampled_frames": 177,
+          "frames_with_any_box": 146,
+          "role": "any-box counts only, not localization accuracy"
+        }
+      }
+    }
+  },
+  "frame_references": {
+    "v9_best": {
+      "weights_sha256": "938d70b4ff7d6b6c0751d7c60f71099e61101db187f9356de36d02f4a306f5f7",
+      "by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 2,
+          "tp": 1,
+          "fp": 2,
+          "fn": 12
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 4,
+          "tp": 4,
+          "fp": 4,
+          "fn": 6
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 2,
+          "tp": 0,
+          "fp": 2,
+          "fn": 0
+        }
+      }
+    },
+    "v9_last": {
+      "weights_sha256": "1ead79c990f0121dc779cee97a155f779deeea428a32d0cc85e56b66be5fe867",
+      "by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 2,
+          "tp": 7,
+          "fp": 2,
+          "fn": 6
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 10,
+          "fp": 3,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 0,
+          "fp": 3,
+          "fn": 0
+        }
+      }
+    }
+  },
+  "publication_scope": "No private per-image names, hashes, coordinates or raw review sheets."
+}

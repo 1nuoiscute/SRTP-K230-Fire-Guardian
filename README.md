@@ -32,7 +32,9 @@ v9 已完成：last 五图蓝焰定位提高到 3/5，但旧图 mAP50 降到 0.9
 
 原训练集颜色/标签抽查完成：所抽厨房图中蓝焰并不少见，但场景重复且部分框包含较大锅体；通用来源全部 4 个空标签图中 3 个实际有可见火焰，已追溯为上游漏标。尚未修改 v9 或原标签。见 [抽查证据](model_work/docs/TRAINING_COLOR_QUALITY_REVIEW_20260930.md)。
 
-v10 已启动：仅移除此次微调中的 generic_fire 800 张，其余数据、标签和参数保持 v9 一致；先检验通用来源的影响，结果待完整评测，见 [来源消融](model_work/docs/HARDCASE_V10_SOURCE_ABLATION_20260930.md)。
+v10 已完成：蓝焰仍为 3/5，食物误检重新出现，暂不采用整来源移除方案；按来源复查发现烟雾/反光误检增加，见 [来源消融](model_work/docs/HARDCASE_V10_SOURCE_ABLATION_20260930.md)。
+
+v11 已启动：回到 v9 数据，隔离五张已审核问题图，对三张原训练烟雾无可见火焰图加权，其余通用来源和蓝焰图保留，见 [负例清理实验](model_work/docs/HARDCASE_V11_NEGATIVE_CURATION_20260930.md)。
 
 ## 从这里开始
 
