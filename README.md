@@ -23,6 +23,8 @@
 
 v5、v6 均已完成训练与对照。v6 减轻了旧图退化，但仍有贴纸误报，外部蓝焰定位未改善，继续保留 v3。v7 从 v3 开始、沿用 v6 参数，仅将两份审核过的既有蓝焰诊断原作加入训练，训练与按来源曝光分组的评测均已完成：last 在五张蓝焰诊断图上由 0/5 到 1/5，但旧图 mAP50 降至 0.906 且仍有误检，拒绝替换。详见 [v5 记录](model_work/docs/HARDCASE_V5_EXPERIMENT_20260930.md)、[v6 完整结果](model_work/docs/HARDCASE_V6_EXPERIMENT_20260930.md) 和 [v7 实验](model_work/docs/HARDCASE_V7_EXPERIMENT_20260930.md)。来源边界更正见 [原作对照](model_work/docs/COMMONS_SOURCE_SCOPE_CORRECTION_20260930.md)。
 
+v8 已启动：保持 v7 数据和 v3 起点，单独检验冻结 11 个主干模块，并逐轮核对参数和 BatchNorm 缓冲不变。效果待评测，见 [v8 实验](model_work/docs/HARDCASE_V8_FREEZE_EXPERIMENT_20260930.md)。
+
 ## 从这里开始
 
 | 内容 | 入口 |

@@ -1,0 +1,44 @@
+{
+  "role": "development candidate; all teammate videos now exposed; no board deployment",
+  "start_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+  "dataset_manifest_sha256": "0a40ce9345652e322c8af0cd2d8a5abb1831e94432065c4b546828d64ee47a3b",
+  "training_script_sha256": "0e414525d6cedeced180e407bd4b5641b53cd17b98373030eca781b3136b4d0e",
+  "dataset_config_sha256": "9b15dd7d24140138459ba033dcadf8995409c6b2a4a8846acae5e53c42690b27",
+  "backbone_freeze": {
+    "blocks": 11,
+    "module_types": [
+      "Conv",
+      "Conv",
+      "C3k2",
+      "Conv",
+      "C3k2",
+      "Conv",
+      "C3k2",
+      "Conv",
+      "C3k2",
+      "SPPF",
+      "C2PSA"
+    ],
+    "frozen_parameter_elements": 5441984,
+    "source_state_sha256": "7180c9b7f55fdcad0e511e6328c1322de0e26c81c109802e4af2d28d4df0fa31",
+    "source_state_tensors": 240,
+    "scope": "Live training backbone parameters and all registered buffers; EMA/FP16 checkpoints are not tested for byte equality.",
+    "audit_script_sha256": "8ea746515b72efd604a9109a38cc092f59e2f3bcaf3a87dd9892fa808171fd46",
+    "framework_trainer_sha256": "9064ec6470efc8e534bcf8b76e1014675b9f8dbdf043d5e862239b2dc5b3ac74"
+  },
+  "environment": {
+    "python": "3.13.13",
+    "torch": "2.12.0+cu132",
+    "ultralytics": "8.4.70",
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU"
+  },
+  "actual_v7_v8_argument_changes": [
+    "freeze",
+    "name",
+    "save_dir"
+  ],
+  "v8_freeze": 11,
+  "status_at_creation": "training started; not evaluated",
+  "dataset": "same reviewed v7; queue2 images not added",
+  "audit_state_scope": "Exact equality is checked on the live model, including BatchNorm running_mean/running_var/num_batches_tracked. Checkpoints use EMA/FP16, so their byte equality to v3 is not claimed."
+}

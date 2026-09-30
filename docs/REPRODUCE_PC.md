@@ -37,3 +37,5 @@ python -B model_work/src/fusion_replay.py replay --input model_work/data/fusion_
 新版转换需指定 --config，输入采用带 width/height/predictions 的开发预测 CSV；ROI JSON 逐视频声明尺寸及 roi_xyxy。配置、输出哈希在回放时核验。命令和迁移说明见 [边界修复记录](../model_work/docs/VISUAL_FUSION_BOUNDARY_FIX_20260930.md)。
 
 Commons 诊断脚本现要求 --comparison-data 指向本轮训练 build_manifest.json；按原作身份分别统计训练来源与本轮未训练的开发诊断来源。不能用不同下载尺寸绕过这个分组。
+
+可选 --freeze-backbone 按实际 checkpoint 的 backbone 长度冻结，并在训练运行中核验主干参数与 BN 缓冲。默认不启用，既有实验日程不变。命令与范围见 [v8 冻结对照](../model_work/docs/HARDCASE_V8_FREEZE_EXPERIMENT_20260930.md)。
