@@ -8,11 +8,12 @@ import argparse
 import csv
 import hashlib
 import json
-from collections import Counter, defaultdict
 from pathlib import Path
 
 from PIL import Image
 from ultralytics import YOLO
+from data_integrity import sha256
+from source_exposure import commons_source_key,training_source_keys,diagnostic_summary,source_exposure_summary
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -46,10 +47,15 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--weights", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--comparison-data", type=Path, required=True,
+                        help="Reviewed training manifest for comparison-relative source exposure")
     args = parser.parse_args()
     if args.out.exists():
         raise SystemExit(f"Refusing overwrite: {args.out}")
-    rows = list(csv.DictReader((DATA / "manifest.csv").open(encoding="utf-8-sig")))
+    with (DATA / "manifest.csv").open(encoding="utf-8-sig") as stream:
+        rows = list(csv.DictReader(stream))
+    comparison_meta=json.loads(args.comparison_data.read_text(encoding="utf-8"))
+    source_keys=training_source_keys(comparison_meta)
     if len(rows) != 13:
         raise SystemExit(f"Expected 13 diagnostic images, got {len(rows)}")
     args.out.mkdir(parents=True)
@@ -58,6 +64,8 @@ def main() -> None:
     for row in rows:
         image = DATA / f"{row['slug']}.jpg"
         label = DATA / "labels" / f"{row['slug']}.txt"
+        if sha256(image)!=row["sha256"]: raise SystemExit("Diagnostic image identity mismatch")
+        source_key=commons_source_key(row["source_page"])
         with Image.open(image) as opened:
             width, height = opened.size
         gt = ground_truth(label, width, height)
@@ -67,6 +75,8 @@ def main() -> None:
                   "xyxy": [round(float(v), 2) for v in b.xyxy[0].tolist()]}
                  for b in pred.boxes]
         item = {"slug": row["slug"], "scene": row["scene"],
+                "source_page":row["source_page"], "source_key":source_key,
+                "source_exposure": "training_source_in_comparison" if source_key in source_keys else "untrained_source_development_diagnostic",
                 "intended": row["intended"], "gt_boxes": len(gt),
                 "max_conf": max((b["confidence"] for b in boxes), default=0.0),
                 "predictions": json.dumps(boxes)}
@@ -81,21 +91,14 @@ def main() -> None:
         writer = csv.DictWriter(handle, fieldnames=list(output[0]))
         writer.writeheader()
         writer.writerows(output)
-    summaries = {}
-    for conf, suffix in ((0.25, "025"), (0.5, "050")):
-        counts = defaultdict(Counter)
-        for row in output:
-            category = ("blue_flame" if "blue" in row["intended"]
-                        else "fire" if row["gt_boxes"] else "no_fire")
-            c = counts[category]
-            c["images"] += 1
-            c["detected_or_false_positive"] += row[f"det_{suffix}"]
-            c["localized"] += row[f"localized_{suffix}"]
-        summaries[str(conf)] = {key: dict(value) for key, value in counts.items()}
+    summaries = diagnostic_summary(output)
     result = {"weights": str(args.weights),
               "weights_sha256": hashlib.sha256(args.weights.read_bytes()).hexdigest(),
               "data": str(DATA), "images": len(output), "summary": summaries,
-              "warning": "Selected small diagnostic set; not a population accuracy estimate."}
+              "comparison_manifest_sha256":sha256(args.comparison_data),
+              "source_exposure":source_exposure_summary(output),
+              "summary_scope":"All thirteen development diagnostics, including sources used in the comparison training manifest.",
+              "warning": "Selected small diagnostic set; use source-exposure strata. Untrained sources are still development diagnostics, not independent acceptance."}
     (args.out / "summary.json").write_text(
         json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8"
     )

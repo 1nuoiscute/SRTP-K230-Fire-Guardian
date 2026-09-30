@@ -26,12 +26,14 @@ python -B model_work/src/fusion_replay.py replay --input model_work/data/fusion_
 
 各评测输出到独立新目录。runner 不部署、不推送，失败时保留日志，需查明后继续未完成项目。
 
-## 两张新蓝焰来源的开发数据扩展
+## 两份既有蓝焰诊断原作的训练数据扩展
 
-构建方法、人工审核和哈希见 [数据准备记录](../model_work/docs/BLUE_SOURCE_DATA_PREPARATION_20260930.md)。重复权重不增加独立照片数；v7 数据已备并开始训练，具体配置见 [v7 实验](../model_work/docs/HARDCASE_V7_EXPERIMENT_20260930.md)。
+构建方法、人工审核和哈希见 [数据准备记录](../model_work/docs/BLUE_SOURCE_DATA_PREPARATION_20260930.md)。重复权重不增加独立照片数；v7 训练与完整评测已经完成，具体配置与拒绝替换结论见 [v7 实验](../model_work/docs/HARDCASE_V7_EXPERIMENT_20260930.md)。
 
 新增 dataset_preflight.py 在训练前验证实际图像/标签身份、采样权重和配置路径；带有 label_sha256 的清单会拒绝审核后的标签修改。历史 v5 清单没有逐标签哈希，记录会如实报告其绑定覆盖数，不把它当成同等强度校验。
 
 ## 视觉结果转融合输入
 
 新版转换需指定 --config，输入采用带 width/height/predictions 的开发预测 CSV；ROI JSON 逐视频声明尺寸及 roi_xyxy。配置、输出哈希在回放时核验。命令和迁移说明见 [边界修复记录](../model_work/docs/VISUAL_FUSION_BOUNDARY_FIX_20260930.md)。
+
+Commons 诊断脚本现要求 --comparison-data 指向本轮训练 build_manifest.json；按原作身份分别统计训练来源与本轮未训练的开发诊断来源。不能用不同下载尺寸绕过这个分组。

@@ -1,0 +1,625 @@
+{
+  "role": "candidate quarantine audit",
+  "training_images_scanned": 5942,
+  "missing_training_files": [],
+  "training_byte_hashes_verified": 5942,
+  "diagnostic_images_scanned": 18,
+  "limits": [
+    "only available manifest files checked",
+    "pHash is similarity triage, not scene-independent proof",
+    "no assertion about generic pretrained data or unrecorded prior data"
+  ],
+  "candidates": [
+    {
+      "file": "queue2_00.jpg",
+      "sha256": "3670fa8b69b6952f5b1fb52989a2ae3b0f1b09676f7ea4213c45758226ef915e",
+      "exact_training_match": false,
+      "nearest_diagnostic_phash": [
+        [
+          26,
+          "chef_flames_jwgb",
+          "ac699495ef9dbc704ef844fa371fcd2ba48820870efc1bad13c54d202a121ee5"
+        ],
+        [
+          26,
+          "flaming_wok_kellyb",
+          "db911dfbc748c242e67b6a236c749fd9827bac1218549cdfa8f7327e320b80b8"
+        ],
+        [
+          26,
+          "gas_stove_flame",
+          "b003bac8e224e5e6a745c200a6aba1ef1785c6aea7cc17d3cab839f8ed030304"
+        ],
+        [
+          26,
+          "wok_fire_webster",
+          "78e62c5515ea1c39c4e47543919e7342c56cfbe972d5d2525cc9af9e4e8b2de8"
+        ],
+        [
+          28,
+          "blue_ka23",
+          "e060f3d15394a66d99b92a7a6efea79be096fb4cd796caeb83742345f5e790dc"
+        ]
+      ],
+      "original_work_seen_in_diagnostics": false,
+      "status": "quarantined_pending_lineage_and_visual_review",
+      "nearest_training_phash": [
+        {
+          "distance": 18,
+          "filename": "generic_fire__ck0kkthj17c9g0838c3vjfndl_jpeg_jpg.rf.18e1ba20e4e965d97ce941fe67ada940.jpg",
+          "sha256": "cbf5ad6c2dbb773e5140f054f69df37240ad359934dd8df92865ac6d49ce6428"
+        },
+        {
+          "distance": 20,
+          "filename": "generic_fire__ck0ng3zz98boz07013zyds00f_jpeg_jpg.rf.29eabe7b5e54cb40bd9c94b7fade34cb.jpg",
+          "sha256": "6a2261cdcb20bb2b7774c35915b4a33c6d457bf0cc3fa8645c1798496b9c5c53"
+        },
+        {
+          "distance": 20,
+          "filename": "generic_fire__fire1-1272-_jpg.rf.eb7e5ed774bdf2e2e03861fa4d454976.jpg",
+          "sha256": "adca3c0d099cd79c21aab13bcc5af708d77748fcd5860e085e4ddc70eed2a784"
+        },
+        {
+          "distance": 20,
+          "filename": "generic_fire__fire1-131-_jpg.rf.45481448fc9e4c486effea67163a34a5.jpg",
+          "sha256": "5659034a41db8461059847a1ac8047851fb1736a61ace054618ce5b1ea2c82f4"
+        },
+        {
+          "distance": 20,
+          "filename": "generic_fire__fire1-503-_jpg.rf.5c792e5e925fb38c37077f824a93ec43.jpg",
+          "sha256": "d6404a9acf3533694e497fd13b88b2adf4038ff41eea6df4165a509cac754753"
+        }
+      ]
+    },
+    {
+      "file": "queue2_01.jpg",
+      "sha256": "09ff5d55ea9435d8f03432c355e581356703672587c6fd5caa39ad060d4ccdb6",
+      "exact_training_match": false,
+      "nearest_diagnostic_phash": [
+        [
+          20,
+          "chef_flames_jwgb",
+          "ac699495ef9dbc704ef844fa371fcd2ba48820870efc1bad13c54d202a121ee5"
+        ],
+        [
+          22,
+          "gas_cooker_blue_flame",
+          "1f1187ff0a25436d937265234344c2be1b489cb16647906d5450b94f8e8cb961"
+        ],
+        [
+          24,
+          "outdoor_wok",
+          "d4ad29534e1f6e6542adc83ea8d04150408bf56484e0fbf541df74e7ad5ef63b"
+        ],
+        [
+          26,
+          "blue_oven",
+          "bdf8d1efe2ac9b5b7d92ab5dfd2169f10856f4fe98a64941ae0ea42d7010220c"
+        ],
+        [
+          26,
+          "flaming_wok_kellyb",
+          "db911dfbc748c242e67b6a236c749fd9827bac1218549cdfa8f7327e320b80b8"
+        ]
+      ],
+      "original_work_seen_in_diagnostics": false,
+      "status": "quarantined_pending_lineage_and_visual_review",
+      "nearest_training_phash": [
+        {
+          "distance": 16,
+          "filename": "generic_fire__MirrorWEBFire2132_jpg.rf.3dfd2553c5990b3affc66d1d79016063.jpg",
+          "sha256": "a839514a782074c472e5a8d2c941e645f96a587558d00268dfc6a49db97cb7f1"
+        },
+        {
+          "distance": 18,
+          "filename": "generic_fire__Img_1900_jpg.rf.24de9557b3fa1c6181df27948cc9d8e2.jpg",
+          "sha256": "c8714a533a64f602d92dbc30ca722d8caecbeb49e649c76c454cc2ce31c494fa"
+        },
+        {
+          "distance": 18,
+          "filename": "generic_fire__Img_491_jpg.rf.bdfbcdb64a1fefa3ad1154a993402e56.jpg",
+          "sha256": "1231d2fa85bdfacd4ef91b1990d65715f5c86aa0245564194aeed6750f62de7c"
+        },
+        {
+          "distance": 18,
+          "filename": "generic_fire__Img_502_jpg.rf.d99a54bef8e10e9708874608b19fa614.jpg",
+          "sha256": "8a01b0ae82b1aa2ef398a0507b0d0c1ddf0ee51bf08ba91bbef9683fd2d61789"
+        },
+        {
+          "distance": 18,
+          "filename": "generic_fire__frame_052_jpg.rf.05666b6b6ff2e56188d88f22e35ac111.jpg",
+          "sha256": "c9b9c183abf05d34a60aecea950a45d4c14db2f082fa6c8f90ea56fcfc633f8e"
+        }
+      ]
+    },
+    {
+      "file": "queue2_02.jpg",
+      "sha256": "9a18f81b36db8acc96b0c7428fcf02ddafebe981f363f41fe923fea09867b926",
+      "exact_training_match": false,
+      "nearest_diagnostic_phash": [
+        [
+          26,
+          "flaming_wok_kellyb",
+          "db911dfbc748c242e67b6a236c749fd9827bac1218549cdfa8f7327e320b80b8"
+        ],
+        [
+          26,
+          "gas_cooker",
+          "4e3b4e1eddcbfe788a1f352eb4cb0f0d7af2e3d7d6cffea45ae65e5b71974168"
+        ],
+        [
+          26,
+          "pot_on_stove",
+          "13b6f967c03a9df24a3517ced9f829acc58c596a6391fbb4046856c672b3da72"
+        ],
+        [
+          28,
+          "blue_oven",
+          "bdf8d1efe2ac9b5b7d92ab5dfd2169f10856f4fe98a64941ae0ea42d7010220c"
+        ],
+        [
+          28,
+          "gas_cooker_blue_flame",
+          "1f1187ff0a25436d937265234344c2be1b489cb16647906d5450b94f8e8cb961"
+        ]
+      ],
+      "original_work_seen_in_diagnostics": false,
+      "status": "quarantined_pending_lineage_and_visual_review",
+      "nearest_training_phash": [
+        {
+          "distance": 14,
+          "filename": "generic_fire__frame_47_jpg.rf.240aecdff1b0d7db54164290f767c890.jpg",
+          "sha256": "f55583e53ba0bb204da4455939479b6a0c094569c457f820fccc876507197c68"
+        },
+        {
+          "distance": 14,
+          "filename": "nofire_real_indoor__val_363.jpg",
+          "sha256": "e87f8d30b99edecb2b8048c9489454bd2f88b144b313c453defad6db6124abe5"
+        },
+        {
+          "distance": 16,
+          "filename": "generic_fire__ezgif-frame-134_jpg.rf.a2d24d1b8c21820a6b85684a53b18b4c.jpg",
+          "sha256": "6b1fb16dede77aa73d7b4edb639d3c50e43095d9fb6a01beb553d639fb93aa3d"
+        },
+        {
+          "distance": 16,
+          "filename": "generic_fire__fire1-337-_jpg.rf.8ea2eaa49eac4ecf49f4adb0460358df.jpg",
+          "sha256": "448dc4e2cba1dfc51f8c99325541fdc74a3b04d40e27cadb419b21ba394882a2"
+        },
+        {
+          "distance": 16,
+          "filename": "generic_fire__frame_36_jpg.rf.418f6a8ced69f52e770f12cbf4a6f38b.jpg",
+          "sha256": "1e69cdefec6e7a646852f89876bb59e64b75800d55348f4643b4c062f8f5f850"
+        }
+      ]
+    },
+    {
+      "file": "queue2_03.jpg",
+      "sha256": "5dcac61d6aeb375a17d64f41a47b7a1cc98659a8530e0dad395b18a5ce9fe975",
+      "exact_training_match": false,
+      "nearest_diagnostic_phash": [
+        [
+          22,
+          "gas_cooker",
+          "4e3b4e1eddcbfe788a1f352eb4cb0f0d7af2e3d7d6cffea45ae65e5b71974168"
+        ],
+        [
+          24,
+          "blue_cardoner",
+          "05a69decc2995fdf9d3a993e2920fb9ee3eef7123b5b4a3ddd26c092f77a402a"
+        ],
+        [
+          24,
+          "gas_stove_blue_flames",
+          "6c6a066c72e8f8f0e80047ff0ba7efad35acb4fe9d2393d3a6bfecc80ab9cf2a"
+        ],
+        [
+          24,
+          "wok_cooking_fire",
+          "93c8cbdbb0d5b57dd04937571bd3d95cfb6a354cdd06a4b44d9923bbe44005d4"
+        ],
+        [
+          26,
+          "gas_cooker_blue_flame",
+          "1f1187ff0a25436d937265234344c2be1b489cb16647906d5450b94f8e8cb961"
+        ]
+      ],
+      "original_work_seen_in_diagnostics": false,
+      "status": "quarantined_pending_lineage_and_visual_review",
+      "nearest_training_phash": [
+        {
+          "distance": 16,
+          "filename": "generic_fire__frame_101_jpg.rf.6aaeb74106dcf5008c9209437fc6bdb0.jpg",
+          "sha256": "be9dcd7bf33c7309dae8385f959a0a27bd1527ae0fd9d2981b6cdfbdee586c09"
+        },
+        {
+          "distance": 16,
+          "filename": "generic_fire__frame_116_jpg.rf.126f0b2dc90c170eaba485c324aaa52f.jpg",
+          "sha256": "458fed64f1bb2baabf016bca27335436cc34307d2f24d046333375842114adb8"
+        },
+        {
+          "distance": 16,
+          "filename": "generic_fire__frame_47_jpg.rf.240aecdff1b0d7db54164290f767c890.jpg",
+          "sha256": "f55583e53ba0bb204da4455939479b6a0c094569c457f820fccc876507197c68"
+        },
+        {
+          "distance": 16,
+          "filename": "kitchen_stove_fire__DSC_5475_JPG_JPG.rf.7a1303f7a4c31233cb188d900d24d27a.jpg",
+          "sha256": "ac42eab7ed2c7bedc888794659bed20e04966c0e96e99be66ff288ccf6d72e0e"
+        },
+        {
+          "distance": 18,
+          "filename": "generic_fire__0150_jpg.rf.1b1dad739838f8faf0ed00a34b92b668.jpg",
+          "sha256": "3468a944cb329895b4eccd0d6ec5b9b3e786deec8e786d39b1cc0326ef592a4d"
+        }
+      ]
+    },
+    {
+      "file": "queue2_04.jpg",
+      "sha256": "4fd7faf4444858efb4cb1f48da06c5e366152ec88fac097875feec0fade3dd39",
+      "exact_training_match": false,
+      "nearest_diagnostic_phash": [
+        [
+          22,
+          "blue_cardoner",
+          "05a69decc2995fdf9d3a993e2920fb9ee3eef7123b5b4a3ddd26c092f77a402a"
+        ],
+        [
+          24,
+          "chef_flames_jwgb",
+          "ac699495ef9dbc704ef844fa371fcd2ba48820870efc1bad13c54d202a121ee5"
+        ],
+        [
+          24,
+          "wok_cooking_fire",
+          "93c8cbdbb0d5b57dd04937571bd3d95cfb6a354cdd06a4b44d9923bbe44005d4"
+        ],
+        [
+          26,
+          "blue_ka23",
+          "e060f3d15394a66d99b92a7a6efea79be096fb4cd796caeb83742345f5e790dc"
+        ],
+        [
+          30,
+          "wok_of_dong",
+          "f05e16a0ca498bca6353a8654e71e02b86d01e8bcad08a5907c117e09438d564"
+        ]
+      ],
+      "original_work_seen_in_diagnostics": false,
+      "status": "quarantined_pending_lineage_and_visual_review",
+      "nearest_training_phash": [
+        {
+          "distance": 18,
+          "filename": "generic_fire__new_fire_fire-88_png_jpg.rf.5220bfaa920f1fe038c22d37def56608.jpg",
+          "sha256": "40d665448a956e3df9a4b22176caefb767ea4b915ac1cf9a5d1f67e1b18fccc0"
+        },
+        {
+          "distance": 18,
+          "filename": "object_stove__images-10-_jpg.rf.56bf19b8598f51c717cb1af2f7996eb1.jpg",
+          "sha256": "3c43154c13dfca2af738f72a9102fdb493cfa323b1a19b570ea0e8984b821c26"
+        },
+        {
+          "distance": 18,
+          "filename": "object_stove__images-10-_jpg.rf.fe4ff07409f3ff24e8f9080b0787f0b6.jpg",
+          "sha256": "e12bd9654241478487e1b13408c59f7c367b3908566a2e42652cb094937b2980"
+        },
+        {
+          "distance": 20,
+          "filename": "generic_fire__Img_1684_jpg.rf.78feb65010a997a96fbf6e188b7f1811.jpg",
+          "sha256": "90c5ac85ef944ffa4c67cde1c9371951a226334fc9bce2c51349b7f8d9ddcef8"
+        },
+        {
+          "distance": 20,
+          "filename": "generic_fire__Img_1684_jpg.rf.ba42994f37583907e52d108d3fe1d2d0.jpg",
+          "sha256": "dcd434e40d0dd97060f30bcb1aa066658d5d3057f7db23518a02d22ed50fa5fa"
+        }
+      ]
+    },
+    {
+      "file": "queue2_05.jpg",
+      "sha256": "e0ac61ad12d80362fa4473bed6d827d51d1903913895fe8407646ac6dfeae6fd",
+      "exact_training_match": false,
+      "nearest_diagnostic_phash": [
+        [
+          26,
+          "blue_cardoner",
+          "05a69decc2995fdf9d3a993e2920fb9ee3eef7123b5b4a3ddd26c092f77a402a"
+        ],
+        [
+          26,
+          "gas_stove_blue_flames",
+          "6c6a066c72e8f8f0e80047ff0ba7efad35acb4fe9d2393d3a6bfecc80ab9cf2a"
+        ],
+        [
+          28,
+          "blue_ka23",
+          "e060f3d15394a66d99b92a7a6efea79be096fb4cd796caeb83742345f5e790dc"
+        ],
+        [
+          28,
+          "gas_cooker",
+          "4e3b4e1eddcbfe788a1f352eb4cb0f0d7af2e3d7d6cffea45ae65e5b71974168"
+        ],
+        [
+          28,
+          "gas_cooker_blue_flame",
+          "1f1187ff0a25436d937265234344c2be1b489cb16647906d5450b94f8e8cb961"
+        ]
+      ],
+      "original_work_seen_in_diagnostics": false,
+      "status": "quarantined_pending_lineage_and_visual_review",
+      "nearest_training_phash": [
+        {
+          "distance": 12,
+          "filename": "generic_fire__frame_127_jpg.rf.d8ddf6ce2a8298573daa0f4e62934b79.jpg",
+          "sha256": "6061b25ba2043a6d62ffb4cc244ba17bd05a06cfd60b44d6415847bb6e4c1c2c"
+        },
+        {
+          "distance": 12,
+          "filename": "generic_fire__frame_135_jpg.rf.c91ea24767a096ec3fa2dbfebde1cd95.jpg",
+          "sha256": "fd741331f2afcc2e05d11be90ab32cde03328eab5fb142fd47317c4bb55b5700"
+        },
+        {
+          "distance": 14,
+          "filename": "generic_fire__Img_1799_jpg.rf.289e0c00400317835504e9c1d4ea5b69.jpg",
+          "sha256": "3f1d3425e9c0b4117396ae3bb70da3d0d83656b55f225f7b1065943f270bf9e2"
+        },
+        {
+          "distance": 14,
+          "filename": "generic_fire__Img_1799_jpg.rf.f915e89e37370cf52980f782f6b6607f.jpg",
+          "sha256": "dea8e26f80350c7743d9071be94c1e278778a4364d2f16797fe96ad68fe5333d"
+        },
+        {
+          "distance": 14,
+          "filename": "generic_fire__frame_126_jpg.rf.ba2e865207b1c1612dffa1890bf3ea3b.jpg",
+          "sha256": "d0516d7e43d4916f7ca263c15d70197df64184c303382c98ef8308bcc31cb687"
+        }
+      ]
+    },
+    {
+      "file": "queue2_06.jpg",
+      "sha256": "52771c24dd8f4bfc278e3a11f4817afee346ba678664b40eba7206569aca66bc",
+      "exact_training_match": false,
+      "nearest_diagnostic_phash": [
+        [
+          24,
+          "blue_bogtar",
+          "25dff0347fe9623797a8c26c7125165f690d2d3fc2cf78492f8ae13483213d18"
+        ],
+        [
+          24,
+          "gas_stove_blue_flames",
+          "6c6a066c72e8f8f0e80047ff0ba7efad35acb4fe9d2393d3a6bfecc80ab9cf2a"
+        ],
+        [
+          24,
+          "wok_fire_webster",
+          "78e62c5515ea1c39c4e47543919e7342c56cfbe972d5d2525cc9af9e4e8b2de8"
+        ],
+        [
+          28,
+          "fireplay_vendor",
+          "9ab38d1675b9607de57e47f0ae15552dd7a6e01b7a90a30a4acbb7d5e18edb36"
+        ],
+        [
+          28,
+          "gas_cooker",
+          "4e3b4e1eddcbfe788a1f352eb4cb0f0d7af2e3d7d6cffea45ae65e5b71974168"
+        ]
+      ],
+      "original_work_seen_in_diagnostics": false,
+      "status": "quarantined_pending_lineage_and_visual_review",
+      "nearest_training_phash": [
+        {
+          "distance": 16,
+          "filename": "generic_fire__frame_036_jpg.rf.fd617dca5a268d1884217d99c2806848.jpg",
+          "sha256": "419b41d91f93e1aad5178d0a495604bea720afba8b5105965f6b9eb25fd252af"
+        },
+        {
+          "distance": 18,
+          "filename": "generic_fire__Img_511_jpg.rf.ad3a24b7be57590ea0ca6bb9a9679668.jpg",
+          "sha256": "6a8239ceb7624170233efce12c4163ef56b7275445cb0c27f4744bf41945ade3"
+        },
+        {
+          "distance": 18,
+          "filename": "generic_fire__Img_511_jpg.rf.b07e4a81ff611361a89234590b577b06.jpg",
+          "sha256": "419a75c4ea353cb529fbbbc8d6ec5027f226b84f53edb1e61792ec0d352d4011"
+        },
+        {
+          "distance": 18,
+          "filename": "generic_fire__WEBFire1136_jpg.rf.f26cb24b944023822d85e6845dd94298.jpg",
+          "sha256": "277e1c2b58e8af989aaf11a2050feb44310ce66e96a729d9cfabf290f934dc99"
+        },
+        {
+          "distance": 18,
+          "filename": "generic_fire__fire1-518-_jpg.rf.163815789935630e26ce13146e164e44.jpg",
+          "sha256": "748fed96f2ea77adecf78fc608cdf701b0303f60a4315df0394693bc5b1e67f2"
+        }
+      ]
+    },
+    {
+      "file": "queue2_07.jpg",
+      "sha256": "0c37477bef3632207adb3a3611294403bff853cc9f600bb6424766a77986c84e",
+      "exact_training_match": false,
+      "nearest_diagnostic_phash": [
+        [
+          28,
+          "blue_ka23",
+          "e060f3d15394a66d99b92a7a6efea79be096fb4cd796caeb83742345f5e790dc"
+        ],
+        [
+          28,
+          "gas_cooker_blue_flame",
+          "1f1187ff0a25436d937265234344c2be1b489cb16647906d5450b94f8e8cb961"
+        ],
+        [
+          28,
+          "gas_stove_flame",
+          "b003bac8e224e5e6a745c200a6aba1ef1785c6aea7cc17d3cab839f8ed030304"
+        ],
+        [
+          30,
+          "blue_bogtar",
+          "25dff0347fe9623797a8c26c7125165f690d2d3fc2cf78492f8ae13483213d18"
+        ],
+        [
+          30,
+          "blue_cardoner",
+          "05a69decc2995fdf9d3a993e2920fb9ee3eef7123b5b4a3ddd26c092f77a402a"
+        ]
+      ],
+      "original_work_seen_in_diagnostics": false,
+      "status": "quarantined_pending_lineage_and_visual_review",
+      "nearest_training_phash": [
+        {
+          "distance": 18,
+          "filename": "object_stove__-1-_jpg.rf.8fc24d126deb955f01446461b2dbd6ec.jpg",
+          "sha256": "e88b8e0d029bdd771143cd86eb4cd78fc7b6ebd3264ba04f194a62b7e4559e47"
+        },
+        {
+          "distance": 18,
+          "filename": "object_stove__-_jpg.rf.6721a8105291918b9599e8e1c98cde98.jpg",
+          "sha256": "4378d4372a6c7512c7cc2a3b1e70e0c1bbc10b31db8fbadae65f968620a5d210"
+        },
+        {
+          "distance": 18,
+          "filename": "object_stove__images-2-_jpg.rf.7b4a13feae5e67a620603c5196c8d984.jpg",
+          "sha256": "fabe1aec67b2b490d23e44924b027362d12a007d8b33789ed430eac878f1dada"
+        },
+        {
+          "distance": 20,
+          "filename": "generic_fire__Img_494_jpg.rf.48f28a79577e7b18c71a4ee5d4681007.jpg",
+          "sha256": "43f17bc511f702f075f59217a3f8d7b69e36f2e5cc8fb12574745ebaa9eb8904"
+        },
+        {
+          "distance": 20,
+          "filename": "generic_fire__Img_494_jpg.rf.9aff59f74913c7210e5d1e9672e56508.jpg",
+          "sha256": "b45c69c24f5444d0cd8506804e6ea469e6733893000679db55fb66ce43728014"
+        }
+      ]
+    },
+    {
+      "file": "queue2_08.jpg",
+      "sha256": "4972e9b8b77a92d6ef1d3f63db5f13ebbf848cff780158557cc050010785cfda",
+      "exact_training_match": false,
+      "nearest_diagnostic_phash": [
+        [
+          20,
+          "gas_stove_blue_flames",
+          "6c6a066c72e8f8f0e80047ff0ba7efad35acb4fe9d2393d3a6bfecc80ab9cf2a"
+        ],
+        [
+          26,
+          "blue_cardoner",
+          "05a69decc2995fdf9d3a993e2920fb9ee3eef7123b5b4a3ddd26c092f77a402a"
+        ],
+        [
+          28,
+          "fireplay_vendor",
+          "9ab38d1675b9607de57e47f0ae15552dd7a6e01b7a90a30a4acbb7d5e18edb36"
+        ],
+        [
+          28,
+          "gas_cooker_blue_flame",
+          "1f1187ff0a25436d937265234344c2be1b489cb16647906d5450b94f8e8cb961"
+        ],
+        [
+          30,
+          "gas_cooker",
+          "4e3b4e1eddcbfe788a1f352eb4cb0f0d7af2e3d7d6cffea45ae65e5b71974168"
+        ]
+      ],
+      "original_work_seen_in_diagnostics": false,
+      "status": "quarantined_pending_lineage_and_visual_review",
+      "nearest_training_phash": [
+        {
+          "distance": 16,
+          "filename": "generic_fire__Img_1799_jpg.rf.289e0c00400317835504e9c1d4ea5b69.jpg",
+          "sha256": "3f1d3425e9c0b4117396ae3bb70da3d0d83656b55f225f7b1065943f270bf9e2"
+        },
+        {
+          "distance": 16,
+          "filename": "generic_fire__Img_1799_jpg.rf.f915e89e37370cf52980f782f6b6607f.jpg",
+          "sha256": "dea8e26f80350c7743d9071be94c1e278778a4364d2f16797fe96ad68fe5333d"
+        },
+        {
+          "distance": 16,
+          "filename": "generic_fire__frame_032_jpg.rf.8c9f69d74a5e21aaae8dbdc2d153666e.jpg",
+          "sha256": "b599209350ea0c5a4a18a5f5302cf8dce5a1bc6adc8e9ad59e8b574da968e252"
+        },
+        {
+          "distance": 16,
+          "filename": "generic_fire__frame_036_jpg.rf.61d7a4624b55154e6cab19373e2e2d76.jpg",
+          "sha256": "708951edd491a02fc02fdfa1aaba4ac7d39125628c3b0e71b12e0b002e65f9cc"
+        },
+        {
+          "distance": 16,
+          "filename": "generic_fire__frame_046_jpg.rf.88d93fd39c577dd9eaa179368e7e79ab.jpg",
+          "sha256": "a90ecb288dea7072b729466507f3b333958a56bc8c17f968ff66417c307ee741"
+        }
+      ]
+    },
+    {
+      "file": "queue2_09.jpg",
+      "sha256": "19d200085e13fb6ca77b761c31d761a9a2e2cf36adac7b0e95d1f50effb80a57",
+      "exact_training_match": false,
+      "nearest_diagnostic_phash": [
+        [
+          22,
+          "blue_bogtar",
+          "25dff0347fe9623797a8c26c7125165f690d2d3fc2cf78492f8ae13483213d18"
+        ],
+        [
+          24,
+          "wok_cooking_fire",
+          "93c8cbdbb0d5b57dd04937571bd3d95cfb6a354cdd06a4b44d9923bbe44005d4"
+        ],
+        [
+          26,
+          "fireplay_vendor",
+          "9ab38d1675b9607de57e47f0ae15552dd7a6e01b7a90a30a4acbb7d5e18edb36"
+        ],
+        [
+          28,
+          "blue_ka23",
+          "e060f3d15394a66d99b92a7a6efea79be096fb4cd796caeb83742345f5e790dc"
+        ],
+        [
+          28,
+          "chef_flames_jwgb",
+          "ac699495ef9dbc704ef844fa371fcd2ba48820870efc1bad13c54d202a121ee5"
+        ]
+      ],
+      "original_work_seen_in_diagnostics": false,
+      "status": "quarantined_pending_lineage_and_visual_review",
+      "nearest_training_phash": [
+        {
+          "distance": 16,
+          "filename": "object_stove__LINE_ALBUM_2023-3-24_-_11_jpg.rf.dd5dd51db3ab532357439cfbc071fc19.jpg",
+          "sha256": "3f4e08c97fc83040d7f7a89ae5b6585bd149ef8d973d064ecc5119df1f367e71"
+        },
+        {
+          "distance": 18,
+          "filename": "generic_fire__31_jpg.rf.4cbd518ceb8874d1222e2071d6e83711.jpg",
+          "sha256": "07d0816c49dae46a94ef77e7cce3f4eb5e68318b92b624cbdf6428c476bd73bb"
+        },
+        {
+          "distance": 18,
+          "filename": "generic_fire__577_jpg.rf.241e2115a652b395dbe6f796be7d5c68.jpg",
+          "sha256": "fea4f8409e437882c0f3badecd8bc0a88a193a5b3b76de2ae05caeb92379b07b"
+        },
+        {
+          "distance": 18,
+          "filename": "generic_fire__577_jpg.rf.b06a3e7c77cfc42dcd74d72c0d04884b.jpg",
+          "sha256": "9e6b41b22d947c343f85f103b92cdfe8d2cded55bd46cf03f59756bfbaf1f8ff"
+        },
+        {
+          "distance": 18,
+          "filename": "generic_fire__577_jpg.rf.e08a84ee44ff799ed4b3b0cf2c2cb276.jpg",
+          "sha256": "95db2592c2acf5b51ca30b3e3fc40bb05468c06d1d7ba0e69fb4aa2ab8c55594"
+        }
+      ]
+    }
+  ],
+  "closest_pair_visual_review": "queue2_05 nearest training pHash distance 12: original candidate is a double blue gas ring; closest available training image is an outdoor orange-fire container, visibly different. pHash remains triage only."
+}

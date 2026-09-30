@@ -1,0 +1,228 @@
+{
+  "role": "Original-work exposure correction for v7 comparison; not independent acceptance",
+  "finding": "All three queue1 originals were already present in the old 13-image Commons diagnostics. Two are now recorded training sources; resizing changes byte hashes but not original-work identity.",
+  "candidate_matches": [
+    {
+      "candidate_file": "candidate_0.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gas_cooker_blue_flame.jpg",
+      "prior_diagnostic_slug": "gas_cooker_blue_flame",
+      "prior_diagnostic_sha256": "1f1187ff0a25436d937265234344c2be1b489cb16647906d5450b94f8e8cb961",
+      "candidate_sha256": "8f6b29a42757c68091b9f36276dad315aed888a75244a9e358aaee2544b17ad4",
+      "same_bytes": false,
+      "same_original_work": true,
+      "v7_role": "training_source"
+    },
+    {
+      "candidate_file": "candidate_1.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gas_stove_blue_flames.jpg",
+      "prior_diagnostic_slug": "gas_stove_blue_flames",
+      "prior_diagnostic_sha256": "6c6a066c72e8f8f0e80047ff0ba7efad35acb4fe9d2393d3a6bfecc80ab9cf2a",
+      "candidate_sha256": "6c6a066c72e8f8f0e80047ff0ba7efad35acb4fe9d2393d3a6bfecc80ab9cf2a",
+      "same_bytes": true,
+      "same_original_work": true,
+      "v7_role": "training_source"
+    },
+    {
+      "candidate_file": "candidate_2.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gas_stove_burner_flame.jpg",
+      "prior_diagnostic_slug": "gas_stove_burner_flame",
+      "prior_diagnostic_sha256": "081ffe51614ab4c69390930633baa244c0063705daafd711acf9ec2b16fd2d5a",
+      "candidate_sha256": "50b33ef859a8035d714fa61899c1ec619d186a65b656b455316fb7ad390a5855",
+      "same_bytes": false,
+      "same_original_work": true,
+      "v7_role": "untrained_development_diagnostic_reference"
+    }
+  ],
+  "comparison_relative_saved_v6_results": {
+    "v3": {
+      "training_source_in_comparison": {
+        "images": 2,
+        "original_works": 2,
+        "summary": {
+          "0.25": {
+            "blue_flame": {
+              "images": 2,
+              "detected_or_false_positive": 1,
+              "localized": 0
+            }
+          },
+          "0.5": {
+            "blue_flame": {
+              "images": 2,
+              "detected_or_false_positive": 0,
+              "localized": 0
+            }
+          }
+        }
+      },
+      "untrained_source_development_diagnostic": {
+        "images": 11,
+        "original_works": 11,
+        "summary": {
+          "0.25": {
+            "blue_flame": {
+              "images": 2,
+              "detected_or_false_positive": 1,
+              "localized": 0
+            },
+            "fire": {
+              "images": 6,
+              "detected_or_false_positive": 6,
+              "localized": 5
+            },
+            "no_fire": {
+              "images": 3,
+              "detected_or_false_positive": 1,
+              "localized": 0
+            }
+          },
+          "0.5": {
+            "blue_flame": {
+              "images": 2,
+              "detected_or_false_positive": 0,
+              "localized": 0
+            },
+            "fire": {
+              "images": 6,
+              "detected_or_false_positive": 6,
+              "localized": 5
+            },
+            "no_fire": {
+              "images": 3,
+              "detected_or_false_positive": 0,
+              "localized": 0
+            }
+          }
+        }
+      }
+    },
+    "v6_best": {
+      "training_source_in_comparison": {
+        "images": 2,
+        "original_works": 2,
+        "summary": {
+          "0.25": {
+            "blue_flame": {
+              "images": 2,
+              "detected_or_false_positive": 0,
+              "localized": 0
+            }
+          },
+          "0.5": {
+            "blue_flame": {
+              "images": 2,
+              "detected_or_false_positive": 0,
+              "localized": 0
+            }
+          }
+        }
+      },
+      "untrained_source_development_diagnostic": {
+        "images": 11,
+        "original_works": 11,
+        "summary": {
+          "0.25": {
+            "blue_flame": {
+              "images": 2,
+              "detected_or_false_positive": 1,
+              "localized": 0
+            },
+            "fire": {
+              "images": 6,
+              "detected_or_false_positive": 6,
+              "localized": 5
+            },
+            "no_fire": {
+              "images": 3,
+              "detected_or_false_positive": 1,
+              "localized": 0
+            }
+          },
+          "0.5": {
+            "blue_flame": {
+              "images": 2,
+              "detected_or_false_positive": 0,
+              "localized": 0
+            },
+            "fire": {
+              "images": 6,
+              "detected_or_false_positive": 6,
+              "localized": 5
+            },
+            "no_fire": {
+              "images": 3,
+              "detected_or_false_positive": 0,
+              "localized": 0
+            }
+          }
+        }
+      }
+    },
+    "v6_last": {
+      "training_source_in_comparison": {
+        "images": 2,
+        "original_works": 2,
+        "summary": {
+          "0.25": {
+            "blue_flame": {
+              "images": 2,
+              "detected_or_false_positive": 0,
+              "localized": 0
+            }
+          },
+          "0.5": {
+            "blue_flame": {
+              "images": 2,
+              "detected_or_false_positive": 0,
+              "localized": 0
+            }
+          }
+        }
+      },
+      "untrained_source_development_diagnostic": {
+        "images": 11,
+        "original_works": 11,
+        "summary": {
+          "0.25": {
+            "blue_flame": {
+              "images": 2,
+              "detected_or_false_positive": 0,
+              "localized": 0
+            },
+            "fire": {
+              "images": 6,
+              "detected_or_false_positive": 6,
+              "localized": 5
+            },
+            "no_fire": {
+              "images": 3,
+              "detected_or_false_positive": 1,
+              "localized": 0
+            }
+          },
+          "0.5": {
+            "blue_flame": {
+              "images": 2,
+              "detected_or_false_positive": 0,
+              "localized": 0
+            },
+            "fire": {
+              "images": 6,
+              "detected_or_false_positive": 6,
+              "localized": 5
+            },
+            "no_fire": {
+              "images": 3,
+              "detected_or_false_positive": 0,
+              "localized": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "v7_training_sources_in_commons13": 2,
+  "remaining_untrained_source_diagnostics": 11,
+  "remaining_untrained_blue_works": 2,
+  "old_five_primary_blue_diagnostics": "None of their original-work identities is in v7 Commons additions; still repeatedly inspected development diagnostics."
+}

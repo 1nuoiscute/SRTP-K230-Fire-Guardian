@@ -78,5 +78,10 @@
     "images_and_labels_verified": 2428,
     "entries_verified": 2678
   },
-  "training_status": "prepared_not_started"
+  "training_status": "prepared_not_started",
+  "source_scope_correction": {
+    "original_works_new_to_project": 0,
+    "existing_diagnostic_works_added_to_training": 2,
+    "details": "commons_source_scope_correction_20260930.json"
+  }
 }

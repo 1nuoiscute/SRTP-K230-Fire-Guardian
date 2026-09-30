@@ -1,0 +1,271 @@
+{
+  "role": "future development data review; not independent validation",
+  "source_manifest_sha256": "26ecf5a80a15d274b6fd439e3dd26353e6e301740cb54ea526cc0a0113188639",
+  "label_sheet_sha256": "37e9a677a1ccf99a0c8d450a2208c338f7528452ad2db0591fb51db699a067e4",
+  "method": "Reviewed source contact sheet, all non-held originals at full size, labeled contact sheet and full multi-burner rendering. Approximate flame envelopes; no pseudo-labels.",
+  "approved_photographs": 8,
+  "approved_boxes": 11,
+  "provisional_approved_scene_groups": 7,
+  "held_photographs": 2,
+  "limits": [
+    "scene groups are conservative manual grouping, not independently verified kitchen/event counts",
+    "same burner heat-series images must not be split into separate data partitions",
+    "no training or independent acceptance has used this queue yet"
+  ],
+  "sources": [
+    {
+      "file": "queue2_00.jpg",
+      "title": "Cooking with gas.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Cooking_with_gas.jpg",
+      "sha256": "3670fa8b69b6952f5b1fb52989a2ae3b0f1b09676f7ea4213c45758226ef915e",
+      "width": 1024,
+      "height": 768,
+      "author": "sfllaw",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "original_sha1": "52cbae01a7088100dff50521955dbe6b78c89217",
+      "author_verification": "Manually verified original Commons summary; machine-readable Artist missing.",
+      "scene_group": "sfllaw_grandfather_stove",
+      "boxes_xyxy": [
+        [
+          204,
+          345,
+          761,
+          638
+        ]
+      ],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "approved_for_development_training",
+      "note": "One burner envelope; approximate localization box, not segmented flame area.",
+      "scope": "approved source/label candidate only; not added to any running dataset"
+    },
+    {
+      "file": "queue2_01.jpg",
+      "title": "Espresso pot on the burner - Flickr - AZAdam.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Espresso_pot_on_the_burner_-_Flickr_-_AZAdam.jpg",
+      "sha256": "09ff5d55ea9435d8f03432c355e581356703672587c6fd5caa39ad060d4ccdb6",
+      "width": 1280,
+      "height": 960,
+      "author": "Adam from Phoenix, Arizona, USA",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "original_sha1": "617ddd80494738d9ac6c5919864eee04e27e447c",
+      "scene_group": "azadam_espresso_burner",
+      "boxes_xyxy": [
+        [
+          195,
+          302,
+          1050,
+          677
+        ]
+      ],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "approved_for_development_training",
+      "note": "One burner envelope; approximate localization box, not segmented flame area.",
+      "scope": "approved source/label candidate only; not added to any running dataset"
+    },
+    {
+      "file": "queue2_02.jpg",
+      "title": "141 - low heat.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:141_-_low_heat.jpg",
+      "sha256": "9a18f81b36db8acc96b0c7428fcf02ddafebe981f363f41fe923fea09867b926",
+      "width": 1280,
+      "height": 1536,
+      "author": "Susan Slater",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "original_sha1": "46e27e8dc0204c38f22ede3395fccac69b6a5942",
+      "scene_group": "susan_slater_heat_series",
+      "boxes_xyxy": [
+        [
+          331,
+          306,
+          936,
+          838
+        ]
+      ],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "approved_for_development_training",
+      "note": "One burner envelope; approximate localization box, not segmented flame area.",
+      "scope": "approved source/label candidate only; not added to any running dataset"
+    },
+    {
+      "file": "queue2_03.jpg",
+      "title": "143 - high heat.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:143_-_high_heat.jpg",
+      "sha256": "5dcac61d6aeb375a17d64f41a47b7a1cc98659a8530e0dad395b18a5ce9fe975",
+      "width": 1280,
+      "height": 1387,
+      "author": "Susan Slater",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "original_sha1": "021d5f10be3e6992c59736d0c57d4461dbe25066",
+      "scene_group": "susan_slater_heat_series",
+      "boxes_xyxy": [
+        [
+          305,
+          85,
+          1047,
+          839
+        ]
+      ],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "approved_for_development_training",
+      "note": "One burner envelope; approximate localization box, not segmented flame area.",
+      "scope": "approved source/label candidate only; not added to any running dataset"
+    },
+    {
+      "file": "queue2_04.jpg",
+      "title": "Close-up of gas stove.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Close-up_of_gas_stove.jpg",
+      "sha256": "4fd7faf4444858efb4cb1f48da06c5e366152ec88fac097875feec0fade3dd39",
+      "width": 1280,
+      "height": 973,
+      "author": "Janne Hellsten from Helsinki, Finland",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "original_sha1": "4f62770a476ae83bd3f2b8640a11e722fe94b746",
+      "scene_group": "janne_hellsten_closeup",
+      "boxes_xyxy": [],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "hold_uncertain_exhaustive_label",
+      "note": "Strong defocus and reflections make the flame envelope uncertain; do not treat as a negative."
+    },
+    {
+      "file": "queue2_05.jpg",
+      "title": "\"LPG flame top view\".JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:%22LPG_flame_top_view%22.JPG",
+      "sha256": "e0ac61ad12d80362fa4473bed6d827d51d1903913895fe8407646ac6dfeae6fd",
+      "width": 1280,
+      "height": 960,
+      "author": "Arivumathi",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "original_sha1": "973d69cdd437168c4930f9016011f2d1b1c259fb",
+      "scene_group": "arivumathi_lpg_series",
+      "boxes_xyxy": [
+        [
+          440,
+          204,
+          980,
+          716
+        ]
+      ],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "approved_for_development_training",
+      "note": "One burner envelope; approximate localization box, not segmented flame area.",
+      "scope": "approved source/label candidate only; not added to any running dataset"
+    },
+    {
+      "file": "queue2_06.jpg",
+      "title": "\"LPG flame\".JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:%22LPG_flame%22.JPG",
+      "sha256": "52771c24dd8f4bfc278e3a11f4817afee346ba678664b40eba7206569aca66bc",
+      "width": 1280,
+      "height": 960,
+      "author": "Arivumathi",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "original_sha1": "e68f868a745872a7e6906eeed9d94f866a673ac5",
+      "scene_group": "arivumathi_lpg_series",
+      "boxes_xyxy": [],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "hold_uncertain_exhaustive_label",
+      "note": "Broad diffuse blue plume boundary uncertain; same scene group as top view, held rather than inventing a precise envelope."
+    },
+    {
+      "file": "queue2_07.jpg",
+      "title": "Lit burner of a gas-fueled stovetop.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Lit_burner_of_a_gas-fueled_stovetop.jpg",
+      "sha256": "0c37477bef3632207adb3a3611294403bff853cc9f600bb6424766a77986c84e",
+      "width": 455,
+      "height": 455,
+      "author": "N.faskhutdinova",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "original_sha1": "f95b5c2d135d7d19fa27e855eea1374f364ddb5f",
+      "scene_group": "nfaskhutdinova_burner",
+      "boxes_xyxy": [
+        [
+          49,
+          20,
+          435,
+          357
+        ]
+      ],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "approved_for_development_training",
+      "note": "One burner envelope; approximate localization box, not segmented flame area.",
+      "scope": "approved source/label candidate only; not added to any running dataset"
+    },
+    {
+      "file": "queue2_08.jpg",
+      "title": "Natural gas burning on a gas stove.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Natural_gas_burning_on_a_gas_stove.jpg",
+      "sha256": "4972e9b8b77a92d6ef1d3f63db5f13ebbf848cff780158557cc050010785cfda",
+      "width": 1280,
+      "height": 768,
+      "author": "WrS.tm.pl",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Natural_gas_burning_on_a_gas_stove.jpg#Licensing",
+      "original_sha1": "57e5b1edea6035840534a7ad974896887a0a1828",
+      "author_verification": "Manually verified Commons author username and public-domain release.",
+      "scene_group": "wrs_tmpl_burner",
+      "boxes_xyxy": [
+        [
+          363,
+          100,
+          917,
+          546
+        ]
+      ],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "approved_for_development_training",
+      "note": "One burner envelope; approximate localization box, not segmented flame area.",
+      "scope": "approved source/label candidate only; not added to any running dataset"
+    },
+    {
+      "file": "queue2_09.jpg",
+      "title": "Fire gas stove.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Fire_gas_stove.jpg",
+      "sha256": "19d200085e13fb6ca77b761c31d761a9a2e2cf36adac7b0e95d1f50effb80a57",
+      "width": 1280,
+      "height": 853,
+      "author": "Осадчая Екатерина",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "original_sha1": "311208c707484d78debf92019abc8335bf2e6ed8",
+      "scene_group": "osadchaya_four_burners",
+      "boxes_xyxy": [
+        [
+          467,
+          271,
+          708,
+          375
+        ],
+        [
+          907,
+          306,
+          1120,
+          432
+        ],
+        [
+          263,
+          435,
+          430,
+          533
+        ],
+        [
+          657,
+          465,
+          967,
+          627
+        ]
+      ],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "approved_for_development_training",
+      "note": "Four individual burner envelopes; reflections on surrounding metal are not separate flames.",
+      "scope": "approved source/label candidate only; not added to any running dataset"
+    }
+  ]
+}

@@ -69,5 +69,6 @@
       "nearest_phash_distance": 16,
       "status": "quarantined_pending_lineage_and_visual_review"
     }
-  ]
+  ],
+  "followup_scope_correction": "All three original works were already development diagnostics; training overlap scan alone did not establish new-to-project sources. See commons_source_scope_correction_20260930.json."
 }

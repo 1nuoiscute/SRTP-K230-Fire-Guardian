@@ -42,7 +42,7 @@ def main():
         jobs=[('frames','eval_hardcase_frames.py',['--data',str(data)],'summary.json'),
               ('blue_primary','eval_blue_localization.py',[],'summary.json'),
               ('legacy286','eval_fire_fulltest.py',[],'metrics_summary.json'),
-              ('commons13','eval_fire_external_diagnostic.py',[],'summary.json'),
+              ('commons13','eval_fire_external_diagnostic.py',['--comparison-data',str(data/'build_manifest.json')],'summary.json'),
               ('old_videos','eval_development_videos.py',['--videos-dir',str(ROOT/'viedos')],'summary.json'),
               ('teammate_videos','eval_development_videos.py',['--videos-dir',str(ROOT/'viedos/视频/视频')],'summary.json')]
         comparison[label]={'weights_sha256':sha256(weights)}
