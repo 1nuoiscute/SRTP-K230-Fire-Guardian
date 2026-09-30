@@ -1,0 +1,82 @@
+{
+  "role": "development_only",
+  "legacy_train": {
+    "kitchen_stove_fire": 1045,
+    "ks_flame": 184,
+    "generic_fire": 800,
+    "nofire_real_indoor": 153,
+    "object_pan": 200
+  },
+  "legacy_unique_images": 2382,
+  "train_entries": 2678,
+  "unique_paths": 2428,
+  "derived_images": 46,
+  "limitations": [
+    "reviewed labels are approximate rectangles",
+    "all nine videos are development-exposed",
+    "crop weighting is not independent sample growth",
+    "legacy val is a checkpoint selector, not a fresh test",
+    "Two added Commons photographs are development training; duplicate weight does not create new scenes."
+  ],
+  "parent_manifest_sha256": "1bfec68698728df68a4e92ce079f9f469eddaa89c1ef4689772b33fdb250ef6d",
+  "parent_review_sha256": "c0742b44ec3a8545ed4210ae918107457e7575d24c19cd98756c82433c50da72",
+  "source_review_sha256": "edbe6f275a1595cc9b345230755758ea455e1c10fd163f5856a559a6b921151c",
+  "inherited_sheet_sha256": "4906bc5bf61f63dd0609c07371cba896d889650454dfcb637669672743e6cc1a",
+  "added_sources": 2,
+  "added_train_entries": 24,
+  "manifest_sha256": "0a40ce9345652e322c8af0cd2d8a5abb1831e94432065c4b546828d64ee47a3b",
+  "review_approval_sha256": "b0c67cc26947ce55d86e082986bf628611f68df86c45297fb7ad2afb990c455b",
+  "new_source_lineage": [
+    {
+      "sha256": "8f6b29a42757c68091b9f36276dad315aed888a75244a9e358aaee2544b17ad4",
+      "width": 1280,
+      "height": 853,
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gas_cooker_blue_flame.jpg",
+      "author": "James Riden",
+      "license": "CC BY-SA 2.5",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+      "boxes_xyxy": [
+        [
+          0,
+          260,
+          1135,
+          515
+        ]
+      ],
+      "review_method": "Codex manual inspection; approximate visible flame rectangles, not model pseudo-labels",
+      "image": "commons_blue_candidate_0.jpg",
+      "origin": "commons_reviewed_blue",
+      "source_group": "https://commons.wikimedia.org/wiki/File:Gas_cooker_blue_flame.jpg",
+      "weight": 12,
+      "label_sha256": "7e2cbbbb629e9b974def9456e648402fd462bdb0f171cf41fc93ad8c4c268d64"
+    },
+    {
+      "sha256": "6c6a066c72e8f8f0e80047ff0ba7efad35acb4fe9d2393d3a6bfecc80ab9cf2a",
+      "width": 800,
+      "height": 703,
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gas_stove_blue_flames.jpg",
+      "author": "Marina Burity from Santo André, Brazil",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "boxes_xyxy": [
+        [
+          86,
+          40,
+          715,
+          651
+        ]
+      ],
+      "review_method": "Codex manual inspection; approximate visible flame rectangles, not model pseudo-labels",
+      "image": "commons_blue_candidate_1.jpg",
+      "origin": "commons_reviewed_blue",
+      "source_group": "https://commons.wikimedia.org/wiki/File:Gas_stove_blue_flames.jpg",
+      "weight": 12,
+      "label_sha256": "3ea6e21552b268f6f3330e8afd4cf200b22a4406ec9743204b0ecc4775a40046"
+    }
+  ],
+  "integrity_check": {
+    "images_and_labels_verified": 2428,
+    "entries_verified": 2678
+  },
+  "training_status": "prepared_not_started"
+}

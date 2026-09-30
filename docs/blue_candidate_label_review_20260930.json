@@ -1,0 +1,58 @@
+[
+  {
+    "file": "candidate_0.jpg",
+    "sha256": "8f6b29a42757c68091b9f36276dad315aed888a75244a9e358aaee2544b17ad4",
+    "width": 1280,
+    "height": 853,
+    "source_page": "https://commons.wikimedia.org/wiki/File:Gas_cooker_blue_flame.jpg",
+    "author": "James Riden",
+    "license": "CC BY-SA 2.5",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+    "boxes_xyxy": [
+      [
+        0,
+        260,
+        1135,
+        515
+      ]
+    ],
+    "decision": "approved_for_development_training",
+    "note": "Single open burner, blue/purple visible flame envelope; bright metal reflections not separate fire instances.",
+    "review_method": "Codex manual inspection; approximate visible flame rectangles, not model pseudo-labels"
+  },
+  {
+    "file": "candidate_1.jpg",
+    "sha256": "6c6a066c72e8f8f0e80047ff0ba7efad35acb4fe9d2393d3a6bfecc80ab9cf2a",
+    "width": 800,
+    "height": 703,
+    "source_page": "https://commons.wikimedia.org/wiki/File:Gas_stove_blue_flames.jpg",
+    "author": "Marina Burity from Santo André, Brazil",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "boxes_xyxy": [
+      [
+        86,
+        40,
+        715,
+        651
+      ]
+    ],
+    "decision": "approved_for_development_training",
+    "note": "Single overhead burner; flame lobes partly occluded by grate, labeled as one burner envelope.",
+    "review_method": "Codex manual inspection; approximate visible flame rectangles, not model pseudo-labels"
+  },
+  {
+    "file": "candidate_2.jpg",
+    "sha256": "50b33ef859a8035d714fa61899c1ec619d186a65b656b455316fb7ad390a5855",
+    "width": 1280,
+    "height": 638,
+    "source_page": "https://commons.wikimedia.org/wiki/File:Gas_stove_burner_flame.jpg",
+    "author": "Lisafern",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "boxes_xyxy": [],
+    "decision": "hold_uncertain_full_image_label",
+    "note": "Reference illustration only for now; peripheral blurred blue region makes exhaustive full-image labeling uncertain.",
+    "review_method": "Codex manual inspection; approximate visible flame rectangles, not model pseudo-labels"
+  }
+]

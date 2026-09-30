@@ -25,3 +25,7 @@ python -B model_work/src/fusion_replay.py replay --input model_work/data/fusion_
 - run_hardcase_comparison.py：只等待命令行与创建时间均核实的训练进程，不自动重训；完成后顺序比较三个权重。
 
 各评测输出到独立新目录。runner 不部署、不推送，失败时保留日志，需查明后继续未完成项目。
+
+## 两张新蓝焰来源的开发数据扩展
+
+构建方法、人工审核和哈希见 [数据准备记录](../model_work/docs/BLUE_SOURCE_DATA_PREPARATION_20260930.md)。重复权重不增加独立照片数；v7 数据已备但训练未启动。
