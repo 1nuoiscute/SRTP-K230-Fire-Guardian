@@ -1,0 +1,30 @@
+#!/bin/sh
+# Small-core status bridge. It waits for /sharefs after init scripts start.
+program=/sharefs/srtp_clean/ui_overlay/status_bridge
+ram_dir=/sharefs/srtp_clean/ui_overlay/status_ram
+status=$ram_dir/status.txt
+log=/tmp/srtp_ui_bridge.log
+
+case "$1" in
+  start)
+    (
+      count=0
+      while [ ! -x "$program" ] && [ "$count" -lt 60 ]; do
+        sleep 1
+        count=$((count + 1))
+      done
+      [ -x "$program" ] || exit 1
+      if pidof status_bridge >/dev/null 2>&1; then exit 0; fi
+      mkdir -p "$ram_dir" || exit 1
+      if ! grep -q " $ram_dir tmpfs " /proc/mounts; then
+        mount -t tmpfs -o size=1m,mode=0755 tmpfs "$ram_dir" || exit 1
+      fi
+      exec "$program" /tmp/sensor_mvp.log "$status" </dev/null >>"$log" 2>&1
+    ) </dev/null >/dev/null 2>&1 &
+    ;;
+  stop)
+    pids=$(pidof status_bridge)
+    [ -z "$pids" ] || kill $pids
+    ;;
+  *) echo "Usage: $0 {start|stop}" >&2; exit 2 ;;
+esac

@@ -1,0 +1,60 @@
+{
+  "as_of": "2026-09-30",
+  "videos": [
+    {
+      "file": "viedos/0.mp4",
+      "sha256": "65ce47ff76f64e8d28f290279f4de970929f203aa8cdbace7c63720260753df6",
+      "role": "development_exposed",
+      "reason": "used in training or failure analysis before v5"
+    },
+    {
+      "file": "viedos/1.mp4",
+      "sha256": "ea5b23e704eb4f7b1a54335f5d0c9b9cd0f6309603b23d59625ad2a633dc7bca",
+      "role": "development_exposed",
+      "reason": "used in training or failure analysis before v5"
+    },
+    {
+      "file": "viedos/2.mp4",
+      "sha256": "9f9183be2cf13b2b65ca89543bb451f4cb2b3515836a449b012e6daa1c071a16",
+      "role": "development_exposed",
+      "reason": "used in training or failure analysis before v5"
+    },
+    {
+      "file": "viedos/3.mp4",
+      "sha256": "dafac36724a2a7a60e23d88cb9781e70814775b28176b672ba38e1aaa5b2c245",
+      "role": "development_exposed",
+      "reason": "used in training or failure analysis before v5"
+    },
+    {
+      "file": "viedos/视频/视频/219bd5993aa0e2b0d8f624f4f69604ae.mp4",
+      "sha256": "ac34d7617a55c42d67d385e92d83f3255c6b93a54789c52cea746dc6a0028eba",
+      "role": "development_exposed",
+      "reason": "used in training or failure analysis before v5"
+    },
+    {
+      "file": "viedos/视频/视频/35cf4b611eeefad77c45cb933daa928f.mp4",
+      "sha256": "dbd18d5fb2587b4dafc224d12bc47984ce6e97abbdfacf0e33a7b83520b02cb1",
+      "role": "development_exposed",
+      "reason": "used in training or failure analysis before v5"
+    },
+    {
+      "file": "viedos/视频/视频/82f51e33ff7ddbdcda9ea4c6754b9983.mp4",
+      "sha256": "f768e372ec81704a31e5bad7834b523b93be05a9b9c88f7040f2178261fe99fc",
+      "role": "development_exposed",
+      "reason": "used in training or failure analysis before v5"
+    },
+    {
+      "file": "viedos/视频/视频/88400a10280b77ddd1ac764ff36e0012.mp4",
+      "sha256": "ab9d1d7e493979dc39395e9933bc1adfe3f1c78ba479759146426ada47af601e",
+      "role": "development_exposed",
+      "reason": "used in training or failure analysis before v5"
+    },
+    {
+      "file": "viedos/视频/视频/f0cb3ebbc80f46fa428d9af79634ef76.mp4",
+      "sha256": "fe87820c64636d5362a35fa98e6d969de892ddebf9a4dc0b326aa6896a97fa6a",
+      "role": "development_exposed",
+      "reason": "used in training or failure analysis before v5"
+    }
+  ],
+  "note": "Exact hashes detect identical files only; scene/initialization-chain independence requires separate audit."
+}

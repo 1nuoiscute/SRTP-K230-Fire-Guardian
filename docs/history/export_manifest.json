@@ -1,0 +1,47 @@
+[
+  {
+    "file": "2026-09-23_RT-Thread_Smart_AI套件实机验证记录.md",
+    "source_sha256": "2c32edeadcc2e680e787bc931a45016328b3844df066b4989255e37350df8218",
+    "public_sha256": "708840785c7453624657f8b10febe58e07e29064963fafdac28a37a4966d06d2"
+  },
+  {
+    "file": "2026-09-24_SHT31_BMP280_实机调试记录.md",
+    "source_sha256": "65fa7eae7546709a2c5d9b4ea82dbc678c624e2caf332fa947c0e9cd9a822780",
+    "public_sha256": "b10116cf8b5620cbaa387c0520783a46bb491eb9f5b2c323ef6db8f0316cd23c"
+  },
+  {
+    "file": "2026-09-24_SRTP阶段总结与DSH交接.md",
+    "source_sha256": "26898fca900692944001bb1db28d325edfee2a75ad89eb1133a446c4a40fab0d",
+    "public_sha256": "b4e45041a4664c141a4f6f66da4e016555cad043adc5d2000b6b257c3d38037f"
+  },
+  {
+    "file": "2026-09-24_火焰烟雾模型训练计划.md",
+    "source_sha256": "32e1a215b6b7d93eeaba7ee1dfee4c2e425d58e0734a0e19fcb9fca7e128c168",
+    "public_sha256": "f6bb5bf98194760cb6a78a26270d3fa5bb17e2249bcf08ea08d1c2dd7abeb440"
+  },
+  {
+    "file": "2026-09-25_K1_K2按键控制实机记录.md",
+    "source_sha256": "e761f1faecadf5e347f3b0272100add0cbdedf7c3436f68db1ebbc8179c5163a",
+    "public_sha256": "0d7e0d181d2fab6905f975b7e073896c4ba9ce967d374ba2f1c7b0aebffda821"
+  },
+  {
+    "file": "2026-09-26_视觉数据整理与DeepSeek训练执行单.md",
+    "source_sha256": "157c39a9f3d5a4d60379baca16d12fb783cd936e096d0365a7cf49e0e6f1a79b",
+    "public_sha256": "b641cc210d87ba5a136a36a81b452311a739875312271a597dae16d9fae876de"
+  },
+  {
+    "file": "THIRD_PARTY_NOTICES.md",
+    "source_sha256": "d3937616b32f0deedb0ce4143dbe8d38b3f6890c02dfe8a281767492255d5717",
+    "public_sha256": "c46a6886b9db1fbc1459cda2af7ea3b7d5a2b51a5c8bcfc65f28880274278bed"
+  },
+  {
+    "file": "下一阶段推进方案_2026-09-27.md",
+    "source_sha256": "e3fcce37e52fc4bfe1e6a0fc484389f03ac7ef9576ca711dbaff5675a5817672",
+    "public_sha256": "8858f032e42bdc871dde9bdaa8a35dc4628b2b81305288d215b068d841381258"
+  },
+  {
+    "file": "项目状态与验收口径_2026-09-27.md",
+    "source_sha256": "2a837e8a4b6839380279cb0fb26108ef1df3699878dc9f47ba0877572153395f",
+    "public_sha256": "d7b76e448ed853b98561d2a34b5180549d5e1389b7144d5efa1fb1554a4040e9"
+  }
+]

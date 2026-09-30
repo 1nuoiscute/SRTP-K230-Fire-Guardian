@@ -1,0 +1,14 @@
+{
+  "calibrated": false,
+  "fire_conf_min": 0.25,
+  "outside_frac_min": 0.5,
+  "smoke_watch_index": 0.35,
+  "smoke_alarm_index": 0.7,
+  "temp_watch_delta_c": 3.0,
+  "temp_alarm_delta_c": 8.0,
+  "humidity_steam_hint_delta_pct": 10.0,
+  "warning_persist_s": 2.0,
+  "alarm_persist_s": 4.0,
+  "clear_hold_s": 2.0,
+  "max_gap_s": 2.0
+}

@@ -1,0 +1,5 @@
+ultralytics==8.4.70
+numpy
+opencv-python
+Pillow
+PyYAML

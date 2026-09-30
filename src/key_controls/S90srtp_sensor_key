@@ -1,0 +1,34 @@
+#!/bin/sh
+# BusyBox rcS runs S?? scripts before it mounts /sharefs. Wait in the
+# background so boot can finish, then start the K2 controller once.
+
+controller=/sharefs/srtp_clean/key_controls/sensor_key
+log=/tmp/srtp_sensor_key.log
+
+case "$1" in
+    start)
+        (
+            tries=0
+            while [ ! -x "$controller" ] && [ "$tries" -lt 60 ]; do
+                sleep 1
+                tries=$((tries + 1))
+            done
+            if [ ! -x "$controller" ]; then
+                echo "K2 startup: controller unavailable" >> "$log"
+                exit 1
+            fi
+            if pidof sensor_key >/dev/null 2>&1; then
+                exit 0
+            fi
+            exec "$controller" </dev/null >> "$log" 2>&1
+        ) </dev/null >/dev/null 2>&1 &
+        ;;
+    stop)
+        pids=$(pidof sensor_key)
+        [ -z "$pids" ] || kill $pids
+        ;;
+    *)
+        echo "Usage: $0 {start|stop}" >&2
+        exit 2
+        ;;
+esac
