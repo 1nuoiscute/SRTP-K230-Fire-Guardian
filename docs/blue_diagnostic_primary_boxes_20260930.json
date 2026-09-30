@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "blue_cardoner",
+    "sha256": "05a69decc2995fdf9d3a993e2920fb9ee3eef7123b5b4a3ddd26c092f77a402a",
+    "width": 1280,
+    "height": 1917,
+    "primary_flame_xyxy": [
+      120,
+      1450,
+      1060,
+      1700
+    ],
+    "author": "Federico Cardoner / TheMusicianLab.com",
+    "license": "CC BY 2.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Gas_Stove_Burner_Blue_Flame_%2828409479226%29.jpg",
+    "scope": "Approximate visible flame envelope of primary burner; not exhaustive instance annotation"
+  },
+  {
+    "slug": "blue_bogtar",
+    "sha256": "25dff0347fe9623797a8c26c7125165f690d2d3fc2cf78492f8ae13483213d18",
+    "width": 1280,
+    "height": 983,
+    "primary_flame_xyxy": [
+      125,
+      225,
+      1170,
+      825
+    ],
+    "author": "BogTar201213",
+    "license": "CC BY-SA 4.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Flame_from_the_burner_of_a_gas_stove.jpg",
+    "scope": "Approximate visible flame envelope of primary burner; not exhaustive instance annotation"
+  },
+  {
+    "slug": "blue_stovetop",
+    "sha256": "45b901a8637ecaa969a2e77405552b1de0d83973e5cb55cf25b55ad7edeb5e44",
+    "width": 1280,
+    "height": 960,
+    "primary_flame_xyxy": [
+      0,
+      270,
+      930,
+      625
+    ],
+    "author": "Askaskari2311",
+    "license": "CC BY-SA 4.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Stove_Top_.jpg",
+    "scope": "Approximate visible flame envelope of primary burner; not exhaustive instance annotation"
+  },
+  {
+    "slug": "blue_ka23",
+    "sha256": "e060f3d15394a66d99b92a7a6efea79be096fb4cd796caeb83742345f5e790dc",
+    "width": 1280,
+    "height": 720,
+    "primary_flame_xyxy": [
+      340,
+      280,
+      970,
+      453
+    ],
+    "author": "Ka23 13",
+    "license": "CC BY-SA 4.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:GasStoveBurner_20220521_181829.jpg",
+    "scope": "Approximate visible flame envelope of primary burner; not exhaustive instance annotation"
+  },
+  {
+    "slug": "blue_oven",
+    "sha256": "bdf8d1efe2ac9b5b7d92ab5dfd2169f10856f4fe98a64941ae0ea42d7010220c",
+    "width": 1280,
+    "height": 779,
+    "primary_flame_xyxy": [
+      383,
+      115,
+      920,
+      570
+    ],
+    "author": "Billjones94",
+    "license": "CC BY-SA 4.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Gas_oven_flame.jpg",
+    "scope": "Approximate visible flame envelope of primary burner; not exhaustive instance annotation"
+  }
+]

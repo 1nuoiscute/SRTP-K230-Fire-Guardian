@@ -11,6 +11,7 @@ def main():
     parser.add_argument('--weights',type=Path,required=True)
     parser.add_argument('--data',type=Path,required=True)
     parser.add_argument('--out',type=Path,required=True)
+    parser.add_argument('--device',default='0')
     args=parser.parse_args();out=args.out
     if out.exists(): raise SystemExit(f'Refusing overwrite: {out}')
     meta=json.loads((args.data/'build_manifest.json').read_text(encoding='utf-8'))
@@ -19,7 +20,7 @@ def main():
         if row['origin']=='legacy_train': continue
         p=args.data/'images/train'/row['image']
         if sha256(p)!=row['sha256']: raise SystemExit('Image hash mismatch')
-        result=model.predict(str(p),imgsz=640,conf=0.25,iou=0.6,device=0,verbose=False)[0]
+        result=model.predict(str(p),imgsz=640,conf=0.25,iou=0.6,device=args.device,verbose=False)[0]
         boxes=[{'confidence':round(float(b.conf.item()),4),'xyxy':[float(v) for v in b.xyxy[0].tolist()]} for b in result.boxes]
         score=matches(row['boxes_xyxy'],[b['xyxy'] for b in boxes])
         rows.append({'image':row['image'],'origin':row['origin'],'source_group':row['source_group'],**score,'predictions':boxes})
