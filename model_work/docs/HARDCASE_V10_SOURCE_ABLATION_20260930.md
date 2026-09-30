@@ -37,3 +37,5 @@ python -B model_work/src/train_hardcase_v5.py --data model_work/data/hardcase_v1
 本实验仍缺独立厨房完整事件、无火长时误报率、同步传感器与实机验收。它检验下一步数据方向，不是最终系统验收。
 
 公开审核 JSON 已改为汇总版本，逐文件身份及来源细节仅留在本机。实际训练数据中的 source_reviews/training_quality_evidence.json 保留构建时完整快照，没有修改，preflight 与正在运行的训练身份不受影响；复现构建可使用这份本地冻结证据，已有输出目录仍会拒绝覆盖。
+
+用户在本轮运行期间调整演示范围：贴纸干扰不作为必须解决目标，演示采用无此干扰灶台。v10 数据、配置和完整评测保持不变，完成后仅贴纸误检不能单独否决演示候选；真实火焰与演示内其他误检仍需判读。参见 [范围说明](../../docs/DEMO_SCOPE.md)。
