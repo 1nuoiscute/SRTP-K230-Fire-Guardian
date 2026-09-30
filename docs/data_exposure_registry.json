@@ -54,6 +54,14 @@
       "sha256": "fe87820c64636d5362a35fa98e6d969de892ddebf9a4dc0b326aa6896a97fa6a",
       "role": "development_exposed",
       "reason": "used in training or failure analysis before v5"
+    },
+    {
+      "file": "model_work/data/public_video_probe_20260930/rice.webm",
+      "sha256": "5b1c313d1c8e17ce50d151106b92b4ad63de60f7e4e126ad665207fcb9dd0b47",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rice_Cooking_on_a_gas_stove.webm",
+      "role": "development_exposed_after_frozen_probe",
+      "reason": "Four predeclared checkpoints evaluated once after manual no-visible-flame truth review; future use is development replay only",
+      "initial_probe_result": "docs/public_video_probe_rice_results_20260930.json"
     }
   ],
   "note": "Exact hashes detect identical files only; scene/initialization-chain independence requires separate audit."

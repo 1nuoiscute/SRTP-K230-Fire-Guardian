@@ -1,0 +1,62 @@
+{
+  "role": "available-chain duplicate/similarity triage; not proof of scene independence",
+  "plan_sha256": "e2f23b94da3e63cd5ea16e4c6094d232581db61391c33c10db3e62001a30f83c",
+  "derived_manifest_identities": [
+    {
+      "manifest_sha256": "7a262442e6227a0da6277b03c3b9211e65effc3d8e3e68e71995922fc636ecc2",
+      "lineage_rows": 2437,
+      "sample_rows": 0
+    },
+    {
+      "manifest_sha256": "858e0140b56a26f65476249896adc69f3de296856e99c21f8d3b58d0916f24e3",
+      "lineage_rows": 2432,
+      "sample_rows": 0
+    },
+    {
+      "manifest_sha256": "db1404ff297bc7a1182111f65eb6bb6dcecd5d7311dc957b23f408b49e036f18",
+      "lineage_rows": 0,
+      "sample_rows": 24
+    }
+  ],
+  "training_images_verified": 6021,
+  "diagnostic_images_verified": 28,
+  "clips": [
+    {
+      "clip": "rice",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rice_Cooking_on_a_gas_stove.webm",
+      "source_sha256": "5b1c313d1c8e17ce50d151106b92b4ad63de60f7e4e126ad665207fcb9dd0b47",
+      "fps": 30.0,
+      "step": 6,
+      "actual_sample_fps": 5.0,
+      "nominal_frames": 214,
+      "decoded_frames": 212,
+      "sampled_frames": 36,
+      "original_work_seen_in_available_records": false,
+      "frames_with_exact_pixel_match": 0,
+      "minimum_train_phash_distance": 12,
+      "minimum_diagnostic_phash_distance": 20
+    },
+    {
+      "clip": "gimbaled",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gimbaled_stove.WebM",
+      "source_sha256": "bdb375cb67d9ddbc3b4521c7fb48c00e2db14a75c5fae5e1cbef7a1455f96cd8",
+      "fps": 30.0,
+      "step": 6,
+      "actual_sample_fps": 5.0,
+      "nominal_frames": 837,
+      "decoded_frames": 838,
+      "sampled_frames": 140,
+      "original_work_seen_in_available_records": false,
+      "frames_with_exact_pixel_match": 0,
+      "minimum_train_phash_distance": 12,
+      "minimum_diagnostic_phash_distance": 16
+    }
+  ],
+  "limitations": [
+    "unavailable earlier training and generic pretraining not checked",
+    "decoded pixel matches are strict; lossy resizing/cropping may evade them",
+    "pHash nearest distances need visual review",
+    "no inference or training admission performed"
+  ],
+  "missing_training_files_count": 0
+}

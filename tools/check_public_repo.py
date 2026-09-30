@@ -13,7 +13,7 @@ errors=[]
 for path in files:
     rel=path.relative_to(ROOT).as_posix()
     if path.stat().st_size>5_000_000: errors.append(f'Unexpected large public file: {rel}')
-    if path.suffix in {'.pt','.elf','.kmodel','.mp4','.onnx','.img','.zip','.o'}: errors.append(f'Local artifact tracked: {rel}')
+    if path.suffix in {'.pt','.elf','.kmodel','.mp4','.webm','.onnx','.img','.zip','.o'}: errors.append(f'Local artifact tracked: {rel}')
     if path.suffix=='.py':
         try: ast.parse(path.read_text(encoding='utf-8-sig'),filename=rel)
         except SyntaxError as error: errors.append(f'Python syntax: {rel}: {error}')

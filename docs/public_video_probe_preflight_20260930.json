@@ -1,5 +1,4 @@
 {
-  "status": "originals acquired after freeze; no media pixels inspected or inference run yet",
   "role": "predeclared small external video probe; not full kitchen-event acceptance",
   "frozen_at_utc": "2026-09-30T10:16:26.644401+00:00",
   "plan_sha256": "e2f23b94da3e63cd5ea16e4c6094d232581db61391c33c10db3e62001a30f83c",
@@ -41,7 +40,11 @@
       "width": 848,
       "height": 480,
       "download_completed_at_utc": "2026-09-30T10:16:28.491605+00:00",
-      "status": "quarantined_not_inspected_not_evaluated"
+      "status": "development_exposed_after_frozen_probe",
+      "nominal_frames": 214,
+      "decoded_frames": 212,
+      "sampled_frames": 36,
+      "truth": "no visible flame in reviewed samples; burner occluded"
     },
     {
       "title": "Gimbaled stove.WebM",
@@ -55,13 +58,26 @@
       "width": 748,
       "height": 420,
       "download_completed_at_utc": "2026-09-30T10:16:42.882626+00:00",
-      "status": "quarantined_not_inspected_not_evaluated"
+      "status": "observed_pixels_truth_pending_no_inference",
+      "nominal_frames": 837,
+      "decoded_frames": 838,
+      "fixed_sample_frames_available": 140
     }
   ],
   "remaining": [
-    "Inspect source/scene and frame similarity against known training/diagnostic chain",
-    "Create flame/no-visible-flame truth without viewing predictions",
-    "Evaluate once at frozen settings and mark development exposure",
-    "Short clips do not establish long-duration or event-level acceptance"
-  ]
+    "Resolve gimbaled flame visibility without viewing predictions or leave excluded explicitly",
+    "Acquire actual visible-blue-flame videos and full independent kitchen events for recall/continuity",
+    "Short no-visible-flame probe cannot resolve food/reflection errors in other exposed development videos",
+    "No threshold/checkpoint changes based on this batch"
+  ],
+  "acquisition_status_at_initial_record": "originals acquired after freeze; no media pixels inspected or inference run yet",
+  "status": "rice truth review and frozen inference complete; gimbaled pixels inspected, truth unresolved and inference not run",
+  "updated_at_utc": "2026-09-30T12:09:15.929132+00:00",
+  "overlap_summary": {
+    "training_images_verified": 6021,
+    "diagnostic_images_verified": 28,
+    "missing_training_files_count": 0,
+    "exact_pixel_match_frames": 0,
+    "limits": "available branches only, pHash not independence proof"
+  }
 }
