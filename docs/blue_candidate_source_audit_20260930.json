@@ -1,0 +1,73 @@
+{
+  "sources": [
+    {
+      "title": "Gas cooker blue flame.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gas_cooker_blue_flame.jpg",
+      "status": "quarantined_source_review_only_not_train_or_test",
+      "file": "candidate_0.jpg",
+      "sha256": "8f6b29a42757c68091b9f36276dad315aed888a75244a9e358aaee2544b17ad4",
+      "author": "James Riden",
+      "license": "CC BY-SA 2.5",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Gas_cooker_blue_flame.jpg/1280px-Gas_cooker_blue_flame.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "original_sha1": "53d3a5a0a0ea34c2e50bfc9403f83092998ade4d",
+      "bytes": 167807
+    },
+    {
+      "title": "Gas stove blue flames.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gas_stove_blue_flames.jpg",
+      "status": "quarantined_source_review_only_not_train_or_test",
+      "file": "candidate_1.jpg",
+      "sha256": "6c6a066c72e8f8f0e80047ff0ba7efad35acb4fe9d2393d3a6bfecc80ab9cf2a",
+      "author": "Marina Burity from Santo André, Brazil",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Gas_stove_blue_flames.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "original_sha1": "16b77520e0ba10bdde84fde3fda044802d892ce7",
+      "bytes": 308434
+    },
+    {
+      "title": "Gas stove burner flame.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gas_stove_burner_flame.jpg",
+      "status": "quarantined_source_review_only_not_train_or_test",
+      "file": "candidate_2.jpg",
+      "sha256": "50b33ef859a8035d714fa61899c1ec619d186a65b656b455316fb7ad390a5855",
+      "author": "Lisafern",
+      "license": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Gas_stove_burner_flame.jpg/1280px-Gas_stove_burner_flame.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "original_sha1": "d3a89f26bfecf103c208b92f0809af3cb7e85207",
+      "bytes": 99898
+    }
+  ],
+  "training_images_scanned": 5942,
+  "missing_training_files": 0,
+  "limits": [
+    "only available manifest files checked",
+    "pHash is similarity triage, not scene-independent proof",
+    "no assertion about generic pretrained data or unrecorded prior data"
+  ],
+  "candidate_overlap": [
+    {
+      "file": "candidate_0.jpg",
+      "sha256": "8f6b29a42757c68091b9f36276dad315aed888a75244a9e358aaee2544b17ad4",
+      "exact_training_match": false,
+      "nearest_phash_distance": 18,
+      "status": "quarantined_pending_lineage_and_visual_review"
+    },
+    {
+      "file": "candidate_1.jpg",
+      "sha256": "6c6a066c72e8f8f0e80047ff0ba7efad35acb4fe9d2393d3a6bfecc80ab9cf2a",
+      "exact_training_match": false,
+      "nearest_phash_distance": 14,
+      "status": "quarantined_pending_lineage_and_visual_review"
+    },
+    {
+      "file": "candidate_2.jpg",
+      "sha256": "50b33ef859a8035d714fa61899c1ec619d186a65b656b455316fb7ad390a5855",
+      "exact_training_match": false,
+      "nearest_phash_distance": 16,
+      "status": "quarantined_pending_lineage_and_visual_review"
+    }
+  ]
+}

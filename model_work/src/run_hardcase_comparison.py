@@ -15,6 +15,7 @@ def main():
     p.add_argument('--run',type=Path,required=True)
     p.add_argument('--out',type=Path,required=True)
     p.add_argument('--data',type=Path,required=True)
+    p.add_argument('--candidate-label',default='v5')
     args=p.parse_args();run=args.run.resolve();out=args.out.resolve();data=args.data.resolve()
     marker=out/'comparison_launch.json'
     if marker.exists(): raise SystemExit('Existing comparison launch; inspect handle/logs before restarting')
@@ -33,7 +34,7 @@ def main():
     for name in ['best.pt','last.pt']:
         if sha256(run/'weights'/name)!=identity[name+'_sha256']: raise SystemExit('Completed checkpoint mismatch')
     models={'v3':ROOT/'model_work/runs/fire-binary-user-video-v3/weights/best.pt',
-            'v5_best':run/'weights/best.pt','v5_last':run/'weights/last.pt'}
+            args.candidate_label+'_best':run/'weights/best.pt',args.candidate_label+'_last':run/'weights/last.pt'}
     comparison={}
     for label,weights in models.items():
         jobs=[('frames','eval_hardcase_frames.py',['--data',str(data)],'summary.json'),
