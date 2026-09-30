@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-09-30T13:01:00.637765+00:00",
+  "check_kind": "local files verified; no live device",
+  "device_check": "adb devices -l: no devices",
+  "historical_device_evidence_date": "2026-09-28",
+  "source_checkpoint_before_handoff": "9acbf4121f27c004f5a3eca3910bef69e8b76117",
+  "entries": [
+    {
+      "id": "vision_elf",
+      "role": "verified_baseline",
+      "source_path": "artifacts/ui_baseline_2026-09-28/ob_det_fire_mvp_spaces.elf",
+      "local_path": "artifacts/board_handoff_2026-09-30/verified_baseline/ob_det_fire_mvp_spaces.elf",
+      "bytes": 12194784,
+      "sha256": "ec2caafd85e56851c44c838b4c9a2a15477cae8b24ac915f1c571f1a0f9a2ac1"
+    },
+    {
+      "id": "board_kmodel",
+      "role": "verified_baseline",
+      "source_path": "artifacts/ui_baseline_2026-09-28/best_vendor80_640.kmodel",
+      "local_path": "artifacts/board_handoff_2026-09-30/verified_baseline/best_vendor80_640.kmodel",
+      "bytes": 13568472,
+      "sha256": "ec475725794417e83b58c661769a915c7a0e7a71ed61a6e2d267ddc7e49096a7"
+    },
+    {
+      "id": "k1_v4b",
+      "role": "verified_baseline",
+      "source_path": "artifacts/sensor_validation/key_controls/vision_key.elf",
+      "local_path": "artifacts/board_handoff_2026-09-30/verified_baseline/vision_key.elf",
+      "bytes": 300832,
+      "sha256": "1d503288d14bdcdbd6e3feb3e0faabcced8cab210fbc66db7b03a023ee46168c"
+    },
+    {
+      "id": "p1_v4b",
+      "role": "verified_baseline",
+      "source_path": "artifacts/board_backup_2026-09-25_autostart/rtt_partition_p1_k1_ui_v4b.img",
+      "local_path": "artifacts/board_handoff_2026-09-30/verified_baseline/rtt_partition_p1_k1_ui_v4b.img",
+      "bytes": 20971520,
+      "sha256": "5fec5ccf0921e790357f523ba7b7a49dd177e101358ac86a8b55a85895264fa1"
+    },
+    {
+      "id": "matrix_key1_panel",
+      "role": "verified_baseline",
+      "source_path": "artifacts/board_ui_overlay/ui_overlay_live.elf",
+      "local_path": "artifacts/board_handoff_2026-09-30/verified_baseline/ui_overlay_live.elf",
+      "bytes": 311520,
+      "sha256": "6dd398c1deea0d99721b44066f71df1cfe5801815d88740d9071ffaaaf9f9c46"
+    },
+    {
+      "id": "history_bridge",
+      "role": "verified_baseline",
+      "source_path": "artifacts/board_ui_overlay/status_bridge_history",
+      "local_path": "artifacts/board_handoff_2026-09-30/verified_baseline/status_bridge_history",
+      "bytes": 19976,
+      "sha256": "8d86dd902617f97f5c75e6dad4cc57ee2fec3f28ec38b8fc0954546f1a04bb5e"
+    },
+    {
+      "id": "sensor_controller",
+      "role": "sensor_local_build",
+      "source_path": "artifacts/sensor_validation/key_controls/sensor_key_dynamic",
+      "local_path": "artifacts/board_handoff_2026-09-30/sensor_local_build/sensor_key_dynamic",
+      "bytes": 20008,
+      "sha256": "5eba5ad80fb452ddae47985cfdfb02f5b99337b40c7092c2bccd3388e60b68bf"
+    },
+    {
+      "id": "sensor_program",
+      "role": "sensor_local_build",
+      "source_path": "artifacts/sensor_validation/key_controls/sensor_mvp_oled_dynamic",
+      "local_path": "artifacts/board_handoff_2026-09-30/sensor_local_build/sensor_mvp_oled_dynamic",
+      "bytes": 28752,
+      "sha256": "b2c30697d6b21072c4916c9bce699519a3da70db4d63dce310264d6c30f08d8c"
+    },
+    {
+      "id": "S90",
+      "role": "service_source_snapshot",
+      "source_path": "src/key_controls/S90srtp_sensor_key",
+      "local_path": "artifacts/board_handoff_2026-09-30/service_source_snapshot/S90srtp_sensor_key",
+      "bytes": 954,
+      "sha256": "e689c7659710a1aa7061a1cd2507b624dcee3ad6ed2b1581f648a8af24ee40ad"
+    },
+    {
+      "id": "S91",
+      "role": "service_source_snapshot",
+      "source_path": "src/board_ui_overlay/S91srtp_ui_bridge",
+      "local_path": "artifacts/board_handoff_2026-09-30/service_source_snapshot/S91srtp_ui_bridge",
+      "bytes": 925,
+      "sha256": "484e0a7979faf4e16133a7942a0071cb7cfa353775b3b6fc53c024272b1ca3f5"
+    },
+    {
+      "id": "key2_failed_candidate",
+      "role": "failed_candidate",
+      "source_path": "artifacts/sensor_validation/key_controls/vision_key_data_candidate.elf",
+      "local_path": "artifacts/board_handoff_2026-09-30/failed_candidate/vision_key_data_candidate.elf",
+      "bytes": 301112,
+      "sha256": "24fbd8e13b8ed087be1fe1bc52638293fa554479c348a020a9466a778beab895"
+    },
+    {
+      "id": "data_page_failed_candidate",
+      "role": "failed_candidate",
+      "source_path": "artifacts/board_ui_overlay/data_page_live.elf",
+      "local_path": "artifacts/board_handoff_2026-09-30/failed_candidate/data_page_live.elf",
+      "bytes": 327624,
+      "sha256": "4de7e892d9ea3d931f7617c31e0c372da561b80a46ae56d24dbddba8d1a3ed64"
+    },
+    {
+      "id": "previous_panel",
+      "role": "historical_backup",
+      "source_path": "artifacts/board_ui_overlay/ui_overlay_live_onebuf_verified.elf",
+      "local_path": "artifacts/board_handoff_2026-09-30/historical_backup/ui_overlay_live_onebuf_verified.elf",
+      "bytes": 308976,
+      "sha256": "78325ec88e6f2c0d0f0a207112b4e0b15880f10efb7b753c614717d774422e12"
+    },
+    {
+      "id": "previous_bridge",
+      "role": "historical_backup",
+      "source_path": "artifacts/board_ui_overlay/status_bridge",
+      "local_path": "artifacts/board_handoff_2026-09-30/historical_backup/status_bridge",
+      "bytes": 19800,
+      "sha256": "fef1b11130d5a76bd2ed2d42152bac095b7fdb1a0ac1fd70de3a7a85b65329d3"
+    },
+    {
+      "id": "ui_asset_base_off.bgra",
+      "role": "ui_assets_local_snapshot",
+      "source_path": "artifacts/board_ui_overlay/live/base_off.bgra",
+      "local_path": "artifacts/board_handoff_2026-09-30/ui_assets_local_snapshot/base_off.bgra",
+      "bytes": 746112,
+      "sha256": "e20bf5195787829ed2ccaf73d416301c110e728391a91c72526a5b50d04c30b9"
+    },
+    {
+      "id": "ui_asset_base_on.bgra",
+      "role": "ui_assets_local_snapshot",
+      "source_path": "artifacts/board_ui_overlay/live/base_on.bgra",
+      "local_path": "artifacts/board_handoff_2026-09-30/ui_assets_local_snapshot/base_on.bgra",
+      "bytes": 746112,
+      "sha256": "651e278cb57fa9b605c91ebd82369162d7aef53e99d3646d53155bea9df51325"
+    },
+    {
+      "id": "ui_asset_base_unknown.bgra",
+      "role": "ui_assets_local_snapshot",
+      "source_path": "artifacts/board_ui_overlay/live/base_unknown.bgra",
+      "local_path": "artifacts/board_handoff_2026-09-30/ui_assets_local_snapshot/base_unknown.bgra",
+      "bytes": 746112,
+      "sha256": "9978392b8f7659c1a1c8eaac3c4116b56f681398a7d2d4a247c2f2e776df9be9"
+    },
+    {
+      "id": "ui_asset_glyphs_large.bgra",
+      "role": "ui_assets_local_snapshot",
+      "source_path": "artifacts/board_ui_overlay/live/glyphs_large.bgra",
+      "local_path": "artifacts/board_handoff_2026-09-30/ui_assets_local_snapshot/glyphs_large.bgra",
+      "bytes": 46080,
+      "sha256": "69ec7b9f0aa5916315321bd3451b76ce169280b1b663d51e2b48d5600d63361b"
+    },
+    {
+      "id": "ui_asset_glyphs_small.bgra",
+      "role": "ui_assets_local_snapshot",
+      "source_path": "artifacts/board_ui_overlay/live/glyphs_small.bgra",
+      "local_path": "artifacts/board_handoff_2026-09-30/ui_assets_local_snapshot/glyphs_small.bgra",
+      "bytes": 13440,
+      "sha256": "188c6a69cf3a84ba53fa5a1ab01ced3f01ede22646b552d44bf5f77fb89ee748"
+    },
+    {
+      "id": "ui_asset_unit_temp.bgra",
+      "role": "ui_assets_local_snapshot",
+      "source_path": "artifacts/board_ui_overlay/live/unit_temp.bgra",
+      "local_path": "artifacts/board_handoff_2026-09-30/ui_assets_local_snapshot/unit_temp.bgra",
+      "bytes": 3400,
+      "sha256": "6cf3221cf094b11ee3585d27fc9c34db5f0135832a487ded1d8721b547acad3d"
+    },
+    {
+      "id": "ui_asset_unit_humidity.bgra",
+      "role": "ui_assets_local_snapshot",
+      "source_path": "artifacts/board_ui_overlay/live/unit_humidity.bgra",
+      "local_path": "artifacts/board_handoff_2026-09-30/ui_assets_local_snapshot/unit_humidity.bgra",
+      "bytes": 1800,
+      "sha256": "827289ed598be33801cd34f88c5691601e855cd6e62679f1ab2915fa6bce8338"
+    },
+    {
+      "id": "ui_asset_unit_pressure.bgra",
+      "role": "ui_assets_local_snapshot",
+      "source_path": "artifacts/board_ui_overlay/live/unit_pressure.bgra",
+      "local_path": "artifacts/board_handoff_2026-09-30/ui_assets_local_snapshot/unit_pressure.bgra",
+      "bytes": 2240,
+      "sha256": "38d0591bd2a41187179608e70db308068596fb85e53007e3534c5863022bc3ec"
+    }
+  ],
+  "limits": [
+    "verified_baseline identities agree with historical short board trials, not long-run acceptance",
+    "sensor_local_build/service_source_snapshot/ui_assets_local_snapshot require current device identity comparison before reinstall",
+    "vendor vision same-source and exact verified v4b controller source unavailable",
+    "failed_candidate is not approved for boot installation",
+    "snapshot is on the same computer, not an independent disaster-recovery backup"
+  ]
+}

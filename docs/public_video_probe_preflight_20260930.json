@@ -65,19 +65,19 @@
     }
   ],
   "remaining": [
-    "Resolve gimbaled flame visibility without viewing predictions or leave excluded explicitly",
-    "Acquire actual visible-blue-flame videos and full independent kitchen events for recall/continuity",
-    "Short no-visible-flame probe cannot resolve food/reflection errors in other exposed development videos",
+    "Independent kitchen acceptance remains incomplete; no additional probe scheduled after user stop",
+    "Gimbaled truth unresolved and inference not run; preserve historical acquisition and freeze",
     "No threshold/checkpoint changes based on this batch"
   ],
   "acquisition_status_at_initial_record": "originals acquired after freeze; no media pixels inspected or inference run yet",
-  "status": "rice truth review and frozen inference complete; gimbaled pixels inspected, truth unresolved and inference not run",
-  "updated_at_utc": "2026-09-30T12:09:15.929132+00:00",
+  "status": "rice completed; gimbaled held at user model-stage stop, truth unresolved, no inference",
+  "updated_at_utc": "2026-09-30T13:01:00.637765+00:00",
   "overlap_summary": {
     "training_images_verified": 6021,
     "diagnostic_images_verified": 28,
     "missing_training_files_count": 0,
     "exact_pixel_match_frames": 0,
     "limits": "available branches only, pHash not independence proof"
-  }
+  },
+  "latest_user_decision": "Pause additional model/video work and move to board"
 }

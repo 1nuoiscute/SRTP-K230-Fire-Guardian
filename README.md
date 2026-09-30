@@ -2,7 +2,7 @@
 
 面向厨房场景的大学生 SRTP 研究原型。基于 **K230 + RT-Thread Smart / Linux**，开展火焰目标检测、环境采集、事件判断与模拟联动研究。
 
-**当前阶段：板端视觉与环境显示 MVP，电脑端模型改进中。** 正常灶火与异常火情需要分开判断；当前模型尚未通过跨厨房可靠性验收。
+**当前阶段：电脑端模型改进暂时收尾，转向板端现有 MVP 的复测、显示与功能整合。** 正常灶火与异常火情需要分开判断；当前模型尚未通过跨厨房可靠性验收。
 
 演示重点已按用户要求调整：采用无贴纸干扰的灶台，贴纸抑制作为可选改进，优先真实火焰定位和连续识别。见 [当前演示范围](docs/DEMO_SCOPE.md)。
 
@@ -21,11 +21,15 @@
 - 烟雾/燃气输入、真实事件融合、自适应标定、执行反馈和 MQTT 闭环尚未验收。
 - 旧图片集和已反复分析的视频均属于开发诊断；其帧数、mAP 或有框比例不能替代独立事件验收。
 
-## 最新实验（2026-09-30）
+## 模型阶段收尾（2026-09-30）
+
+按用户要求停止追加模型实验，保留 v3 开发基线及 v5–v11 失败结果。新片段的未完成审核/推理已暂存，不自动继续。见 [模型收尾](docs/PC_MODEL_STAGE_CLOSURE_20260930.md) 和 [板端交接](docs/BOARD_HANDOFF_20260930.md)。本轮仅核对本地产物，ADB 无连接设备。
+
+### 已完成实验
 
 v5、v6 均已完成训练与对照。v6 减轻了旧图退化，但仍有贴纸误报，外部蓝焰定位未改善，继续保留 v3。v7 从 v3 开始、沿用 v6 参数，仅将两份审核过的既有蓝焰诊断原作加入训练，训练与按来源曝光分组的评测均已完成：last 在五张蓝焰诊断图上由 0/5 到 1/5，但旧图 mAP50 降至 0.906 且仍有误检，拒绝替换。详见 [v5 记录](model_work/docs/HARDCASE_V5_EXPERIMENT_20260930.md)、[v6 完整结果](model_work/docs/HARDCASE_V6_EXPERIMENT_20260930.md) 和 [v7 实验](model_work/docs/HARDCASE_V7_EXPERIMENT_20260930.md)。来源边界更正见 [原作对照](model_work/docs/COMMONS_SOURCE_SCOPE_CORRECTION_20260930.md)。
 
-v8 已完成：冻结 11 个主干模块确实保住旧图诊断，但蓝焰仍为 0/5，难例适配不足，拒绝替换。下一轮仅增补审核后的蓝焰与食物难负例，见 [v8 实验](model_work/docs/HARDCASE_V8_FREEZE_EXPERIMENT_20260930.md)。
+v8 已完成：冻结 11 个主干模块确实保住旧图诊断，但蓝焰仍为 0/5，难例适配不足，拒绝替换。随后 v9 增补了审核后的蓝焰与食物难负例，见 [v8 实验](model_work/docs/HARDCASE_V8_FREEZE_EXPERIMENT_20260930.md)。
 
 v9 已完成：last 五图蓝焰定位提高到 3/5，但旧图 mAP50 降到 0.900 且仍有贴纸误检，拒绝替换。此次仅增补八张蓝焰照片与一个食物难负例，训练与完整对比身份已保存，见 [v9 实验](model_work/docs/HARDCASE_V9_SOURCE_DATA_EXPERIMENT_20260930.md)。
 
@@ -34,13 +38,14 @@ v9 已完成：last 五图蓝焰定位提高到 3/5，但旧图 mAP50 降到 0.9
 
 v10 已完成：蓝焰仍为 3/5，食物误检重新出现，暂不采用整来源移除方案；按来源复查发现烟雾/反光误检增加，见 [来源消融](model_work/docs/HARDCASE_V10_SOURCE_ABLATION_20260930.md)。
 
-v11 已完成：回到 v9 数据，隔离五张问题图、加权三张原训练烟雾无可见火焰图。last 蓝焰仍 3/5，烟雾来源误检为 10 框且有食物/关火反光误检，不采用。贴纸不是否决理由，见 [完整结果](model_work/docs/HARDCASE_V11_NEGATIVE_CURATION_20260930.md)。[新来源短视频探查](model_work/docs/PUBLIC_VIDEO_PROBE_20260930.md) 已完成煮饭片段：36个无可见火焰采样帧四模型均0误检；船上灶台仍待火焰判读，不把短片结果当成完整事件验收。
+v11 已完成：回到 v9 数据，隔离五张问题图、加权三张原训练烟雾无可见火焰图。last 蓝焰仍 3/5，烟雾来源误检为 10 框且有食物/关火反光误检，不采用。贴纸不是否决理由，见 [完整结果](model_work/docs/HARDCASE_V11_NEGATIVE_CURATION_20260930.md)。[新来源短视频探查](model_work/docs/PUBLIC_VIDEO_PROBE_20260930.md) 已完成煮饭片段：36个无可见火焰采样帧四模型均0误检；船上灶台暂存，未完成火焰判读，不把短片结果当成完整事件验收。
 
 ## 从这里开始
 
 | 内容 | 入口 |
 |---|---|
-| 最新状态及电脑端推进 | [项目状态](docs/STATUS.md)、[路线与实验门槛](docs/ROADMAP.md) |
+| 当前板端交接 | [上板顺序与版本边界](docs/BOARD_HANDOFF_20260930.md)、[模型阶段收尾](docs/PC_MODEL_STAGE_CLOSURE_20260930.md) |
+| 最新状态及历史 | [项目状态](docs/STATUS.md)、[路线与实验门槛](docs/ROADMAP.md) |
 | 板端实时面板 | [实机记录](model_work/docs/BOARD_UI_LIVE_INTEGRATION_20260928.md) |
 | 数据页失败及恢复 | [数据页记录](model_work/docs/BOARD_DATA_PAGE_KEY2_20260928.md) |
 | 新厨房视频失败 | [冻结模型测试](model_work/docs/TEAMMATE_NEW_VIDEO_TEST_20260928.md) |

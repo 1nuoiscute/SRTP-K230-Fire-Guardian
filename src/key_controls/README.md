@@ -2,7 +2,11 @@
 
 # 副板 K1/K2 程序开关
 
-2026-09-28 更新：当前 `vision_key.c` 的 K1 新版会在原视觉进程启动约 4 秒后启动实时 OSD0 面板；关闭时先退出面板，再按原有 `q` 路径关闭视觉。两轮 `selftest` 通过后，以原厂 p1 定点替换法部署为 v4b；重启后用户确认参数变化，实体 K1 两次按压使画面和面板一起关闭、再一起恢复。镜像哈希与未完成的长时/分屏验收见 `model_work/docs/BOARD_UI_LIVE_INTEGRATION_20260928.md`。以下 v3 记录为历史过程，勿把其中“当前”理解为 9 月 28 日最终状态。
+截至 2026-09-30：正式启动组合仍是历史验收 v4b，其 ELF/p1 已在本机重新校验并冻结。当前 vision_key.c 和 vision_key_data_candidate.c 内容相同，是后续矩阵 KEY2 数据页实验；实机曾乱码，不能当成 v4b 源码重新部署。副板 K1、K2 与底板矩阵 KEY1、KEY2 不同。见 [板端交接](../../docs/BOARD_HANDOFF_20260930.md)。
+
+## 2026-09-25 至 28 历史过程
+
+2026-09-28 已验收的 v4b K1 控制器会在原视觉进程启动约 4 秒后启动实时 OSD0 面板，关闭时先退面板，再走视觉 q 退出路径。两轮 selftest、p1 写入/读回和现场 K1 关闭/恢复已完成。此处描述历史二进制行为，不表示当前候选源码已通过相同验收。
 
 本目录是 2026-09-25 的按键控制源码。完整开发过程见项目根目录 `2026-09-23_RT-Thread_Smart_AI套件实机验证记录.md` 第 20、21、23、24 节。
 
@@ -10,13 +14,15 @@
 
 `key_input.c/.h` 只读 IOMUX 电平，不改引脚配置；每 20 ms 采样，连续稳定约 60 ms 才触发。`vision_key.c` 在 RT-Smart 大核运行，K1 切换视觉进程：启动时 fork/exec 已有 ELF，关闭时向子进程 stdin 写 `q`，走原程序摄像头释放流程。RT-Smart 的 `waitpid` 忽略 `WNOHANG`，因此主轮询不能对运行中的视觉子进程调用它；只在发送 `q` 后等待回收。`sensor_key.c` 在 Linux 小核运行，K2 切换新版 SHT31/BMP280/OLED 程序，关闭时发 SIGTERM 让 OLED 清屏并释放 GPIO。控制器启动时两个功能默认关闭。
 
-在 WSL `K230-Ubuntu` 构建：
+在 WSL `K230-Ubuntu` 构建当前**未验收数据页候选**（不部署、不覆盖 v4b；通用脚本也会重建传感器本地产物，回退快照先保留）：
 
 ```sh
-sh /mnt/c/Users/ASUS/Documents/ChatGPT/SRTP/src/key_controls/build.sh
+sh /mnt/c/Users/ASUS/Documents/ChatGPT/SRTP/src/key_controls/build.sh --data-candidate
 sh /mnt/c/Users/ASUS/Documents/ChatGPT/SRTP/src/sensor_mvp/build.sh \
   /mnt/c/Users/ASUS/Documents/ChatGPT/SRTP/artifacts/sensor_validation/sensor_mvp_oled
 ```
+
+候选视觉产物名仅为 `vision_key_data_candidate.elf`；不能用它覆盖已验收 `vision_key.elf` 或启动分区。以下为历史部署路径。
 
 产物在 `C:\Users\ASUS\Documents\ChatGPT\SRTP\artifacts\sensor_validation\key_controls\`。板端实际使用动态小核产物 `sensor_key_dynamic`、`sensor_mvp_oled_dynamic`（推送后分别命名为 `/sharefs/srtp_clean/key_controls/sensor_key`、`sensor_mvp_oled_keys`），以及大核 `/sharefs/srtp_clean/key_controls/vision_key_v3.elf`。K2 的小核启动脚本为 `/etc/init.d/S90srtp_sensor_key`。大核 p1 采用 `patch_stock_romfs.py` 仅在原厂 ROMFS 的 `fastboot_app.elf` 槽位放入 v3 控制器，原厂备份、v2 和 v3 镜像均在 `artifacts/board_backup_2026-09-25_autostart/`。
 

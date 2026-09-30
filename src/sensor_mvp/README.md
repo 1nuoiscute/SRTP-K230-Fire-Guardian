@@ -19,7 +19,7 @@
 | `ssd1306.c/.h` | 128×64 OLED 初始化、普通字号绘制、仅发送变化页 |
 | `main.c` | 采样、错误状态与五行显示；Wi-Fi 状态入口在此处 |
 
-当前程序跑在 Linux 小核，使用 GPIO 模拟 I²C；RT-Smart 的硬件 I²C3 曾独立读到 BMP280 ID `0x58` 和约 27.5°C。该程序不修改固件或启动项，断电后需重新启动。
+当前程序跑在 Linux 小核，使用 GPIO 模拟 I²C；RT-Smart 的硬件 I²C3 曾独立读到 BMP280 ID `0x58` 和约 27.5°C。本目录独立手动运行入口不修改固件或启动项，断电后需重新启动。已安装的 K2 方案另由 `/etc/init.d/S90srtp_sensor_key` 自启控制器，采样默认关闭，按副板 K2 启动 `/sharefs/srtp_clean/key_controls/sensor_mvp_oled_keys`；见 [按键控制](../key_controls/README.md) 和 [当前交接](../../docs/BOARD_HANDOFF_20260930.md)。不要把手动入口和 K2 方案同时启动。
 
 ## 构建和运行
 
@@ -46,7 +46,7 @@ pidof sensor_mvp_oled
 tail -n 4 /tmp/sensor_mvp.log
 ```
 
-2026-09-25 实机验证：退出交互 shell 后进程仍持续采样；一次性 `adb shell "sh ..."` 启动后台程序未能留下进程，不作为可靠启动方式。启动脚本将逐次读数日志写到 `/tmp/sensor_mvp.log`，避免持续写入 `/sharefs`。程序每轮打印 SHT31（含 CRC 状态）和 BMP280 数值。若读数失败，OLED 对应行显示 `ERR`。前台运行可用 `Ctrl+C` 退出，后台运行可用 `kill -TERM <pid>` 退出并释放 GPIO。启动前确保 `GPIO44/45` 为默认 GPIO 输入复用（IOMUX 低位 `0x1CF`），且同一总线上没有第二个控制进程。Wi-Fi 目前仅预留显示位置，尚未测试 RW007 连通与状态读取。
+2026-09-25 实机验证：退出交互 shell 后进程仍持续采样；一次性 `adb shell "sh ..."` 启动后台程序未能留下进程，不作为可靠启动方式。启动脚本将逐次读数日志写到 `/tmp/sensor_mvp.log`，避免持续写入 `/sharefs`。程序每轮打印 SHT31（含 CRC 状态）和 BMP280 数值。若读数失败，OLED 对应行显示 `ERR`。前台运行可用 `Ctrl+C` 退出，后台运行可用 `kill -TERM <pid>` 退出并释放 GPIO。启动前确保 `GPIO44/45` 为默认 GPIO 输入复用（IOMUX 低位 `0x1CF`），且同一总线上没有第二个控制进程。此独立 OLED 入口的 Wi-Fi 行仅预留；后续大屏桥接按 wlan0 IPv4 显示状态，不能据此声称网络/MQTT 闭环通过。
 
 ## 手册依据
 
