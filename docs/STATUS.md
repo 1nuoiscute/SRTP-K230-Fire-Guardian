@@ -40,3 +40,9 @@ v8 完整结果：9 轮早停，11 次主干不变性检查通过；best/last �
 v9 开发数据已构建并目视审核：2437 个文件、2782 个条目，新增 8 张蓝焰/11 框及 1 个食物无火裁剪，两个暂缓原作未入集。此时尚未训练；预检查核对全部图像、标签、审核文件和采样权重。
 
 v9 已实际启动，args.yaml 与 v7 仅 data/name/save_dir 不同，全部数据检查通过；效果待完整评测。详见 [v9 实验](../model_work/docs/HARDCASE_V9_SOURCE_DATA_EXPERIMENT_20260930.md)。
+
+原训练集颜色/标签抽查完成：所抽厨房图中蓝焰并不少见，但场景重复且部分框包含较大锅体；通用来源全部 4 个空标签图中 3 个实际有可见火焰，已追溯为上游漏标。尚未修改 v9 或原标签。见 [抽查证据](../model_work/docs/TRAINING_COLOR_QUALITY_REVIEW_20260930.md)。
+
+v9 完整对照已结束：9 轮早停，last 五图蓝焰定位 3/5、旧图 mAP50=0.90044、队友正例 TP/FP/FN=10/3/0、负裁剪误检=3。保留 v3，不上板。结果见 [v9 报告](../model_work/docs/HARDCASE_V9_SOURCE_DATA_EXPERIMENT_20260930.md)。
+
+v10 来源消融已实际启动：本次微调移除 800 张 generic_fire，其余保留 1637 图/1982 条目，全部身份、标签、权重及继承审核核验通过。actual args 与 v9 仅 data/name/save_dir 不同。编码失败目录未批准未训练，修复后在新目录运行；详见 [v10 记录](../model_work/docs/HARDCASE_V10_SOURCE_ABLATION_20260930.md)。

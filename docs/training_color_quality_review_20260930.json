@@ -1,0 +1,43 @@
+{
+  "role": "stratified diagnostic sample, not exhaustive color census or independent evaluation",
+  "seed": 20260930,
+  "selection": "random sample within sorted provenance, 24 stove / 12 KS / 12 generic; unequal sampling fractions",
+  "summary": {
+    "kitchen_stove_fire": {
+      "sample": 24,
+      "blue_violet_present": 19,
+      "orange_only": 5
+    },
+    "ks_flame": {
+      "sample": 12,
+      "blue_present": 12
+    },
+    "generic_fire": {
+      "sample": 12,
+      "clear_blue_flame_present": 0,
+      "grayscale_color_unassessable": 2,
+      "scope": "no extrapolation to all 800"
+    },
+    "finding": "blue flames exist in original data; repeated setting, box semantics and inherited label noise warrant source review"
+  },
+  "next_action": "Preserve v9 frozen data identity; review/quarantine generic source and standardize flame-only boxes in separate successor data, never edit original labels.",
+  "publication_scope": "Aggregate diagnostic conclusions only. Private dataset filenames, per-image hashes, paths, source IDs, coordinates and review-image hashes remain local.",
+  "reviewed_sample_images": 48,
+  "generic_empty_label_review": {
+    "total": 4,
+    "visually_reviewed": 4,
+    "visible_fire_empty_label": 3,
+    "no_visible_fire": 1,
+    "scope": "all four empty-label generic originals in current train split; not a census of all label errors"
+  },
+  "source_mapping_check": {
+    "upstream_class_count": 1,
+    "mapping_preserves_fire_class": true,
+    "finding": "Three visible-fire empty labels were inherited unchanged from upstream; no class-ID drop introduced by the binary filter. No raw source metadata is published."
+  },
+  "visual_context_findings": {
+    "commercial_sample": "repeated similar multi-burner background; 6 flagged examples contain substantial pot body",
+    "domestic_sample": "blue flames visible in all 12 reviewed samples, repeated similar stove settings",
+    "generic_sample": "one sampled visible fire has an empty label; two smoke/haze fire labels require review at original resolution"
+  }
+}

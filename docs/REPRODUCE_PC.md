@@ -41,3 +41,5 @@ Commons 诊断脚本现要求 --comparison-data 指向本轮训练 build_manifes
 可选 --freeze-backbone 按实际 checkpoint 的 backbone 长度冻结，并在训练运行中核验主干参数与 BN 缓冲。默认不启用，既有实验日程不变。命令与范围见 [v8 冻结对照](../model_work/docs/HARDCASE_V8_FREEZE_EXPERIMENT_20260930.md)。
 
 第二批来源和无火裁剪的构建器 build_reviewed_source_queue.py 保留父数据、排除暂缓照片，并输出未批准的数据目录。逐图复核及训练方法见 [v9 数据与实验](../model_work/docs/HARDCASE_V9_SOURCE_DATA_EXPERIMENT_20260930.md)。dataset_preflight.py 现在还核对 source_reviews 实际文件和最终新增审核图；训练记录绑定本地校验依赖脚本哈希。
+
+原训练集分层目视抽查工具 prepare_training_color_review.py 和来源移除构建器 build_reviewed_source_ablation.py 已加入。前者只生成固定抽样拼版，不产生颜色真值；后者只派生未批准数据，不自动重标或训练。具体审核、失败与身份见 [抽查](../model_work/docs/TRAINING_COLOR_QUALITY_REVIEW_20260930.md) 与 [v10](../model_work/docs/HARDCASE_V10_SOURCE_ABLATION_20260930.md)。

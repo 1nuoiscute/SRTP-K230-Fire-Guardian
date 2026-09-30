@@ -1,0 +1,60 @@
+{
+  "training_script_sha256": "753fe29d3612b0ea1b254f808b1ec543f485e04720bf0d366c3f16c07f22207c",
+  "dataset_config_sha256": "04ed116b1359c2c11b16a61e4c2c94e9cbf9bbc26fc57ab3caf9c64ae8a2b494",
+  "dataset_verification": {
+    "manifest_sha256": "794d7623fa422049b0d8ab6694d92afe278de67e6f16a97a31763f8a52645fde",
+    "approval_sha256": "3f79d95f591338e3b37322f759f2faeedf24f5871d5a03ffb44076069a13a4ef",
+    "train_list_sha256": "a4c440a9ba247fabe54258dae37ccfa9d6d9b7a7d97df728b23dc27b204eda89",
+    "base_manifest_sha256": "00df0d72e3b967592dcd6b2f0d17dadd862a4bff6e9b56e4491ac07c1e99fd8f",
+    "images_verified": 1637,
+    "entries_verified": 1982,
+    "labels_bound_by_manifest": 1637,
+    "scope": "Bytes, labels, weights and config checked; not proof of scene independence."
+  },
+  "start_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+  "start": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-binary-user-video-v3\\weights\\best.pt",
+  "dataset_manifest_sha256": "794d7623fa422049b0d8ab6694d92afe278de67e6f16a97a31763f8a52645fde",
+  "config": {
+    "data": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\data\\hardcase_v10_source_ablation_utf8_20260930\\data.yaml",
+    "epochs": 12,
+    "patience": 8,
+    "imgsz": 640,
+    "batch": 4,
+    "device": 0,
+    "workers": 0,
+    "seed": 20260930,
+    "optimizer": "AdamW",
+    "lr0": 2e-05,
+    "warmup_bias_lr": 2e-05,
+    "lrf": 0.1,
+    "weight_decay": 0.0005,
+    "hsv_h": 0.015,
+    "hsv_s": 0.3,
+    "hsv_v": 0.25,
+    "degrees": 3.0,
+    "translate": 0.05,
+    "scale": 0.2,
+    "fliplr": 0.5,
+    "mosaic": 0.2,
+    "mixup": 0.0,
+    "close_mosaic": 5,
+    "project": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs",
+    "name": "fire-binary-hardcase-v10-source-ablation-20260930",
+    "exist_ok": false,
+    "save": true,
+    "plots": true,
+    "val": true
+  },
+  "environment": {
+    "python": "3.13.13",
+    "torch": "2.12.0+cu132",
+    "ultralytics": "8.4.70",
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU"
+  },
+  "role": "development candidate; all teammate videos now exposed; no board deployment",
+  "local_dependency_sha256": {
+    "data_integrity.py": "22777ca17939e2c07c5834418ac4bcf96ff3ae627053d8825feac29a6f8e59a0",
+    "dataset_preflight.py": "6908ae7b213adff69cb7c32d884778e30642a3235eae0cb04f8080c62752974b",
+    "backbone_freeze_audit.py": "8ea746515b72efd604a9109a38cc092f59e2f3bcaf3a87dd9892fa808171fd46"
+  }
+}

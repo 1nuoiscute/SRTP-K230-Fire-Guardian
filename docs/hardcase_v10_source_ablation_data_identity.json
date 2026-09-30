@@ -1,0 +1,27 @@
+{
+  "role": "development-only whole-source ablation, approved for training, no result yet",
+  "dataset": "hardcase_v10_source_ablation_utf8_20260930",
+  "parent_manifest_sha256": "7a262442e6227a0da6277b03c3b9211e65effc3d8e3e68e71995922fc636ecc2",
+  "builder_sha256": "374d914b2b1c7b5101aa220ea0787e58098cf350b2ef0542cffb66ec36b51012",
+  "preflight": {
+    "manifest_sha256": "794d7623fa422049b0d8ab6694d92afe278de67e6f16a97a31763f8a52645fde",
+    "approval_sha256": "3f79d95f591338e3b37322f759f2faeedf24f5871d5a03ffb44076069a13a4ef",
+    "train_list_sha256": "a4c440a9ba247fabe54258dae37ccfa9d6d9b7a7d97df728b23dc27b204eda89",
+    "base_manifest_sha256": "00df0d72e3b967592dcd6b2f0d17dadd862a4bff6e9b56e4491ac07c1e99fd8f",
+    "images_verified": 1637,
+    "entries_verified": 1982,
+    "labels_bound_by_manifest": 1637,
+    "scope": "Bytes, labels, weights and config checked; not proof of scene independence."
+  },
+  "excluded_source": "generic_fire",
+  "removed_images": 800,
+  "legacy_sources": {
+    "kitchen_stove_fire": 1045,
+    "ks_flame": 184,
+    "nofire_real_indoor": 153,
+    "object_pan": 200
+  },
+  "retained_derived_images": 55,
+  "scope": "All retained labels and weights identical to v9; no claim all removed examples are bad or that this is independent acceptance.",
+  "audit_evidence_scope": "Detailed private-file audit and removal list are bound in the local dataset; public version contains aggregate findings only."
+}

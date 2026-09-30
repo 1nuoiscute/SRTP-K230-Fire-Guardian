@@ -25,7 +25,12 @@ v5、v6 均已完成训练与对照。v6 减轻了旧图退化，但仍有贴纸
 
 v8 已完成：冻结 11 个主干模块确实保住旧图诊断，但蓝焰仍为 0/5，难例适配不足，拒绝替换。下一轮仅增补审核后的蓝焰与食物难负例，见 [v8 实验](model_work/docs/HARDCASE_V8_FREEZE_EXPERIMENT_20260930.md)。
 
-v9 已启动：从 v3 开始、沿用 v7 不冻结参数，仅增补八张蓝焰照片与一个食物难负例。来源、标签和训练身份已核验，效果待完整评测，见 [v9 实验](model_work/docs/HARDCASE_V9_SOURCE_DATA_EXPERIMENT_20260930.md)。
+v9 已完成：last 五图蓝焰定位提高到 3/5，但旧图 mAP50 降到 0.900 且仍有贴纸误检，拒绝替换。此次仅增补八张蓝焰照片与一个食物难负例，训练与完整对比身份已保存，见 [v9 实验](model_work/docs/HARDCASE_V9_SOURCE_DATA_EXPERIMENT_20260930.md)。
+
+
+原训练集颜色/标签抽查完成：所抽厨房图中蓝焰并不少见，但场景重复且部分框包含较大锅体；通用来源全部 4 个空标签图中 3 个实际有可见火焰，已追溯为上游漏标。尚未修改 v9 或原标签。见 [抽查证据](model_work/docs/TRAINING_COLOR_QUALITY_REVIEW_20260930.md)。
+
+v10 已启动：仅移除此次微调中的 generic_fire 800 张，其余数据、标签和参数保持 v9 一致；先检验通用来源的影响，结果待完整评测，见 [来源消融](model_work/docs/HARDCASE_V10_SOURCE_ABLATION_20260930.md)。
 
 ## 从这里开始
 
