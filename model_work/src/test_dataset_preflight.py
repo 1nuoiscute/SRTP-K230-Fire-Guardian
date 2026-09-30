@@ -67,6 +67,32 @@ class DatasetPreflightTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "train counts changed"):
             verify_reviewed_dataset(self.folder, self.config)
 
+    def test_bound_source_review_edit_rejected(self):
+        review_dir = self.folder / "source_reviews"
+        review_dir.mkdir()
+        review = review_dir / "bundle.json"
+        review.write_text("{\"scope\": \"reviewed\"}", encoding="utf-8")
+        approval_path = self.folder / "review_approval.json"
+        approval = json.loads(approval_path.read_text(encoding="utf-8"))
+        approval["source_review_files_sha256"] = {review.name: sha256(review)}
+        approval_path.write_text(json.dumps(approval), encoding="utf-8")
+        verify_reviewed_dataset(self.folder, self.config)
+        review.write_text("{\"scope\": \"changed\"}", encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "source approval/acquisition file changed"):
+            verify_reviewed_dataset(self.folder, self.config)
+
+    def test_bound_new_source_sheet_edit_rejected(self):
+        sheet = self.folder / "new_source_review_sheet.jpg"
+        sheet.write_bytes(b"reviewed additions")
+        approval_path = self.folder / "review_approval.json"
+        approval = json.loads(approval_path.read_text(encoding="utf-8"))
+        approval["new_source_sheet_sha256"] = sha256(sheet)
+        approval_path.write_text(json.dumps(approval), encoding="utf-8")
+        verify_reviewed_dataset(self.folder, self.config)
+        sheet.write_bytes(b"changed additions")
+        with self.assertRaisesRegex(ValueError, "new source sheet changed"):
+            verify_reviewed_dataset(self.folder, self.config)
+
     def test_review_sheet_edit_rejected(self):
         self.sheet.write_bytes(b"another review")
         with self.assertRaisesRegex(ValueError, "sheet identity changed"):

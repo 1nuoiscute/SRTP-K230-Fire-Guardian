@@ -51,6 +51,7 @@ def main():
               'config':config,'environment':{'python':platform.python_version(),'torch':torch.__version__,
                 'ultralytics':ultralytics.__version__,'gpu':torch.cuda.get_device_name(0)},
               'role':'development candidate; all teammate videos now exposed; no board deployment'}
+    identity['local_dependency_sha256']={name:sha256(Path(__file__).with_name(name)) for name in ('data_integrity.py','dataset_preflight.py','backbone_freeze_audit.py')}
     if freeze_audit:
         framework_trainer=Path(ultralytics.__file__).parent/'engine/trainer.py'
         identity['backbone_freeze']={**freeze_audit.plan,'audit_script_sha256':sha256(Path(__file__).with_name('backbone_freeze_audit.py')),'framework_trainer_sha256':sha256(framework_trainer)}

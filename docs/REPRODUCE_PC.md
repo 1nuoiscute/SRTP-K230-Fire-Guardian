@@ -39,3 +39,5 @@ python -B model_work/src/fusion_replay.py replay --input model_work/data/fusion_
 Commons 诊断脚本现要求 --comparison-data 指向本轮训练 build_manifest.json；按原作身份分别统计训练来源与本轮未训练的开发诊断来源。不能用不同下载尺寸绕过这个分组。
 
 可选 --freeze-backbone 按实际 checkpoint 的 backbone 长度冻结，并在训练运行中核验主干参数与 BN 缓冲。默认不启用，既有实验日程不变。命令与范围见 [v8 冻结对照](../model_work/docs/HARDCASE_V8_FREEZE_EXPERIMENT_20260930.md)。
+
+第二批来源和无火裁剪的构建器 build_reviewed_source_queue.py 保留父数据、排除暂缓照片，并输出未批准的数据目录。逐图复核及训练方法见 [v9 数据与实验](../model_work/docs/HARDCASE_V9_SOURCE_DATA_EXPERIMENT_20260930.md)。dataset_preflight.py 现在还核对 source_reviews 实际文件和最终新增审核图；训练记录绑定本地校验依赖脚本哈希。

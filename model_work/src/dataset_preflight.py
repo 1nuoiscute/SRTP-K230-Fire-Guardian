@@ -23,6 +23,11 @@ def verify_reviewed_dataset(folder, config):
     for name, digest in approval.get("source_rendering_sha256", {}).items():
         if Path(name).name != name or sha256(folder / "source_label_review" / name) != digest:
             raise ValueError("Reviewed source rendering changed")
+    for name, digest in approval.get("source_review_files_sha256", {}).items():
+        if Path(name).name != name or sha256(folder / "source_reviews" / name) != digest:
+            raise ValueError("Reviewed source approval/acquisition file changed")
+    if "new_source_sheet_sha256" in approval and sha256(folder / "new_source_review_sheet.jpg") != approval["new_source_sheet_sha256"]:
+        raise ValueError("Reviewed new source sheet changed")
     base = Path(meta["base"]).resolve()
     expected = {"path": folder, "train": folder / "train.txt", "val": base / "images/val"}
     for key, target in expected.items():

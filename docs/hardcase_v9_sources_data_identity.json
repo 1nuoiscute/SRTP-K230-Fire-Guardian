@@ -1,0 +1,384 @@
+{
+  "role": "development data; prepared and approved, not trained at creation",
+  "verification": {
+    "manifest_sha256": "7a262442e6227a0da6277b03c3b9211e65effc3d8e3e68e71995922fc636ecc2",
+    "approval_sha256": "22fba7807d007ce7e4d1cfd3bebe70439d8d7191a60a65a2efd4e120c40da76e",
+    "train_list_sha256": "ae1ab80bc21fdbe76095b14266e085f855f60a353fa0e41f12e60c0002411cd5",
+    "base_manifest_sha256": "00df0d72e3b967592dcd6b2f0d17dadd862a4bff6e9b56e4491ac07c1e99fd8f",
+    "images_verified": 2437,
+    "entries_verified": 2782,
+    "labels_bound_by_manifest": 2437,
+    "scope": "Bytes, labels, weights and config checked; not proof of scene independence."
+  },
+  "parent_manifest_sha256": "0a40ce9345652e322c8af0cd2d8a5abb1831e94432065c4b546828d64ee47a3b",
+  "parent_review_sha256": "b0c67cc26947ce55d86e082986bf628611f68df86c45297fb7ad2afb990c455b",
+  "source_review_bundle_sha256": "eb434b325b837f2931e949dedbdefbb09f0b0402d49ba162bd35f557108f0f3e",
+  "new_source_sheet_sha256": "42825a9ac77322284a48a631fd73e93f944c2dd3291c2c34754c8a49b2439387",
+  "train_entries": 2782,
+  "unique_files": 2437,
+  "derived_images": 55,
+  "added_blue_photographs": 8,
+  "added_blue_boxes": 11,
+  "provisional_added_scene_groups": 7,
+  "added_food_negative_crops": 1,
+  "added_weighted_entries": 104,
+  "new_source_lineage": [
+    {
+      "file": "queue2_00.jpg",
+      "title": "Cooking with gas.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Cooking_with_gas.jpg",
+      "sha256": "3670fa8b69b6952f5b1fb52989a2ae3b0f1b09676f7ea4213c45758226ef915e",
+      "width": 1024,
+      "height": 768,
+      "author": "sfllaw",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "original_sha1": "52cbae01a7088100dff50521955dbe6b78c89217",
+      "author_verification": "Manually verified original Commons summary; machine-readable Artist missing.",
+      "scene_group": "sfllaw_grandfather_stove",
+      "boxes_xyxy": [
+        [
+          204,
+          345,
+          761,
+          638
+        ]
+      ],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "approved_for_development_training",
+      "note": "One burner envelope; approximate localization box, not segmented flame area.",
+      "scope": "approved source/label candidate only; not added to any running dataset",
+      "metadata_corrections": {
+        "author": {
+          "raw": "",
+          "reviewed": "sfllaw",
+          "basis": "Manually verified original Commons summary; machine-readable Artist missing."
+        }
+      },
+      "image": "commons_queue2_00.jpg",
+      "label_sha256": "05098008eb0189e7cc9373f3b85996d329ad7d63d4d6cd8961d81a55fc7397d1",
+      "weight": 12,
+      "origin": "commons_reviewed_blue",
+      "source_group": "sfllaw_grandfather_stove"
+    },
+    {
+      "file": "queue2_01.jpg",
+      "title": "Espresso pot on the burner - Flickr - AZAdam.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Espresso_pot_on_the_burner_-_Flickr_-_AZAdam.jpg",
+      "sha256": "09ff5d55ea9435d8f03432c355e581356703672587c6fd5caa39ad060d4ccdb6",
+      "width": 1280,
+      "height": 960,
+      "author": "Adam from Phoenix, Arizona, USA",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "original_sha1": "617ddd80494738d9ac6c5919864eee04e27e447c",
+      "scene_group": "azadam_espresso_burner",
+      "boxes_xyxy": [
+        [
+          195,
+          302,
+          1050,
+          677
+        ]
+      ],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "approved_for_development_training",
+      "note": "One burner envelope; approximate localization box, not segmented flame area.",
+      "scope": "approved source/label candidate only; not added to any running dataset",
+      "metadata_corrections": {},
+      "image": "commons_queue2_01.jpg",
+      "label_sha256": "456aceb53c48320c9c82c6ab6e9aadce10f74e89d9ab34d478da6e6debd9d925",
+      "weight": 12,
+      "origin": "commons_reviewed_blue",
+      "source_group": "azadam_espresso_burner"
+    },
+    {
+      "file": "queue2_02.jpg",
+      "title": "141 - low heat.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:141_-_low_heat.jpg",
+      "sha256": "9a18f81b36db8acc96b0c7428fcf02ddafebe981f363f41fe923fea09867b926",
+      "width": 1280,
+      "height": 1536,
+      "author": "Susan Slater",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "original_sha1": "46e27e8dc0204c38f22ede3395fccac69b6a5942",
+      "scene_group": "susan_slater_heat_series",
+      "boxes_xyxy": [
+        [
+          331,
+          306,
+          936,
+          838
+        ]
+      ],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "approved_for_development_training",
+      "note": "One burner envelope; approximate localization box, not segmented flame area.",
+      "scope": "approved source/label candidate only; not added to any running dataset",
+      "metadata_corrections": {},
+      "image": "commons_queue2_02.jpg",
+      "label_sha256": "855929e342edd812ce73c38c3567cb26692c3132c8beedf0466bd70e71be494e",
+      "weight": 12,
+      "origin": "commons_reviewed_blue",
+      "source_group": "susan_slater_heat_series"
+    },
+    {
+      "file": "queue2_03.jpg",
+      "title": "143 - high heat.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:143_-_high_heat.jpg",
+      "sha256": "5dcac61d6aeb375a17d64f41a47b7a1cc98659a8530e0dad395b18a5ce9fe975",
+      "width": 1280,
+      "height": 1387,
+      "author": "Susan Slater",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "original_sha1": "021d5f10be3e6992c59736d0c57d4461dbe25066",
+      "scene_group": "susan_slater_heat_series",
+      "boxes_xyxy": [
+        [
+          305,
+          85,
+          1047,
+          839
+        ]
+      ],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "approved_for_development_training",
+      "note": "One burner envelope; approximate localization box, not segmented flame area.",
+      "scope": "approved source/label candidate only; not added to any running dataset",
+      "metadata_corrections": {},
+      "image": "commons_queue2_03.jpg",
+      "label_sha256": "1e515c318284e6f3bb1829971299300b124b674402eff7f6b584f6515b09f5c7",
+      "weight": 12,
+      "origin": "commons_reviewed_blue",
+      "source_group": "susan_slater_heat_series"
+    },
+    {
+      "file": "queue2_05.jpg",
+      "title": "\"LPG flame top view\".JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:%22LPG_flame_top_view%22.JPG",
+      "sha256": "e0ac61ad12d80362fa4473bed6d827d51d1903913895fe8407646ac6dfeae6fd",
+      "width": 1280,
+      "height": 960,
+      "author": "Arivumathi",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "original_sha1": "973d69cdd437168c4930f9016011f2d1b1c259fb",
+      "scene_group": "arivumathi_lpg_series",
+      "boxes_xyxy": [
+        [
+          440,
+          204,
+          980,
+          716
+        ]
+      ],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "approved_for_development_training",
+      "note": "One burner envelope; approximate localization box, not segmented flame area.",
+      "scope": "approved source/label candidate only; not added to any running dataset",
+      "metadata_corrections": {},
+      "image": "commons_queue2_05.jpg",
+      "label_sha256": "7b29efd9225c2430313cb3856c44ee1dd04266c56e08a6cccc2ea09e40aaa230",
+      "weight": 12,
+      "origin": "commons_reviewed_blue",
+      "source_group": "arivumathi_lpg_series"
+    },
+    {
+      "file": "queue2_07.jpg",
+      "title": "Lit burner of a gas-fueled stovetop.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Lit_burner_of_a_gas-fueled_stovetop.jpg",
+      "sha256": "0c37477bef3632207adb3a3611294403bff853cc9f600bb6424766a77986c84e",
+      "width": 455,
+      "height": 455,
+      "author": "N.faskhutdinova",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "original_sha1": "f95b5c2d135d7d19fa27e855eea1374f364ddb5f",
+      "scene_group": "nfaskhutdinova_burner",
+      "boxes_xyxy": [
+        [
+          49,
+          20,
+          435,
+          357
+        ]
+      ],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "approved_for_development_training",
+      "note": "One burner envelope; approximate localization box, not segmented flame area.",
+      "scope": "approved source/label candidate only; not added to any running dataset",
+      "metadata_corrections": {},
+      "image": "commons_queue2_07.jpg",
+      "label_sha256": "33c5471d5bdd7832de88cc932a5207b1e64428c5dba6934123d81b27a952a8fb",
+      "weight": 12,
+      "origin": "commons_reviewed_blue",
+      "source_group": "nfaskhutdinova_burner"
+    },
+    {
+      "file": "queue2_08.jpg",
+      "title": "Natural gas burning on a gas stove.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Natural_gas_burning_on_a_gas_stove.jpg",
+      "sha256": "4972e9b8b77a92d6ef1d3f63db5f13ebbf848cff780158557cc050010785cfda",
+      "width": 1280,
+      "height": 768,
+      "author": "WrS.tm.pl",
+      "license": "Public domain",
+      "license_url": "https://commons.wikimedia.org/wiki/File:Natural_gas_burning_on_a_gas_stove.jpg#Licensing",
+      "original_sha1": "57e5b1edea6035840534a7ad974896887a0a1828",
+      "author_verification": "Manually verified Commons author username and public-domain release.",
+      "scene_group": "wrs_tmpl_burner",
+      "boxes_xyxy": [
+        [
+          363,
+          100,
+          917,
+          546
+        ]
+      ],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "approved_for_development_training",
+      "note": "One burner envelope; approximate localization box, not segmented flame area.",
+      "scope": "approved source/label candidate only; not added to any running dataset",
+      "metadata_corrections": {
+        "license_url": {
+          "raw": "",
+          "reviewed": "https://commons.wikimedia.org/wiki/File:Natural_gas_burning_on_a_gas_stove.jpg#Licensing",
+          "basis": "Manually verified Commons author username and public-domain release."
+        },
+        "author": {
+          "raw": "Warszawska róg Szerokiej w Tomaszowie Mazowieckim, woj. łódzkie",
+          "reviewed": "WrS.tm.pl",
+          "basis": "Manually verified Commons author username and public-domain release."
+        }
+      },
+      "image": "commons_queue2_08.jpg",
+      "label_sha256": "3ddd905a79bb52084a57a83837d5662f616a5f6513d185723342ac6bb2a8ae20",
+      "weight": 12,
+      "origin": "commons_reviewed_blue",
+      "source_group": "wrs_tmpl_burner"
+    },
+    {
+      "file": "queue2_09.jpg",
+      "title": "Fire gas stove.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Fire_gas_stove.jpg",
+      "sha256": "19d200085e13fb6ca77b761c31d761a9a2e2cf36adac7b0e95d1f50effb80a57",
+      "width": 1280,
+      "height": 853,
+      "author": "Осадчая Екатерина",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "original_sha1": "311208c707484d78debf92019abc8335bf2e6ed8",
+      "scene_group": "osadchaya_four_burners",
+      "boxes_xyxy": [
+        [
+          467,
+          271,
+          708,
+          375
+        ],
+        [
+          907,
+          306,
+          1120,
+          432
+        ],
+        [
+          263,
+          435,
+          430,
+          533
+        ],
+        [
+          657,
+          465,
+          967,
+          627
+        ]
+      ],
+      "review_method": "Codex visual inspection of full-resolution image; approximate burner flame envelopes, no pseudo-labels.",
+      "decision": "approved_for_development_training",
+      "note": "Four individual burner envelopes; reflections on surrounding metal are not separate flames.",
+      "scope": "approved source/label candidate only; not added to any running dataset",
+      "metadata_corrections": {},
+      "image": "commons_queue2_09.jpg",
+      "label_sha256": "3ab57245bd2b7a3af944401e66d40c47d084dd56a1a3c162eaf7a203c652498b",
+      "weight": 12,
+      "origin": "commons_reviewed_blue",
+      "source_group": "osadchaya_four_burners"
+    },
+    {
+      "image": "negative_food_82f51e3_666.png",
+      "image_sha256": "5d01f8e4ce627db9176438e89d58a73b11b43eec10b47d67c894430f81a1f969",
+      "dimensions": [
+        565,
+        310
+      ],
+      "label": "negative_food_82f51e3_666.txt",
+      "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_boxes_xyxy": [],
+      "source_image": "teammate_82f51e3_666.jpg",
+      "source_image_sha256": "fd9716469f0703404958af539536eadc7d0c5eddc2bdcb2ab43b8fa63232e328",
+      "source_image_dimensions": [
+        720,
+        1280
+      ],
+      "source_video": "82f51e33ff7ddbdcda9ea4c6754b9983.mp4",
+      "source_video_sha256": "f768e372ec81704a31e5bad7834b523b93be05a9b9c88f7040f2178261fe99fc",
+      "source_frame_index": 666,
+      "source_group": "82f51e33ff7ddbdcda9ea4c6754b9983.mp4",
+      "crop_xyxy": [
+        75,
+        240,
+        640,
+        550
+      ],
+      "crop_pixel_check": "PNG decoded pixels exactly equal the specified source JPEG decoded crop",
+      "source_dataset_manifest_sha256": "0a40ce9345652e322c8af0cd2d8a5abb1831e94432065c4b546828d64ee47a3b",
+      "failure_comparison_sha256": "ae08f2bcb768a834caaee4e63bcbe21c408155c76d0acbc5c07d2be3059f9fc5",
+      "failure_weights_sha256": "7ce5b575d5c9d0d8d2581666305198ead3b4d3a1c3b1fc53d979dea45835e851",
+      "source_frame_predictions": [
+        {
+          "confidence": 0.6923,
+          "xyxy": [
+            172.57493591308594,
+            631.2445068359375,
+            613.0787353515625,
+            731.9102783203125
+          ]
+        },
+        {
+          "confidence": 0.2795,
+          "xyxy": [
+            112.87774658203125,
+            371.70831298828125,
+            540.9194946289062,
+            491.29473876953125
+          ]
+        }
+      ],
+      "training_exposure": "Original frame was in v5/v6/v7/v8 training data; this crop is not a new independent source",
+      "label_scope": "No visible flame in this crop; does not label the full frame or cooking event as safe",
+      "review_required": "Inspect crop image and full-frame context before approval; empty YOLO label must not be inferred only from detector output",
+      "sha256": "5d01f8e4ce627db9176438e89d58a73b11b43eec10b47d67c894430f81a1f969",
+      "weight": 8,
+      "origin": "food_hard_negative_crop",
+      "boxes_xyxy": []
+    }
+  ],
+  "reviewer": "Codex visual review; no separate user label confirmation",
+  "limitations": [
+    "reviewed labels are approximate rectangles",
+    "all nine videos are development-exposed",
+    "crop weighting is not independent sample growth",
+    "legacy val is a checkpoint selector, not a fresh test",
+    "Two added Commons photographs are development training; duplicate weight does not create new scenes.",
+    "Queue2 additions are exposed development sources; negative crop reuses an existing video scene. Scene groups and sampling repetitions are not independent kitchen counts."
+  ],
+  "build_failure_before_output_creation": {
+    "error": "Reviewed source identity differs: queue2_08.jpg/license_url",
+    "cause": "Raw Commons acquisition had an empty license URL; prior visual/source review supplied the original public-domain release section.",
+    "resolution": "Keep original metadata immutable; allow only explicit source-verified author corrections and an empty Public domain link supplemented with the same source page Licensing section; record raw/reviewed values."
+  }
+}

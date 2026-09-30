@@ -1,0 +1,846 @@
+{
+  "role": "development comparisons; no independent acceptance, no board deployment",
+  "data_manifest_sha256": "0a40ce9345652e322c8af0cd2d8a5abb1831e94432065c4b546828d64ee47a3b",
+  "full_comparison_sha256": "2b6c9579276b339dae2963ffd3e3fa17bb1e6cd219e5297eda9c626fb50ed7b2",
+  "backbone_freeze_audit": {
+    "plan": {
+      "blocks": 11,
+      "module_types": [
+        "Conv",
+        "Conv",
+        "C3k2",
+        "Conv",
+        "C3k2",
+        "Conv",
+        "C3k2",
+        "Conv",
+        "C3k2",
+        "SPPF",
+        "C2PSA"
+      ],
+      "frozen_parameter_elements": 5441984,
+      "source_state_sha256": "7180c9b7f55fdcad0e511e6328c1322de0e26c81c109802e4af2d28d4df0fa31",
+      "source_state_tensors": 240,
+      "scope": "Live training backbone parameters and all registered buffers; EMA/FP16 checkpoints are not tested for byte equality."
+    },
+    "checks": [
+      {
+        "stage": "train_start",
+        "epoch": 0,
+        "backbone_state_sha256": "7180c9b7f55fdcad0e511e6328c1322de0e26c81c109802e4af2d28d4df0fa31",
+        "unchanged": true,
+        "trainable_parameter_elements": 3986179
+      },
+      {
+        "stage": "epoch_end",
+        "epoch": 1,
+        "backbone_state_sha256": "7180c9b7f55fdcad0e511e6328c1322de0e26c81c109802e4af2d28d4df0fa31",
+        "unchanged": true,
+        "trainable_parameter_elements": 3986179
+      },
+      {
+        "stage": "epoch_end",
+        "epoch": 2,
+        "backbone_state_sha256": "7180c9b7f55fdcad0e511e6328c1322de0e26c81c109802e4af2d28d4df0fa31",
+        "unchanged": true,
+        "trainable_parameter_elements": 3986179
+      },
+      {
+        "stage": "epoch_end",
+        "epoch": 3,
+        "backbone_state_sha256": "7180c9b7f55fdcad0e511e6328c1322de0e26c81c109802e4af2d28d4df0fa31",
+        "unchanged": true,
+        "trainable_parameter_elements": 3986179
+      },
+      {
+        "stage": "epoch_end",
+        "epoch": 4,
+        "backbone_state_sha256": "7180c9b7f55fdcad0e511e6328c1322de0e26c81c109802e4af2d28d4df0fa31",
+        "unchanged": true,
+        "trainable_parameter_elements": 3986179
+      },
+      {
+        "stage": "epoch_end",
+        "epoch": 5,
+        "backbone_state_sha256": "7180c9b7f55fdcad0e511e6328c1322de0e26c81c109802e4af2d28d4df0fa31",
+        "unchanged": true,
+        "trainable_parameter_elements": 3986179
+      },
+      {
+        "stage": "epoch_end",
+        "epoch": 6,
+        "backbone_state_sha256": "7180c9b7f55fdcad0e511e6328c1322de0e26c81c109802e4af2d28d4df0fa31",
+        "unchanged": true,
+        "trainable_parameter_elements": 3986179
+      },
+      {
+        "stage": "epoch_end",
+        "epoch": 7,
+        "backbone_state_sha256": "7180c9b7f55fdcad0e511e6328c1322de0e26c81c109802e4af2d28d4df0fa31",
+        "unchanged": true,
+        "trainable_parameter_elements": 3986179
+      },
+      {
+        "stage": "epoch_end",
+        "epoch": 8,
+        "backbone_state_sha256": "7180c9b7f55fdcad0e511e6328c1322de0e26c81c109802e4af2d28d4df0fa31",
+        "unchanged": true,
+        "trainable_parameter_elements": 3986179
+      },
+      {
+        "stage": "epoch_end",
+        "epoch": 9,
+        "backbone_state_sha256": "7180c9b7f55fdcad0e511e6328c1322de0e26c81c109802e4af2d28d4df0fa31",
+        "unchanged": true,
+        "trainable_parameter_elements": 3986179
+      },
+      {
+        "stage": "train_complete",
+        "epoch": 9,
+        "backbone_state_sha256": "7180c9b7f55fdcad0e511e6328c1322de0e26c81c109802e4af2d28d4df0fa31",
+        "unchanged": true,
+        "trainable_parameter_elements": 3986179
+      }
+    ]
+  },
+  "backbone_freeze_audit_sha256": "657258466bd73c61dd639e663c53ef97b4abc5871c9e7e6d79cf90a6a3269601",
+  "actual_epochs": 9,
+  "training_csv_last_elapsed_seconds": 1177.41,
+  "models": {
+    "v3": {
+      "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+      "reviewed_frames": {
+        "commons_reviewed_blue": {
+          "images": 2,
+          "images_with_fp": 1,
+          "tp": 0,
+          "fp": 1,
+          "fn": 2
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 5,
+          "tp": 3,
+          "fp": 5,
+          "fn": 7
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 0,
+          "fp": 3,
+          "fn": 0
+        }
+      },
+      "frame_config": {
+        "imgsz": 640,
+        "conf": 0.25,
+        "nms_iou": 0.6,
+        "match_iou": 0.5
+      },
+      "blue_primary": {
+        "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+        "imgsz": 640,
+        "conf": 0.25,
+        "nms_iou": 0.6,
+        "images": 5,
+        "detected_anywhere": 1,
+        "primary_localized_iou50": 0,
+        "role": "selected development diagnostics; approximate primary boxes; not accuracy"
+      },
+      "legacy286": {
+        "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+        "split": "test",
+        "precision": 0.9505308287375542,
+        "recall": 0.961038961038961,
+        "map50": 0.9732386254178709,
+        "map50_95": 0.27949606105054137
+      },
+      "commons13": {
+        "summary_scope": "All thirteen development diagnostics, including sources used in the comparison training manifest.",
+        "source_exposure": {
+          "training_source_in_comparison": {
+            "images": 2,
+            "original_works": 2,
+            "summary": {
+              "0.25": {
+                "blue_flame": {
+                  "images": 2,
+                  "detected_or_false_positive": 1,
+                  "localized": 0
+                }
+              },
+              "0.5": {
+                "blue_flame": {
+                  "images": 2,
+                  "detected_or_false_positive": 0,
+                  "localized": 0
+                }
+              }
+            }
+          },
+          "untrained_source_development_diagnostic": {
+            "images": 11,
+            "original_works": 11,
+            "summary": {
+              "0.25": {
+                "blue_flame": {
+                  "images": 2,
+                  "detected_or_false_positive": 1,
+                  "localized": 0
+                },
+                "fire": {
+                  "images": 6,
+                  "detected_or_false_positive": 6,
+                  "localized": 5
+                },
+                "no_fire": {
+                  "images": 3,
+                  "detected_or_false_positive": 1,
+                  "localized": 0
+                }
+              },
+              "0.5": {
+                "blue_flame": {
+                  "images": 2,
+                  "detected_or_false_positive": 0,
+                  "localized": 0
+                },
+                "fire": {
+                  "images": 6,
+                  "detected_or_false_positive": 6,
+                  "localized": 5
+                },
+                "no_fire": {
+                  "images": 3,
+                  "detected_or_false_positive": 0,
+                  "localized": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "old_videos": {
+        "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+        "config": {
+          "imgsz": 640,
+          "conf": 0.25,
+          "nms_iou": 0.6,
+          "requested_sample_fps": 1
+        },
+        "clips": [
+          {
+            "video": "0.mp4",
+            "sha256": "65ce47ff76f64e8d28f290279f4de970929f203aa8cdbace7c63720260753df6",
+            "fps": 30.0,
+            "step": 30,
+            "sampled": 32,
+            "frames_with_any_box": 0
+          },
+          {
+            "video": "1.mp4",
+            "sha256": "ea5b23e704eb4f7b1a54335f5d0c9b9cd0f6309603b23d59625ad2a633dc7bca",
+            "fps": 30.0,
+            "step": 30,
+            "sampled": 32,
+            "frames_with_any_box": 32
+          },
+          {
+            "video": "2.mp4",
+            "sha256": "9f9183be2cf13b2b65ca89543bb451f4cb2b3515836a449b012e6daa1c071a16",
+            "fps": 30.0,
+            "step": 30,
+            "sampled": 32,
+            "frames_with_any_box": 32
+          },
+          {
+            "video": "3.mp4",
+            "sha256": "dafac36724a2a7a60e23d88cb9781e70814775b28176b672ba38e1aaa5b2c245",
+            "fps": 30.0,
+            "step": 30,
+            "sampled": 34,
+            "frames_with_any_box": 34
+          }
+        ],
+        "role": "development-exposed predictions; any-box ratios are not accuracy"
+      },
+      "teammate_videos": {
+        "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+        "config": {
+          "imgsz": 640,
+          "conf": 0.25,
+          "nms_iou": 0.6,
+          "requested_sample_fps": 1
+        },
+        "clips": [
+          {
+            "video": "219bd5993aa0e2b0d8f624f4f69604ae.mp4",
+            "sha256": "ac34d7617a55c42d67d385e92d83f3255c6b93a54789c52cea746dc6a0028eba",
+            "fps": 30.004173042147727,
+            "step": 30,
+            "sampled": 24,
+            "frames_with_any_box": 8
+          },
+          {
+            "video": "35cf4b611eeefad77c45cb933daa928f.mp4",
+            "sha256": "dbd18d5fb2587b4dafc224d12bc47984ce6e97abbdfacf0e33a7b83520b02cb1",
+            "fps": 30.00447828034035,
+            "step": 30,
+            "sampled": 23,
+            "frames_with_any_box": 13
+          },
+          {
+            "video": "82f51e33ff7ddbdcda9ea4c6754b9983.mp4",
+            "sha256": "f768e372ec81704a31e5bad7834b523b93be05a9b9c88f7040f2178261fe99fc",
+            "fps": 28.02002035968782,
+            "step": 28,
+            "sampled": 27,
+            "frames_with_any_box": 8
+          },
+          {
+            "video": "88400a10280b77ddd1ac764ff36e0012.mp4",
+            "sha256": "ab9d1d7e493979dc39395e9933bc1adfe3f1c78ba479759146426ada47af601e",
+            "fps": 30.0046699875467,
+            "step": 30,
+            "sampled": 43,
+            "frames_with_any_box": 43
+          },
+          {
+            "video": "f0cb3ebbc80f46fa428d9af79634ef76.mp4",
+            "sha256": "fe87820c64636d5362a35fa98e6d969de892ddebf9a4dc0b326aa6896a97fa6a",
+            "fps": 30.004214075010534,
+            "step": 30,
+            "sampled": 60,
+            "frames_with_any_box": 32
+          }
+        ],
+        "role": "development-exposed predictions; any-box ratios are not accuracy"
+      }
+    },
+    "v8_best": {
+      "weights_sha256": "c714a9f42439b502d458d97ca933da1cf5f7f9ee211958579a8c4afb36cd74c4",
+      "reviewed_frames": {
+        "commons_reviewed_blue": {
+          "images": 2,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 2
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 5,
+          "tp": 3,
+          "fp": 5,
+          "fn": 7
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 2,
+          "tp": 0,
+          "fp": 2,
+          "fn": 0
+        }
+      },
+      "frame_config": {
+        "imgsz": 640,
+        "conf": 0.25,
+        "nms_iou": 0.6,
+        "match_iou": 0.5
+      },
+      "blue_primary": {
+        "weights_sha256": "c714a9f42439b502d458d97ca933da1cf5f7f9ee211958579a8c4afb36cd74c4",
+        "imgsz": 640,
+        "conf": 0.25,
+        "nms_iou": 0.6,
+        "images": 5,
+        "detected_anywhere": 0,
+        "primary_localized_iou50": 0,
+        "role": "selected development diagnostics; approximate primary boxes; not accuracy"
+      },
+      "legacy286": {
+        "weights_sha256": "c714a9f42439b502d458d97ca933da1cf5f7f9ee211958579a8c4afb36cd74c4",
+        "split": "test",
+        "precision": 0.9662585703795105,
+        "recall": 0.961038961038961,
+        "map50": 0.9736803512749868,
+        "map50_95": 0.2798783094710061
+      },
+      "commons13": {
+        "summary_scope": "All thirteen development diagnostics, including sources used in the comparison training manifest.",
+        "source_exposure": {
+          "training_source_in_comparison": {
+            "images": 2,
+            "original_works": 2,
+            "summary": {
+              "0.25": {
+                "blue_flame": {
+                  "images": 2,
+                  "detected_or_false_positive": 0,
+                  "localized": 0
+                }
+              },
+              "0.5": {
+                "blue_flame": {
+                  "images": 2,
+                  "detected_or_false_positive": 0,
+                  "localized": 0
+                }
+              }
+            }
+          },
+          "untrained_source_development_diagnostic": {
+            "images": 11,
+            "original_works": 11,
+            "summary": {
+              "0.25": {
+                "blue_flame": {
+                  "images": 2,
+                  "detected_or_false_positive": 0,
+                  "localized": 0
+                },
+                "fire": {
+                  "images": 6,
+                  "detected_or_false_positive": 6,
+                  "localized": 5
+                },
+                "no_fire": {
+                  "images": 3,
+                  "detected_or_false_positive": 0,
+                  "localized": 0
+                }
+              },
+              "0.5": {
+                "blue_flame": {
+                  "images": 2,
+                  "detected_or_false_positive": 0,
+                  "localized": 0
+                },
+                "fire": {
+                  "images": 6,
+                  "detected_or_false_positive": 6,
+                  "localized": 5
+                },
+                "no_fire": {
+                  "images": 3,
+                  "detected_or_false_positive": 0,
+                  "localized": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "old_videos": {
+        "weights_sha256": "c714a9f42439b502d458d97ca933da1cf5f7f9ee211958579a8c4afb36cd74c4",
+        "config": {
+          "imgsz": 640,
+          "conf": 0.25,
+          "nms_iou": 0.6,
+          "requested_sample_fps": 1
+        },
+        "clips": [
+          {
+            "video": "0.mp4",
+            "sha256": "65ce47ff76f64e8d28f290279f4de970929f203aa8cdbace7c63720260753df6",
+            "fps": 30.0,
+            "step": 30,
+            "sampled": 32,
+            "frames_with_any_box": 0
+          },
+          {
+            "video": "1.mp4",
+            "sha256": "ea5b23e704eb4f7b1a54335f5d0c9b9cd0f6309603b23d59625ad2a633dc7bca",
+            "fps": 30.0,
+            "step": 30,
+            "sampled": 32,
+            "frames_with_any_box": 32
+          },
+          {
+            "video": "2.mp4",
+            "sha256": "9f9183be2cf13b2b65ca89543bb451f4cb2b3515836a449b012e6daa1c071a16",
+            "fps": 30.0,
+            "step": 30,
+            "sampled": 32,
+            "frames_with_any_box": 32
+          },
+          {
+            "video": "3.mp4",
+            "sha256": "dafac36724a2a7a60e23d88cb9781e70814775b28176b672ba38e1aaa5b2c245",
+            "fps": 30.0,
+            "step": 30,
+            "sampled": 34,
+            "frames_with_any_box": 34
+          }
+        ],
+        "role": "development-exposed predictions; any-box ratios are not accuracy"
+      },
+      "teammate_videos": {
+        "weights_sha256": "c714a9f42439b502d458d97ca933da1cf5f7f9ee211958579a8c4afb36cd74c4",
+        "config": {
+          "imgsz": 640,
+          "conf": 0.25,
+          "nms_iou": 0.6,
+          "requested_sample_fps": 1
+        },
+        "clips": [
+          {
+            "video": "219bd5993aa0e2b0d8f624f4f69604ae.mp4",
+            "sha256": "ac34d7617a55c42d67d385e92d83f3255c6b93a54789c52cea746dc6a0028eba",
+            "fps": 30.004173042147727,
+            "step": 30,
+            "sampled": 24,
+            "frames_with_any_box": 6
+          },
+          {
+            "video": "35cf4b611eeefad77c45cb933daa928f.mp4",
+            "sha256": "dbd18d5fb2587b4dafc224d12bc47984ce6e97abbdfacf0e33a7b83520b02cb1",
+            "fps": 30.00447828034035,
+            "step": 30,
+            "sampled": 23,
+            "frames_with_any_box": 12
+          },
+          {
+            "video": "82f51e33ff7ddbdcda9ea4c6754b9983.mp4",
+            "sha256": "f768e372ec81704a31e5bad7834b523b93be05a9b9c88f7040f2178261fe99fc",
+            "fps": 28.02002035968782,
+            "step": 28,
+            "sampled": 27,
+            "frames_with_any_box": 7
+          },
+          {
+            "video": "88400a10280b77ddd1ac764ff36e0012.mp4",
+            "sha256": "ab9d1d7e493979dc39395e9933bc1adfe3f1c78ba479759146426ada47af601e",
+            "fps": 30.0046699875467,
+            "step": 30,
+            "sampled": 43,
+            "frames_with_any_box": 43
+          },
+          {
+            "video": "f0cb3ebbc80f46fa428d9af79634ef76.mp4",
+            "sha256": "fe87820c64636d5362a35fa98e6d969de892ddebf9a4dc0b326aa6896a97fa6a",
+            "fps": 30.004214075010534,
+            "step": 30,
+            "sampled": 60,
+            "frames_with_any_box": 31
+          }
+        ],
+        "role": "development-exposed predictions; any-box ratios are not accuracy"
+      }
+    },
+    "v8_last": {
+      "weights_sha256": "6de21642ea1409b747d1142cc469ab756e2eba2a774d7548f2c8d2fa3a1ebd18",
+      "reviewed_frames": {
+        "commons_reviewed_blue": {
+          "images": 2,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 2
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 5,
+          "tp": 5,
+          "fp": 5,
+          "fn": 5
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 0,
+          "fp": 3,
+          "fn": 0
+        }
+      },
+      "frame_config": {
+        "imgsz": 640,
+        "conf": 0.25,
+        "nms_iou": 0.6,
+        "match_iou": 0.5
+      },
+      "blue_primary": {
+        "weights_sha256": "6de21642ea1409b747d1142cc469ab756e2eba2a774d7548f2c8d2fa3a1ebd18",
+        "imgsz": 640,
+        "conf": 0.25,
+        "nms_iou": 0.6,
+        "images": 5,
+        "detected_anywhere": 1,
+        "primary_localized_iou50": 0,
+        "role": "selected development diagnostics; approximate primary boxes; not accuracy"
+      },
+      "legacy286": {
+        "weights_sha256": "6de21642ea1409b747d1142cc469ab756e2eba2a774d7548f2c8d2fa3a1ebd18",
+        "split": "test",
+        "precision": 0.947217988869974,
+        "recall": 0.9322809628534154,
+        "map50": 0.9564061830723914,
+        "map50_95": 0.24738221675603972
+      },
+      "commons13": {
+        "summary_scope": "All thirteen development diagnostics, including sources used in the comparison training manifest.",
+        "source_exposure": {
+          "training_source_in_comparison": {
+            "images": 2,
+            "original_works": 2,
+            "summary": {
+              "0.25": {
+                "blue_flame": {
+                  "images": 2,
+                  "detected_or_false_positive": 0,
+                  "localized": 0
+                }
+              },
+              "0.5": {
+                "blue_flame": {
+                  "images": 2,
+                  "detected_or_false_positive": 0,
+                  "localized": 0
+                }
+              }
+            }
+          },
+          "untrained_source_development_diagnostic": {
+            "images": 11,
+            "original_works": 11,
+            "summary": {
+              "0.25": {
+                "blue_flame": {
+                  "images": 2,
+                  "detected_or_false_positive": 0,
+                  "localized": 0
+                },
+                "fire": {
+                  "images": 6,
+                  "detected_or_false_positive": 6,
+                  "localized": 5
+                },
+                "no_fire": {
+                  "images": 3,
+                  "detected_or_false_positive": 1,
+                  "localized": 0
+                }
+              },
+              "0.5": {
+                "blue_flame": {
+                  "images": 2,
+                  "detected_or_false_positive": 0,
+                  "localized": 0
+                },
+                "fire": {
+                  "images": 6,
+                  "detected_or_false_positive": 6,
+                  "localized": 5
+                },
+                "no_fire": {
+                  "images": 3,
+                  "detected_or_false_positive": 0,
+                  "localized": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "old_videos": {
+        "weights_sha256": "6de21642ea1409b747d1142cc469ab756e2eba2a774d7548f2c8d2fa3a1ebd18",
+        "config": {
+          "imgsz": 640,
+          "conf": 0.25,
+          "nms_iou": 0.6,
+          "requested_sample_fps": 1
+        },
+        "clips": [
+          {
+            "video": "0.mp4",
+            "sha256": "65ce47ff76f64e8d28f290279f4de970929f203aa8cdbace7c63720260753df6",
+            "fps": 30.0,
+            "step": 30,
+            "sampled": 32,
+            "frames_with_any_box": 0
+          },
+          {
+            "video": "1.mp4",
+            "sha256": "ea5b23e704eb4f7b1a54335f5d0c9b9cd0f6309603b23d59625ad2a633dc7bca",
+            "fps": 30.0,
+            "step": 30,
+            "sampled": 32,
+            "frames_with_any_box": 32
+          },
+          {
+            "video": "2.mp4",
+            "sha256": "9f9183be2cf13b2b65ca89543bb451f4cb2b3515836a449b012e6daa1c071a16",
+            "fps": 30.0,
+            "step": 30,
+            "sampled": 32,
+            "frames_with_any_box": 32
+          },
+          {
+            "video": "3.mp4",
+            "sha256": "dafac36724a2a7a60e23d88cb9781e70814775b28176b672ba38e1aaa5b2c245",
+            "fps": 30.0,
+            "step": 30,
+            "sampled": 34,
+            "frames_with_any_box": 34
+          }
+        ],
+        "role": "development-exposed predictions; any-box ratios are not accuracy"
+      },
+      "teammate_videos": {
+        "weights_sha256": "6de21642ea1409b747d1142cc469ab756e2eba2a774d7548f2c8d2fa3a1ebd18",
+        "config": {
+          "imgsz": 640,
+          "conf": 0.25,
+          "nms_iou": 0.6,
+          "requested_sample_fps": 1
+        },
+        "clips": [
+          {
+            "video": "219bd5993aa0e2b0d8f624f4f69604ae.mp4",
+            "sha256": "ac34d7617a55c42d67d385e92d83f3255c6b93a54789c52cea746dc6a0028eba",
+            "fps": 30.004173042147727,
+            "step": 30,
+            "sampled": 24,
+            "frames_with_any_box": 23
+          },
+          {
+            "video": "35cf4b611eeefad77c45cb933daa928f.mp4",
+            "sha256": "dbd18d5fb2587b4dafc224d12bc47984ce6e97abbdfacf0e33a7b83520b02cb1",
+            "fps": 30.00447828034035,
+            "step": 30,
+            "sampled": 23,
+            "frames_with_any_box": 18
+          },
+          {
+            "video": "82f51e33ff7ddbdcda9ea4c6754b9983.mp4",
+            "sha256": "f768e372ec81704a31e5bad7834b523b93be05a9b9c88f7040f2178261fe99fc",
+            "fps": 28.02002035968782,
+            "step": 28,
+            "sampled": 27,
+            "frames_with_any_box": 11
+          },
+          {
+            "video": "88400a10280b77ddd1ac764ff36e0012.mp4",
+            "sha256": "ab9d1d7e493979dc39395e9933bc1adfe3f1c78ba479759146426ada47af601e",
+            "fps": 30.0046699875467,
+            "step": 30,
+            "sampled": 43,
+            "frames_with_any_box": 43
+          },
+          {
+            "video": "f0cb3ebbc80f46fa428d9af79634ef76.mp4",
+            "sha256": "fe87820c64636d5362a35fa98e6d969de892ddebf9a4dc0b326aa6896a97fa6a",
+            "fps": 30.004214075010534,
+            "step": 30,
+            "sampled": 60,
+            "frames_with_any_box": 49
+          }
+        ],
+        "role": "development-exposed predictions; any-box ratios are not accuracy"
+      }
+    }
+  },
+  "frame_references": {
+    "v7_best": {
+      "weights_sha256": "b7c27a8b192b4ffdfd0b0d2ec8a8183b179354de9d23ed8ba32c1777498b8561",
+      "config": {
+        "imgsz": 640,
+        "conf": 0.25,
+        "nms_iou": 0.6,
+        "match_iou": 0.5
+      },
+      "reviewed_frames": {
+        "commons_reviewed_blue": {
+          "images": 2,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 2
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 4,
+          "tp": 4,
+          "fp": 4,
+          "fn": 6
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 2,
+          "tp": 0,
+          "fp": 2,
+          "fn": 0
+        }
+      }
+    },
+    "v7_last": {
+      "weights_sha256": "7ce5b575d5c9d0d8d2581666305198ead3b4d3a1c3b1fc53d979dea45835e851",
+      "config": {
+        "imgsz": 640,
+        "conf": 0.25,
+        "nms_iou": 0.6,
+        "match_iou": 0.5
+      },
+      "reviewed_frames": {
+        "commons_reviewed_blue": {
+          "images": 2,
+          "images_with_fp": 0,
+          "tp": 1,
+          "fp": 0,
+          "fn": 1
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 2,
+          "tp": 10,
+          "fp": 2,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 2,
+          "tp": 0,
+          "fp": 2,
+          "fn": 0
+        }
+      }
+    }
+  },
+  "decision": "Reject replacement. Freezing preserved old-image diagnostics but did not repair blue-flame localization or the known kitchen failures. Retain v3 development baseline and accepted board MVP."
+}
