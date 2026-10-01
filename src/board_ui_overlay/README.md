@@ -21,3 +21,7 @@
 ## 2026-09-30 KEY2 connector 修复候选
 
 已发现旧数据页 connector 记录与已验收视觉 ELF 的字段布局/时序不同，按已验收记录构造新 payload，独立 120 秒试验已运行并回到 msh 后恢复 v4b；实屏及矩阵切换仍待确认。构建命令 `sh src/board_ui_overlay/build_key2_candidate.sh NEW_OUTPUT_DIRECTORY`，输出新目录并记录身份，不自动上板。见 [修复记录](../../model_work/docs/KEY2_CONNECTOR_CANDIDATE_20260930.md)。
+
+## 2026-10-01 KEY1 限时图层候选
+
+`overlay_mix_candidate.c` 与 `key1_mix_guard.h` 是独立、限时的图层候选；`overlay_live.c` 原样链接，通过 OSD0 enable/disable wrappers 调整并恢复顺序。构建脚本 `build_key1_mix_candidate.sh NEW_OUTPUT_DIRECTORY` 不部署、拒绝已有目录；候选要求显式1–300秒，不能直接代替正式开机面板。两次构建一致，真实显示候选未运行；屏幕试验反馈仍待答。详情见 [KEY1研究](../../model_work/docs/KEY1_BLUE_BOX_INVESTIGATION_20261001.md)。

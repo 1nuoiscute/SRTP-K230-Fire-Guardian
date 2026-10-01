@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-01",
+  "formal_key2_tag": "board-key2-20260930",
+  "formal_key2_p1_sha256": "5cd8667b3035199fcc63d7e557c8257247bc0080f2b9cda7e3a916a3616ef1d2",
+  "compiler": "riscv64-unknown-linux-musl-gcc (GCC) 12.0.1 20220505 (prerelease)",
+  "outputs": [
+    {
+      "name": "key1_mix_bounded_candidate.elf",
+      "bytes": 387656,
+      "sha256": "403153d4497d90a7e11126f4d1b9e6a516617c8a41e83d7b0685977f83bed354"
+    },
+    {
+      "name": "key1_mix_guard_fake_test",
+      "bytes": 3678128,
+      "sha256": "a88eca34020bc730cd4b34aae6005c71c2cf80482d9aa2f2ba11f750e9cf0575"
+    }
+  ],
+  "independent_builds_bit_identical": true,
+  "link_audit": "Original panel function references both OSD wrappers",
+  "candidate_duration_seconds": "explicit 1..300 required; default startup arguments rejected",
+  "candidate_board_run": false,
+  "candidate_physical_screen_acceptance": false,
+  "test_status": "board push returned EOF then ADB device missing; no test execution; CI fake-register cases pending",
+  "scope": "Separate panel candidate; formal panel/controller/p1/model unchanged",
+  "repeated_order_trial": {
+    "receipt_sha256": "5011d381b29c2f901edfba180a71b7720108c22d1e836bcdae60dc28a9e0b3c9",
+    "before_high": "0xBA987654",
+    "trial_high": "0xBA984657",
+    "after_high": "0xBA987654",
+    "screen_feedback": "pending; user could not identify earlier window, so a new start and end were explicitly announced"
+  },
+  "source_inputs": [
+    {
+      "path": "src/board_ui_overlay/overlay_live.c",
+      "sha256": "8c54c928846f18df2fa5bea07742692f48aa5d22af0a91de54146feb2e0d8560"
+    },
+    {
+      "path": "src/board_ui_overlay/overlay_mix_candidate.c",
+      "sha256": "8f40be661b51cadae0f71f5d4542b9f2640cba241ef82d56238072ffcb49aec7"
+    },
+    {
+      "path": "src/board_ui_overlay/key1_mix_guard.h",
+      "sha256": "08cc4e9d5753e1afb048abe61586a884ffbdb5f51da6148273b3b90d04e40365"
+    },
+    {
+      "path": "src/board_ui_overlay/test_key1_mix_guard.c",
+      "sha256": "890c2142db1e9f18bddfa9e9f1c82a75f04ae114ef379dea8bbe4b5950399c25"
+    },
+    {
+      "path": "src/board_ui_overlay/build_key1_mix_candidate.sh",
+      "sha256": "57560817c78eb83be6d739da3bf394b7b2d56a5b30f95cd98a8ef3a2206aef50"
+    }
+  ]
+}

@@ -10,4 +10,8 @@ jobs:
           python-version: '3.13'
       - run: python -B tools/check_public_repo.py
       - run: python -B tools/check_key1_draw_path.py --self-test
+      - name: KEY1 mix transaction on fake registers
+        run: |
+          cc -std=c11 -O2 -Wall -Wextra -Werror src/board_ui_overlay/test_key1_mix_guard.c -o /tmp/key1_mix_guard_test
+          /tmp/key1_mix_guard_test
       - run: python -B -m unittest discover -s model_work/src -p 'test_*.py' -v
