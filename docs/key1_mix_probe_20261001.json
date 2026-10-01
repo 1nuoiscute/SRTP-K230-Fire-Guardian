@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-01",
+  "formal_key2_commit": "dd7175917dd14d28906d48c2e491732116427719",
+  "formal_key2_tag": "board-key2-20260930",
+  "p1_sha256": "5cd8667b3035199fcc63d7e557c8257247bc0080f2b9cda7e3a916a3616ef1d2",
+  "probe_source_sha256": "3e672ee36e5e38ae84fd946b072688c20b7b61213987f27430944aae1c4ba3ed",
+  "trial_receipt_sha256": "5599c15c26c44f591c79818d2305079a287c4ea5b18c081f59a13dc1d37a767a",
+  "before": {
+    "0x908403cc": 12816,
+    "0x90840950": 3130553940,
+    "0x90840118": 146
+  },
+  "trial_order_high": "0xBA984657",
+  "after": {
+    "0x908403cc": 12816,
+    "0x90840950": 3130553940,
+    "0x90840118": 146
+  },
+  "screen_result": "awaiting user feedback",
+  "hardware_frame_snapshot_active_count": 0,
+  "hardware_frame_snapshot_boundary": "single independent read; does not exclude intermittent hardware frames",
+  "base_panel_alpha_min_max": [
+    255,
+    255
+  ],
+  "permanent_deployment": false
+}

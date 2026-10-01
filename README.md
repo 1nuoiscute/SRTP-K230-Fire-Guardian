@@ -45,7 +45,9 @@ v11 已完成：回到 v9 数据，隔离五张问题图、加权三张原训练
 | 内容 | 入口 |
 |---|---|
 | 当前板端交接 | [上板顺序与版本边界](docs/BOARD_HANDOFF_20260930.md)、[模型阶段收尾](docs/PC_MODEL_STAGE_CLOSURE_20260930.md) |
+| 报警、融合与联动方案 | [板端实施顺序与输入缺口](docs/BOARD_EVENT_FUSION_PLAN_20261001.md) |
 | 最新状态及历史 | [项目状态](docs/STATUS.md)、[路线与实验门槛](docs/ROADMAP.md) |
+| KEY1 蓝框问题 | [短时叠加试验与裁剪方案](model_work/docs/KEY1_BLUE_BOX_INVESTIGATION_20261001.md) |
 | 板端实时面板 | [实机记录](model_work/docs/BOARD_UI_LIVE_INTEGRATION_20260928.md) |
 | KEY2 数据页与部署 | [最新修复](model_work/docs/KEY2_CONNECTOR_CANDIDATE_20260930.md)、[历史失败](model_work/docs/BOARD_DATA_PAGE_KEY2_20260928.md) |
 | 新厨房视频失败 | [冻结模型测试](model_work/docs/TEAMMATE_NEW_VIDEO_TEST_20260928.md) |
