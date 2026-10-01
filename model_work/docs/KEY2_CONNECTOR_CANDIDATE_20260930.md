@@ -52,3 +52,19 @@ ADB RTT_K230_ADB、COM5 Linux/COM6 RT-Smart 已确认。板端 p1、视觉 ELF�
 通过原始 p1（83f8286a…）和原厂 fastboot ELF（025e7950…）哈希保护，仅替换 ROMFS fastboot 槽位，其他解压字节保持一致；新镜像 20 MiB，SHA **5cd8667b3035199fcc63d7e557c8257247bc0080f2b9cda7e3a916a3616ef1d2**。保留当前 v4b p1（5fec5ccf…）及其恢复控制器；数据页路径仍是已验收隔离目录，不重建或重命名已测试 ELF。
 
 源码、构建产物和现场边界见 [版本清单](../../docs/key2_release_identity_20260930.json)。当前为已完成本地打包，设备写入、重启和重启后按键结果将在下一段补记，不提前宣称已完成。
+
+## 永久启动部署与真实重启
+
+修复源码和前述验收已提交并推送 **9056ca3bcc220ab2d68fe102a6af728c03c9f574**，GitHub 检查 **36733410977 success**；本机已有 58 项测试通过、公开源码检查 279 文件。只读沙箱首次测试因临时目录不可写出现 20 项错误，同环境允许临时文件后重跑全部通过，不归为算法错误。
+
+退出 v4b 时串口确认 UI、摄像头干净退出并返回 msh。重新确认设备 RTT_K230_ADB、mmcblk0p1 40960 个 512-byte sector、旧 p1 SHA5fec…；另存板端 p1_v4b_before_key2.img 并拉回本机，SHA 与旧基线一致。新 20 MiB 镜像和两个 ELF 推送读回一致。写入前在设备侧再次同时校验分区尺寸、旧分区和新镜像 SHA；dd 写入后 sync 并读回 **5cd8667b…** 完全一致。
+
+实际 ADB reboot 后，COM6 抓到等待 /sharefs 与 **matrix KEY2 switches vision/data** 开机标记；新 p1 SHA 再读回一致。原视觉、KModel、KEY1 面板、S90/S91 哈希均保持；tmpfs 与两个 Linux 控制/桥进程自启。KEY2 正式控制器现在从 p1 自启；采样和视觉仍按原设计默认关闭。重启后两轮实体切换正在记录，不再在记录结束后发送 q 或恢复旧控制器。
+
+本地证据：boot_deploy_preflight.txt、boot_deploy_write.txt、serial_permanent_boot.txt、boot_deploy_after_reboot.txt、serial_permanent_key2_validation.txt，均在 artifacts/key2_20260930_connector_candidate。用户重启后的反馈和实际轮数尚待补记。
+
+## 重启后现场确认与冻结（2026-10-01 补记）
+
+用户在永久版本重启后明确回复“两轮都正常”，作为实体 KEY2 进入/返回与屏幕效果确认。300 秒记录器退出时没有发送 q，也没有回退旧版本，永久控制器保留。本次串口窗口只抓到一次进入数据页、未抓到返回；两轮结果来自现场反馈，不能写成 UART 独立证明两轮。窗口持续 DATA 更新、0 free-buffer、0 Exception，但摄像启动仍有 1 次 vi wait-stop-timeout。数据页的长期资源稳定性仍未验收。
+
+构建保护已实测：在已完成输出目录重构返回 2，两 ELF SHA 均不变。旧 v4b 回退、新镜像、旧失败候选和设备证据保留。最后一轮补记曾因自动审批服务额度用尽而未执行；实际固件已写入成功，失败的是文档/Git 收尾，不应重复烧录。

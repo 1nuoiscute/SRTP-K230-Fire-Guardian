@@ -1,4 +1,4 @@
-> **2026-09-30 最新：** KEY2 新 connector 页和矩阵切换已获用户实屏确认；新启动镜像正在永久部署。历史 v4b 回退与旧失败候选继续保留。见 [修复与部署记录](../../model_work/docs/KEY2_CONNECTOR_CANDIDATE_20260930.md) 和 [版本身份](../../docs/key2_release_identity_20260930.json)。以下旧“未验收”段落保留为历史边界。
+> **2026-09-30 最新：** KEY2 新 connector 页和矩阵切换已获用户实屏确认；新启动镜像已写入并实际重启，启动与读回一致；用户确认重启后两轮实体切换正常。历史 v4b 回退与旧失败候选继续保留。见 [修复与部署记录](../../model_work/docs/KEY2_CONNECTOR_CANDIDATE_20260930.md) 和 [版本身份](../../docs/key2_release_identity_20260930.json)。以下旧“未验收”段落保留为历史边界。
 
 > 2026-09-30 版本保护：当前 vision_key.c 已含未验收数据页候选，不能重建为“已验收 v4b”。通用 build.sh 要求显式 --data-candidate，并只输出候选文件名；已验收二进制身份见 ../../docs/BOARD_BASELINE.md。
 

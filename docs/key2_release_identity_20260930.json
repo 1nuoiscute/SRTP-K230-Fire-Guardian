@@ -2,7 +2,7 @@
   "schema_version": 1,
   "release": "key2-connector-20260930",
   "as_of_utc": "2026-09-30T14:58:34.060567+00:00",
-  "status": "human accepted standalone data page and matrix KEY2 switching; persistent boot deployment pending",
+  "status": "permanent KEY2 boot deployment verified; user confirms two post-reboot rounds; short-term acceptance",
   "sources": [
     {
       "path": "src/board_ui_overlay/data_page.c",
@@ -71,8 +71,34 @@
     "camera_vi_wait_stop_timeout_count": 2
   },
   "limitations": [
-    "KEY1 detection boxes can overlay parameter panel; unresolved, priority experiment paused by user",
+    "KEY1 detection boxes overlap parameter panel; investigation resumed 2026-10-01",
     "Long duration stability unverified",
     "Data page alarm section not connected to real event chain"
-  ]
+  ],
+  "deployment": {
+    "as_of_utc": "2026-09-30T15:07:37.300230+00:00",
+    "device": "RTT_K230_ADB",
+    "partition": "/dev/mmcblk0p1",
+    "partition_bytes": 20971520,
+    "written_and_reboot_readback_sha256": "5cd8667b3035199fcc63d7e557c8257247bc0080f2b9cda7e3a916a3616ef1d2",
+    "boot_marker": "K1 controls display; matrix KEY2 switches vision/data; initial state OFF; q exits controller",
+    "fresh_local_rollback_path": "artifacts/key2_20260930_connector_candidate/p1_v4b_before_key2_from_board.img",
+    "post_reboot_receipt_sha256": "66f2f62e415beb442221d31ccacb61d45138dda8c86066bdaeaf5ec7f9727cbb",
+    "boot_serial_sha256": "34c814003896197eed5a65b671c78d3629bc1e951a734c4422ca3ab92ff9cdb1"
+  },
+  "post_reboot_acceptance": {
+    "user_feedback": "两轮都正常",
+    "reported_post_reboot_round_trips": 2,
+    "serial_window_seconds": 300,
+    "logged_data_starts": 1,
+    "logged_clean_returns": 0,
+    "DATA_updates": 133,
+    "free_buffer_warnings": 0,
+    "vi_wait_stop_timeouts": 1,
+    "exception_count": 0,
+    "serial_sha256": "aba3e8bb684a1ecc18851cfea84dd5931122d29d3b1b0a91fecf0ccf545790ba",
+    "evidence_boundary": "Two rounds confirmed by human; UART window only captured one data entry without return",
+    "controller_left_running": true,
+    "automatic_rollback": false
+  }
 }
