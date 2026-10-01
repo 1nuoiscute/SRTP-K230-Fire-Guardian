@@ -1,0 +1,40 @@
+{
+  "baseline_sha256": "ec2caafd85e56851c44c838b4c9a2a15477cae8b24ac915f1c571f1a0f9a2ac1",
+  "text_virtual_address": "0x200000000",
+  "text_file_offset": "0x1000",
+  "text_bytes": 9969408,
+  "objdump_instruction_lines": 3399655,
+  "wrappers": {
+    "hardware_draw": {
+      "virtual_address": "0x2005142bc",
+      "ioctl_pattern_file_offset": "0x51531c",
+      "ioctl": "0xc0184f2c",
+      "direct_references": [],
+      "literal_pointer_file_offsets": []
+    },
+    "osd_insert": {
+      "virtual_address": "0x200514460",
+      "ioctl_pattern_file_offset": "0x5154e8",
+      "ioctl": "0xc0e84f40",
+      "direct_references": [
+        {
+          "from": "0x200001514",
+          "mnemonic": "jalr",
+          "preceding_a0_literal": 6
+        },
+        {
+          "from": "0x200002408",
+          "mnemonic": "jalr",
+          "preceding_a0_literal": 6
+        }
+      ],
+      "literal_pointer_file_offsets": []
+    }
+  },
+  "boundary": "Static objdump resolved jump/branch targets and literal-pointer scan; not runtime proof; indirect/computed calls and embedded text data remain limits",
+  "checker_sha256": "14810e153540643678901326d0693328568eb8c3a1226ddabfddba92bafd975d",
+  "receipt_sha256": "0299f1e46a6cbc3409f962f3fd96ec64f5795da47ef354837f6c4de6b09af89c",
+  "inspection_method": "SDK riscv64-unknown-linux-musl-objdump -d; original ELF identity checked first",
+  "inference": "OSD3 submissions are directly evidenced; the absence of resolved hardware calls supports but does not prove an OSD-only blue-box path",
+  "screen_result": "awaiting user feedback for the earlier bounded mix-order trial"
+}

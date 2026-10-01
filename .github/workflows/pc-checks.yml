@@ -9,4 +9,5 @@ jobs:
         with:
           python-version: '3.13'
       - run: python -B tools/check_public_repo.py
+      - run: python -B tools/check_key1_draw_path.py --self-test
       - run: python -B -m unittest discover -s model_work/src -p 'test_*.py' -v

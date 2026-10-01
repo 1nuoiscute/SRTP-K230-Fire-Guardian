@@ -22,6 +22,24 @@
 
 同时只读记录 OSD3 尺寸寄存器=540×960、面板=536×348、OSD3 Y 显示区50–1009。这些是原视觉与面板的不同画布，不把 540 与 536 盲目等同。一次独立硬件框寄存器快照活跃数为0，未与蓝框出现时刻同步，所以仅是线索，不能证明永远没有硬件框。
 
+## 原视觉静态调用核对（同日追加）
+
+冻结原视觉 ec2caafd… 的两个提交帧调用位于 0x200001514、0x200002408；调用前均设置 a0=6。旧 SDK 的 kd_mpi_vo_chn_insert_frame 通道为 OSD 枚举值加3，因此通道6对应 OSD3。原视觉这条图形提交路径有直接证据；不再仅根据独立候选源码推测它的行为。
+
+原视觉中也链接了 kd_mpi_vo_draw_frame 包装函数（0x2005142bc），但整份 SDK objdump 输出没有发现指向它的已解析跳转/分支，完整 ELF 内没有其64位地址字面量。两个 OSD 提交均指向 0x200514460，说明工具能找到实际显示调用。结合不同步的零活跃硬件框快照，**更支持 OSD 图形层解释，但不排除间接/动态调用**，也不把静态结果当成实屏修复成功。
+
+最初自编2/4字节线性扫描发现 .text 内混入字符串，出现扩展指令样式，不能称为完整指令解码；该尝试的本地收据保留，公开结论以工具链 objdump 检查为准。最终工具 [check_key1_draw_path.py](../../tools/check_key1_draw_path.py) 默认只读，先校验原 ELF SHA，再流式读取反汇编，仅输出数字和身份，不发布原程序或完整反汇编。真实调用样例和“数据地址注释不能算调用”的检查通过；完整本地 ELF 实际检查通过，摘要见 [绘制路径身份](../../docs/key1_draw_path_20261001.json)。
+
+复现（在 K230-Ubuntu 内运行，ELF 仍是本地文件）：
+
+```bash
+python3 -B /mnt/c/Users/ASUS/Documents/ChatGPT/SRTP/tools/check_key1_draw_path.py \
+  --objdump /home/k230/k230_sdk_v1.6/toolchain/riscv64-linux-musleabi_for_x86_64-pc-linux-gnu/bin/riscv64-unknown-linux-musl-objdump \
+  --baseline /mnt/c/Users/ASUS/Documents/ChatGPT/SRTP/artifacts/ui_baseline_2026-09-28/ob_det_fire_mvp_spaces.elf
+```
+
+本轮结束前再次只读复查：混合顺序仍为0xBA987654、enable=0x92，p1仍为5cd8667b…；KEY2没有回退。下一步仍取决于先前60秒试验的屏幕反馈：有效才做长期面板候选，无效才推进 OSD3 显示区裁剪。
+
 ## 根据结果决定下一步
 
 若调序有效：将已验证的顺序设置封装到独立面板候选，面板退出前恢复，兼顾 KEY1 隐藏/再显示、KEY2 进入/返回、K1 总开关及重启。先新文件名短测、真实反馈、保存构建与回退，再考虑正式替换。
