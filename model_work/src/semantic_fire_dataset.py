@@ -16,6 +16,7 @@ def write(path,value):
 
 
 def yolo_label(boxes):
+    if not boxes: raise ValueError('Visible-flame positive must have boxes')
     lines=[]
     for x1,y1,x2,y2 in boxes:
         lines.append(f'0 {(x1+x2)/1280:.8f} {(y1+y2)/1280:.8f} {(x2-x1)/640:.8f} {(y2-y1)/640:.8f}')
@@ -56,14 +57,20 @@ def membership(parent_rows,industrial,approved,pilot_weight):
                 raise ValueError('Industrial source differs from exact legacy train parent')
             revision=approved.get(name)
             if revision is None:
-                excluded.append(row); continue
+                if row.get('label_revised') is True:
+                    if row['teacher_preserve']:
+                        raise ValueError('Reviewed parent revision must be exempt from teacher geometry')
+                    kept.append({**row,'visible_flame_train_revision':False,'retained_parent_revision':True})
+                else:
+                    excluded.append(row)
+                continue
             if revision['split']!='train' or revision['image_sha256']!=row['sha256'] or revision['label_sha256']!=row['label_sha256']:
                 raise ValueError('Approved image/label differs from parent')
             kept.append({**row,'weight':pilot_weight,'teacher_preserve':False,
                          'visible_flame_train_revision':True,'parent_label_sha256':row['label_sha256'],
-                         'boxes_xyxy':revision['boxes_xyxy']})
+                         'boxes_xyxy':revision['boxes_xyxy'],'retained_parent_revision':False})
         else:
-            kept.append({**row,'visible_flame_train_revision':False})
+            kept.append({**row,'visible_flame_train_revision':False,'retained_parent_revision':row.get('label_revised') is True})
     return kept,excluded
 
 
@@ -108,8 +115,10 @@ def build(parent,expected_parent,review,pilot_weight,out):
               parent_identity=checked,review=str(review),review_complete_sha256=sha256(review/'review_complete.json'),
               pilot_weight=pilot_weight,unique_paths=len(rows),train_entries=len(entries),
               corrected_images=len(approved),corrected_boxes=reviewed['approved_boxes'],
+              retained_prior_revised_images=sum(r['retained_parent_revision'] for r in rows),
+              retained_prior_revised_boxes=sum(len((parent/'labels/train'/(Path(r['image']).stem+'.txt')).read_text(encoding='utf-8').splitlines()) for r in rows if r['retained_parent_revision']),
               excluded_industrial_images=len(excluded),source_industrial_images=1045,
-              source_policy='All industrial source labels excluded except the explicitly reviewed approximate train pilot. Excluded images are not negatives.',
+              source_policy='Keep exact previously approved parent revisions and new reviewed approximate train pilot. Quarantine other industrial source labels; excluded images are not negatives.',
               smoke_absence_unlabelled=True,independent_kitchen=False,original_validation_retained=True,
               validation=validation_snapshot(base),lineage=rows,excluded_lineage=excluded,
               builder_sha256=sha256(Path(__file__)))
@@ -149,12 +158,17 @@ def verify(folder,expected):
         raise ValueError('Extra, missing or reweighted training files')
     if meta['unique_paths']!=len(actual_rows) or meta['train_entries']!=sum(entries.values()) or meta['excluded_industrial_images']!=len(excluded) or meta['corrected_images']!=len(approved) or meta['corrected_boxes']!=reviewed['approved_boxes']:
         raise ValueError('Derived count claim differs')
+    retained_images=sum(r['retained_parent_revision'] for r in actual_rows)
+    retained_boxes=sum(len((folder/'labels/train'/(Path(r['image']).stem+'.txt')).read_text(encoding='utf-8').splitlines()) for r in actual_rows if r['retained_parent_revision'])
+    if meta['retained_prior_revised_images']!=retained_images or meta['retained_prior_revised_boxes']!=retained_boxes:
+        raise ValueError('Previously approved revision retention differs')
     base=Path(meta['base']); config=yaml.safe_load((folder/'data.yaml').read_text(encoding='utf-8'))
     if config!=dict(path=str(folder),train=str(folder/'train.txt'),val=str(base/'images/val'),nc=1,names={0:'fire'}) or validation_snapshot(base)!=meta['validation']:
         raise ValueError('Validation/config changed')
     return dict(manifest_sha256=sha256(manifest),config_sha256=sha256(folder/'data.yaml'),train_list_sha256=sha256(folder/'train.txt'),
                 images_verified=len(actual_rows),entries_verified=sum(entries.values()),corrected_images=len(approved),
                 corrected_boxes=reviewed['approved_boxes'],excluded_industrial_images=len(excluded),
+                retained_prior_revised_images=retained_images,retained_prior_revised_boxes=retained_boxes,
                 teacher_preserved_images=sum(r['teacher_preserve'] for r in actual_rows),
                 scope='Train-only approximate visible flame pilot with quarantined unreviewed industrial source; not independent evaluation')
 

@@ -1,0 +1,29 @@
+{
+  "role": "Train-only approximate visible-flame source-quarantine pilot; dataset prepared, model training not started",
+  "independent_kitchen": false,
+  "annotations_are_approximate": true,
+  "smoke_absence_unlabelled": true,
+  "original_labels_modified": false,
+  "active_scratch_training_modified": false,
+  "reviewed_images": 32,
+  "approved_new_images": 15,
+  "approved_new_boxes": 43,
+  "held_review_images": 17,
+  "retained_prior_revised_images": 5,
+  "retained_prior_revised_boxes": 6,
+  "training_images": 1407,
+  "weighted_training_entries": 1890,
+  "excluded_industrial_training_images": 1025,
+  "teacher_preserved_images": 1332,
+  "original_validation_images_retained": 243,
+  "pilot_weight": 8,
+  "local_tests_passed": 126,
+  "identity": {
+    "parent_manifest_sha256": "56496195e463bd11f1071bb7299dab8198175911403016d11ef79bc03c61ccc7",
+    "review_complete_sha256": "c59f5e431bdfaf85c3a010857339e5a61d8cc1d2dba0d5d7aedcd569936a44a3",
+    "dataset_manifest_sha256": "f3237c9ae34804918968a34945d51886266313aed83b7938e012586e11471069",
+    "config_sha256": "a36d7cac5c9788843a20f7641bcbd1d30f6c4e0af1b4e2d9bddde312b315ff92",
+    "train_list_sha256": "a8086fb0ddc3c88251196dd500443ebb004ccef9f80a030fcc766f35a4a68e50",
+    "builder_sha256": "c47beb34cadc64730d68f0cbe70fd7af61c535add0f7efaf377b74aa673863ec"
+  }
+}
