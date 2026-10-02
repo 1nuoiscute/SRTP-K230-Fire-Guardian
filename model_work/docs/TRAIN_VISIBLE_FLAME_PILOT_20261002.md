@@ -64,3 +64,11 @@ python -B model_work/src/train_visible_flame_pilot_v15.py --data D:/SRTP_Dataset
 ```
 
 预演目录已存在，不能重复覆盖。正式训练仍待v14完整对照结束，届时去掉`--rehearse-cpu`并提供完成对照及其SHA，在新run目录运行。后续选择需通过原回归门槛、蓝焰不低于v13，并同时改善相同补充火焰框在IoU=.3/.5的匹配；不合格时继续保留已有候选。数据量和来源都很有限，不将该试验叫独立厨房验收。
+
+后续比较入口 `screen_visible_flame_pilot_v15.py` 已实现：先核对完整12轮、实际学习步数、保存模型固定状态、教师/EMA审计及100轮路线对照身份，再统一测v3/v13/v15 best/last。除原门槛外，要求蓝焰及旧开发micro F1不低于v13，补充可见火焰在IoU=.3/.5的TP与F1均提高、平均最佳IoU提高；不能只用更宽松或更多预测框获得TP增长。通过者也仅进入视频复核，不自动替换候选。四项门槛测试使本机总数达到133项并全部通过；尚无正式v15训练权重或比较结果。
+
+```powershell
+python -B model_work/src/screen_visible_flame_pilot_v15.py --run <completed-v15-run> --data D:/SRTP_Datasets/fire_semantic_pilot_v2_20261002 --review model_work/out/legacy_visible_flame_audit_20261002 --comparison <completed-v14-comparison.json> --out <new-v15-comparison-directory>
+```
+
+此命令列出未来完整运行的参数，当前缺少v15已完成run，不能提前执行或把门槛测试算模型结果。
