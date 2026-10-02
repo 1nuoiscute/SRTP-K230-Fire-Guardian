@@ -22,4 +22,6 @@
 
 另行审核D-Fire可见烟状羽流口径后，完成36图两类开发版本及 [首轮训练/四模型比较](../model_work/docs/SMOKE_FIRE_PILOT_V1_20261002.md)。这与前述烹饪Smoke源的事件语义分别记录；新val只有3个smoke框且已曝光，best/last均TP=0，仍无有效电脑smoke候选。独立测试≥20%、真实厨房≥30%、两类F1≥.90均未因此达成。
 
+后续 [v2日程试验](../model_work/docs/SMOKE_FIRE_CADENCE_V2_20261002.md) 在本批3个smoke框上取得2 TP/0 FP/1 FN，只有开发定位信号；旧fire退化，不能晋升。独立两类F1等计划书要求保持未达成，v3继续为fire基线。
+
 依据：DOCX只读抽取技术段落；项目证据见 [状态](STATUS.md)、[模型卡](PC_FIRE_V3_MODEL_CARD.md)、[本轮报告](../model_work/docs/PC_MODEL_PROGRESS_20261002.md)。本表是实施差距清单，不是计划书完成度百分比或正式验收报告。
