@@ -122,6 +122,121 @@
         }
       },
       "mean_best_visible_flame_iou": 0.219940949265442
+    },
+    {
+      "epoch_zero_based": 50,
+      "completed_epochs": 51,
+      "checkpoint_sha256": "1875e3a374229751965acd139900610dc8d059d5d5b9fc03b7eaaca4323fa73d",
+      "diagnostic_complete_sha256": "a204347f4aa90d959dc8cc42aec81ce832611ccc0103bdd98b04d9febaddba42",
+      "visual_review_complete_sha256": "b03eaa3135974701756d6ecaf18c35758e2c8b83164f37e88bf8c76e2fb7dc2a",
+      "device": "cpu",
+      "cpu_threads": 2,
+      "blue_primary_localized_iou50": 3,
+      "frame_counts": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 13,
+          "fp": 0,
+          "fn": 0
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "legacy_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 57,
+          "fp": 0,
+          "fn": 0
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 3,
+          "images_with_fn": 3,
+          "tp": 17,
+          "fp": 3,
+          "fn": 3
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 10,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 11,
+          "fn": 0
+        }
+      },
+      "visible_flame_original_same_subset": {
+        "tp": 13,
+        "fp": 2,
+        "fn": 2,
+        "micro_f1": 0.8666666666666667
+      },
+      "visible_flame_approximate": {
+        "0.3": {
+          "tp": 4,
+          "fp": 11,
+          "fn": 11,
+          "micro_f1": 0.26666666666666666
+        },
+        "0.5": {
+          "tp": 0,
+          "fp": 15,
+          "fn": 15,
+          "micro_f1": 0.0
+        }
+      },
+      "mean_best_visible_flame_iou": 0.2429618328993172
     }
   ]
 }
