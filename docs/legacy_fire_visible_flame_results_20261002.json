@@ -1,0 +1,78 @@
+{
+  "role": "Supplemental approximate visible-flame localization on exposed legacy development source",
+  "independent_test": false,
+  "annotations_are_approximate": true,
+  "original_metrics_replaced": false,
+  "training_labels_modified": false,
+  "previous_prediction_exposure_acknowledged": true,
+  "configuration": {
+    "imgsz": 640,
+    "conf": 0.25,
+    "nms_iou": 0.6,
+    "match_iou": 0.5
+  },
+  "approximate_geometry_sensitivity_iou": [
+    0.3,
+    0.5
+  ],
+  "reviewed_images": 14,
+  "scored_images": 10,
+  "scored_boxes": 15,
+  "held_images": 4,
+  "review_complete_sha256": "196927d6b67cfe01c89b94a2aedb3e1f8d876ef3bba17e4079033a773c685682",
+  "score_summary_sha256": "5bc8427828b33b571326fc0e0a93b5adb3b4c0a406db811ade2d8cfcb2bd5a46",
+  "models": {
+    "v3": {
+      "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+      "original_same_subset": {
+        "tp": 13,
+        "fp": 3,
+        "fn": 2,
+        "micro_f1": 0.8387096774193549
+      },
+      "supplemental": {
+        "0.3": {
+          "tp": 7,
+          "fp": 9,
+          "fn": 8,
+          "micro_f1": 0.45161290322580644
+        },
+        "0.5": {
+          "tp": 2,
+          "fp": 14,
+          "fn": 13,
+          "micro_f1": 0.12903225806451613
+        }
+      },
+      "mean_best_prediction_iou": 0.32612719119208816,
+      "cached_predictions_sha256": "e1097e497374f54eb66ce98c553cca7b4649bf82b5710c8ee2648ec06457459d",
+      "details_sha256": "046c73031a6da5046c24047c373f3bf0e57c873faf31f8fac646204a4003c5b5"
+    },
+    "v13_best": {
+      "weights_sha256": "c2b2a8bdc66fe452c80a1786f918f62f8686ad3b0f11061a761969ee02b09966",
+      "original_same_subset": {
+        "tp": 13,
+        "fp": 2,
+        "fn": 2,
+        "micro_f1": 0.8666666666666667
+      },
+      "supplemental": {
+        "0.3": {
+          "tp": 6,
+          "fp": 9,
+          "fn": 9,
+          "micro_f1": 0.4
+        },
+        "0.5": {
+          "tp": 1,
+          "fp": 14,
+          "fn": 14,
+          "micro_f1": 0.06666666666666667
+        }
+      },
+      "mean_best_prediction_iou": 0.31042186045940834,
+      "cached_predictions_sha256": "420686c239ffa4cb9fc183fa26c6d64603b9a02dfbab7cb74bf73b6f38e66c45",
+      "details_sha256": "6486da607a36a2033b062f37fd3f9d3a7335c57800c13e606e22b90187c61b27"
+    }
+  }
+}

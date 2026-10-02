@@ -29,6 +29,8 @@
 
 已经启动单个本地训练任务，真实随机初始化检查通过。第一轮特征权重126张量、头权重42张量变化，352个batch/343次实际更新；首轮val mAP50=.00491，尚处随机起点学习阶段，不以首轮低分否定从零路线。GPU当次显存约3.6GB，训练正在进行，没有同时启动第二份GPU训练。
 
+23轮时val mAP50=.57660，所有已记录轮次126个feature/42个head权重张量均变化；这只是运行中的开发验证进展，最终100轮和best/last对照尚未结束。初始化与固定比较工具的GitHub push/PR两项基础CI均通过（head `1510f1c`），新增标签语义工具后本机全依赖123项测试通过。旧灶火原框存在锅体范围差异，已独立完成 [补充诊断](../../docs/PC_FIRE_LABEL_SEMANTICS_20261002.md)，原标签和本轮训练保持。
+
 ```powershell
 python -B model_work/src/prepare_random_fire_start.py --reference model_work/runs/fire-binary-user-video-v3/weights/best.pt --expected-reference-sha256 48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980 --out model_work/out/fire_random_v14_initial_20261002
 python -B model_work/src/train_fire_from_scratch_v14.py --data D:/SRTP_Datasets/fire_teacher_v13_20261002/data.yaml --expected-manifest-sha256 56496195e463bd11f1071bb7299dab8198175911403016d11ef79bc03c61ccc7 --initial model_work/out/fire_random_v14_initial_20261002 --expected-initialization-sha256 defc84bda87b71574b3b0282f35930de19a9958b40da151407d5b88dacb8b3f7 --out model_work/runs/fire-from-scratch-v14-20261002
