@@ -1,5 +1,7 @@
 # 电脑端复现
 
+当前新的电脑端单类候选为 [fire v13](PC_FIRE_V13_MODEL_CARD.md)：已选权重与静态/动态 ONNX 位于本机 `model_work/out/fire_teacher_v13_selected_20261002/`，具体 SHA256 和图片/视频命令见模型卡。原 v3 仍保留回退；下文 v3 实验命令保留作历史复现，不与 v13 的模型身份混用。
+
 已用环境：Windows、Python 3.13、PyTorch 2.12.0+cu132、Ultralytics 8.4.70、OpenCV 4.13.0，RTX 5060 Laptop 8GB。版本是本机实测记录；CUDA 构建按运行机器配置，不由普通 requirements 强制安装。
 
 ```sh
