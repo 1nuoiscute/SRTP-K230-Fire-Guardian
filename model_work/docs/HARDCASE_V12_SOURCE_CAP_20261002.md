@@ -41,3 +41,34 @@ python -B model_work/src/train_hardcase_v5.py --data model_work/data/hardcase_v1
 评测包含固定阈值旧测试来源计数和 v11 best/last 曝光派生图重测；每项评测限 1800 秒，超时或失败保存日志。训练已有第 1 轮完成结果；这还不能判断改进。运行目录：`model_work/runs/fire-binary-hardcase-v12-stove-cap-20261002`，比较目录：`model_work/out/hardcase_v12_stove_cap_20261002/comparison`。脚本、preflight、args、CSV及独立stdout/stderr日志留本地。
 
 数据审计新增父子版本端到端测试：排除的父样本标签变动也必须拒绝，循环父引用必须拒绝；选样测试保证固定集合、继承权重和标签不变。基础CI安装与本机一致的 PyYAML 6.0.3 来实际执行这些数据配置测试。
+
+## 完整结果与决定
+
+9 轮完成，patience=8 正常早停，best 在 epoch 1。训练日志报告 .229 小时；两份完成权重身份核对通过：
+
+- best.pt：`31b376c81f343d9720ae99acf32db99aeb01b1744d4af4a4bd91246ba5650d55`
+- last.pt：`d6a21ced8b474bbe362c4e694edb725d53278c03e15152466c1696fce8f86f1a`
+
+自动对照全部完成，包含三份模型的 6 组评测、v11 两份同清单曝光帧参考、三份模型固定阈值来源定位计数。两个实际 PID 均已退出，experiment_meta.json 和 comparison_complete.json 已保存。公开结果见 [身份绑定汇总](../../docs/source_cap_v12_results_20261002.json)。
+
+| 模型 | 五图蓝焰定位 | 旧 286 图 mAP50 | 原无火 100 图 FP 框 | 队友曝光正例 TP/FP/FN | 新增蓝焰原作训练图 TP/FP/FN |
+|---|---:|---:|---:|---:|---:|
+| v3（重测） | 0/5 | .9732386 | 1 | 3/5/7 | 1/3/12 |
+| v12 best | 0/5 | .9527251 | 3 | 4/5/6 | 1/3/12 |
+| v12 last | 3/5 | .8884888 | 5 | 9/5/1 | 6/1/7 |
+
+best 的旧图 mAP50 下降 .0205135，蓝焰未增益，无火 FP 多 2；last 的 mAP50 下降 .0847499，虽蓝焰增加 3/5，无火 FP 多 4。**两份均不通过预设筛选，保留 v3，不晋升。** 不补试其他来源上限、不放宽门槛；此次没有证明减小重复背景采样就能解决跨厨房问题。
+
+固定阈值来源进一步揭示：ks_flame 的 v3/best/last TP 分别 57/56/57，FP 1/1/2；14 张旧灶火三者均 18 TP/5 FP/2 FN。75 张已确认无可见火焰来源与 40 张锅具来源三者都无 FP。来源结果是曝光开发诊断，不能转换为独立测试 F1 或100小时误报。
+
+v11 best/last 在相同 55 图上的参考重测已完成：队友曝光正例为 5/5/5 和 10/2/0，原作蓝焰训练图为 2/3/11 和 9/1/4；v12 last 相比 v11 last 在这两组也更差。旧 24 帧 v12 保持18 TP/0 FP/0 FN，但不足以抵消其他退化。1 个食物裁剪均0 FP；贴纸裁剪 FP由v3的3到v12的2，仅作用户演示范围外附带诊断。
+
+三者各评测 9 段开发视频、307 个采样，旧4段预测数量一致，队友5段数量有变化；没有补充逐帧/事件真值，不用“有框帧更多”报告准确率提高。Commons 的两份训练来源与十一份未用于此轮训练来源仍分开统计，未训练来源也是曝光诊断。
+
+最终核对原 v3 与 v11 清单 SHA 均未改变。候选、日志、审核清单、预览和私人媒体留本地，公开仅代码和匿名汇总。该采样消融本阶段已结束；持续目标下一步转向统一可见火焰框口径、明确 Smoke/蒸汽语义和有来源的新数据，详见 [烟雾审核](SMOKE_SOURCE_SEMANTICS_20261002.md) 与 [候选源记录](../../docs/SMOKE_DATA_NEXT_SOURCES_20261002.md)。新版计划书整体要求仍未完成。
+
+公开汇总命令（已有输出拒绝覆盖）：
+
+```powershell
+python -B model_work/src/summarize_source_cap_experiment.py --data model_work/data/hardcase_v12_stove_cap_20261002 --run model_work/runs/fire-binary-hardcase-v12-stove-cap-20261002 --comparison model_work/out/hardcase_v12_stove_cap_20261002/comparison --expected-data-sha256 d7c0a4853495a2dcc68935c55269ec41b57ba086eb8a4c69e21a1959b3fb6cfd --out docs/source_cap_v12_results_20261002.json
+```

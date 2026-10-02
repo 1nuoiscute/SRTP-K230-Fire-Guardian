@@ -4,6 +4,8 @@
 
 **当前阶段（2026-10-02）：用户旅游期间授权恢复电脑端模型推进，开发板未连接。** 已完成固定权重插值对照、v3 的静态/动态 ONNX 验证与独立图片/视频推理入口；保留 v3。正常灶火与异常火情需要分开判断，当前模型尚未通过跨厨房可靠性验收。
 
+持续推进新增 v12 来源采样训练与完整对照，两份候选均未达到冻结门槛，继续保留 v3。已对照新版计划书建立差距清单，并实际审核 19 张 Smoke 源训练图，记录烟雾/蒸汽语义缺口，原数据和旧权重保留。
+
 演示重点已按用户要求调整：采用无贴纸干扰的灶台，贴纸抑制作为可选改进，优先真实火焰定位和连续识别。见 [当前演示范围](docs/DEMO_SCOPE.md)。
 
 ## 已有成果
@@ -45,6 +47,7 @@ v11 已完成：回到 v9 数据，隔离五张问题图、加权三张原训练
 | 内容 | 入口 |
 |---|---|
 | 最新模型推进与可运行入口 | [10 月 2 日完整实验](model_work/docs/PC_MODEL_PROGRESS_20261002.md)、[v3 模型卡与 ONNX 身份](docs/PC_FIRE_V3_MODEL_CARD.md) |
+| 持续模型训练与计划要求 | [v12 完整结果](model_work/docs/HARDCASE_V12_SOURCE_CAP_20261002.md)、[新版计划书证据矩阵](docs/PLAN_REQUIREMENT_MATRIX_20261002.md)、[烟雾标签审核](model_work/docs/SMOKE_SOURCE_SEMANTICS_20261002.md) |
 | 当前板端交接 | [上板顺序与版本边界](docs/BOARD_HANDOFF_20260930.md)、[模型阶段收尾](docs/PC_MODEL_STAGE_CLOSURE_20260930.md) |
 | 报警、融合与联动方案 | [板端实施顺序与输入缺口](docs/BOARD_EVENT_FUSION_PLAN_20261001.md) |
 | 最新状态及历史 | [项目状态](docs/STATUS.md)、[路线与实验门槛](docs/ROADMAP.md) |
