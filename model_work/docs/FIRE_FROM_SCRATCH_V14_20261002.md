@@ -31,6 +31,20 @@
 
 23轮时val mAP50=.57660，所有已记录轮次126个feature/42个head权重张量均变化；这只是运行中的开发验证进展，最终100轮和best/last对照尚未结束。初始化与固定比较工具的GitHub push/PR两项基础CI均通过（head `1510f1c`），新增标签语义工具后本机全依赖123项测试通过。旧灶火原框存在锅体范围差异，已独立完成 [补充诊断](../../docs/PC_FIRE_LABEL_SEMANTICS_20261002.md)，原标签和本轮训练保持。
 
+### 固定周期快照诊断
+
+从已声明的周期保存中固定`epoch20/50/90.pt`做收敛观察，均不进入最终primary候选池，不据此调训练或阈值。使用独立CPU进程、OMP/MKL各2线程、禁用该诊断进程的CUDA可见设备；GPU继续原100轮日程。`epoch20.pt`是零起编号，实际完成21轮，SHA256 `1846dd76c4de478a7aa02d7b3a737d169e7eb6cf7dfe246e223adf01c4f4264c`。其当轮val mAP50=.50175，不与最新运行中的val混淆。
+
+第一个完整CPU诊断已结束：5张蓝焰主定位2/5（两张开口灶头，两个锅下蓝焰仍无框，另一张开口蓝焰被分成局部框）；55张曝光训练难例中Commons蓝焰TP/FP/FN=13/2/0、队友10/0/0、旧视频18/0/0、贴纸与食物FP=0。旧286图固定阈值ks_flame=53/0/4、kitchen_stove=15/4/5、无火室内FP=2，其余两组负例FP=0。它仍没达到旧火焰召回门槛，不因训练难例拟合好就晋升。
+
+同一10图/15处近似可见火焰诊断：原标签11/3/4，紧火焰IoU≥.5为0/14/15、≥.3为4/10/11，平均最佳IoU=.219941。实际看完全部3张语义预测页和5张蓝焰预测图，仍见高锅体范围预测与蓝焰碎框。最终候选也应检查这一语义问题；它不是换初始化即可解决的证据。这里是CPU中途诊断，原v3/v13筛选是历史GPU测量；最终成对路线评测仍统一用同一设备，不把这组跨设备中途计数写作最终因果对照。
+
+完整本地文件 `model_work/out/fire_random_v14_epoch20_diagnostic_20261002/diagnostic_complete.json`，公开 [收敛计数](../../docs/fire_scratch_v14_convergence_20261002.json)。工具拒绝未完成周期或已存在输出，绑定随机实际起点、原训练代码/依赖、checkpoint和补充复核身份；不会触碰训练目录。后续只在对应已保存周期完成后执行同一工具。
+
+```powershell
+python -B model_work/src/diagnose_fire_scratch_snapshots.py --run model_work/runs/fire-from-scratch-v14-20261002 --epoch 50 --review model_work/out/legacy_visible_flame_audit_20261002 --out model_work/out/fire_random_v14_epoch50_diagnostic_20261002
+```
+
 ```powershell
 python -B model_work/src/prepare_random_fire_start.py --reference model_work/runs/fire-binary-user-video-v3/weights/best.pt --expected-reference-sha256 48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980 --out model_work/out/fire_random_v14_initial_20261002
 python -B model_work/src/train_fire_from_scratch_v14.py --data D:/SRTP_Datasets/fire_teacher_v13_20261002/data.yaml --expected-manifest-sha256 56496195e463bd11f1071bb7299dab8198175911403016d11ef79bc03c61ccc7 --initial model_work/out/fire_random_v14_initial_20261002 --expected-initialization-sha256 defc84bda87b71574b3b0282f35930de19a9958b40da151407d5b88dacb8b3f7 --out model_work/runs/fire-from-scratch-v14-20261002

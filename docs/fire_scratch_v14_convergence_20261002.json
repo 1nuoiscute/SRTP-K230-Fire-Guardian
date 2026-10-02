@@ -1,0 +1,127 @@
+{
+  "role": "Periodic convergence diagnostic on development-exposed data; no promotion or training adjustment",
+  "independent_test": false,
+  "primary_selection_performed": false,
+  "training_adjusted": false,
+  "fixed_periodic_checkpoint_names": [
+    "epoch20.pt",
+    "epoch50.pt",
+    "epoch90.pt"
+  ],
+  "snapshots": [
+    {
+      "epoch_zero_based": 20,
+      "completed_epochs": 21,
+      "checkpoint_sha256": "1846dd76c4de478a7aa02d7b3a737d169e7eb6cf7dfe246e223adf01c4f4264c",
+      "diagnostic_complete_sha256": "b3df790fd674fe42712050467cb3db731e8c872904c8e977b0777e4fef19d88a",
+      "device": "cpu",
+      "cpu_threads": 2,
+      "blue_primary_localized_iou50": 2,
+      "frame_counts": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 2,
+          "tp": 13,
+          "fp": 2,
+          "fn": 0
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "legacy_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 0,
+          "images_with_fn": 4,
+          "tp": 53,
+          "fp": 0,
+          "fn": 4
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 4,
+          "images_with_fn": 5,
+          "tp": 15,
+          "fp": 4,
+          "fn": 5
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 2,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 2,
+          "fn": 0
+        }
+      },
+      "visible_flame_original_same_subset": {
+        "tp": 11,
+        "fp": 3,
+        "fn": 4,
+        "micro_f1": 0.7586206896551724
+      },
+      "visible_flame_approximate": {
+        "0.3": {
+          "tp": 4,
+          "fp": 10,
+          "fn": 11,
+          "micro_f1": 0.27586206896551724
+        },
+        "0.5": {
+          "tp": 0,
+          "fp": 14,
+          "fn": 15,
+          "micro_f1": 0.0
+        }
+      },
+      "mean_best_visible_flame_iou": 0.219940949265442
+    }
+  ]
+}
