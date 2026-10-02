@@ -4,3 +4,4 @@ opencv-python
 Pillow
 PyYAML==6.0.3
 psutil
+requests==2.33.1
