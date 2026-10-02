@@ -10,6 +10,7 @@ from data_integrity import sha256
 from semantic_fire_dataset import verify, read
 from screen_fire_teacher_v13 import BASE, GATE, ROOT, SRC, run_job, write
 from train_visible_flame_pilot_v15 import PRIMARY, START_SHA, completed_comparison
+from model_project_review import video_review_plan
 
 
 def candidate_gate(row, v3, v13):
@@ -101,8 +102,10 @@ def screen(run, data, review, comparison, out):
     plan = dict(role='Semantic fire-head source-quarantine development comparison; approximate exposed geometry, no independent acceptance',
                 models={n: dict(weights=str(p), expected_sha256=expected[n]) for n, p in models.items()},
                 old_gate=GATE, checkpoint_screen=PRIMARY, original_metrics_replaced=False,
-                added_gate='Blue and paired old development micro-F1 not below v13; more visible-flame TP and F1 at both IoU .3/.5, plus higher mean best visible-flame IoU',
-                selection='Only among all-gate passers: highest tight-flame F1, then mean best IoU, blue count, old mAP50',
+                added_gate='Historical diagnostic: blue/micro-F1 not below v13; visible-flame TP/F1 and mean IoU gain',
+                selection='User-authorized project review: retain both best/last for video review; historical gate is diagnostic only',
+                project_policy_sha256=sha256(ROOT / 'docs/MODEL_ADOPTION_CRITERIA_20261002.md'),
+                project_review_script_sha256=sha256(SRC / 'model_project_review.py'),
                 legacy_input_identities=identities, data_manifest_sha256=checked['manifest_sha256'],
                 visible_flame_review_sha256=sha256(review / 'review_complete.json'),
                 source_experiment_meta_sha256=sha256(run / 'experiment_meta.json'), saved_state_audit=saved_audit,
@@ -143,11 +146,15 @@ def screen(run, data, review, comparison, out):
                                 -result['models'][n]['blue']['primary_localized_iou50'], -result['models'][n]['legacy']['map50']))
     if any(sha256(p) != expected[n] for n, p in models.items()):
         raise ValueError('Compared checkpoint changed during evaluation')
-    result['passing_semantic_candidates'] = passing
-    result['candidate_for_video_review'] = passing[0] if passing else None
+    result['passing_semantic_candidates_under_historical_gate'] = passing
+    result['historical_gate_now_diagnostic_only'] = True
+    result['project_review'] = video_review_plan(result['models'], 'v13_best',
+                                               ['semantic_v15_best', 'semantic_v15_last'])
+    result['candidate_for_video_review'] = result['project_review']['candidates_in_review_order'][0]
     result['automatic_default_replacement'] = False
     write(out / 'comparison_complete.json', result)
-    print('Finished semantic comparison; candidates for video review: ' + str(passing), flush=True)
+    print('Finished semantic comparison; project video review retains both best/last: ' +
+          str(result['project_review']['candidates_in_review_order']), flush=True)
 
 
 if __name__ == '__main__':

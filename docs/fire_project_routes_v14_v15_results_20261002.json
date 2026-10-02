@@ -1,0 +1,770 @@
+{
+  "role": "Project tradeoff review; exposed development measurements",
+  "independent_test": false,
+  "historical_gate_is_not_adoption_veto": true,
+  "comparison_sha256": {
+    "scratch": "16f15e3bf279f58dfda77f3e0c7e5b961205a64741555c4bfa8f2758d628362f",
+    "semantic": "ad486fc5668ee4e980bc4f66e95c114e02dbc11924972afbda8400ac66d0ef00",
+    "scratch_tight": "d35dbeb34cc60c5626f9f0ef01ca4159eb0e4a5b1d8858e58c208655f06ffa9b"
+  },
+  "policy_sha256": "9e22cfdd93b8d28108d1a874a5824127c63e1b59dbfebe5926dc38be92ad6a3f",
+  "training": {
+    "scratch_v14": {
+      "epochs": 100,
+      "experiment_meta_sha256": "9401b3a10ec496dbc784ee036a7c1266201964adcaa648c02c0a8f5bc3f95538",
+      "actual_batches": 35200,
+      "actual_optimizer_steps": 35180,
+      "audits": {
+        "actual_initialization_audit.json": "d1ff5f1d7b8b39178a40b29ff6e6b2c160054e5638a1a722ef8b75b90c0b4c34",
+        "full_network_update_audit.json": "a22ba54334014410f6a435c1ce9f59a812e2cf42c596fa712d314769337c8fd6",
+        "optimizer_cadence_audit.json": "225cc3e5e86324c5a0d3e808529a5d74a14e22f0e7cd846b826b9854329f985c"
+      },
+      "best_sha256": "7152ac073bcee9074561157cb4416c15173844c6e9c5c1878e02c12f4a18df67",
+      "last_sha256": "a46690756e65826060392688e98ceb268c9ecfa3f007e5796fa3c38ef4b5833e"
+    },
+    "semantic_v15": {
+      "epochs": 12,
+      "experiment_meta_sha256": "50fb3674f1337855338bcbf258472b4852dd26e64f6bc7441e96589718c8e152",
+      "actual_batches": 2844,
+      "actual_optimizer_steps": 2837,
+      "audits": {
+        "actual_initialization_audit.json": "0258598a3aa8ad17c99a7e2a8581067d0344c5842b41308d0611ec6231315907",
+        "teacher_audit.json": "195df8f99829e1a7b65236c39fe3225d6a3394c650efb90525d35d245a6de294",
+        "feature_audit.json": "af9acfc5e2cdaa2778d68a79bbee6ff0e5232ea1e64db4453632e880e35579a7",
+        "optimizer_cadence_audit.json": "ce4020a8c3e454d512c37a6fdbb2152052700646f2c0fc29bf5f9d89358d87d1"
+      },
+      "best_sha256": "6ef302d93c90148633b6e1278939e7f00fa76746bbceea619fc83b5963f6d25d",
+      "last_sha256": "b323fd44c159ad28519624414a132c9ffa2fc05944d55542be392da67236a6df"
+    }
+  },
+  "models": {
+    "v3": {
+      "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+      "map50": 0.9732386254178709,
+      "map50_95": 0.27949606105054137,
+      "blue_primary_localized_iou50": 0,
+      "legacy_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 1,
+          "images_with_fn": 0,
+          "tp": 57,
+          "fp": 1,
+          "fn": 0
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 5,
+          "images_with_fn": 2,
+          "tp": 18,
+          "fp": 5,
+          "fn": 2
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 1,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        }
+      },
+      "derived_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 1,
+          "fp": 3,
+          "fn": 12
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 5,
+          "tp": 3,
+          "fp": 5,
+          "fn": 7
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 0,
+          "fp": 3,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 97,
+        "fp": 18,
+        "fn": 21,
+        "micro_f1": 0.8326180257510729,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "visible_flame": {
+        "original_same_subset": {
+          "tp": 13,
+          "fp": 3,
+          "fn": 2,
+          "micro_f1": 0.8387096774193549
+        },
+        "supplemental": {
+          "0.3": {
+            "tp": 7,
+            "fp": 9,
+            "fn": 8,
+            "micro_f1": 0.45161290322580644
+          },
+          "0.5": {
+            "tp": 2,
+            "fp": 14,
+            "fn": 13,
+            "micro_f1": 0.12903225806451613
+          }
+        },
+        "mean_best_prediction_iou": 0.32612719119208816
+      }
+    },
+    "v13_best": {
+      "weights_sha256": "c2b2a8bdc66fe452c80a1786f918f62f8686ad3b0f11061a761969ee02b09966",
+      "map50": 0.9712760344504512,
+      "map50_95": 0.27867172968986564,
+      "blue_primary_localized_iou50": 1,
+      "legacy_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 2,
+          "images_with_fn": 0,
+          "tp": 57,
+          "fp": 2,
+          "fn": 0
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 4,
+          "images_with_fn": 2,
+          "tp": 18,
+          "fp": 4,
+          "fn": 2
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 1,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        }
+      },
+      "derived_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 1,
+          "tp": 4,
+          "fp": 1,
+          "fn": 9
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 4,
+          "tp": 5,
+          "fp": 4,
+          "fn": 5
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 2,
+          "tp": 0,
+          "fp": 2,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 102,
+        "fp": 14,
+        "fn": 16,
+        "micro_f1": 0.8717948717948718,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "visible_flame": {
+        "original_same_subset": {
+          "tp": 13,
+          "fp": 2,
+          "fn": 2,
+          "micro_f1": 0.8666666666666667
+        },
+        "supplemental": {
+          "0.3": {
+            "tp": 6,
+            "fp": 9,
+            "fn": 9,
+            "micro_f1": 0.4
+          },
+          "0.5": {
+            "tp": 1,
+            "fp": 14,
+            "fn": 14,
+            "micro_f1": 0.06666666666666667
+          }
+        },
+        "mean_best_prediction_iou": 0.31042186045940834
+      }
+    },
+    "scratch_v14_best": {
+      "weights_sha256": "7152ac073bcee9074561157cb4416c15173844c6e9c5c1878e02c12f4a18df67",
+      "map50": 0.7921122332699148,
+      "map50_95": 0.24357872305425557,
+      "blue_primary_localized_iou50": 4,
+      "legacy_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 10,
+          "images_with_fn": 11,
+          "tp": 46,
+          "fp": 10,
+          "fn": 11
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 3,
+          "images_with_fn": 2,
+          "tp": 18,
+          "fp": 3,
+          "fn": 2
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 15,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 19,
+          "fn": 0
+        }
+      },
+      "derived_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 13,
+          "fp": 0,
+          "fn": 0
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 105,
+        "fp": 32,
+        "fn": 13,
+        "micro_f1": 0.8235294117647058,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "visible_flame": {
+        "original_same_subset": {
+          "tp": 13,
+          "fp": 2,
+          "fn": 2,
+          "micro_f1": 0.8666666666666667
+        },
+        "supplemental": {
+          "0.3": {
+            "tp": 4,
+            "fp": 11,
+            "fn": 11,
+            "micro_f1": 0.26666666666666666
+          },
+          "0.5": {
+            "tp": 0,
+            "fp": 15,
+            "fn": 15,
+            "micro_f1": 0.0
+          }
+        },
+        "mean_best_prediction_iou": 0.24978142260702332
+      }
+    },
+    "scratch_v14_last": {
+      "weights_sha256": "a46690756e65826060392688e98ceb268c9ecfa3f007e5796fa3c38ef4b5833e",
+      "map50": 0.7876499194205994,
+      "map50_95": 0.24121002479703474,
+      "blue_primary_localized_iou50": 4,
+      "legacy_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 10,
+          "images_with_fn": 11,
+          "tp": 46,
+          "fp": 10,
+          "fn": 11
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 3,
+          "images_with_fn": 2,
+          "tp": 18,
+          "fp": 3,
+          "fn": 2
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 14,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 18,
+          "fn": 0
+        }
+      },
+      "derived_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 13,
+          "fp": 0,
+          "fn": 0
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 105,
+        "fp": 31,
+        "fn": 13,
+        "micro_f1": 0.8267716535433071,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "visible_flame": {
+        "original_same_subset": {
+          "tp": 13,
+          "fp": 2,
+          "fn": 2,
+          "micro_f1": 0.8666666666666667
+        },
+        "supplemental": {
+          "0.3": {
+            "tp": 4,
+            "fp": 11,
+            "fn": 11,
+            "micro_f1": 0.26666666666666666
+          },
+          "0.5": {
+            "tp": 0,
+            "fp": 15,
+            "fn": 15,
+            "micro_f1": 0.0
+          }
+        },
+        "mean_best_prediction_iou": 0.25024550518092525
+      }
+    },
+    "semantic_v15_best": {
+      "weights_sha256": "6ef302d93c90148633b6e1278939e7f00fa76746bbceea619fc83b5963f6d25d",
+      "map50": 0.9293838650309019,
+      "map50_95": 0.22643337496229524,
+      "blue_primary_localized_iou50": 1,
+      "legacy_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 4,
+          "images_with_fn": 1,
+          "tp": 56,
+          "fp": 5,
+          "fn": 1
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 2,
+          "images_with_fn": 2,
+          "tp": 18,
+          "fp": 2,
+          "fn": 2
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 1,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        }
+      },
+      "derived_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 4,
+          "fp": 0,
+          "fn": 9
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 4,
+          "tp": 8,
+          "fp": 4,
+          "fn": 2
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 4,
+          "tp": 18,
+          "fp": 4,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 0,
+          "fp": 3,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 104,
+        "fp": 19,
+        "fn": 14,
+        "micro_f1": 0.8630705394190872,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "visible_flame": {
+        "original_same_subset": {
+          "tp": 13,
+          "fp": 2,
+          "fn": 2,
+          "micro_f1": 0.8666666666666667
+        },
+        "supplemental": {
+          "0.3": {
+            "tp": 7,
+            "fp": 8,
+            "fn": 8,
+            "micro_f1": 0.4666666666666667
+          },
+          "0.5": {
+            "tp": 1,
+            "fp": 14,
+            "fn": 14,
+            "micro_f1": 0.06666666666666667
+          }
+        },
+        "mean_best_prediction_iou": 0.3136868671725755
+      }
+    },
+    "semantic_v15_last": {
+      "weights_sha256": "b323fd44c159ad28519624414a132c9ffa2fc05944d55542be392da67236a6df",
+      "map50": 0.8861951660126107,
+      "map50_95": 0.21638377204005005,
+      "blue_primary_localized_iou50": 3,
+      "legacy_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 4,
+          "images_with_fn": 0,
+          "tp": 57,
+          "fp": 4,
+          "fn": 0
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 6,
+          "images_with_fn": 3,
+          "tp": 17,
+          "fp": 11,
+          "fn": 3
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "derived_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 1,
+          "tp": 8,
+          "fp": 1,
+          "fn": 5
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 5,
+          "tp": 9,
+          "fp": 5,
+          "fn": 1
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 1,
+          "tp": 18,
+          "fp": 1,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 0,
+          "fp": 3,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 109,
+        "fp": 25,
+        "fn": 9,
+        "micro_f1": 0.8650793650793651,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "visible_flame": {
+        "original_same_subset": {
+          "tp": 13,
+          "fp": 10,
+          "fn": 2,
+          "micro_f1": 0.6842105263157895
+        },
+        "supplemental": {
+          "0.3": {
+            "tp": 7,
+            "fp": 16,
+            "fn": 8,
+            "micro_f1": 0.3684210526315789
+          },
+          "0.5": {
+            "tp": 5,
+            "fp": 18,
+            "fn": 10,
+            "micro_f1": 0.2631578947368421
+          }
+        },
+        "mean_best_prediction_iou": 0.4063335126365466
+      }
+    }
+  },
+  "project_decision": {
+    "next_runtime_candidate": "scratch_v14_last",
+    "reason": "Reviewed under-pot video localization and continuity advantage; same model size; last slightly fewer old negative FPs than best.",
+    "costs": "Old AP/recall loss and 18 old nofire-source FP boxes; pot-body geometry unresolved; video truth sparse.",
+    "v13_retained": true,
+    "semantic_v15_last_retained_for_geometry_work": true,
+    "general_or_board_adoption": false
+  }
+}
