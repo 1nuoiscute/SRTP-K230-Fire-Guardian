@@ -5,6 +5,14 @@ from pathlib import Path
 import json,tempfile
 
 class QueueBoundaryTests(unittest.TestCase):
+    def test_queue_filenames_cannot_escape_output_directory(self):
+        from fetch_kitchen_context_queue import file_prefix
+        for value in ['../outside','C:/outside','bad/name','',None]:
+            with self.assertRaisesRegex(ValueError,'Unsafe queue filename prefix'):
+                file_prefix({'file_prefix':value})
+        self.assertEqual(file_prefix({}),'context3')
+        self.assertEqual(file_prefix({'file_prefix':'context4'}),'context4')
+
     def test_restrictive_license_is_not_accidentally_admitted(self):
         for name in ['CC BY-NC 4.0','CC BY-ND 4.0','CC BY-SA 4.0 or other terms','Public domain']:
             self.assertFalse(license_allowed(name,'https://creativecommons.org/licenses/by/4.0/'))

@@ -76,10 +76,17 @@ def save(path, value):
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2)+"\n", encoding="utf-8", newline="\n")
 
 
+def file_prefix(plan):
+    prefix=plan.get("file_prefix","context3")
+    if not isinstance(prefix,str) or not re.fullmatch(r"[a-z][a-z0-9_]{0,32}",prefix):
+        raise ValueError("Unsafe queue filename prefix")
+    return prefix
+
+
 def acquire(plan_path, out):
     if out.exists(): raise ValueError("Refusing overwrite; use a new attempt directory")
     plan=json.loads(plan_path.read_text(encoding="utf-8"))
-    titles=plan['titles']
+    titles=plan['titles'];prefix=file_prefix(plan)
     if len(titles)!=len(set(titles)) or any(not isinstance(t,str) or not t for t in titles):
         raise ValueError("Titles must be nonempty and unique")
     known=known_titles(plan['known_source_manifests'])
@@ -123,7 +130,7 @@ def acquire(plan_path, out):
                 with __import__('PIL.Image',fromlist=['Image']).open(io.BytesIO(payload)) as im:
                     if im.format!='JPEG': raise ValueError('Payload is not JPEG')
                     width,height=im.size;im.verify()
-                filename=f'context3_{index:02d}.jpg';(out/filename).write_bytes(payload)
+                filename=f'{prefix}_{index:02d}.jpg';(out/filename).write_bytes(payload)
                 row.update(file=filename,sha256=hashlib.sha256(payload).hexdigest(),width=width,height=height,
                            bytes=len(payload),download_url=url)
                 canonical.add(page['title']);prior_sha1.add(info['sha1'])

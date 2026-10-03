@@ -1,0 +1,163 @@
+{
+  "role": "queue4_completed_review_and_inherited_roles_no_predictions",
+  "date": "2026-10-03",
+  "requested_works": 13,
+  "downloaded_works": 11,
+  "retried_http429_sources": 3,
+  "retry_successes": 3,
+  "license_policy_held_not_downloaded": 2,
+  "known_commons_works_api_checked": 38,
+  "queue_manifest_sha256": "2b1aff9104cf2aaf1a493a9085198618c54a06b625f3ef40537b7857cf62eb7e",
+  "acquisition_source_sha256": "42056ae80452f97ed854f42e6a3e774238a9434207fa39b4c7fe0315f7736695",
+  "review_sha256": "7b8a68a3a34bac00ce8d6afc529e397f1920952cb70fa6ae35203698bd0037d6",
+  "overlap_summary_sha256": "dbeeec9d5a291656ef8e3c0d6a0f5bf0123169043418f5f508f18df818d2308e",
+  "frozen_data_manifest_sha256": "85a73d4000fdfaea6acdb123abf7f5c0c53da61a27f8a39090354c189e4d926f",
+  "inheritance_plan_sha256": "5d4965b6c94f683a9aee2e83caa5cf4c48731f77b02ca0f9fe5f724afa264bd5",
+  "paths_scanned": 25766,
+  "unique_byte_images": 7601,
+  "csv_image_identities_verified": 15484,
+  "roles": {
+    "held": 2,
+    "reserved_holdout": 2,
+    "development": 7
+  },
+  "provisional_group_counts": {
+    "development": 7,
+    "reserved_holdout": 2,
+    "held": 2
+  },
+  "full_kitchen_area_context_images": 2,
+  "review_counts": {
+    "original_images": 11,
+    "nearest_comparison_pages": 11,
+    "detail_zooms": 5,
+    "annotation_overlays": 5,
+    "annotation_zooms": 2,
+    "old_author_reference": 1
+  },
+  "local_checks": {
+    "full_unit_tests": 174,
+    "skipped": 0,
+    "passed": true,
+    "log_sha256": "6c0ece0590dabfbdc8be0ec705d69556a15f30371f0b67f6629158fbadbdd058",
+    "reviewed_artifact_hashes_verified": 35,
+    "frozen_images_verified": 9,
+    "frozen_labels_verified": 9,
+    "positive_box_roundtrip_max_abs_pixels": 9.599998520570807e-07,
+    "held_images_without_generated_labels": true,
+    "prior_builder_and_v19_manifest_unchanged": true
+  },
+  "model_predictions_on_queue": 0,
+  "new_training_runs": 0,
+  "selection": {
+    "demo": "v16 best",
+    "development": "v18 last",
+    "changed": false
+  },
+  "board_connected": false,
+  "limits": [
+    "Only indices1/4 are kitchen area context; 2 is a utensils display, 9 a product photograph, other sources closeups/outdoor.",
+    "No queue3/4 predictions, no new training or model promotion.",
+    "One reserved positive and one reserved negative are targeted candidates, not representative project acceptance.",
+    "Related scene/author grouping still requires human review; differently spelled authors are not automatically resolved."
+  ],
+  "development": {
+    "images": 7,
+    "visible_flame_images": 3,
+    "visible_flame_boxes": 3,
+    "visible_no_flame_images": 4
+  },
+  "reserved_holdout": {
+    "images": 2,
+    "visible_flame_images": 1,
+    "visible_flame_boxes": 1,
+    "visible_no_flame_images": 1
+  },
+  "held": {
+    "images": 2,
+    "visible_flame_images": 1,
+    "visible_flame_boxes": 4,
+    "visible_no_flame_images": 0,
+    "labels_created": false
+  },
+  "overlap_results": [
+    {
+      "file": "context4_00.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 18
+    },
+    {
+      "file": "context4_01.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 18
+    },
+    {
+      "file": "context4_02.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 18
+    },
+    {
+      "file": "context4_03.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 20
+    },
+    {
+      "file": "context4_04.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 18
+    },
+    {
+      "file": "context4_05.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 18
+    },
+    {
+      "file": "context4_08.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 16
+    },
+    {
+      "file": "context4_09.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 16
+    },
+    {
+      "file": "context4_10.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 18
+    },
+    {
+      "file": "context4_11.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 18
+    },
+    {
+      "file": "context4_12.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 18
+    }
+  ],
+  "combined_queue3_queue4": {
+    "development_images": 14,
+    "development_provisional_groups": 13,
+    "development_flame_images": 4,
+    "development_flame_boxes": 4,
+    "reserved_images": 4,
+    "reserved_groups": 4,
+    "reserved_flame_boxes": 2,
+    "held_images": 3,
+    "project_independent_acceptance": false
+  },
+  "next_action": "Freeze a balanced extension experiment using only both queues development roles, exclude all inherited reserved/held identities, compare real-video blue-flame and utensil tradeoffs, preserve smoke/event acceptance gaps."
+}
