@@ -1,0 +1,1478 @@
+{
+  "role": "PC fixed-feature flame-head v18 completed development results",
+  "date": "2026-10-03",
+  "independent_acceptance": false,
+  "board_connected": false,
+  "training": {
+    "role": "Fixed v16 features on identical v17 data/schedule; head-only route, no teacher",
+    "source_sha256": "e770cf68d12cd43b4494a1439dc9c65f14d1d5fc570b2e2e379cc084384418fd",
+    "dataset": {
+      "manifest_sha256": "8e70dea69f39beafa0f17b3a6d4b483c537622fdf52271755fd8f3e2447bd54d",
+      "images_verified": 1424,
+      "entries_verified": 2131,
+      "new_flame_images": 17,
+      "new_flame_boxes": 44,
+      "reviewed_negative_images": 15,
+      "excluded_industrial_images": 1008,
+      "validation_images": 243,
+      "independent_kitchen": false
+    },
+    "config": {
+      "data": "D:\\SRTP_Datasets\\fire_semantic_extension_v17_20261003\\data.yaml",
+      "epochs": 12,
+      "patience": 0,
+      "pretrained": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-scratch-semantic-v16-r2-20261003\\weights\\best.pt",
+      "resume": false,
+      "imgsz": 640,
+      "batch": 8,
+      "nbs": 8,
+      "device": 0,
+      "workers": 0,
+      "seed": 20261006,
+      "optimizer": "AdamW",
+      "lr0": 5e-05,
+      "lrf": 0.1,
+      "weight_decay": 0.0005,
+      "warmup_epochs": 0,
+      "freeze": 23,
+      "hsv_h": 0.015,
+      "hsv_s": 0.3,
+      "hsv_v": 0.25,
+      "degrees": 3,
+      "translate": 0.05,
+      "scale": 0.2,
+      "fliplr": 0.5,
+      "mosaic": 0,
+      "mixup": 0,
+      "close_mosaic": 0,
+      "project": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs",
+      "name": "fire-frozen-flame-head-v18-20261003",
+      "exist_ok": false,
+      "save": true,
+      "save_period": -1,
+      "plots": true,
+      "val": true
+    },
+    "fixed_feature_blocks": 23,
+    "candidate_training": true,
+    "checkpoint_screen": [
+      "best.pt",
+      "last.pt"
+    ],
+    "teacher_loss": false,
+    "actual_trainer_reconstruction": {
+      "exact_source_state_equal": true,
+      "state_tensors": 499,
+      "rebuilt_state_sha256": "aa54d71b4f23ab60923a8be6539784628876891e299ed908386549fae88fe611"
+    },
+    "script_sha256": "b810e4588301f608dd7d8b5bf09e7d6177dca8589d06c9833c4cc20dd355fcd6",
+    "dependencies": {
+      "train_flame_extension_v17.py": "4cbf297200f7e362c0a25e5777e6858c05ac91607f2b89fecb61cfdf5fb675b7",
+      "train_scratch_semantic_v16.py": "40d353034bf88d458b70d1a589dc91966236203fcaf0233c9bf772f655c0cdf8",
+      "extend_flame_review_v17.py": "3d1b246d1a6040d16ff95b08bc5bdd9b330d2eec83cd2ba6428de865a005247d",
+      "backbone_freeze_audit.py": "8ea746515b72efd604a9109a38cc092f59e2f3bcaf3a87dd9892fa808171fd46",
+      "optimizer_cadence_audit.py": "34f6a5f2bc29dacf7f5a4d0214082728acb238285edd8ded8d91bb4ee2bb2730",
+      "data_integrity.py": "22777ca17939e2c07c5834418ac4bcf96ff3ae627053d8825feac29a6f8e59a0"
+    },
+    "environment": {
+      "python": "3.13.13",
+      "torch": "2.12.0+cu132",
+      "ultralytics": "8.4.70"
+    },
+    "checkpoints": {
+      "best.pt": "71cbf5f7020b9e8e6cbf205c7752ea38d23c4f6aaf438cffdc079e39f7ab0732",
+      "last.pt": "2534a8c727157d0333bf7e0b785cd09e950f5e6e0192831947ba26cfe865b3ce"
+    },
+    "actual_optimizer_steps": 3198,
+    "actual_batches": 3204,
+    "completed_audits": {
+      "actual_initialization_audit.json": "579da830c76cb16c083563ae8e5a24501523ab7ea1648736581a6fd8100e093d",
+      "feature_audit.json": "d5ca9bef1fe4e9d4a72ad863d78bc8f754cce1e80f2fe058b3ea6ab78d5bed12",
+      "head_update_audit.json": "e040878fab1d47f4088418f69bcb1179fe296a94d1b59e1369f9871a436ba93e",
+      "optimizer_cadence_audit.json": "9ae595290f4876d94e25330802131b16a3dd041184bb3cc5a94322a16fff1284"
+    },
+    "serialized_checkpoint_features_equal": true
+  },
+  "source_snapshot": {
+    "manifest_sha256": "92bd4731292cfa66c683c019de541fdde5d3dc46b6412b79eb254a007923bf7f",
+    "files": [
+      {
+        "file": "train_frozen_flame_head_v18.py",
+        "actual_bytes_sha256": "b810e4588301f608dd7d8b5bf09e7d6177dca8589d06c9833c4cc20dd355fcd6",
+        "git_lf_normalized_sha256": "b810e4588301f608dd7d8b5bf09e7d6177dca8589d06c9833c4cc20dd355fcd6"
+      },
+      {
+        "file": "train_flame_extension_v17.py",
+        "actual_bytes_sha256": "4cbf297200f7e362c0a25e5777e6858c05ac91607f2b89fecb61cfdf5fb675b7",
+        "git_lf_normalized_sha256": "9c75b3dcee2e7b817c90095690da6f75591cb6e0cd317255425a32fbc67e5c12"
+      },
+      {
+        "file": "train_scratch_semantic_v16.py",
+        "actual_bytes_sha256": "40d353034bf88d458b70d1a589dc91966236203fcaf0233c9bf772f655c0cdf8",
+        "git_lf_normalized_sha256": "40d353034bf88d458b70d1a589dc91966236203fcaf0233c9bf772f655c0cdf8"
+      },
+      {
+        "file": "extend_flame_review_v17.py",
+        "actual_bytes_sha256": "3d1b246d1a6040d16ff95b08bc5bdd9b330d2eec83cd2ba6428de865a005247d",
+        "git_lf_normalized_sha256": "0ad351af3fda4e7ddf6137dc49c42ad198249a83c3940ffb92cf9249f8cc54cc"
+      },
+      {
+        "file": "backbone_freeze_audit.py",
+        "actual_bytes_sha256": "8ea746515b72efd604a9109a38cc092f59e2f3bcaf3a87dd9892fa808171fd46",
+        "git_lf_normalized_sha256": "e7e31eb5392d916fe115c5ad72adae1556df51c867398d97601a4231732a09ab"
+      },
+      {
+        "file": "optimizer_cadence_audit.py",
+        "actual_bytes_sha256": "34f6a5f2bc29dacf7f5a4d0214082728acb238285edd8ded8d91bb4ee2bb2730",
+        "git_lf_normalized_sha256": "34f6a5f2bc29dacf7f5a4d0214082728acb238285edd8ded8d91bb4ee2bb2730"
+      },
+      {
+        "file": "data_integrity.py",
+        "actual_bytes_sha256": "22777ca17939e2c07c5834418ac4bcf96ff3ae627053d8825feac29a6f8e59a0",
+        "git_lf_normalized_sha256": "22777ca17939e2c07c5834418ac4bcf96ff3ae627053d8825feac29a6f8e59a0"
+      },
+      {
+        "file": "screen_frozen_flame_head_v18.py",
+        "actual_bytes_sha256": "34643ba272f59d6c4b5288942de6afbab8e839037e149d5e81d97c1e904ca55e",
+        "git_lf_normalized_sha256": "34643ba272f59d6c4b5288942de6afbab8e839037e149d5e81d97c1e904ca55e"
+      },
+      {
+        "file": "eval_project_model_videos.py",
+        "actual_bytes_sha256": "4049a4b55867a6958384af25452167fa8f4a77e9257992c6abaee078fb076751",
+        "git_lf_normalized_sha256": "4049a4b55867a6958384af25452167fa8f4a77e9257992c6abaee078fb076751"
+      },
+      {
+        "file": "verify_pc_video_cpu_parity.py",
+        "actual_bytes_sha256": "1b736c481a2fb9c82b932fbf5ae18bb103d380c658f51d82395cb5bc85ed61d3",
+        "git_lf_normalized_sha256": "6807f48ae4efc70b2f3f89c8df1e6673c701d52610e2c2283dd3d821fadeea66"
+      },
+      {
+        "file": "verify_onnx_export.py",
+        "actual_bytes_sha256": "e483dabc78041dec2a946826818328218dfb60fe32703d09104f862bf9a9017f",
+        "git_lf_normalized_sha256": "e483dabc78041dec2a946826818328218dfb60fe32703d09104f862bf9a9017f"
+      },
+      {
+        "file": "pc_onnx_infer.py",
+        "actual_bytes_sha256": "ef522b2002c7384f0374492a2c24a98c9bcf4c5a81d7a4161902edd269a0b28a",
+        "git_lf_normalized_sha256": "ef522b2002c7384f0374492a2c24a98c9bcf4c5a81d7a4161902edd269a0b28a"
+      },
+      {
+        "file": "pc_onnx_video.py",
+        "actual_bytes_sha256": "5d02a3ba967a1d01a26bc74b0b0f36f0ac23312dfedc00f9e7d424f0972eca47",
+        "git_lf_normalized_sha256": "5d02a3ba967a1d01a26bc74b0b0f36f0ac23312dfedc00f9e7d424f0972eca47"
+      }
+    ],
+    "scope": "Exact local source bytes; preserves original experiment identities across Git EOL normalization"
+  },
+  "comparison_complete_sha256": "7d29ba2eef75190ca6de81fc69b86184053662da615ae5918928dca83af9a01f",
+  "comparison_plan": {
+    "role": "Fixed-feature versus full-network project development comparison; references cached, new candidates evaluated",
+    "models": [
+      {
+        "label": "v16_best",
+        "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-scratch-semantic-v16-r2-20261003\\weights\\best.pt",
+        "expected_sha256": "e770cf68d12cd43b4494a1439dc9c65f14d1d5fc570b2e2e379cc084384418fd"
+      },
+      {
+        "label": "v17_best",
+        "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-flame-extension-v17-20261003\\weights\\best.pt",
+        "expected_sha256": "51edf823d902935e8f8a78aefeb51b713c9e113555e10cc5f2840d253bb0eaa6"
+      },
+      {
+        "label": "v17_last",
+        "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-flame-extension-v17-20261003\\weights\\last.pt",
+        "expected_sha256": "2f4c7b200a7d109c94594601756631da1fe8c97fc1f16ae58231a22ffc0acf6d"
+      },
+      {
+        "label": "v18_best",
+        "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-frozen-flame-head-v18-20261003\\weights\\best.pt",
+        "expected_sha256": "71cbf5f7020b9e8e6cbf205c7752ea38d23c4f6aaf438cffdc079e39f7ab0732"
+      },
+      {
+        "label": "v18_last",
+        "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-frozen-flame-head-v18-20261003\\weights\\last.pt",
+        "expected_sha256": "2534a8c727157d0333bf7e0b785cd09e950f5e6e0192831947ba26cfe865b3ce"
+      }
+    ],
+    "data_manifest_sha256": "8e70dea69f39beafa0f17b3a6d4b483c537622fdf52271755fd8f3e2447bd54d",
+    "source_experiment_meta_sha256": "c55083533ab9019e2cd6dc42a3a16f44b08a5c54aa2fa38e11e4bae95a95547c",
+    "reference_comparison_sha256": "e54838863db679f05a7b6863f1f689bf88c30af55090e523ff0d6973e229c364",
+    "script_sha256": "34643ba272f59d6c4b5288942de6afbab8e839037e149d5e81d97c1e904ca55e",
+    "supplemental_review_sha256": "196927d6b67cfe01c89b94a2aedb3e1f8d876ef3bba17e4079033a773c685682",
+    "policy_sha256": "9e22cfdd93b8d28108d1a874a5824127c63e1b59dbfebe5926dc38be92ad6a3f",
+    "evaluator_sha256": {
+      "eval_blue_localization.py": "71ae8abb9ce943161dc787a6632494d10a0e4252bb05b4dbd4a4a452c2d871fa",
+      "eval_fire_fulltest.py": "9d1af28e7eb22045d71a767e35e881f6dd4ae31e62b578aca84a38b016afd143",
+      "eval_hardcase_frames.py": "db6fa9913a99f5744d45ac9a4c797f743b1704aa1ebf47f0d226c4aa218b0f44",
+      "eval_legacy_source_localization.py": "29a5dafd1f5c152a377888eb3677a78f9ef0a560c2eb072c3b34775e7065b95e",
+      "score_legacy_fire_semantics.py": "213b7c65663001439a101b7570252e6c5da54f4f28b7e03b496bf092ff16afe7",
+      "model_project_review.py": "a5d026282656140409047a1aa561a533007b944c25059f08e5f1ed1756cc7682"
+    }
+  },
+  "reference_cache_scope": "v16/v17 blue, old286 AP and derived55 cached after identity validation; fixed legacy-source counts and supplemental physical geometry recomputed for all five; all five videos rerun.",
+  "models": {
+    "v16_best": {
+      "weights_sha256": "e770cf68d12cd43b4494a1439dc9c65f14d1d5fc570b2e2e379cc084384418fd",
+      "blue_primary_localized_iou50": 4,
+      "legacy": {
+        "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-scratch-semantic-v16-r2-20261003\\weights\\best.pt",
+        "weights_sha256": "e770cf68d12cd43b4494a1439dc9c65f14d1d5fc570b2e2e379cc084384418fd",
+        "data": "D:\\SRTP_Datasets\\kitchen_fire_binary_codex_20260927\\data.yaml",
+        "split": "test",
+        "precision": 0.701115739767064,
+        "recall": 0.7616513961849197,
+        "map50": 0.6829617468783579,
+        "map50_95": 0.17448759337331737
+      },
+      "source_counts": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 13,
+          "images_with_fn": 11,
+          "tp": 46,
+          "fp": 13,
+          "fn": 11
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 7,
+          "images_with_fn": 5,
+          "tp": 14,
+          "fp": 8,
+          "fn": 6
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 15,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 17,
+          "fn": 0
+        }
+      },
+      "derived_frames_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 13,
+          "fp": 0,
+          "fn": 0
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 101,
+        "fp": 38,
+        "fn": 17,
+        "micro_f1": 0.7859922178988327,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "visible_flame": {
+        "weights_sha256": "e770cf68d12cd43b4494a1439dc9c65f14d1d5fc570b2e2e379cc084384418fd",
+        "cached_predictions_sha256": "48802b4b743566c989eab7331e9751e86cf27241461d8a77c2ec0bc82489326e",
+        "original_same_subset": {
+          "tp": 10,
+          "fp": 7,
+          "fn": 5,
+          "micro_f1": 0.625
+        },
+        "supplemental": {
+          "0.3": {
+            "tp": 8,
+            "fp": 9,
+            "fn": 7,
+            "micro_f1": 0.5
+          },
+          "0.5": {
+            "tp": 6,
+            "fp": 11,
+            "fn": 9,
+            "micro_f1": 0.375
+          }
+        },
+        "mean_best_prediction_iou": 0.3849124698088186,
+        "details_sha256": "d727bc8ce12a50441fddc8cb8204acd1499f07bdc261e37885dd80bd6290b49e"
+      }
+    },
+    "v17_best": {
+      "weights_sha256": "51edf823d902935e8f8a78aefeb51b713c9e113555e10cc5f2840d253bb0eaa6",
+      "blue_primary_localized_iou50": 3,
+      "legacy": {
+        "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-flame-extension-v17-20261003\\weights\\best.pt",
+        "weights_sha256": "51edf823d902935e8f8a78aefeb51b713c9e113555e10cc5f2840d253bb0eaa6",
+        "data": "D:\\SRTP_Datasets\\kitchen_fire_binary_codex_20260927\\data.yaml",
+        "split": "test",
+        "precision": 0.6820638119384176,
+        "recall": 0.6363636363636364,
+        "map50": 0.6093141525443441,
+        "map50_95": 0.14158822446948022
+      },
+      "source_counts": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 10,
+          "images_with_fn": 11,
+          "tp": 46,
+          "fp": 10,
+          "fn": 11
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 9,
+          "images_with_fn": 8,
+          "tp": 9,
+          "fp": 14,
+          "fn": 11
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 16,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 19,
+          "fn": 0
+        }
+      },
+      "derived_frames_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 13,
+          "fp": 0,
+          "fn": 0
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 96,
+        "fp": 43,
+        "fn": 22,
+        "micro_f1": 0.7470817120622568,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "visible_flame": {
+        "weights_sha256": "51edf823d902935e8f8a78aefeb51b713c9e113555e10cc5f2840d253bb0eaa6",
+        "cached_predictions_sha256": "71f42dfb08e1c16f53ec2d7918179185cac50ec3d36f2b4232cd6e6c730eabbc",
+        "original_same_subset": {
+          "tp": 7,
+          "fp": 12,
+          "fn": 8,
+          "micro_f1": 0.4117647058823529
+        },
+        "supplemental": {
+          "0.3": {
+            "tp": 11,
+            "fp": 8,
+            "fn": 4,
+            "micro_f1": 0.6470588235294118
+          },
+          "0.5": {
+            "tp": 11,
+            "fp": 8,
+            "fn": 4,
+            "micro_f1": 0.6470588235294118
+          }
+        },
+        "mean_best_prediction_iou": 0.587320091769551,
+        "details_sha256": "15a3a1e1dc25ba71d7d3912a9a78bd6f6c92b5a36eb13d9b5162390eb53557b7"
+      }
+    },
+    "v17_last": {
+      "weights_sha256": "2f4c7b200a7d109c94594601756631da1fe8c97fc1f16ae58231a22ffc0acf6d",
+      "blue_primary_localized_iou50": 4,
+      "legacy": {
+        "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-flame-extension-v17-20261003\\weights\\last.pt",
+        "weights_sha256": "2f4c7b200a7d109c94594601756631da1fe8c97fc1f16ae58231a22ffc0acf6d",
+        "data": "D:\\SRTP_Datasets\\kitchen_fire_binary_codex_20260927\\data.yaml",
+        "split": "test",
+        "precision": 0.4891467245524133,
+        "recall": 0.5584415584415584,
+        "map50": 0.4189804347162061,
+        "map50_95": 0.08988252120901846
+      },
+      "source_counts": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 21,
+          "images_with_fn": 22,
+          "tp": 35,
+          "fp": 21,
+          "fn": 22
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 9,
+          "images_with_fn": 8,
+          "tp": 8,
+          "fp": 15,
+          "fn": 12
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 14,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 15,
+          "fn": 0
+        }
+      },
+      "derived_frames_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 13,
+          "fp": 0,
+          "fn": 0
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 84,
+        "fp": 51,
+        "fn": 34,
+        "micro_f1": 0.6640316205533597,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "visible_flame": {
+        "weights_sha256": "2f4c7b200a7d109c94594601756631da1fe8c97fc1f16ae58231a22ffc0acf6d",
+        "cached_predictions_sha256": "1dbca2b40a231740d42a83cbaed83327931985236cdc294721d85f0e9584a141",
+        "original_same_subset": {
+          "tp": 7,
+          "fp": 12,
+          "fn": 8,
+          "micro_f1": 0.4117647058823529
+        },
+        "supplemental": {
+          "0.3": {
+            "tp": 12,
+            "fp": 7,
+            "fn": 3,
+            "micro_f1": 0.7058823529411765
+          },
+          "0.5": {
+            "tp": 12,
+            "fp": 7,
+            "fn": 3,
+            "micro_f1": 0.7058823529411765
+          }
+        },
+        "mean_best_prediction_iou": 0.642464496373313,
+        "details_sha256": "5f9ec3dcdfc3cd692302ee7e538950392c99a7f054ec62c3c57f0fa522212a9d"
+      }
+    },
+    "v18_best": {
+      "weights_sha256": "71cbf5f7020b9e8e6cbf205c7752ea38d23c4f6aaf438cffdc079e39f7ab0732",
+      "blue_primary_localized_iou50": 4,
+      "legacy": {
+        "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-frozen-flame-head-v18-20261003\\weights\\best.pt",
+        "weights_sha256": "71cbf5f7020b9e8e6cbf205c7752ea38d23c4f6aaf438cffdc079e39f7ab0732",
+        "data": "D:\\SRTP_Datasets\\kitchen_fire_binary_codex_20260927\\data.yaml",
+        "split": "test",
+        "precision": 0.646408418424472,
+        "recall": 0.6753246753246753,
+        "map50": 0.6015859224599567,
+        "map50_95": 0.15522078236705947
+      },
+      "source_counts": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 12,
+          "images_with_fn": 11,
+          "tp": 46,
+          "fp": 12,
+          "fn": 11
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 8,
+          "images_with_fn": 5,
+          "tp": 13,
+          "fp": 13,
+          "fn": 7
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 16,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 18,
+          "fn": 0
+        }
+      },
+      "derived_frames_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 13,
+          "fp": 0,
+          "fn": 0
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 100,
+        "fp": 43,
+        "fn": 18,
+        "micro_f1": 0.7662835249042146,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "visible_flame": {
+        "weights_sha256": "71cbf5f7020b9e8e6cbf205c7752ea38d23c4f6aaf438cffdc079e39f7ab0732",
+        "cached_predictions_sha256": "0d3282c986dac7143b62b7a07b27f13d455961c4a7d7ffc0cddbe3fe90fd0931",
+        "original_same_subset": {
+          "tp": 10,
+          "fp": 10,
+          "fn": 5,
+          "micro_f1": 0.5714285714285714
+        },
+        "supplemental": {
+          "0.3": {
+            "tp": 9,
+            "fp": 11,
+            "fn": 6,
+            "micro_f1": 0.5142857142857142
+          },
+          "0.5": {
+            "tp": 7,
+            "fp": 13,
+            "fn": 8,
+            "micro_f1": 0.4
+          }
+        },
+        "mean_best_prediction_iou": 0.4623789328258366,
+        "details_sha256": "022a45d767faaa537d8d462b6d9d41680fd2b1b2a59c57b01bd74fcdbfde196e"
+      }
+    },
+    "v18_last": {
+      "weights_sha256": "2534a8c727157d0333bf7e0b785cd09e950f5e6e0192831947ba26cfe865b3ce",
+      "blue_primary_localized_iou50": 4,
+      "legacy": {
+        "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-frozen-flame-head-v18-20261003\\weights\\last.pt",
+        "weights_sha256": "2534a8c727157d0333bf7e0b785cd09e950f5e6e0192831947ba26cfe865b3ce",
+        "data": "D:\\SRTP_Datasets\\kitchen_fire_binary_codex_20260927\\data.yaml",
+        "split": "test",
+        "precision": 0.6646269587795814,
+        "recall": 0.5584415584415584,
+        "map50": 0.5475500375871118,
+        "map50_95": 0.1374207483087345
+      },
+      "source_counts": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 14,
+          "images_with_fn": 14,
+          "tp": 43,
+          "fp": 14,
+          "fn": 14
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 9,
+          "images_with_fn": 11,
+          "tp": 5,
+          "fp": 13,
+          "fn": 15
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 15,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 18,
+          "fn": 0
+        }
+      },
+      "derived_frames_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 13,
+          "fp": 0,
+          "fn": 0
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 89,
+        "fp": 45,
+        "fn": 29,
+        "micro_f1": 0.7063492063492064,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "visible_flame": {
+        "weights_sha256": "2534a8c727157d0333bf7e0b785cd09e950f5e6e0192831947ba26cfe865b3ce",
+        "cached_predictions_sha256": "a5fd61ec35a4a83450556bfbcfe82a293857422f552f00e50a3c052bb52e6fb1",
+        "original_same_subset": {
+          "tp": 4,
+          "fp": 11,
+          "fn": 11,
+          "micro_f1": 0.26666666666666666
+        },
+        "supplemental": {
+          "0.3": {
+            "tp": 10,
+            "fp": 5,
+            "fn": 5,
+            "micro_f1": 0.6666666666666666
+          },
+          "0.5": {
+            "tp": 10,
+            "fp": 5,
+            "fn": 5,
+            "micro_f1": 0.6666666666666666
+          }
+        },
+        "mean_best_prediction_iou": 0.5236551747977346,
+        "details_sha256": "f347b0514800d3792b2eb73df9302ccecea86baab04be9f98c1aab4404cf8a8b"
+      }
+    }
+  },
+  "video": {
+    "plan_sha256": "1740959764ae2254cbc637085a511580c97bccb0e5f49fa7a139d8f9b4c180a8",
+    "completed_utc": "2026-10-03T05:38:28.216722+00:00",
+    "clips": [
+      {
+        "video_index": 1,
+        "source_sha256": "65ce47ff76f64e8d28f290279f4de970929f203aa8cdbace7c63720260753df6",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 931,
+        "sampled_frames": 32,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v18_best": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          }
+        }
+      },
+      {
+        "video_index": 2,
+        "source_sha256": "ea5b23e704eb4f7b1a54335f5d0c9b9cd0f6309603b23d59625ad2a633dc7bca",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 940,
+        "sampled_frames": 32,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v18_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          }
+        }
+      },
+      {
+        "video_index": 3,
+        "source_sha256": "9f9183be2cf13b2b65ca89543bb451f4cb2b3515836a449b012e6daa1c071a16",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 956,
+        "sampled_frames": 32,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v18_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          }
+        }
+      },
+      {
+        "video_index": 4,
+        "source_sha256": "dafac36724a2a7a60e23d88cb9781e70814775b28176b672ba38e1aaa5b2c245",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 992,
+        "sampled_frames": 34,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v18_best": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          }
+        }
+      },
+      {
+        "video_index": 5,
+        "source_sha256": "ac34d7617a55c42d67d385e92d83f3255c6b93a54789c52cea746dc6a0028eba",
+        "fps": 30.004173042147727,
+        "step": 30,
+        "decoded_frames": 719,
+        "sampled_frames": 24,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v18_best": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          }
+        }
+      },
+      {
+        "video_index": 6,
+        "source_sha256": "dbd18d5fb2587b4dafc224d12bc47984ce6e97abbdfacf0e33a7b83520b02cb1",
+        "fps": 30.00447828034035,
+        "step": 30,
+        "decoded_frames": 670,
+        "sampled_frames": 23,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 21,
+            "boxes": 22,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 20,
+              "2": 1
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 21,
+            "boxes": 23,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 19,
+              "2": 2
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 21,
+            "boxes": 24,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 19,
+              "2": 1,
+              "3": 1
+            }
+          },
+          "v18_best": {
+            "frames_with_any_box": 21,
+            "boxes": 21,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 21
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 21,
+            "boxes": 21,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 21
+            }
+          }
+        }
+      },
+      {
+        "video_index": 7,
+        "source_sha256": "f768e372ec81704a31e5bad7834b523b93be05a9b9c88f7040f2178261fe99fc",
+        "fps": 28.02002035968782,
+        "step": 28,
+        "decoded_frames": 734,
+        "sampled_frames": 27,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 25,
+            "boxes": 37,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "3": 3,
+              "1": 16,
+              "2": 6,
+              "0": 2
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 25,
+            "boxes": 35,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "2": 6,
+              "1": 17,
+              "0": 2,
+              "3": 2
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 24,
+            "boxes": 34,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "2": 6,
+              "0": 3,
+              "1": 16,
+              "3": 2
+            }
+          },
+          "v18_best": {
+            "frames_with_any_box": 25,
+            "boxes": 35,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "2": 6,
+              "1": 17,
+              "0": 2,
+              "3": 2
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 25,
+            "boxes": 35,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "1": 17,
+              "2": 6,
+              "0": 2,
+              "3": 2
+            }
+          }
+        }
+      },
+      {
+        "video_index": 8,
+        "source_sha256": "ab9d1d7e493979dc39395e9933bc1adfe3f1c78ba479759146426ada47af601e",
+        "fps": 30.0046699875467,
+        "step": 30,
+        "decoded_frames": 1285,
+        "sampled_frames": 43,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v18_best": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          }
+        }
+      },
+      {
+        "video_index": 9,
+        "source_sha256": "fe87820c64636d5362a35fa98e6d969de892ddebf9a4dc0b326aa6896a97fa6a",
+        "fps": 30.004214075010534,
+        "step": 30,
+        "decoded_frames": 1780,
+        "sampled_frames": 60,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 60,
+            "boxes": 64,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 56,
+              "2": 4
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 60,
+            "boxes": 69,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 51,
+              "2": 9
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 60,
+            "boxes": 72,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 48,
+              "2": 12
+            }
+          },
+          "v18_best": {
+            "frames_with_any_box": 60,
+            "boxes": 66,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 54,
+              "2": 6
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 60,
+            "boxes": 70,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 51,
+              "2": 8,
+              "3": 1
+            }
+          }
+        }
+      }
+    ],
+    "total_samples": 307,
+    "model_inferences": 1535,
+    "per_frame_sha256": "df3bc931919b264b962bf3697ccf601c33bcd2c9c12121abdbc07c111ef88091",
+    "review_manifest_sha256": "7c963b50d5fd2f02c0e92145e0ad309fe20978f0b942807d78a2e913133d3f40",
+    "models_sha256": {
+      "v16_best": "e770cf68d12cd43b4494a1439dc9c65f14d1d5fc570b2e2e379cc084384418fd",
+      "v17_best": "51edf823d902935e8f8a78aefeb51b713c9e113555e10cc5f2840d253bb0eaa6",
+      "v17_last": "2f4c7b200a7d109c94594601756631da1fe8c97fc1f16ae58231a22ffc0acf6d",
+      "v18_best": "71cbf5f7020b9e8e6cbf205c7752ea38d23c4f6aaf438cffdc079e39f7ab0732",
+      "v18_last": "2534a8c727157d0333bf7e0b785cd09e950f5e6e0192831947ba26cfe865b3ce"
+    },
+    "source_frame_shared": true,
+    "automatic_adoption": false,
+    "limits": "Any-box and empty-run statistics include wrong boxes and lack exhaustive truth; not detection accuracy, alarm rate or real-time latency"
+  },
+  "cross_run": {
+    "samples": 307,
+    "source_identity_fields": [
+      "video_index",
+      "video_sha256",
+      "frame_index",
+      "sample_index",
+      "time_seconds",
+      "width",
+      "height",
+      "source_pixel_sha256"
+    ],
+    "all_source_identities_equal": true,
+    "reference_models": [
+      "v16_best",
+      "v17_best",
+      "v17_last"
+    ],
+    "all_reference_predictions_exactly_reproduced": true,
+    "prior_per_frame_sha256": "dc4dd2974fbc02b0c8b056cded7be58f9c5b1956dbb3fd879c2c679accb71ba3",
+    "current_per_frame_sha256": "df3bc931919b264b962bf3697ccf601c33bcd2c9c12121abdbc07c111ef88091"
+  },
+  "manual_review": {
+    "sha256": "7b483caedbb8da1d26295fb355c8173655df32a32313cbaee36a0cf741de5de5",
+    "pages": 20,
+    "runtime_images": 4,
+    "observations": {
+      "geometry": "last tighter on physical indices 1/2/5/6; misses pot 7; oversized boxes remain on 3/4/8/10. Three open burners at index 14 contribute matches; 10/15 does not mean pots solved.",
+      "video6": "both v18 variants retain one flame box in count-different samples 3 and 22; v17 fragment/overlap boxes reduce. No proof of full flame coverage.",
+      "video7": "sample 1 visible blue flame missed by v17 last is detected by both v18 variants; v18 last has overlapping boxes there. Sample 0 last only covers left flame component. Counts are not recall.",
+      "video9": {
+        "reviewed_hanging_utensil_samples": [
+          33,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          45
+        ],
+        "false_object_samples": {
+          "v16_best": [
+            45
+          ],
+          "v17_best": [
+            33,
+            35,
+            36,
+            37,
+            38,
+            40,
+            45
+          ],
+          "v17_last": [
+            33,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            45
+          ],
+          "v18_best": [
+            35,
+            40,
+            45
+          ],
+          "v18_last": [
+            33,
+            35,
+            36,
+            38,
+            40,
+            45
+          ]
+        },
+        "v18_last_sample45": "two overlapping false boxes on the same hanging utensils; other models one. This is a reviewed subset, not exhaustive scene FP rate."
+      },
+      "runtime": "overlay plus decoded boxed samples 0/13/26 inspected; output has 27 decoded frames. Flame component coverage still incomplete in sample 0.",
+      "limits": [
+        "20 pages plus 4 runtime images actually inspected; fixed-video review shows 27 source frames with selected v16/v18 model rows, difference review shows all 15 count-different sources with all five models; overlaps not counted as unique frames.",
+        "All shared-frame references exposed development sources; no dense video GT, no independent acceptance, no board tests.",
+        "No-fire raw source labels not silently corrected; ambiguous earlier table objects remain unknown."
+      ]
+    }
+  },
+  "selection": {
+    "current_pc_demo": "v16_best",
+    "next_localization_development_candidate": "v18_last",
+    "geometry_reference_retained": "v17_last",
+    "v18_best": "retained as lower-utensil-error control",
+    "reason": "v18 last gains tight flame localization over v16, recovers v17 last video7 sample1, and preserves better old AP and fixed-count micro F1 than v17 last; still contains hanging-utensil errors, nested boxes and pot misses. Old AP decrease is recorded as cost, not an all-metrics veto.",
+    "automatic_replacement": false
+  },
+  "verification": {
+    "full_dependency_local_tests": 152,
+    "preflight_log_sha256": "5eda3e312410579855705098221103979f3fbd7e6d982263b6e2be484a022726",
+    "final_full_dependency_tests": 152,
+    "final_full_dependency_tests_log_sha256": "a1a33da9fefd59c1c511669d9b07634cea35e47030b280ebf87dde3ab715c57b"
+  },
+  "limits": [
+    "same exposed development sources and related frames; approximate supplemental geometry; not independent accuracy",
+    "legacy labels and physical-flame supplemental metrics retained separately",
+    "9 videos 307 samples at about 1fps, not whole-video detection acceptance",
+    "PC exports and CPU parity do not establish K230 or realtime performance"
+  ]
+}
