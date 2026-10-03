@@ -18,6 +18,15 @@ class ContextApprovalTest(unittest.TestCase):
         decisions=[dict(index=i,status='flame' if i==40 else 'negative',boxes_xyxy=[[10,20,30,40]] if i==40 else [],note='Actually reviewed original full frame') for i in range(1,41)]
         return dict(images=rows),decisions
 
+    def test_schedule_controls_match_v18_and_wrong_data_is_rejected(self):
+        from train_context_flame_head_v19 import frozen_schedule, validate_completion
+        from train_frozen_flame_head_v18 import frozen_schedule as previous_schedule
+        previous=previous_schedule(Path('v17/data.yaml'),Path('runs/v18'),Path('v16/best.pt'),23)
+        current=frozen_schedule(Path('v19/data.yaml'),Path('runs/v19'),Path('v16/best.pt'),23)
+        self.assertEqual({k:(previous[k],v) for k,v in current.items() if previous[k]!=v}, {'data':(str(Path('v17/data.yaml').resolve()),str(Path('v19/data.yaml').resolve())),'name':('v18','v19')})
+        with self.assertRaisesRegex(ValueError,'Wrong completed v19 data'):
+            validate_completion(dict(dataset=dict(manifest_sha256='stale')),[],dict())
+
     def test_nonfinite_or_outside_geometry_rejected(self):
         inp,d=self.inputs()
         for b in ([10,20,float('nan'),40],[10,20,641,40],[30,20,10,40]):
