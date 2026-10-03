@@ -36,3 +36,11 @@ python -B model_work/src/curate_train_context_v19.py build --parent D:/SRTP_Data
 python -B model_work/src/train_context_flame_head_v19.py --start model_work/runs/fire-scratch-semantic-v16-r2-20261003/weights/best.pt --data D:/SRTP_Datasets/fire_train_context_v19_20261003/data.yaml --rehearse-cpu --out model_work/out/train_context_v19_cpu_rehearsal_20261003
 python -B model_work/src/train_context_flame_head_v19.py --start model_work/runs/fire-scratch-semantic-v16-r2-20261003/weights/best.pt --data D:/SRTP_Datasets/fire_train_context_v19_20261003/data.yaml --out model_work/runs/fire-train-context-head-v19-20261003
 ```
+
+
+正式GPU训练已启动，499状态实际v16起点和819779个头参数核对通过；训练尚未完成。比较入口`screen_train_context_v19.py`在结果前冻结，比较v16、v17 best/last、v18 best/last和v19 best/last共7模型；新增数据的55派生图成员/标签必须与父版本逐项一致才允许参考缓存。五份参考的旧AP/蓝焰/55图缓存身份绑定，固定来源和物理15框实际重算七模型，视频七模型全部重跑同307帧。15份实际源码字节快照保存于本地`model_work/out/v19_frozen_sources_20261003`，保留原CRLF与Git LF规范化哈希。
+
+```powershell
+python -B model_work/src/screen_train_context_v19.py --run model_work/runs/fire-train-context-head-v19-20261003 --data D:/SRTP_Datasets/fire_train_context_v19_20261003 --review model_work/out/legacy_visible_flame_audit_20261002 --previous model_work/out/frozen_flame_v18_comparison_20261003 --out model_work/out/train_context_v19_comparison_20261003
+python -B model_work/src/eval_project_model_videos.py --models model_work/out/train_context_v19_comparison_20261003/models.json --videos-dir viedos viedos/视频/视频 --out model_work/out/project_v19_videos_20261003
+```
