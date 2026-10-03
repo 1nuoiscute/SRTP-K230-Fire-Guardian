@@ -1,0 +1,142 @@
+{
+  "role": "completed_source_review_and_frozen_roles_no_new_model",
+  "date": "2026-10-03",
+  "requested_works": 13,
+  "downloaded_works": 10,
+  "http429_failures": 3,
+  "known_commons_works_api_checked": 28,
+  "queue_manifest_sha256": "2ae56741220ed716deebcc4f61d597b3894e603246d7cc4ddab636aecc8ce5ca",
+  "acquisition_source_sha256": "1e67113755c0787227035329801eb93b8adfa2592bc0b0c22327e5a155148de8",
+  "overlap_summary_sha256": "025a9f42a99498ad2a5f207b747db518a03f67c26ef6a14bdfb599266bce0ef9",
+  "review_sha256": "941d28ea49a28262064c5c4bbc88fcf7ca5c70e7bef50105f2f3499147bae137",
+  "frozen_data_manifest_sha256": "7c6a9b49eadb7ed74d03993bd25766176bfd42344d3b4255bb83ca7a590cd88b",
+  "paths_scanned": 25756,
+  "unique_byte_images": 7591,
+  "csv_image_identities_verified": 15484,
+  "review_counts": {
+    "original_images": 10,
+    "nearest_comparison_pages": 10,
+    "annotation_overlays": 2,
+    "flame_zooms": 2,
+    "stove_zoom": 1
+  },
+  "roles": {
+    "development": 7,
+    "reserved_holdout": 2,
+    "held": 1
+  },
+  "provisional_group_counts": {
+    "development": 6,
+    "reserved_holdout": 2,
+    "held": 1
+  },
+  "full_kitchen_context_images": 2,
+  "development": {
+    "images": 7,
+    "visible_flame_images": 1,
+    "visible_flame_boxes": 1,
+    "visible_no_flame_images": 6
+  },
+  "reserved_holdout": {
+    "images": 2,
+    "visible_flame_images": 1,
+    "visible_flame_boxes": 1,
+    "visible_no_flame_images": 1
+  },
+  "held": {
+    "images": 1,
+    "labels_created": false
+  },
+  "overlap_results": [
+    {
+      "file": "context3_00.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 16
+    },
+    {
+      "file": "context3_01.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 18
+    },
+    {
+      "file": "context3_02.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 18
+    },
+    {
+      "file": "context3_03.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 18
+    },
+    {
+      "file": "context3_04.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 14
+    },
+    {
+      "file": "context3_05.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 16
+    },
+    {
+      "file": "context3_06.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 18
+    },
+    {
+      "file": "context3_07.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 18
+    },
+    {
+      "file": "context3_08.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 18
+    },
+    {
+      "file": "context3_09.jpg",
+      "exact_byte_matches": 0,
+      "exact_pixel_matches": 0,
+      "nearest_phash_distance": 16
+    }
+  ],
+  "local_checks": {
+    "full_unit_tests": 167,
+    "skipped": 0,
+    "passed": true,
+    "log_sha256": "c8b9c2b04426d8a90400f4438b5743f60248b75140970e6d2d79d8c4bb4325d6",
+    "reviewed_artifact_hashes_verified": 25,
+    "frozen_images_verified": 9,
+    "frozen_labels_verified": 9,
+    "positive_box_roundtrip_max_abs_pixels_lt": 1e-05,
+    "held_image_without_generated_label": true,
+    "prior_v19_manifest_unchanged": true
+  },
+  "model_predictions_on_queue": 0,
+  "new_training_runs": 0,
+  "selection": {
+    "demo": "v16 best",
+    "development": "v18 last",
+    "changed": false
+  },
+  "board_connected": false,
+  "next_action": "Expand source-diverse full-kitchen visible flame positives and occlusions; preserve reserved groups; then freeze paired training protocol before inference. Retry three HTTP429 sources only in a separately recorded attempt.",
+  "limits": [
+    "Only two full kitchen contexts; closeups are recorded separately.",
+    "Two labelled burner regions do not establish smoke/event labels or adequate positive coverage.",
+    "No inference, training, model promotion, board or acceptance result in this data stage.",
+    "Overlap covers explicit local inventory plus 27 reviewed project frames, not every frame of all private videos.",
+    "The two reserved images do not satisfy the project independent-test>=20% requirement.",
+    "Shared author grouping is conservative, not proof that all source scenes are independent.",
+    "Later acquisition request pacing is a mitigation; the three failures have not been retried or proven resolved."
+  ]
+}
