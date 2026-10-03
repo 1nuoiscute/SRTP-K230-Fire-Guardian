@@ -1,0 +1,15 @@
+{
+  "scope": "Exposed source-error semantics review; do not silently correct labels or count ambiguous objects as confirmed fire/no-fire",
+  "input_sha256": "29daf1f38a543c9678e171e465dd0474858b98edfa60cac37573efcbb5288f82",
+  "original_labels_modified": false,
+  "independent_kitchen": false,
+  "smoke_absence_unknown": true,
+  "confirmed_nonflame_images": 10,
+  "confirmed_nonflame_prediction_boxes": 12,
+  "uncertain_visible_fire_images": 5,
+  "uncertain_prediction_boxes": 5,
+  "raw_empty_label_fp_images": 15,
+  "raw_empty_label_fp_boxes": 17,
+  "review_complete_sha256": "7d1a4be6641f62f523061d29f3872f2c4271a4534425ee239993d20cdaf426c8",
+  "finding": "Named nofire source is not normal-event ground truth. Errors include plume, illumination, tissue, industrial objects and FIRECHIEF watermark. Five images of a bright table object remain ambiguous; retain original scoring separately."
+}
