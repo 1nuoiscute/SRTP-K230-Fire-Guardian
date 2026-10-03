@@ -35,3 +35,18 @@ python -B model_work/src/train_kitchen_source_head_v20.py --start model_work/run
 ```
 
 完整目标仍包括独立厨房、烟雾/蒸汽事件、低误报警和板端链路，均不由本轮训练准备达成。
+
+## 正式启动与比较实现
+
+正式训练已从70705ce启动，实际目录fire-kitchen-source-head-v20-20261003，当前启动观察记录见[launch JSON](../../docs/kitchen_source_v20_launch_20261003.json)。499状态张量精确等于v16 best，819779头参数学习、23特征模块固定；实际args与声明data/epochs/batch/imgsz/optimizer/seed/freeze/lr0/nbs/warmup/mosaic/name/pretrained逐项一致。16份实际源码快照已逐项核对。观察时轮数和更新数是带时间的快照，不当训练完成声明。
+
+351a023的基础CI曾因新增配置比较测试在跳过处理前导入cv2失败。70705ce只修正测试的可选导入边界，模型训练源码和最终CPU预演身份不变；准确push/PR任务均完成成功。本机182项无跳过；基础CI中缺模型依赖的75项跳过，二者范围分开。失败CI记录保留。
+
+比较实现已冻结到[protocol](../../docs/kitchen_source_v20_comparison_protocol_20261003.json)，包括准确旧图片/视频结果、评测源码和采用政策SHA。新入口加载检查通过，但完整候选评测尚未运行，不能从--help宣布比较通过。旧55派生图沿用原v19数据，不因新增14图改变历史计数；新增图单独评分。训练完成后运行：
+
+```powershell
+python -B model_work/src/screen_kitchen_source_v20.py --run model_work/runs/fire-kitchen-source-head-v20-20261003 --data D:/SRTP_Datasets/fire_kitchen_source_v20_20261003 --review model_work/out/legacy_visible_flame_audit_20261002 --previous model_work/out/train_context_v19_comparison_20261003 --out <new-comparison-directory>
+python -B model_work/src/eval_project_model_videos.py --models <new-comparison-directory>/models.json --videos-dir viedos viedos/视频/视频 --out <new-video-comparison-directory>
+```
+
+全部best/last继续进行项目视频复核，留出仍不预测。GPU进程的session只用于重新观察实际进度，句柄缺失或终止须检查产物，不从旧launch快照重启。
