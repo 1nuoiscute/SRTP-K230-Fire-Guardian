@@ -48,8 +48,8 @@ class SourceExtensionTests(unittest.TestCase):
     def test_v20_schedule_matches_v19_except_data_and_run_name(self):
         from pathlib import Path
         from train_kitchen_source_head_v20 import frozen_schedule
-        from train_context_flame_head_v19 import frozen_schedule as old_schedule
         try:
+            from train_context_flame_head_v19 import frozen_schedule as old_schedule
             previous=old_schedule(Path('v19/data.yaml'),Path('runs/v19'),Path('v16/best.pt'),23)
             current=frozen_schedule(Path('v20/data.yaml'),Path('runs/v20'),Path('v16/best.pt'),23)
         except ImportError as error:self.skipTest(str(error))
