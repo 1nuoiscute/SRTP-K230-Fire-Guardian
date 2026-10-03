@@ -1,0 +1,96 @@
+{
+  "role": "Audit of supervision composition before completed v18 candidate evaluation",
+  "data_manifest_sha256": "8e70dea69f39beafa0f17b3a6d4b483c537622fdf52271755fd8f3e2447bd54d",
+  "unique_images": 1424,
+  "sampling_entries": 2131,
+  "by_provenance": {
+    "kitchen_stove_fire": {
+      "unique_images": 37,
+      "sampling_entries": 261,
+      "label_boxes": 93,
+      "empty_label_images": 0,
+      "reviewed_legacy_visible_geometry_images": 37,
+      "v17_reviewed_negative_images": 0
+    },
+    "ks_flame": {
+      "unique_images": 184,
+      "sampling_entries": 184,
+      "label_boxes": 240,
+      "empty_label_images": 0,
+      "reviewed_legacy_visible_geometry_images": 0,
+      "v17_reviewed_negative_images": 0
+    },
+    "generic_fire": {
+      "unique_images": 795,
+      "sampling_entries": 795,
+      "label_boxes": 1555,
+      "empty_label_images": 1,
+      "reviewed_legacy_visible_geometry_images": 0,
+      "v17_reviewed_negative_images": 0
+    },
+    "nofire_real_indoor": {
+      "unique_images": 153,
+      "sampling_entries": 235,
+      "label_boxes": 0,
+      "empty_label_images": 153,
+      "reviewed_legacy_visible_geometry_images": 0,
+      "v17_reviewed_negative_images": 7
+    },
+    "object_pan": {
+      "unique_images": 200,
+      "sampling_entries": 256,
+      "label_boxes": 0,
+      "empty_label_images": 200,
+      "reviewed_legacy_visible_geometry_images": 0,
+      "v17_reviewed_negative_images": 8
+    },
+    "reviewed_flame": {
+      "unique_images": 10,
+      "sampling_entries": 120,
+      "label_boxes": 10,
+      "empty_label_images": 0,
+      "reviewed_legacy_visible_geometry_images": 0,
+      "v17_reviewed_negative_images": 0
+    },
+    "sticker_hard_negative_crop": {
+      "unique_images": 10,
+      "sampling_entries": 80,
+      "label_boxes": 0,
+      "empty_label_images": 10,
+      "reviewed_legacy_visible_geometry_images": 0,
+      "v17_reviewed_negative_images": 0
+    },
+    "reviewed_old_video": {
+      "unique_images": 24,
+      "sampling_entries": 72,
+      "label_boxes": 18,
+      "empty_label_images": 6,
+      "reviewed_legacy_visible_geometry_images": 0,
+      "v17_reviewed_negative_images": 0
+    },
+    "commons_reviewed_blue": {
+      "unique_images": 10,
+      "sampling_entries": 120,
+      "label_boxes": 13,
+      "empty_label_images": 0,
+      "reviewed_legacy_visible_geometry_images": 0,
+      "v17_reviewed_negative_images": 0
+    },
+    "food_hard_negative_crop": {
+      "unique_images": 1,
+      "sampling_entries": 8,
+      "label_boxes": 0,
+      "empty_label_images": 1,
+      "reviewed_legacy_visible_geometry_images": 0,
+      "v17_reviewed_negative_images": 0
+    }
+  },
+  "reviewed_legacy_visible_geometry_images": 37,
+  "reviewed_legacy_geometry_sampling_entries": 261,
+  "reviewed_legacy_geometry_sampling_fraction": 0.12247770999530737,
+  "teacher_loss_active_in_v18": false,
+  "original_train_membership_verified": true,
+  "training_labels_modified": false,
+  "independent_kitchen": false,
+  "interpretation": "261 weighted entries from 37 reviewed legacy geometry frames coexist with inherited supervision and 55 reviewed derived records. Empty inherited labels are not all freshly reviewed. This composition audit does not prove label correctness, independent scene count or a cause of observed errors; no sampling changed during the fixed experiment."
+}
