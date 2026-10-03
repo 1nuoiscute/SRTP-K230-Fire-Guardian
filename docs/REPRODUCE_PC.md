@@ -1,5 +1,7 @@
 # 电脑端复现
 
+当前新的电脑端单类候选为 [fire v13](PC_FIRE_V13_MODEL_CARD.md)：已选权重与静态/动态 ONNX 位于本机 `model_work/out/fire_teacher_v13_selected_20261002/`，具体 SHA256 和图片/视频命令见模型卡。原 v3 仍保留回退；下文 v3 实验命令保留作历史复现，不与 v13 的模型身份混用。
+
 已用环境：Windows、Python 3.13、PyTorch 2.12.0+cu132、Ultralytics 8.4.70、OpenCV 4.13.0，RTX 5060 Laptop 8GB。版本是本机实测记录；CUDA 构建按运行机器配置，不由普通 requirements 强制安装。
 
 ```sh
@@ -14,6 +16,35 @@ python -B model_work/src/fusion_replay.py replay --input model_work/data/fusion_
 ```
 
 原视频和大型数据不在仓库，按 references 里的来源/许可自行获取。旧模型与数据沿革见实验报告。新实验构建、训练和评测均输出到新目录并拒绝覆盖；v5 命令及数据身份记录在本轮实验报告中。
+
+## 2026-10-02 独立 ONNX 图片/视频入口
+
+模型沿革、两种导出身份及输入策略见 [v3 模型卡](PC_FIRE_V3_MODEL_CARD.md)，完整实验见 [本轮记录](../model_work/docs/PC_MODEL_PROGRESS_20261002.md)。仅运行电脑 CPU 推理可在单独环境安装：
+
+```sh
+python -m pip install -r model_work/src/requirements-onnx.txt
+```
+
+电脑端沿用默认 PyTorch 预处理时，使用动态版本加 --rectangular。image.jpg、clip.mp4 是你自己的本地素材；每次指定新的输出目录：
+
+```sh
+python -B model_work/src/pc_onnx_infer.py --model model_work/out/onnx_v3_rectangular_parity_20261002_v2/model.onnx --expected-sha256 41a0431013501b4f833700d464c3c0bb2abcf2627a23a1dd63f19b1d8eee5e47 --image image.jpg --out model_work/out/new_image_run --rectangular
+python -B model_work/src/pc_onnx_video.py --model model_work/out/onnx_v3_rectangular_parity_20261002_v2/model.onnx --expected-sha256 41a0431013501b4f833700d464c3c0bb2abcf2627a23a1dd63f19b1d8eee5e47 --video clip.mp4 --out model_work/out/new_video_run --sample-fps 1 --rectangular --boxed
+```
+
+图片输出 predictions.json 与 overlay.jpg；视频输出 per_frame.csv、summary.json 与可选采样预览 boxed.mp4。框均为原图坐标。空框是有效预测，打开/解码/形状异常会失败并保留已生成日志，不伪造传感器或事件报警。视频按 nominal FPS 标时，实际解码数与容器标称数都记录，未验证 VFR 实时捕获。
+
+固定正方形路线改用静态 model_work/out/onnx_v3_parity_20261002/model.onnx 及 SHA-256 170ff446709cff7d061e3f7ebc3878c87accf386d1d09704ea49502c9528b40f，去掉 --rectangular。两种输入方式的诊断分数不能混用。动态产物用于电脑端；静态产物也未做 KModel 或实机验证。
+
+在完整训练/导出环境中重现两种验证（大文件需已取得和审核）：
+
+```sh
+python -B model_work/src/verify_onnx_export.py --weights model_work/runs/fire-binary-user-video-v3/weights/best.pt --expected-sha256 48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980 --data model_work/data/hardcase_v9_sources_20260930 --out model_work/out/new_static_parity
+python -B model_work/src/verify_onnx_export.py --weights model_work/runs/fire-binary-user-video-v3/weights/best.pt --expected-sha256 48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980 --data model_work/data/hardcase_v9_sources_20260930 --out model_work/out/new_rectangular_parity --dynamic-rectangular
+python -B model_work/src/compare_pc_input_policy.py --parity-run model_work/out/new_rectangular_parity --out model_work/out/new_wrapper_comparison
+```
+
+ONNX Exporter 写入当前日期等元数据，不同时间重导出的文件 SHA 可能不同；新副本使用本次 summary.json 的 SHA，不能跳过原权重与数值一致性检查。代码和公开汇总在 Git，训练权重、ONNX、原图与视频继续留本地。
 
 ## v5 对照工具
 

@@ -1,0 +1,488 @@
+{
+  "role": "queue4_roles_frozen_before_predictions_with_queue3_inheritance",
+  "date": "2026-10-03",
+  "queue_manifest_sha256": "2b1aff9104cf2aaf1a493a9085198618c54a06b625f3ef40537b7857cf62eb7e",
+  "audit_summary_sha256": "dbeeec9d5a291656ef8e3c0d6a0f5bf0123169043418f5f508f18df818d2308e",
+  "inheritance_plan_sha256": "5d4965b6c94f683a9aee2e83caa5cf4c48731f77b02ca0f9fe5f724afa264bd5",
+  "no_model_predictions_on_queue": true,
+  "reviewer": "Codex single visual reviewer; no inter-rater audit",
+  "label_policy": "class0 visible flame, one enclosing region per visible burner; separate burners separate; empty is no visible flame only; smoke and event truth unknown",
+  "grouping_policy": "All queue3 source groups/author strings/original SHA1 roles inherited through hash-bound reviews. BogTar repeated author separately held. Other candidate groups are provisional, not proven independent kitchens.",
+  "rows": [
+    {
+      "file": "context4_00.jpg",
+      "sha256": "b579feeb384bc52907420085cce2ecfe5f665c1a0a88ad1b96bbf8e25ec79aff",
+      "width": 1920,
+      "height": 1440,
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AKawiarka_Bialetti_Moka_Induction_%282022-10-09%29.jpg",
+      "canonical_title": "File:Kawiarka Bialetti Moka Induction (2022-10-09).jpg",
+      "original_sha1": "0c8025392978a697dc616d04fda9931ead09adbf",
+      "author": "Olgierd Rudak",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "capture_date": "2022-10-09 07:27:01",
+      "role": "held",
+      "visible_target": "unknown",
+      "source_group": "rudak_outdoor_moka_20221009",
+      "boxes": [],
+      "full_kitchen_context": false,
+      "visually_reviewed": true,
+      "note": "户外摩卡壶；锅底红区放大后仍无法区分灼热金属与可见火焰，保留未知，不生成空标签。",
+      "nearest_visual_review": "实际查看最近两幅旧图，未确认同作品或同厨房；同作者旧来源另记隔离。"
+    },
+    {
+      "file": "context4_01.jpg",
+      "sha256": "5449c5c9ec812aea348fed2e6b9d3040d7f0b42c622eed4eb465c1824f828ce3",
+      "width": 1920,
+      "height": 2879,
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AGas_stove_in_the_bivouac_Bivacco_Primalpia_-_Valle_dei_Ratti%2C_Sondrio%2C_Lombardy%2C_Italy_-_2021-07-06.jpg",
+      "canonical_title": "File:Gas stove in the bivouac Bivacco Primalpia - Valle dei Ratti, Sondrio, Lombardy, Italy - 2021-07-06.jpg",
+      "original_sha1": "dd5b315a2421d56df0f52eab32dbb7610e0e463e",
+      "author": "Mænsard vokser",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "capture_date": "2021-07-06 18:05:46",
+      "role": "reserved_holdout",
+      "visible_target": "visible_no_flame",
+      "source_group": "maensard_primalpia_20210706",
+      "boxes": [],
+      "full_kitchen_context": true,
+      "visually_reviewed": true,
+      "note": "完整灶台及厨房背景、锅和橙色挂布；放大锅底未解析出火焰，只认定无可见火焰，不认定无燃烧事件。",
+      "nearest_visual_review": "实际查看最近两幅旧图，未确认同作品或同厨房；同作者旧来源另记隔离。"
+    },
+    {
+      "file": "context4_02.jpg",
+      "sha256": "9eb9a96aab9605d87ab26d3ce810c8fb06fedb8b13d8c1da4f8722291f857ab6",
+      "width": 1920,
+      "height": 1080,
+      "source_page": "https://commons.wikimedia.org/wiki/File%3APerkakas_dan_Peralatan_Masak_Rumah_Tangga.jpg",
+      "canonical_title": "File:Perkakas dan Peralatan Masak Rumah Tangga.jpg",
+      "original_sha1": "99373c3c67e49d0681ceb5da0f45af6986407f9f",
+      "author": "Goten444",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "capture_date": "2021-09-05",
+      "role": "development",
+      "visible_target": "visible_no_flame",
+      "source_group": "goten_utensils_display",
+      "boxes": [],
+      "full_kitchen_context": false,
+      "visually_reviewed": true,
+      "note": "传统炊具陈列、挂件和多种锅具，无可见火焰；场景可能是陈列，不能算正在使用的真实厨房。",
+      "nearest_visual_review": "实际查看最近两幅旧图，未确认同作品或同厨房；同作者旧来源另记隔离。"
+    },
+    {
+      "file": "context4_03.jpg",
+      "sha256": "f5ccf578ba573b4b594dee20e3c5ed6102592f22524f280888168454c89c7a17",
+      "width": 1280,
+      "height": 2133,
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ACuisine_%28_in_China%29_10.jpg",
+      "canonical_title": "File:Cuisine ( in China) 10.jpg",
+      "original_sha1": "4e948b9b07ba9388700863658456568488e989ad",
+      "author": "Pauloleong2002",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "capture_date": "2018-12-26 18:57:45",
+      "role": "development",
+      "visible_target": "visible_no_flame",
+      "source_group": "pauloleong_china_cooking_20181226",
+      "boxes": [],
+      "full_kitchen_context": false,
+      "visually_reviewed": true,
+      "note": "食物、橙红汤汁、反光金属和炉架近景，无可解析可见火焰；下载像素已为竖向，EXIF无待旋转标记。",
+      "nearest_visual_review": "实际查看最近两幅旧图，未确认同作品或同厨房；同作者旧来源另记隔离。"
+    },
+    {
+      "file": "context4_04.jpg",
+      "sha256": "34a7450548fcd24a2b72d904089f12ef6b292c7d9b8788fdb9a2219c944f0ec7",
+      "width": 974,
+      "height": 595,
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AMixian_Rice_Noodles_Being_Prepared_in_Copper_Pots.jpg",
+      "canonical_title": "File:Mixian Rice Noodles Being Prepared in Copper Pots.jpg",
+      "original_sha1": "48588b3cc7026b57acc0a1d3fa50de2d865c8252",
+      "author": "Pratyeka",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "capture_date": "2016-11-10 18:42:29",
+      "role": "development",
+      "visible_target": "flame",
+      "source_group": "pratyeka_copper_noodles",
+      "boxes": [
+        [
+          505,
+          389,
+          676,
+          461
+        ]
+      ],
+      "full_kitchen_context": true,
+      "visually_reviewed": true,
+      "note": "实际烹饪区域和挂置厨具；前左锅下1个蓝焰区域，右锅下未见火焰。按同一炉头可见火焰包围框，弧形火焰内部不可避免包含少量锅底。",
+      "nearest_visual_review": "实际查看最近两幅旧图，未确认同作品或同厨房；同作者旧来源另记隔离。"
+    },
+    {
+      "file": "context4_05.jpg",
+      "sha256": "004c49e9e80b3548902501974893b32b5b88ef706e4a0dffa66e6893bf2fda21",
+      "width": 1920,
+      "height": 1440,
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ABiogas_used_in_a_stove_in_a_school_in_Rwanda_%286008003225%29.jpg",
+      "canonical_title": "File:Biogas used in a stove in a school in Rwanda (6008003225).jpg",
+      "original_sha1": "235725eadaa6593c579877bd18de9a73b1518135",
+      "author": "SuSanA Secretariat. Photo taken by P. Feiereisen",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "capture_date": "Taken on 22 July 2011",
+      "role": "development",
+      "visible_target": "flame",
+      "source_group": "susana_feiereisen_rwanda_school",
+      "boxes": [
+        [
+          814,
+          576,
+          973,
+          627
+        ]
+      ],
+      "full_kitchen_context": false,
+      "visually_reviewed": true,
+      "note": "工业灶近景，炉门上部1个小蓝焰区域，前景杆与手局部遮挡；非完整厨房，不能从来源描述推断危险事件。",
+      "nearest_visual_review": "实际查看最近两幅旧图，未确认同作品或同厨房；同作者旧来源另记隔离。"
+    },
+    {
+      "file": "context4_08.jpg",
+      "sha256": "7175247d6b2c0eebc52ef7ac4b75df0b409f5b6031e607bba4b69e67ee4835c7",
+      "width": 1067,
+      "height": 1600,
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ABule_da_bisa_%2817126378781%29.jpg",
+      "canonical_title": "File:Bule da bisa (17126378781).jpg",
+      "original_sha1": "4f1f6be41644201be296b407d9d398bbc24baeda",
+      "author": "Kátia Goretti Dias Vazzoller from Brazil",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "capture_date": "2015-04-11 19:05",
+      "role": "development",
+      "visible_target": "visible_no_flame",
+      "source_group": "vazzoller_kettle_20150412",
+      "boxes": [],
+      "full_kitchen_context": false,
+      "visually_reviewed": true,
+      "note": "金属壶、蓝色壶盖及橙黄反光；放大底部看到反光炉圈，未见可解析火焰，不把蓝盖或反光标正例。",
+      "nearest_visual_review": "实际查看最近两幅旧图，未确认同作品或同厨房；同作者旧来源另记隔离。"
+    },
+    {
+      "file": "context4_09.jpg",
+      "sha256": "1ab14b5d323c234df305c9164ca5e850cdb0a8bc9053e2dc65c01f81a5714ce8",
+      "width": 1920,
+      "height": 1202,
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ANayati_Wok_Gas_Oriental_Cooking.jpg",
+      "canonical_title": "File:Nayati Wok Gas Oriental Cooking.jpg",
+      "original_sha1": "3c6f3c6640aaa9eb0750403e9d5d4e5c72d71250",
+      "author": "Marcomm2022",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "capture_date": "2011-04-01",
+      "role": "development",
+      "visible_target": "visible_no_flame",
+      "source_group": "marcomm_nayati_product",
+      "boxes": [],
+      "full_kitchen_context": false,
+      "visually_reviewed": true,
+      "note": "独立商用灶产品照及木托架，没有可见火焰；不是实际烹饪或完整厨房样本。",
+      "nearest_visual_review": "实际查看最近两幅旧图，未确认同作品或同厨房；同作者旧来源另记隔离。"
+    },
+    {
+      "file": "context4_10.jpg",
+      "sha256": "642bc4f27e8b0f0b317bcf430cc71bc89ced5a7c245ed290d934b8443c491e3c",
+      "width": 1184,
+      "height": 665,
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ACocinafuego.jpg",
+      "canonical_title": "File:Cocinafuego.jpg",
+      "original_sha1": "7e5195784713539bceae8124b1dd1619048b5032",
+      "author": "FlorenciaFerrer",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "capture_date": "2016-06-02",
+      "role": "reserved_holdout",
+      "visible_target": "flame",
+      "source_group": "florencia_cocina_burner",
+      "boxes": [
+        [
+          375,
+          267,
+          689,
+          416
+        ]
+      ],
+      "full_kitchen_context": false,
+      "visually_reviewed": true,
+      "note": "近景开放炉头1个蓝焰区域，预先封存；未来Cocinafuego2等同作者或同场景图片继承此留出用途。",
+      "nearest_visual_review": "实际查看最近两幅旧图，未确认同作品或同厨房；同作者旧来源另记隔离。"
+    },
+    {
+      "file": "context4_11.jpg",
+      "sha256": "a880542d52cfe9093496c546e7200b1adde3a6a3a9067a6e54e4766da39efc6a",
+      "width": 1920,
+      "height": 1282,
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AGas_Cooker_%28102440303%29.jpeg",
+      "canonical_title": "File:Gas Cooker (102440303).jpeg",
+      "original_sha1": "6d589a2961784ee35a1d4666525f993032810dad",
+      "author": "Charrine Liu",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "capture_date": "before 21 March 2015, 09:00:08 (UTC)",
+      "role": "development",
+      "visible_target": "flame",
+      "source_group": "charrine_liu_open_burner",
+      "boxes": [
+        [
+          633,
+          142,
+          1405,
+          924
+        ]
+      ],
+      "full_kitchen_context": false,
+      "visually_reviewed": true,
+      "note": "单个内圈炉头的蓝焰与同炉头上部橙色火舌，共1个包围区域；炉圈内部为空/金属区域是环形包围框的几何限制。",
+      "nearest_visual_review": "实际查看最近两幅旧图，未确认同作品或同厨房；同作者旧来源另记隔离。"
+    },
+    {
+      "file": "context4_12.jpg",
+      "sha256": "7f0aaa2b57c9c56f7ed63b0edc227a9f7be5f07b74470d23e350b061293892d3",
+      "width": 1920,
+      "height": 1353,
+      "source_page": "https://commons.wikimedia.org/wiki/File%3AGas_stove_13.jpg",
+      "canonical_title": "File:Gas stove 13.jpg",
+      "original_sha1": "e286740595a887e084211e78104ce3260d211ddc",
+      "author": "BogTar201213",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "capture_date": "2023-12-18",
+      "role": "held",
+      "visible_target": "flame",
+      "source_group": "bogtar_prior_exposed_author",
+      "boxes": [
+        [
+          350,
+          162,
+          781,
+          470
+        ],
+        [
+          1090,
+          173,
+          1672,
+          530
+        ],
+        [
+          192,
+          712,
+          665,
+          1120
+        ],
+        [
+          1226,
+          726,
+          1780,
+          1200
+        ]
+      ],
+      "full_kitchen_context": false,
+      "visually_reviewed": true,
+      "note": "4个不同开放炉头可见火焰；作者与旧blue_bogtar开发诊断一致，炉头外观相关但未证实同采集。隔离，不作为独立新场景，也不进入本批开发或留出复制。",
+      "nearest_visual_review": "实际查看最近两幅旧图，未确认同作品或同厨房；同作者旧来源另记隔离。"
+    }
+  ],
+  "viewed_artifacts": [
+    {
+      "path": "model_work/out/kitchen_context_queue4_quarantine_20261003/context4_00.jpg",
+      "sha256": "b579feeb384bc52907420085cce2ecfe5f665c1a0a88ad1b96bbf8e25ec79aff"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_quarantine_20261003/context4_01.jpg",
+      "sha256": "5449c5c9ec812aea348fed2e6b9d3040d7f0b42c622eed4eb465c1824f828ce3"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_quarantine_20261003/context4_02.jpg",
+      "sha256": "9eb9a96aab9605d87ab26d3ce810c8fb06fedb8b13d8c1da4f8722291f857ab6"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_quarantine_20261003/context4_03.jpg",
+      "sha256": "f5ccf578ba573b4b594dee20e3c5ed6102592f22524f280888168454c89c7a17"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_quarantine_20261003/context4_04.jpg",
+      "sha256": "34a7450548fcd24a2b72d904089f12ef6b292c7d9b8788fdb9a2219c944f0ec7"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_quarantine_20261003/context4_05.jpg",
+      "sha256": "004c49e9e80b3548902501974893b32b5b88ef706e4a0dffa66e6893bf2fda21"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_quarantine_20261003/context4_08.jpg",
+      "sha256": "7175247d6b2c0eebc52ef7ac4b75df0b409f5b6031e607bba4b69e67ee4835c7"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_quarantine_20261003/context4_09.jpg",
+      "sha256": "1ab14b5d323c234df305c9164ca5e850cdb0a8bc9053e2dc65c01f81a5714ce8"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_quarantine_20261003/context4_10.jpg",
+      "sha256": "642bc4f27e8b0f0b317bcf430cc71bc89ced5a7c245ed290d934b8443c491e3c"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_quarantine_20261003/context4_11.jpg",
+      "sha256": "a880542d52cfe9093496c546e7200b1adde3a6a3a9067a6e54e4766da39efc6a"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_quarantine_20261003/context4_12.jpg",
+      "sha256": "7f0aaa2b57c9c56f7ed63b0edc227a9f7be5f07b74470d23e350b061293892d3"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_overlap_20261003/nearest_review/context4_00.jpg",
+      "sha256": "2a041bc9ad4c007ed453aa5e4496d8071d49c706da5d8313e19b729c0ada9625"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_overlap_20261003/nearest_review/context4_01.jpg",
+      "sha256": "e4973da6a1d7eb810b827792c55580ad25e966ac0e96e174ddbef9ec550cece9"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_overlap_20261003/nearest_review/context4_02.jpg",
+      "sha256": "10c75246239c255a17bdb5985be4e4595dca033875f6501cf66ffcac1ac35e4d"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_overlap_20261003/nearest_review/context4_03.jpg",
+      "sha256": "5a1fe8fa1b753afe3135b35a88dcee9fed9d4d554032a8ed7bf2a53f1325f1c0"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_overlap_20261003/nearest_review/context4_04.jpg",
+      "sha256": "269e58efde773dad754a4b783edb9959aaab75222867d8066bf117999e12b299"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_overlap_20261003/nearest_review/context4_05.jpg",
+      "sha256": "fced37e063249630056d3f771bcbe342105a039604eba225c5ffcdd79947adac"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_overlap_20261003/nearest_review/context4_08.jpg",
+      "sha256": "d09bb50664a6a6d05e42543100f0667cdf57014b110dfc653a7981c0c3303edf"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_overlap_20261003/nearest_review/context4_09.jpg",
+      "sha256": "ee8c319a20b7ec93dd7a66db44aabf487270150423b63514c5c7f10052fcb884"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_overlap_20261003/nearest_review/context4_10.jpg",
+      "sha256": "d6644fcf322dde44b6392f5fa86e15269098e0cf612686f364c4c70b02f5ac27"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_overlap_20261003/nearest_review/context4_11.jpg",
+      "sha256": "dbcb0510324d99d02ac2de3634d97c542ab7eee02009e67cb0b0d02340c69a4c"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_overlap_20261003/nearest_review/context4_12.jpg",
+      "sha256": "db5392841075c08bcfdfb799ac3d15a8255e1a28a40b77f0e874d3d1b574f7a3"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_visual_20261003/annotation_04.jpg",
+      "sha256": "f90b64f22dcd01e3407a3e6ccc07dc8b805176ade288384d2c88e9603c9000e2"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_visual_20261003/annotation_05.jpg",
+      "sha256": "6abca85f038c250ebed57086c9986b0c0ce21e9439e2d4e9baccb067204596f6"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_visual_20261003/annotation_10.jpg",
+      "sha256": "bd368212c4a76843c9a86a147fdd6d3cdf932af31f269cced13abd6be092a506"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_visual_20261003/annotation_11.jpg",
+      "sha256": "c954e9247d4b20913812d5e0d52fc2c9d7aaa30c0b59f39733e5bc1724e2492e"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_visual_20261003/annotation_12.jpg",
+      "sha256": "5c0fbb9764a142074da8a8c4b32b6fa10758a43929e9ca6a954cf59ff7050c55"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_visual_20261003/annotation_zoom_04.png",
+      "sha256": "e3c2ebca195d1cb4d19fee23bf0ede5fc080b090182ef4bb387e96e59168e379"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_visual_20261003/annotation_zoom_05.png",
+      "sha256": "b9d107a12179212c652d35c3a5bdbef95b9cfab1a310bc7fb5a8851a7b5af53e"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_visual_20261003/zoom_00.png",
+      "sha256": "c6e35f3383321bcbf159afd0e2944c2b19e19ebb84a9be219bbce8c700bb8115"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_visual_20261003/zoom_01.png",
+      "sha256": "d4a3645a9c02158ef90e6a19d23274d725ce2346c6e9d857721972b3e91bb94a"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_visual_20261003/zoom_04.png",
+      "sha256": "e83da8f6ede9efd11aaf5a070414502f72f31031c810d5e2619ce002a8e6438b"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_visual_20261003/zoom_05.png",
+      "sha256": "78fd0862fe0e274ad4e16a44baab215761fa6367f63590506a1d39d2c1bb38cc"
+    },
+    {
+      "path": "model_work/out/kitchen_context_queue4_visual_20261003/zoom_08.png",
+      "sha256": "db6ccd696df9c58c567a5d8f96b2dfa7a7a35a3279b4b1c800ee769a3f0a435a"
+    },
+    {
+      "path": "model_work/data/commons_blue_review_20260927/blue_bogtar.jpg",
+      "sha256": "25dff0347fe9623797a8c26c7125165f690d2d3fc2cf78492f8ae13483213d18"
+    }
+  ],
+  "unavailable_or_license_held": [
+    {
+      "index": 6,
+      "requested_title": "Bakken.jpg",
+      "status": "held_license_manual_review",
+      "acquired_at_utc": "2026-10-03T07:48:10.385960+00:00",
+      "canonical_title": "File:Bakken.jpg",
+      "original_sha1": "c05fd90b3fbbb716049bb9377392c81052a04ab6",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ABakken.jpg",
+      "author": "M.Minderhoud",
+      "license": "CC BY-SA 3.0",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "capture_date": "2004-10-09 16:30:39",
+      "credit": "Own work",
+      "description": "cooking",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Bakken.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_width": 1024,
+      "original_height": 768,
+      "metadata_file": "metadata\\candidate_06.json",
+      "metadata_sha256": "e1bcf9b5edb88274fb5efcb97eb02f4aab6c49808522f592af68c88dabe3d83a"
+    },
+    {
+      "index": 7,
+      "requested_title": "Coker on stove.JPG",
+      "status": "held_license_manual_review",
+      "acquired_at_utc": "2026-10-03T07:48:12.138037+00:00",
+      "canonical_title": "File:Coker on stove.JPG",
+      "original_sha1": "74ed68d1747b85dc6394c1a1a6fa78a5346392c3",
+      "source_page": "https://commons.wikimedia.org/wiki/File%3ACoker_on_stove.JPG",
+      "author": "Bhaskaranaidu",
+      "license": "Public domain",
+      "license_url": "",
+      "capture_date": "",
+      "credit": "Own work",
+      "description": "స్టౌ మీద కుక్కరు",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Coker_on_stove.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "original_width": 2592,
+      "original_height": 1944,
+      "metadata_file": "metadata\\candidate_07.json",
+      "metadata_sha256": "738da6d345f0ea53bab39ad13b0e68204e9671d75f3eb6af324d9dad9a4e91a4"
+    }
+  ],
+  "prior_original_work_identities_checked": 38,
+  "limits": [
+    "Only indices1/4 are kitchen area context; 2 is a utensils display, 9 a product photograph, other sources closeups/outdoor.",
+    "No queue3/4 predictions, no new training or model promotion.",
+    "One reserved positive and one reserved negative are targeted candidates, not representative project acceptance.",
+    "Related scene/author grouping still requires human review; differently spelled authors are not automatically resolved."
+  ]
+}

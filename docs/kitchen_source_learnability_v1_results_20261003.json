@@ -1,0 +1,897 @@
+{
+  "role": "Train-exposed learnability results, not candidate acceptance",
+  "source_git_commit": "7c1cb97bfaa267da915151692f0d91c482c2686f",
+  "run_started_from_commit": "169ecf56232d1d3d3bccba2f46f66dc1d5c278c2",
+  "source_uncommitted_at_launch": true,
+  "plan_sha256": "88a348af09ac98669ad496777ffd8f24e04237059020d0f76d0c6cd8e3461745",
+  "complete_sha256": "45daea25c31756321f936a243fd8d841587fc9797381cf3e184717b08fae69da",
+  "actual_optimizer_steps_total": 320,
+  "same_initial_state_and_predictions_across_four_arms": true,
+  "arms": {
+    "full_head": {
+      "actual_optimizer_steps": 80,
+      "final_audit": {
+        "step": 80,
+        "frozen_state_unchanged": true,
+        "bn_statistics_unchanged": true,
+        "changed_head_weight_tensors": 42,
+        "changed_feature_weight_tensors": 0,
+        "model_state_sha256": "9e8225a7b79701cd64c344140c1bd31a85efc6f0e3fe99b4927824a9a6fdc284",
+        "trainable_parameters": 819779
+      },
+      "checkpoints": [
+        {
+          "step": 0,
+          "training_loss_components": [
+            3.7380595207214355,
+            3.0799643993377686,
+            3.631348133087158
+          ],
+          "evaluations": {
+            "full_rect": {
+              "tp": 0,
+              "fp": 6,
+              "fn": 4,
+              "negative_images_with_boxes": 4
+            },
+            "full_square": {
+              "tp": 0,
+              "fp": 2,
+              "fn": 4,
+              "negative_images_with_boxes": 0
+            },
+            "oracle_crop_square": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 3,
+              "negative_images_with_boxes": 0
+            }
+          }
+        },
+        {
+          "step": 20,
+          "training_loss_components": [
+            3.4253973960876465,
+            2.522493362426758,
+            3.2123873233795166
+          ],
+          "evaluations": {
+            "full_rect": {
+              "tp": 1,
+              "fp": 4,
+              "fn": 3,
+              "negative_images_with_boxes": 3
+            },
+            "full_square": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 3,
+              "negative_images_with_boxes": 0
+            },
+            "oracle_crop_square": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 3,
+              "negative_images_with_boxes": 0
+            }
+          }
+        },
+        {
+          "step": 40,
+          "training_loss_components": [
+            2.9722485542297363,
+            1.8997137546539307,
+            3.005530834197998
+          ],
+          "evaluations": {
+            "full_rect": {
+              "tp": 1,
+              "fp": 3,
+              "fn": 3,
+              "negative_images_with_boxes": 2
+            },
+            "full_square": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 3,
+              "negative_images_with_boxes": 0
+            },
+            "oracle_crop_square": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 3,
+              "negative_images_with_boxes": 0
+            }
+          }
+        },
+        {
+          "step": 80,
+          "training_loss_components": [
+            1.978980302810669,
+            1.1455599069595337,
+            2.4115355014801025
+          ],
+          "evaluations": {
+            "full_rect": {
+              "tp": 3,
+              "fp": 1,
+              "fn": 1,
+              "negative_images_with_boxes": 1
+            },
+            "full_square": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 1,
+              "negative_images_with_boxes": 0
+            },
+            "oracle_crop_square": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 2,
+              "negative_images_with_boxes": 0
+            }
+          }
+        }
+      ],
+      "final_full_positive_iou": {
+        "context3_01.jpg": 0,
+        "context4_04.jpg": 0.533293114938176,
+        "context4_05.jpg": 0.6348478171300009,
+        "context4_11.jpg": 0.9198983171683021
+      },
+      "final_full_negative_predictions": {
+        "context3_06.jpg": [
+          {
+            "xyxy": [
+              0.0,
+              86.94627380371094,
+              1845.0557861328125,
+              2731.230712890625
+            ],
+            "confidence": 0.5204660892486572
+          }
+        ]
+      },
+      "artifact_hashes": {
+        "loss_trace.json": "5b0c33bf524ad8e67533bfc4cfb5bdfd4fa39c3d8a3d35316948962025cd590c",
+        "measurements.json": "9b6ad18bcbac6502dd03426a55dfe32db34410689f08e39f4c12c56ae2bfe3d3",
+        "optimizer_cadence_audit.json": "9a079cb19b445f44a9a75990fd4b56da4f60cb756a4b0b6b7115a03a8ced1a13",
+        "state_audit.json": "7261764c497f20b2c12654e1d07728ca0dece7809d2ba354cf12b331fe206b1e"
+      }
+    },
+    "full_late": {
+      "actual_optimizer_steps": 80,
+      "final_audit": {
+        "step": 80,
+        "frozen_state_unchanged": true,
+        "bn_statistics_unchanged": true,
+        "changed_head_weight_tensors": 42,
+        "changed_feature_weight_tensors": 60,
+        "model_state_sha256": "5e779ac0b245f92fad02ca96c8dceccb6f82f42bf5a24bf15a720d489f25b3f6",
+        "trainable_parameters": 4977155
+      },
+      "checkpoints": [
+        {
+          "step": 0,
+          "training_loss_components": [
+            3.7380595207214355,
+            3.0799643993377686,
+            3.631348133087158
+          ],
+          "evaluations": {
+            "full_rect": {
+              "tp": 0,
+              "fp": 6,
+              "fn": 4,
+              "negative_images_with_boxes": 4
+            },
+            "full_square": {
+              "tp": 0,
+              "fp": 2,
+              "fn": 4,
+              "negative_images_with_boxes": 0
+            },
+            "oracle_crop_square": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 3,
+              "negative_images_with_boxes": 0
+            }
+          }
+        },
+        {
+          "step": 20,
+          "training_loss_components": [
+            2.8506429195404053,
+            1.5979700088500977,
+            2.659363269805908
+          ],
+          "evaluations": {
+            "full_rect": {
+              "tp": 2,
+              "fp": 3,
+              "fn": 2,
+              "negative_images_with_boxes": 2
+            },
+            "full_square": {
+              "tp": 2,
+              "fp": 1,
+              "fn": 2,
+              "negative_images_with_boxes": 0
+            },
+            "oracle_crop_square": {
+              "tp": 2,
+              "fp": 1,
+              "fn": 2,
+              "negative_images_with_boxes": 0
+            }
+          }
+        },
+        {
+          "step": 40,
+          "training_loss_components": [
+            1.7404086589813232,
+            0.9161585569381714,
+            1.9663946628570557
+          ],
+          "evaluations": {
+            "full_rect": {
+              "tp": 4,
+              "fp": 2,
+              "fn": 0,
+              "negative_images_with_boxes": 2
+            },
+            "full_square": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "negative_images_with_boxes": 0
+            },
+            "oracle_crop_square": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 1,
+              "negative_images_with_boxes": 0
+            }
+          }
+        },
+        {
+          "step": 80,
+          "training_loss_components": [
+            0.6035429239273071,
+            0.4800677001476288,
+            1.247103214263916
+          ],
+          "evaluations": {
+            "full_rect": {
+              "tp": 4,
+              "fp": 1,
+              "fn": 0,
+              "negative_images_with_boxes": 1
+            },
+            "full_square": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "negative_images_with_boxes": 0
+            },
+            "oracle_crop_square": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 1,
+              "negative_images_with_boxes": 0
+            }
+          }
+        }
+      ],
+      "final_full_positive_iou": {
+        "context3_01.jpg": 0.9807499708873885,
+        "context4_04.jpg": 0.9010266473497713,
+        "context4_05.jpg": 0.7366457754378657,
+        "context4_11.jpg": 0.9851545441963561
+      },
+      "final_full_negative_predictions": {
+        "context3_06.jpg": [
+          {
+            "xyxy": [
+              41.67443084716797,
+              138.35067749023438,
+              1812.366943359375,
+              2664.099853515625
+            ],
+            "confidence": 0.7987799644470215
+          }
+        ]
+      },
+      "artifact_hashes": {
+        "loss_trace.json": "6f01f42f0df771eb69905ff8bd7bcbcaaa90b093d3370766d8f71bbad3bec959",
+        "measurements.json": "45fbe460a177bf880a120e33beb07b054e2c1470439284af51111f2d3acdaa0c",
+        "optimizer_cadence_audit.json": "9a079cb19b445f44a9a75990fd4b56da4f60cb756a4b0b6b7115a03a8ced1a13",
+        "state_audit.json": "cf8880f907b11fd08f911e19b384fed7bc1afd755efdb68e3ccaa95a5bbac014"
+      }
+    },
+    "crop_head": {
+      "actual_optimizer_steps": 80,
+      "final_audit": {
+        "step": 80,
+        "frozen_state_unchanged": true,
+        "bn_statistics_unchanged": true,
+        "changed_head_weight_tensors": 42,
+        "changed_feature_weight_tensors": 0,
+        "model_state_sha256": "3a79421a74c6b6d327d70004ee4f07d07c3e54621a368ceca6948608aacb0eee",
+        "trainable_parameters": 819779
+      },
+      "checkpoints": [
+        {
+          "step": 0,
+          "training_loss_components": [
+            2.792085886001587,
+            2.408681631088257,
+            3.3329825401306152
+          ],
+          "evaluations": {
+            "full_rect": {
+              "tp": 0,
+              "fp": 6,
+              "fn": 4,
+              "negative_images_with_boxes": 4
+            },
+            "full_square": {
+              "tp": 0,
+              "fp": 2,
+              "fn": 4,
+              "negative_images_with_boxes": 0
+            },
+            "oracle_crop_square": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 3,
+              "negative_images_with_boxes": 0
+            }
+          }
+        },
+        {
+          "step": 20,
+          "training_loss_components": [
+            2.4197332859039307,
+            1.9965169429779053,
+            2.9105639457702637
+          ],
+          "evaluations": {
+            "full_rect": {
+              "tp": 0,
+              "fp": 5,
+              "fn": 4,
+              "negative_images_with_boxes": 3
+            },
+            "full_square": {
+              "tp": 0,
+              "fp": 2,
+              "fn": 4,
+              "negative_images_with_boxes": 0
+            },
+            "oracle_crop_square": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 2,
+              "negative_images_with_boxes": 0
+            }
+          }
+        },
+        {
+          "step": 40,
+          "training_loss_components": [
+            2.0576510429382324,
+            1.5877074003219604,
+            2.5059990882873535
+          ],
+          "evaluations": {
+            "full_rect": {
+              "tp": 0,
+              "fp": 4,
+              "fn": 4,
+              "negative_images_with_boxes": 2
+            },
+            "full_square": {
+              "tp": 0,
+              "fp": 1,
+              "fn": 4,
+              "negative_images_with_boxes": 0
+            },
+            "oracle_crop_square": {
+              "tp": 3,
+              "fp": 0,
+              "fn": 1,
+              "negative_images_with_boxes": 0
+            }
+          }
+        },
+        {
+          "step": 80,
+          "training_loss_components": [
+            1.3890514373779297,
+            1.0216460227966309,
+            1.9322872161865234
+          ],
+          "evaluations": {
+            "full_rect": {
+              "tp": 1,
+              "fp": 3,
+              "fn": 3,
+              "negative_images_with_boxes": 2
+            },
+            "full_square": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 3,
+              "negative_images_with_boxes": 0
+            },
+            "oracle_crop_square": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "negative_images_with_boxes": 0
+            }
+          }
+        }
+      ],
+      "final_full_positive_iou": {
+        "context3_01.jpg": 0,
+        "context4_04.jpg": 0.3893042512416204,
+        "context4_05.jpg": 0,
+        "context4_11.jpg": 0.8659092841202052
+      },
+      "final_full_negative_predictions": {
+        "context3_00.jpg": [
+          {
+            "xyxy": [
+              402.8102111816406,
+              403.7179870605469,
+              981.3282470703125,
+              586.6396484375
+            ],
+            "confidence": 0.45394816994667053
+          }
+        ],
+        "context3_06.jpg": [
+          {
+            "xyxy": [
+              0.0,
+              86.95340728759766,
+              1844.844970703125,
+              2730.197265625
+            ],
+            "confidence": 0.565754234790802
+          }
+        ]
+      },
+      "artifact_hashes": {
+        "loss_trace.json": "6be7fce7f986c03a6cb8be7a7966e368dc2cca8d1101050c91ff17387003ecd2",
+        "measurements.json": "a69148b3a1ee681215d97e5fd8d782b12b4260243a1c9f71e82701a6d71d3475",
+        "optimizer_cadence_audit.json": "9a079cb19b445f44a9a75990fd4b56da4f60cb756a4b0b6b7115a03a8ced1a13",
+        "state_audit.json": "1ff6c99372a0299f96f36ac21e6b69406d3ede47996a1f17af925934df804419"
+      }
+    },
+    "crop_late": {
+      "actual_optimizer_steps": 80,
+      "final_audit": {
+        "step": 80,
+        "frozen_state_unchanged": true,
+        "bn_statistics_unchanged": true,
+        "changed_head_weight_tensors": 42,
+        "changed_feature_weight_tensors": 60,
+        "model_state_sha256": "5dbb4621756ae29c557c17e97f2e2404e62bd126b16a49fd16e01fad19f532aa",
+        "trainable_parameters": 4977155
+      },
+      "checkpoints": [
+        {
+          "step": 0,
+          "training_loss_components": [
+            2.792085886001587,
+            2.408681631088257,
+            3.3329825401306152
+          ],
+          "evaluations": {
+            "full_rect": {
+              "tp": 0,
+              "fp": 6,
+              "fn": 4,
+              "negative_images_with_boxes": 4
+            },
+            "full_square": {
+              "tp": 0,
+              "fp": 2,
+              "fn": 4,
+              "negative_images_with_boxes": 0
+            },
+            "oracle_crop_square": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 3,
+              "negative_images_with_boxes": 0
+            }
+          }
+        },
+        {
+          "step": 20,
+          "training_loss_components": [
+            1.8253353834152222,
+            1.214850664138794,
+            2.22099232673645
+          ],
+          "evaluations": {
+            "full_rect": {
+              "tp": 1,
+              "fp": 4,
+              "fn": 3,
+              "negative_images_with_boxes": 2
+            },
+            "full_square": {
+              "tp": 1,
+              "fp": 2,
+              "fn": 3,
+              "negative_images_with_boxes": 0
+            },
+            "oracle_crop_square": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "negative_images_with_boxes": 0
+            }
+          }
+        },
+        {
+          "step": 40,
+          "training_loss_components": [
+            1.0031287670135498,
+            0.7851622700691223,
+            1.6541751623153687
+          ],
+          "evaluations": {
+            "full_rect": {
+              "tp": 1,
+              "fp": 3,
+              "fn": 3,
+              "negative_images_with_boxes": 2
+            },
+            "full_square": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 3,
+              "negative_images_with_boxes": 0
+            },
+            "oracle_crop_square": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "negative_images_with_boxes": 0
+            }
+          }
+        },
+        {
+          "step": 80,
+          "training_loss_components": [
+            0.30707478523254395,
+            0.4358132779598236,
+            1.2417794466018677
+          ],
+          "evaluations": {
+            "full_rect": {
+              "tp": 1,
+              "fp": 5,
+              "fn": 3,
+              "negative_images_with_boxes": 4
+            },
+            "full_square": {
+              "tp": 1,
+              "fp": 1,
+              "fn": 3,
+              "negative_images_with_boxes": 0
+            },
+            "oracle_crop_square": {
+              "tp": 4,
+              "fp": 0,
+              "fn": 0,
+              "negative_images_with_boxes": 0
+            }
+          }
+        }
+      ],
+      "final_full_positive_iou": {
+        "context3_01.jpg": 0,
+        "context4_04.jpg": 0.38464544745896245,
+        "context4_05.jpg": 0,
+        "context4_11.jpg": 0.9849946114727813
+      },
+      "final_full_negative_predictions": {
+        "context3_00.jpg": [
+          {
+            "xyxy": [
+              409.0716552734375,
+              407.1031799316406,
+              967.35302734375,
+              587.324462890625
+            ],
+            "confidence": 0.6442176699638367
+          }
+        ],
+        "context3_06.jpg": [
+          {
+            "xyxy": [
+              16.4571533203125,
+              224.05282592773438,
+              1817.2049560546875,
+              2873.406982421875
+            ],
+            "confidence": 0.6755633354187012
+          }
+        ],
+        "context3_08.jpg": [
+          {
+            "xyxy": [
+              1196.3719482421875,
+              152.0430908203125,
+              1899.521484375,
+              1047.633544921875
+            ],
+            "confidence": 0.3906765878200531
+          }
+        ],
+        "context4_03.jpg": [
+          {
+            "xyxy": [
+              140.9310302734375,
+              421.1734924316406,
+              1238.49169921875,
+              1174.15576171875
+            ],
+            "confidence": 0.27639541029930115
+          }
+        ]
+      },
+      "artifact_hashes": {
+        "loss_trace.json": "c5d2db35d36e12099389db113b3bcd2e6d068227a1fe539bfcb6fed1538e84c6",
+        "measurements.json": "6b899519ce5efff52bbd0e35e2f7dd8e3788792b241e01118e3aa13bc0ef56c5",
+        "optimizer_cadence_audit.json": "9a079cb19b445f44a9a75990fd4b56da4f60cb756a4b0b6b7115a03a8ced1a13",
+        "state_audit.json": "2054f27bfd0177104b8dea2191e580e4609c98ad160715694b97e582a5f60238"
+      }
+    }
+  },
+  "positive_input_wh_square640": [
+    {
+      "image": "context3_01.jpg",
+      "width_height": [
+        42.666666666666664,
+        11.666666666666666
+      ]
+    },
+    {
+      "image": "context4_04.jpg",
+      "width_height": [
+        112.36139630390143,
+        47.31006160164271
+      ]
+    },
+    {
+      "image": "context4_05.jpg",
+      "width_height": [
+        53.0,
+        17.0
+      ]
+    },
+    {
+      "image": "context4_11.jpg",
+      "width_height": [
+        257.3333333333333,
+        260.66666666666663
+      ]
+    }
+  ],
+  "first_run_failure": {
+    "exit_code": 1,
+    "actual_optimizer_steps": 0,
+    "reason": "Baseline old-entry strict numeric comparison failed before learning",
+    "log_sha256": "9d92d3a3b086f0de00fbc9a4b8389acdc41ee8e81291ef5c3d7ffaed2f2002db",
+    "plan_sha256": "0aacac75e482a40ae08b4165d47d69544472640d64b6e71f18e481041efaa92d"
+  },
+  "baseline_old_entry_strict_comparison": {
+    "scope": "Unfused FP32 model with TF32 disabled versus historical fused GPU entry; not interchangeable numeric paths",
+    "coordinate_tolerance": 0.1,
+    "probability_tolerance": 0.0001,
+    "frames": [
+      {
+        "image": "context3_00.jpg",
+        "counts_equal": true,
+        "deltas": [],
+        "strict_passed": true
+      },
+      {
+        "image": "context3_01.jpg",
+        "counts_equal": true,
+        "deltas": [],
+        "strict_passed": true
+      },
+      {
+        "image": "context3_04.jpg",
+        "counts_equal": true,
+        "deltas": [],
+        "strict_passed": true
+      },
+      {
+        "image": "context3_05.jpg",
+        "counts_equal": true,
+        "deltas": [],
+        "strict_passed": true
+      },
+      {
+        "image": "context3_06.jpg",
+        "counts_equal": true,
+        "deltas": [
+          {
+            "coordinate_max_abs": 0.04833984375,
+            "confidence_abs": 8.464956283571468e-05
+          }
+        ],
+        "strict_passed": true
+      },
+      {
+        "image": "context3_08.jpg",
+        "counts_equal": true,
+        "deltas": [
+          {
+            "coordinate_max_abs": 0.012237548828125,
+            "confidence_abs": 0.00013874044418332732
+          }
+        ],
+        "strict_passed": false
+      },
+      {
+        "image": "context3_09.jpg",
+        "counts_equal": true,
+        "deltas": [
+          {
+            "coordinate_max_abs": 0.01171875,
+            "confidence_abs": 1.301870346070988e-05
+          }
+        ],
+        "strict_passed": true
+      },
+      {
+        "image": "context4_02.jpg",
+        "counts_equal": true,
+        "deltas": [],
+        "strict_passed": true
+      },
+      {
+        "image": "context4_03.jpg",
+        "counts_equal": true,
+        "deltas": [
+          {
+            "coordinate_max_abs": 0.2249755859375,
+            "confidence_abs": 0.00013376965522765571
+          }
+        ],
+        "strict_passed": false
+      },
+      {
+        "image": "context4_04.jpg",
+        "counts_equal": true,
+        "deltas": [
+          {
+            "coordinate_max_abs": 0.00750732421875,
+            "confidence_abs": 0.00013963766098024077
+          }
+        ],
+        "strict_passed": false
+      },
+      {
+        "image": "context4_05.jpg",
+        "counts_equal": true,
+        "deltas": [
+          {
+            "coordinate_max_abs": 0.00994873046875,
+            "confidence_abs": 6.88635826111006e-05
+          }
+        ],
+        "strict_passed": true
+      },
+      {
+        "image": "context4_08.jpg",
+        "counts_equal": true,
+        "deltas": [],
+        "strict_passed": true
+      },
+      {
+        "image": "context4_09.jpg",
+        "counts_equal": true,
+        "deltas": [],
+        "strict_passed": true
+      },
+      {
+        "image": "context4_11.jpg",
+        "counts_equal": true,
+        "deltas": [],
+        "strict_passed": true
+      }
+    ],
+    "all_counts_equal": true,
+    "strict_all_passed": false
+  },
+  "actual_visual_review": [
+    {
+      "file": "model_work\\out\\kitchen_source_learnability_v1_r2_20261003\\context3_01_full.jpg",
+      "sha256": "194a18b0e0d2656a1e6ceb8e66196dfb0b5964dbb3b054abd44782e4795491e7",
+      "actually_viewed": true
+    },
+    {
+      "file": "model_work\\out\\kitchen_source_learnability_v1_r2_20261003\\context3_01_crop.jpg",
+      "sha256": "bf2ef194a9d5c4488f898a5b46ba1ef5e515fa6829d43c9d3120770f6e1baade",
+      "actually_viewed": true
+    },
+    {
+      "file": "model_work\\out\\kitchen_source_learnability_v1_r2_20261003\\context4_04_full.jpg",
+      "sha256": "4e2013708b7fb172d31b83db3add46eba400771291b3b2147f6a2162b422641a",
+      "actually_viewed": true
+    },
+    {
+      "file": "model_work\\out\\kitchen_source_learnability_v1_r2_20261003\\context4_04_crop.jpg",
+      "sha256": "5f456b7dc2b985d52645110f754bef458927870b0b8ed3a0b05b48b40f0bed12",
+      "actually_viewed": true
+    },
+    {
+      "file": "model_work\\out\\kitchen_source_learnability_v1_r2_20261003\\context4_05_full.jpg",
+      "sha256": "9e782f12595281a7617696a493e61064d82867b53548953e1846956ce0bcb11e",
+      "actually_viewed": true
+    },
+    {
+      "file": "model_work\\out\\kitchen_source_learnability_v1_r2_20261003\\context4_05_crop.jpg",
+      "sha256": "204d525301eaf4a0bb70b7e75709d36d92d5fb2b1edf7a5d30e9f4242ac2bd4f",
+      "actually_viewed": true
+    },
+    {
+      "file": "model_work\\out\\kitchen_source_learnability_v1_r2_20261003\\context4_11_full.jpg",
+      "sha256": "3ed766df265ebf68461d5a7c62bbf7439d8619237768a0d7a48bd6ac3a50b6f9",
+      "actually_viewed": true
+    },
+    {
+      "file": "model_work\\out\\kitchen_source_learnability_v1_r2_20261003\\context4_11_crop.jpg",
+      "sha256": "4b04b86fde9585c6de4d1106d45df306e805e14501ba2521fa4a9347ac026f65",
+      "actually_viewed": true
+    },
+    {
+      "file": "model_work\\out\\learnability_negative_review_20261003\\context3_00.jpg",
+      "sha256": "c9ebc9fef5a7115a286e220226119ebc6ea36931a81345302afeeae90824441a",
+      "actually_viewed": true
+    },
+    {
+      "file": "model_work\\out\\learnability_negative_review_20261003\\context3_06.jpg",
+      "sha256": "1c7c0817add50150e4723eb7e9811e4fa427310f93b7b35e86bc174f84f63b4d",
+      "actually_viewed": true
+    },
+    {
+      "file": "model_work\\out\\learnability_negative_review_20261003\\context3_08.jpg",
+      "sha256": "c6ab94514893ace01cf72d84405ebe89db3622388bcfda78c1f8ad2b2c5beb40",
+      "actually_viewed": true
+    },
+    {
+      "file": "model_work\\out\\learnability_negative_review_20261003\\context4_03.jpg",
+      "sha256": "ad8ea69b376835e263ab0e36b72f77e20b95c45f488059d0af99365bfb092869",
+      "actually_viewed": true
+    }
+  ],
+  "full_pc_tests": {
+    "count": 185,
+    "skipped": 0,
+    "log_sha256": "ce0196f3a5b6c285be4ea4549d109926b5e948535965598a2f290cd5567ccd02"
+  },
+  "decision": "No promotion. Test full-context partial feature adaptation on the complete mixed training set next; keep negatives and evaluate old videos/images unchanged.",
+  "trained_weights_saved": false,
+  "reserved_predicted_or_trained": false,
+  "limitations": [
+    "4 repeated train positives, one seed and fixed 80-step budget; no independent accuracy.",
+    "All BN statistics fixed and no augmentation/EMA here; not a controlled attribution of prior v20 failure.",
+    "Oracle crop uses GT and cannot be deployed directly; crop fit does not prove full-frame recognition.",
+    "Late feature adaptation learned only modules10-22 plus head; no proof that it is necessary or best.",
+    "Negative sources were assessed but not optimized in this diagnostic. No legacy regression or new ONNX candidate evaluation."
+  ]
+}

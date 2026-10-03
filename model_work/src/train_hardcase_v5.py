@@ -52,6 +52,8 @@ def main():
                 'ultralytics':ultralytics.__version__,'gpu':torch.cuda.get_device_name(0)},
               'role':'development candidate; all teammate videos now exposed; no board deployment'}
     identity['local_dependency_sha256']={name:sha256(Path(__file__).with_name(name)) for name in ('data_integrity.py','dataset_preflight.py','backbone_freeze_audit.py')}
+    if 'source_sampling' in dataset_check:
+        identity['local_dependency_sha256']['source_sampling_plan.py']=sha256(Path(__file__).with_name('source_sampling_plan.py'))
     if freeze_audit:
         framework_trainer=Path(ultralytics.__file__).parent/'engine/trainer.py'
         identity['backbone_freeze']={**freeze_audit.plan,'audit_script_sha256':sha256(Path(__file__).with_name('backbone_freeze_audit.py')),'framework_trainer_sha256':sha256(framework_trainer)}

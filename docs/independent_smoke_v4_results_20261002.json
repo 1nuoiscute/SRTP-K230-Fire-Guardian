@@ -1,0 +1,504 @@
+{
+  "role": "Independent smoke-head developer candidate; default fire v3 retained, no proposal acceptance",
+  "summary_script_sha256": "fdbd6743d894cdb3b8a63887f4bfcc3d7e13ce332d5bcb2bc527853256fed919",
+  "local_record_sha256": {
+    "training": "de616934fd77ee560222b5aadbf3ccdcdaab7b70cc441055ae476378c3383c08",
+    "shared_audit": "efc80bd81a4f8abe15578a5d3b3d6e7684972c1e4db2e8509cf393759c280c7f",
+    "ema_audit": "9c5e81af3f51c83d9ae4bc131a6c986fc53bef8215a595326e368580fc6ee074",
+    "cadence": "c68a6e00e02257f2f705d55238a2b5a443f13a832db51319bab3665271019f1d",
+    "packed_raw_check": "d45dc90d78ad6421253b8d66e52d8ac9cbecc43079ce38ad25ae1a38b72aa1bf",
+    "comparison": "8eed47aa03720c9de2261a941e38fecf87874ce199f01b8224bc9fa93c403142",
+    "baseline_comparison": "2dd35734d1789f91733f4e18086b9bad74be6e6b624f48c8983a0ec83d4995e1",
+    "onnx_report": "ce3f1b869a62ffe965cf9b0854064d744ebbb9712d05441a0667a14bbad214a7",
+    "initialization": "514056fc7aef499739c59a5033604998629c58927994035ed7770f8678b94d5c"
+  },
+  "initialization": {
+    "role": "standalone smoke head start; fixed original v3 features, v2 smoke-head initialization",
+    "fire_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+    "joint_v2_sha256": "a4cfc6b6cbb6d282ecf5a621dc38b3e16007fdc31cf38c044c5021c4f5ad5701",
+    "start_sha256": "e5c4466356459dbfeccdf951f075685206d7d1afb232c5a41f972b1ceebf15af",
+    "script_sha256": "22bb740a1b830ce64f799be23c6ffc999e5e27f6f2c672e97c9b0deac5f8a233",
+    "source_head_class_row": 1,
+    "output_names": {
+      "0": "smoke"
+    },
+    "shared_features_saved_equal": true,
+    "shared_blocks": 23,
+    "smoke_head_parameter_elements": 819795
+  },
+  "training": {
+    "config": {
+      "epochs": 40,
+      "patience": 0,
+      "imgsz": 640,
+      "batch": 4,
+      "nbs": 4,
+      "device": 0,
+      "workers": 0,
+      "seed": 20261002,
+      "optimizer": "AdamW",
+      "lr0": 0.0005,
+      "lrf": 0.1,
+      "weight_decay": 0.0005,
+      "warmup_epochs": 0,
+      "warmup_bias_lr": 0.001,
+      "freeze": 23,
+      "hsv_h": 0.015,
+      "hsv_s": 0.3,
+      "hsv_v": 0.25,
+      "degrees": 3,
+      "translate": 0.05,
+      "scale": 0.2,
+      "fliplr": 0.5,
+      "mosaic": 0.2,
+      "mixup": 0,
+      "close_mosaic": 5,
+      "name": "independent-smoke-head-v4-20261002",
+      "exist_ok": false,
+      "save": true,
+      "plots": true,
+      "val": true
+    },
+    "environment": {
+      "python": "3.13.13",
+      "torch": "2.12.0+cu132",
+      "ultralytics": "8.4.70",
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU"
+    },
+    "dataset": {
+      "verified_images": 36,
+      "manifest_sha256": "cd8075591b4983d55e5f61805da78b8e995448bc5b1f93078fed4d78bf4a83d8",
+      "parent_manifest_sha256": "58860795d0bebefdf62e88a02eb308e579d873b6e89c943584a2847c694953e5",
+      "source_review_sha256": "d3b84a8e9b0c245fe3ead468015d2204beaa1a351d0314062c46364941eaf7a4",
+      "role": "exposed smoke-head development data, no independent test"
+    },
+    "completed_epochs": 40,
+    "epoch_of_max_smoke_csv_map50_95": 21,
+    "shared_live_checks": 42,
+    "shared_ema_checks": 40,
+    "results_csv_sha256": "e9c058e4739470973d2e23cbc17c029552ed7ca99a834cd8fc8cfa0423809d52",
+    "actual_batches": 280,
+    "actual_optimizer_steps": 272
+  },
+  "packed_numeric_check": {
+    "dual_v4_start": {
+      "weights_sha256": "7781c2b45fe5e571a799d6ccb7f27ec242bbf348bb8f75849790b3be01ad0430",
+      "source_smoke_sha256": "e5c4466356459dbfeccdf951f075685206d7d1afb232c5a41f972b1ceebf15af",
+      "protected_saved_state_equal": true,
+      "parameters": 10247974,
+      "baseline_parameters": 9428179,
+      "added_parameters": 819795,
+      "raw_checked_images": 36,
+      "raw_fire_geometry_max_abs": 0.0
+    },
+    "dual_v4_best": {
+      "weights_sha256": "6517f1407d5152684d2a8a2b50af2145143f619c245c611829eb964807d0e737",
+      "source_smoke_sha256": "2cf84267553c3f7da10bbc0e88d71b03323c2279a6b4eb24aa61c4171809b6da",
+      "protected_saved_state_equal": true,
+      "parameters": 10247974,
+      "baseline_parameters": 9428179,
+      "added_parameters": 819795,
+      "raw_checked_images": 36,
+      "raw_fire_geometry_max_abs": 0.0
+    },
+    "dual_v4_last": {
+      "weights_sha256": "6fadba31de63738ce012b5deb12836710fd65e20f9d821a26cf6297dba2c45fb",
+      "source_smoke_sha256": "576916ca04a651fdf9f33e6007893427b9c92fd7430d368afa68326c26de5b33",
+      "protected_saved_state_equal": true,
+      "parameters": 10247974,
+      "baseline_parameters": 9428179,
+      "added_parameters": 819795,
+      "raw_checked_images": 36,
+      "raw_fire_geometry_max_abs": 0.0
+    }
+  },
+  "comparison": {
+    "role": "exposed two-class development pilot and repeated known-fire regression; no independent kitchen/event acceptance",
+    "script_sha256": "990d9f008097c0c9117acd93afbb1e87b0602266ce90c557d5d2ab4e5d2ec55b",
+    "input_records_sha256": "c0c1cdaf9261c6c5ee74a6dda104f211b0d6e4c2bf243d5dd8218af8a508d467",
+    "model_list_sha256": "50ba1ad54fd48cb715a39abe4284899e6dc25cb203c74c9114a0cb1f7559e2ca",
+    "pilot_dataset": {
+      "verified_images": 36,
+      "reviewed_development_groups": 33,
+      "source_review_sha256": "d3b84a8e9b0c245fe3ead468015d2204beaa1a351d0314062c46364941eaf7a4",
+      "manifest_sha256": "58860795d0bebefdf62e88a02eb308e579d873b6e89c943584a2847c694953e5",
+      "role": "development-exposed validation, not independent kitchen test"
+    },
+    "models": {
+      "dual_v4_start": {
+        "weights_sha256": "7781c2b45fe5e571a799d6ccb7f27ec242bbf348bb8f75849790b3be01ad0430",
+        "names": {
+          "0": "fire",
+          "1": "smoke"
+        },
+        "pilot_val_fixed": {
+          "0": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "f1": 0.4
+          },
+          "1": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "f1": 0.0
+          }
+        },
+        "legacy_map": {
+          "precision": 0.9505308287375542,
+          "recall": 0.961038961038961,
+          "map50": 0.9732386254178709,
+          "map50_95": 0.27949606105054137
+        },
+        "legacy_fixed_by_source": {
+          "ks_nofire_confirmed": {
+            "images": 75,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "f1": null,
+            "unscored_smoke_boxes": 0
+          },
+          "ks_flame": {
+            "images": 57,
+            "tp": 57,
+            "fp": 1,
+            "fn": 0,
+            "f1": 0.991304347826087,
+            "unscored_smoke_boxes": 0
+          },
+          "kitchen_stove_fire": {
+            "images": 14,
+            "tp": 18,
+            "fp": 5,
+            "fn": 2,
+            "f1": 0.8372093023255814,
+            "unscored_smoke_boxes": 5
+          },
+          "object_pan": {
+            "images": 40,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "f1": null,
+            "unscored_smoke_boxes": 0
+          },
+          "nofire_real_indoor": {
+            "images": 100,
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "f1": 0.0,
+            "unscored_smoke_boxes": 0
+          }
+        },
+        "blue_primary_localized_iou50": 0
+      },
+      "dual_v4_best": {
+        "weights_sha256": "6517f1407d5152684d2a8a2b50af2145143f619c245c611829eb964807d0e737",
+        "names": {
+          "0": "fire",
+          "1": "smoke"
+        },
+        "pilot_val_fixed": {
+          "0": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "f1": 0.4
+          },
+          "1": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 1,
+            "f1": 0.8
+          }
+        },
+        "legacy_map": {
+          "precision": 0.9505308287375542,
+          "recall": 0.961038961038961,
+          "map50": 0.9732386254178709,
+          "map50_95": 0.27949606105054137
+        },
+        "legacy_fixed_by_source": {
+          "ks_nofire_confirmed": {
+            "images": 75,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "f1": null,
+            "unscored_smoke_boxes": 0
+          },
+          "ks_flame": {
+            "images": 57,
+            "tp": 57,
+            "fp": 1,
+            "fn": 0,
+            "f1": 0.991304347826087,
+            "unscored_smoke_boxes": 0
+          },
+          "kitchen_stove_fire": {
+            "images": 14,
+            "tp": 18,
+            "fp": 5,
+            "fn": 2,
+            "f1": 0.8372093023255814,
+            "unscored_smoke_boxes": 0
+          },
+          "object_pan": {
+            "images": 40,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "f1": null,
+            "unscored_smoke_boxes": 0
+          },
+          "nofire_real_indoor": {
+            "images": 100,
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "f1": 0.0,
+            "unscored_smoke_boxes": 0
+          }
+        },
+        "blue_primary_localized_iou50": 0
+      },
+      "dual_v4_last": {
+        "weights_sha256": "6fadba31de63738ce012b5deb12836710fd65e20f9d821a26cf6297dba2c45fb",
+        "names": {
+          "0": "fire",
+          "1": "smoke"
+        },
+        "pilot_val_fixed": {
+          "0": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "f1": 0.4
+          },
+          "1": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 1,
+            "f1": 0.8
+          }
+        },
+        "legacy_map": {
+          "precision": 0.9505308287375542,
+          "recall": 0.961038961038961,
+          "map50": 0.9732386254178709,
+          "map50_95": 0.27949606105054137
+        },
+        "legacy_fixed_by_source": {
+          "ks_nofire_confirmed": {
+            "images": 75,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "f1": null,
+            "unscored_smoke_boxes": 0
+          },
+          "ks_flame": {
+            "images": 57,
+            "tp": 57,
+            "fp": 1,
+            "fn": 0,
+            "f1": 0.991304347826087,
+            "unscored_smoke_boxes": 0
+          },
+          "kitchen_stove_fire": {
+            "images": 14,
+            "tp": 18,
+            "fp": 5,
+            "fn": 2,
+            "f1": 0.8372093023255814,
+            "unscored_smoke_boxes": 0
+          },
+          "object_pan": {
+            "images": 40,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "f1": null,
+            "unscored_smoke_boxes": 0
+          },
+          "nofire_real_indoor": {
+            "images": 100,
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "f1": 0.0,
+            "unscored_smoke_boxes": 0
+          }
+        },
+        "blue_primary_localized_iou50": 0
+      }
+    },
+    "fixed_configuration": {
+      "imgsz": 640,
+      "conf": 0.25,
+      "nms_iou": 0.6,
+      "match_iou": 0.5,
+      "device": "0"
+    },
+    "scope": {
+      "pilot_val_images": 9,
+      "pilot_val_classes": {
+        "0": "fire",
+        "1": "smoke"
+      },
+      "legacy_images": 286,
+      "legacy_known_classes": [
+        0
+      ],
+      "blue_primary_images": 5,
+      "unknown_legacy_smoke": "predictions counted but no TP/FP/FN or F1 assigned"
+    }
+  },
+  "reused_v3_baseline": {
+    "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+    "names": {
+      "0": "fire"
+    },
+    "pilot_val_fixed": {
+      "0": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 2,
+        "f1": 0.4
+      },
+      "1": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "f1": 0.0
+      }
+    },
+    "legacy_map": {
+      "precision": 0.9505308287375542,
+      "recall": 0.961038961038961,
+      "map50": 0.9732386254178709,
+      "map50_95": 0.27949606105054137
+    },
+    "legacy_fixed_by_source": {
+      "ks_nofire_confirmed": {
+        "images": 75,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "f1": null,
+        "unscored_smoke_boxes": 0
+      },
+      "ks_flame": {
+        "images": 57,
+        "tp": 57,
+        "fp": 1,
+        "fn": 0,
+        "f1": 0.991304347826087,
+        "unscored_smoke_boxes": 0
+      },
+      "kitchen_stove_fire": {
+        "images": 14,
+        "tp": 18,
+        "fp": 5,
+        "fn": 2,
+        "f1": 0.8372093023255814,
+        "unscored_smoke_boxes": 0
+      },
+      "object_pan": {
+        "images": 40,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "f1": null,
+        "unscored_smoke_boxes": 0
+      },
+      "nofire_real_indoor": {
+        "images": 100,
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "f1": 0.0,
+        "unscored_smoke_boxes": 0
+      }
+    },
+    "blue_primary_localized_iou50": 0
+  },
+  "stage_screen": {
+    "dual_v4_start": {
+      "saved_fire_state_equal": true,
+      "raw_fire_geometry_difference_at_most_1e_5": true,
+      "legacy_fire_map50_drop_at_most_0_01": true,
+      "old_kitchen_fire_tp_not_reduced": true,
+      "no_fire_100_fire_fp_not_increased": true,
+      "any_smoke_tp_on_exposed_three_box_val": false,
+      "stage_pass": false
+    },
+    "dual_v4_best": {
+      "saved_fire_state_equal": true,
+      "raw_fire_geometry_difference_at_most_1e_5": true,
+      "legacy_fire_map50_drop_at_most_0_01": true,
+      "old_kitchen_fire_tp_not_reduced": true,
+      "no_fire_100_fire_fp_not_increased": true,
+      "any_smoke_tp_on_exposed_three_box_val": true,
+      "stage_pass": true
+    },
+    "dual_v4_last": {
+      "saved_fire_state_equal": true,
+      "raw_fire_geometry_difference_at_most_1e_5": true,
+      "legacy_fire_map50_drop_at_most_0_01": true,
+      "old_kitchen_fire_tp_not_reduced": true,
+      "no_fire_100_fire_fp_not_increased": true,
+      "any_smoke_tp_on_exposed_three_box_val": true,
+      "stage_pass": true
+    }
+  },
+  "onnx_cpu_consistency": {
+    "role": "FP32 static CPU dual-head export parity; no quantization, board or event acceptance",
+    "weights_sha256": "6517f1407d5152684d2a8a2b50af2145143f619c245c611829eb964807d0e737",
+    "onnx_sha256": "2422bc7cb89ff40351079914ed7802328e26428b6fc8d762a67cc8aadb183d44",
+    "script_sha256": "329c78e6df1817a09cbc1b70414e5b55a40f021144b4b9959549f7594ccd32d9",
+    "runtime_sha256": "9afd9a37f11cf8812eb02ca3472d9bfb38956bfaa99532170eff690f75043462",
+    "inputs_sha256": "751573fdb90dc53de615db534298f73e064b363b1e1d7ee8d8eb222374364753",
+    "details_sha256": "b2317160fa59515cf37f65a14344d9eaf43e09a8144c6ddba53671316e561dc6",
+    "configuration": {
+      "imgsz": 640,
+      "batch": 1,
+      "dynamic": false,
+      "half": false,
+      "opset": 12,
+      "simplify": false,
+      "embedded_nms": false,
+      "conf": 0.25,
+      "nms_iou": 0.6,
+      "max_det": 300,
+      "raw_geometry_tolerance": 0.1,
+      "probability_tolerance": 0.0001,
+      "nms_xyxy_tolerance": 0.1
+    },
+    "verified_images": 61,
+    "raw_geometry_max_abs": 0.005889892578125,
+    "raw_probability_max_abs": 9.804964065551758e-06,
+    "nms_matched_images": 61,
+    "session_only_latency_ms": {
+      "median": 156.01849999802653,
+      "p95": 189.6347000001697
+    },
+    "environment": {
+      "torch": "2.12.0+cu132",
+      "ultralytics": "8.4.70",
+      "onnx": "1.22.0",
+      "onnxruntime": "1.27.0"
+    }
+  },
+  "decision": "retain v3 default; dual_v4_best is a functional smoke development candidate only",
+  "limitations": [
+    "Validation is fully exposed development data with only three smoke truth boxes.",
+    "Visible smoke-like plumes do not identify combustion/steam/events.",
+    "Blue flame remains unresolved; original full-model promotion gate not passed.",
+    "Static CPU ONNX consistency and session-only timings are not KModel, hardware or end-to-end latency evidence.",
+    "Independent kitchen share, two-class F1, long alarm duration and board acceptance remain unmet."
+  ]
+}

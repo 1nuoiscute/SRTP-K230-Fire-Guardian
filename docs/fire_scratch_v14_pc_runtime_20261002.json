@@ -1,0 +1,227 @@
+{
+  "role": "v14 last computer under-pot candidate; retained v13 rollback; no independent or board acceptance",
+  "export": {
+    "weights_sha256": "a46690756e65826060392688e98ceb268c9ecfa3f007e5796fa3c38ef4b5833e",
+    "script_sha256": "e483dabc78041dec2a946826818328218dfb60fe32703d09104f862bf9a9017f",
+    "runtime_script_sha256": "ef522b2002c7384f0374492a2c24a98c9bcf4c5a81d7a4161902edd269a0b28a",
+    "tolerance": {
+      "raw_xywh_pixels": 0.1,
+      "raw_probability": 0.0001,
+      "nms_xyxy_input_pixels": 0.1,
+      "nms_probability": 0.0001
+    },
+    "config": {
+      "imgsz": 640,
+      "batch": 1,
+      "dynamic": true,
+      "half": false,
+      "opset": 12,
+      "simplify": false,
+      "embedded_nms": false,
+      "conf": 0.25,
+      "nms_iou": 0.6
+    },
+    "environment": {
+      "torch": "2.12.0+cu132",
+      "ultralytics": "8.4.70",
+      "onnx": "1.22.0",
+      "onnxruntime": "1.27.0"
+    },
+    "scope": "FP32 CPU export consistency on exposed diagnostics; no KModel, quantization, independent accuracy or board test",
+    "onnx_sha256": "b0b7a7fd7aa0c44b70aea20528fa2ad94369dc49de2a11928612a27917b83762",
+    "input_shape": [
+      "batch",
+      3,
+      "height",
+      "width"
+    ],
+    "output_shape": [
+      "batch",
+      "Concatoutput0_dim_1",
+      "anchors"
+    ],
+    "actual_input_shapes": [
+      [
+        1,
+        3,
+        288,
+        640
+      ],
+      [
+        1,
+        3,
+        352,
+        640
+      ],
+      [
+        1,
+        3,
+        384,
+        640
+      ],
+      [
+        1,
+        3,
+        416,
+        640
+      ],
+      [
+        1,
+        3,
+        448,
+        640
+      ],
+      [
+        1,
+        3,
+        480,
+        640
+      ],
+      [
+        1,
+        3,
+        512,
+        640
+      ],
+      [
+        1,
+        3,
+        576,
+        640
+      ],
+      [
+        1,
+        3,
+        640,
+        384
+      ],
+      [
+        1,
+        3,
+        640,
+        448
+      ],
+      [
+        1,
+        3,
+        640,
+        544
+      ],
+      [
+        1,
+        3,
+        640,
+        608
+      ],
+      [
+        1,
+        3,
+        640,
+        640
+      ]
+    ],
+    "images": 80,
+    "passed": 80,
+    "all_passed": true,
+    "raw_coordinate_max_abs": 0.000885009765625,
+    "raw_probability_max_abs": 2.2649765014648438e-06,
+    "by_group": {
+      "blue_primary": {
+        "images": 5,
+        "passed": 5,
+        "native_boxes": 4,
+        "onnx_boxes": 4
+      },
+      "commons_reviewed_blue": {
+        "images": 10,
+        "passed": 10,
+        "native_boxes": 13,
+        "onnx_boxes": 13
+      },
+      "food_hard_negative_crop": {
+        "images": 1,
+        "passed": 1,
+        "native_boxes": 0,
+        "onnx_boxes": 0
+      },
+      "legacy_kitchen_stove_fire": {
+        "images": 4,
+        "passed": 4,
+        "native_boxes": 7,
+        "onnx_boxes": 7
+      },
+      "legacy_ks_flame": {
+        "images": 4,
+        "passed": 4,
+        "native_boxes": 4,
+        "onnx_boxes": 4
+      },
+      "legacy_ks_nofire_confirmed": {
+        "images": 4,
+        "passed": 4,
+        "native_boxes": 0,
+        "onnx_boxes": 0
+      },
+      "legacy_nofire_real_indoor": {
+        "images": 4,
+        "passed": 4,
+        "native_boxes": 1,
+        "onnx_boxes": 1
+      },
+      "legacy_object_pan": {
+        "images": 4,
+        "passed": 4,
+        "native_boxes": 0,
+        "onnx_boxes": 0
+      },
+      "reviewed_flame": {
+        "images": 10,
+        "passed": 10,
+        "native_boxes": 10,
+        "onnx_boxes": 10
+      },
+      "reviewed_old_video": {
+        "images": 24,
+        "passed": 24,
+        "native_boxes": 18,
+        "onnx_boxes": 18
+      },
+      "sticker_hard_negative_crop": {
+        "images": 10,
+        "passed": 10,
+        "native_boxes": 0,
+        "onnx_boxes": 0
+      }
+    }
+  },
+  "export_summary_sha256": "5153b8a958dcb92f4d2b96caf88932c1cdc075a06faf9e3b4b62bf3495fbb2f2",
+  "video_summary_sha256": "ca66ef12561753e12c6bc75543b307568928c909eeb5c2424b1f7bd581d8e525",
+  "video": {
+    "decoded_frames": 734,
+    "nominal_minus_decoded_frames": 0.0,
+    "sampled_frames": 27,
+    "frames_with_any_box": 24,
+    "total_boxes": 33,
+    "mean_onnx_forward_ms": 58.22655925941136,
+    "csv_sha256": "78ea12c7499d65f48c6e8227fbaf0177c6a4382d8b378f0647a52fc12f942f0e",
+    "limitations": "Decoder read-end may also reflect truncation; count discrepancy retained. Sampling may miss short events. No VFR, camera, event or real-time verification."
+  },
+  "image_prediction_sha256": "71c3e5e42dcff6de87609a48f74886a19b03e7841af5221e42cd0983f6483e06",
+  "image_predictions": [
+    {
+      "class": "fire",
+      "confidence": 0.8229949474334717,
+      "xyxy": [
+        285.184814453125,
+        674.03955078125,
+        465.84259033203125,
+        729.31298828125
+      ]
+    }
+  ],
+  "image_overlay_sha256": "b20bc006a0d39e2d1abbe953c6e162996bf5c74313e35f55da1995c60e6acc65",
+  "image_overlay_actually_viewed": true,
+  "image_observation": "One correct visible under-pot blue flame box; food and sticker unboxed in this sampled source frame.",
+  "known_costs": "Old nofire-source FP=18; old AP/recall lower; pot-body geometry unresolved; 27-sample video is exposed development material.",
+  "smoke_compatibility": "Scratch features differ from v3/v13; existing independently trained smoke head cannot be transferred without new training/verification."
+}

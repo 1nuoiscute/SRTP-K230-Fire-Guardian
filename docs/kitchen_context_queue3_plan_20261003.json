@@ -1,0 +1,33 @@
+{
+  "role": "new_whole_kitchen_context_quarantine_before_model_predictions",
+  "date": "2026-10-03",
+  "download_width": 1600,
+  "titles": [
+    "Kitchen- cooking gas stove.JPG",
+    "DFC 2431 A cook flips food in a hot pan while working in a compact well-used kitchen filled with pots utensils and shelves of ingredients.jpg",
+    "Home kitchen, New Orleans July 2025.jpg",
+    "Kochen mit Gas.jpg",
+    "Kitchen utensils-01.jpg",
+    "Collection of essential cooking tools hanging on a rustic wall.jpg",
+    "Clean dishes and utensils are arranged on a red tray.jpg",
+    "Gas stove cooking.jpg",
+    "Food on Stove 2026-03-04 1.jpeg",
+    "Gas Stove (two burners).jpg",
+    "Kawiarka Bialetti Moka Induction (2022-10-09).jpg",
+    "Gas stove in the bivouac Bivacco Primalpia - Valle dei Ratti, Sondrio, Lombardy, Italy - 2021-07-06.jpg",
+    "Perkakas dan Peralatan Masak Rumah Tangga.jpg"
+  ],
+  "known_source_manifests": [
+    "model_work/data/commons_blue_review_20260927/manifest.csv",
+    "model_work/data/manual_kitchen_labels_v2_20260927/commons_candidates/manifest.csv",
+    "model_work/data/blue_source_queue2_20260930/manifest.json",
+    "D:/SRTP_Datasets/fire_train_context_v19_20261003/build_manifest.json"
+  ],
+  "rules": [
+    "No model inference before visual review, overlap audit and group freeze.",
+    "Full downloaded image retained; no automatic positive or empty labels.",
+    "Group related author/event/kitchen conservatively; aliases and original SHA1 must not cross roles.",
+    "Held-out candidates remain excluded from training and tuning; this targeted small queue is not representative acceptance.",
+    "Record unavailable sources and license failures; no hidden replacement after predictions."
+  ]
+}

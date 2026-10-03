@@ -1,0 +1,227 @@
+{
+  "role": "v16 best computer development candidate; not general/board acceptance",
+  "export": {
+    "weights_sha256": "e770cf68d12cd43b4494a1439dc9c65f14d1d5fc570b2e2e379cc084384418fd",
+    "script_sha256": "e483dabc78041dec2a946826818328218dfb60fe32703d09104f862bf9a9017f",
+    "runtime_script_sha256": "ef522b2002c7384f0374492a2c24a98c9bcf4c5a81d7a4161902edd269a0b28a",
+    "tolerance": {
+      "raw_xywh_pixels": 0.1,
+      "raw_probability": 0.0001,
+      "nms_xyxy_input_pixels": 0.1,
+      "nms_probability": 0.0001
+    },
+    "config": {
+      "imgsz": 640,
+      "batch": 1,
+      "dynamic": true,
+      "half": false,
+      "opset": 12,
+      "simplify": false,
+      "embedded_nms": false,
+      "conf": 0.25,
+      "nms_iou": 0.6
+    },
+    "environment": {
+      "torch": "2.12.0+cu132",
+      "ultralytics": "8.4.70",
+      "onnx": "1.22.0",
+      "onnxruntime": "1.27.0"
+    },
+    "scope": "FP32 CPU export consistency on exposed diagnostics; no KModel, quantization, independent accuracy or board test",
+    "onnx_sha256": "6d3d2ae52679988dd3f48a2d6932fa987ad2bd7b713168a638997cc86d8d683a",
+    "input_shape": [
+      "batch",
+      3,
+      "height",
+      "width"
+    ],
+    "output_shape": [
+      "batch",
+      "Concatoutput0_dim_1",
+      "anchors"
+    ],
+    "actual_input_shapes": [
+      [
+        1,
+        3,
+        288,
+        640
+      ],
+      [
+        1,
+        3,
+        352,
+        640
+      ],
+      [
+        1,
+        3,
+        384,
+        640
+      ],
+      [
+        1,
+        3,
+        416,
+        640
+      ],
+      [
+        1,
+        3,
+        448,
+        640
+      ],
+      [
+        1,
+        3,
+        480,
+        640
+      ],
+      [
+        1,
+        3,
+        512,
+        640
+      ],
+      [
+        1,
+        3,
+        576,
+        640
+      ],
+      [
+        1,
+        3,
+        640,
+        384
+      ],
+      [
+        1,
+        3,
+        640,
+        448
+      ],
+      [
+        1,
+        3,
+        640,
+        544
+      ],
+      [
+        1,
+        3,
+        640,
+        608
+      ],
+      [
+        1,
+        3,
+        640,
+        640
+      ]
+    ],
+    "images": 80,
+    "passed": 80,
+    "all_passed": true,
+    "raw_coordinate_max_abs": 0.0008392333984375,
+    "raw_probability_max_abs": 2.384185791015625e-06,
+    "by_group": {
+      "blue_primary": {
+        "images": 5,
+        "passed": 5,
+        "native_boxes": 5,
+        "onnx_boxes": 5
+      },
+      "commons_reviewed_blue": {
+        "images": 10,
+        "passed": 10,
+        "native_boxes": 13,
+        "onnx_boxes": 13
+      },
+      "food_hard_negative_crop": {
+        "images": 1,
+        "passed": 1,
+        "native_boxes": 0,
+        "onnx_boxes": 0
+      },
+      "legacy_kitchen_stove_fire": {
+        "images": 4,
+        "passed": 4,
+        "native_boxes": 7,
+        "onnx_boxes": 7
+      },
+      "legacy_ks_flame": {
+        "images": 4,
+        "passed": 4,
+        "native_boxes": 4,
+        "onnx_boxes": 4
+      },
+      "legacy_ks_nofire_confirmed": {
+        "images": 4,
+        "passed": 4,
+        "native_boxes": 0,
+        "onnx_boxes": 0
+      },
+      "legacy_nofire_real_indoor": {
+        "images": 4,
+        "passed": 4,
+        "native_boxes": 0,
+        "onnx_boxes": 0
+      },
+      "legacy_object_pan": {
+        "images": 4,
+        "passed": 4,
+        "native_boxes": 0,
+        "onnx_boxes": 0
+      },
+      "reviewed_flame": {
+        "images": 10,
+        "passed": 10,
+        "native_boxes": 10,
+        "onnx_boxes": 10
+      },
+      "reviewed_old_video": {
+        "images": 24,
+        "passed": 24,
+        "native_boxes": 18,
+        "onnx_boxes": 18
+      },
+      "sticker_hard_negative_crop": {
+        "images": 10,
+        "passed": 10,
+        "native_boxes": 0,
+        "onnx_boxes": 0
+      }
+    }
+  },
+  "export_summary_sha256": "a69ceb1f46f54fef01aecad505365f8b6f40888b32e8b396a32f72d1356157f4",
+  "video_summary_sha256": "16cd0cea6231d282ca228114cfbb7bb24014504dbf2a5c583d91af02273d14f1",
+  "video": {
+    "decoded_frames": 734,
+    "nominal_minus_decoded_frames": 0.0,
+    "sampled_frames": 27,
+    "frames_with_any_box": 25,
+    "total_boxes": 37,
+    "mean_onnx_forward_ms": 61.45455185226941,
+    "csv_sha256": "48a1fd16734a4cf2f7bbc06514a8d62a35343322e733dc6aa8fc094fadc4194a",
+    "limitations": "Decoder read-end may also reflect truncation; count discrepancy retained. Sampling may miss short events. No VFR, camera, event or real-time verification."
+  },
+  "image_prediction_sha256": "9b480d6822f1cd29b54ede97105cf5314c17bc51e156aa769e718758ff5f3ab4",
+  "image_predictions": [
+    {
+      "class": "fire",
+      "confidence": 0.78171706199646,
+      "xyxy": [
+        288.18402099609375,
+        673.30859375,
+        463.96795654296875,
+        728.879638671875
+      ]
+    }
+  ],
+  "image_overlay_sha256": "c62ee54497036e5ca3f9bbc047dc8d60c5998f90867f850ed21180db4d302f88",
+  "image_overlay_actually_viewed": true,
+  "image_observation": "One visible under-pot blue flame box; food and sticker unboxed in this sampled frame.",
+  "rollback_weights_sha256": "a46690756e65826060392688e98ceb268c9ecfa3f007e5796fa3c38ef4b5833e",
+  "limits": "Old nofire-source 17 FP boxes; large pot-body boxes and split flames remain; smoke head cannot be directly reused; no independent kitchen/event/board validation."
+}

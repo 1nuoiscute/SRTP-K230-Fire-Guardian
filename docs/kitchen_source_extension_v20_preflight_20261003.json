@@ -1,0 +1,146 @@
+{
+  "role": "v20_data_and_final_cpu_preflight_complete_candidate_not_started",
+  "date": "2026-10-03",
+  "plan_sha256": "ea09fd68fb3db53fb50114705afb35bfa8d977579bb0ae5d1023e21cb691f86f",
+  "data": {
+    "manifest_sha256": "15a509075be0d2ff062894cd7de1160699bbdc7b657d8199bfba77cb80bf36fa",
+    "images_verified": 1445,
+    "entries_verified": 2409,
+    "new_source_images": 14,
+    "new_flame_boxes": 4,
+    "validation_images": 243,
+    "independent_kitchen": false
+  },
+  "start_sha256": "e770cf68d12cd43b4494a1439dc9c65f14d1d5fc570b2e2e379cc084384418fd",
+  "training_source_sha256": "69bdd226bcfa9ad7daa576cfe5250cf4faa2b40f427604fa4e4dcffa9ed1c405",
+  "dependencies_sha256": {
+    "build_kitchen_source_extension_v20.py": "79c30079ae3cf68cb6b74bae0e4e51f32ba8e0cb3c2b37806a6fc9a4d180787b",
+    "freeze_kitchen_context_review.py": "18d73ee63fdd0391673ace42fc02932424ee9a6a4a577d476dba9d33b74b478f",
+    "fetch_kitchen_context_queue.py": "42056ae80452f97ed854f42e6a3e774238a9434207fa39b4c7fe0315f7736695",
+    "curate_train_context_v19.py": "6087bbdc5bfbff74a84a65d4753442f7c7ec050c8014ec9007c21cf1554bc62a",
+    "train_flame_extension_v17.py": "4cbf297200f7e362c0a25e5777e6858c05ac91607f2b89fecb61cfdf5fb675b7",
+    "train_scratch_semantic_v16.py": "40d353034bf88d458b70d1a589dc91966236203fcaf0233c9bf772f655c0cdf8",
+    "extend_flame_review_v17.py": "3d1b246d1a6040d16ff95b08bc5bdd9b330d2eec83cd2ba6428de865a005247d",
+    "semantic_fire_dataset.py": "c47beb34cadc64730d68f0cbe70fd7af61c535add0f7efaf377b74aa673863ec",
+    "fire_label_revision_dataset.py": "1e2186448f0ff2c61c74abe2bb6b6f72dcbdc798473aadc63dc99e73ab344398",
+    "backbone_freeze_audit.py": "8ea746515b72efd604a9109a38cc092f59e2f3bcaf3a87dd9892fa808171fd46",
+    "optimizer_cadence_audit.py": "34f6a5f2bc29dacf7f5a4d0214082728acb238285edd8ded8d91bb4ee2bb2730",
+    "data_integrity.py": "22777ca17939e2c07c5834418ac4bcf96ff3ae627053d8825feac29a6f8e59a0",
+    "dataset_preflight.py": "15a8200d26429bd5945e30dc1aabd1597d7df8370cfb42b31dcf4257ce9a60f8",
+    "train_flame_semantic_review.py": "ba34daf7b8fe2cfe41046b2dc952166ee62c33f5cd441122527f3462c7d12cae",
+    "source_exposure.py": "a3348c01d717657871b2609357977b0cf52cd2d1f29511968a536094a3d78b20"
+  },
+  "rehearsal_identity_sha256": "49d01d724bb34e48f063f62f4bddb386074b13564699c8b4f8af2b54dbceb384",
+  "rehearsal_complete_sha256": "b514a30692ef208ecc4c68c46da650f5b8b14300bc8bcb74cb5e5e3132f88627",
+  "cpu_rehearsal": {
+    "candidate_training": false,
+    "images": 8,
+    "actual_optimizer_steps": 1,
+    "loss": [
+      3.2018942832946777,
+      2.7699031829833984,
+      2.8136847019195557
+    ],
+    "all_learned_head_gradients_finite": true,
+    "feature_gradients_absent": true,
+    "audit": {
+      "epoch": 1,
+      "feature_unchanged": true,
+      "changed_head_weight_tensors": 42,
+      "model_state_sha256": "dc67a487f2bc5a0464d2c73f02cb5cfb1e46e320d83be684da1dd72c50409200",
+      "actual_optimizer_steps": 1,
+      "ema_fixed_features_restored": false
+    },
+    "source_inputs": [
+      {
+        "image": "context3_01.jpg",
+        "image_sha256": "7e68830f0a1e56846ef3f943885051ab8f12db103b02e88f86dda181636f6533",
+        "label_sha256": "d427b9a4483f7822c3ca68265eda471ed493a5f346959417c0edb8dc0cc5247c",
+        "new_source": true
+      },
+      {
+        "image": "context4_04.jpg",
+        "image_sha256": "34a7450548fcd24a2b72d904089f12ef6b292c7d9b8788fdb9a2219c944f0ec7",
+        "label_sha256": "32feda0fb590e5c5a2c5410290cc752eae2241e2fbcd7a0cf277bdf02fb92707",
+        "new_source": true
+      },
+      {
+        "image": "context4_05.jpg",
+        "image_sha256": "004c49e9e80b3548902501974893b32b5b88ef706e4a0dffa66e6893bf2fda21",
+        "label_sha256": "a710776b6c9e5bb8f412c0420694867da64ccf2492cd99b347dc20729a150a8d",
+        "new_source": true
+      },
+      {
+        "image": "context4_11.jpg",
+        "image_sha256": "a880542d52cfe9093496c546e7200b1adde3a6a3a9067a6e54e4766da39efc6a",
+        "label_sha256": "8a89e4a965dda07fa534d5db5899f8f160041d252d01194dd21694d3ccc4d6eb",
+        "new_source": true
+      },
+      {
+        "image": "context3_00.jpg",
+        "image_sha256": "66dd414bd32e8b701308bce540ac68a245d9e549f9da1b27683bd744afdc72d8",
+        "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "new_source": true
+      },
+      {
+        "image": "context4_02.jpg",
+        "image_sha256": "9eb9a96aab9605d87ab26d3ce810c8fb06fedb8b13d8c1da4f8722291f857ab6",
+        "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "new_source": true
+      },
+      {
+        "image": "kitchen_stove_fire__DSC_4813_JPG_JPG.rf.bfcd64456e26cf5a108d9c0f239ff151.jpg",
+        "image_sha256": "a6327282c4c5ee1bc3cf72b8f105759c11f9314c0d63479b38ce90b05fc197a0",
+        "label_sha256": "1d823c3e7b7a817096d5a2b91872c5f782e920c50ec24f757ca7eae3b42e9503",
+        "new_source": false
+      },
+      {
+        "image": "kitchen_stove_fire__DSC_4843_JPG_JPG.rf.6304b975ed5b5e88e54dc37503dc4ada.jpg",
+        "image_sha256": "6dfa3efc9186d3027a66cee06c2463d53a6bbaad45ff596394e9ffc6cdcd28e8",
+        "label_sha256": "ef746326db0e92420fe958d2a54df9e9bafbefa2afdd04dffa4b3050e0e05a5c",
+        "new_source": false
+      }
+    ]
+  },
+  "previous_cpu_rehearsal_scope": "First rehearsal passed; formal-launch snapshot hook and final-source rehearsal requirement then added. Final source rerun in r2 before candidate training.",
+  "build_failure": {
+    "error_type": "KeyError",
+    "message": "image_sha256",
+    "cause": "Validation snapshot actually uses sha256; first draft read a nonexistent field.",
+    "builder_sha256": "b1c685f527cd16c6661e98bcb0b475026c72656b16be850b346c08017a75fb15",
+    "stage": "planned before output creation",
+    "training_updates": 0,
+    "dataset_output_created": false
+  },
+  "fixed_reference_models": [
+    {
+      "label": "v16_best",
+      "weights": "model_work/runs/fire-scratch-semantic-v16-r2-20261003/weights/best.pt",
+      "expected_sha256": "e770cf68d12cd43b4494a1439dc9c65f14d1d5fc570b2e2e379cc084384418fd"
+    },
+    {
+      "label": "v18_last",
+      "weights": "model_work/runs/fire-frozen-flame-head-v18-20261003/weights/last.pt",
+      "expected_sha256": "2534a8c727157d0333bf7e0b785cd09e950f5e6e0192831947ba26cfe865b3ce"
+    },
+    {
+      "label": "v19_last",
+      "weights": "model_work/runs/fire-train-context-head-v19-20261003/weights/last.pt",
+      "expected_sha256": "9a13523c8f66f8a9b60e8bcafda9b1cdc270cf71e0269b4019708b7beabd80af"
+    }
+  ],
+  "local_tests": {
+    "passed": true,
+    "tests": 182,
+    "skipped": 0,
+    "log_sha256": "6b5e653613b0b2ef124afe5af39db0b3bb7d2328f27ba3807c32086df24d299b"
+  },
+  "candidate_training_started": false,
+  "reserved_predictions": 0,
+  "board_connected": false,
+  "selection": {
+    "demo": "v16 best",
+    "development": "v18 last",
+    "changed": false
+  }
+}

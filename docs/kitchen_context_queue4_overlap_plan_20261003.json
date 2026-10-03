@@ -1,0 +1,70 @@
+{
+  "role": "queue4_overlap_scope_including_frozen_queue3",
+  "roots": [
+    {
+      "path": "D:\\SRTP_Datasets\\fire_semantic_extension_v17_20261003\\images",
+      "role": "recorded_dataset_all_available_splits"
+    },
+    {
+      "path": "D:\\SRTP_Datasets\\fire_semantic_pilot_20261002\\images",
+      "role": "recorded_dataset_all_available_splits"
+    },
+    {
+      "path": "D:\\SRTP_Datasets\\fire_semantic_pilot_v2_20261002\\images",
+      "role": "recorded_dataset_all_available_splits"
+    },
+    {
+      "path": "D:\\SRTP_Datasets\\fire_teacher_v13_20261002\\images",
+      "role": "recorded_dataset_all_available_splits"
+    },
+    {
+      "path": "D:\\SRTP_Datasets\\fire_train_context_v19_20261003\\images",
+      "role": "recorded_dataset_all_available_splits"
+    },
+    {
+      "path": "D:\\SRTP_Datasets\\kitchen_fire_binary_codex_20260927\\images",
+      "role": "recorded_dataset_all_available_splits"
+    },
+    {
+      "path": "D:\\SRTP_Datasets\\kitchen_vision_v2_20260926\\images",
+      "role": "recorded_dataset_all_available_splits"
+    },
+    {
+      "path": "D:\\SRTP_Datasets\\kitchen_vision_v3_20260926\\images",
+      "role": "recorded_dataset_all_available_splits"
+    },
+    {
+      "path": "D:\\SRTP_Datasets\\smoke_fire_pilot_v1_20261002\\images",
+      "role": "recorded_dataset_all_available_splits"
+    },
+    {
+      "path": "D:\\SRTP_Datasets\\smoke_head_v4_20261002\\images",
+      "role": "recorded_dataset_all_available_splits"
+    },
+    {
+      "path": "model_work/data",
+      "role": "prior_local_data_and_review_material",
+      "exclude": [
+        "model_work/data/kitchen_context_queue3_20261003"
+      ]
+    },
+    {
+      "path": "model_work/out/project_v16_videos_20261003/source_review_frames",
+      "role": "exposed_project_video_frames"
+    },
+    {
+      "path": "model_work/data/kitchen_context_queue3_20261003",
+      "role": "prior_reviewed_queue3_all_roles"
+    }
+  ],
+  "csv_manifests": [
+    "D:\\SRTP_Datasets\\kitchen_fire_binary_codex_20260927\\manifest.csv",
+    "D:\\SRTP_Datasets\\kitchen_vision_v2_20260926\\manifest.csv",
+    "D:\\SRTP_Datasets\\kitchen_vision_v3_20260926\\manifest.csv"
+  ],
+  "limits": [
+    "Raw D-Fire unselected pool has no images/ root and is not part of this training/exposure inventory.",
+    "Reference roles overlap; root counts are not unique scenes or train-only counts.",
+    "Queue3 original images are included explicitly; its reserved roles remain immutable. Queue4 quarantine output is not a reference root."
+  ]
+}

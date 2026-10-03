@@ -1,0 +1,65 @@
+{
+  "role": "v20_formal_training_running_when_launch_record_written",
+  "observed_at_utc": "2026-10-03T08:33:04.118181+00:00",
+  "training_launch_commit": "70705ce3b71aa66e9272015c73c6d1a1b6f58213",
+  "run": "model_work/runs/fire-kitchen-source-head-v20-20261003",
+  "exec_session_id": 87420,
+  "process_status_evidence": "write_stdin returned the same running session; progress log and actual epoch updates observed",
+  "preflight_sha256": "fd030f48ccb2d7e26d9e1b7c4873ba5e780ec455bad6a377ac6839a748f7d1f5",
+  "actual_initialization": {
+    "exact_v16_best_state_equal": true,
+    "source_sha256": "e770cf68d12cd43b4494a1439dc9c65f14d1d5fc570b2e2e379cc084384418fd",
+    "state_sha256": "aa54d71b4f23ab60923a8be6539784628876891e299ed908386549fae88fe611",
+    "state_tensors": 499,
+    "fixed_feature_blocks": 23,
+    "trainable_parameters": 819779
+  },
+  "actual_args_sha256": "311dc5ebb4e2adcedba6910dd65c9e5f0c1a55e235711a4b78540ad8574dead8",
+  "actual_args_checked_against_declared_config": true,
+  "source_snapshot_files": 16,
+  "source_snapshot_hashes_verified": true,
+  "epochs_completed_at_record": 7,
+  "actual_updates_at_last_completed_epoch": 2108,
+  "all_completed_epochs_feature_unchanged": true,
+  "all_completed_epochs_head_weight_tensors_changed": true,
+  "training_code_sha256": "69bdd226bcfa9ad7daa576cfe5250cf4faa2b40f427604fa4e4dcffa9ed1c405",
+  "comparison_protocol_sha256": "0d12c5add24b3919827a73c108a2e7eff6a6600fb69ef4df901e0d18129e7098",
+  "local_tests": {
+    "tests": 182,
+    "skipped": 0,
+    "passed": true
+  },
+  "ci": [
+    {
+      "run_id": 37109579987,
+      "head_sha": "70705ce3b71aa66e9272015c73c6d1a1b6f58213",
+      "conclusion": "success",
+      "jobs_success": true
+    },
+    {
+      "run_id": 37109584172,
+      "head_sha": "70705ce3b71aa66e9272015c73c6d1a1b6f58213",
+      "conclusion": "success",
+      "jobs_success": true
+    }
+  ],
+  "ci_tests_summary": [
+    "Ran 182 tests in 0.174s",
+    "OK (skipped=75)"
+  ],
+  "previous_ci_failure": {
+    "commit": "351a023aa6105fa2cf134573a9989ff00ed9f479",
+    "push_run": 37109500460,
+    "pr_run": 37109503066,
+    "cause": "Optional v19 schedule import attempted before skip handler; base CI has no cv2. Fixed test import boundary, training source unchanged."
+  },
+  "reserved_sources_predicted": false,
+  "candidate_comparison_completed": false,
+  "model_adoption_changed": false,
+  "board_connected": false,
+  "limits": [
+    "This is an observed running-state snapshot, not a completion marker.",
+    "Re-poll the actual session and inspect completed/failed artifacts before declaring training status.",
+    "CI model-dependency skips do not replace182 fully executed local tests."
+  ]
+}

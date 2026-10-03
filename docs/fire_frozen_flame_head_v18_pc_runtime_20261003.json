@@ -1,0 +1,920 @@
+{
+  "role": "PC dynamic ONNX export and independent CPU execution evidence",
+  "exports": {
+    "best": {
+      "weights_sha256": "71cbf5f7020b9e8e6cbf205c7752ea38d23c4f6aaf438cffdc079e39f7ab0732",
+      "script_sha256": "e483dabc78041dec2a946826818328218dfb60fe32703d09104f862bf9a9017f",
+      "runtime_script_sha256": "ef522b2002c7384f0374492a2c24a98c9bcf4c5a81d7a4161902edd269a0b28a",
+      "tolerance": {
+        "raw_xywh_pixels": 0.1,
+        "raw_probability": 0.0001,
+        "nms_xyxy_input_pixels": 0.1,
+        "nms_probability": 0.0001
+      },
+      "config": {
+        "imgsz": 640,
+        "batch": 1,
+        "dynamic": true,
+        "half": false,
+        "opset": 12,
+        "simplify": false,
+        "embedded_nms": false,
+        "conf": 0.25,
+        "nms_iou": 0.6
+      },
+      "environment": {
+        "torch": "2.12.0+cu132",
+        "ultralytics": "8.4.70",
+        "onnx": "1.22.0",
+        "onnxruntime": "1.27.0"
+      },
+      "scope": "FP32 CPU export consistency on exposed diagnostics; no KModel, quantization, independent accuracy or board test",
+      "onnx_sha256": "ee44034b6143f363be58627cc5c0092503d4e305d41a80b7f5088c61c60fb8a7",
+      "input_shape": [
+        "batch",
+        3,
+        "height",
+        "width"
+      ],
+      "output_shape": [
+        "batch",
+        "Concatoutput0_dim_1",
+        "anchors"
+      ],
+      "actual_input_shapes": [
+        [
+          1,
+          3,
+          288,
+          640
+        ],
+        [
+          1,
+          3,
+          352,
+          640
+        ],
+        [
+          1,
+          3,
+          384,
+          640
+        ],
+        [
+          1,
+          3,
+          416,
+          640
+        ],
+        [
+          1,
+          3,
+          448,
+          640
+        ],
+        [
+          1,
+          3,
+          480,
+          640
+        ],
+        [
+          1,
+          3,
+          512,
+          640
+        ],
+        [
+          1,
+          3,
+          576,
+          640
+        ],
+        [
+          1,
+          3,
+          640,
+          384
+        ],
+        [
+          1,
+          3,
+          640,
+          448
+        ],
+        [
+          1,
+          3,
+          640,
+          544
+        ],
+        [
+          1,
+          3,
+          640,
+          608
+        ],
+        [
+          1,
+          3,
+          640,
+          640
+        ]
+      ],
+      "images": 80,
+      "passed": 80,
+      "all_passed": true,
+      "raw_coordinate_max_abs": 0.0009765625,
+      "raw_probability_max_abs": 3.635883331298828e-06,
+      "by_group": {
+        "blue_primary": {
+          "images": 5,
+          "passed": 5,
+          "native_boxes": 5,
+          "onnx_boxes": 5
+        },
+        "commons_reviewed_blue": {
+          "images": 10,
+          "passed": 10,
+          "native_boxes": 13,
+          "onnx_boxes": 13
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "passed": 1,
+          "native_boxes": 0,
+          "onnx_boxes": 0
+        },
+        "legacy_kitchen_stove_fire": {
+          "images": 4,
+          "passed": 4,
+          "native_boxes": 9,
+          "onnx_boxes": 9
+        },
+        "legacy_ks_flame": {
+          "images": 4,
+          "passed": 4,
+          "native_boxes": 4,
+          "onnx_boxes": 4
+        },
+        "legacy_ks_nofire_confirmed": {
+          "images": 4,
+          "passed": 4,
+          "native_boxes": 0,
+          "onnx_boxes": 0
+        },
+        "legacy_nofire_real_indoor": {
+          "images": 4,
+          "passed": 4,
+          "native_boxes": 1,
+          "onnx_boxes": 1
+        },
+        "legacy_object_pan": {
+          "images": 4,
+          "passed": 4,
+          "native_boxes": 0,
+          "onnx_boxes": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "passed": 10,
+          "native_boxes": 10,
+          "onnx_boxes": 10
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "passed": 24,
+          "native_boxes": 18,
+          "onnx_boxes": 18
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "passed": 10,
+          "native_boxes": 0,
+          "onnx_boxes": 0
+        }
+      }
+    },
+    "last": {
+      "weights_sha256": "2534a8c727157d0333bf7e0b785cd09e950f5e6e0192831947ba26cfe865b3ce",
+      "script_sha256": "e483dabc78041dec2a946826818328218dfb60fe32703d09104f862bf9a9017f",
+      "runtime_script_sha256": "ef522b2002c7384f0374492a2c24a98c9bcf4c5a81d7a4161902edd269a0b28a",
+      "tolerance": {
+        "raw_xywh_pixels": 0.1,
+        "raw_probability": 0.0001,
+        "nms_xyxy_input_pixels": 0.1,
+        "nms_probability": 0.0001
+      },
+      "config": {
+        "imgsz": 640,
+        "batch": 1,
+        "dynamic": true,
+        "half": false,
+        "opset": 12,
+        "simplify": false,
+        "embedded_nms": false,
+        "conf": 0.25,
+        "nms_iou": 0.6
+      },
+      "environment": {
+        "torch": "2.12.0+cu132",
+        "ultralytics": "8.4.70",
+        "onnx": "1.22.0",
+        "onnxruntime": "1.27.0"
+      },
+      "scope": "FP32 CPU export consistency on exposed diagnostics; no KModel, quantization, independent accuracy or board test",
+      "onnx_sha256": "bbbeeeb4372727b75e97cc372065de703b3ae709108df3ab1fca4dfe037686ff",
+      "input_shape": [
+        "batch",
+        3,
+        "height",
+        "width"
+      ],
+      "output_shape": [
+        "batch",
+        "Concatoutput0_dim_1",
+        "anchors"
+      ],
+      "actual_input_shapes": [
+        [
+          1,
+          3,
+          288,
+          640
+        ],
+        [
+          1,
+          3,
+          352,
+          640
+        ],
+        [
+          1,
+          3,
+          384,
+          640
+        ],
+        [
+          1,
+          3,
+          416,
+          640
+        ],
+        [
+          1,
+          3,
+          448,
+          640
+        ],
+        [
+          1,
+          3,
+          480,
+          640
+        ],
+        [
+          1,
+          3,
+          512,
+          640
+        ],
+        [
+          1,
+          3,
+          576,
+          640
+        ],
+        [
+          1,
+          3,
+          640,
+          384
+        ],
+        [
+          1,
+          3,
+          640,
+          448
+        ],
+        [
+          1,
+          3,
+          640,
+          544
+        ],
+        [
+          1,
+          3,
+          640,
+          608
+        ],
+        [
+          1,
+          3,
+          640,
+          640
+        ]
+      ],
+      "images": 80,
+      "passed": 80,
+      "all_passed": true,
+      "raw_coordinate_max_abs": 0.00091552734375,
+      "raw_probability_max_abs": 4.172325134277344e-06,
+      "by_group": {
+        "blue_primary": {
+          "images": 5,
+          "passed": 5,
+          "native_boxes": 6,
+          "onnx_boxes": 6
+        },
+        "commons_reviewed_blue": {
+          "images": 10,
+          "passed": 10,
+          "native_boxes": 13,
+          "onnx_boxes": 13
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "passed": 1,
+          "native_boxes": 0,
+          "onnx_boxes": 0
+        },
+        "legacy_kitchen_stove_fire": {
+          "images": 4,
+          "passed": 4,
+          "native_boxes": 8,
+          "onnx_boxes": 8
+        },
+        "legacy_ks_flame": {
+          "images": 4,
+          "passed": 4,
+          "native_boxes": 4,
+          "onnx_boxes": 4
+        },
+        "legacy_ks_nofire_confirmed": {
+          "images": 4,
+          "passed": 4,
+          "native_boxes": 0,
+          "onnx_boxes": 0
+        },
+        "legacy_nofire_real_indoor": {
+          "images": 4,
+          "passed": 4,
+          "native_boxes": 1,
+          "onnx_boxes": 1
+        },
+        "legacy_object_pan": {
+          "images": 4,
+          "passed": 4,
+          "native_boxes": 0,
+          "onnx_boxes": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "passed": 10,
+          "native_boxes": 10,
+          "onnx_boxes": 10
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "passed": 24,
+          "native_boxes": 18,
+          "onnx_boxes": 18
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "passed": 10,
+          "native_boxes": 0,
+          "onnx_boxes": 0
+        }
+      }
+    }
+  },
+  "image_cli": {
+    "role": "PC visual detections; not an abnormal-fire alarm or board validation",
+    "model_sha256": "bbbeeeb4372727b75e97cc372065de703b3ae709108df3ab1fca4dfe037686ff",
+    "image_sha256": "c8ab39b1799387f4f93b9fe1456ca4878ee71a9b93b6af2c711dc7e3ca023fac",
+    "configuration": {
+      "conf": 0.25,
+      "nms_iou": 0.6,
+      "provider": "CPUExecutionProvider"
+    },
+    "geometry": {
+      "width": 720,
+      "height": 1280,
+      "gain": 0.5,
+      "left": 12,
+      "top": 0,
+      "input_height": 640,
+      "input_width": 384,
+      "input_policy": "rectangular_stride32"
+    },
+    "onnx_forward_ms_single_call": 61.05499999830499,
+    "predictions": [
+      {
+        "class": "fire",
+        "confidence": 0.4043814539909363,
+        "xyxy": [
+          270.2583312988281,
+          911.223876953125,
+          422.7003479003906,
+          972.8232421875
+        ]
+      }
+    ]
+  },
+  "video_cli": {
+    "role": "unlabelled offline development predictions; sampled any-box counts are not accuracy or alarms",
+    "source_sha256": "f768e372ec81704a31e5bad7834b523b93be05a9b9c88f7040f2178261fe99fc",
+    "model_sha256": "bbbeeeb4372727b75e97cc372065de703b3ae709108df3ab1fca4dfe037686ff",
+    "script_sha256": "5d02a3ba967a1d01a26bc74b0b0f36f0ac23312dfedc00f9e7d424f0972eca47",
+    "runtime_sha256": "ef522b2002c7384f0374492a2c24a98c9bcf4c5a81d7a4161902edd269a0b28a",
+    "configuration": {
+      "requested_sample_fps": 1.0,
+      "step": 28,
+      "actual_sample_fps": 1.0007150128459936,
+      "conf": 0.25,
+      "nms_iou": 0.6,
+      "input_policy": "rectangular_stride32"
+    },
+    "nominal_fps": 28.02002035968782,
+    "nominal_frames": 734.0,
+    "timestamp_basis": "frame_index/nominal_fps; no wall-clock or VFR timing validation",
+    "actual_input_shape": [
+      1,
+      3,
+      640,
+      384
+    ],
+    "decoded_to_read_end": true,
+    "decoded_frames": 734,
+    "nominal_minus_decoded_frames": 0.0,
+    "sampled_frames": 27,
+    "frames_with_any_box": 25,
+    "total_boxes": 35,
+    "size": [
+      720,
+      1280
+    ],
+    "nominal_decoded_duration_s": 26.195555555555554,
+    "mean_onnx_forward_ms": 59.45636666621323,
+    "csv_sha256": "af616bbd64f3ec6e11d21444e8cdcc3efbf7217db7e84073fd9c74987eb45e7a",
+    "limitations": "Decoder read-end may also reflect truncation; count discrepancy retained. Sampling may miss short events. No VFR, camera, event or real-time verification."
+  },
+  "video_cpu_pytorch_parity": {
+    "role": "CPU PyTorch versus independent ONNX video CLI; GPU numeric agreement separate",
+    "weights_sha256": "2534a8c727157d0333bf7e0b785cd09e950f5e6e0192831947ba26cfe865b3ce",
+    "onnx_sha256": "bbbeeeb4372727b75e97cc372065de703b3ae709108df3ab1fca4dfe037686ff",
+    "source_sha256": "f768e372ec81704a31e5bad7834b523b93be05a9b9c88f7040f2178261fe99fc",
+    "comparison_per_frame_sha256": "df3bc931919b264b962bf3697ccf601c33bcd2c9c12121abdbc07c111ef88091",
+    "cli_csv_sha256": "af616bbd64f3ec6e11d21444e8cdcc3efbf7217db7e84073fd9c74987eb45e7a",
+    "script_sha256": "1b736c481a2fb9c82b932fbf5ae18bb103d380c658f51d82395cb5bc85ed61d3",
+    "tolerance": {
+      "coordinates": 0.1,
+      "confidence": 0.0001
+    },
+    "samples": 27,
+    "passed": 27,
+    "all_passed": true,
+    "cpu_details": [
+      {
+        "frame_index": 0,
+        "source_pixel_sha256": "03fd247cdd8935bf96ed39d0233eb4f835086b879527d87c2aee804e80773109",
+        "preprocessing_equal": true,
+        "native_boxes": 1,
+        "cli_boxes": 1,
+        "passed": true
+      },
+      {
+        "frame_index": 28,
+        "source_pixel_sha256": "4a973271d172e5ee95f418e1eccd2d9882a5a776107c7a5fa3ff90b7c8c2b364",
+        "preprocessing_equal": true,
+        "native_boxes": 2,
+        "cli_boxes": 2,
+        "passed": true
+      },
+      {
+        "frame_index": 56,
+        "source_pixel_sha256": "6f4c3706d93059a706766b3ceb16272849ea37cae628ff6f7d39ce61775a7b7a",
+        "preprocessing_equal": true,
+        "native_boxes": 2,
+        "cli_boxes": 2,
+        "passed": true
+      },
+      {
+        "frame_index": 84,
+        "source_pixel_sha256": "38396721d572bbe946c5af0bf59d410a8b2e8f6d28f4fad548a28836be6fc14e",
+        "preprocessing_equal": true,
+        "native_boxes": 1,
+        "cli_boxes": 1,
+        "passed": true
+      },
+      {
+        "frame_index": 112,
+        "source_pixel_sha256": "629b1710c136a00266cc02511aa550669b8da2344ebf9011da7f4515932f07ef",
+        "preprocessing_equal": true,
+        "native_boxes": 2,
+        "cli_boxes": 2,
+        "passed": true
+      },
+      {
+        "frame_index": 140,
+        "source_pixel_sha256": "4650bd6cce856c9d783dcae780a0bc49b924284b1eef03d46eaeae31a0cba515",
+        "preprocessing_equal": true,
+        "native_boxes": 0,
+        "cli_boxes": 0,
+        "passed": true
+      },
+      {
+        "frame_index": 168,
+        "source_pixel_sha256": "32987b31b799941f2fe662e138a1a166ee064992864cd57e721e3a4a069526d9",
+        "preprocessing_equal": true,
+        "native_boxes": 1,
+        "cli_boxes": 1,
+        "passed": true
+      },
+      {
+        "frame_index": 196,
+        "source_pixel_sha256": "06d79b3f38dca10478310355a10cc635a1d2ed109feb5c737939b9c565df5c92",
+        "preprocessing_equal": true,
+        "native_boxes": 1,
+        "cli_boxes": 1,
+        "passed": true
+      },
+      {
+        "frame_index": 224,
+        "source_pixel_sha256": "0cce094b2be780fa91e8e66a37e5411168cfaeace521ffe0e9e70546c49dd5a1",
+        "preprocessing_equal": true,
+        "native_boxes": 1,
+        "cli_boxes": 1,
+        "passed": true
+      },
+      {
+        "frame_index": 252,
+        "source_pixel_sha256": "a421fb3f9323fdd85346193c8977a77dcba7545c42cfdd9ccd3ce9f0adf30706",
+        "preprocessing_equal": true,
+        "native_boxes": 1,
+        "cli_boxes": 1,
+        "passed": true
+      },
+      {
+        "frame_index": 280,
+        "source_pixel_sha256": "842c70b89510db4faecec46870456c74a7b05fd3cc9461283a4ef907488dc0d3",
+        "preprocessing_equal": true,
+        "native_boxes": 3,
+        "cli_boxes": 3,
+        "passed": true
+      },
+      {
+        "frame_index": 308,
+        "source_pixel_sha256": "ad7a125e490af746bc458fa1536b8dab88bc875635e39cf1fa8c6a11f03cb729",
+        "preprocessing_equal": true,
+        "native_boxes": 3,
+        "cli_boxes": 3,
+        "passed": true
+      },
+      {
+        "frame_index": 336,
+        "source_pixel_sha256": "00c1f04606ac6451193ad335b4f96763df1b93f6fd4e2f618230d118c0826368",
+        "preprocessing_equal": true,
+        "native_boxes": 2,
+        "cli_boxes": 2,
+        "passed": true
+      },
+      {
+        "frame_index": 364,
+        "source_pixel_sha256": "182c37a3d13b29657decf22beab0697939d439a9438f65b7847b1a5d4431f491",
+        "preprocessing_equal": true,
+        "native_boxes": 1,
+        "cli_boxes": 1,
+        "passed": true
+      },
+      {
+        "frame_index": 392,
+        "source_pixel_sha256": "9a034e4a05616b1993a02fd8e060d6d86a2e1a61cfe602b0aab63b8f5da8f58d",
+        "preprocessing_equal": true,
+        "native_boxes": 1,
+        "cli_boxes": 1,
+        "passed": true
+      },
+      {
+        "frame_index": 420,
+        "source_pixel_sha256": "0a0d6c56ada822266ea98f3c9c732e37c8a4b2ba5e77cb95e0e6e89c78bc241c",
+        "preprocessing_equal": true,
+        "native_boxes": 1,
+        "cli_boxes": 1,
+        "passed": true
+      },
+      {
+        "frame_index": 448,
+        "source_pixel_sha256": "005333c5b40b478b28ce661b6b2fe19f11cd1f968f7b6561b138d0e1771ec98e",
+        "preprocessing_equal": true,
+        "native_boxes": 1,
+        "cli_boxes": 1,
+        "passed": true
+      },
+      {
+        "frame_index": 476,
+        "source_pixel_sha256": "8cda5e138dfe7377d1c491d5612da3d80f014acf643d0442ed5312b060959ef7",
+        "preprocessing_equal": true,
+        "native_boxes": 1,
+        "cli_boxes": 1,
+        "passed": true
+      },
+      {
+        "frame_index": 504,
+        "source_pixel_sha256": "b3f0b600fff5f5816af7686f90837575d30b4ffb8decfd54ab5ded7b3712f4bc",
+        "preprocessing_equal": true,
+        "native_boxes": 2,
+        "cli_boxes": 2,
+        "passed": true
+      },
+      {
+        "frame_index": 532,
+        "source_pixel_sha256": "6e1dd30912fe3cbb1eb39fa9b10599488e32aca1fc00a41e9e599b22cae284fa",
+        "preprocessing_equal": true,
+        "native_boxes": 2,
+        "cli_boxes": 2,
+        "passed": true
+      },
+      {
+        "frame_index": 560,
+        "source_pixel_sha256": "5d6ffcd2841686467891cd018f71a1da761ccc93b13af564752609907dbbbbd9",
+        "preprocessing_equal": true,
+        "native_boxes": 0,
+        "cli_boxes": 0,
+        "passed": true
+      },
+      {
+        "frame_index": 588,
+        "source_pixel_sha256": "a5cf7c7439b1ca3922fed4d41f2b4b640131e4f52b2f0c8f1794b289e983a175",
+        "preprocessing_equal": true,
+        "native_boxes": 1,
+        "cli_boxes": 1,
+        "passed": true
+      },
+      {
+        "frame_index": 616,
+        "source_pixel_sha256": "28914fd7f6f38cf918a645167633d89797214bf6bd10e1ba9f4d8cee996ae1ad",
+        "preprocessing_equal": true,
+        "native_boxes": 1,
+        "cli_boxes": 1,
+        "passed": true
+      },
+      {
+        "frame_index": 644,
+        "source_pixel_sha256": "0b2ddd1294f6c2f49e6f853862c4ccd7aca6029ae13b32194baaac3f546ced56",
+        "preprocessing_equal": true,
+        "native_boxes": 1,
+        "cli_boxes": 1,
+        "passed": true
+      },
+      {
+        "frame_index": 672,
+        "source_pixel_sha256": "a56169894e3bbfe5cd4ebfa8e71ae5066e8fadc46efa48d5035ac76d087c2eaf",
+        "preprocessing_equal": true,
+        "native_boxes": 1,
+        "cli_boxes": 1,
+        "passed": true
+      },
+      {
+        "frame_index": 700,
+        "source_pixel_sha256": "615135374da1af627e8067697d49ba26cad569b8460217c927d213c6b0f486fa",
+        "preprocessing_equal": true,
+        "native_boxes": 1,
+        "cli_boxes": 1,
+        "passed": true
+      },
+      {
+        "frame_index": 728,
+        "source_pixel_sha256": "5d3c23260ef048c333eb226fa0122682bdfab046f5c934a042017309c2dcd048",
+        "preprocessing_equal": true,
+        "native_boxes": 1,
+        "cli_boxes": 1,
+        "passed": true
+      }
+    ],
+    "gpu_comparison": {
+      "all_counts_equal": true,
+      "strict_passed": 12,
+      "strict_all_passed": false,
+      "coordinate_max_abs": 0.01727294921875,
+      "confidence_max_abs": 0.0010754764080047607,
+      "details": [
+        {
+          "frame_index": 0,
+          "equal_count": true,
+          "strict_numeric_match": false,
+          "coordinate_max_abs": 0.009002685546875,
+          "confidence_max_abs": 0.00014549493789672852
+        },
+        {
+          "frame_index": 28,
+          "equal_count": true,
+          "strict_numeric_match": true,
+          "coordinate_max_abs": 0.013763427734375,
+          "confidence_max_abs": 4.45246696472168e-05
+        },
+        {
+          "frame_index": 56,
+          "equal_count": true,
+          "strict_numeric_match": false,
+          "coordinate_max_abs": 0.0113525390625,
+          "confidence_max_abs": 0.000353008508682251
+        },
+        {
+          "frame_index": 84,
+          "equal_count": true,
+          "strict_numeric_match": true,
+          "coordinate_max_abs": 0.0037994384765625,
+          "confidence_max_abs": 9.47713851928711e-06
+        },
+        {
+          "frame_index": 112,
+          "equal_count": true,
+          "strict_numeric_match": true,
+          "coordinate_max_abs": 0.00616455078125,
+          "confidence_max_abs": 6.407499313354492e-05
+        },
+        {
+          "frame_index": 140,
+          "equal_count": true,
+          "strict_numeric_match": true,
+          "coordinate_max_abs": 0.0,
+          "confidence_max_abs": 0.0
+        },
+        {
+          "frame_index": 168,
+          "equal_count": true,
+          "strict_numeric_match": true,
+          "coordinate_max_abs": 0.00372314453125,
+          "confidence_max_abs": 3.927946090698242e-05
+        },
+        {
+          "frame_index": 196,
+          "equal_count": true,
+          "strict_numeric_match": true,
+          "coordinate_max_abs": 0.016845703125,
+          "confidence_max_abs": 7.641315460205078e-05
+        },
+        {
+          "frame_index": 224,
+          "equal_count": true,
+          "strict_numeric_match": true,
+          "coordinate_max_abs": 0.00469970703125,
+          "confidence_max_abs": 9.357929229736328e-06
+        },
+        {
+          "frame_index": 252,
+          "equal_count": true,
+          "strict_numeric_match": false,
+          "coordinate_max_abs": 0.01727294921875,
+          "confidence_max_abs": 0.0003081858158111572
+        },
+        {
+          "frame_index": 280,
+          "equal_count": true,
+          "strict_numeric_match": true,
+          "coordinate_max_abs": 0.00439453125,
+          "confidence_max_abs": 6.663799285888672e-05
+        },
+        {
+          "frame_index": 308,
+          "equal_count": true,
+          "strict_numeric_match": false,
+          "coordinate_max_abs": 0.01287841796875,
+          "confidence_max_abs": 0.0002092123031616211
+        },
+        {
+          "frame_index": 336,
+          "equal_count": true,
+          "strict_numeric_match": false,
+          "coordinate_max_abs": 0.0130615234375,
+          "confidence_max_abs": 0.0010754764080047607
+        },
+        {
+          "frame_index": 364,
+          "equal_count": true,
+          "strict_numeric_match": false,
+          "coordinate_max_abs": 0.014251708984375,
+          "confidence_max_abs": 0.0009664595127105713
+        },
+        {
+          "frame_index": 392,
+          "equal_count": true,
+          "strict_numeric_match": false,
+          "coordinate_max_abs": 0.008056640625,
+          "confidence_max_abs": 0.0002726316452026367
+        },
+        {
+          "frame_index": 420,
+          "equal_count": true,
+          "strict_numeric_match": false,
+          "coordinate_max_abs": 0.00634765625,
+          "confidence_max_abs": 0.00015628337860107422
+        },
+        {
+          "frame_index": 448,
+          "equal_count": true,
+          "strict_numeric_match": false,
+          "coordinate_max_abs": 0.01312255859375,
+          "confidence_max_abs": 0.0001513957977294922
+        },
+        {
+          "frame_index": 476,
+          "equal_count": true,
+          "strict_numeric_match": false,
+          "coordinate_max_abs": 0.00726318359375,
+          "confidence_max_abs": 0.00020778179168701172
+        },
+        {
+          "frame_index": 504,
+          "equal_count": true,
+          "strict_numeric_match": false,
+          "coordinate_max_abs": 0.00567626953125,
+          "confidence_max_abs": 0.00028973817825317383
+        },
+        {
+          "frame_index": 532,
+          "equal_count": true,
+          "strict_numeric_match": false,
+          "coordinate_max_abs": 0.00836181640625,
+          "confidence_max_abs": 0.0006952285766601562
+        },
+        {
+          "frame_index": 560,
+          "equal_count": true,
+          "strict_numeric_match": true,
+          "coordinate_max_abs": 0.0,
+          "confidence_max_abs": 0.0
+        },
+        {
+          "frame_index": 588,
+          "equal_count": true,
+          "strict_numeric_match": false,
+          "coordinate_max_abs": 0.00762939453125,
+          "confidence_max_abs": 0.0006693005561828613
+        },
+        {
+          "frame_index": 616,
+          "equal_count": true,
+          "strict_numeric_match": true,
+          "coordinate_max_abs": 0.007080078125,
+          "confidence_max_abs": 8.422136306762695e-05
+        },
+        {
+          "frame_index": 644,
+          "equal_count": true,
+          "strict_numeric_match": true,
+          "coordinate_max_abs": 0.0093994140625,
+          "confidence_max_abs": 3.8623809814453125e-05
+        },
+        {
+          "frame_index": 672,
+          "equal_count": true,
+          "strict_numeric_match": true,
+          "coordinate_max_abs": 0.01409912109375,
+          "confidence_max_abs": 1.5079975128173828e-05
+        },
+        {
+          "frame_index": 700,
+          "equal_count": true,
+          "strict_numeric_match": false,
+          "coordinate_max_abs": 0.0057373046875,
+          "confidence_max_abs": 0.0002582073211669922
+        },
+        {
+          "frame_index": 728,
+          "equal_count": true,
+          "strict_numeric_match": false,
+          "coordinate_max_abs": 0.013031005859375,
+          "confidence_max_abs": 0.00016009807586669922
+        }
+      ],
+      "note": "GPU/CPU comparison is distinct from the frozen CPU export test; tolerances unchanged and differences retained."
+    }
+  },
+  "boxed_preview": {
+    "decoded_boxed_frames": 27,
+    "images": [
+      {
+        "path": "model_work\\out\\frozen_flame_v18_last_cpu_video_20261003\\preview_00.jpg",
+        "sha256": "c3cd7c598c584d0b2cc512ab90149e7845c7b1428d4f7091bd21d42c57acb794"
+      },
+      {
+        "path": "model_work\\out\\frozen_flame_v18_last_cpu_video_20261003\\preview_13.jpg",
+        "sha256": "946b8eba66e7f862396f724613e025fa4fe3202944a8a94f8a708b6937ecff73"
+      },
+      {
+        "path": "model_work\\out\\frozen_flame_v18_last_cpu_video_20261003\\preview_26.jpg",
+        "sha256": "225a709221a7b75f4480f7508b0bf0cfa726a5428e72ff3441b503f94ae4f3fb"
+      }
+    ]
+  },
+  "manual_review_sha256": "7b483caedbb8da1d26295fb355c8173655df32a32313cbaee36a0cf741de5de5",
+  "limits": [
+    "CPU-to-CPU fixed tolerance pass; GPU-to-CPU strict match only 12/27, confidence maximum 0.0010754764 exceeds 0.0001; counts equal. Tolerance unchanged.",
+    "Mean forward time excludes decode/preprocess/NMS/render and is not whole pipeline realtime or board performance.",
+    "No hardware/deployment tested."
+  ]
+}

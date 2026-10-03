@@ -1,0 +1,1150 @@
+{
+  "date": "2026-10-02",
+  "role": "development diagnostics and CPU export compatibility; no independent or board acceptance",
+  "decision": "Retain original v3; no interpolated checkpoint passes the frozen development screen.",
+  "blend": {
+    "launch_sha256": "0dcca333ccb8ec0031b276415d66bce6855b8768f1e9fee2fc76d3d6bf916b58",
+    "manifest_sha256": "7a262442e6227a0da6277b03c3b9211e65effc3d8e3e68e71995922fc636ecc2",
+    "screening_only": {
+      "maximum_map50_drop": 0.01,
+      "minimum_blue_gain": 1,
+      "maximum_additional_noflame_fp": 1
+    },
+    "models": {
+      "v3": {
+        "alpha": 0.0,
+        "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+        "blue_primary_localized": 0,
+        "legacy_map50": 0.9732386254178709,
+        "legacy_map50_95": 0.27949606105054137,
+        "derived_frames_by_origin": {
+          "commons_reviewed_blue": {
+            "images": 10,
+            "images_with_fp": 3,
+            "tp": 1,
+            "fp": 3,
+            "fn": 12
+          },
+          "food_hard_negative_crop": {
+            "images": 1,
+            "images_with_fp": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "reviewed_flame": {
+            "images": 10,
+            "images_with_fp": 5,
+            "tp": 3,
+            "fp": 5,
+            "fn": 7
+          },
+          "reviewed_old_video": {
+            "images": 24,
+            "images_with_fp": 0,
+            "tp": 18,
+            "fp": 0,
+            "fn": 0
+          },
+          "sticker_hard_negative_crop": {
+            "images": 10,
+            "images_with_fp": 3,
+            "tp": 0,
+            "fp": 3,
+            "fn": 0
+          }
+        },
+        "legacy_by_provenance": {
+          "ks_nofire_confirmed": {
+            "images": 75,
+            "gt_boxes": 0,
+            "images_with_fp": 0,
+            "images_with_fn": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "ks_flame": {
+            "images": 57,
+            "gt_boxes": 57,
+            "images_with_fp": 1,
+            "images_with_fn": 0,
+            "tp": 57,
+            "fp": 1,
+            "fn": 0
+          },
+          "kitchen_stove_fire": {
+            "images": 14,
+            "gt_boxes": 20,
+            "images_with_fp": 5,
+            "images_with_fn": 2,
+            "tp": 18,
+            "fp": 5,
+            "fn": 2
+          },
+          "object_pan": {
+            "images": 40,
+            "gt_boxes": 0,
+            "images_with_fp": 0,
+            "images_with_fn": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "nofire_real_indoor": {
+            "images": 100,
+            "gt_boxes": 0,
+            "images_with_fp": 1,
+            "images_with_fn": 0,
+            "tp": 0,
+            "fp": 1,
+            "fn": 0
+          }
+        },
+        "passes_development_screen": false
+      },
+      "blend_00": {
+        "alpha": 0.25,
+        "weights_sha256": "42b21f821091b60ef5a72599b2a6928d0753edf1d711998191257dd3672c6bb7",
+        "blue_primary_localized": 0,
+        "legacy_map50": 0.953378093735326,
+        "legacy_map50_95": 0.2729874542655926,
+        "derived_frames_by_origin": {
+          "commons_reviewed_blue": {
+            "images": 10,
+            "images_with_fp": 3,
+            "tp": 1,
+            "fp": 3,
+            "fn": 12
+          },
+          "food_hard_negative_crop": {
+            "images": 1,
+            "images_with_fp": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "reviewed_flame": {
+            "images": 10,
+            "images_with_fp": 4,
+            "tp": 5,
+            "fp": 4,
+            "fn": 5
+          },
+          "reviewed_old_video": {
+            "images": 24,
+            "images_with_fp": 0,
+            "tp": 18,
+            "fp": 0,
+            "fn": 0
+          },
+          "sticker_hard_negative_crop": {
+            "images": 10,
+            "images_with_fp": 2,
+            "tp": 0,
+            "fp": 2,
+            "fn": 0
+          }
+        },
+        "legacy_by_provenance": {
+          "ks_nofire_confirmed": {
+            "images": 75,
+            "gt_boxes": 0,
+            "images_with_fp": 0,
+            "images_with_fn": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "ks_flame": {
+            "images": 57,
+            "gt_boxes": 57,
+            "images_with_fp": 1,
+            "images_with_fn": 0,
+            "tp": 57,
+            "fp": 1,
+            "fn": 0
+          },
+          "kitchen_stove_fire": {
+            "images": 14,
+            "gt_boxes": 20,
+            "images_with_fp": 4,
+            "images_with_fn": 2,
+            "tp": 18,
+            "fp": 4,
+            "fn": 2
+          },
+          "object_pan": {
+            "images": 40,
+            "gt_boxes": 0,
+            "images_with_fp": 0,
+            "images_with_fn": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "nofire_real_indoor": {
+            "images": 100,
+            "gt_boxes": 0,
+            "images_with_fp": 1,
+            "images_with_fn": 0,
+            "tp": 0,
+            "fp": 1,
+            "fn": 0
+          }
+        },
+        "passes_development_screen": false
+      },
+      "blend_01": {
+        "alpha": 0.5,
+        "weights_sha256": "ec61839882e7eb838873a3f7257280accef25e67a9d4fcd8fa497d0565dc939d",
+        "blue_primary_localized": 1,
+        "legacy_map50": 0.9613479194063488,
+        "legacy_map50_95": 0.2629315484571092,
+        "derived_frames_by_origin": {
+          "commons_reviewed_blue": {
+            "images": 10,
+            "images_with_fp": 0,
+            "tp": 3,
+            "fp": 0,
+            "fn": 10
+          },
+          "food_hard_negative_crop": {
+            "images": 1,
+            "images_with_fp": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "reviewed_flame": {
+            "images": 10,
+            "images_with_fp": 4,
+            "tp": 5,
+            "fp": 4,
+            "fn": 5
+          },
+          "reviewed_old_video": {
+            "images": 24,
+            "images_with_fp": 0,
+            "tp": 18,
+            "fp": 0,
+            "fn": 0
+          },
+          "sticker_hard_negative_crop": {
+            "images": 10,
+            "images_with_fp": 2,
+            "tp": 0,
+            "fp": 2,
+            "fn": 0
+          }
+        },
+        "legacy_by_provenance": {
+          "ks_nofire_confirmed": {
+            "images": 75,
+            "gt_boxes": 0,
+            "images_with_fp": 0,
+            "images_with_fn": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "ks_flame": {
+            "images": 57,
+            "gt_boxes": 57,
+            "images_with_fp": 1,
+            "images_with_fn": 1,
+            "tp": 56,
+            "fp": 1,
+            "fn": 1
+          },
+          "kitchen_stove_fire": {
+            "images": 14,
+            "gt_boxes": 20,
+            "images_with_fp": 5,
+            "images_with_fn": 2,
+            "tp": 18,
+            "fp": 5,
+            "fn": 2
+          },
+          "object_pan": {
+            "images": 40,
+            "gt_boxes": 0,
+            "images_with_fp": 0,
+            "images_with_fn": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "nofire_real_indoor": {
+            "images": 100,
+            "gt_boxes": 0,
+            "images_with_fp": 2,
+            "images_with_fn": 0,
+            "tp": 0,
+            "fp": 2,
+            "fn": 0
+          }
+        },
+        "passes_development_screen": false
+      },
+      "blend_02": {
+        "alpha": 0.75,
+        "weights_sha256": "f573aaf5a7cdef20999378eea10995afbfdaebc03b55d0036371c0209320a6d7",
+        "blue_primary_localized": 1,
+        "legacy_map50": 0.9482437766911451,
+        "legacy_map50_95": 0.2481181656246337,
+        "derived_frames_by_origin": {
+          "commons_reviewed_blue": {
+            "images": 10,
+            "images_with_fp": 0,
+            "tp": 5,
+            "fp": 0,
+            "fn": 8
+          },
+          "food_hard_negative_crop": {
+            "images": 1,
+            "images_with_fp": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "reviewed_flame": {
+            "images": 10,
+            "images_with_fp": 4,
+            "tp": 9,
+            "fp": 4,
+            "fn": 1
+          },
+          "reviewed_old_video": {
+            "images": 24,
+            "images_with_fp": 0,
+            "tp": 18,
+            "fp": 0,
+            "fn": 0
+          },
+          "sticker_hard_negative_crop": {
+            "images": 10,
+            "images_with_fp": 2,
+            "tp": 0,
+            "fp": 2,
+            "fn": 0
+          }
+        },
+        "legacy_by_provenance": {
+          "ks_nofire_confirmed": {
+            "images": 75,
+            "gt_boxes": 0,
+            "images_with_fp": 0,
+            "images_with_fn": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "ks_flame": {
+            "images": 57,
+            "gt_boxes": 57,
+            "images_with_fp": 1,
+            "images_with_fn": 0,
+            "tp": 57,
+            "fp": 1,
+            "fn": 0
+          },
+          "kitchen_stove_fire": {
+            "images": 14,
+            "gt_boxes": 20,
+            "images_with_fp": 5,
+            "images_with_fn": 3,
+            "tp": 17,
+            "fp": 5,
+            "fn": 3
+          },
+          "object_pan": {
+            "images": 40,
+            "gt_boxes": 0,
+            "images_with_fp": 0,
+            "images_with_fn": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "nofire_real_indoor": {
+            "images": 100,
+            "gt_boxes": 0,
+            "images_with_fp": 6,
+            "images_with_fn": 0,
+            "tp": 0,
+            "fp": 6,
+            "fn": 0
+          }
+        },
+        "passes_development_screen": false
+      },
+      "v9_last": {
+        "alpha": 1.0,
+        "weights_sha256": "1ead79c990f0121dc779cee97a155f779deeea428a32d0cc85e56b66be5fe867",
+        "blue_primary_localized": 3,
+        "legacy_map50": 0.9004364640562981,
+        "legacy_map50_95": 0.23240101318412315,
+        "derived_frames_by_origin": {
+          "commons_reviewed_blue": {
+            "images": 10,
+            "images_with_fp": 2,
+            "tp": 7,
+            "fp": 2,
+            "fn": 6
+          },
+          "food_hard_negative_crop": {
+            "images": 1,
+            "images_with_fp": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "reviewed_flame": {
+            "images": 10,
+            "images_with_fp": 3,
+            "tp": 10,
+            "fp": 3,
+            "fn": 0
+          },
+          "reviewed_old_video": {
+            "images": 24,
+            "images_with_fp": 0,
+            "tp": 18,
+            "fp": 0,
+            "fn": 0
+          },
+          "sticker_hard_negative_crop": {
+            "images": 10,
+            "images_with_fp": 3,
+            "tp": 0,
+            "fp": 3,
+            "fn": 0
+          }
+        },
+        "legacy_by_provenance": {
+          "ks_nofire_confirmed": {
+            "images": 75,
+            "gt_boxes": 0,
+            "images_with_fp": 0,
+            "images_with_fn": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "ks_flame": {
+            "images": 57,
+            "gt_boxes": 57,
+            "images_with_fp": 2,
+            "images_with_fn": 0,
+            "tp": 57,
+            "fp": 2,
+            "fn": 0
+          },
+          "kitchen_stove_fire": {
+            "images": 14,
+            "gt_boxes": 20,
+            "images_with_fp": 2,
+            "images_with_fn": 3,
+            "tp": 17,
+            "fp": 2,
+            "fn": 3
+          },
+          "object_pan": {
+            "images": 40,
+            "gt_boxes": 0,
+            "images_with_fp": 0,
+            "images_with_fn": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "nofire_real_indoor": {
+            "images": 100,
+            "gt_boxes": 0,
+            "images_with_fp": 9,
+            "images_with_fn": 0,
+            "tp": 0,
+            "fp": 9,
+            "fn": 0
+          }
+        },
+        "passes_development_screen": false
+      }
+    }
+  },
+  "onnx": {
+    "static_square": {
+      "parity": {
+        "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+        "script_sha256": "fd00786352b36a01f01c9aa7d144ac8f4f9996c59ae266b2fd6f8392c7289e2b",
+        "runtime_script_sha256": "cac9b636b0ba4c08448a2090467adef5238ca8d6c1eb3a2edd3b6f6721b2baf6",
+        "tolerance": {
+          "raw_xywh_pixels": 0.1,
+          "raw_probability": 0.0001,
+          "nms_xyxy_input_pixels": 0.1,
+          "nms_probability": 0.0001
+        },
+        "config": {
+          "imgsz": 640,
+          "batch": 1,
+          "dynamic": false,
+          "half": false,
+          "opset": 12,
+          "simplify": false,
+          "embedded_nms": false,
+          "conf": 0.25,
+          "nms_iou": 0.6
+        },
+        "environment": {
+          "torch": "2.12.0+cu132",
+          "ultralytics": "8.4.70",
+          "onnx": "1.22.0",
+          "onnxruntime": "1.27.0"
+        },
+        "scope": "FP32 CPU export consistency on exposed diagnostics; no KModel, quantization, independent accuracy or board test",
+        "onnx_sha256": "170ff446709cff7d061e3f7ebc3878c87accf386d1d09704ea49502c9528b40f",
+        "input_shape": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "output_shape": [
+          1,
+          5,
+          8400
+        ],
+        "images": 80,
+        "passed": 80,
+        "all_passed": true,
+        "raw_coordinate_max_abs": 0.011474609375,
+        "raw_probability_max_abs": 3.039836883544922e-06,
+        "by_group": {
+          "blue_primary": {
+            "images": 5,
+            "passed": 5,
+            "native_boxes": 1,
+            "onnx_boxes": 1
+          },
+          "commons_reviewed_blue": {
+            "images": 10,
+            "passed": 10,
+            "native_boxes": 4,
+            "onnx_boxes": 4
+          },
+          "food_hard_negative_crop": {
+            "images": 1,
+            "passed": 1,
+            "native_boxes": 0,
+            "onnx_boxes": 0
+          },
+          "legacy_kitchen_stove_fire": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 9,
+            "onnx_boxes": 9
+          },
+          "legacy_ks_flame": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 4,
+            "onnx_boxes": 4
+          },
+          "legacy_ks_nofire_confirmed": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 0,
+            "onnx_boxes": 0
+          },
+          "legacy_nofire_real_indoor": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 0,
+            "onnx_boxes": 0
+          },
+          "legacy_object_pan": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 0,
+            "onnx_boxes": 0
+          },
+          "reviewed_flame": {
+            "images": 10,
+            "passed": 10,
+            "native_boxes": 8,
+            "onnx_boxes": 8
+          },
+          "reviewed_old_video": {
+            "images": 24,
+            "passed": 24,
+            "native_boxes": 18,
+            "onnx_boxes": 18
+          },
+          "sticker_hard_negative_crop": {
+            "images": 10,
+            "passed": 10,
+            "native_boxes": 2,
+            "onnx_boxes": 2
+          }
+        }
+      },
+      "wrapper": {
+        "role": "inference input-policy compatibility, not accuracy",
+        "images": 80,
+        "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+        "onnx_sha256": "170ff446709cff7d061e3f7ebc3878c87accf386d1d09704ea49502c9528b40f",
+        "script_sha256": "169d891077c886f8e4e95019af2a35d492909a87cee082589858af73aecefebe",
+        "original_coordinate_tolerance_pixels": 1.0,
+        "confidence_tolerance": 0.0001,
+        "square_wrapper_matches": 80,
+        "default_rect_wrapper_matches": 42,
+        "by_group": {
+          "blue_primary": {
+            "images": 5,
+            "square_wrapper_matches": 5,
+            "default_rect_wrapper_matches": 4,
+            "square_boxes": 1,
+            "default_rect_boxes": 1
+          },
+          "commons_reviewed_blue": {
+            "images": 10,
+            "square_wrapper_matches": 10,
+            "default_rect_wrapper_matches": 6,
+            "square_boxes": 4,
+            "default_rect_boxes": 4
+          },
+          "food_hard_negative_crop": {
+            "images": 1,
+            "square_wrapper_matches": 1,
+            "default_rect_wrapper_matches": 1,
+            "square_boxes": 0,
+            "default_rect_boxes": 0
+          },
+          "legacy_kitchen_stove_fire": {
+            "images": 4,
+            "square_wrapper_matches": 4,
+            "default_rect_wrapper_matches": 4,
+            "square_boxes": 9,
+            "default_rect_boxes": 9
+          },
+          "legacy_ks_flame": {
+            "images": 4,
+            "square_wrapper_matches": 4,
+            "default_rect_wrapper_matches": 0,
+            "square_boxes": 4,
+            "default_rect_boxes": 4
+          },
+          "legacy_ks_nofire_confirmed": {
+            "images": 4,
+            "square_wrapper_matches": 4,
+            "default_rect_wrapper_matches": 4,
+            "square_boxes": 0,
+            "default_rect_boxes": 0
+          },
+          "legacy_nofire_real_indoor": {
+            "images": 4,
+            "square_wrapper_matches": 4,
+            "default_rect_wrapper_matches": 4,
+            "square_boxes": 0,
+            "default_rect_boxes": 0
+          },
+          "legacy_object_pan": {
+            "images": 4,
+            "square_wrapper_matches": 4,
+            "default_rect_wrapper_matches": 4,
+            "square_boxes": 0,
+            "default_rect_boxes": 0
+          },
+          "reviewed_flame": {
+            "images": 10,
+            "square_wrapper_matches": 10,
+            "default_rect_wrapper_matches": 2,
+            "square_boxes": 8,
+            "default_rect_boxes": 8
+          },
+          "reviewed_old_video": {
+            "images": 24,
+            "square_wrapper_matches": 24,
+            "default_rect_wrapper_matches": 6,
+            "square_boxes": 18,
+            "default_rect_boxes": 18
+          },
+          "sticker_hard_negative_crop": {
+            "images": 10,
+            "square_wrapper_matches": 10,
+            "default_rect_wrapper_matches": 7,
+            "square_boxes": 2,
+            "default_rect_boxes": 3
+          }
+        }
+      }
+    },
+    "dynamic_rectangular": {
+      "parity": {
+        "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+        "script_sha256": "e483dabc78041dec2a946826818328218dfb60fe32703d09104f862bf9a9017f",
+        "runtime_script_sha256": "ef522b2002c7384f0374492a2c24a98c9bcf4c5a81d7a4161902edd269a0b28a",
+        "tolerance": {
+          "raw_xywh_pixels": 0.1,
+          "raw_probability": 0.0001,
+          "nms_xyxy_input_pixels": 0.1,
+          "nms_probability": 0.0001
+        },
+        "config": {
+          "imgsz": 640,
+          "batch": 1,
+          "dynamic": true,
+          "half": false,
+          "opset": 12,
+          "simplify": false,
+          "embedded_nms": false,
+          "conf": 0.25,
+          "nms_iou": 0.6
+        },
+        "environment": {
+          "torch": "2.12.0+cu132",
+          "ultralytics": "8.4.70",
+          "onnx": "1.22.0",
+          "onnxruntime": "1.27.0"
+        },
+        "scope": "FP32 CPU export consistency on exposed diagnostics; no KModel, quantization, independent accuracy or board test",
+        "onnx_sha256": "41a0431013501b4f833700d464c3c0bb2abcf2627a23a1dd63f19b1d8eee5e47",
+        "input_shape": [
+          "batch",
+          3,
+          "height",
+          "width"
+        ],
+        "output_shape": [
+          "batch",
+          "Concatoutput0_dim_1",
+          "anchors"
+        ],
+        "actual_input_shapes": [
+          [
+            1,
+            3,
+            288,
+            640
+          ],
+          [
+            1,
+            3,
+            352,
+            640
+          ],
+          [
+            1,
+            3,
+            384,
+            640
+          ],
+          [
+            1,
+            3,
+            416,
+            640
+          ],
+          [
+            1,
+            3,
+            448,
+            640
+          ],
+          [
+            1,
+            3,
+            480,
+            640
+          ],
+          [
+            1,
+            3,
+            512,
+            640
+          ],
+          [
+            1,
+            3,
+            576,
+            640
+          ],
+          [
+            1,
+            3,
+            640,
+            384
+          ],
+          [
+            1,
+            3,
+            640,
+            448
+          ],
+          [
+            1,
+            3,
+            640,
+            544
+          ],
+          [
+            1,
+            3,
+            640,
+            608
+          ],
+          [
+            1,
+            3,
+            640,
+            640
+          ]
+        ],
+        "images": 80,
+        "passed": 80,
+        "all_passed": true,
+        "raw_coordinate_max_abs": 0.0096282958984375,
+        "raw_probability_max_abs": 3.427267074584961e-06,
+        "by_group": {
+          "blue_primary": {
+            "images": 5,
+            "passed": 5,
+            "native_boxes": 1,
+            "onnx_boxes": 1
+          },
+          "commons_reviewed_blue": {
+            "images": 10,
+            "passed": 10,
+            "native_boxes": 4,
+            "onnx_boxes": 4
+          },
+          "food_hard_negative_crop": {
+            "images": 1,
+            "passed": 1,
+            "native_boxes": 0,
+            "onnx_boxes": 0
+          },
+          "legacy_kitchen_stove_fire": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 9,
+            "onnx_boxes": 9
+          },
+          "legacy_ks_flame": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 4,
+            "onnx_boxes": 4
+          },
+          "legacy_ks_nofire_confirmed": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 0,
+            "onnx_boxes": 0
+          },
+          "legacy_nofire_real_indoor": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 0,
+            "onnx_boxes": 0
+          },
+          "legacy_object_pan": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 0,
+            "onnx_boxes": 0
+          },
+          "reviewed_flame": {
+            "images": 10,
+            "passed": 10,
+            "native_boxes": 8,
+            "onnx_boxes": 8
+          },
+          "reviewed_old_video": {
+            "images": 24,
+            "passed": 24,
+            "native_boxes": 18,
+            "onnx_boxes": 18
+          },
+          "sticker_hard_negative_crop": {
+            "images": 10,
+            "passed": 10,
+            "native_boxes": 3,
+            "onnx_boxes": 3
+          }
+        }
+      },
+      "wrapper": {
+        "role": "inference input-policy compatibility, not accuracy",
+        "images": 80,
+        "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+        "onnx_sha256": "41a0431013501b4f833700d464c3c0bb2abcf2627a23a1dd63f19b1d8eee5e47",
+        "script_sha256": "f161d8fa1b4e048b35de9c07326d16145d23763ca361005ab55b19815a3b9b49",
+        "original_coordinate_tolerance_pixels": 1.0,
+        "confidence_tolerance": 0.0001,
+        "square_wrapper_matches": 42,
+        "default_rect_wrapper_matches": 80,
+        "by_group": {
+          "blue_primary": {
+            "images": 5,
+            "square_wrapper_matches": 4,
+            "default_rect_wrapper_matches": 5,
+            "square_boxes": 1,
+            "default_rect_boxes": 1
+          },
+          "commons_reviewed_blue": {
+            "images": 10,
+            "square_wrapper_matches": 6,
+            "default_rect_wrapper_matches": 10,
+            "square_boxes": 4,
+            "default_rect_boxes": 4
+          },
+          "food_hard_negative_crop": {
+            "images": 1,
+            "square_wrapper_matches": 1,
+            "default_rect_wrapper_matches": 1,
+            "square_boxes": 0,
+            "default_rect_boxes": 0
+          },
+          "legacy_kitchen_stove_fire": {
+            "images": 4,
+            "square_wrapper_matches": 4,
+            "default_rect_wrapper_matches": 4,
+            "square_boxes": 9,
+            "default_rect_boxes": 9
+          },
+          "legacy_ks_flame": {
+            "images": 4,
+            "square_wrapper_matches": 0,
+            "default_rect_wrapper_matches": 4,
+            "square_boxes": 4,
+            "default_rect_boxes": 4
+          },
+          "legacy_ks_nofire_confirmed": {
+            "images": 4,
+            "square_wrapper_matches": 4,
+            "default_rect_wrapper_matches": 4,
+            "square_boxes": 0,
+            "default_rect_boxes": 0
+          },
+          "legacy_nofire_real_indoor": {
+            "images": 4,
+            "square_wrapper_matches": 4,
+            "default_rect_wrapper_matches": 4,
+            "square_boxes": 0,
+            "default_rect_boxes": 0
+          },
+          "legacy_object_pan": {
+            "images": 4,
+            "square_wrapper_matches": 4,
+            "default_rect_wrapper_matches": 4,
+            "square_boxes": 0,
+            "default_rect_boxes": 0
+          },
+          "reviewed_flame": {
+            "images": 10,
+            "square_wrapper_matches": 2,
+            "default_rect_wrapper_matches": 10,
+            "square_boxes": 8,
+            "default_rect_boxes": 8
+          },
+          "reviewed_old_video": {
+            "images": 24,
+            "square_wrapper_matches": 6,
+            "default_rect_wrapper_matches": 24,
+            "square_boxes": 18,
+            "default_rect_boxes": 18
+          },
+          "sticker_hard_negative_crop": {
+            "images": 10,
+            "square_wrapper_matches": 7,
+            "default_rect_wrapper_matches": 10,
+            "square_boxes": 2,
+            "default_rect_boxes": 3
+          }
+        }
+      }
+    }
+  },
+  "videos": {
+    "static_square": {
+      "clips": 10,
+      "decoded_frames": 9219,
+      "sampled_frames": 315,
+      "previews_validated": 10,
+      "per_clip": [
+        {
+          "clip_index": 0,
+          "decoded_frames": 931,
+          "sampled_frames": 32,
+          "frames_with_any_box": 0,
+          "total_boxes": 0,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 1,
+          "decoded_frames": 940,
+          "sampled_frames": 32,
+          "frames_with_any_box": 32,
+          "total_boxes": 32,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 2,
+          "decoded_frames": 956,
+          "sampled_frames": 32,
+          "frames_with_any_box": 32,
+          "total_boxes": 32,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 3,
+          "decoded_frames": 992,
+          "sampled_frames": 34,
+          "frames_with_any_box": 34,
+          "total_boxes": 34,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 4,
+          "decoded_frames": 719,
+          "sampled_frames": 24,
+          "frames_with_any_box": 4,
+          "total_boxes": 4,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 5,
+          "decoded_frames": 670,
+          "sampled_frames": 23,
+          "frames_with_any_box": 13,
+          "total_boxes": 14,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 6,
+          "decoded_frames": 734,
+          "sampled_frames": 27,
+          "frames_with_any_box": 7,
+          "total_boxes": 7,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 7,
+          "decoded_frames": 1285,
+          "sampled_frames": 43,
+          "frames_with_any_box": 43,
+          "total_boxes": 43,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 8,
+          "decoded_frames": 1780,
+          "sampled_frames": 60,
+          "frames_with_any_box": 36,
+          "total_boxes": 37,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 9,
+          "decoded_frames": 212,
+          "sampled_frames": 8,
+          "frames_with_any_box": 0,
+          "total_boxes": 0,
+          "nominal_minus_decoded_frames": 2.0
+        }
+      ],
+      "role": "previously exposed predictions; any-box counts are not accuracy; nominal frame timestamps, not VFR validation"
+    },
+    "dynamic_rectangular": {
+      "clips": 10,
+      "decoded_frames": 9219,
+      "sampled_frames": 315,
+      "previews_validated": 10,
+      "per_clip": [
+        {
+          "clip_index": 0,
+          "decoded_frames": 931,
+          "sampled_frames": 32,
+          "frames_with_any_box": 0,
+          "total_boxes": 0,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 1,
+          "decoded_frames": 940,
+          "sampled_frames": 32,
+          "frames_with_any_box": 32,
+          "total_boxes": 32,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 2,
+          "decoded_frames": 956,
+          "sampled_frames": 32,
+          "frames_with_any_box": 32,
+          "total_boxes": 32,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 3,
+          "decoded_frames": 992,
+          "sampled_frames": 34,
+          "frames_with_any_box": 34,
+          "total_boxes": 34,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 4,
+          "decoded_frames": 719,
+          "sampled_frames": 24,
+          "frames_with_any_box": 8,
+          "total_boxes": 8,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 5,
+          "decoded_frames": 670,
+          "sampled_frames": 23,
+          "frames_with_any_box": 13,
+          "total_boxes": 14,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 6,
+          "decoded_frames": 734,
+          "sampled_frames": 27,
+          "frames_with_any_box": 8,
+          "total_boxes": 8,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 7,
+          "decoded_frames": 1285,
+          "sampled_frames": 43,
+          "frames_with_any_box": 43,
+          "total_boxes": 43,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 8,
+          "decoded_frames": 1780,
+          "sampled_frames": 60,
+          "frames_with_any_box": 32,
+          "total_boxes": 33,
+          "nominal_minus_decoded_frames": 0.0
+        },
+        {
+          "clip_index": 9,
+          "decoded_frames": 212,
+          "sampled_frames": 8,
+          "frames_with_any_box": 0,
+          "total_boxes": 0,
+          "nominal_minus_decoded_frames": 2.0
+        }
+      ],
+      "role": "previously exposed predictions; any-box counts are not accuracy; nominal frame timestamps, not VFR validation"
+    }
+  }
+}

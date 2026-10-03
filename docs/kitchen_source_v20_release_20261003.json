@@ -1,0 +1,161 @@
+{
+  "role": "Publication audit for completed v20 source/result commit; later documentation-only closure is separate",
+  "observed_utc": "2026-10-03T11:00:43.935164+00:00",
+  "source_commit": "89f3671c59b1e1efe5fb1c16798ae62140d8d979",
+  "origin": "https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian.git",
+  "branch": "codex/pc-model-20261002",
+  "repository_owner": "1nuoiscute",
+  "authenticated_login": "1nuoiscute",
+  "owner_matches_authenticated_account": true,
+  "admin_permission": true,
+  "push_permission": true,
+  "public_repository": true,
+  "draft_pr": "https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/pull/1",
+  "approval_history": {
+    "initial_push_executed": false,
+    "initial_rejection": "Automatic review required trusted ownership and payload evidence for external transfer",
+    "subsequent_read_only_checks": "origin equals attached PR repository; authenticated account equals repository owner with admin/push permissions; nine staged source/summary/document files inspected",
+    "same_push_after_evidence": "Approval succeeded; exact existing branch push completed",
+    "bypass_used": false
+  },
+  "transferred_scope": {
+    "changed_files": 9,
+    "large_weights": false,
+    "original_images": false,
+    "private_videos": false
+  },
+  "ci": [
+    {
+      "run_id": 37118048019,
+      "event": "push",
+      "head_sha": "89f3671c59b1e1efe5fb1c16798ae62140d8d979",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "checks",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Dataset config dependency",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -B tools/check_public_repo.py",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -B tools/check_key1_draw_path.py --self-test",
+              "conclusion": "success"
+            },
+            {
+              "name": "KEY1 mix transaction on fake registers",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -B -m unittest discover -s model_work/src -p 'test_*.py' -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 37118050269,
+      "event": "pull_request",
+      "head_sha": "89f3671c59b1e1efe5fb1c16798ae62140d8d979",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "checks",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Dataset config dependency",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -B tools/check_public_repo.py",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -B tools/check_key1_draw_path.py --self-test",
+              "conclusion": "success"
+            },
+            {
+              "name": "KEY1 mix transaction on fake registers",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -B -m unittest discover -s model_work/src -p 'test_*.py' -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "full_local_tests": {
+    "total": 182,
+    "skipped": 0,
+    "result": "passed"
+  },
+  "base_ci_tests": {
+    "total": 182,
+    "skipped": 75,
+    "result": "passed",
+    "scope": "No Torch/OpenCV-dependent model verification in base CI"
+  },
+  "public_source_files_checked_at_source_commit": 484,
+  "working_tree_clean_at_source_commit": true,
+  "source_head_matches_origin": true
+}
