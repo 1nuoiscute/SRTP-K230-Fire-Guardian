@@ -1,5 +1,34 @@
 # SRTP K230 Fire Guardian｜边缘视觉火情检测与多传感器融合
 
+## 队友与 AI 接手入口（2026-10-11）
+
+**完整的最新电脑端记录在 [codex/pc-model-20261002 开发分支](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/tree/codex/pc-model-20261002)，尚未合入 main。** 默认分支提供板端历史源码和交接入口；这次只更新交接文档，没有把电脑模型发布为板端正式版本。
+
+拉取仓库后先确认分支；需要完整模型记录时执行：
+
+```sh
+git fetch origin
+git switch codex/pc-model-20261002
+```
+
+| 范围 | 最近已记录的状态 | 接手时如何理解 |
+|---|---|---|
+| 板端视觉 | 原视觉 ELF ec2caafd…＋早期四类映射640 KModel ec475725…，已有摄像头画框实屏证据 | 这是最近已验收视觉身份，不能用电脑端版本号替代；先读回实际板上文件核对 |
+| 板端 KEY2 | 新控制器8d69a1c5…、数据页cbb46868…、p1镜像5cd8667b…；永久启动与重启后两轮切换获确认 | 已验收的是短时功能，KEY1框覆盖面板及长时稳定仍未解决 |
+| 电脑端模型 | v16 best保留作电脑演示、v18 last保留作定位开发；2026-10-03起暂停推进 | 这些不是已上板模型；v20未晋升，v21只有CPU预演，正式GPU训练未启动 |
+| 板端选区 ROI | 用户要求在板端完成选择；讨论方案为屏幕显示矩形、矩阵按键移动/缩放/预览/保存，再配全画面巡视 | **功能尚未实现、未编译或上板验收。** 触摸输入未验证可用，其他矩阵键也须核对实测 |
+
+建议阅读顺序：
+
+1. [板端基线与完整哈希](docs/BOARD_BASELINE.md)：确定最近验收的视觉、KModel、启动和面板身份。
+2. [板端交接](docs/BOARD_HANDOFF_20260930.md)：先读顶部最新更正；下面旧表格是历史冻结状态，不能据此把已部署KEY2认定为未验收。
+3. [KEY2永久部署和现场记录](model_work/docs/KEY2_CONNECTOR_CANDIDATE_20260930.md)、[KEY1未解决问题](model_work/docs/KEY1_BLUE_BOX_INVESTIGATION_20261001.md)。
+4. [开发分支最新状态](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/blob/codex/pc-model-20261002/docs/STATUS.md)和[v21预演暂停记录](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/blob/codex/pc-model-20261002/model_work/docs/KITCHEN_PARTIAL_FEATURES_V21_20261003.md)。
+
+**源码和产物边界：** 原厂视觉ELF缺少同源源码，`src/kitchen_fire_yolov8/`不是已复现摄像兼容性的正式视觉源码；编译成功不能作为直接替换依据。当前 `vision_key.c` 是KEY2控制器源码，不是历史v4b的原始快照。ROI显示框、推理前裁剪、检测框回原图坐标是不同环节，不能只画一个矩形就声明完成ROI识别。
+
+**仓库不包含权重、KModel、ELF、固件备份和原视频。** 这些保留在原电脑或板上；新克隆不具备完整运行产物。接手板子先保存设备读回和现有产物，不把缺少本地备份误判为板上没有程序。上述板端结论来自2026-09-30至10-01记录，2026-10-11没有新增实机核验；队友之后的修改应另记设备证据和版本。
+
 **电脑端模型推进已暂停（2026-10-03，用户要求）：**[v21预演收尾](model_work/docs/KITCHEN_PARTIAL_FEATURES_V21_20261003.md)完成8图/1次真实CPU更新，60个后段特征及42个头权重张量改变，冻结前缀/特征BN保持；189项本机测试无跳过通过。正式GPU训练未启动，ROI功能仅讨论。当前仍保留v16 best演示/v18 last开发。
 
 **最新电脑端诊断（2026-10-03）：**[新来源可学习性四组实验](model_work/docs/KITCHEN_SOURCE_LEARNABILITY_V1_20261003.md)已完成320次实际更新与12文件实际复核。全画面检测头拟合3/4、开放后段特征拟合4/4；裁剪组虽裁剪4/4，原画面仅1/4，仍有非火对象错误。185项本机测试无跳过通过；只属训练曝光诊断，保留v16 best演示/v18 last开发，没有晋升或新板端验收。
@@ -20,7 +49,7 @@
 
 **前一阶段v16（2026-10-03）：**[v16训练、项目比较与CPU运行](model_work/docs/SCRATCH_SEMANTIC_V16_20261003.md) 已完成。best保持4/5蓝焰，补充物理火焰框匹配0→6处，锅底小蓝焰视频表现保持；动态ONNX80/80及独立CPU入口通过，作为下一电脑端开发候选。旧AP下降、无火误检及锅体大框仍记录，v14/v13回退保留；尚无独立厨房或板端验收。下文为此前阶段沿革。
 
-**当前阶段（2026-10-02）：v14从零训练和v15语义适配均完成，优先推进v14锅底蓝焰电脑端候选，开发板未连接。** 已有fire v13保留回退：它相比v3蓝焰主定位0/5→1/5、队友已审核火焰TP 3→5，旧火焰召回及室内无火FP保持，旧mAP50 .97324→.97128，静态/动态ONNX各80/80及独立CPU入口通过。v3也保留；跨厨房可靠性和事件验收仍未完成。见 [v13模型卡](docs/PC_FIRE_V13_MODEL_CARD.md)。
+**历史阶段（2026-10-02）：v14从零训练和v15语义适配均完成，优先推进v14锅底蓝焰电脑端候选，开发板未连接。** 已有fire v13保留回退：它相比v3蓝焰主定位0/5→1/5、队友已审核火焰TP 3→5，旧火焰召回及室内无火FP保持，旧mAP50 .97324→.97128，静态/动态ONNX各80/80及独立CPU入口通过。v3也保留；跨厨房可靠性和事件验收仍未完成。见 [v13模型卡](docs/PC_FIRE_V13_MODEL_CARD.md)。
 
 此前 v12 来源采样训练的两份候选均未达到冻结门槛；本轮 v13 改用固定特征与教师约束后首次通过开发筛选。已对照新版计划书建立差距清单，烟雾/蒸汽语义和独立两类验收仍缺证据，原数据和旧权重保留。
 
@@ -42,7 +71,7 @@
 
 ## 当前限制
 
-- 2026-09-28 新厨房视频暴露锅下蓝焰漏检、蓝色贴纸误检；电脑端 v3 是开发基线，新权重尚未上板。
+- 2026-09-28 新厨房视频暴露锅下蓝焰漏检、蓝色贴纸误检；电脑端v16 best/v18 last分别保留作演示和定位开发，新权重尚未上板；v3保留为历史回退。
 - KEY2 全屏数据页的旧乱码已在 9 月 30 日短时实屏试验通过修复；新开机版本已写入并通过启动/哈希复测，长时稳定性未验收。KEY1 蓝框覆盖参数区仍未解决。
 - 烟雾/燃气输入、真实事件融合、自适应标定、执行反馈和 MQTT 闭环尚未验收。
 - 旧图片集和已反复分析的视频均属于开发诊断；其帧数、mAP 或有框比例不能替代独立事件验收。
@@ -70,8 +99,8 @@ v11 已完成：回到 v9 数据，隔离五张问题图、加权三张原训练
 
 | 内容 | 入口 |
 |---|---|
-| 最新模型推进与可运行入口 | [v13 模型卡与 ONNX 身份](docs/PC_FIRE_V13_MODEL_CARD.md)、[v13 完整实验](model_work/docs/FIRE_TEACHER_V13_20261002.md)、[v3 回退模型卡](docs/PC_FIRE_V3_MODEL_CARD.md) |
-| 持续模型训练与计划要求 | [v12 完整结果](model_work/docs/HARDCASE_V12_SOURCE_CAP_20261002.md)、[新版计划书证据矩阵](docs/PLAN_REQUIREMENT_MATRIX_20261002.md)、[烟雾标签审核](model_work/docs/SMOKE_SOURCE_SEMANTICS_20261002.md) |
+| 最新电脑端记录与可运行入口 | [完整开发分支状态](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/blob/codex/pc-model-20261002/docs/STATUS.md)、[v16运行记录](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/blob/codex/pc-model-20261002/model_work/docs/SCRATCH_SEMANTIC_V16_20261003.md)、[v18开发候选](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/blob/codex/pc-model-20261002/model_work/docs/FROZEN_FLAME_HEAD_V18_20261003.md)、[v21预演暂停](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/blob/codex/pc-model-20261002/model_work/docs/KITCHEN_PARTIAL_FEATURES_V21_20261003.md) |
+| 历史训练及未达计划要求（当前暂停） | [v12 完整结果](model_work/docs/HARDCASE_V12_SOURCE_CAP_20261002.md)、[新版计划书证据矩阵](docs/PLAN_REQUIREMENT_MATRIX_20261002.md)、[烟雾标签审核](model_work/docs/SMOKE_SOURCE_SEMANTICS_20261002.md) |
 | 当前板端交接 | [上板顺序与版本边界](docs/BOARD_HANDOFF_20260930.md)、[模型阶段收尾](docs/PC_MODEL_STAGE_CLOSURE_20260930.md) |
 | 报警、融合与联动方案 | [板端实施顺序与输入缺口](docs/BOARD_EVENT_FUSION_PLAN_20261001.md) |
 | 最新状态及历史 | [项目状态](docs/STATUS.md)、[路线与实验门槛](docs/ROADMAP.md) |
