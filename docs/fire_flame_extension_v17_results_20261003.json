@@ -1,0 +1,797 @@
+{
+  "role": "v17 completed project-scoped development comparison",
+  "independent_test": false,
+  "experiment_meta_sha256": "4402e31f2f180e2a1d5badc0ae39350a96542e33833c93cf66ea5ee404cfc1f1",
+  "comparison_sha256": "e54838863db679f05a7b6863f1f689bf88c30af55090e523ff0d6973e229c364",
+  "data_manifest_sha256": "8e70dea69f39beafa0f17b3a6d4b483c537622fdf52271755fd8f3e2447bd54d",
+  "epochs": 12,
+  "actual_batches": 3204,
+  "actual_optimizer_steps": 3198,
+  "checkpoints": {
+    "best.pt": "51edf823d902935e8f8a78aefeb51b713c9e113555e10cc5f2840d253bb0eaa6",
+    "last.pt": "2f4c7b200a7d109c94594601756631da1fe8c97fc1f16ae58231a22ffc0acf6d"
+  },
+  "completed_audits": {
+    "actual_initialization_audit.json": "e8b9fdd837b0b3bedffe958bc98ab7b702e7016e582aabab0ed57ff609feb775",
+    "full_network_update_audit.json": "2a65b7b5ad702d760f8d396116b90f9d9ec06729a91a0460a98d05082c94affb",
+    "optimizer_cadence_audit.json": "76a55923ccb5c41a3002364965702492d5bf28b169e986c339be3890271bea4e"
+  },
+  "models": {
+    "v16_best": {
+      "weights_sha256": "e770cf68d12cd43b4494a1439dc9c65f14d1d5fc570b2e2e379cc084384418fd",
+      "map50": 0.6829617468783579,
+      "map50_95": 0.17448759337331737,
+      "blue_primary_localized_iou50": 4,
+      "sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 13,
+          "images_with_fn": 11,
+          "tp": 46,
+          "fp": 13,
+          "fn": 11
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 7,
+          "images_with_fn": 5,
+          "tp": 14,
+          "fp": 8,
+          "fn": 6
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 15,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 17,
+          "fn": 0
+        }
+      },
+      "derived_development_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 13,
+          "fp": 0,
+          "fn": 0
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 101,
+        "fp": 38,
+        "fn": 17,
+        "micro_f1": 0.7859922178988327,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "supplemental_visible_flame": {
+        "0.3": {
+          "tp": 8,
+          "fp": 9,
+          "fn": 7,
+          "micro_f1": 0.5
+        },
+        "0.5": {
+          "tp": 6,
+          "fp": 11,
+          "fn": 9,
+          "micro_f1": 0.375
+        }
+      },
+      "original_labels_same_subset": {
+        "tp": 10,
+        "fp": 7,
+        "fn": 5,
+        "micro_f1": 0.625
+      },
+      "mean_best_prediction_iou": 0.3849124698088186
+    },
+    "v17_best": {
+      "weights_sha256": "51edf823d902935e8f8a78aefeb51b713c9e113555e10cc5f2840d253bb0eaa6",
+      "map50": 0.6093141525443441,
+      "map50_95": 0.14158822446948022,
+      "blue_primary_localized_iou50": 3,
+      "sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 10,
+          "images_with_fn": 11,
+          "tp": 46,
+          "fp": 10,
+          "fn": 11
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 9,
+          "images_with_fn": 8,
+          "tp": 9,
+          "fp": 14,
+          "fn": 11
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 16,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 19,
+          "fn": 0
+        }
+      },
+      "derived_development_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 13,
+          "fp": 0,
+          "fn": 0
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 96,
+        "fp": 43,
+        "fn": 22,
+        "micro_f1": 0.7470817120622568,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "supplemental_visible_flame": {
+        "0.3": {
+          "tp": 11,
+          "fp": 8,
+          "fn": 4,
+          "micro_f1": 0.6470588235294118
+        },
+        "0.5": {
+          "tp": 11,
+          "fp": 8,
+          "fn": 4,
+          "micro_f1": 0.6470588235294118
+        }
+      },
+      "original_labels_same_subset": {
+        "tp": 7,
+        "fp": 12,
+        "fn": 8,
+        "micro_f1": 0.4117647058823529
+      },
+      "mean_best_prediction_iou": 0.587320091769551
+    },
+    "v17_last": {
+      "weights_sha256": "2f4c7b200a7d109c94594601756631da1fe8c97fc1f16ae58231a22ffc0acf6d",
+      "map50": 0.4189804347162061,
+      "map50_95": 0.08988252120901846,
+      "blue_primary_localized_iou50": 4,
+      "sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 21,
+          "images_with_fn": 22,
+          "tp": 35,
+          "fp": 21,
+          "fn": 22
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 9,
+          "images_with_fn": 8,
+          "tp": 8,
+          "fp": 15,
+          "fn": 12
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 14,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 15,
+          "fn": 0
+        }
+      },
+      "derived_development_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 13,
+          "fp": 0,
+          "fn": 0
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 84,
+        "fp": 51,
+        "fn": 34,
+        "micro_f1": 0.6640316205533597,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "supplemental_visible_flame": {
+        "0.3": {
+          "tp": 12,
+          "fp": 7,
+          "fn": 3,
+          "micro_f1": 0.7058823529411765
+        },
+        "0.5": {
+          "tp": 12,
+          "fp": 7,
+          "fn": 3,
+          "micro_f1": 0.7058823529411765
+        }
+      },
+      "original_labels_same_subset": {
+        "tp": 7,
+        "fp": 12,
+        "fn": 8,
+        "micro_f1": 0.4117647058823529
+      },
+      "mean_best_prediction_iou": 0.642464496373313
+    }
+  },
+  "supplemental_scope": {
+    "scored_images": 10,
+    "approximate_flame_boxes": 15,
+    "match_iou": 0.5,
+    "training_labels_modified": false,
+    "original_metrics_retained": true
+  },
+  "videos": {
+    "clips": [
+      {
+        "video_index": 1,
+        "source_sha256": "65ce47ff76f64e8d28f290279f4de970929f203aa8cdbace7c63720260753df6",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 931,
+        "sampled_frames": 32,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          }
+        }
+      },
+      {
+        "video_index": 2,
+        "source_sha256": "ea5b23e704eb4f7b1a54335f5d0c9b9cd0f6309603b23d59625ad2a633dc7bca",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 940,
+        "sampled_frames": 32,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          }
+        }
+      },
+      {
+        "video_index": 3,
+        "source_sha256": "9f9183be2cf13b2b65ca89543bb451f4cb2b3515836a449b012e6daa1c071a16",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 956,
+        "sampled_frames": 32,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          }
+        }
+      },
+      {
+        "video_index": 4,
+        "source_sha256": "dafac36724a2a7a60e23d88cb9781e70814775b28176b672ba38e1aaa5b2c245",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 992,
+        "sampled_frames": 34,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          }
+        }
+      },
+      {
+        "video_index": 5,
+        "source_sha256": "ac34d7617a55c42d67d385e92d83f3255c6b93a54789c52cea746dc6a0028eba",
+        "fps": 30.004173042147727,
+        "step": 30,
+        "decoded_frames": 719,
+        "sampled_frames": 24,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          }
+        }
+      },
+      {
+        "video_index": 6,
+        "source_sha256": "dbd18d5fb2587b4dafc224d12bc47984ce6e97abbdfacf0e33a7b83520b02cb1",
+        "fps": 30.00447828034035,
+        "step": 30,
+        "decoded_frames": 670,
+        "sampled_frames": 23,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 21,
+            "boxes": 22,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 20,
+              "2": 1
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 21,
+            "boxes": 23,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 19,
+              "2": 2
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 21,
+            "boxes": 24,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 19,
+              "2": 1,
+              "3": 1
+            }
+          }
+        }
+      },
+      {
+        "video_index": 7,
+        "source_sha256": "f768e372ec81704a31e5bad7834b523b93be05a9b9c88f7040f2178261fe99fc",
+        "fps": 28.02002035968782,
+        "step": 28,
+        "decoded_frames": 734,
+        "sampled_frames": 27,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 25,
+            "boxes": 37,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "3": 3,
+              "1": 16,
+              "2": 6,
+              "0": 2
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 25,
+            "boxes": 35,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "2": 6,
+              "1": 17,
+              "0": 2,
+              "3": 2
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 24,
+            "boxes": 34,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "2": 6,
+              "0": 3,
+              "1": 16,
+              "3": 2
+            }
+          }
+        }
+      },
+      {
+        "video_index": 8,
+        "source_sha256": "ab9d1d7e493979dc39395e9933bc1adfe3f1c78ba479759146426ada47af601e",
+        "fps": 30.0046699875467,
+        "step": 30,
+        "decoded_frames": 1285,
+        "sampled_frames": 43,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          }
+        }
+      },
+      {
+        "video_index": 9,
+        "source_sha256": "fe87820c64636d5362a35fa98e6d969de892ddebf9a4dc0b326aa6896a97fa6a",
+        "fps": 30.004214075010534,
+        "step": 30,
+        "decoded_frames": 1780,
+        "sampled_frames": 60,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 60,
+            "boxes": 64,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 56,
+              "2": 4
+            }
+          },
+          "v17_best": {
+            "frames_with_any_box": 60,
+            "boxes": 69,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 51,
+              "2": 9
+            }
+          },
+          "v17_last": {
+            "frames_with_any_box": 60,
+            "boxes": 72,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 48,
+              "2": 12
+            }
+          }
+        }
+      }
+    ],
+    "shared_samples": 307,
+    "total_model_inferences": 921,
+    "comparison_sha256": "47035f85fed81609e2a0f51a809672befd42cabb2bc07f50165cb568779a57bb",
+    "manual_review_complete_sha256": "e242464b011d0468a4b15d67992d37dfc1321b910a5b86a7a24bf4030f08ac65",
+    "actually_viewed_comparison_pages": 9,
+    "first_middle_last_source_samples": 27,
+    "count_different_samples_reviewed": 13,
+    "count_difference_pages_reviewed": 5,
+    "cross_run": {
+      "previous_per_frame_sha256": "14cd391173208b589e107a8362a7da433aa7ea0454a97dd29750723f0f6b2bc8",
+      "current_per_frame_sha256": "dc4dd2974fbc02b0c8b056cded7be58f9c5b1956dbb3fd879c2c679accb71ba3",
+      "samples": 307,
+      "all_source_identities_and_pixels_equal": true,
+      "all_reference_full_predictions_exactly_equal": true
+    },
+    "findings": {
+      "visible_flame": "Both candidates improve tight flame boxes; large pot boxes remain. Last still misses tight geometry at supplemental indices 4/8/10 and retains large/overlapping boxes elsewhere.",
+      "fixed_video": "All nine first/middle/last pages reviewed. First clip shows unlit burners in the three reviewed frames and no sampled boxes; sampled count is not a full off-event truth.",
+      "count_differences": "All 13 count-different samples reviewed in five pages. Video 6 sample22 adds overlapping flame boxes (1/2/3). Video7 sample1 contains visible blue flame but last misses; sample0 and15 use fewer component boxes, not established recall improvements.",
+      "utensils": "Video9 best adds non-flame hanging-utensil boxes at samples33/35/36/37/38/40; last also at39. Last adds overlapping flame boxes at5; sample6 already has multiple flame boxes for v16/last. Whole-frame utensil errors are within the demo scene and must be addressed.",
+      "runtime": "Independent CPU image overlay and boxed-video first/middle/last actually viewed; observed blue flame localization. No full-frame accuracy annotation or continuous real-time claim."
+    }
+  },
+  "nofire_semantics": {
+    "original_labels_modified": false,
+    "smoke_absence_unknown": true,
+    "models": {
+      "v16_best": {
+        "scope": "Exposed source-error semantics review; do not silently correct labels or count ambiguous objects as confirmed fire/no-fire",
+        "input_sha256": "29daf1f38a543c9678e171e465dd0474858b98edfa60cac37573efcbb5288f82",
+        "original_labels_modified": false,
+        "independent_kitchen": false,
+        "smoke_absence_unknown": true,
+        "confirmed_nonflame_images": 10,
+        "confirmed_nonflame_prediction_boxes": 12,
+        "uncertain_visible_fire_images": 5,
+        "uncertain_prediction_boxes": 5,
+        "raw_empty_label_fp_images": 15,
+        "raw_empty_label_fp_boxes": 17,
+        "review_complete_sha256": "7d1a4be6641f62f523061d29f3872f2c4271a4534425ee239993d20cdaf426c8",
+        "finding": "Named nofire source is not normal-event ground truth. Errors include plume, illumination, tissue, industrial objects and FIRECHIEF watermark. Five images of a bright table object remain ambiguous; retain original scoring separately."
+      },
+      "v17_best": {
+        "input_sha256": "db25f57490f9dd95db1d6025efd5ac8f3498304871535cde9b44338af6a879ae",
+        "review_complete_sha256": "825c77e3daa7db3e7551b701fe27d8bdb308cc1d516304e3e4e3c7ca4075a686",
+        "raw_empty_label_fp_images": 16,
+        "raw_empty_label_fp_boxes": 19,
+        "confirmed_nonflame_images": 8,
+        "confirmed_nonflame_prediction_boxes": 10,
+        "uncertain_visible_fire_images": 8,
+        "uncertain_prediction_boxes": 9
+      },
+      "v17_last": {
+        "input_sha256": "f68d3de52227eadfeaf8ef52cfc1d734e16c4bf00c6cf6113056317a08739aae",
+        "review_complete_sha256": "c8200972d4c05ba8e4f5bab25de68b9788ac7a52eb60af191aaef360ea32aa8d",
+        "raw_empty_label_fp_images": 14,
+        "raw_empty_label_fp_boxes": 15,
+        "confirmed_nonflame_images": 7,
+        "confirmed_nonflame_prediction_boxes": 8,
+        "uncertain_visible_fire_images": 7,
+        "uncertain_prediction_boxes": 7
+      }
+    },
+    "note": "These are prediction semantics on exposed errors, not corrected dataset truth. Raw original FP counts remain 17/19/15."
+  },
+  "selection": {
+    "current_pc_demo_candidate": "v16_best",
+    "next_geometry_development_candidate": "v17_last",
+    "v17_best": "comparison checkpoint retained",
+    "all_weights_retained": true,
+    "default_model_overwritten": false,
+    "basis": "v17 last has a real tight-flame benefit (6 to 12/15, mean IoU .385 to .642) with blue4/5 preserved. Continue its geometry/data direction, but retain v16 for current demonstration: new hanging-utensil errors in video9, extra near-flame boxes and video7 sample1 miss are actual within-scene costs. Old AP alone is not a veto.",
+    "next_work": "Review original train-only frames with utensils/reflections and partially occluded burners; retain flame-positive labels for frames with visible fire. Improve consistent small-flame geometry and avoid large/nested pot boxes. Do not relabel exposed test/video samples into training or claim independent acceptance; new kitchen/event-isolated data still required."
+  },
+  "limitations": [
+    "Exposed development sources and near-related frames, no independent kitchen/event acceptance.",
+    "Approximate tight labels supplement rather than replace original labels.",
+    "Sampling at about 1 fps cannot verify all short events or full continuous accuracy.",
+    "Data, initialization, learning rate and seed changed; not a single-factor causal ablation.",
+    "Board disconnected; no KModel, quantization, two-class smoke fusion or alarms validated in this run."
+  ],
+  "source_snapshot": {
+    "manifest_sha256": "f8c437c01a5d26dd05a6bf53431974669261e20929bd978190171d90f69c5e31",
+    "files": 22,
+    "all_actual_bytes_verified": true,
+    "git_eol_normalization": "LF; local byte hashes can differ from repository blobs; exact-byte source snapshot retained with the run"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "role": "v20_comparison_implementation_frozen_before_model_selection",
+  "date": "2026-10-03",
+  "data_manifest_sha256": "15a509075be0d2ff062894cd7de1160699bbdc7b657d8199bfba77cb80bf36fa",
+  "candidate_files": [
+    "best.pt",
+    "last.pt"
+  ],
+  "reference_models": [
+    "v16_best",
+    "v18_last",
+    "v19_last"
+  ],
+  "reserved_predictions_allowed": false,
+  "script_sha256": {
+    "screen_kitchen_source_v20.py": "287123f8dd6793ddb3e9b3555d7d24cba79bbfe739c970ed09c69a2198f15b3d",
+    "eval_kitchen_source_v20.py": "f72b60320ddc15bb691b7bc360eb76cc5050ff14948cb6ea0e340448077b4fee",
+    "eval_blue_localization.py": "71ae8abb9ce943161dc787a6632494d10a0e4252bb05b4dbd4a4a452c2d871fa",
+    "eval_fire_fulltest.py": "9d1af28e7eb22045d71a767e35e881f6dd4ae31e62b578aca84a38b016afd143",
+    "eval_hardcase_frames.py": "db6fa9913a99f5744d45ac9a4c797f743b1704aa1ebf47f0d226c4aa218b0f44",
+    "eval_legacy_source_localization.py": "29a5dafd1f5c152a377888eb3677a78f9ef0a560c2eb072c3b34775e7065b95e",
+    "score_legacy_fire_semantics.py": "213b7c65663001439a101b7570252e6c5da54f4f28b7e03b496bf092ff16afe7",
+    "eval_project_model_videos.py": "4049a4b55867a6958384af25452167fa8f4a77e9257992c6abaee078fb076751",
+    "model_project_review.py": "a5d026282656140409047a1aa561a533007b944c25059f08e5f1ed1756cc7682",
+    "compare_fire_training_routes.py": "97d50793700784f2cded378284b1e5e2df3b13e35e8e0e8db4ae9981eb72aeea"
+  },
+  "old_diagnostics_dataset": "D:/SRTP_Datasets/fire_train_context_v19_20261003",
+  "new_training_diagnostics_images": 14,
+  "video_shared_samples": 307,
+  "video_count": 9,
+  "policy_sha256": "9e22cfdd93b8d28108d1a874a5824127c63e1b59dbfebe5926dc38be92ad6a3f",
+  "reference_image_comparison_sha256": "3be9754e9205c67399c1f24a0c70a5e87e1d4d6431454faf2aeee55bf63d8bc3",
+  "reference_video_comparison_sha256": "708ed0510d6fd5f511a72150a887d61cd68271e0db044cd69dda9e6d980b26b6",
+  "limits": [
+    "All old diagnostics are already exposed.",
+    "All added14 sources are designated training examples; their post-training scores are training feedback.",
+    "No automatic promotion; all declared candidate videos require actual visual review."
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "role": "train-source semantic audit; no label conversion, no dataset/model modification",
+  "reviewed_utc": "2026-10-02T05:47:49.350558+00:00",
+  "review_pending_sha256": "51860c79fd0568b1f807f7662b0bbaaf8de419cd0b702b52805392cea594ecf0",
+  "counts": {
+    "train": {
+      "Burner_boxes": 66,
+      "Flame_boxes": 269,
+      "Smoke_boxes": 130,
+      "Smoke_images": 101,
+      "Smoke_with_Flame": 46,
+      "Spill_boxes": 262,
+      "images": 418,
+      "safe_boxes": 183
+    },
+    "valid": {
+      "Burner_boxes": 39,
+      "Flame_boxes": 97,
+      "Smoke_boxes": 45,
+      "Smoke_images": 35,
+      "Smoke_with_Flame": 17,
+      "Spill_boxes": 93,
+      "images": 137,
+      "safe_boxes": 58
+    },
+    "test": {
+      "Burner_boxes": 1,
+      "Flame_boxes": 18,
+      "Smoke_boxes": 14,
+      "Smoke_images": 11,
+      "Smoke_with_Flame": 2,
+      "Spill_boxes": 15,
+      "images": 37,
+      "safe_boxes": 10
+    }
+  },
+  "selection": {
+    "seed": 20261002,
+    "per_segment": 2,
+    "train_temporal_groups": 11,
+    "samples": 19,
+    "method": "smallest SHA(seed, temporal segment, image SHA) per train segment",
+    "scope": "Temporal index checked against file/class/box inventory; not scene independence"
+  },
+  "source_data_yaml_sha256": "6e8c73ed17cb6901cb3afdecfd66d1560546b6da7839141cc3c27efaf1604d8f",
+  "temporal_index_sha256": "6f588fc5e2c3231cbc10ebe4c898de1c63fb58d8b1a6b96206d6079e1d238d29",
+  "rendering_script_sha256": "a3d0e002319d1268657ecbcd518d0d89292211ecf7c92c9f73bbff8578d217bb",
+  "sheets": [
+    {
+      "file": "sheet_01.jpg",
+      "sha256": "d1023d5946d2844657b9d08d40d08616731df616309e90794de9a2f64bdbeaf8"
+    },
+    {
+      "file": "sheet_02.jpg",
+      "sha256": "4505ad1111035805dc667fd0d2667e8125e46bca51d7a5400510a5e80d64853c"
+    }
+  ],
+  "assessment": {
+    "sample_count": 19,
+    "visible_cooking_plume_or_haze": 17,
+    "source_smoke_region_unresolved_at_supplied_resolution": 2,
+    "unresolved_indices": [
+      3,
+      6
+    ],
+    "full_source_images_additionally_inspected": [
+      3,
+      6,
+      13
+    ],
+    "combustion_smoke_confirmed_by_event_truth": 0,
+    "approved_for_combustion_smoke_training": 0,
+    "negative_labels_assigned": 0,
+    "limitations": [
+      "Stratified train sample, not population error-rate estimate.",
+      "No Smoke semantics inferred solely from source class name or plume color.",
+      "Visually repeated kitchen backgrounds; temporal groups are not independent kitchens.",
+      "All sample decisions held; existing Flame-only mapping remains unchanged."
+    ]
+  },
+  "local_review_complete_sha256": "4fde1b869a2e8cd76ca49e736df934feaecb507f5d4a3f6e59168bb60bd57ca5"
+}

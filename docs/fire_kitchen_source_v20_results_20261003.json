@@ -1,0 +1,1323 @@
+{
+  "role": "Completed PC v20 development experiment; source-balanced head training and project comparison",
+  "completed_utc": "2026-10-03T10:51:22.856976+00:00",
+  "training": {
+    "launch_git_commit": "70705ce3b71aa66e9272015c73c6d1a1b6f58213",
+    "epochs": 12,
+    "actual_batches": 3624,
+    "actual_optimizer_steps": 3618,
+    "dataset": {
+      "manifest_sha256": "15a509075be0d2ff062894cd7de1160699bbdc7b657d8199bfba77cb80bf36fa",
+      "images_verified": 1445,
+      "entries_verified": 2409,
+      "new_source_images": 14,
+      "new_flame_boxes": 4,
+      "validation_images": 243,
+      "independent_kitchen": false
+    },
+    "config": {
+      "data": "D:\\SRTP_Datasets\\fire_kitchen_source_v20_20261003\\data.yaml",
+      "epochs": 12,
+      "patience": 0,
+      "pretrained": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-scratch-semantic-v16-r2-20261003\\weights\\best.pt",
+      "resume": false,
+      "imgsz": 640,
+      "batch": 8,
+      "nbs": 8,
+      "device": 0,
+      "workers": 0,
+      "seed": 20261006,
+      "optimizer": "AdamW",
+      "lr0": 5e-05,
+      "lrf": 0.1,
+      "weight_decay": 0.0005,
+      "warmup_epochs": 0,
+      "freeze": 23,
+      "hsv_h": 0.015,
+      "hsv_s": 0.3,
+      "hsv_v": 0.25,
+      "degrees": 3,
+      "translate": 0.05,
+      "scale": 0.2,
+      "fliplr": 0.5,
+      "mosaic": 0,
+      "mixup": 0,
+      "close_mosaic": 0,
+      "project": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs",
+      "name": "fire-kitchen-source-head-v20-20261003",
+      "exist_ok": false,
+      "save": true,
+      "save_period": -1,
+      "plots": true,
+      "val": true
+    },
+    "checkpoint_sha256": {
+      "best.pt": "a8186bc227207e9daedb4fe7a59f8e967c9acc225fc1b205ccb2b0bbe1ebe24c",
+      "last.pt": "37d18ca746cf83fb9e19fd07c0faaaaa6e04f96916f9864b12d415a3acdf55c0"
+    },
+    "actual_initialization": {
+      "exact_source_state_equal": true,
+      "state_tensors": 499,
+      "rebuilt_state_sha256": "aa54d71b4f23ab60923a8be6539784628876891e299ed908386549fae88fe611"
+    },
+    "fixed_feature_blocks": 23,
+    "serialized_checkpoint_features_equal": true,
+    "source_files": 16,
+    "script_sha256": "69bdd226bcfa9ad7daa576cfe5250cf4faa2b40f427604fa4e4dcffa9ed1c405",
+    "dependencies": {
+      "build_kitchen_source_extension_v20.py": "79c30079ae3cf68cb6b74bae0e4e51f32ba8e0cb3c2b37806a6fc9a4d180787b",
+      "freeze_kitchen_context_review.py": "18d73ee63fdd0391673ace42fc02932424ee9a6a4a577d476dba9d33b74b478f",
+      "fetch_kitchen_context_queue.py": "42056ae80452f97ed854f42e6a3e774238a9434207fa39b4c7fe0315f7736695",
+      "curate_train_context_v19.py": "6087bbdc5bfbff74a84a65d4753442f7c7ec050c8014ec9007c21cf1554bc62a",
+      "train_flame_extension_v17.py": "4cbf297200f7e362c0a25e5777e6858c05ac91607f2b89fecb61cfdf5fb675b7",
+      "train_scratch_semantic_v16.py": "40d353034bf88d458b70d1a589dc91966236203fcaf0233c9bf772f655c0cdf8",
+      "extend_flame_review_v17.py": "3d1b246d1a6040d16ff95b08bc5bdd9b330d2eec83cd2ba6428de865a005247d",
+      "semantic_fire_dataset.py": "c47beb34cadc64730d68f0cbe70fd7af61c535add0f7efaf377b74aa673863ec",
+      "fire_label_revision_dataset.py": "1e2186448f0ff2c61c74abe2bb6b6f72dcbdc798473aadc63dc99e73ab344398",
+      "backbone_freeze_audit.py": "8ea746515b72efd604a9109a38cc092f59e2f3bcaf3a87dd9892fa808171fd46",
+      "optimizer_cadence_audit.py": "34f6a5f2bc29dacf7f5a4d0214082728acb238285edd8ded8d91bb4ee2bb2730",
+      "data_integrity.py": "22777ca17939e2c07c5834418ac4bcf96ff3ae627053d8825feac29a6f8e59a0",
+      "dataset_preflight.py": "15a8200d26429bd5945e30dc1aabd1597d7df8370cfb42b31dcf4257ce9a60f8",
+      "train_flame_semantic_review.py": "ba34daf7b8fe2cfe41046b2dc952166ee62c33f5cd441122527f3462c7d12cae",
+      "source_exposure.py": "a3348c01d717657871b2609357977b0cf52cd2d1f29511968a536094a3d78b20"
+    },
+    "completed_audits": {
+      "actual_initialization_audit.json": "2a0d71b71960f8e20c9306a178ad520d2db5a92d85ab721d75dad28b0765759a",
+      "feature_audit.json": "d5ca9bef1fe4e9d4a72ad863d78bc8f754cce1e80f2fe058b3ea6ab78d5bed12",
+      "head_update_audit.json": "5daf1ab4620b4e7a6dd280413d5b257afe68860ca54e158cc469b8b23ebbda43",
+      "optimizer_cadence_audit.json": "4db0bd8d55f759b4a5efaa568653a803a87098ece4d9b42c289fc6e49be715ae"
+    }
+  },
+  "models": {
+    "v16_best": {
+      "weights_sha256": "e770cf68d12cd43b4494a1439dc9c65f14d1d5fc570b2e2e379cc084384418fd",
+      "blue_primary_localized": 4,
+      "blue_images": 5,
+      "visible_flame_iou50": {
+        "tp": 6,
+        "fp": 11,
+        "fn": 9,
+        "micro_f1": 0.375
+      },
+      "mean_best_prediction_iou": 0.3849124698088186,
+      "old_map50": 0.6829617468783579,
+      "old_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 13,
+          "images_with_fn": 11,
+          "tp": 46,
+          "fp": 13,
+          "fn": 11
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 7,
+          "images_with_fn": 5,
+          "tp": 14,
+          "fp": 8,
+          "fn": 6
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 15,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 17,
+          "fn": 0
+        }
+      },
+      "old_286_plus_55_micro": {
+        "tp": 101,
+        "fp": 38,
+        "fn": 17,
+        "micro_f1": 0.7859922178988327,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "new_training_source_score": {
+        "reviewed_commons_queue": {
+          "images": 14,
+          "images_with_fp": 6,
+          "tp": 0,
+          "fp": 6,
+          "fn": 4
+        }
+      },
+      "new_positive_best_iou": {
+        "context4_11.jpg": 0,
+        "context3_01.jpg": 0,
+        "context4_04.jpg": 0.4177381446816855,
+        "context4_05.jpg": 0.46755171311786725
+      },
+      "new_empty_negative_images": 10,
+      "new_empty_negative_images_with_predictions": 4,
+      "new_empty_negative_boxes": 4
+    },
+    "v18_last": {
+      "weights_sha256": "2534a8c727157d0333bf7e0b785cd09e950f5e6e0192831947ba26cfe865b3ce",
+      "blue_primary_localized": 4,
+      "blue_images": 5,
+      "visible_flame_iou50": {
+        "tp": 10,
+        "fp": 5,
+        "fn": 5,
+        "micro_f1": 0.6666666666666666
+      },
+      "mean_best_prediction_iou": 0.5236551747977346,
+      "old_map50": 0.5475500375871118,
+      "old_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 14,
+          "images_with_fn": 14,
+          "tp": 43,
+          "fp": 14,
+          "fn": 14
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 9,
+          "images_with_fn": 11,
+          "tp": 5,
+          "fp": 13,
+          "fn": 15
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 15,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 18,
+          "fn": 0
+        }
+      },
+      "old_286_plus_55_micro": {
+        "tp": 89,
+        "fp": 45,
+        "fn": 29,
+        "micro_f1": 0.7063492063492064,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "new_training_source_score": {
+        "reviewed_commons_queue": {
+          "images": 14,
+          "images_with_fp": 7,
+          "tp": 0,
+          "fp": 7,
+          "fn": 4
+        }
+      },
+      "new_positive_best_iou": {
+        "context4_11.jpg": 0.0650946917298789,
+        "context3_01.jpg": 0,
+        "context4_04.jpg": 0.39011307702029385,
+        "context4_05.jpg": 0.4772725313898612
+      },
+      "new_empty_negative_images": 10,
+      "new_empty_negative_images_with_predictions": 4,
+      "new_empty_negative_boxes": 4
+    },
+    "v19_last": {
+      "weights_sha256": "9a13523c8f66f8a9b60e8bcafda9b1cdc270cf71e0269b4019708b7beabd80af",
+      "blue_primary_localized": 4,
+      "blue_images": 5,
+      "visible_flame_iou50": {
+        "tp": 11,
+        "fp": 3,
+        "fn": 4,
+        "micro_f1": 0.7586206896551724
+      },
+      "mean_best_prediction_iou": 0.560291982622488,
+      "old_map50": 0.4615255157018551,
+      "old_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 18,
+          "images_with_fn": 18,
+          "tp": 39,
+          "fp": 18,
+          "fn": 18
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 10,
+          "images_with_fn": 12,
+          "tp": 4,
+          "fp": 14,
+          "fn": 16
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 20,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 25,
+          "fn": 0
+        }
+      },
+      "old_286_plus_55_micro": {
+        "tp": 84,
+        "fp": 57,
+        "fn": 34,
+        "micro_f1": 0.6486486486486487,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "new_training_source_score": {
+        "reviewed_commons_queue": {
+          "images": 14,
+          "images_with_fp": 6,
+          "tp": 0,
+          "fp": 6,
+          "fn": 4
+        }
+      },
+      "new_positive_best_iou": {
+        "context4_11.jpg": 0.06587963371307831,
+        "context3_01.jpg": 0,
+        "context4_04.jpg": 0.3789030934720679,
+        "context4_05.jpg": 0.48063967191466256
+      },
+      "new_empty_negative_images": 10,
+      "new_empty_negative_images_with_predictions": 3,
+      "new_empty_negative_boxes": 3
+    },
+    "v20_best": {
+      "weights_sha256": "a8186bc227207e9daedb4fe7a59f8e967c9acc225fc1b205ccb2b0bbe1ebe24c",
+      "blue_primary_localized": 4,
+      "blue_images": 5,
+      "visible_flame_iou50": {
+        "tp": 7,
+        "fp": 12,
+        "fn": 8,
+        "micro_f1": 0.4117647058823529
+      },
+      "mean_best_prediction_iou": 0.43405777198208306,
+      "old_map50": 0.587048751457557,
+      "old_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 16,
+          "images_with_fn": 15,
+          "tp": 42,
+          "fp": 16,
+          "fn": 15
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 8,
+          "images_with_fn": 5,
+          "tp": 13,
+          "fp": 11,
+          "fn": 7
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 15,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 18,
+          "fn": 0
+        }
+      },
+      "old_286_plus_55_micro": {
+        "tp": 96,
+        "fp": 45,
+        "fn": 22,
+        "micro_f1": 0.7413127413127413,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "new_training_source_score": {
+        "reviewed_commons_queue": {
+          "images": 14,
+          "images_with_fp": 7,
+          "tp": 0,
+          "fp": 7,
+          "fn": 4
+        }
+      },
+      "new_positive_best_iou": {
+        "context4_11.jpg": 0.057800224917810915,
+        "context3_01.jpg": 0,
+        "context4_04.jpg": 0.38995408330103587,
+        "context4_05.jpg": 0.4650717699045069
+      },
+      "new_empty_negative_images": 10,
+      "new_empty_negative_images_with_predictions": 4,
+      "new_empty_negative_boxes": 4
+    },
+    "v20_last": {
+      "weights_sha256": "37d18ca746cf83fb9e19fd07c0faaaaa6e04f96916f9864b12d415a3acdf55c0",
+      "blue_primary_localized": 4,
+      "blue_images": 5,
+      "visible_flame_iou50": {
+        "tp": 10,
+        "fp": 3,
+        "fn": 5,
+        "micro_f1": 0.7142857142857143
+      },
+      "mean_best_prediction_iou": 0.5038036078521118,
+      "old_map50": 0.4161499678865998,
+      "old_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 21,
+          "images_with_fn": 21,
+          "tp": 36,
+          "fp": 21,
+          "fn": 21
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 9,
+          "images_with_fn": 12,
+          "tp": 4,
+          "fp": 12,
+          "fn": 16
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 19,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 22,
+          "fn": 0
+        }
+      },
+      "old_286_plus_55_micro": {
+        "tp": 81,
+        "fp": 55,
+        "fn": 37,
+        "micro_f1": 0.6377952755905512,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "new_training_source_score": {
+        "reviewed_commons_queue": {
+          "images": 14,
+          "images_with_fp": 6,
+          "tp": 0,
+          "fp": 6,
+          "fn": 4
+        }
+      },
+      "new_positive_best_iou": {
+        "context4_11.jpg": 0.06553797938838217,
+        "context3_01.jpg": 0,
+        "context4_04.jpg": 0.4094246102052674,
+        "context4_05.jpg": 0.49572121625287235
+      },
+      "new_empty_negative_images": 10,
+      "new_empty_negative_images_with_predictions": 3,
+      "new_empty_negative_boxes": 3
+    }
+  },
+  "paired_videos": {
+    "videos": 9,
+    "samples": 307,
+    "inferences": 1535,
+    "exact_old_reference_predictions": 921,
+    "clips": [
+      {
+        "video_index": 1,
+        "source_sha256": "65ce47ff76f64e8d28f290279f4de970929f203aa8cdbace7c63720260753df6",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 931,
+        "sampled_frames": 32,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          }
+        }
+      },
+      {
+        "video_index": 2,
+        "source_sha256": "ea5b23e704eb4f7b1a54335f5d0c9b9cd0f6309603b23d59625ad2a633dc7bca",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 940,
+        "sampled_frames": 32,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          }
+        }
+      },
+      {
+        "video_index": 3,
+        "source_sha256": "9f9183be2cf13b2b65ca89543bb451f4cb2b3515836a449b012e6daa1c071a16",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 956,
+        "sampled_frames": 32,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          }
+        }
+      },
+      {
+        "video_index": 4,
+        "source_sha256": "dafac36724a2a7a60e23d88cb9781e70814775b28176b672ba38e1aaa5b2c245",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 992,
+        "sampled_frames": 34,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          }
+        }
+      },
+      {
+        "video_index": 5,
+        "source_sha256": "ac34d7617a55c42d67d385e92d83f3255c6b93a54789c52cea746dc6a0028eba",
+        "fps": 30.004173042147727,
+        "step": 30,
+        "decoded_frames": 719,
+        "sampled_frames": 24,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          }
+        }
+      },
+      {
+        "video_index": 6,
+        "source_sha256": "dbd18d5fb2587b4dafc224d12bc47984ce6e97abbdfacf0e33a7b83520b02cb1",
+        "fps": 30.00447828034035,
+        "step": 30,
+        "decoded_frames": 670,
+        "sampled_frames": 23,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 21,
+            "boxes": 22,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 20,
+              "2": 1
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 21,
+            "boxes": 21,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 21
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 21,
+            "boxes": 21,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 21
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 21,
+            "boxes": 21,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 21
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 21,
+            "boxes": 21,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 21
+            }
+          }
+        }
+      },
+      {
+        "video_index": 7,
+        "source_sha256": "f768e372ec81704a31e5bad7834b523b93be05a9b9c88f7040f2178261fe99fc",
+        "fps": 28.02002035968782,
+        "step": 28,
+        "decoded_frames": 734,
+        "sampled_frames": 27,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 25,
+            "boxes": 37,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "3": 3,
+              "1": 16,
+              "2": 6,
+              "0": 2
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 25,
+            "boxes": 35,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "1": 17,
+              "2": 6,
+              "0": 2,
+              "3": 2
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 25,
+            "boxes": 33,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "1": 19,
+              "2": 4,
+              "0": 2,
+              "3": 2
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 25,
+            "boxes": 35,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "2": 6,
+              "1": 17,
+              "0": 2,
+              "3": 2
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 25,
+            "boxes": 36,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "2": 7,
+              "1": 16,
+              "0": 2,
+              "3": 2
+            }
+          }
+        }
+      },
+      {
+        "video_index": 8,
+        "source_sha256": "ab9d1d7e493979dc39395e9933bc1adfe3f1c78ba479759146426ada47af601e",
+        "fps": 30.0046699875467,
+        "step": 30,
+        "decoded_frames": 1285,
+        "sampled_frames": 43,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          }
+        }
+      },
+      {
+        "video_index": 9,
+        "source_sha256": "fe87820c64636d5362a35fa98e6d969de892ddebf9a4dc0b326aa6896a97fa6a",
+        "fps": 30.004214075010534,
+        "step": 30,
+        "decoded_frames": 1780,
+        "sampled_frames": 60,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 60,
+            "boxes": 64,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 56,
+              "2": 4
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 60,
+            "boxes": 70,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 51,
+              "2": 8,
+              "3": 1
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 60,
+            "boxes": 71,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 51,
+              "2": 7,
+              "3": 2
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 60,
+            "boxes": 64,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 56,
+              "2": 4
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 60,
+            "boxes": 69,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 52,
+              "2": 7,
+              "3": 1
+            }
+          }
+        }
+      }
+    ],
+    "reference_audit": {
+      "shared_frames": 307,
+      "exact_reference_predictions": 921,
+      "controls": [
+        "v16_best",
+        "v18_last",
+        "v19_last"
+      ],
+      "identity_fields": [
+        "video_index",
+        "video_sha256",
+        "frame_index",
+        "sample_index",
+        "time_seconds",
+        "width",
+        "height",
+        "source_pixel_sha256"
+      ]
+    }
+  },
+  "actual_visual_review": {
+    "role": "Actual visual review ledger after inspecting all listed files; no independent acceptance",
+    "visually_seen_files": [
+      {
+        "path": "model_work/out/kitchen_source_v20_comparison_20261003/visible_flame/v20_best_sheet_01.jpg",
+        "sha256": "73f6438fd8ed9c9dadbdaac85608623fbd130f561911607cd27d7d2cc715f074"
+      },
+      {
+        "path": "model_work/out/kitchen_source_v20_comparison_20261003/visible_flame/v20_best_sheet_02.jpg",
+        "sha256": "1ec85754c9fd27567d1a8463d8d150f450668d223fcfb2ccb33d68188120336c"
+      },
+      {
+        "path": "model_work/out/kitchen_source_v20_comparison_20261003/visible_flame/v20_best_sheet_03.jpg",
+        "sha256": "02c0b8c653d8fc2631712c201b87827da88248350bdc89a95dc7ad476d96e48b"
+      },
+      {
+        "path": "model_work/out/kitchen_source_v20_comparison_20261003/visible_flame/v20_last_sheet_01.jpg",
+        "sha256": "33a1d9eda092efa45298760bfd2acec7f2bd5a2e05a315107010b8adbe12a133"
+      },
+      {
+        "path": "model_work/out/kitchen_source_v20_comparison_20261003/visible_flame/v20_last_sheet_02.jpg",
+        "sha256": "c7dc5fd57f00ff8387871edacd8cdeb43a8a48abf490ec6ef0e21e1874b064a0"
+      },
+      {
+        "path": "model_work/out/kitchen_source_v20_comparison_20261003/visible_flame/v20_last_sheet_03.jpg",
+        "sha256": "d7d3dfc0e79672e62086fdcc469d649adee8cb9535f98d6e58fd96d4331cec59"
+      },
+      {
+        "path": "model_work/out/v20_visual_review_20261003/new_sources_01.jpg",
+        "sha256": "ceae932fe2ae7e16352cbab0bd4cc2b78fc77c41a829559a46091a2968d86d49"
+      },
+      {
+        "path": "model_work/out/v20_visual_review_20261003/new_sources_02.jpg",
+        "sha256": "873d1dbc40b6c7da078c2fe3707baa209e9c29f59aa58330649c94e0126990dd"
+      },
+      {
+        "path": "model_work/out/v20_visual_review_20261003/new_sources_03.jpg",
+        "sha256": "141ffe71c6c47302120e00e773b53b26af0d2e67d15af5b8968dcb57979ca386"
+      },
+      {
+        "path": "model_work/out/v20_visual_review_20261003/new_sources_04.jpg",
+        "sha256": "b3f74afb706e62fbc08eafe71a4be2b362363e5ff3c2eeb04abe6ec527c1854b"
+      },
+      {
+        "path": "model_work/out/v20_visual_review_20261003/video_01_three_models.jpg",
+        "sha256": "a6c344fcdc01800b2aaa2cf4e2ec49dd074d1cfc6ca69328af4ad94d44b21afd"
+      },
+      {
+        "path": "model_work/out/v20_visual_review_20261003/video_02_three_models.jpg",
+        "sha256": "657e52f009fc429e10c720bfbd08eaca24a2b0c93bc5a9c623e6325ab4420c77"
+      },
+      {
+        "path": "model_work/out/v20_visual_review_20261003/video_03_three_models.jpg",
+        "sha256": "b73e14e947f49b38a1987d0865320c741884a892645e48f6c6aa45eec34fda53"
+      },
+      {
+        "path": "model_work/out/v20_visual_review_20261003/video_04_three_models.jpg",
+        "sha256": "7db9ad0fb66ac82bda19272597724fe957728712b8054357ebe1d1a46d4060e4"
+      },
+      {
+        "path": "model_work/out/v20_visual_review_20261003/video_05_three_models.jpg",
+        "sha256": "05fcfe4b099c7331a09924fd544f59e11101d36a2571abe341bc6095a37cb9fe"
+      },
+      {
+        "path": "model_work/out/v20_visual_review_20261003/video_06_three_models.jpg",
+        "sha256": "6bd92c21a0aada8e7a17dc0a4f03c6794a629e0f9bca13b67a08b9693666d41f"
+      },
+      {
+        "path": "model_work/out/v20_visual_review_20261003/video_07_three_models.jpg",
+        "sha256": "9ba60fbee75c2cadf5febab135a09095f838a4e52590953396cccf09245c8e2a"
+      },
+      {
+        "path": "model_work/out/v20_visual_review_20261003/video_08_three_models.jpg",
+        "sha256": "b18157ee618c867a479bad4e6c3a512e9b4d7726d7c74d40f9aff97394a04e4c"
+      },
+      {
+        "path": "model_work/out/v20_visual_review_20261003/video_09_three_models.jpg",
+        "sha256": "7cbde4e8c38a2d9e0b93f174b64fa60e56c5e101aa891f4b45eafd765d1dca79"
+      },
+      {
+        "path": "model_work/out/v20_all_video_count_differences_20261003/sheet_01.jpg",
+        "sha256": "745377a89228c1224a7a90bb02ebaef7d1ae9040077ea625e8e82e64b556cfee"
+      },
+      {
+        "path": "model_work/out/v20_all_video_count_differences_20261003/sheet_02.jpg",
+        "sha256": "072e24b62ea89e7e9d3fbd49d9c275b71f2b64a262fa923753633f97248c0b6c"
+      },
+      {
+        "path": "model_work/out/v20_all_video_count_differences_20261003/sheet_03.jpg",
+        "sha256": "b230aff30490c6bf689774db45d43b5a3e2facbb632b34aead714b8450f3d2e0"
+      },
+      {
+        "path": "model_work/out/v20_all_video_count_differences_20261003/sheet_04.jpg",
+        "sha256": "078f7d01531e5f0e9c507c3f70dbf251c609a52a0bddc892b8bec7c503df2cef"
+      },
+      {
+        "path": "model_work/out/v20_all_video_count_differences_20261003/sheet_05.jpg",
+        "sha256": "2060bd8a271a0a38afef85d664c456763ba47a35b6f4db45933d9997e4797090"
+      },
+      {
+        "path": "model_work/out/v20_best_nofire_error_review_20261003/sheet_01.jpg",
+        "sha256": "b9a05f3a58eaaf3bcdff0b21622a256b893e48da38d28f29c73be979d5ca008b"
+      },
+      {
+        "path": "model_work/out/v20_best_nofire_error_review_20261003/sheet_02.jpg",
+        "sha256": "7511e86cebdf28666c197b717f1169e3ad868a7c0b44e5b66b91f2d363de0789"
+      },
+      {
+        "path": "model_work/out/v20_best_nofire_error_review_20261003/sheet_03.jpg",
+        "sha256": "aa0a69ec5871ac97923f9b4bb80ef0ef0933413fec9bf8e6a139c7fbd96f09d0"
+      },
+      {
+        "path": "model_work/out/v20_best_nofire_error_review_20261003/sheet_04.jpg",
+        "sha256": "93682d6ea4fb68fd970d52024e528c723ee9b68d9f8c85e03451304c2827429c"
+      },
+      {
+        "path": "model_work/out/v20_last_nofire_error_review_20261003/sheet_01.jpg",
+        "sha256": "f1079d3539e119127c55e1b0860c515e4926946d453206a840b060eac9888aa7"
+      },
+      {
+        "path": "model_work/out/v20_last_nofire_error_review_20261003/sheet_02.jpg",
+        "sha256": "9fa5b11b0ebe2d452be695e2e5d435b3a0dfb4ea3b186bb1c23fd7bdb442c679"
+      },
+      {
+        "path": "model_work/out/v20_last_nofire_error_review_20261003/sheet_03.jpg",
+        "sha256": "bf4da1cacc6061bb0f8fe8931413cf20e3af170eb6bcd5fb61356bd895c08e4a"
+      },
+      {
+        "path": "model_work/out/v20_last_nofire_error_review_20261003/sheet_04.jpg",
+        "sha256": "e6a1619bc196fadb3c15311d87812303537e697f5a08e2c4de219049a9339987"
+      },
+      {
+        "path": "model_work/out/v20_last_nofire_error_review_20261003/sheet_05.jpg",
+        "sha256": "29370527cff350046705e9dbb202eeaa2a77b0b1bfb6bf4797f6c50f70208eef"
+      },
+      {
+        "path": "model_work/out/v20_detail_review_20261003/context3_01_positive_zoom.jpg",
+        "sha256": "b8ff167417f9a8992ab79a2ea816df0d2fdba495ef91cb58f14d27698c6fcea5"
+      },
+      {
+        "path": "model_work/out/v20_detail_review_20261003/context4_04_positive_zoom.jpg",
+        "sha256": "04a02a3ca42de93a63269fe8992639e33a3beb4d38fc1247033abee9e28c9014"
+      },
+      {
+        "path": "model_work/out/v20_detail_review_20261003/context4_05_positive_zoom.jpg",
+        "sha256": "548569cca22224a9137f0eb0d90a411ff87b9ba0ecc1ac693d141e116a65bf7d"
+      },
+      {
+        "path": "model_work/out/v20_detail_review_20261003/context4_11_positive_zoom.jpg",
+        "sha256": "cc206adab2f47887150bf5076f5527c1f7e1da689dabfb00d9f816dd5c4267b7"
+      },
+      {
+        "path": "model_work/out/v20_detail_review_20261003/cpu_video_three_samples.jpg",
+        "sha256": "982e70853c88343d19dedd7fcfd1eae67e3089d5d14698b6e5e96ef84ed086f6"
+      },
+      {
+        "path": "model_work/out/v20_same_count_review_20261003/selected_samples.jpg",
+        "sha256": "5bd9268d851cac3c6e5d1357328e49d91433e6f8955648e225c065ca0ca68034"
+      },
+      {
+        "path": "model_work/out/v20_same_count_sample6_review_20261003/selected_samples.jpg",
+        "sha256": "a6af5d5a687763df76c530f35dc2937ecf36587a0eb3dd71bc1d811891358c28"
+      },
+      {
+        "path": "model_work/out/kitchen_source_v20_last_cpu_image_20261003/overlay.jpg",
+        "sha256": "6a504d1b0718bd7936d4e8ddb51eefff707c07cf4317803af958d08593a1487b"
+      }
+    ],
+    "files_seen": 41,
+    "new_sources_reviewed": 14,
+    "new_positive_zoomed": 4,
+    "fixed_video_source_frames": 27,
+    "count_different_samples": 13,
+    "additional_same_count_samples": {
+      "video9": [
+        6,
+        37,
+        39
+      ]
+    },
+    "video7": {
+      "sample0": "Both v20 recover center component versus v18/v19 last; right component still missed",
+      "sample1": "Both v20 retain only left, missing center shown by v18 last",
+      "sample12": "Both v20 retain left and center unlike v19 last",
+      "sample15": "v20 last retains center and right; v18/v19 last and v20 best miss right",
+      "sample26": "Visible front blue region retained"
+    },
+    "video9": {
+      "reviewed_subset": [
+        6,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        44,
+        45
+      ],
+      "hanging_error_samples_on_reviewed_subset": {
+        "v16_best": [
+          34,
+          44,
+          45
+        ],
+        "v18_last": [
+          33,
+          34,
+          35,
+          36,
+          38,
+          40,
+          44,
+          45
+        ],
+        "v19_last": [
+          33,
+          34,
+          35,
+          36,
+          38,
+          40,
+          44,
+          45
+        ],
+        "v20_best": [
+          40,
+          44,
+          45
+        ],
+        "v20_last": [
+          33,
+          34,
+          35,
+          36,
+          40,
+          44,
+          45
+        ]
+      },
+      "sample6": "All five have two boxes on real burner regions; not automatically duplicates",
+      "sample37_39": "No hanging error in these two same-count samples",
+      "sample44": "v20 last removes v19 last extra nested hanging box but still has one wrong hanging box",
+      "sample45": "v20 last still has two nested hanging errors"
+    },
+    "new_sources": {
+      "context3_01": "New full commercial kitchen visible flame missed by all five",
+      "context4_04": "Blue flame detected but upper portion/envelope coverage insufficient",
+      "context4_05": "Blue flame detected with excess lower/right extent; v20 last IoU .495715 below fixed .5",
+      "context4_11": "v20 detects orange tip while most blue burner remains missed",
+      "negatives": "v20 last removes food glare box on context4_03 versus v18; cutlery/red tray, orange food and stove badge errors persist"
+    },
+    "old_empty_labels": "Reviewed 15 best / 19 last images. Watermark, sunset, paper, building and colored objects are visible nonflame errors; plume/luminous scene combustion semantics not independently established. Raw FP boxes are not alarms."
+  },
+  "decision": {
+    "demo": "v16_best",
+    "localization_development": "v18_last",
+    "v20_promoted": false,
+    "v20_last_retained_as_tradeoff_reference": true,
+    "reason": "Local gains at video7 samples 0/15 and video9 sample38, but sample1 center/right component failures, remaining hanging errors and no newly matched four training envelopes prevent a sufficiently stable project gain; old AP is a reported cost, not a standalone veto."
+  },
+  "evidence": {
+    "training_meta_sha256": "b9916e507d93c17fca362c2d301471e950590710045c65b8ca96f71cb28d0266",
+    "protocol_sha256": "0d12c5add24b3919827a73c108a2e7eff6a6600fb69ef4df901e0d18129e7098",
+    "image_comparison_sha256": "9046e352e61e071fe00899011ead1ef02dde895dd2d2185a1d8d3fc30b796332",
+    "video_comparison_sha256": "bb9c78c30328dc47a7f2a850a162a4b4cc0c08a5ba9f385c4bdb0eccc80d7032",
+    "video_predictions_sha256": "eca88201fb2728d3d93903b5c6a4a38671f72fdf28e7f468b343ac4669bbbf4d",
+    "actual_review_sha256": "27069642469d04380e8fef2494a8cfc81763d9bae8c88df4f41e3737a52117c2",
+    "review_scripts_sha256": {
+      "prepare_kitchen_source_v20_review.py": "ee9ae7fa1a66809a9a7a9017a4829075c6afb3f5f80a3933b4409532682cce0c",
+      "prepare_kitchen_source_v20_detail.py": "cdf361e71c36a804c84f79faa939d1a73b3477641c052f1ecd8a12d98e2201f4",
+      "prepare_video_sample_comparison_review.py": "65a557cbd685430972d83c8706d2835aca563b2b179f419048adf7b0549aa82c"
+    }
+  },
+  "limits": {
+    "independent_kitchen": false,
+    "reserved_sources_predicted": false,
+    "reserved_sources_trained": false,
+    "new_sources_are_training_exposed": true,
+    "all_evaluation_is_exposed_development": true,
+    "smoke_candidate": false,
+    "board_connected": false,
+    "alarm_performance_verified": false
+  },
+  "checks": {
+    "local_unittests": 182,
+    "local_skipped": 0,
+    "test_log_sha256": "74c1f8d93c58d4a9e8054fe95f1a5d1145947d399c31495de1a444b307448cdb",
+    "public_source_files_checked": 484,
+    "staged_diff_check": true,
+    "previous_commit_ci": {
+      "head": "4ad38becd30394b813d48f7a52e4eb8de4964902",
+      "push_run": 37110212096,
+      "pr_run": 37110214384,
+      "status": "All actual jobs and steps completed success"
+    }
+  }
+}

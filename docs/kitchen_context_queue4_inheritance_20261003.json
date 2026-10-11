@@ -1,0 +1,9 @@
+{
+  "role": "mandatory_prior_queue_roles",
+  "inherited_reviews": [
+    {
+      "path": "docs/kitchen_context_queue3_review_20261003.json",
+      "sha256": "941d28ea49a28262064c5c4bbc88fcf7ca5c70e7bef50105f2f3499147bae137"
+    }
+  ]
+}

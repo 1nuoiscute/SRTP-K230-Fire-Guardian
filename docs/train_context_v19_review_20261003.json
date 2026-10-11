@@ -1,0 +1,1070 @@
+{
+  "role": "Completed train-only original-context review and verified v19 dataset, no model-result claim",
+  "date": "2026-10-03",
+  "selection_plan_commit": "1669fbdeb1d0c2e865c7f169754be689cf15eb5d",
+  "parent_manifest_sha256": "8e70dea69f39beafa0f17b3a6d4b483c537622fdf52271755fd8f3e2447bd54d",
+  "dataset_manifest_sha256": "9971c9530a04f1dd962a7c2d9e229d73d5b7e1a47aab5d3d966975d6e78d831a",
+  "builder_sha256": "6087bbdc5bfbff74a84a65d4753442f7c7ec050c8014ec9007c21cf1554bc62a",
+  "review_complete_sha256": "61482175a628baa508dc2c0a6cd7d0b0d0a4b6b263b7aae1f225d03438b269a7",
+  "review_inputs_sha256": "cdd173f484cd786a5ae144460e21786a59ff5fd4dfe773eeb173525e22cc2cf3",
+  "inspection_history_sha256": "f4c789b5fb181239aec8688bff5111b6fe7a0d1afeda5fe4563ef242fb251c40",
+  "mining_predictions_sha256": "259981a3c20f203422348963ddb14154fc0896e1713bc736f306a35c90c14325",
+  "miner_sha256": "2534a8c727157d0333bf7e0b785cd09e950f5e6e0192831947ba26cfe865b3ce",
+  "mining_scope": {
+    "original_train_negatives": 337,
+    "images_with_box_by_provenance": {
+      "nofire_real_indoor": 2
+    },
+    "not_accuracy": true,
+    "predictions_not_truth": true
+  },
+  "review": {
+    "originals": 40,
+    "approved_flame_images": 15,
+    "approved_flame_boxes": 27,
+    "approved_negative_images": 14,
+    "held_images": 11,
+    "actually_viewed_pages": 21,
+    "by_status_and_provenance": [
+      {
+        "status": "negative",
+        "provenance": "object_pan",
+        "images": 2
+      },
+      {
+        "status": "held",
+        "provenance": "object_pan",
+        "images": 10
+      },
+      {
+        "status": "negative",
+        "provenance": "nofire_real_indoor",
+        "images": 12
+      },
+      {
+        "status": "flame",
+        "provenance": "kitchen_stove_fire",
+        "images": 7
+      },
+      {
+        "status": "held",
+        "provenance": "kitchen_stove_fire",
+        "images": 1
+      },
+      {
+        "status": "flame",
+        "provenance": "ks_flame",
+        "images": 8
+      }
+    ],
+    "proposal_revision": "Index33 tightened after first actual review; old decisions/pages retained; other nine page bytes equal.",
+    "decisions": [
+      {
+        "index": 1,
+        "file": "object_pan__1-174-_jpg.rf.3432d5201f1268932958fdcffab30d2e.jpg",
+        "image_sha256": "0257ed0c142425f69a54b3e65fa1b4138b4385f159a64341218fe7caa7940170",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "object_pan",
+        "source_group": "1-174-_jpg",
+        "status": "negative",
+        "boxes_xyxy": [],
+        "note": "完整单锅平面原图未见可见火焰，保留两个不同朝向的审核对照；不是复杂厨房或真实困难误检。"
+      },
+      {
+        "index": 2,
+        "file": "object_pan__1-119-_jpg.rf.0954164077d09eb8d8d2f67f21e6210e.jpg",
+        "image_sha256": "02b2005255dcdb5bcd53af94abc41fcde6f5155612c32ee7e7978d129287c954",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "object_pan",
+        "source_group": "1-119-_jpg",
+        "status": "held",
+        "boxes_xyxy": [],
+        "note": "已看完整原图未见可见火焰，但与现有单锅/单背景样本高度冗余且本轮挖掘无框；暂不额外提高采样，保持父版本。"
+      },
+      {
+        "index": 3,
+        "file": "object_pan__3-94-_jpg.rf.a91b15790e8f3c36221b0bc375c43022.jpg",
+        "image_sha256": "0404c4700dc1ab3824de901cdc5080ef0293056b08e5453ef1ecfdcbbad51ef4",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "object_pan",
+        "source_group": "3-94-_jpg",
+        "status": "held",
+        "boxes_xyxy": [],
+        "note": "已看完整原图未见可见火焰，但与现有单锅/单背景样本高度冗余且本轮挖掘无框；暂不额外提高采样，保持父版本。"
+      },
+      {
+        "index": 4,
+        "file": "object_pan__1-190-_jpg.rf.a14013ec0b1c1ea43cc3fdb2afd312b4.jpg",
+        "image_sha256": "040a1b1e9ba4fe7d13f15a40856ebac1eb3f33f31ba78e4a07ebd4a735b0a1cb",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "object_pan",
+        "source_group": "1-190-_jpg",
+        "status": "held",
+        "boxes_xyxy": [],
+        "note": "已看完整原图未见可见火焰，但与现有单锅/单背景样本高度冗余且本轮挖掘无框；暂不额外提高采样，保持父版本。"
+      },
+      {
+        "index": 5,
+        "file": "object_pan__1-9-_jpg.rf.439ce08e4fbd707f6e68f40f81e3d2ed.jpg",
+        "image_sha256": "04454829bbe522ad12210f8d841977092bc83335a6ae7197dc9fe723dd6b1f69",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "object_pan",
+        "source_group": "1-9-_jpg",
+        "status": "negative",
+        "boxes_xyxy": [],
+        "note": "完整单锅平面原图未见可见火焰，保留两个不同朝向的审核对照；不是复杂厨房或真实困难误检。"
+      },
+      {
+        "index": 6,
+        "file": "object_pan__3-47-_jpg.rf.d4064b26bea0ef6d0b872919f5869182.jpg",
+        "image_sha256": "07865a44e4bb7d7c5ec57a1d2ac3eb2139200563d02a04fcfd5b3f6ab9b3cae7",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "object_pan",
+        "source_group": "3-47-_jpg",
+        "status": "held",
+        "boxes_xyxy": [],
+        "note": "已看完整原图未见可见火焰，但与现有单锅/单背景样本高度冗余且本轮挖掘无框；暂不额外提高采样，保持父版本。"
+      },
+      {
+        "index": 7,
+        "file": "object_pan__1-232-_jpg.rf.54c1f60ab3d8b91067a7e068032e0c7e.jpg",
+        "image_sha256": "086c20e667e9fda357c096cb4cd081249e347b100b448da124317184f97e7a65",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "object_pan",
+        "source_group": "1-232-_jpg",
+        "status": "held",
+        "boxes_xyxy": [],
+        "note": "已看完整原图未见可见火焰，但与现有单锅/单背景样本高度冗余且本轮挖掘无框；暂不额外提高采样，保持父版本。"
+      },
+      {
+        "index": 8,
+        "file": "object_pan__5-127-_jpg.rf.adef71a385ee39efaffed8f99752f10f.jpg",
+        "image_sha256": "0a0f461dbd01b3571d626260b176bea9d45ccc21119e3de6f263a02909098283",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "object_pan",
+        "source_group": "5-127-_jpg",
+        "status": "held",
+        "boxes_xyxy": [],
+        "note": "已看完整原图未见可见火焰，但与现有单锅/单背景样本高度冗余且本轮挖掘无框；暂不额外提高采样，保持父版本。"
+      },
+      {
+        "index": 9,
+        "file": "object_pan__1-237-_jpg.rf.228e1c190c30a938cd81313acd8f6078.jpg",
+        "image_sha256": "0a5b822ee2c880057bc3f6d2daa42c8fe7a29dd2e578de3ebafad659d256f493",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "object_pan",
+        "source_group": "1-237-_jpg",
+        "status": "held",
+        "boxes_xyxy": [],
+        "note": "已看完整原图未见可见火焰，但与现有单锅/单背景样本高度冗余且本轮挖掘无框；暂不额外提高采样，保持父版本。"
+      },
+      {
+        "index": 10,
+        "file": "object_pan__5-145-_jpg.rf.7b843ef9f6944a92a019113c952de4e4.jpg",
+        "image_sha256": "0a8a24f6737c508dd103740fa54fd659a7899f4aa24172bc706484c4f51f0079",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "object_pan",
+        "source_group": "5-145-_jpg",
+        "status": "held",
+        "boxes_xyxy": [],
+        "note": "已看完整原图未见可见火焰，但与现有单锅/单背景样本高度冗余且本轮挖掘无框；暂不额外提高采样，保持父版本。"
+      },
+      {
+        "index": 11,
+        "file": "object_pan__1-201-_jpg.rf.46b05505df26e7418817e178cb142362.jpg",
+        "image_sha256": "0d184174063e8db80039cf55f3e533303d46434b1fe0a206e13e94a5d5748194",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "object_pan",
+        "source_group": "1-201-_jpg",
+        "status": "held",
+        "boxes_xyxy": [],
+        "note": "已看完整原图未见可见火焰，但与现有单锅/单背景样本高度冗余且本轮挖掘无框；暂不额外提高采样，保持父版本。"
+      },
+      {
+        "index": 12,
+        "file": "object_pan__3-96-_jpg.rf.52b55a0b602aa0e51e6e93c05101bf4b.jpg",
+        "image_sha256": "0d535e07f684be171c7364be7644d829e6a2f78c5e5f3e02e087152e7ef4c438",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "object_pan",
+        "source_group": "3-96-_jpg",
+        "status": "held",
+        "boxes_xyxy": [],
+        "note": "已看完整原图未见可见火焰，但与现有单锅/单背景样本高度冗余且本轮挖掘无框；暂不额外提高采样，保持父版本。"
+      },
+      {
+        "index": 13,
+        "file": "nofire_real_indoor__val_208.jpg",
+        "image_sha256": "a382d992441f41168b32a5706de8836cdcb37d6564d0068d9717c48b80823da7",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          960,
+          540
+        ],
+        "split": "train",
+        "provenance": "nofire_real_indoor",
+        "source_group": "val_208",
+        "status": "negative",
+        "boxes_xyxy": [],
+        "note": "完整原图见手持燃烧材料的烟状羽流，端部未见可见火焰；仅fire类negative，不标无燃烧或无烟雾。"
+      },
+      {
+        "index": 14,
+        "file": "nofire_real_indoor__val_1135.jpg",
+        "image_sha256": "8f81225450034e31f5d718c01423c5dc4ffba14c7f504a90e9a3b38524e4b0dc",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          1280,
+          720
+        ],
+        "split": "train",
+        "provenance": "nofire_real_indoor",
+        "source_group": "val_1135",
+        "status": "negative",
+        "boxes_xyxy": [],
+        "note": "完整户外桶装装置有明显白色羽流，未见可见火焰；仅fire类negative，内部事件未知。"
+      },
+      {
+        "index": 15,
+        "file": "nofire_real_indoor__val_1084.jpg",
+        "image_sha256": "0162dab32c94931963bd19dd12b516020f560b035d1f71a9fabdbf0904ebfd9c",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          540,
+          960
+        ],
+        "split": "train",
+        "provenance": "nofire_real_indoor",
+        "source_group": "val_1084",
+        "status": "negative",
+        "boxes_xyxy": [],
+        "note": "花枝、石质背景与阳光阴影；未见可见火焰。"
+      },
+      {
+        "index": 16,
+        "file": "nofire_real_indoor__val_1146.jpg",
+        "image_sha256": "019ddb4eb4f50e9d06b9d86755e3a8cd4b1d8fad66771a13776c7891cda4d117",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          1280,
+          720
+        ],
+        "split": "train",
+        "provenance": "nofire_real_indoor",
+        "source_group": "val_1146",
+        "status": "negative",
+        "boxes_xyxy": [],
+        "note": "完整室内桌椅、红色热水瓶及亮灯，未见可见火焰。"
+      },
+      {
+        "index": 17,
+        "file": "nofire_real_indoor__val_1220.jpg",
+        "image_sha256": "01d62bf5ddc4d923000a98fb2aa1edbf45de482b3daa15a405eadc513c57641b",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          960,
+          540
+        ],
+        "split": "train",
+        "provenance": "nofire_real_indoor",
+        "source_group": "val_1220",
+        "status": "negative",
+        "boxes_xyxy": [],
+        "note": "雪景屋顶烟囱有被阳光照亮的羽流，未见可见火焰，不把暖色羽流标火焰。"
+      },
+      {
+        "index": 18,
+        "file": "nofire_real_indoor__val_158.jpg",
+        "image_sha256": "03695193424dfb14f5729ca3cbc9d4ed088ed97923f141b0d486bf89fef996b3",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          960,
+          540
+        ],
+        "split": "train",
+        "provenance": "nofire_real_indoor",
+        "source_group": "val_158",
+        "status": "negative",
+        "boxes_xyxy": [],
+        "note": "同类雪景烟囱暖色羽流，未见可见火焰；相关场景重复，不计新独立厨房。"
+      },
+      {
+        "index": 19,
+        "file": "nofire_real_indoor__val_45.jpg",
+        "image_sha256": "03e06883174e6780c9f5f2bf017d0c33ada0876d67203a47446e4fa4e112d0b9",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          960,
+          540
+        ],
+        "split": "train",
+        "provenance": "nofire_real_indoor",
+        "source_group": "val_45",
+        "status": "negative",
+        "boxes_xyxy": [],
+        "note": "烟状羽流来自桌面材料，未见明火，端部可能阴燃；仅fire类negative，不标无燃烧事件。"
+      },
+      {
+        "index": 20,
+        "file": "nofire_real_indoor__val_221.jpg",
+        "image_sha256": "053279470454b9bda5dfe05511e67339acb597d8594b347e982e104f59ae4431",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          1280,
+          720
+        ],
+        "split": "train",
+        "provenance": "nofire_real_indoor",
+        "source_group": "val_221",
+        "status": "negative",
+        "boxes_xyxy": [],
+        "note": "完整户外桶装装置有白色羽流，未见可见火焰；内部事件未知。"
+      },
+      {
+        "index": 21,
+        "file": "nofire_real_indoor__val_1198.jpg",
+        "image_sha256": "057284a1942a4c23d800e258ec2c664cbd9767802e672931241061a9b6b31faf",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          1280,
+          720
+        ],
+        "split": "train",
+        "provenance": "nofire_real_indoor",
+        "source_group": "val_1198",
+        "status": "negative",
+        "boxes_xyxy": [],
+        "note": "室内窗户反光、墙面和窗台，未见可见火焰。"
+      },
+      {
+        "index": 22,
+        "file": "nofire_real_indoor__val_506.jpg",
+        "image_sha256": "068b1e40866440ec5b89906cbbf61ea4a14529a15f7ff568332cb639adaca21f",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          1280,
+          720
+        ],
+        "split": "train",
+        "provenance": "nofire_real_indoor",
+        "source_group": "val_506",
+        "status": "negative",
+        "boxes_xyxy": [],
+        "note": "室内桌椅、红色瓶和亮灯，未见可见火焰；与其他室内图相关。"
+      },
+      {
+        "index": 23,
+        "file": "nofire_real_indoor__val_869.jpg",
+        "image_sha256": "08ba2fa5cf3016dd7cd816603fffdeccc02a179a6d64be8220bce271687f8d30",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          1920,
+          1080
+        ],
+        "split": "train",
+        "provenance": "nofire_real_indoor",
+        "source_group": "val_869",
+        "status": "negative",
+        "boxes_xyxy": [],
+        "note": "暗室桌面有烟状羽流和白色亮灯，放大完整原图未见可见火焰；仅fire类negative。"
+      },
+      {
+        "index": 24,
+        "file": "nofire_real_indoor__val_861.jpg",
+        "image_sha256": "0aef5bcecd9e2cf15c7f399f76c878e7c43ed3384031ef6bc2af5565c1b15b1b",
+        "original_label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": [
+          1280,
+          720
+        ],
+        "split": "train",
+        "provenance": "nofire_real_indoor",
+        "source_group": "val_861",
+        "status": "negative",
+        "boxes_xyxy": [],
+        "note": "完整室内洗衣机、挂衣和红绿色物体，未见可见火焰；非项目视频的实际彩色厨具场景。"
+      },
+      {
+        "index": 25,
+        "file": "kitchen_stove_fire__DSC_4843_JPG_JPG.rf.6304b975ed5b5e88e54dc37503dc4ada.jpg",
+        "image_sha256": "6dfa3efc9186d3027a66cee06c2463d53a6bbaad45ff596394e9ffc6cdcd28e8",
+        "original_label_sha256": "b733ff3d4dacf83f64397f048b24089be6e618aaa19bae81bd7218dd076d45ce",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "kitchen_stove_fire",
+        "source_group": "DSC_4843_JPG_JPG",
+        "status": "flame",
+        "boxes_xyxy": [
+          [
+            143,
+            376,
+            177,
+            389
+          ],
+          [
+            209,
+            363,
+            238,
+            409
+          ]
+        ],
+        "note": "已看完整原图，以可见物理火焰的近似外包络标注，排除锅体、溢出食物、玻璃/墙面反光及烟状羽流；原坐标按原尺寸。"
+      },
+      {
+        "index": 26,
+        "file": "kitchen_stove_fire__DSC_4969_JPG_JPG.rf.8b0f3c0544ed0657110ef7e09a83d209.jpg",
+        "image_sha256": "c02debf8165c8f14c66aeb8976478b22c47c201c6a41e097f9829cd16c2789c5",
+        "original_label_sha256": "6e8e5eb40bf284f5dc3263f7d33b61dd40ebfe98b6bd23935d834a28b0bdaa29",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "kitchen_stove_fire",
+        "source_group": "DSC_4969_JPG_JPG",
+        "status": "flame",
+        "boxes_xyxy": [
+          [
+            142,
+            375,
+            170,
+            387
+          ],
+          [
+            209,
+            348,
+            238,
+            408
+          ]
+        ],
+        "note": "已看完整原图，以可见物理火焰的近似外包络标注，排除锅体、溢出食物、玻璃/墙面反光及烟状羽流；原坐标按原尺寸。"
+      },
+      {
+        "index": 27,
+        "file": "kitchen_stove_fire__DSC_5099_JPG_JPG.rf.c72fa601e439fd9e8c1c703516a59cc8.jpg",
+        "image_sha256": "3efc104e602700de996b8f1e40552ba16f701a84d56546e8c85188146723a310",
+        "original_label_sha256": "cf965e8995e6d482668f07a0ebfcc7715431625cde0537d5ef7aa09f5199ba50",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "kitchen_stove_fire",
+        "source_group": "DSC_5099_JPG_JPG",
+        "status": "flame",
+        "boxes_xyxy": [
+          [
+            11,
+            321,
+            45,
+            345
+          ],
+          [
+            57,
+            360,
+            108,
+            377
+          ],
+          [
+            125,
+            385,
+            166,
+            416
+          ]
+        ],
+        "note": "已看完整原图，以可见物理火焰的近似外包络标注，排除锅体、溢出食物、玻璃/墙面反光及烟状羽流；原坐标按原尺寸。"
+      },
+      {
+        "index": 28,
+        "file": "kitchen_stove_fire__DSC_5343_JPG_JPG.rf.7e11d393c272e5502510b77e97b48f16.jpg",
+        "image_sha256": "9d167a6c47d9e2fed66dea395ab021a4d623d7c341e71111150c22bcc744ac10",
+        "original_label_sha256": "1eb5ef54e9abf91fe081361b3c84da26ba28810075988d8f59568407bcc595bf",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "kitchen_stove_fire",
+        "source_group": "DSC_5343_JPG_JPG",
+        "status": "flame",
+        "boxes_xyxy": [
+          [
+            167,
+            383,
+            328,
+            424
+          ]
+        ],
+        "note": "已看完整原图，以可见物理火焰的近似外包络标注，排除锅体、溢出食物、玻璃/墙面反光及烟状羽流；原坐标按原尺寸。"
+      },
+      {
+        "index": 29,
+        "file": "kitchen_stove_fire__DSC_5489_JPG_JPG.rf.0d34a3b18973eeba2590c4246c43fb2a.jpg",
+        "image_sha256": "961febf177f542ee765f5cfd5a79d29e4426cc3580837a45188e266a3cd4167a",
+        "original_label_sha256": "4a78bb10f2a046b362f843c3ca11c3d615407ac94d4a2f807ce57ae387782257",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "kitchen_stove_fire",
+        "source_group": "DSC_5489_JPG_JPG",
+        "status": "held",
+        "boxes_xyxy": [],
+        "note": "锅底强亮区域较模糊，火焰与热反光边界无法可靠区分，暂不新增标签，继续隔离。"
+      },
+      {
+        "index": 30,
+        "file": "kitchen_stove_fire__DSC_5634_JPG_JPG.rf.e772785b020c120e6adc793389927010.jpg",
+        "image_sha256": "dd68185d39f9593309bdeb592fd59609623ad018b4bcb018e5f04ff6131138d6",
+        "original_label_sha256": "ee385b05b41b9fb8db6149ccf46584effe3e24aa669ade3baeb895e6488295f3",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "kitchen_stove_fire",
+        "source_group": "DSC_5634_JPG_JPG",
+        "status": "flame",
+        "boxes_xyxy": [
+          [
+            198,
+            386,
+            407,
+            475
+          ]
+        ],
+        "note": "已看完整原图，以可见物理火焰的近似外包络标注，排除锅体、溢出食物、玻璃/墙面反光及烟状羽流；原坐标按原尺寸。"
+      },
+      {
+        "index": 31,
+        "file": "kitchen_stove_fire__DSC_6370_JPG.rf.b6c37f79be935362e96feb8d32bc676e.jpg",
+        "image_sha256": "3d823d9884e0d919017938a5615503f57699ab05714089ecfd5178c63198f82c",
+        "original_label_sha256": "5e3bd815272f984e9026db415c87fd56a347709f349c8d1d8dc0d3ee1826bb8a",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "kitchen_stove_fire",
+        "source_group": "DSC_6370_JPG",
+        "status": "flame",
+        "boxes_xyxy": [
+          [
+            82,
+            271,
+            119,
+            321
+          ],
+          [
+            195,
+            304,
+            250,
+            330
+          ],
+          [
+            331,
+            320,
+            385,
+            350
+          ],
+          [
+            498,
+            287,
+            579,
+            383
+          ]
+        ],
+        "note": "已看完整原图，以可见物理火焰的近似外包络标注，排除锅体、溢出食物、玻璃/墙面反光及烟状羽流；原坐标按原尺寸。"
+      },
+      {
+        "index": 32,
+        "file": "kitchen_stove_fire__DSC_6515_JPG.rf.baeb970dd8ee28c643606e4c4dbf1e47.jpg",
+        "image_sha256": "41de695cd90e979c70942f6cb233076c0898f41ee096f35499cef9606619621a",
+        "original_label_sha256": "a1352759c22b624782766af978d83bc6e32675c1c29d2587f43e006e7e58a269",
+        "size": [
+          640,
+          640
+        ],
+        "split": "train",
+        "provenance": "kitchen_stove_fire",
+        "source_group": "DSC_6515_JPG",
+        "status": "flame",
+        "boxes_xyxy": [
+          [
+            56,
+            312,
+            134,
+            345
+          ],
+          [
+            265,
+            318,
+            342,
+            363
+          ],
+          [
+            474,
+            284,
+            556,
+            376
+          ]
+        ],
+        "note": "已看完整原图，以可见物理火焰的近似外包络标注，排除锅体、溢出食物、玻璃/墙面反光及烟状羽流；原坐标按原尺寸。"
+      },
+      {
+        "index": 33,
+        "file": "ks_flame__20240902_211627_jpg.rf.36bcb987647866fa2f726a625807b3c3.jpg",
+        "image_sha256": "7cba2f17a2afeab610e285d94c6ffafc5d8148f372bdec25ec3987d610876817",
+        "original_label_sha256": "7e18a5f1dc5963d00923f57c6ce550d2e2ff64a6404383426120ea202f53dba3",
+        "size": [
+          640,
+          480
+        ],
+        "split": "train",
+        "provenance": "ks_flame",
+        "source_group": "20240902_211627_jpg",
+        "status": "flame",
+        "boxes_xyxy": [
+          [
+            298,
+            280,
+            368,
+            312
+          ],
+          [
+            444,
+            317,
+            514,
+            375
+          ]
+        ],
+        "note": "已看完整原图，以可见物理火焰的近似外包络标注，排除锅体、溢出食物、玻璃/墙面反光及烟状羽流；原坐标按原尺寸。提案复核后收紧第一锅底框，排除上部锅体。"
+      },
+      {
+        "index": 34,
+        "file": "ks_flame__20240902_212408_jpg.rf.8386007562c368e5df30b0619621b562.jpg",
+        "image_sha256": "a55e80f962280825d036ebe18e2c6e72cc525cfcde3a535019191603e9657a9c",
+        "original_label_sha256": "246150cc91d349bc6eaf3cf224e01128b2df49d0ceb60271868a3b5ec6e4906f",
+        "size": [
+          640,
+          480
+        ],
+        "split": "train",
+        "provenance": "ks_flame",
+        "source_group": "20240902_212408_jpg",
+        "status": "flame",
+        "boxes_xyxy": [
+          [
+            315,
+            259,
+            380,
+            284
+          ]
+        ],
+        "note": "已看完整原图，以可见物理火焰的近似外包络标注，排除锅体、溢出食物、玻璃/墙面反光及烟状羽流；原坐标按原尺寸。"
+      },
+      {
+        "index": 35,
+        "file": "ks_flame__20240902_213945_jpg.rf.67b2f6b0c5e6cc0942118f8dc5a69b51.jpg",
+        "image_sha256": "c75b344dde6dba0622aa6e44f2ef1e020523be152350a279e2599ec56ebf5473",
+        "original_label_sha256": "40210baa91a55be99256fc7202431f454ddce0989b561cb33e06dd833ccb7c1c",
+        "size": [
+          640,
+          480
+        ],
+        "split": "train",
+        "provenance": "ks_flame",
+        "source_group": "20240902_213945_jpg",
+        "status": "flame",
+        "boxes_xyxy": [
+          [
+            276,
+            255,
+            319,
+            271
+          ]
+        ],
+        "note": "已看完整原图，以可见物理火焰的近似外包络标注，排除锅体、溢出食物、玻璃/墙面反光及烟状羽流；原坐标按原尺寸。"
+      },
+      {
+        "index": 36,
+        "file": "ks_flame__PXL_20240902_154559986_jpg.rf.bcd7d7dec1a129b6608b6f3962a11694.jpg",
+        "image_sha256": "5a2b41fbe9669e3feb42e585198a75d292dd11263b9a7be0d8d269a0745c8860",
+        "original_label_sha256": "fe8e5f5eb111d9b13ab44ff6d92d8a726559587573ed52cb8eb0bde273874a00",
+        "size": [
+          640,
+          480
+        ],
+        "split": "train",
+        "provenance": "ks_flame",
+        "source_group": "PXL_20240902_154559986_jpg",
+        "status": "flame",
+        "boxes_xyxy": [
+          [
+            285,
+            272,
+            332,
+            292
+          ],
+          [
+            406,
+            271,
+            451,
+            300
+          ]
+        ],
+        "note": "已看完整原图，以可见物理火焰的近似外包络标注，排除锅体、溢出食物、玻璃/墙面反光及烟状羽流；原坐标按原尺寸。"
+      },
+      {
+        "index": 37,
+        "file": "ks_flame__PXL_20240902_155435379_jpg.rf.614d76681ab060c29d5f1e278f145f06.jpg",
+        "image_sha256": "8656a22354f7bbe4f54a8e92b99dd9d14e9345846cffe2f3dc1aabf7ac2bcb02",
+        "original_label_sha256": "240f90a578805b631b516f98df0ca951a19e3b676fc39b91b73c2280efb8f844",
+        "size": [
+          640,
+          480
+        ],
+        "split": "train",
+        "provenance": "ks_flame",
+        "source_group": "PXL_20240902_155435379_jpg",
+        "status": "flame",
+        "boxes_xyxy": [
+          [
+            294,
+            277,
+            389,
+            308
+          ]
+        ],
+        "note": "已看完整原图，以可见物理火焰的近似外包络标注，排除锅体、溢出食物、玻璃/墙面反光及烟状羽流；原坐标按原尺寸。"
+      },
+      {
+        "index": 38,
+        "file": "ks_flame__PXL_20240902_161319992_jpg.rf.dfd4c6b8ba868c36ba114e93430c5306.jpg",
+        "image_sha256": "b03ad462061c2034d46696dc7d7852fa69f2f3e3e112b018cfaabcadccfeb36e",
+        "original_label_sha256": "d61baa45b47f38da433cf9473010cd51acb42f86876196c21b2e78b6391ad163",
+        "size": [
+          640,
+          480
+        ],
+        "split": "train",
+        "provenance": "ks_flame",
+        "source_group": "PXL_20240902_161319992_jpg",
+        "status": "flame",
+        "boxes_xyxy": [
+          [
+            338,
+            262,
+            383,
+            282
+          ]
+        ],
+        "note": "已看完整原图，以可见物理火焰的近似外包络标注，排除锅体、溢出食物、玻璃/墙面反光及烟状羽流；原坐标按原尺寸。"
+      },
+      {
+        "index": 39,
+        "file": "ks_flame__snapshot-00035_jpg.rf.562ed1124e6ffe9db3e7e8da7a765e34.jpg",
+        "image_sha256": "384e4468926b39dbc61874aa10202244bac475db7cbcbffe6243af47518cd1bc",
+        "original_label_sha256": "f41cdb039c206b8ddb9450a137665ddc09817c4b18143963c02175a44aa4d0d1",
+        "size": [
+          1280,
+          720
+        ],
+        "split": "train",
+        "provenance": "ks_flame",
+        "source_group": "snapshot-00035_jpg",
+        "status": "flame",
+        "boxes_xyxy": [
+          [
+            565,
+            349,
+            600,
+            368
+          ]
+        ],
+        "note": "已看完整原图，以可见物理火焰的近似外包络标注，排除锅体、溢出食物、玻璃/墙面反光及烟状羽流；原坐标按原尺寸。"
+      },
+      {
+        "index": 40,
+        "file": "ks_flame__snapshot-00141_jpg.rf.7066d4cb25c3ceb349773c4c0c829830.jpg",
+        "image_sha256": "9cea5504d79adb65f8b117f76521fed0b57e6822307967f807d3691852a9effa",
+        "original_label_sha256": "27e2cc26fdc88aad0fc3dd97b26b68c7df11bfb7c4ea9f1741251571103aafc6",
+        "size": [
+          1920,
+          1080
+        ],
+        "split": "train",
+        "provenance": "ks_flame",
+        "source_group": "snapshot-00141_jpg",
+        "status": "flame",
+        "boxes_xyxy": [
+          [
+            1005,
+            598,
+            1081,
+            637
+          ],
+          [
+            1229,
+            594,
+            1318,
+            628
+          ]
+        ],
+        "note": "已看完整原图，以可见物理火焰的近似外包络标注，排除锅体、溢出食物、玻璃/墙面反光及烟状羽流；原坐标按原尺寸。"
+      }
+    ],
+    "viewed_sheet_sha256": [
+      {
+        "file": "original_01.jpg",
+        "sha256": "d231e688dd8a3c041627f059cfab4c61b6b2a9d31c83f7f542914d9307b459b2"
+      },
+      {
+        "file": "original_02.jpg",
+        "sha256": "8698a4dc768dfb4c7133269062669c7fac657af2609ea1d2c68f7e3dc03b6bc1"
+      },
+      {
+        "file": "original_03.jpg",
+        "sha256": "746bb3db0ba47360caf405f474104df837fb0d9d5cc959035045c6bf30d2e1f7"
+      },
+      {
+        "file": "original_04.jpg",
+        "sha256": "f7652802846ee0f3b49bd7dcac2f3f5e4a78a4084de4001e120053e8c1176bb0"
+      },
+      {
+        "file": "original_05.jpg",
+        "sha256": "260be7f8b7cb336559e8267074de6398000e8a6891ed166baece66561123743c"
+      },
+      {
+        "file": "original_06.jpg",
+        "sha256": "f7904c9dcb706ed22b948ec820e990116219ad8053cc5ea792b5a9dc696dd31e"
+      },
+      {
+        "file": "original_07.jpg",
+        "sha256": "18cad629b8500ab21bf8538f7607392becbf906a11cf2582b92bf9df4442768c"
+      },
+      {
+        "file": "original_08.jpg",
+        "sha256": "0c13f4e45f1fbaad3d529cf096682821cf9bb99f134abc395bc386b978c87eef"
+      },
+      {
+        "file": "original_09.jpg",
+        "sha256": "2e500529fb8688f773eb769e6aa96d0175ecabda7f0f1d4e9887bd7219d36b93"
+      },
+      {
+        "file": "original_10.jpg",
+        "sha256": "0ef9466ca38297816321a5bb4d66ff6b22a42b9f205dd24f5a46c050e474d180"
+      },
+      {
+        "file": "proposal_01.jpg",
+        "sha256": "3ce16281150213baf8f71a757e383cec2dc560c103614f61978f2e7a1090e1e8"
+      },
+      {
+        "file": "proposal_02.jpg",
+        "sha256": "379caf7e232aaa3a657e7eaf44c5944150968c720217b92985602cb55b87e534"
+      },
+      {
+        "file": "proposal_03.jpg",
+        "sha256": "3bdd9ae7a048b56a9a730f0325502e217b5f0bd48542e6a4be780d4aeaa8f051"
+      },
+      {
+        "file": "proposal_04.jpg",
+        "sha256": "6965566063a9aead554538e447d933b88a2e00df284b9dc77b3d7be4756892b8"
+      },
+      {
+        "file": "proposal_05.jpg",
+        "sha256": "913ca6fe3dfd2797c4391af2eac0a77fecbb1c1d231f9c1fb7479cfed1c28d31"
+      },
+      {
+        "file": "proposal_06.jpg",
+        "sha256": "f091d3d8f7813353bf44b22e3b71268ebcc4d5bedf76bb12916ff5e4c6a2dc55"
+      },
+      {
+        "file": "proposal_07.jpg",
+        "sha256": "77d15fee6b410ce9a49a4081026bf7d28fa3eda03add44e4bedb5ef4e00a85ac"
+      },
+      {
+        "file": "proposal_08.jpg",
+        "sha256": "f91a6c2ee595ca48acbe1b5def6e9afe34f9d4e082db5c2ea8d5c1b4c14a0f35"
+      },
+      {
+        "file": "proposal_09.jpg",
+        "sha256": "78fff572bedcc25050298b7269c3b57ef32d3cb8f877d1dbd190b4a755cfbac6"
+      },
+      {
+        "file": "proposal_10.jpg",
+        "sha256": "18d478768b2ee569d89f9901fe0e1b934ee8d18a9545871f493cc920ed7e34e8"
+      },
+      {
+        "file": "proposal_round2_09.jpg",
+        "sha256": "6a117c89fc5c534a2a09643baac40a72a6a0e6969b02aed5574a15758a628d95"
+      }
+    ]
+  },
+  "dataset": {
+    "unique_images": 1431,
+    "sampling_entries": 2341,
+    "new_original_images": 7,
+    "existing_flame_images_relabelled": 8,
+    "existing_negatives_reweighted": 14,
+    "validation_images": 243,
+    "original_validation_identity_unchanged": true,
+    "all_nonapproved_members_labels_weights_retained": true,
+    "no_exact_pixels_from_original_val_test": true,
+    "by_provenance": {
+      "kitchen_stove_fire": {
+        "unique_images": 44,
+        "sampling_entries": 317,
+        "label_boxes": 109,
+        "empty_labels": 0,
+        "v19_reviewed_contexts": 7,
+        "visible_flame_train_revision_flagged_originals": 39
+      },
+      "ks_flame": {
+        "unique_images": 184,
+        "sampling_entries": 240,
+        "label_boxes": 240,
+        "empty_labels": 0,
+        "v19_reviewed_contexts": 8,
+        "visible_flame_train_revision_flagged_originals": 8
+      },
+      "generic_fire": {
+        "unique_images": 795,
+        "sampling_entries": 795,
+        "label_boxes": 1555,
+        "empty_labels": 1,
+        "v19_reviewed_contexts": 0,
+        "visible_flame_train_revision_flagged_originals": 0
+      },
+      "nofire_real_indoor": {
+        "unique_images": 153,
+        "sampling_entries": 319,
+        "label_boxes": 0,
+        "empty_labels": 153,
+        "v19_reviewed_contexts": 12,
+        "visible_flame_train_revision_flagged_originals": 0
+      },
+      "object_pan": {
+        "unique_images": 200,
+        "sampling_entries": 270,
+        "label_boxes": 0,
+        "empty_labels": 200,
+        "v19_reviewed_contexts": 2,
+        "visible_flame_train_revision_flagged_originals": 0
+      },
+      "reviewed_flame": {
+        "unique_images": 10,
+        "sampling_entries": 120,
+        "label_boxes": 10,
+        "empty_labels": 0,
+        "v19_reviewed_contexts": 0,
+        "visible_flame_train_revision_flagged_originals": 0
+      },
+      "sticker_hard_negative_crop": {
+        "unique_images": 10,
+        "sampling_entries": 80,
+        "label_boxes": 0,
+        "empty_labels": 10,
+        "v19_reviewed_contexts": 0,
+        "visible_flame_train_revision_flagged_originals": 0
+      },
+      "reviewed_old_video": {
+        "unique_images": 24,
+        "sampling_entries": 72,
+        "label_boxes": 18,
+        "empty_labels": 6,
+        "v19_reviewed_contexts": 0,
+        "visible_flame_train_revision_flagged_originals": 0
+      },
+      "commons_reviewed_blue": {
+        "unique_images": 10,
+        "sampling_entries": 120,
+        "label_boxes": 13,
+        "empty_labels": 0,
+        "v19_reviewed_contexts": 0,
+        "visible_flame_train_revision_flagged_originals": 0
+      },
+      "food_hard_negative_crop": {
+        "unique_images": 1,
+        "sampling_entries": 8,
+        "label_boxes": 0,
+        "empty_labels": 1,
+        "v19_reviewed_contexts": 0,
+        "visible_flame_train_revision_flagged_originals": 0
+      }
+    },
+    "flag_scope": "Explicit visible_flame_train_revision flag; earlier label_revised-only records not silently counted as fresh physical geometry review."
+  },
+  "limits": [
+    "40 images are original project train images; v18 training-feedback selection; not new independent kitchens.",
+    "object_pan mine gave no detections and shares a simple single-pan background; only two orientations additionally weighted, ten held as redundant.",
+    "Two mined detections are smoke-like plume images, not the project-video colored kitchen utensils.",
+    "Negative means no visible flame; smoke/combustion may exist and no smoke absence is labelled.",
+    "Existing related scenes and some near-duplicate views remain; unique image count is not independent scene count.",
+    "Geometry remains approximate; seven added kitchen originals are predominantly the existing industrial kitchen.",
+    "Independent acceptance and model improvement await subsequent training/comparison; no board connected."
+  ]
+}

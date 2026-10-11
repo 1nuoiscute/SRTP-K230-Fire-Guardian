@@ -1,0 +1,5 @@
+# Minimal CPU inference environment tested on 2026-10-02.
+# Training and export verification additionally require PyTorch/Ultralytics/ONNX.
+numpy==2.4.4
+opencv-python==4.13.0.92
+onnxruntime==1.27.0

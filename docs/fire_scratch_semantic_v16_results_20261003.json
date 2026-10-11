@@ -1,0 +1,1214 @@
+{
+  "role": "v16 completed project-route development assessment",
+  "independent_test": false,
+  "experiment_meta_sha256": "a69353965f8a686cfc092c722f73db4076671f3a583117cfa8c9960a106fd98c",
+  "comparison_sha256": "da855b5d8decca5414548c0f3b807b1abbed8271fd4386e31aacbc03fa866e4d",
+  "epochs": 12,
+  "actual_batches": 2844,
+  "actual_optimizer_steps": 2837,
+  "checkpoints": {
+    "best.pt": "e770cf68d12cd43b4494a1439dc9c65f14d1d5fc570b2e2e379cc084384418fd",
+    "last.pt": "3381a759d77ea390c11ae5034cfe14f122b62326938644f72d71df126a3de8f1"
+  },
+  "completed_audits": {
+    "actual_initialization_audit.json": "a9fe0cfda123aaf0d8b3ec2e5f833b476d1453eed8d0d63d13d484fb67c9d048",
+    "full_network_update_audit.json": "088c475f2ca38fa6765bd47776ecf1d1ad2c43d37ccd9816b7fe5e6f92ed8547",
+    "optimizer_cadence_audit.json": "07313441b37abc971b6cd60f6ca0b3e4c73f47ad16437c85eb9545c5fe393b44"
+  },
+  "models": {
+    "v13_best": {
+      "weights_sha256": "c2b2a8bdc66fe452c80a1786f918f62f8686ad3b0f11061a761969ee02b09966",
+      "map50": 0.9712760344504512,
+      "map50_95": 0.27867172968986564,
+      "blue_primary_localized_iou50": 1,
+      "sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 2,
+          "images_with_fn": 0,
+          "tp": 57,
+          "fp": 2,
+          "fn": 0
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 4,
+          "images_with_fn": 2,
+          "tp": 18,
+          "fp": 4,
+          "fn": 2
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 1,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        }
+      },
+      "derived_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 1,
+          "tp": 4,
+          "fp": 1,
+          "fn": 9
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 4,
+          "tp": 5,
+          "fp": 4,
+          "fn": 5
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 2,
+          "tp": 0,
+          "fp": 2,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 102,
+        "fp": 14,
+        "fn": 16,
+        "micro_f1": 0.8717948717948718,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "visible_flame": {
+        "supplemental": {
+          "0.3": {
+            "tp": 6,
+            "fp": 9,
+            "fn": 9,
+            "micro_f1": 0.4
+          },
+          "0.5": {
+            "tp": 1,
+            "fp": 14,
+            "fn": 14,
+            "micro_f1": 0.06666666666666667
+          }
+        },
+        "original_same_subset": {
+          "tp": 13,
+          "fp": 2,
+          "fn": 2,
+          "micro_f1": 0.8666666666666667
+        },
+        "mean_best_prediction_iou": 0.31042186045940834
+      }
+    },
+    "scratch_v14_last": {
+      "weights_sha256": "a46690756e65826060392688e98ceb268c9ecfa3f007e5796fa3c38ef4b5833e",
+      "map50": 0.7876499194205994,
+      "map50_95": 0.24121002479703474,
+      "blue_primary_localized_iou50": 4,
+      "sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 10,
+          "images_with_fn": 11,
+          "tp": 46,
+          "fp": 10,
+          "fn": 11
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 3,
+          "images_with_fn": 2,
+          "tp": 18,
+          "fp": 3,
+          "fn": 2
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 14,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 18,
+          "fn": 0
+        }
+      },
+      "derived_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 13,
+          "fp": 0,
+          "fn": 0
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 105,
+        "fp": 31,
+        "fn": 13,
+        "micro_f1": 0.8267716535433071,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "visible_flame": {
+        "supplemental": {
+          "0.3": {
+            "tp": 4,
+            "fp": 11,
+            "fn": 11,
+            "micro_f1": 0.26666666666666666
+          },
+          "0.5": {
+            "tp": 0,
+            "fp": 15,
+            "fn": 15,
+            "micro_f1": 0.0
+          }
+        },
+        "original_same_subset": {
+          "tp": 13,
+          "fp": 2,
+          "fn": 2,
+          "micro_f1": 0.8666666666666667
+        },
+        "mean_best_prediction_iou": 0.25024550518092525
+      }
+    },
+    "semantic_v15_last": {
+      "weights_sha256": "b323fd44c159ad28519624414a132c9ffa2fc05944d55542be392da67236a6df",
+      "map50": 0.8861951660126107,
+      "map50_95": 0.21638377204005005,
+      "blue_primary_localized_iou50": 3,
+      "sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 4,
+          "images_with_fn": 0,
+          "tp": 57,
+          "fp": 4,
+          "fn": 0
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 6,
+          "images_with_fn": 3,
+          "tp": 17,
+          "fp": 11,
+          "fn": 3
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "derived_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 1,
+          "tp": 8,
+          "fp": 1,
+          "fn": 5
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 5,
+          "tp": 9,
+          "fp": 5,
+          "fn": 1
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 1,
+          "tp": 18,
+          "fp": 1,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 0,
+          "fp": 3,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 109,
+        "fp": 25,
+        "fn": 9,
+        "micro_f1": 0.8650793650793651,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "visible_flame": {
+        "supplemental": {
+          "0.3": {
+            "tp": 7,
+            "fp": 16,
+            "fn": 8,
+            "micro_f1": 0.3684210526315789
+          },
+          "0.5": {
+            "tp": 5,
+            "fp": 18,
+            "fn": 10,
+            "micro_f1": 0.2631578947368421
+          }
+        },
+        "original_same_subset": {
+          "tp": 13,
+          "fp": 10,
+          "fn": 2,
+          "micro_f1": 0.6842105263157895
+        },
+        "mean_best_prediction_iou": 0.4063335126365466
+      }
+    },
+    "scratch_semantic_v16_best": {
+      "weights_sha256": "e770cf68d12cd43b4494a1439dc9c65f14d1d5fc570b2e2e379cc084384418fd",
+      "map50": 0.6829617468783579,
+      "map50_95": 0.17448759337331737,
+      "blue_primary_localized_iou50": 4,
+      "sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 13,
+          "images_with_fn": 11,
+          "tp": 46,
+          "fp": 13,
+          "fn": 11
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 7,
+          "images_with_fn": 5,
+          "tp": 14,
+          "fp": 8,
+          "fn": 6
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 15,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 17,
+          "fn": 0
+        }
+      },
+      "derived_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 13,
+          "fp": 0,
+          "fn": 0
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 101,
+        "fp": 38,
+        "fn": 17,
+        "micro_f1": 0.7859922178988327,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "visible_flame": {
+        "supplemental": {
+          "0.3": {
+            "tp": 8,
+            "fp": 9,
+            "fn": 7,
+            "micro_f1": 0.5
+          },
+          "0.5": {
+            "tp": 6,
+            "fp": 11,
+            "fn": 9,
+            "micro_f1": 0.375
+          }
+        },
+        "original_same_subset": {
+          "tp": 10,
+          "fp": 7,
+          "fn": 5,
+          "micro_f1": 0.625
+        },
+        "mean_best_prediction_iou": 0.3849124698088186
+      }
+    },
+    "scratch_semantic_v16_last": {
+      "weights_sha256": "3381a759d77ea390c11ae5034cfe14f122b62326938644f72d71df126a3de8f1",
+      "map50": 0.3764996532748771,
+      "map50_95": 0.07373686801898857,
+      "blue_primary_localized_iou50": 3,
+      "sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 24,
+          "images_with_fn": 23,
+          "tp": 34,
+          "fp": 24,
+          "fn": 23
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 10,
+          "images_with_fn": 7,
+          "tp": 9,
+          "fp": 16,
+          "fn": 11
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 14,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 18,
+          "fn": 0
+        }
+      },
+      "derived_by_origin": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 13,
+          "fp": 0,
+          "fn": 0
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "tp": 84,
+        "fp": 58,
+        "fn": 34,
+        "micro_f1": 0.6461538461538462,
+        "scope": "286 old images plus 55 fully labelled development-exposed frames; blue primary-only photos excluded"
+      },
+      "visible_flame": {
+        "supplemental": {
+          "0.3": {
+            "tp": 11,
+            "fp": 8,
+            "fn": 4,
+            "micro_f1": 0.6470588235294118
+          },
+          "0.5": {
+            "tp": 10,
+            "fp": 9,
+            "fn": 5,
+            "micro_f1": 0.5882352941176471
+          }
+        },
+        "original_same_subset": {
+          "tp": 6,
+          "fp": 13,
+          "fn": 9,
+          "micro_f1": 0.35294117647058826
+        },
+        "mean_best_prediction_iou": 0.5914626594810818
+      }
+    }
+  },
+  "project_decision": {
+    "next_pc_runtime_candidate": "scratch_semantic_v16_best",
+    "reason": "Retains 4/5 blue primary localization, useful under-pot videos and partial physical geometry improvement, with fewer extra boxes than last in some clips.",
+    "last_retained": "Stronger physical geometry specialist with 10/15 approximate matches; blue 3/5 and more duplicate video boxes.",
+    "old_candidates_retained": true,
+    "automatic_general_or_board_replacement": false
+  },
+  "videos": {
+    "complete_sha256": "16ae0c430469a71274d2ffaa3b7494a95841b5baf3a892a611cf3beb59bc30bd",
+    "plan_sha256": "a5e0aa0707f339f59a64cc587a08559e79aecaad4d8456a07eec9022184d39e0",
+    "visual_review_sha256": "fdff45f37ebf53ac70ec3f56229d3783f31e81564771c20be108d21ee83582d6",
+    "total_samples": 307,
+    "model_inferences": 1535,
+    "clips": [
+      {
+        "video_index": 1,
+        "source_sha256": "65ce47ff76f64e8d28f290279f4de970929f203aa8cdbace7c63720260753df6",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 931,
+        "sampled_frames": 32,
+        "model_counts": {
+          "v13_best": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "scratch_v14_last": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "semantic_v15_last": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "scratch_semantic_v16_best": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "scratch_semantic_v16_last": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          }
+        }
+      },
+      {
+        "video_index": 2,
+        "source_sha256": "ea5b23e704eb4f7b1a54335f5d0c9b9cd0f6309603b23d59625ad2a633dc7bca",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 940,
+        "sampled_frames": 32,
+        "model_counts": {
+          "v13_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "scratch_v14_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "semantic_v15_last": {
+            "frames_with_any_box": 32,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 30,
+              "2": 2
+            }
+          },
+          "scratch_semantic_v16_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "scratch_semantic_v16_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          }
+        }
+      },
+      {
+        "video_index": 3,
+        "source_sha256": "9f9183be2cf13b2b65ca89543bb451f4cb2b3515836a449b012e6daa1c071a16",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 956,
+        "sampled_frames": 32,
+        "model_counts": {
+          "v13_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "scratch_v14_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "semantic_v15_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "scratch_semantic_v16_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "scratch_semantic_v16_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          }
+        }
+      },
+      {
+        "video_index": 4,
+        "source_sha256": "dafac36724a2a7a60e23d88cb9781e70814775b28176b672ba38e1aaa5b2c245",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 992,
+        "sampled_frames": 34,
+        "model_counts": {
+          "v13_best": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "scratch_v14_last": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "semantic_v15_last": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "scratch_semantic_v16_best": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "scratch_semantic_v16_last": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          }
+        }
+      },
+      {
+        "video_index": 5,
+        "source_sha256": "ac34d7617a55c42d67d385e92d83f3255c6b93a54789c52cea746dc6a0028eba",
+        "fps": 30.004173042147727,
+        "step": 30,
+        "decoded_frames": 719,
+        "sampled_frames": 24,
+        "model_counts": {
+          "v13_best": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "scratch_v14_last": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "semantic_v15_last": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "scratch_semantic_v16_best": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "scratch_semantic_v16_last": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          }
+        }
+      },
+      {
+        "video_index": 6,
+        "source_sha256": "dbd18d5fb2587b4dafc224d12bc47984ce6e97abbdfacf0e33a7b83520b02cb1",
+        "fps": 30.00447828034035,
+        "step": 30,
+        "decoded_frames": 670,
+        "sampled_frames": 23,
+        "model_counts": {
+          "v13_best": {
+            "frames_with_any_box": 15,
+            "boxes": 20,
+            "longest_empty_sample_run": 5,
+            "box_count_histogram": {
+              "0": 8,
+              "1": 10,
+              "2": 5
+            }
+          },
+          "scratch_v14_last": {
+            "frames_with_any_box": 19,
+            "boxes": 19,
+            "longest_empty_sample_run": 4,
+            "box_count_histogram": {
+              "0": 4,
+              "1": 19
+            }
+          },
+          "semantic_v15_last": {
+            "frames_with_any_box": 18,
+            "boxes": 28,
+            "longest_empty_sample_run": 5,
+            "box_count_histogram": {
+              "0": 5,
+              "1": 8,
+              "2": 10
+            }
+          },
+          "scratch_semantic_v16_best": {
+            "frames_with_any_box": 21,
+            "boxes": 22,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 20,
+              "2": 1
+            }
+          },
+          "scratch_semantic_v16_last": {
+            "frames_with_any_box": 21,
+            "boxes": 24,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 19,
+              "2": 1,
+              "3": 1
+            }
+          }
+        }
+      },
+      {
+        "video_index": 7,
+        "source_sha256": "f768e372ec81704a31e5bad7834b523b93be05a9b9c88f7040f2178261fe99fc",
+        "fps": 28.02002035968782,
+        "step": 28,
+        "decoded_frames": 734,
+        "sampled_frames": 27,
+        "model_counts": {
+          "v13_best": {
+            "frames_with_any_box": 8,
+            "boxes": 8,
+            "longest_empty_sample_run": 16,
+            "box_count_histogram": {
+              "0": 19,
+              "1": 8
+            }
+          },
+          "scratch_v14_last": {
+            "frames_with_any_box": 24,
+            "boxes": 33,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "2": 5,
+              "1": 17,
+              "0": 3,
+              "3": 2
+            }
+          },
+          "semantic_v15_last": {
+            "frames_with_any_box": 9,
+            "boxes": 11,
+            "longest_empty_sample_run": 8,
+            "box_count_histogram": {
+              "0": 18,
+              "2": 2,
+              "1": 7
+            }
+          },
+          "scratch_semantic_v16_best": {
+            "frames_with_any_box": 25,
+            "boxes": 37,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "3": 3,
+              "1": 16,
+              "2": 6,
+              "0": 2
+            }
+          },
+          "scratch_semantic_v16_last": {
+            "frames_with_any_box": 25,
+            "boxes": 34,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "2": 5,
+              "1": 18,
+              "0": 2,
+              "3": 2
+            }
+          }
+        }
+      },
+      {
+        "video_index": 8,
+        "source_sha256": "ab9d1d7e493979dc39395e9933bc1adfe3f1c78ba479759146426ada47af601e",
+        "fps": 30.0046699875467,
+        "step": 30,
+        "decoded_frames": 1285,
+        "sampled_frames": 43,
+        "model_counts": {
+          "v13_best": {
+            "frames_with_any_box": 43,
+            "boxes": 51,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 35,
+              "2": 8
+            }
+          },
+          "scratch_v14_last": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "semantic_v15_last": {
+            "frames_with_any_box": 43,
+            "boxes": 87,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "2": 42,
+              "3": 1
+            }
+          },
+          "scratch_semantic_v16_best": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "scratch_semantic_v16_last": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          }
+        }
+      },
+      {
+        "video_index": 9,
+        "source_sha256": "fe87820c64636d5362a35fa98e6d969de892ddebf9a4dc0b326aa6896a97fa6a",
+        "fps": 30.004214075010534,
+        "step": 30,
+        "decoded_frames": 1780,
+        "sampled_frames": 60,
+        "model_counts": {
+          "v13_best": {
+            "frames_with_any_box": 42,
+            "boxes": 49,
+            "longest_empty_sample_run": 6,
+            "box_count_histogram": {
+              "1": 35,
+              "0": 18,
+              "2": 7
+            }
+          },
+          "scratch_v14_last": {
+            "frames_with_any_box": 59,
+            "boxes": 68,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "1": 51,
+              "0": 1,
+              "2": 7,
+              "3": 1
+            }
+          },
+          "semantic_v15_last": {
+            "frames_with_any_box": 53,
+            "boxes": 75,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "2": 22,
+              "1": 31,
+              "0": 7
+            }
+          },
+          "scratch_semantic_v16_best": {
+            "frames_with_any_box": 60,
+            "boxes": 64,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 56,
+              "2": 4
+            }
+          },
+          "scratch_semantic_v16_last": {
+            "frames_with_any_box": 60,
+            "boxes": 70,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 50,
+              "2": 10
+            }
+          }
+        }
+      }
+    ],
+    "visual_review": {
+      "role": "Actual contact-sheet review, no dense event truth",
+      "video_sheets": [
+        {
+          "video_index": 1,
+          "sheet_sha256": "0f36e61250e46c39a319dec43ea22e155eba53a4c2d6d2dbbe90eaa848c94bd2",
+          "fixed_source_samples": 3,
+          "observation": "All three fixed samples have no visible flame and no boxes for any model."
+        },
+        {
+          "video_index": 2,
+          "sheet_sha256": "da0220bd25d7b652eda85ec5a5efb410ba329e0ea20c55733db7bb243153b6a4",
+          "fixed_source_samples": 3,
+          "observation": "All five models locate open burner flame in all three samples."
+        },
+        {
+          "video_index": 3,
+          "sheet_sha256": "d8cf1c6f6a338860bbe49511c26646e23e4cc0994425fc3f4310cc7bed53866a",
+          "fixed_source_samples": 3,
+          "observation": "All five models locate visible under-wok flame in all three samples."
+        },
+        {
+          "video_index": 4,
+          "sheet_sha256": "1abe50f148a07862b02148456d800c9b031d933d50c3447aa5b9ed4ceebf4bd2",
+          "fixed_source_samples": 3,
+          "observation": "All five models locate visible under-wok flame in all three samples."
+        },
+        {
+          "video_index": 5,
+          "sheet_sha256": "859393dece80f9783ebf73073209d2f696753b9a568d14a19b585827d746f95e",
+          "fixed_source_samples": 3,
+          "observation": "All five models locate open blue burner in all three samples."
+        },
+        {
+          "video_index": 6,
+          "sheet_sha256": "3d61bb961563ac169b867cdaeb25e4a3a58a5f6b8ba605e414b4890c525ed4a1",
+          "fixed_source_samples": 3,
+          "observation": "First sample: no detections; flame visibility not adjudicated. Middle: all locate under-pot flame. Last: v13 selects sticker; v14/v15/v16 locate flame. v16 last has three flame-region boxes."
+        },
+        {
+          "video_index": 7,
+          "sheet_sha256": "4ba0567e26a4226ab4f2ed999c9ed149a2647922004a2b7a5adc7de04257a2a9",
+          "fixed_source_samples": 3,
+          "observation": "Both v16 candidates locate under-pot flame in first/middle/last, like v14. v13/v15 miss first/middle. First has three separated flame boxes for v16 best and two for v14/v16 last."
+        },
+        {
+          "video_index": 8,
+          "sheet_sha256": "d84fec9426b6bd626481dc9557d148e89bac8205e41825fabca4d009fbf07e92",
+          "fixed_source_samples": 3,
+          "observation": "Both v16 candidates and v14 locate flame without sticker boxes at all three samples. v13 boxes sticker; v15 boxes flame plus sticker."
+        },
+        {
+          "video_index": 9,
+          "sheet_sha256": "1c6a9f445c633f96cd86c36d3226e06ca88c90f1eceef80d502c9e14e3ac928e",
+          "fixed_source_samples": 3,
+          "observation": "Both v16 candidates and v14 locate under-pot flame at all three samples. v13 boxes sticker at first/last and no box in middle. v15 locates flame but adds sticker at first/last."
+        }
+      ],
+      "video_source_samples": 27,
+      "geometry_sheets": [
+        {
+          "file": "scratch_semantic_v16_best_sheet_01.jpg",
+          "sha256": "bd0ac0a9cb7af2bdd2059180e01050adffa1c51bebb56dde661526ccdbd1b3de"
+        },
+        {
+          "file": "scratch_semantic_v16_best_sheet_02.jpg",
+          "sha256": "ec9cd7159d4e14bfa820bd2353b58fcceb967d99775fd3afafb13b411474568a"
+        },
+        {
+          "file": "scratch_semantic_v16_best_sheet_03.jpg",
+          "sha256": "cc7678d820bb78cfa448240f3ed256cb93ce2a7512ba63ff30d769903b2d8813"
+        },
+        {
+          "file": "scratch_semantic_v16_last_sheet_01.jpg",
+          "sha256": "f4ed5c8a65bdef929405e2778df148a4fc16e441dba77bd459e374577eaa022c"
+        },
+        {
+          "file": "scratch_semantic_v16_last_sheet_02.jpg",
+          "sha256": "41352d5a2044cf094b67eb32fbf6fae4a4a456e2bbd710bfeb3d3963e331ad61"
+        },
+        {
+          "file": "scratch_semantic_v16_last_sheet_03.jpg",
+          "sha256": "37abb8ab64cb30c7f4081f377a6ff6fb53489d086fc303d62b3c4e0a6addf73e"
+        }
+      ],
+      "geometry_observation": "Best shows tight pot-underflame boxes at indices 2/5 and tighter exposed burners; most large pot-body boxes persist. Last additionally localizes pot-underflame at 1/3/6; large boxes remain, sometimes alongside smaller boxes. Last is not complete pot-box correction.",
+      "cross_run_identical_decoded_samples": 307,
+      "reference_predictions_exactly_equal": {
+        "v13_best": true,
+        "scratch_v14_last": true,
+        "semantic_v15_last": true
+      }
+    },
+    "limits": "Any-box and empty-run statistics include wrong boxes and lack exhaustive truth; not detection accuracy, alarm rate or real-time latency"
+  }
+}

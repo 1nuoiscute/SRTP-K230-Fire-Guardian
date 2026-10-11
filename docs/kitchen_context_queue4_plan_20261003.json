@@ -1,0 +1,63 @@
+{
+  "role": "queue4_pre_prediction_kitchen_positive_search_and_explicit_retry",
+  "date": "2026-10-03",
+  "file_prefix": "context4",
+  "download_width": 1600,
+  "titles": [
+    "Kawiarka Bialetti Moka Induction (2022-10-09).jpg",
+    "Gas stove in the bivouac Bivacco Primalpia - Valle dei Ratti, Sondrio, Lombardy, Italy - 2021-07-06.jpg",
+    "Perkakas dan Peralatan Masak Rumah Tangga.jpg",
+    "Cuisine ( in China) 10.jpg",
+    "Mixian Rice Noodles Being Prepared in Copper Pots.jpg",
+    "Biogas used in a stove in a school in Rwanda (6008003225).jpg",
+    "Bakken.jpg",
+    "Coker on stove.JPG",
+    "Bule da bisa (17126378781).jpg",
+    "Nayati Wok Gas Oriental Cooking.jpg",
+    "Cocinafuego.jpg",
+    "Gas Cooker (102440303).jpeg",
+    "Gas stove 13.jpg"
+  ],
+  "known_source_manifests": [
+    "model_work/data/commons_blue_review_20260927/manifest.csv",
+    "model_work/data/manual_kitchen_labels_v2_20260927/commons_candidates/manifest.csv",
+    "model_work/data/blue_source_queue2_20260930/manifest.json",
+    "D:/SRTP_Datasets/fire_train_context_v19_20261003/build_manifest.json",
+    "model_work/data/kitchen_context_queue3_20261003/manifest.json"
+  ],
+  "retries": [
+    {
+      "title": "Kawiarka Bialetti Moka Induction (2022-10-09).jpg",
+      "previous_manifest": "model_work/data/kitchen_context_queue3_20261003/manifest.json",
+      "previous_error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "title": "Gas stove in the bivouac Bivacco Primalpia - Valle dei Ratti, Sondrio, Lombardy, Italy - 2021-07-06.jpg",
+      "previous_manifest": "model_work/data/kitchen_context_queue3_20261003/manifest.json",
+      "previous_error": "HTTPError: HTTP Error 429: Too Many Requests"
+    },
+    {
+      "title": "Perkakas dan Peralatan Masak Rumah Tangga.jpg",
+      "previous_manifest": "model_work/data/kitchen_context_queue3_20261003/manifest.json",
+      "previous_error": "HTTPError: HTTP Error 429: Too Many Requests"
+    }
+  ],
+  "discovery_pages": [
+    "https://commons.wikimedia.org/wiki/Category:Gas_stoves",
+    "https://commons.wikimedia.org/wiki/Category:Gas_flames"
+  ],
+  "inherited_reserved_groups": [
+    "infrogmation_home_kitchen_20250719",
+    "bellingrodt_pot_20150403"
+  ],
+  "rules": [
+    "No model inference before visual review, overlap audit and group freeze.",
+    "Full downloaded image retained; no automatic positive or empty labels.",
+    "Group related author/event/kitchen conservatively; aliases and original SHA1 must not cross roles.",
+    "Held-out candidates remain excluded from training and tuning; this targeted small queue is not representative acceptance.",
+    "Record unavailable sources and license failures; no hidden replacement after predictions.",
+    "Queue3 original identities enter known-source registry; preserve its roles and all old source snapshots.",
+    "Queue4 names are unique across queue directories; repeat/related captures do not count as independent kitchens.",
+    "No flame labels from titles or gas-stove presence; actual visibility and physical flame bounds require review."
+  ]
+}

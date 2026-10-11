@@ -1,0 +1,548 @@
+{
+  "role": "fixed small-data schedule package v2; exposed development only",
+  "summary_script_sha256": "0a85badccc2be45cbe2637a197816a84fbe926578e65dedad785aeb9732d4709",
+  "local_record_sha256": {
+    "training": "db85509117d441cc0d6537bc5763e901668966eed146ce7d20e9dc7d5d7f8ef1",
+    "cadence": "9429a597ef57c65cc48478c6f3c87f671fd57b4f89d72b67b37b4b2116f155c2",
+    "freeze": "47ab1c3b22af2b1e2d5410d7e8c44adf04b406179592f7b19f7aa223eb20ff25",
+    "comparison": "beb2a85c5e127289eaed512962b424887f8005452b007a4b711de085fc014a1b",
+    "baseline_comparison": "2dd35734d1789f91733f4e18086b9bad74be6e6b624f48c8983a0ec83d4995e1"
+  },
+  "training": {
+    "config": {
+      "epochs": 40,
+      "patience": 0,
+      "imgsz": 640,
+      "batch": 4,
+      "nbs": 4,
+      "device": 0,
+      "workers": 0,
+      "seed": 20261002,
+      "optimizer": "AdamW",
+      "lr0": 0.0005,
+      "lrf": 0.1,
+      "weight_decay": 0.0005,
+      "warmup_epochs": 0,
+      "warmup_bias_lr": 0.001,
+      "freeze": 11,
+      "hsv_h": 0.015,
+      "hsv_s": 0.3,
+      "hsv_v": 0.25,
+      "degrees": 3,
+      "translate": 0.05,
+      "scale": 0.2,
+      "fliplr": 0.5,
+      "mosaic": 0.2,
+      "mixup": 0,
+      "close_mosaic": 5,
+      "name": "smoke-fire-joint-cadence-v2-20261002",
+      "exist_ok": false,
+      "save": true,
+      "plots": true,
+      "val": true
+    },
+    "environment": {
+      "python": "3.13.13",
+      "torch": "2.12.0+cu132",
+      "ultralytics": "8.4.70",
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU"
+    },
+    "dataset": {
+      "verified_images": 36,
+      "reviewed_development_groups": 33,
+      "source_review_sha256": "d3b84a8e9b0c245fe3ead468015d2204beaa1a351d0314062c46364941eaf7a4",
+      "manifest_sha256": "58860795d0bebefdf62e88a02eb308e579d873b6e89c943584a2847c694953e5",
+      "role": "development-exposed validation, not independent kitchen test"
+    },
+    "start_sha256": "b8394018e6b3dbc9bab06eea23ee884683a387d7416ec0f51b094a2c9d127f32",
+    "completed_epochs": 40,
+    "epoch_of_max_csv_map50_95": 40,
+    "results_csv_sha256": "6553e584540af0bd7d4e91e1a044c97d2dc85bec23008da6be031487bad42845",
+    "backbone_unchanged_checks": 42
+  },
+  "optimizer_cadence": {
+    "scope": "Optimizer step post-hook; batch count is separate; no inference quality claim",
+    "batches": 280,
+    "actual_optimizer_steps": 271,
+    "batches_without_observed_step": 9,
+    "epochs": [
+      {
+        "epoch": 1,
+        "batches": 7,
+        "actual_optimizer_steps": 2
+      },
+      {
+        "epoch": 2,
+        "batches": 14,
+        "actual_optimizer_steps": 9
+      },
+      {
+        "epoch": 3,
+        "batches": 21,
+        "actual_optimizer_steps": 16
+      },
+      {
+        "epoch": 4,
+        "batches": 28,
+        "actual_optimizer_steps": 23
+      },
+      {
+        "epoch": 5,
+        "batches": 35,
+        "actual_optimizer_steps": 30
+      },
+      {
+        "epoch": 6,
+        "batches": 42,
+        "actual_optimizer_steps": 37
+      },
+      {
+        "epoch": 7,
+        "batches": 49,
+        "actual_optimizer_steps": 43
+      },
+      {
+        "epoch": 8,
+        "batches": 56,
+        "actual_optimizer_steps": 49
+      },
+      {
+        "epoch": 9,
+        "batches": 63,
+        "actual_optimizer_steps": 56
+      },
+      {
+        "epoch": 10,
+        "batches": 70,
+        "actual_optimizer_steps": 63
+      },
+      {
+        "epoch": 11,
+        "batches": 77,
+        "actual_optimizer_steps": 70
+      },
+      {
+        "epoch": 12,
+        "batches": 84,
+        "actual_optimizer_steps": 77
+      },
+      {
+        "epoch": 13,
+        "batches": 91,
+        "actual_optimizer_steps": 84
+      },
+      {
+        "epoch": 14,
+        "batches": 98,
+        "actual_optimizer_steps": 90
+      },
+      {
+        "epoch": 15,
+        "batches": 105,
+        "actual_optimizer_steps": 97
+      },
+      {
+        "epoch": 16,
+        "batches": 112,
+        "actual_optimizer_steps": 104
+      },
+      {
+        "epoch": 17,
+        "batches": 119,
+        "actual_optimizer_steps": 111
+      },
+      {
+        "epoch": 18,
+        "batches": 126,
+        "actual_optimizer_steps": 118
+      },
+      {
+        "epoch": 19,
+        "batches": 133,
+        "actual_optimizer_steps": 125
+      },
+      {
+        "epoch": 20,
+        "batches": 140,
+        "actual_optimizer_steps": 132
+      },
+      {
+        "epoch": 21,
+        "batches": 147,
+        "actual_optimizer_steps": 139
+      },
+      {
+        "epoch": 22,
+        "batches": 154,
+        "actual_optimizer_steps": 146
+      },
+      {
+        "epoch": 23,
+        "batches": 161,
+        "actual_optimizer_steps": 153
+      },
+      {
+        "epoch": 24,
+        "batches": 168,
+        "actual_optimizer_steps": 160
+      },
+      {
+        "epoch": 25,
+        "batches": 175,
+        "actual_optimizer_steps": 167
+      },
+      {
+        "epoch": 26,
+        "batches": 182,
+        "actual_optimizer_steps": 174
+      },
+      {
+        "epoch": 27,
+        "batches": 189,
+        "actual_optimizer_steps": 181
+      },
+      {
+        "epoch": 28,
+        "batches": 196,
+        "actual_optimizer_steps": 187
+      },
+      {
+        "epoch": 29,
+        "batches": 203,
+        "actual_optimizer_steps": 194
+      },
+      {
+        "epoch": 30,
+        "batches": 210,
+        "actual_optimizer_steps": 201
+      },
+      {
+        "epoch": 31,
+        "batches": 217,
+        "actual_optimizer_steps": 208
+      },
+      {
+        "epoch": 32,
+        "batches": 224,
+        "actual_optimizer_steps": 215
+      },
+      {
+        "epoch": 33,
+        "batches": 231,
+        "actual_optimizer_steps": 222
+      },
+      {
+        "epoch": 34,
+        "batches": 238,
+        "actual_optimizer_steps": 229
+      },
+      {
+        "epoch": 35,
+        "batches": 245,
+        "actual_optimizer_steps": 236
+      },
+      {
+        "epoch": 36,
+        "batches": 252,
+        "actual_optimizer_steps": 243
+      },
+      {
+        "epoch": 37,
+        "batches": 259,
+        "actual_optimizer_steps": 250
+      },
+      {
+        "epoch": 38,
+        "batches": 266,
+        "actual_optimizer_steps": 257
+      },
+      {
+        "epoch": 39,
+        "batches": 273,
+        "actual_optimizer_steps": 264
+      },
+      {
+        "epoch": 40,
+        "batches": 280,
+        "actual_optimizer_steps": 271
+      }
+    ],
+    "first_update_lr": [
+      0.0005,
+      0.0005,
+      0.0005
+    ],
+    "last_update_lr": [
+      6.125000000000001e-05,
+      6.125000000000001e-05,
+      6.125000000000001e-05
+    ]
+  },
+  "comparison": {
+    "role": "exposed two-class development pilot and repeated known-fire regression; no independent kitchen/event acceptance",
+    "script_sha256": "990d9f008097c0c9117acd93afbb1e87b0602266ce90c557d5d2ab4e5d2ec55b",
+    "input_records_sha256": "c0c1cdaf9261c6c5ee74a6dda104f211b0d6e4c2bf243d5dd8218af8a508d467",
+    "model_list_sha256": "2ce3bb7e1c7f511137d2839a6f28e55ad0b27e06d6bb52d1ffbd830d4c8f8589",
+    "pilot_dataset": {
+      "verified_images": 36,
+      "reviewed_development_groups": 33,
+      "source_review_sha256": "d3b84a8e9b0c245fe3ead468015d2204beaa1a351d0314062c46364941eaf7a4",
+      "manifest_sha256": "58860795d0bebefdf62e88a02eb308e579d873b6e89c943584a2847c694953e5",
+      "role": "development-exposed validation, not independent kitchen test"
+    },
+    "models": {
+      "joint_v2_best": {
+        "weights_sha256": "a4cfc6b6cbb6d282ecf5a621dc38b3e16007fdc31cf38c044c5021c4f5ad5701",
+        "names": {
+          "0": "fire",
+          "1": "smoke"
+        },
+        "pilot_val_fixed": {
+          "0": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "f1": 0.4
+          },
+          "1": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 1,
+            "f1": 0.8
+          }
+        },
+        "legacy_map": {
+          "precision": 0.8646453605442376,
+          "recall": 0.8311688311688312,
+          "map50": 0.9067786222208956,
+          "map50_95": 0.2471395482699223
+        },
+        "legacy_fixed_by_source": {
+          "ks_nofire_confirmed": {
+            "images": 75,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "f1": null,
+            "unscored_smoke_boxes": 0
+          },
+          "ks_flame": {
+            "images": 57,
+            "tp": 41,
+            "fp": 0,
+            "fn": 16,
+            "f1": 0.8367346938775511,
+            "unscored_smoke_boxes": 0
+          },
+          "kitchen_stove_fire": {
+            "images": 14,
+            "tp": 17,
+            "fp": 6,
+            "fn": 3,
+            "f1": 0.7906976744186046,
+            "unscored_smoke_boxes": 7
+          },
+          "object_pan": {
+            "images": 40,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "f1": null,
+            "unscored_smoke_boxes": 0
+          },
+          "nofire_real_indoor": {
+            "images": 100,
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "f1": 0.0,
+            "unscored_smoke_boxes": 12
+          }
+        },
+        "blue_primary_localized_iou50": 0
+      },
+      "joint_v2_last": {
+        "weights_sha256": "99d44c7ea50873fb46f7c1513967b8339077b56140c67b05a603da82a2bc0e6c",
+        "names": {
+          "0": "fire",
+          "1": "smoke"
+        },
+        "pilot_val_fixed": {
+          "0": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "f1": 0.4
+          },
+          "1": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 1,
+            "f1": 0.8
+          }
+        },
+        "legacy_map": {
+          "precision": 0.8646453605442376,
+          "recall": 0.8311688311688312,
+          "map50": 0.9067786222208956,
+          "map50_95": 0.2471395482699223
+        },
+        "legacy_fixed_by_source": {
+          "ks_nofire_confirmed": {
+            "images": 75,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "f1": null,
+            "unscored_smoke_boxes": 0
+          },
+          "ks_flame": {
+            "images": 57,
+            "tp": 41,
+            "fp": 0,
+            "fn": 16,
+            "f1": 0.8367346938775511,
+            "unscored_smoke_boxes": 0
+          },
+          "kitchen_stove_fire": {
+            "images": 14,
+            "tp": 17,
+            "fp": 6,
+            "fn": 3,
+            "f1": 0.7906976744186046,
+            "unscored_smoke_boxes": 7
+          },
+          "object_pan": {
+            "images": 40,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "f1": null,
+            "unscored_smoke_boxes": 0
+          },
+          "nofire_real_indoor": {
+            "images": 100,
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "f1": 0.0,
+            "unscored_smoke_boxes": 12
+          }
+        },
+        "blue_primary_localized_iou50": 0
+      }
+    },
+    "fixed_configuration": {
+      "imgsz": 640,
+      "conf": 0.25,
+      "nms_iou": 0.6,
+      "match_iou": 0.5,
+      "device": "0"
+    },
+    "scope": {
+      "pilot_val_images": 9,
+      "pilot_val_classes": {
+        "0": "fire",
+        "1": "smoke"
+      },
+      "legacy_images": 286,
+      "legacy_known_classes": [
+        0
+      ],
+      "blue_primary_images": 5,
+      "unknown_legacy_smoke": "predictions counted but no TP/FP/FN or F1 assigned"
+    }
+  },
+  "reused_v3_baseline": {
+    "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+    "names": {
+      "0": "fire"
+    },
+    "pilot_val_fixed": {
+      "0": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 2,
+        "f1": 0.4
+      },
+      "1": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "f1": 0.0
+      }
+    },
+    "legacy_map": {
+      "precision": 0.9505308287375542,
+      "recall": 0.961038961038961,
+      "map50": 0.9732386254178709,
+      "map50_95": 0.27949606105054137
+    },
+    "legacy_fixed_by_source": {
+      "ks_nofire_confirmed": {
+        "images": 75,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "f1": null,
+        "unscored_smoke_boxes": 0
+      },
+      "ks_flame": {
+        "images": 57,
+        "tp": 57,
+        "fp": 1,
+        "fn": 0,
+        "f1": 0.991304347826087,
+        "unscored_smoke_boxes": 0
+      },
+      "kitchen_stove_fire": {
+        "images": 14,
+        "tp": 18,
+        "fp": 5,
+        "fn": 2,
+        "f1": 0.8372093023255814,
+        "unscored_smoke_boxes": 0
+      },
+      "object_pan": {
+        "images": 40,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "f1": null,
+        "unscored_smoke_boxes": 0
+      },
+      "nofire_real_indoor": {
+        "images": 100,
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "f1": 0.0,
+        "unscored_smoke_boxes": 0
+      }
+    },
+    "blue_primary_localized_iou50": 0
+  },
+  "development_screen": {
+    "joint_v2_best": {
+      "legacy_map50_drop_at_most_0_01": false,
+      "blue_primary_gain_at_least_one": false,
+      "no_fire_100_fp_gain_at_most_one": true,
+      "any_smoke_tp_on_exposed_three_box_val": true,
+      "all_pass": false
+    },
+    "joint_v2_last": {
+      "legacy_map50_drop_at_most_0_01": false,
+      "blue_primary_gain_at_least_one": false,
+      "no_fire_100_fp_gain_at_most_one": true,
+      "any_smoke_tp_on_exposed_three_box_val": true,
+      "all_pass": false
+    }
+  },
+  "decision": "retain v3; smoke localization signal gained but fire regression and blue screen fail",
+  "limitations": [
+    "3 smoke truth boxes on visually exposed validation; not general smoke F1.",
+    "Schedule package changes multiple timing parameters; no one-knob causal attribution.",
+    "Old images have no smoke absence truth; new smoke outputs there remain unscored.",
+    "No independent kitchen/event, long-duration alarms or board acceptance."
+  ]
+}

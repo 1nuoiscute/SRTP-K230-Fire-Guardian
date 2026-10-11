@@ -1,0 +1,111 @@
+{
+  "role": "Frozen v19 train-only data and fixed-head preflight; no completed candidate result",
+  "dataset_manifest_sha256": "9971c9530a04f1dd962a7c2d9e229d73d5b7e1a47aab5d3d966975d6e78d831a",
+  "review_summary_sha256": "897a87f5a312f00ba29abedae14e2d51ef4f7a8de0f5dd35f947adae3efe2850",
+  "configuration": {
+    "data": "D:\\SRTP_Datasets\\fire_train_context_v19_20261003\\data.yaml",
+    "epochs": 12,
+    "patience": 0,
+    "pretrained": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-scratch-semantic-v16-r2-20261003\\weights\\best.pt",
+    "resume": false,
+    "imgsz": 640,
+    "batch": 8,
+    "nbs": 8,
+    "device": 0,
+    "workers": 0,
+    "seed": 20261006,
+    "optimizer": "AdamW",
+    "lr0": 5e-05,
+    "lrf": 0.1,
+    "weight_decay": 0.0005,
+    "warmup_epochs": 0,
+    "freeze": 23,
+    "hsv_h": 0.015,
+    "hsv_s": 0.3,
+    "hsv_v": 0.25,
+    "degrees": 3,
+    "translate": 0.05,
+    "scale": 0.2,
+    "fliplr": 0.5,
+    "mosaic": 0,
+    "mixup": 0,
+    "close_mosaic": 0,
+    "project": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs",
+    "name": "fire-train-context-head-v19-20261003",
+    "exist_ok": false,
+    "save": true,
+    "save_period": -1,
+    "plots": true,
+    "val": true
+  },
+  "actual_schedule_difference_vs_v18": {
+    "data": {
+      "previous": "D:\\SRTP_Datasets\\fire_semantic_extension_v17_20261003\\data.yaml",
+      "current": "D:\\SRTP_Datasets\\fire_train_context_v19_20261003\\data.yaml"
+    },
+    "name": {
+      "previous": "fire-frozen-flame-head-v18-20261003",
+      "current": "fire-train-context-head-v19-20261003"
+    }
+  },
+  "cpu_rehearsal": {
+    "candidate_training": false,
+    "images": 8,
+    "actual_optimizer_steps": 1,
+    "loss": [
+      2.3797483444213867,
+      1.9708415269851685,
+      1.6953682899475098
+    ],
+    "all_learned_head_gradients_finite": true,
+    "feature_gradients_absent": true,
+    "audit": {
+      "epoch": 1,
+      "feature_unchanged": true,
+      "changed_head_weight_tensors": 37,
+      "model_state_sha256": "1380ee4f3bb6c28012bebdfe3120c63da244f68b302c32ce1aca380fb71e7be3",
+      "actual_optimizer_steps": 1,
+      "ema_fixed_features_restored": false
+    },
+    "source_inputs": [
+      {
+        "image_sha256": "6dfa3efc9186d3027a66cee06c2463d53a6bbaad45ff596394e9ffc6cdcd28e8",
+        "label_sha256": "ef746326db0e92420fe958d2a54df9e9bafbefa2afdd04dffa4b3050e0e05a5c"
+      },
+      {
+        "image_sha256": "c02debf8165c8f14c66aeb8976478b22c47c201c6a41e097f9829cd16c2789c5",
+        "label_sha256": "de07b385f6bcaf5ef8979dc7948283d17c95c15af78cca66e904367b068c3002"
+      },
+      {
+        "image_sha256": "0162dab32c94931963bd19dd12b516020f560b035d1f71a9fabdbf0904ebfd9c",
+        "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "image_sha256": "8f81225450034e31f5d718c01423c5dc4ffba14c7f504a90e9a3b38524e4b0dc",
+        "label_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "image_sha256": "a6327282c4c5ee1bc3cf72b8f105759c11f9314c0d63479b38ce90b05fc197a0",
+        "label_sha256": "1d823c3e7b7a817096d5a2b91872c5f782e920c50ec24f757ca7eae3b42e9503"
+      },
+      {
+        "image_sha256": "eb4e7d58045c636617787e8bb6b8c73a04cd35c3be59eb7591b8d27e23b00207",
+        "label_sha256": "dbed24b2b538abe9d9726efa2465afc51779b281ea069fb9f39e44f2cb5642c4"
+      },
+      {
+        "image_sha256": "8b0c3d66dbf0adaeb2232b1d6551467fb52eb9ed3cc417f09395897c6a88d1f3",
+        "label_sha256": "eb854b8744d4d8d379ee912c96e05f77c2f34cd078580731779eb9fe89a9ac7f"
+      },
+      {
+        "image_sha256": "8f6b29a42757c68091b9f36276dad315aed888a75244a9e358aaee2544b17ad4",
+        "label_sha256": "7e2cbbbb629e9b974def9456e648402fd462bdb0f171cf41fc93ad8c4c268d64"
+      }
+    ]
+  },
+  "cpu_rehearsal_identity_sha256": "23e565c649ecf3ecbba43984f6a7a5feacebb15c99551216d050605ffab87a12",
+  "local_tests": 158,
+  "local_tests_log_sha256": "28264ea1d41222445fc65fb8045e868afb094f6c969cab103433843395e52f5b",
+  "trainer_sha256": "14cdd54d8293ffc70cd76777f6d475b5bce5b4db84504315e57145d8490b800d",
+  "builder_sha256": "6087bbdc5bfbff74a84a65d4753442f7c7ec050c8014ec9007c21cf1554bc62a",
+  "scope": "Rehearsal weights discarded; formal best/last to be compared before any adoption."
+}

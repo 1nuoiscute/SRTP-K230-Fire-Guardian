@@ -1,0 +1,745 @@
+{
+  "role": "row-only functional preservation development probe; no global model promotion",
+  "summary_script_sha256": "0699f873756d25083b3b48798e9745a24aa7c58443696e92ef8be220b7635974",
+  "local_record_sha256": {
+    "training": "f2984ea6fb38ccd3dab320c8b0d4f2f0feed6189459fb982047a3376ac404082",
+    "comparison": "beebcdb152c1b7e44115d0eb67395b4701f835bc124ff827d6d5ad3ae7a9928c",
+    "baseline_comparison": "2dd35734d1789f91733f4e18086b9bad74be6e6b624f48c8983a0ec83d4995e1",
+    "raw_check": "aa4a8e39f709bedef82940b3e44f4166e7a9c1a069fd70dcb418bb0fd301cc32",
+    "cadence": "2ca2a4cd3dd1f3f5d9d373e9b34018c71f3022bdf26f43544bd18f3b7cb53dc7",
+    "fire_audit": "89604f4794e106da16599bbb216904f651535dedf4ac968454bae0ae76720746"
+  },
+  "training": {
+    "config": {
+      "epochs": 40,
+      "patience": 0,
+      "imgsz": 640,
+      "batch": 4,
+      "nbs": 4,
+      "device": 0,
+      "workers": 0,
+      "seed": 20261002,
+      "optimizer": "AdamW",
+      "lr0": 0.0005,
+      "lrf": 0.1,
+      "weight_decay": 0,
+      "warmup_epochs": 0,
+      "warmup_bias_lr": 0.001,
+      "freeze": 23,
+      "hsv_h": 0.015,
+      "hsv_s": 0.3,
+      "hsv_v": 0.25,
+      "degrees": 3,
+      "translate": 0.05,
+      "scale": 0.2,
+      "fliplr": 0.5,
+      "mosaic": 0.2,
+      "mixup": 0,
+      "close_mosaic": 5,
+      "name": "smoke-fire-row-v3-20261002",
+      "exist_ok": false,
+      "save": true,
+      "plots": true,
+      "val": true
+    },
+    "environment": {
+      "python": "3.13.13",
+      "torch": "2.12.0+cu132",
+      "ultralytics": "8.4.70",
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU"
+    },
+    "dataset": {
+      "verified_images": 36,
+      "reviewed_development_groups": 33,
+      "source_review_sha256": "d3b84a8e9b0c245fe3ead468015d2204beaa1a351d0314062c46364941eaf7a4",
+      "manifest_sha256": "58860795d0bebefdf62e88a02eb308e579d873b6e89c943584a2847c694953e5",
+      "role": "development-exposed validation, not independent kitchen test"
+    },
+    "start_sha256": "b8394018e6b3dbc9bab06eea23ee884683a387d7416ec0f51b094a2c9d127f32",
+    "completed_epochs": 40,
+    "epoch_of_max_csv_map50_95": 39,
+    "fire_path_plan": {
+      "trainable_tensors": [
+        "model.23.cv3.0.2.bias",
+        "model.23.cv3.0.2.weight",
+        "model.23.cv3.1.2.bias",
+        "model.23.cv3.1.2.weight",
+        "model.23.cv3.2.2.bias",
+        "model.23.cv3.2.2.weight"
+      ],
+      "effective_smoke_parameter_elements": 387,
+      "protected_state_tensors": 499,
+      "scope": "All live registered parameters/buffers except smoke row 1; row 0 retained; EMA protected state copied before validation/checkpoint save"
+    },
+    "preservation_checks": 82,
+    "results_csv_sha256": "20d6d5ee776d5ddb0c9e2ef752ae68888770badec371080d04be3390974ebbfc"
+  },
+  "cadence": {
+    "batches": 280,
+    "actual_optimizer_steps": 273
+  },
+  "raw_check": {
+    "role": "Saved protected state and raw unfused CPU output check; NMS/class competition needs separate regression",
+    "script_sha256": "53e1d112ec072836f5dcd7d99c3e7bdfcfeff9e1a23e77fddc4768e9576bf368",
+    "review_sha256": "d3b84a8e9b0c245fe3ead468015d2204beaa1a351d0314062c46364941eaf7a4",
+    "start_sha256": "b8394018e6b3dbc9bab06eea23ee884683a387d7416ec0f51b094a2c9d127f32",
+    "fire_baseline_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+    "models_list_sha256": "60f05a4af3a7b880676b595caf72c30bcd1a19e48424007a88cdf935e485eae3",
+    "configuration": {
+      "images": 36,
+      "imgsz": 640,
+      "rect": false,
+      "device": "cpu",
+      "atol": 1e-05,
+      "rtol": 1e-06
+    },
+    "models": {
+      "smoke_row_v3_best": {
+        "weights_sha256": "32b63617870c5f578c202c469b5cd770d20515f7d7071eae624338557a937b60",
+        "protected_saved_state_equal": true,
+        "changed_smoke_tensors": 6,
+        "smoke_parameter_max_abs_delta": 0.05914306640625,
+        "raw_comparison": [
+          {
+            "image_sha256": "03715ae9531d6c32305b12befa8e62799ffb948df98f68ddbf5fb758092885ce",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.012470711953938007
+          },
+          {
+            "image_sha256": "103abd583e20d40cdb02d1dab4767343ebc8277e700bc86530f2537a473b8b7d",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.020138904452323914
+          },
+          {
+            "image_sha256": "1b4c8e6546b1a19a0980cb6cef39ba3cec6550f2ffa5217e833106e19287f622",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.021058594807982445
+          },
+          {
+            "image_sha256": "205a068e36a6ccb442c3e5573f57347ca35200543f99d46f0fff51d2843f15fb",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.03511757776141167
+          },
+          {
+            "image_sha256": "3ab8248562f2ca3ea6443f6b21def80c63701ff8eb5f4c3a7d08ecbdb0a1389d",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.02984723262488842
+          },
+          {
+            "image_sha256": "3b80521d7031caf2da7b1dc9fd7d86a38048bc6ad4e9d41adc73decc2608373d",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.020891442894935608
+          },
+          {
+            "image_sha256": "3e150a42d063eb2b7fb297b4788e9a295c0d74353dda5abed9a5981498568b9d",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.08375123143196106
+          },
+          {
+            "image_sha256": "4245e19dc480afebe37d8b12dd10740ae21d002af23630a3de035833dc073d37",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.0428132638335228
+          },
+          {
+            "image_sha256": "460ebc3b2fb3a8d190387a5d2402d540294568c741d342fd86ff13b1ec5b41a2",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.03319544345140457
+          },
+          {
+            "image_sha256": "4920da8f4e5246c60e0a8b1d5228707b76da3bcef2e672714c8b31d2168b2b8c",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.01918199099600315
+          },
+          {
+            "image_sha256": "4e0021b2ca79c0c326c20eeb981f1f3054b2c7c744420f1597c202431de04c6c",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.01014219131320715
+          },
+          {
+            "image_sha256": "543472f8b053c421710488bb5699135a81cece4de8e68e0816188379a03d9201",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.10620042681694031
+          },
+          {
+            "image_sha256": "54a8404fe0d8676495376cf040b03a931431d1f8441f37480d702508e6966b51",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.018466943874955177
+          },
+          {
+            "image_sha256": "5b6298a35622ff1a8c68c76c2ac0964c7251883290fecf299c8bf93c694008e5",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.08293980360031128
+          },
+          {
+            "image_sha256": "708e628ce594feaaedd0b79d0e9ba54623c1093ab929d327c2a74d910f360b80",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.054790396243333817
+          },
+          {
+            "image_sha256": "7522398e43b69075908d3e152cbfc3a2c7394e5a3fcafd8f9420d64aa5eac32c",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.00814059842377901
+          },
+          {
+            "image_sha256": "7b59768e33d1cffd1295b981098decd1fed4d05b24b3de87a531809c4ce30835",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.035252805799245834
+          },
+          {
+            "image_sha256": "80fe7ff2685c3daf65f8106c46c0839a55ef92b5849a6d4946d40e268ddc5464",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.07536060363054276
+          },
+          {
+            "image_sha256": "856c8094c7f7961fce66c07d4cbd3c7a09189a0a9c21a42593bb6f654ebe9c52",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.04588031396269798
+          },
+          {
+            "image_sha256": "86168758e12690a2bb89ab64795f31e46c30ed6ce7e2abf937e3f6c957e29c8e",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.014704413712024689
+          },
+          {
+            "image_sha256": "89318a6a6ece5a06cb404391f759f869c37afa7b685757ba8ec6dd9f374b871e",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.014132017269730568
+          },
+          {
+            "image_sha256": "8941c78c789d0ae16e56ac13a6c0f6ff5a5a296f1638c3b06b410f6e77938491",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.02839125692844391
+          },
+          {
+            "image_sha256": "8d55c81d7788878617307a022fbc6a171e5ffd0a98ae9966a0ab0f7748d40fa7",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.08447562158107758
+          },
+          {
+            "image_sha256": "90758bb2da52c08d3ed8c70ef891c4d315510f55cd94001085f3a34fab2096c4",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.04657711088657379
+          },
+          {
+            "image_sha256": "9369ff79c6ea4d210203b257251fd6c7198701077671a8eefbaf20d9b3bbac52",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.030616752803325653
+          },
+          {
+            "image_sha256": "93d7672fc555b51dbb2d0c2b4c4094cd9ba607d74c74d3ab16e318edf248c150",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.06697607040405273
+          },
+          {
+            "image_sha256": "979387626732f4d3a457d50e3dadd1826fc8acaca9a25c2e072ec1ccd6e92d4c",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.0369730107486248
+          },
+          {
+            "image_sha256": "a84b33718de8a676315f37c663a067b18557c8bf0267f622fcd8de4a74f5eb33",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.05151645466685295
+          },
+          {
+            "image_sha256": "b177ebccb4926a4d606c43d97434e440b95055efcc3de2c232906ccc3466ebc2",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.08237947523593903
+          },
+          {
+            "image_sha256": "b6db77af0d4bdec36b0376ff8318b0ba4fc0a7a97e9a19ba5124283be374c090",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.05532637611031532
+          },
+          {
+            "image_sha256": "cc5dd44fc7465df07b902cb1b293e349e257cc6a0a32334357ddf4ed282d7698",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.013820895925164223
+          },
+          {
+            "image_sha256": "d8b22b924ce1c1307711e57b994a2e28aaed0d6ebae4eeb5fc4b5e41ddd76c25",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.024040285497903824
+          },
+          {
+            "image_sha256": "dd8c6a5e9c75e5cc541356357093cfbe175ad4793e4f4b3622f5bb47e7752e6a",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.056640129536390305
+          },
+          {
+            "image_sha256": "e52dd70d3a8e74ac3913b7cf3ae16c7eb09025d39ba6e21b84812e8d5fec6a33",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.06015684828162193
+          },
+          {
+            "image_sha256": "e5ae487b3bbafd34712dea0aa47824a5f78c48cb837498436959ce6f7d4a9d7a",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.03877390921115875
+          },
+          {
+            "image_sha256": "fcfe59bf5b1debc9b45af31daadef89d250f516af6a8f1387548685392954e18",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.10700364410877228
+          }
+        ]
+      },
+      "smoke_row_v3_last": {
+        "weights_sha256": "1f2c2165e6679366cc40f9bf7b0d340445dc8e4700e60e47ac4385eb67115b22",
+        "protected_saved_state_equal": true,
+        "changed_smoke_tensors": 6,
+        "smoke_parameter_max_abs_delta": 0.05914306640625,
+        "raw_comparison": [
+          {
+            "image_sha256": "03715ae9531d6c32305b12befa8e62799ffb948df98f68ddbf5fb758092885ce",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.012470711953938007
+          },
+          {
+            "image_sha256": "103abd583e20d40cdb02d1dab4767343ebc8277e700bc86530f2537a473b8b7d",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.020138904452323914
+          },
+          {
+            "image_sha256": "1b4c8e6546b1a19a0980cb6cef39ba3cec6550f2ffa5217e833106e19287f622",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.021058594807982445
+          },
+          {
+            "image_sha256": "205a068e36a6ccb442c3e5573f57347ca35200543f99d46f0fff51d2843f15fb",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.03511757776141167
+          },
+          {
+            "image_sha256": "3ab8248562f2ca3ea6443f6b21def80c63701ff8eb5f4c3a7d08ecbdb0a1389d",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.02984723262488842
+          },
+          {
+            "image_sha256": "3b80521d7031caf2da7b1dc9fd7d86a38048bc6ad4e9d41adc73decc2608373d",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.020891442894935608
+          },
+          {
+            "image_sha256": "3e150a42d063eb2b7fb297b4788e9a295c0d74353dda5abed9a5981498568b9d",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.08375123143196106
+          },
+          {
+            "image_sha256": "4245e19dc480afebe37d8b12dd10740ae21d002af23630a3de035833dc073d37",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.0428132638335228
+          },
+          {
+            "image_sha256": "460ebc3b2fb3a8d190387a5d2402d540294568c741d342fd86ff13b1ec5b41a2",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.03319544345140457
+          },
+          {
+            "image_sha256": "4920da8f4e5246c60e0a8b1d5228707b76da3bcef2e672714c8b31d2168b2b8c",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.01918199099600315
+          },
+          {
+            "image_sha256": "4e0021b2ca79c0c326c20eeb981f1f3054b2c7c744420f1597c202431de04c6c",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.01014219131320715
+          },
+          {
+            "image_sha256": "543472f8b053c421710488bb5699135a81cece4de8e68e0816188379a03d9201",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.10620042681694031
+          },
+          {
+            "image_sha256": "54a8404fe0d8676495376cf040b03a931431d1f8441f37480d702508e6966b51",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.018466943874955177
+          },
+          {
+            "image_sha256": "5b6298a35622ff1a8c68c76c2ac0964c7251883290fecf299c8bf93c694008e5",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.08293980360031128
+          },
+          {
+            "image_sha256": "708e628ce594feaaedd0b79d0e9ba54623c1093ab929d327c2a74d910f360b80",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.054790396243333817
+          },
+          {
+            "image_sha256": "7522398e43b69075908d3e152cbfc3a2c7394e5a3fcafd8f9420d64aa5eac32c",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.00814059842377901
+          },
+          {
+            "image_sha256": "7b59768e33d1cffd1295b981098decd1fed4d05b24b3de87a531809c4ce30835",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.035252805799245834
+          },
+          {
+            "image_sha256": "80fe7ff2685c3daf65f8106c46c0839a55ef92b5849a6d4946d40e268ddc5464",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.07536060363054276
+          },
+          {
+            "image_sha256": "856c8094c7f7961fce66c07d4cbd3c7a09189a0a9c21a42593bb6f654ebe9c52",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.04588031396269798
+          },
+          {
+            "image_sha256": "86168758e12690a2bb89ab64795f31e46c30ed6ce7e2abf937e3f6c957e29c8e",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.014704413712024689
+          },
+          {
+            "image_sha256": "89318a6a6ece5a06cb404391f759f869c37afa7b685757ba8ec6dd9f374b871e",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.014132017269730568
+          },
+          {
+            "image_sha256": "8941c78c789d0ae16e56ac13a6c0f6ff5a5a296f1638c3b06b410f6e77938491",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.02839125692844391
+          },
+          {
+            "image_sha256": "8d55c81d7788878617307a022fbc6a171e5ffd0a98ae9966a0ab0f7748d40fa7",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.08447562158107758
+          },
+          {
+            "image_sha256": "90758bb2da52c08d3ed8c70ef891c4d315510f55cd94001085f3a34fab2096c4",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.04657711088657379
+          },
+          {
+            "image_sha256": "9369ff79c6ea4d210203b257251fd6c7198701077671a8eefbaf20d9b3bbac52",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.030616752803325653
+          },
+          {
+            "image_sha256": "93d7672fc555b51dbb2d0c2b4c4094cd9ba607d74c74d3ab16e318edf248c150",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.06697607040405273
+          },
+          {
+            "image_sha256": "979387626732f4d3a457d50e3dadd1826fc8acaca9a25c2e072ec1ccd6e92d4c",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.0369730107486248
+          },
+          {
+            "image_sha256": "a84b33718de8a676315f37c663a067b18557c8bf0267f622fcd8de4a74f5eb33",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.05151645466685295
+          },
+          {
+            "image_sha256": "b177ebccb4926a4d606c43d97434e440b95055efcc3de2c232906ccc3466ebc2",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.08237947523593903
+          },
+          {
+            "image_sha256": "b6db77af0d4bdec36b0376ff8318b0ba4fc0a7a97e9a19ba5124283be374c090",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.05532637611031532
+          },
+          {
+            "image_sha256": "cc5dd44fc7465df07b902cb1b293e349e257cc6a0a32334357ddf4ed282d7698",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.013820895925164223
+          },
+          {
+            "image_sha256": "d8b22b924ce1c1307711e57b994a2e28aaed0d6ebae4eeb5fc4b5e41ddd76c25",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.024040285497903824
+          },
+          {
+            "image_sha256": "dd8c6a5e9c75e5cc541356357093cfbe175ad4793e4f4b3622f5bb47e7752e6a",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.056640129536390305
+          },
+          {
+            "image_sha256": "e52dd70d3a8e74ac3913b7cf3ae16c7eb09025d39ba6e21b84812e8d5fec6a33",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.06015684828162193
+          },
+          {
+            "image_sha256": "e5ae487b3bbafd34712dea0aa47824a5f78c48cb837498436959ce6f7d4a9d7a",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.03877390921115875
+          },
+          {
+            "image_sha256": "fcfe59bf5b1debc9b45af31daadef89d250f516af6a8f1387548685392954e18",
+            "fire_geometry_max_abs_vs_v3": 0.0,
+            "smoke_max": 0.10700364410877228
+          }
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "role": "exposed two-class development pilot and repeated known-fire regression; no independent kitchen/event acceptance",
+    "script_sha256": "990d9f008097c0c9117acd93afbb1e87b0602266ce90c557d5d2ab4e5d2ec55b",
+    "input_records_sha256": "c0c1cdaf9261c6c5ee74a6dda104f211b0d6e4c2bf243d5dd8218af8a508d467",
+    "model_list_sha256": "60f05a4af3a7b880676b595caf72c30bcd1a19e48424007a88cdf935e485eae3",
+    "pilot_dataset": {
+      "verified_images": 36,
+      "reviewed_development_groups": 33,
+      "source_review_sha256": "d3b84a8e9b0c245fe3ead468015d2204beaa1a351d0314062c46364941eaf7a4",
+      "manifest_sha256": "58860795d0bebefdf62e88a02eb308e579d873b6e89c943584a2847c694953e5",
+      "role": "development-exposed validation, not independent kitchen test"
+    },
+    "models": {
+      "smoke_row_v3_best": {
+        "weights_sha256": "32b63617870c5f578c202c469b5cd770d20515f7d7071eae624338557a937b60",
+        "names": {
+          "0": "fire",
+          "1": "smoke"
+        },
+        "pilot_val_fixed": {
+          "0": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "f1": 0.4
+          },
+          "1": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "f1": 0.0
+          }
+        },
+        "legacy_map": {
+          "precision": 0.9505309594180151,
+          "recall": 0.961038961038961,
+          "map50": 0.9732386254178709,
+          "map50_95": 0.27949606105054137
+        },
+        "legacy_fixed_by_source": {
+          "ks_nofire_confirmed": {
+            "images": 75,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "f1": null,
+            "unscored_smoke_boxes": 0
+          },
+          "ks_flame": {
+            "images": 57,
+            "tp": 57,
+            "fp": 1,
+            "fn": 0,
+            "f1": 0.991304347826087,
+            "unscored_smoke_boxes": 0
+          },
+          "kitchen_stove_fire": {
+            "images": 14,
+            "tp": 18,
+            "fp": 5,
+            "fn": 2,
+            "f1": 0.8372093023255814,
+            "unscored_smoke_boxes": 0
+          },
+          "object_pan": {
+            "images": 40,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "f1": null,
+            "unscored_smoke_boxes": 0
+          },
+          "nofire_real_indoor": {
+            "images": 100,
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "f1": 0.0,
+            "unscored_smoke_boxes": 0
+          }
+        },
+        "blue_primary_localized_iou50": 0
+      },
+      "smoke_row_v3_last": {
+        "weights_sha256": "1f2c2165e6679366cc40f9bf7b0d340445dc8e4700e60e47ac4385eb67115b22",
+        "names": {
+          "0": "fire",
+          "1": "smoke"
+        },
+        "pilot_val_fixed": {
+          "0": {
+            "tp": 1,
+            "fp": 1,
+            "fn": 2,
+            "f1": 0.4
+          },
+          "1": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 3,
+            "f1": 0.0
+          }
+        },
+        "legacy_map": {
+          "precision": 0.9505309594180151,
+          "recall": 0.961038961038961,
+          "map50": 0.9732386254178709,
+          "map50_95": 0.27949606105054137
+        },
+        "legacy_fixed_by_source": {
+          "ks_nofire_confirmed": {
+            "images": 75,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "f1": null,
+            "unscored_smoke_boxes": 0
+          },
+          "ks_flame": {
+            "images": 57,
+            "tp": 57,
+            "fp": 1,
+            "fn": 0,
+            "f1": 0.991304347826087,
+            "unscored_smoke_boxes": 0
+          },
+          "kitchen_stove_fire": {
+            "images": 14,
+            "tp": 18,
+            "fp": 5,
+            "fn": 2,
+            "f1": 0.8372093023255814,
+            "unscored_smoke_boxes": 0
+          },
+          "object_pan": {
+            "images": 40,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "f1": null,
+            "unscored_smoke_boxes": 0
+          },
+          "nofire_real_indoor": {
+            "images": 100,
+            "tp": 0,
+            "fp": 1,
+            "fn": 0,
+            "f1": 0.0,
+            "unscored_smoke_boxes": 0
+          }
+        },
+        "blue_primary_localized_iou50": 0
+      }
+    },
+    "fixed_configuration": {
+      "imgsz": 640,
+      "conf": 0.25,
+      "nms_iou": 0.6,
+      "match_iou": 0.5,
+      "device": "0"
+    },
+    "scope": {
+      "pilot_val_images": 9,
+      "pilot_val_classes": {
+        "0": "fire",
+        "1": "smoke"
+      },
+      "legacy_images": 286,
+      "legacy_known_classes": [
+        0
+      ],
+      "blue_primary_images": 5,
+      "unknown_legacy_smoke": "predictions counted but no TP/FP/FN or F1 assigned"
+    }
+  },
+  "reused_v3_baseline": {
+    "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+    "names": {
+      "0": "fire"
+    },
+    "pilot_val_fixed": {
+      "0": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 2,
+        "f1": 0.4
+      },
+      "1": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 3,
+        "f1": 0.0
+      }
+    },
+    "legacy_map": {
+      "precision": 0.9505308287375542,
+      "recall": 0.961038961038961,
+      "map50": 0.9732386254178709,
+      "map50_95": 0.27949606105054137
+    },
+    "legacy_fixed_by_source": {
+      "ks_nofire_confirmed": {
+        "images": 75,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "f1": null,
+        "unscored_smoke_boxes": 0
+      },
+      "ks_flame": {
+        "images": 57,
+        "tp": 57,
+        "fp": 1,
+        "fn": 0,
+        "f1": 0.991304347826087,
+        "unscored_smoke_boxes": 0
+      },
+      "kitchen_stove_fire": {
+        "images": 14,
+        "tp": 18,
+        "fp": 5,
+        "fn": 2,
+        "f1": 0.8372093023255814,
+        "unscored_smoke_boxes": 0
+      },
+      "object_pan": {
+        "images": 40,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "f1": null,
+        "unscored_smoke_boxes": 0
+      },
+      "nofire_real_indoor": {
+        "images": 100,
+        "tp": 0,
+        "fp": 1,
+        "fn": 0,
+        "f1": 0.0,
+        "unscored_smoke_boxes": 0
+      }
+    },
+    "blue_primary_localized_iou50": 0
+  },
+  "stage_screen": {
+    "smoke_row_v3_best": {
+      "saved_protected_state_equal": true,
+      "raw_fire_geometry_max_abs_at_most_1e_5": true,
+      "legacy_map50_drop_at_most_0_01": true,
+      "original_kitchen_fire_tp_not_reduced": true,
+      "no_fire_100_fire_fp_not_increased": true,
+      "any_smoke_tp_on_exposed_three_box_val": false,
+      "all_stage_pass": false
+    },
+    "smoke_row_v3_last": {
+      "saved_protected_state_equal": true,
+      "raw_fire_geometry_max_abs_at_most_1e_5": true,
+      "legacy_map50_drop_at_most_0_01": true,
+      "original_kitchen_fire_tp_not_reduced": true,
+      "no_fire_100_fire_fp_not_increased": true,
+      "any_smoke_tp_on_exposed_three_box_val": false,
+      "all_stage_pass": false
+    }
+  },
+  "decision": "retain v3; fire path preserved but row-only smoke output has no fixed-threshold localization",
+  "limitations": [
+    "Visually exposed development validation, three smoke truth boxes.",
+    "Blue flame and independent proposal requirements remain unmet.",
+    "Live/raw state checks do not alone establish final prediction quality."
+  ]
+}

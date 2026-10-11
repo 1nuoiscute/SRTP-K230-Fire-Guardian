@@ -1,0 +1,71 @@
+{
+  "role": "v20_source_balanced_extension_frozen_before_training_or_predictions",
+  "date": "2026-10-03",
+  "parent": "D:/SRTP_Datasets/fire_train_context_v19_20261003",
+  "parent_manifest_sha256": "9971c9530a04f1dd962a7c2d9e229d73d5b7e1a47aab5d3d966975d6e78d831a",
+  "queues": [
+    {
+      "review": "docs/kitchen_context_queue3_review_20261003.json",
+      "review_sha256": "941d28ea49a28262064c5c4bbc88fcf7ca5c70e7bef50105f2f3499147bae137",
+      "frozen_data": "model_work/out/kitchen_context_queue3_frozen_data_20261003",
+      "frozen_manifest_sha256": "7c6a9b49eadb7ed74d03993bd25766176bfd42344d3b4255bb83ca7a590cd88b"
+    },
+    {
+      "review": "docs/kitchen_context_queue4_review_20261003.json",
+      "review_sha256": "7b8a68a3a34bac00ce8d6afc529e397f1920952cb70fa6ae35203698bd0037d6",
+      "frozen_data": "model_work/out/kitchen_context_queue4_frozen_data_20261003",
+      "frozen_manifest_sha256": "85a73d4000fdfaea6acdb123abf7f5c0c53da61a27f8a39090354c189e4d926f"
+    }
+  ],
+  "positive_entries_per_group": 8,
+  "negative_entries_per_group": 4,
+  "expected_new_images": 14,
+  "expected_new_flame_images": 4,
+  "expected_new_flame_boxes": 4,
+  "expected_new_entries": 68,
+  "expected_total_images": 1445,
+  "expected_total_entries": 2409,
+  "start": "model_work/runs/fire-scratch-semantic-v16-r2-20261003/weights/best.pt",
+  "start_sha256": "e770cf68d12cd43b4494a1439dc9c65f14d1d5fc570b2e2e379cc084384418fd",
+  "training": {
+    "epochs": 12,
+    "freeze": 23,
+    "seed": 20261006,
+    "lr0": 5e-05,
+    "batch": 8,
+    "nbs": 8,
+    "imgsz": 640,
+    "mosaic": 0,
+    "warmup_epochs": 0,
+    "optimizer": "AdamW"
+  },
+  "comparison": {
+    "reference_models": [
+      "v16_best",
+      "v18_last",
+      "v19_last"
+    ],
+    "new_checkpoints": [
+      "best.pt",
+      "last.pt"
+    ],
+    "conf": 0.25,
+    "nms_iou": 0.6,
+    "match_iou": 0.5,
+    "old_diagnostics_data": "D:/SRTP_Datasets/fire_train_context_v19_20261003",
+    "video_samples": 307,
+    "video_count": 9,
+    "new_development_images": 14,
+    "reserved_predictions_allowed": false,
+    "mid_training_snapshot_selection_allowed": false,
+    "automatic_promotion": false
+  },
+  "rules": [
+    "Copy only development role; reserved and held groups/authors/originals/image digests remain excluded.",
+    "Each new positive group contributes8 entries, each new negative group4; shared-author groups split that budget equally.",
+    "Preserve all parent train image/label/weight identities and original validation243 images.",
+    "Compare all predeclared best/last checkpoints on real blue-flame/utensil videos even if old AP falls.",
+    "New development images become training-exposed; do not call post-training results independent generalization.",
+    "Do not infer smoke absence, danger events, alarms, board speed or project acceptance from flame-only labels."
+  ]
+}

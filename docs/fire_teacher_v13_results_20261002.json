@@ -1,0 +1,801 @@
+{
+  "role": "Selected PC fire development version; exposed comparisons, no independent event or board acceptance",
+  "selected": "v13_best",
+  "version": "fire_v13_20261002",
+  "rollback": "v3",
+  "screen_sha256": "ff7b50c55a9e65261420b078b760f48c2511475dea30e62d0e2db5b879d33c2e",
+  "state_audit_sha256": "c60309659aa0ada6e50873d62d43468551418a993b266f4913c0090b24142052",
+  "experiment_meta_sha256": "255a606c692709fffcb037903a460102a436b9b257b8e510434cc7e705611aa8",
+  "publication_script_sha256": "bfb260bfd54a8742c2881de48b27fc7e912b4a0cdd0f1af88df6d87b19c747a5",
+  "gate": {
+    "max_legacy_map50_drop": 0.01,
+    "min_blue_gain": 1,
+    "max_nofire_indoor_fp_gain": 1,
+    "min_ks_flame_tp": 56,
+    "min_kitchen_stove_tp": 18
+  },
+  "models": {
+    "v3": {
+      "weights_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+      "legacy286": {
+        "precision": 0.9505308287375542,
+        "recall": 0.961038961038961,
+        "map50": 0.9732386254178709,
+        "map50_95": 0.27949606105054137
+      },
+      "blue_primary_localized_iou50": 0,
+      "fixed_threshold_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 1,
+          "images_with_fn": 0,
+          "tp": 57,
+          "fp": 1,
+          "fn": 0
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 5,
+          "images_with_fn": 2,
+          "tp": 18,
+          "fp": 5,
+          "fn": 2
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 1,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        }
+      },
+      "reviewed_development_frames": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 1,
+          "fp": 3,
+          "fn": 12
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 5,
+          "tp": 3,
+          "fp": 5,
+          "fn": 7
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 0,
+          "fp": 3,
+          "fn": 0
+        }
+      },
+      "gate": {
+        "legacy_map50": true,
+        "blue_gain": false,
+        "indoor_false_positive": true,
+        "ks_flame_recall": true,
+        "kitchen_stove_recall": true
+      },
+      "gate_passed": false
+    },
+    "v13_best": {
+      "weights_sha256": "c2b2a8bdc66fe452c80a1786f918f62f8686ad3b0f11061a761969ee02b09966",
+      "legacy286": {
+        "precision": 0.9598345969379737,
+        "recall": 0.9310909653928746,
+        "map50": 0.9712760344504512,
+        "map50_95": 0.27867172968986564
+      },
+      "blue_primary_localized_iou50": 1,
+      "fixed_threshold_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 2,
+          "images_with_fn": 0,
+          "tp": 57,
+          "fp": 2,
+          "fn": 0
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 4,
+          "images_with_fn": 2,
+          "tp": 18,
+          "fp": 4,
+          "fn": 2
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 1,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        }
+      },
+      "reviewed_development_frames": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 1,
+          "tp": 4,
+          "fp": 1,
+          "fn": 9
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 4,
+          "tp": 5,
+          "fp": 4,
+          "fn": 5
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 2,
+          "tp": 0,
+          "fp": 2,
+          "fn": 0
+        }
+      },
+      "gate": {
+        "legacy_map50": true,
+        "blue_gain": true,
+        "indoor_false_positive": true,
+        "ks_flame_recall": true,
+        "kitchen_stove_recall": true
+      },
+      "gate_passed": true
+    },
+    "v13_last": {
+      "weights_sha256": "a7963400ba9083408df92d53e780ca40571e979d05d4c1689e7237cef0eba026",
+      "legacy286": {
+        "precision": 0.9451712076821236,
+        "recall": 0.922077922077922,
+        "map50": 0.9396140681091056,
+        "map50_95": 0.24894692938059465
+      },
+      "blue_primary_localized_iou50": 1,
+      "fixed_threshold_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 1,
+          "images_with_fn": 0,
+          "tp": 57,
+          "fp": 1,
+          "fn": 0
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 4,
+          "images_with_fn": 2,
+          "tp": 18,
+          "fp": 4,
+          "fn": 2
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 1,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        }
+      },
+      "reviewed_development_frames": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 1,
+          "tp": 6,
+          "fp": 1,
+          "fn": 7
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 4,
+          "tp": 8,
+          "fp": 4,
+          "fn": 2
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 0,
+          "fp": 3,
+          "fn": 0
+        }
+      },
+      "gate": {
+        "legacy_map50": false,
+        "blue_gain": true,
+        "indoor_false_positive": true,
+        "ks_flame_recall": true,
+        "kitchen_stove_recall": true
+      },
+      "gate_passed": false
+    },
+    "v13_epoch3": {
+      "weights_sha256": "484d9857b02d238facf4f1594823658ccc2e5632e2a5d28306e784e63e0d0bcc",
+      "legacy286": {
+        "precision": 0.9598345969379737,
+        "recall": 0.9310909653928746,
+        "map50": 0.9712760344504512,
+        "map50_95": 0.27867172968986564
+      },
+      "blue_primary_localized_iou50": 1,
+      "fixed_threshold_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 2,
+          "images_with_fn": 0,
+          "tp": 57,
+          "fp": 2,
+          "fn": 0
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 4,
+          "images_with_fn": 2,
+          "tp": 18,
+          "fp": 4,
+          "fn": 2
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 1,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        }
+      },
+      "reviewed_development_frames": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 1,
+          "tp": 4,
+          "fp": 1,
+          "fn": 9
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 4,
+          "tp": 5,
+          "fp": 4,
+          "fn": 5
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 2,
+          "tp": 0,
+          "fp": 2,
+          "fn": 0
+        }
+      },
+      "gate": {
+        "legacy_map50": true,
+        "blue_gain": true,
+        "indoor_false_positive": true,
+        "ks_flame_recall": true,
+        "kitchen_stove_recall": true
+      },
+      "gate_passed": true
+    },
+    "v13_epoch6": {
+      "weights_sha256": "9f07c21700cfaf78274d7777ad222e07570272eb4cca5048ea8c8baf1aaa3f10",
+      "legacy286": {
+        "precision": 0.940832914848183,
+        "recall": 0.9090909090909091,
+        "map50": 0.9579788035731471,
+        "map50_95": 0.25595346058590723
+      },
+      "blue_primary_localized_iou50": 1,
+      "fixed_threshold_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 3,
+          "images_with_fn": 1,
+          "tp": 56,
+          "fp": 3,
+          "fn": 1
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 4,
+          "images_with_fn": 2,
+          "tp": 18,
+          "fp": 4,
+          "fn": 2
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 1,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        }
+      },
+      "reviewed_development_frames": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 6,
+          "fp": 0,
+          "fn": 7
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 4,
+          "tp": 8,
+          "fp": 4,
+          "fn": 2
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 2,
+          "tp": 0,
+          "fp": 2,
+          "fn": 0
+        }
+      },
+      "gate": {
+        "legacy_map50": false,
+        "blue_gain": true,
+        "indoor_false_positive": true,
+        "ks_flame_recall": true,
+        "kitchen_stove_recall": true
+      },
+      "gate_passed": false
+    },
+    "v13_epoch9": {
+      "weights_sha256": "962fe1f46f9c341fd226dbd6e420748fab65aef1967a04a48dc74fe28e216003",
+      "legacy286": {
+        "precision": 0.9459033885113678,
+        "recall": 0.9083444959039249,
+        "map50": 0.9408038071811131,
+        "map50_95": 0.25795664356816755
+      },
+      "blue_primary_localized_iou50": 1,
+      "fixed_threshold_sources": {
+        "ks_nofire_confirmed": {
+          "images": 75,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "ks_flame": {
+          "images": 57,
+          "gt_boxes": 57,
+          "images_with_fp": 3,
+          "images_with_fn": 1,
+          "tp": 56,
+          "fp": 4,
+          "fn": 1
+        },
+        "kitchen_stove_fire": {
+          "images": 14,
+          "gt_boxes": 20,
+          "images_with_fp": 4,
+          "images_with_fn": 2,
+          "tp": 18,
+          "fp": 4,
+          "fn": 2
+        },
+        "object_pan": {
+          "images": 40,
+          "gt_boxes": 0,
+          "images_with_fp": 0,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "nofire_real_indoor": {
+          "images": 100,
+          "gt_boxes": 0,
+          "images_with_fp": 1,
+          "images_with_fn": 0,
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        }
+      },
+      "reviewed_development_frames": {
+        "commons_reviewed_blue": {
+          "images": 10,
+          "images_with_fp": 0,
+          "tp": 6,
+          "fp": 0,
+          "fn": 7
+        },
+        "food_hard_negative_crop": {
+          "images": 1,
+          "images_with_fp": 0,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reviewed_flame": {
+          "images": 10,
+          "images_with_fp": 4,
+          "tp": 8,
+          "fp": 4,
+          "fn": 2
+        },
+        "reviewed_old_video": {
+          "images": 24,
+          "images_with_fp": 0,
+          "tp": 18,
+          "fp": 0,
+          "fn": 0
+        },
+        "sticker_hard_negative_crop": {
+          "images": 10,
+          "images_with_fp": 3,
+          "tp": 0,
+          "fp": 3,
+          "fn": 0
+        }
+      },
+      "gate": {
+        "legacy_map50": false,
+        "blue_gain": true,
+        "indoor_false_positive": true,
+        "ks_flame_recall": true,
+        "kitchen_stove_recall": true
+      },
+      "gate_passed": false
+    }
+  },
+  "training": {
+    "data": "D:\\SRTP_Datasets\\fire_teacher_v13_20261002\\data.yaml",
+    "epochs": 12,
+    "patience": 0,
+    "imgsz": 640,
+    "batch": 8,
+    "nbs": 8,
+    "device": 0,
+    "workers": 0,
+    "seed": 20261002,
+    "optimizer": "AdamW",
+    "lr0": 0.0001,
+    "lrf": 0.1,
+    "weight_decay": 0.0005,
+    "warmup_epochs": 0,
+    "freeze": 23,
+    "hsv_h": 0.015,
+    "hsv_s": 0.3,
+    "hsv_v": 0.25,
+    "degrees": 3,
+    "translate": 0.05,
+    "scale": 0.2,
+    "fliplr": 0.5,
+    "mosaic": 0,
+    "mixup": 0,
+    "project": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs",
+    "name": "fire-teacher-head-v13-20261002",
+    "exist_ok": false,
+    "save": true,
+    "save_period": 3,
+    "plots": true,
+    "val": true
+  },
+  "dataset": {
+    "manifest_sha256": "56496195e463bd11f1071bb7299dab8198175911403016d11ef79bc03c61ccc7",
+    "config_sha256": "153bed841acb5e5ef7a8cf2d3e6b86481c2381caf87f9347e60c5c373e4baaa5",
+    "train_list_sha256": "98483f314e9eb0f667bbce128044fba835c740118e109e75bcd7ceb81dfd6a01",
+    "images_verified": 2432,
+    "entries_verified": 2810,
+    "label_revisions": 5,
+    "teacher_preserved_images": 2372,
+    "scope": "Approved development labels only; source bytes and sampling retained; not independent evaluation"
+  },
+  "saved_state": {
+    "source_sha256": "48f284f9094fe334e02c66647f95fed8bfb3396b09f4488753508f514ed38980",
+    "script_sha256": "ae702ee4481f590e262c9111916a1940cab55182165a4e8cddcc255de6cf214c",
+    "fixed_tensors": 432,
+    "models": {
+      "best.pt": {
+        "checkpoint_sha256": "c2b2a8bdc66fe452c80a1786f918f62f8686ad3b0f11061a761969ee02b09966",
+        "model_state_sha256": "7d996a34f4b7ebcf71673df6f502d9ef7faadc891854fcbaae2f01a1fea95e96",
+        "fixed_state_equal": true,
+        "changed_head_tensors": 64,
+        "parameters": 9428179
+      },
+      "last.pt": {
+        "checkpoint_sha256": "a7963400ba9083408df92d53e780ca40571e979d05d4c1689e7237cef0eba026",
+        "model_state_sha256": "99cb20f50a77d03c97cd189eba030783d811561f0b3f2bf592ac31eca104bff1",
+        "fixed_state_equal": true,
+        "changed_head_tensors": 64,
+        "parameters": 9428179
+      },
+      "epoch3.pt": {
+        "checkpoint_sha256": "484d9857b02d238facf4f1594823658ccc2e5632e2a5d28306e784e63e0d0bcc",
+        "model_state_sha256": "7d996a34f4b7ebcf71673df6f502d9ef7faadc891854fcbaae2f01a1fea95e96",
+        "fixed_state_equal": true,
+        "changed_head_tensors": 64,
+        "parameters": 9428179
+      },
+      "epoch6.pt": {
+        "checkpoint_sha256": "9f07c21700cfaf78274d7777ad222e07570272eb4cca5048ea8c8baf1aaa3f10",
+        "model_state_sha256": "8dfdbac1438d64093641f27e469f141345db434bc907b6f0fb546750d16c7d1a",
+        "fixed_state_equal": true,
+        "changed_head_tensors": 64,
+        "parameters": 9428179
+      },
+      "epoch9.pt": {
+        "checkpoint_sha256": "962fe1f46f9c341fd226dbd6e420748fab65aef1967a04a48dc74fe28e216003",
+        "model_state_sha256": "2efbb5cd364e7d4187e06a1ab79b4bcdf340c5b73448d402e1b80b14da45a72c",
+        "fixed_state_equal": true,
+        "changed_head_tensors": 64,
+        "parameters": 9428179
+      }
+    },
+    "live_checks": 14,
+    "teacher_and_ema_epochs": 12,
+    "actual_batches": 4224,
+    "actual_optimizer_steps": 4216,
+    "best_state_equal_epoch3": true
+  },
+  "assets": {
+    "fire_v13.pt": "c2b2a8bdc66fe452c80a1786f918f62f8686ad3b0f11061a761969ee02b09966",
+    "fire_v13_dynamic.onnx": "cf3c9210505f749e96ae048c358d5c1f4ddca788a0096a7831dc60819c397705",
+    "fire_v13_static.onnx": "2dd6fc6d82714fc827443fc3fde0628bc3b0f20dd1d7bc22278b115e25b233f3"
+  },
+  "onnx_export_checkpoint": "epoch3.pt",
+  "selected_checkpoint": "best.pt",
+  "export_equivalence": "Every model state tensor equals between best.pt and epoch3.pt; container hashes differ",
+  "onnx": {
+    "static": {
+      "weights_sha256": "484d9857b02d238facf4f1594823658ccc2e5632e2a5d28306e784e63e0d0bcc",
+      "onnx_sha256": "2dd6fc6d82714fc827443fc3fde0628bc3b0f20dd1d7bc22278b115e25b233f3",
+      "images": 80,
+      "passed": 80,
+      "all_passed": true,
+      "raw_coordinate_max_abs": 0.017120361328125,
+      "raw_probability_max_abs": 5.0961971282958984e-06,
+      "config": {
+        "imgsz": 640,
+        "batch": 1,
+        "dynamic": false,
+        "half": false,
+        "opset": 12,
+        "simplify": false,
+        "embedded_nms": false,
+        "conf": 0.25,
+        "nms_iou": 0.6
+      },
+      "input_shape": [
+        1,
+        3,
+        640,
+        640
+      ],
+      "output_shape": [
+        1,
+        5,
+        8400
+      ]
+    },
+    "dynamic": {
+      "weights_sha256": "484d9857b02d238facf4f1594823658ccc2e5632e2a5d28306e784e63e0d0bcc",
+      "onnx_sha256": "cf3c9210505f749e96ae048c358d5c1f4ddca788a0096a7831dc60819c397705",
+      "images": 80,
+      "passed": 80,
+      "all_passed": true,
+      "raw_coordinate_max_abs": 0.008697509765625,
+      "raw_probability_max_abs": 2.5331974029541016e-06,
+      "config": {
+        "imgsz": 640,
+        "batch": 1,
+        "dynamic": true,
+        "half": false,
+        "opset": 12,
+        "simplify": false,
+        "embedded_nms": false,
+        "conf": 0.25,
+        "nms_iou": 0.6
+      },
+      "input_shape": [
+        "batch",
+        3,
+        "height",
+        "width"
+      ],
+      "output_shape": [
+        "batch",
+        "Concatoutput0_dim_1",
+        "anchors"
+      ]
+    }
+  },
+  "limitations": [
+    "Repeated development samples do not establish independent kitchen generalization.",
+    "Blue primary localization improves 0/5 to 1/5; four blue primary flames still missed.",
+    "Legacy mAP50 decreases by about .002; gains concern the reviewed difficult flames.",
+    "Five of ten reviewed teammate flames still missed.",
+    "Visible fire detection does not classify abnormal fire or validate smoke/event alarm behavior.",
+    "No K230, quantization, live camera or event testing during this disconnected-board run."
+  ]
+}

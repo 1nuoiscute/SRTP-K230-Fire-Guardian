@@ -1,0 +1,509 @@
+{
+  "role": "V20 FP32 CPU implementation consistency, not accuracy, K230 timing or alarms",
+  "onnx": {
+    "best": {
+      "summary": {
+        "weights_sha256": "a8186bc227207e9daedb4fe7a59f8e967c9acc225fc1b205ccb2b0bbe1ebe24c",
+        "script_sha256": "e483dabc78041dec2a946826818328218dfb60fe32703d09104f862bf9a9017f",
+        "runtime_script_sha256": "ef522b2002c7384f0374492a2c24a98c9bcf4c5a81d7a4161902edd269a0b28a",
+        "tolerance": {
+          "raw_xywh_pixels": 0.1,
+          "raw_probability": 0.0001,
+          "nms_xyxy_input_pixels": 0.1,
+          "nms_probability": 0.0001
+        },
+        "config": {
+          "imgsz": 640,
+          "batch": 1,
+          "dynamic": true,
+          "half": false,
+          "opset": 12,
+          "simplify": false,
+          "embedded_nms": false,
+          "conf": 0.25,
+          "nms_iou": 0.6
+        },
+        "environment": {
+          "torch": "2.12.0+cu132",
+          "ultralytics": "8.4.70",
+          "onnx": "1.22.0",
+          "onnxruntime": "1.27.0"
+        },
+        "scope": "FP32 CPU export consistency on exposed diagnostics; no KModel, quantization, independent accuracy or board test",
+        "onnx_sha256": "3aa6ea8792213fb16566231ad26f3b880cf47c2116d50854eaa52dbda64d3f3a",
+        "input_shape": [
+          "batch",
+          3,
+          "height",
+          "width"
+        ],
+        "output_shape": [
+          "batch",
+          "Concatoutput0_dim_1",
+          "anchors"
+        ],
+        "actual_input_shapes": [
+          [
+            1,
+            3,
+            288,
+            640
+          ],
+          [
+            1,
+            3,
+            352,
+            640
+          ],
+          [
+            1,
+            3,
+            384,
+            640
+          ],
+          [
+            1,
+            3,
+            416,
+            640
+          ],
+          [
+            1,
+            3,
+            448,
+            640
+          ],
+          [
+            1,
+            3,
+            480,
+            640
+          ],
+          [
+            1,
+            3,
+            512,
+            640
+          ],
+          [
+            1,
+            3,
+            576,
+            640
+          ],
+          [
+            1,
+            3,
+            640,
+            384
+          ],
+          [
+            1,
+            3,
+            640,
+            448
+          ],
+          [
+            1,
+            3,
+            640,
+            544
+          ],
+          [
+            1,
+            3,
+            640,
+            608
+          ],
+          [
+            1,
+            3,
+            640,
+            640
+          ]
+        ],
+        "images": 94,
+        "passed": 94,
+        "all_passed": true,
+        "raw_coordinate_max_abs": 0.000823974609375,
+        "raw_probability_max_abs": 3.337860107421875e-06,
+        "by_group": {
+          "blue_primary": {
+            "images": 5,
+            "passed": 5,
+            "native_boxes": 5,
+            "onnx_boxes": 5
+          },
+          "commons_reviewed_blue": {
+            "images": 10,
+            "passed": 10,
+            "native_boxes": 13,
+            "onnx_boxes": 13
+          },
+          "food_hard_negative_crop": {
+            "images": 1,
+            "passed": 1,
+            "native_boxes": 0,
+            "onnx_boxes": 0
+          },
+          "legacy_kitchen_stove_fire": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 7,
+            "onnx_boxes": 7
+          },
+          "legacy_ks_flame": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 4,
+            "onnx_boxes": 4
+          },
+          "legacy_ks_nofire_confirmed": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 0,
+            "onnx_boxes": 0
+          },
+          "legacy_nofire_real_indoor": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 1,
+            "onnx_boxes": 1
+          },
+          "legacy_object_pan": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 0,
+            "onnx_boxes": 0
+          },
+          "reviewed_commons_queue": {
+            "images": 14,
+            "passed": 14,
+            "native_boxes": 7,
+            "onnx_boxes": 7
+          },
+          "reviewed_flame": {
+            "images": 10,
+            "passed": 10,
+            "native_boxes": 10,
+            "onnx_boxes": 10
+          },
+          "reviewed_old_video": {
+            "images": 24,
+            "passed": 24,
+            "native_boxes": 18,
+            "onnx_boxes": 18
+          },
+          "sticker_hard_negative_crop": {
+            "images": 10,
+            "passed": 10,
+            "native_boxes": 0,
+            "onnx_boxes": 0
+          }
+        }
+      },
+      "summary_sha256": "b9c3b6089f5309015f8e8076d5b141d0037296b31090a79581067580d1229ff1"
+    },
+    "last": {
+      "summary": {
+        "weights_sha256": "37d18ca746cf83fb9e19fd07c0faaaaa6e04f96916f9864b12d415a3acdf55c0",
+        "script_sha256": "e483dabc78041dec2a946826818328218dfb60fe32703d09104f862bf9a9017f",
+        "runtime_script_sha256": "ef522b2002c7384f0374492a2c24a98c9bcf4c5a81d7a4161902edd269a0b28a",
+        "tolerance": {
+          "raw_xywh_pixels": 0.1,
+          "raw_probability": 0.0001,
+          "nms_xyxy_input_pixels": 0.1,
+          "nms_probability": 0.0001
+        },
+        "config": {
+          "imgsz": 640,
+          "batch": 1,
+          "dynamic": true,
+          "half": false,
+          "opset": 12,
+          "simplify": false,
+          "embedded_nms": false,
+          "conf": 0.25,
+          "nms_iou": 0.6
+        },
+        "environment": {
+          "torch": "2.12.0+cu132",
+          "ultralytics": "8.4.70",
+          "onnx": "1.22.0",
+          "onnxruntime": "1.27.0"
+        },
+        "scope": "FP32 CPU export consistency on exposed diagnostics; no KModel, quantization, independent accuracy or board test",
+        "onnx_sha256": "bb35f050b56b5f670414fa84ae9cc6960790d0dc5bd34aedb6a891f5b59c58ff",
+        "input_shape": [
+          "batch",
+          3,
+          "height",
+          "width"
+        ],
+        "output_shape": [
+          "batch",
+          "Concatoutput0_dim_1",
+          "anchors"
+        ],
+        "actual_input_shapes": [
+          [
+            1,
+            3,
+            288,
+            640
+          ],
+          [
+            1,
+            3,
+            352,
+            640
+          ],
+          [
+            1,
+            3,
+            384,
+            640
+          ],
+          [
+            1,
+            3,
+            416,
+            640
+          ],
+          [
+            1,
+            3,
+            448,
+            640
+          ],
+          [
+            1,
+            3,
+            480,
+            640
+          ],
+          [
+            1,
+            3,
+            512,
+            640
+          ],
+          [
+            1,
+            3,
+            576,
+            640
+          ],
+          [
+            1,
+            3,
+            640,
+            384
+          ],
+          [
+            1,
+            3,
+            640,
+            448
+          ],
+          [
+            1,
+            3,
+            640,
+            544
+          ],
+          [
+            1,
+            3,
+            640,
+            608
+          ],
+          [
+            1,
+            3,
+            640,
+            640
+          ]
+        ],
+        "images": 94,
+        "passed": 94,
+        "all_passed": true,
+        "raw_coordinate_max_abs": 0.00115966796875,
+        "raw_probability_max_abs": 4.291534423828125e-06,
+        "by_group": {
+          "blue_primary": {
+            "images": 5,
+            "passed": 5,
+            "native_boxes": 6,
+            "onnx_boxes": 6
+          },
+          "commons_reviewed_blue": {
+            "images": 10,
+            "passed": 10,
+            "native_boxes": 13,
+            "onnx_boxes": 13
+          },
+          "food_hard_negative_crop": {
+            "images": 1,
+            "passed": 1,
+            "native_boxes": 0,
+            "onnx_boxes": 0
+          },
+          "legacy_kitchen_stove_fire": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 6,
+            "onnx_boxes": 6
+          },
+          "legacy_ks_flame": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 4,
+            "onnx_boxes": 4
+          },
+          "legacy_ks_nofire_confirmed": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 0,
+            "onnx_boxes": 0
+          },
+          "legacy_nofire_real_indoor": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 1,
+            "onnx_boxes": 1
+          },
+          "legacy_object_pan": {
+            "images": 4,
+            "passed": 4,
+            "native_boxes": 0,
+            "onnx_boxes": 0
+          },
+          "reviewed_commons_queue": {
+            "images": 14,
+            "passed": 14,
+            "native_boxes": 6,
+            "onnx_boxes": 6
+          },
+          "reviewed_flame": {
+            "images": 10,
+            "passed": 10,
+            "native_boxes": 10,
+            "onnx_boxes": 10
+          },
+          "reviewed_old_video": {
+            "images": 24,
+            "passed": 24,
+            "native_boxes": 18,
+            "onnx_boxes": 18
+          },
+          "sticker_hard_negative_crop": {
+            "images": 10,
+            "passed": 10,
+            "native_boxes": 0,
+            "onnx_boxes": 0
+          }
+        }
+      },
+      "summary_sha256": "e5e7a8b96b0f22f1d73f1253d35a2ca0523611fb6103945004fefe3c2062160b"
+    }
+  },
+  "cpu_video_summary": {
+    "role": "unlabelled offline development predictions; sampled any-box counts are not accuracy or alarms",
+    "source_sha256": "f768e372ec81704a31e5bad7834b523b93be05a9b9c88f7040f2178261fe99fc",
+    "model_sha256": "bb35f050b56b5f670414fa84ae9cc6960790d0dc5bd34aedb6a891f5b59c58ff",
+    "script_sha256": "5d02a3ba967a1d01a26bc74b0b0f36f0ac23312dfedc00f9e7d424f0972eca47",
+    "runtime_sha256": "ef522b2002c7384f0374492a2c24a98c9bcf4c5a81d7a4161902edd269a0b28a",
+    "configuration": {
+      "requested_sample_fps": 1.0,
+      "step": 28,
+      "actual_sample_fps": 1.0007150128459936,
+      "conf": 0.25,
+      "nms_iou": 0.6,
+      "input_policy": "rectangular_stride32"
+    },
+    "nominal_fps": 28.02002035968782,
+    "nominal_frames": 734.0,
+    "timestamp_basis": "frame_index/nominal_fps; no wall-clock or VFR timing validation",
+    "actual_input_shape": [
+      1,
+      3,
+      640,
+      384
+    ],
+    "decoded_to_read_end": true,
+    "decoded_frames": 734,
+    "nominal_minus_decoded_frames": 0.0,
+    "sampled_frames": 27,
+    "frames_with_any_box": 25,
+    "total_boxes": 36,
+    "size": [
+      720,
+      1280
+    ],
+    "nominal_decoded_duration_s": 26.195555555555554,
+    "mean_onnx_forward_ms": 57.33165925549757,
+    "csv_sha256": "e0f54c8918e68297beaf63b6cc89cc0b9e63b62f34b07edb5e15fe22391cd3b1",
+    "limitations": "Decoder read-end may also reflect truncation; count discrepancy retained. Sampling may miss short events. No VFR, camera, event or real-time verification."
+  },
+  "cpu_video_summary_sha256": "10cff2d21a635c89418255c8aa5fd158fe447b5d857c219cbe592fc7d6b01b09",
+  "cpu_video_parity": {
+    "role": "CPU PyTorch versus independent ONNX video CLI; GPU numeric agreement separate",
+    "weights_sha256": "37d18ca746cf83fb9e19fd07c0faaaaa6e04f96916f9864b12d415a3acdf55c0",
+    "onnx_sha256": "bb35f050b56b5f670414fa84ae9cc6960790d0dc5bd34aedb6a891f5b59c58ff",
+    "source_sha256": "f768e372ec81704a31e5bad7834b523b93be05a9b9c88f7040f2178261fe99fc",
+    "comparison_per_frame_sha256": "eca88201fb2728d3d93903b5c6a4a38671f72fdf28e7f468b343ac4669bbbf4d",
+    "cli_csv_sha256": "e0f54c8918e68297beaf63b6cc89cc0b9e63b62f34b07edb5e15fe22391cd3b1",
+    "script_sha256": "1b736c481a2fb9c82b932fbf5ae18bb103d380c658f51d82395cb5bc85ed61d3",
+    "tolerance": {
+      "coordinates": 0.1,
+      "confidence": 0.0001
+    },
+    "samples": 27,
+    "passed": 27,
+    "all_passed": true
+  },
+  "gpu_comparison": {
+    "all_counts_equal": true,
+    "strict_passed": 12,
+    "strict_all_passed": false,
+    "coordinate_max_abs": 0.0205078125,
+    "confidence_max_abs": 0.0013331770896911621,
+    "note": "GPU/CPU comparison is distinct from the frozen CPU export test; tolerances unchanged and differences retained."
+  },
+  "cpu_image": {
+    "role": "PC visual detections; not an abnormal-fire alarm or board validation",
+    "model_sha256": "bb35f050b56b5f670414fa84ae9cc6960790d0dc5bd34aedb6a891f5b59c58ff",
+    "image_sha256": "c8ab39b1799387f4f93b9fe1456ca4878ee71a9b93b6af2c711dc7e3ca023fac",
+    "configuration": {
+      "conf": 0.25,
+      "nms_iou": 0.6,
+      "provider": "CPUExecutionProvider"
+    },
+    "geometry": {
+      "width": 720,
+      "height": 1280,
+      "gain": 0.5,
+      "left": 12,
+      "top": 0,
+      "input_height": 640,
+      "input_width": 384,
+      "input_policy": "rectangular_stride32"
+    },
+    "onnx_forward_ms_single_call": 62.22709998837672,
+    "predictions": [
+      {
+        "class": "fire",
+        "confidence": 0.5324673652648926,
+        "xyxy": [
+          272.03314208984375,
+          911.82080078125,
+          418.87115478515625,
+          971.996337890625
+        ]
+      }
+    ]
+  },
+  "cpu_preview_decode": 27,
+  "runtime_files_visually_seen": true
+}

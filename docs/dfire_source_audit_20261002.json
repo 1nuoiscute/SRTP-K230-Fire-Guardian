@@ -1,0 +1,500 @@
+{
+  "role": "acquired source development data, structurally audited, sampled semantics and family review; not independently accepted kitchen test or trained model",
+  "source": {
+    "official_repo_commit": "4bf9c31b18fadcd44d5f0b6d66f82bc56fa5e328",
+    "mirror_ref": "sayedgamal99/smoke-fire-detection-yolo",
+    "mirror_version": 1,
+    "archive_bytes": 3049605157,
+    "archive_sha256": "65d81b602991261b47ddc71281e99108362a30336a448e1f8d21352c825c6d83",
+    "extracted_members": 43055,
+    "extracted_bytes": 3118334483
+  },
+  "class_contract": {
+    "url": "https://raw.githubusercontent.com/pedbrgs/Fire-Detection/9d99b0e71fd4cc930da053a41b79de1c58aabdf2/data/dfire.yaml",
+    "repo_commit": "9d99b0e71fd4cc930da053a41b79de1c58aabdf2",
+    "sha256": "407e8eb8aa5a449224d6d4f8e6dd32bda0dcd3a021b9b801ca8db16c49f1477e",
+    "names": {
+      "0": "smoke",
+      "1": "fire"
+    },
+    "scope": "D-Fire original author model config; mirror mapping still checked by actual counts and visual sample"
+  },
+  "inventory_summary_sha256": "8524be128c15b0964801bfde09bee805ed7fe8e45e665688e1ab5de5f9770607",
+  "inventory_sha256": "81131f1d0983a7bdcb7858bb569734e3f2bc9e2dd1ff44cebdb58f105893e652",
+  "counts": {
+    "train": {
+      "images": 14122,
+      "empty_labels": 6458,
+      "smoke_only": 3836,
+      "fire_only": 770,
+      "both": 3058,
+      "smoke_boxes": 7788,
+      "fire_boxes": 9631,
+      "images_with_errors": 224,
+      "box_exceeds_bounds": 211,
+      "malformed_label": 13,
+      "orphan_labels": 0
+    },
+    "val": {
+      "images": 3099,
+      "empty_labels": 1375,
+      "smoke_only": 845,
+      "fire_only": 174,
+      "both": 705,
+      "smoke_boxes": 1755,
+      "fire_boxes": 2176,
+      "images_with_errors": 54,
+      "box_exceeds_bounds": 53,
+      "malformed_label": 1,
+      "orphan_labels": 0
+    },
+    "test": {
+      "images": 4306,
+      "empty_labels": 2008,
+      "smoke_only": 1183,
+      "fire_only": 225,
+      "both": 890,
+      "smoke_boxes": 2303,
+      "fire_boxes": 2878,
+      "images_with_errors": 62,
+      "malformed_label": 12,
+      "box_exceeds_bounds": 50,
+      "orphan_labels": 0
+    }
+  },
+  "total_images": 21527,
+  "structurally_invalid_images": 340,
+  "byte_duplicate_groups": 0,
+  "decoded_duplicate_groups": 0,
+  "known_unique_byte_identities_checked": 6481,
+  "known_byte_overlap_images": 0,
+  "perceptual_summary_sha256": "6873a8e16508f002fcd8c8723f4519e507197a7a88f25b8f9c3072634e3d1d2c",
+  "perceptual_triage": {
+    "radius": 4,
+    "pair_counts": {
+      "candidate_pairs": 186119,
+      "distance_0": 14047,
+      "distance_2": 56300,
+      "distance_4": 115772,
+      "cross_split_pairs": 94015
+    },
+    "recorded_pairs": 10000,
+    "pair_records_capped_at": 10000,
+    "images_with_direct_cross_split_candidate": 8958,
+    "candidate_components": 785,
+    "candidate_cross_split_components": 591,
+    "largest_component_images": 1258,
+    "known_images": 6553,
+    "known_similarity_candidate_images": 37,
+    "known_similarity_pairs": 196
+  },
+  "manual_sample": {
+    "selection": {
+      "cross_split_components_random_sample": 12,
+      "known_candidate_images_random_sample": 8,
+      "train_label_strata": 4,
+      "each_stratum": 4,
+      "scope": "Different audit sampling fractions; not duplicate prevalence/error-rate estimate. Source first-10000 pair file not used (biased toward train)."
+    },
+    "sheets": [
+      {
+        "file": "sheet_01.jpg",
+        "sha256": "b9714a5e58a8dd06ef62669c9cc0cbf176cfe8a74d8f55ca38bada97e6e1cd1f"
+      },
+      {
+        "file": "sheet_02.jpg",
+        "sha256": "27437015799256f8237e1ee37374c9a8072fbcf36c1e4465e3d35f31a9b4bbca"
+      },
+      {
+        "file": "sheet_03.jpg",
+        "sha256": "81937d96b8ebd272f7ef19927e7fdb6efa25b70a66df32f44add2f151538a28c"
+      },
+      {
+        "file": "sheet_04.jpg",
+        "sha256": "537e57134d1b9334c373603dfaddaf98224b5dae828dd573201a3bd591c60922"
+      },
+      {
+        "file": "sheet_05.jpg",
+        "sha256": "c45bc20320936a2f7f2feccd1e36d29853a0815556b4ae9500f81e161bceb5ec"
+      },
+      {
+        "file": "sheet_06.jpg",
+        "sha256": "9189f5765cc6979f6d60547a0cf4fd356d15cb11c42b0abfd23a71699b036395"
+      },
+      {
+        "file": "sheet_07.jpg",
+        "sha256": "e57cd666bb08bc4277d3c4c900102e5957315568b050a29b5ff9bfe3e336a5e6"
+      },
+      {
+        "file": "sheet_08.jpg",
+        "sha256": "89fef90b619378145e7a3b012baca1a50d279041d5f661c289a3a63a6b9f895c"
+      },
+      {
+        "file": "sheet_09.jpg",
+        "sha256": "0224dc4e848b5fa5aeb9af6e4fa11af3f11fb2af416cd12dcd193d2a23ec90f6"
+      }
+    ],
+    "reviewed_utc": "2026-10-02T06:38:49.387199+00:00",
+    "local_complete_sha256": "49228cba395642d83970aa60473f02fed2e75f01ccc9f28904cbe2322e835e8f",
+    "cross_split_reviewed": 12,
+    "cross_split_same_capture_view_or_source": 12,
+    "known_leads_reviewed": 8,
+    "known_same_capture_view_or_source": 5,
+    "known_unrelated_false_leads": 3,
+    "source_label_strata_images": 16,
+    "reviews": [
+      {
+        "index": 1,
+        "kind": "source_cross_split",
+        "raw_classes": [],
+        "decision": "same_capture_view_or_original_source_cross_split",
+        "note": "Same Camera0003 viewpoint; timestamps five seconds apart.",
+        "approved_for_training": false
+      },
+      {
+        "index": 2,
+        "kind": "source_cross_split",
+        "raw_classes": [],
+        "decision": "same_capture_view_or_original_source_cross_split",
+        "note": "Same park/road/city fixed viewpoint with similar haze and timestamp overlay.",
+        "approved_for_training": false
+      },
+      {
+        "index": 3,
+        "kind": "source_cross_split",
+        "raw_classes": [
+          0
+        ],
+        "decision": "same_capture_view_or_original_source_cross_split",
+        "note": "Same channel-38 city smoke footage and viewpoint.",
+        "approved_for_training": false
+      },
+      {
+        "index": 4,
+        "kind": "source_cross_split",
+        "raw_classes": [],
+        "decision": "same_capture_view_or_original_source_cross_split",
+        "note": "Same cloud/landscape composition, apparently reused original or adjacent frame; byte equality absent.",
+        "approved_for_training": false
+      },
+      {
+        "index": 5,
+        "kind": "source_cross_split",
+        "raw_classes": [],
+        "decision": "same_capture_view_or_original_source_cross_split",
+        "note": "Same forest viewpoint with brightness/position variation.",
+        "approved_for_training": false
+      },
+      {
+        "index": 6,
+        "kind": "source_cross_split",
+        "raw_classes": [],
+        "decision": "same_capture_view_or_original_source_cross_split",
+        "note": "Same rooftop skyline/cloud viewpoint.",
+        "approved_for_training": false
+      },
+      {
+        "index": 7,
+        "kind": "source_cross_split",
+        "raw_classes": [],
+        "decision": "same_capture_view_or_original_source_cross_split",
+        "note": "Same Camera0002 viewpoint and date, about eleven minutes apart; not identical moment.",
+        "approved_for_training": false
+      },
+      {
+        "index": 8,
+        "kind": "source_cross_split",
+        "raw_classes": [
+          0,
+          1
+        ],
+        "decision": "same_capture_view_or_original_source_cross_split",
+        "note": "Same RT/KABC freeway wildfire footage and viewpoint.",
+        "approved_for_training": false
+      },
+      {
+        "index": 9,
+        "kind": "source_cross_split",
+        "raw_classes": [],
+        "decision": "same_capture_view_or_original_source_cross_split",
+        "note": "Same fisheye hill/tower camera viewpoint.",
+        "approved_for_training": false
+      },
+      {
+        "index": 10,
+        "kind": "source_cross_split",
+        "raw_classes": [
+          0
+        ],
+        "decision": "same_capture_view_or_original_source_cross_split",
+        "note": "Same Camera0002 viewpoint; timestamps ten seconds apart.",
+        "approved_for_training": false
+      },
+      {
+        "index": 11,
+        "kind": "source_cross_split",
+        "raw_classes": [
+          0,
+          1
+        ],
+        "decision": "same_capture_view_or_original_source_cross_split",
+        "note": "Same night building-fire footage and publisher overlays; flame changes between frames.",
+        "approved_for_training": false
+      },
+      {
+        "index": 12,
+        "kind": "source_cross_split",
+        "raw_classes": [
+          0
+        ],
+        "decision": "same_capture_view_or_original_source_cross_split",
+        "note": "Same Camera0001 viewpoint; timestamps ten seconds apart.",
+        "approved_for_training": false
+      },
+      {
+        "index": 13,
+        "kind": "known_exposure_lead",
+        "raw_classes": [
+          0
+        ],
+        "decision": "known_capture_view_or_original_source_overlap",
+        "note": "Same Big Black Mountain North fixed-camera viewpoint; timestamps differ.",
+        "approved_for_training": false
+      },
+      {
+        "index": 14,
+        "kind": "known_exposure_lead",
+        "raw_classes": [],
+        "decision": "known_capture_view_or_original_source_overlap",
+        "note": "Same Red Mountain West tower-camera viewpoint; different date/lighting, not duplicate moment.",
+        "approved_for_training": false
+      },
+      {
+        "index": 15,
+        "kind": "known_exposure_lead",
+        "raw_classes": [],
+        "decision": "known_capture_view_or_original_source_overlap",
+        "note": "Same Red Mountain West tower-camera viewpoint; different date/lighting, not duplicate moment.",
+        "approved_for_training": false
+      },
+      {
+        "index": 16,
+        "kind": "known_exposure_lead",
+        "raw_classes": [
+          0,
+          1
+        ],
+        "decision": "visually_unrelated_phash_false_lead",
+        "note": "Unrelated night rooftop fire and pan demonstration; perceptual false lead.",
+        "approved_for_training": false
+      },
+      {
+        "index": 17,
+        "kind": "known_exposure_lead",
+        "raw_classes": [
+          0,
+          1
+        ],
+        "decision": "visually_unrelated_phash_false_lead",
+        "note": "Unrelated night building fire and two-person torch demonstration; perceptual false lead.",
+        "approved_for_training": false
+      },
+      {
+        "index": 18,
+        "kind": "known_exposure_lead",
+        "raw_classes": [
+          0,
+          1
+        ],
+        "decision": "known_capture_view_or_original_source_overlap",
+        "note": "Same forest/building-fire original composition at a different download/encoding.",
+        "approved_for_training": false
+      },
+      {
+        "index": 19,
+        "kind": "known_exposure_lead",
+        "raw_classes": [],
+        "decision": "visually_unrelated_phash_false_lead",
+        "note": "Unrelated red sunset cloud and campfire; perceptual false lead.",
+        "approved_for_training": false
+      },
+      {
+        "index": 20,
+        "kind": "known_exposure_lead",
+        "raw_classes": [
+          1
+        ],
+        "decision": "known_capture_view_or_original_source_overlap",
+        "note": "Same burning-tree footage/viewpoint; changed flame moment and framing.",
+        "approved_for_training": false
+      },
+      {
+        "index": 21,
+        "kind": "label_stratum",
+        "raw_classes": [],
+        "decision": "no_obvious_fire_or_smoke",
+        "note": "Red sunset cloud; no obvious visible flame or combustion plume.",
+        "approved_for_training": false
+      },
+      {
+        "index": 22,
+        "kind": "label_stratum",
+        "raw_classes": [],
+        "decision": "no_obvious_fire_or_smoke",
+        "note": "Storm clouds; no obvious visible flame or combustion plume.",
+        "approved_for_training": false
+      },
+      {
+        "index": 23,
+        "kind": "label_stratum",
+        "raw_classes": [],
+        "decision": "no_obvious_fire_or_smoke",
+        "note": "Weather cloud/mist at mountain and buildings; no obvious visible flame or combustion plume.",
+        "approved_for_training": false
+      },
+      {
+        "index": 24,
+        "kind": "label_stratum",
+        "raw_classes": [],
+        "decision": "no_obvious_fire_or_smoke",
+        "note": "Fixed landscape camera; no obvious visible flame or combustion plume.",
+        "approved_for_training": false
+      },
+      {
+        "index": 25,
+        "kind": "label_stratum",
+        "raw_classes": [
+          0
+        ],
+        "decision": "visible_plume_event_unverified",
+        "note": "White plume above distant mountain visible; combustion source is not verified by this image.",
+        "approved_for_training": false
+      },
+      {
+        "index": 26,
+        "kind": "label_stratum",
+        "raw_classes": [
+          0
+        ],
+        "decision": "unresolved",
+        "note": "Two tiny low-contrast hilltop regions remain unresolved even in original 1280x720 image; no relabeling.",
+        "approved_for_training": false
+      },
+      {
+        "index": 27,
+        "kind": "label_stratum",
+        "raw_classes": [
+          0
+        ],
+        "decision": "visible_smoke_event_unverified",
+        "note": "Dense dark plume through a city; visible-smoke class matches appearance, event truth still absent.",
+        "approved_for_training": false
+      },
+      {
+        "index": 28,
+        "kind": "label_stratum",
+        "raw_classes": [
+          0
+        ],
+        "decision": "visible_plume_event_unverified",
+        "note": "White plume near wrecked car and firefighters; steam versus combustion smoke not established.",
+        "approved_for_training": false
+      },
+      {
+        "index": 29,
+        "kind": "label_stratum",
+        "raw_classes": [
+          1
+        ],
+        "decision": "visible_fire_box_extent_needs_review",
+        "note": "Visible building flame, but fire rectangle includes a large upper plume region; extent requires review.",
+        "approved_for_training": false
+      },
+      {
+        "index": 30,
+        "kind": "label_stratum",
+        "raw_classes": [
+          1
+        ],
+        "decision": "unresolved",
+        "note": "Tiny saturated white/yellow night region remains unresolved in original image; no relabeling.",
+        "approved_for_training": false
+      },
+      {
+        "index": 31,
+        "kind": "label_stratum",
+        "raw_classes": [
+          1
+        ],
+        "decision": "visible_fire_smoke_extent_unresolved",
+        "note": "Visible wildfire flame; broad haze/red background not resolved as separately annotatable smoke.",
+        "approved_for_training": false
+      },
+      {
+        "index": 32,
+        "kind": "label_stratum",
+        "raw_classes": [
+          1
+        ],
+        "decision": "visible_fire_label_quality_unaccepted",
+        "note": "Visible fire/embers with large background haze; source fire rectangles not a full label-quality acceptance.",
+        "approved_for_training": false
+      },
+      {
+        "index": 33,
+        "kind": "label_stratum",
+        "raw_classes": [
+          0,
+          1
+        ],
+        "decision": "visible_fire_and_plume_event_unverified",
+        "note": "Visible street flame and plume; raw 1=fire and 0=smoke plausible here.",
+        "approved_for_training": false
+      },
+      {
+        "index": 34,
+        "kind": "label_stratum",
+        "raw_classes": [
+          0,
+          1
+        ],
+        "decision": "visible_fire_and_smoke_extent_unaccepted",
+        "note": "Original viewed: small red flame fronts under dense dark smoke; mapping plausible, precise tiny extents not accepted.",
+        "approved_for_training": false
+      },
+      {
+        "index": 35,
+        "kind": "label_stratum",
+        "raw_classes": [
+          0,
+          1
+        ],
+        "decision": "visible_fire_plume_extent_unresolved",
+        "note": "Visible grass flame; white plume versus cloud and smoke extent not fully resolved.",
+        "approved_for_training": false
+      },
+      {
+        "index": 36,
+        "kind": "label_stratum",
+        "raw_classes": [
+          0,
+          1
+        ],
+        "decision": "unresolved",
+        "note": "Original viewed: saturated night plume/flame-shaped region; separate smoke/fire extents unresolved; no relabeling.",
+        "approved_for_training": false
+      }
+    ]
+  },
+  "limitations": [
+    "340 structurally invalid images are not automatically clipped or made negative; source files unchanged.",
+    "pHash candidates/components are similarity leads, not confirmed duplicates or scene IDs; transitive components may merge unrelated images.",
+    "Only first 10000 pairs stored, biased toward train-first scan. All pair counts/components complete; reviewed closest cross-split edges reconstructed from full components.",
+    "12 selected cross-split families are not a prevalence estimate for all 21527 images or 8958 candidate images.",
+    "Known same-camera matches are exposure/viewpoint overlap, not necessarily identical event/time; three false leads show pHash does not supply truth.",
+    "16 train-label samples only; no full label quality or combustion-versus-steam event acceptance.",
+    "No kitchen percentage or independent test ratio claimed; raw publisher splits not approved for formal acceptance.",
+    "Official collection CC0 declaration does not establish ownership/individual-image rights; raw media remains local.",
+    "No new model training, source split mutation or candidate promotion in this stage."
+  ]
+}

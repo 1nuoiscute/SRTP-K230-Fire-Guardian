@@ -1,0 +1,12 @@
+{
+  "input_sha256": "71c94bb4084b32495bc374b5d73efe3ec4f7758bc9d4db6dbe7ab93f9f1a4cd8",
+  "source_video_sha256": "dbd18d5fb2587b4dafc224d12bc47984ce6e97abbdfacf0e33a7b83520b02cb1",
+  "visible_flame_samples": 21,
+  "uncertain_samples": 2,
+  "confirmed_no_visible_flame_samples": 0,
+  "independent_kitchen": false,
+  "scope": "All 23 exposed 1fps samples visually inspected before v17 evaluation; presence only, no box truth or dense event truth",
+  "review_complete_sha256": "2d2492adea27b75f0849b1548ee01945ee6cf8cb8c3b67af356a36a55308af7e",
+  "all_sample_pixels_match_original_comparison": true,
+  "annotation_use": "Retain raw 23-sample counts; unknown samples are not negatives. Any-box counts cannot establish correct localization or precision."
+}
