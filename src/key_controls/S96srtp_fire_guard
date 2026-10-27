@@ -1,0 +1,69 @@
+#!/bin/sh
+#
+# S96srtp_fire_guard - run the gas/flame valve guard from boot.
+#
+# BusyBox rcS runs every S?? script BEFORE it mounts /sharefs, and a background
+# "&" subshell dies together with this script, so the waiting-for-/sharefs logic
+# cannot live here. It lives in /usr/bin/srtp_fire_guard_launch instead (on the
+# rootfs), which this script starts through setsid so it survives rcS exiting.
+#
+# The guard polls status_ram/status.txt once a second and drives the valve relay
+# on D2 (pad 63). Default policy closes the valve when sensor data is missing, so
+# a board that boots without its sampler keeps the gas shut.
+
+LAUNCHER=/usr/bin/srtp_fire_guard_launch
+GUARD=/sharefs/srtp_clean/key_controls/fire_guard.sh
+LOG=/tmp/fire_guard.out
+
+guard_pid() {
+    ps w 2>/dev/null | grep 'fire_guard.sh run' | grep -v grep | awk '{print $1}' | head -1
+}
+
+case "$1" in
+    start)
+        if [ ! -x "$LAUNCHER" ]; then
+            echo "S96srtp_fire_guard: $LAUNCHER missing"
+            exit 1
+        fi
+        pid=$(guard_pid)
+        if [ -n "$pid" ]; then
+            echo "S96srtp_fire_guard: already running (pid $pid)"
+            exit 0
+        fi
+        setsid "$LAUNCHER" </dev/null >>"$LOG" 2>&1 &
+        sleep 2
+        pid=$(guard_pid)
+        if [ -n "$pid" ]; then
+            echo "S96srtp_fire_guard: started (pid $pid)"
+        else
+            echo "S96srtp_fire_guard: launcher queued (waits for /sharefs)"
+        fi
+        ;;
+    stop)
+        pid=$(guard_pid)
+        if [ -n "$pid" ]; then
+            kill "$pid" 2>/dev/null
+            echo "S96srtp_fire_guard: stopped (pid $pid)"
+        else
+            echo "S96srtp_fire_guard: not running"
+        fi
+        ;;
+    restart)
+        "$0" stop
+        sleep 1
+        "$0" start
+        ;;
+    status)
+        pid=$(guard_pid)
+        if [ -n "$pid" ]; then
+            echo "guard process: running (pid $pid)"
+        else
+            echo "guard process: not running"
+        fi
+        if [ -n "$pid" ]; then sh "$GUARD" status; fi
+        ;;
+    *)
+        echo "usage: $0 {start|stop|restart|status}"
+        exit 2
+        ;;
+esac

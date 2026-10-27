@@ -1,0 +1,17 @@
+# SRTP board WiFi credentials (TEMPLATE).
+#
+# Copy this file to /etc/srtp_wifi.conf on the board and fill in the real values:
+#
+#     cp srtp_wifi.conf.example /etc/srtp_wifi.conf
+#     chmod 600 /etc/srtp_wifi.conf
+#     vi /etc/srtp_wifi.conf
+#
+# /etc/init.d/S95srtp_wifi sources it at boot.
+#
+# Do NOT commit a filled-in copy: it holds the hotspot password in plain text.
+#
+# The radio is a Realtek RTL8188FU (USB), which is 2.4 GHz only. A 5 GHz-only
+# hotspot will never appear in a scan, so set the phone hotspot to 2.4 GHz.
+
+WIFI_SSID="your-ssid"
+WIFI_PSK="your-password"

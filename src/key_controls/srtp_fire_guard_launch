@@ -1,0 +1,28 @@
+#!/bin/sh
+# Launcher for the fire guard, living on the rootfs (not on /sharefs).
+#
+# Why this exists: /etc/init.d/S96srtp_fire_guard runs BEFORE rcS mounts
+# /sharefs, and passing a multi-line wait loop through `setsid sh -c "..."` from
+# an init script is a quoting minefield. So the wait loop lives here, on the
+# rootfs, and the init script only has to do:
+#
+#   setsid /usr/bin/srtp_fire_guard_launch
+#
+# The launcher waits for the guard script to appear on the SD card, then execs
+# it. exec keeps the pid, so "ps w | grep fire_guard.sh" still finds it.
+
+GUARD=/sharefs/srtp_clean/key_controls/fire_guard.sh
+
+tries=0
+while [ ! -x "$GUARD" ] && [ "$tries" -lt 60 ]; do
+    sleep 1
+    tries=$((tries + 1))
+done
+
+if [ ! -x "$GUARD" ]; then
+    echo "srtp_fire_guard_launch: $GUARD never appeared after 60s"
+    exit 1
+fi
+
+echo "srtp_fire_guard_launch: starting guard after ${tries}s wait"
+exec sh "$GUARD" run

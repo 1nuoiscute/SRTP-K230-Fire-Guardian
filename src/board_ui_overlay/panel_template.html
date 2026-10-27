@@ -36,14 +36,15 @@
   <div class="topline"><h1>设备状态</h1><span class="network">主板 Wi-Fi {{WIFI}}</span></div>
   <div class="state"><div class="state-label">火情判断</div>
     <p class="state-value">暂未判定</p>
-    <p class="state-note">烟雾和气体未接入，当前只显示视觉结果</p>
+    <p class="state-note">气体与火焰读数来自 ADS1115，视觉结果来自检测模型</p>
   </div>
   <div class="metrics">
     <div class="metric"><span class="metric-name">温度 · SHT31</span><span class="metric-value">{{TEMP}}<span class="unit">°C</span></span></div>
     <div class="metric"><span class="metric-name">相对湿度 · SHT31</span><span class="metric-value">{{HUMIDITY}}<span class="unit">%</span></span></div>
-    <div class="metric"><span class="metric-name">烟雾</span><span class="metric-value unavailable">未接入</span></div>
-    <div class="metric"><span class="metric-name">可燃气体 / CO</span><span class="metric-value unavailable">预留</span></div>
+    <div class="metric"><span class="metric-name">气体 · MQ-2（相对空载 %）</span><span class="metric-value"></span></div>
+    <div class="metric"><span class="metric-name">火焰 · AIN1（mV）</span><span class="metric-value"></span></div>
   </div>
   <div class="foot"><span>气压 <strong>{{PRESSURE}} hPa</strong> · BMP280</span><span>板端状态</span></div>
 </body>
 </html>
+
