@@ -7,5 +7,5 @@ CC=${CC:-/home/k230/k230_sdk_v1.6/toolchain/Xuantie-900-gcc-linux-5.10.4-glibc-x
 
 "$CC" -static -O2 -Wall -Wextra -std=c11 -D_POSIX_C_SOURCE=200809L \
   -o "$OUTPUT" \
-  "$SOURCE_DIR/main.c" "$SOURCE_DIR/gpio_i2c.c" \
+  "$SOURCE_DIR/main.c" "$SOURCE_DIR/gpio_i2c.c" "$SOURCE_DIR/ads1115.c" \
   "$SOURCE_DIR/sht31.c" "$SOURCE_DIR/bmp280.c" "$SOURCE_DIR/ssd1306.c"

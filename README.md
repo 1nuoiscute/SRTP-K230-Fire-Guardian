@@ -1,129 +1,90 @@
 # SRTP K230 Fire Guardian｜边缘视觉火情检测与多传感器融合
 
-## 队友与 AI 接手入口（2026-10-11）
+基于 **K230 + RT-Thread Smart / Linux** 的厨房火情检测研究原型，结合摄像头火焰检测、环境传感器、板端显示与阀门联动。项目公开源码、实验记录和已知问题。
 
-**完整的最新电脑端记录在 [codex/pc-model-20261002 开发分支](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/tree/codex/pc-model-20261002)，尚未合入 main。** 默认分支提供板端历史源码和交接入口；这次只更新交接文档，没有把电脑模型发布为板端正式版本。
+**2026-10-27 更新：** 整合 [PR #2](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/pull/2) 的 ADS1115 气体/火焰采集、OLED 与大屏显示、阀门联锁、WiFi 及开机启动脚本。电脑端模型记录与本次板端代码统一收录到 `main`，接手时从默认分支开始。
 
-拉取仓库后先确认分支；需要完整模型记录时执行：
+## 当前能力与验证状态
 
-```sh
-git fetch origin
-git switch codex/pc-model-20261002
+| 能力 | 当前实现 | 验证范围 |
+|---|---|---|
+| 摄像头火焰检测 | 早期四类映射 640 KModel + 历史视觉 ELF，板端摄像头画框 | 已有历史实屏证据；跨厨房可靠性仍未验收 |
+| 环境采集 | SHT31 温湿度、BMP280 温度/气压、SSD1306 OLED | 已有实机记录；OLED 刷新故障不再直接终止采样循环 |
+| 气体与火焰输入 | ADS1115 `0x49`，AIN2 接 MQ-2、AIN1 接火焰模块；输出 mV | 队友报告 MQ-2 实测响应；火焰模块尚无可用火焰响应 |
+| 实时面板与数据页 | KEY1 面板、KEY2 数据页读取 v1/v2 状态；桥接每 0.5 s 刷新，历史保留约 20 分钟 | 旧 KEY2 有重启及切换确认；新增显示见队友 PR 记录，未在此次整合中复验 |
+| 阀门联动 | 气体、火焰、温度阈值及温升判断；迟滞；D2/pad 63 继电器控制 | 队友报告约 12 s 阀门行程、断电自关和温度联动；未完成系统故障验收 |
+| WiFi | 2.4 GHz 连接、扫描、诊断与开机启动 | 队友报告可 ping 公网；MQTT 与远程告警尚未实现闭环 |
+| 电脑端模型 | v16 best 保留作演示，v18 last 作定位开发；v21 仅完成 CPU 预演 | 2026-10-03 起暂停模型推进；这些新权重尚未上板 |
+
+本次进展与数据来源见 [气体、阀门与联网整合记录](docs/GAS_VALVE_WIFI_INTEGRATION_20261027.md)。历史结果按记录日期理解，不代表当前设备已重新验收。
+
+## 数据与控制链
+
+```text
+MQ-2 / 火焰模块 → ADS1115 ┐
+SHT31 / BMP280 ──────────┴→ Linux 采样日志 → status_bridge（v2）
+                                            ├→ RT-Smart KEY1 面板 / KEY2 数据页
+                                            └→ fire_guard → 继电器 → 常闭阀门
+摄像头 → KModel / 视觉 ELF → 检测框显示（尚未接入上述关阀判断）
 ```
 
-| 范围 | 最近已记录的状态 | 接手时如何理解 |
-|---|---|---|
-| 板端视觉 | 原视觉 ELF ec2caafd…＋早期四类映射640 KModel ec475725…，已有摄像头画框实屏证据 | 这是最近已验收视觉身份，不能用电脑端版本号替代；先读回实际板上文件核对 |
-| 板端 KEY2 | 新控制器8d69a1c5…、数据页cbb46868…、p1镜像5cd8667b…；永久启动与重启后两轮切换获确认 | 已验收的是短时功能，KEY1框覆盖面板及长时稳定仍未解决 |
-| 电脑端模型 | v16 best保留作电脑演示、v18 last保留作定位开发；2026-10-03起暂停推进 | 这些不是已上板模型；v20未晋升，v21只有CPU预演，正式GPU训练未启动 |
-| 板端选区 ROI | 用户要求在板端完成选择；讨论方案为屏幕显示矩形、矩阵按键移动/缩放/预览/保存，再配全画面巡视 | **功能尚未实现、未编译或上板验收。** 触摸输入未验证可用，其他矩阵键也须核对实测 |
-
-建议阅读顺序：
-
-1. [板端基线与完整哈希](docs/BOARD_BASELINE.md)：确定最近验收的视觉、KModel、启动和面板身份。
-2. [板端交接](docs/BOARD_HANDOFF_20260930.md)：先读顶部最新更正；下面旧表格是历史冻结状态，不能据此把已部署KEY2认定为未验收。
-3. [KEY2永久部署和现场记录](model_work/docs/KEY2_CONNECTOR_CANDIDATE_20260930.md)、[KEY1未解决问题](model_work/docs/KEY1_BLUE_BOX_INVESTIGATION_20261001.md)。
-4. [开发分支最新状态](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/blob/codex/pc-model-20261002/docs/STATUS.md)和[v21预演暂停记录](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/blob/codex/pc-model-20261002/model_work/docs/KITCHEN_PARTIAL_FEATURES_V21_20261003.md)。
-
-**源码和产物边界：** 原厂视觉ELF缺少同源源码，`src/kitchen_fire_yolov8/`不是已复现摄像兼容性的正式视觉源码；编译成功不能作为直接替换依据。当前 `vision_key.c` 是KEY2控制器源码，不是历史v4b的原始快照。ROI显示框、推理前裁剪、检测框回原图坐标是不同环节，不能只画一个矩形就声明完成ROI识别。
-
-**仓库不包含权重、KModel、ELF、固件备份和原视频。** 这些保留在原电脑或板上；新克隆不具备完整运行产物。接手板子先保存设备读回和现有产物，不把缺少本地备份误判为板上没有程序。上述板端结论来自2026-09-30至10-01记录，2026-10-11没有新增实机核验；队友之后的修改应另记设备证据和版本。
-
-**电脑端模型推进已暂停（2026-10-03，用户要求）：**[v21预演收尾](model_work/docs/KITCHEN_PARTIAL_FEATURES_V21_20261003.md)完成8图/1次真实CPU更新，60个后段特征及42个头权重张量改变，冻结前缀/特征BN保持；189项本机测试无跳过通过。正式GPU训练未启动，ROI功能仅讨论。当前仍保留v16 best演示/v18 last开发。
-
-**最新电脑端诊断（2026-10-03）：**[新来源可学习性四组实验](model_work/docs/KITCHEN_SOURCE_LEARNABILITY_V1_20261003.md)已完成320次实际更新与12文件实际复核。全画面检测头拟合3/4、开放后段特征拟合4/4；裁剪组虽裁剪4/4，原画面仅1/4，仍有非火对象错误。185项本机测试无跳过通过；只属训练曝光诊断，保留v16 best演示/v18 last开发，没有晋升或新板端验收。
-
-**最新模型结果v20（2026-10-03）：**[不同来源扩展完整结果](model_work/docs/KITCHEN_SOURCE_V20_RESULTS_20261003.md)已完成12轮/3618次更新、五模型图片和9视频307同帧比较、41文件实际复核、两份ONNX各94/94及last独立CPU视频27/27一致性通过。last紧框10/15、补充FP3，视频有两处蓝焰分量恢复及一处挂件减少，但同场景漏检/挂件错误和新来源定位仍在；保留v16 best演示/v18 last开发，v20不晋升。四张预留仍未预测/训练，无独立厨房、事件或新板端验收。以下各阶段记录保留当时沿革。
-
-**最新数据推进队列4（2026-10-03）：**[新火焰与跨批次分组冻结](model_work/docs/KITCHEN_CONTEXT_QUEUE4_20261003.md)已完成13作品请求/11张取得（3次HTTP429重试成功、2项许可策略隔离未下载）、35文件实际查看及25,766路径扫描。7开发/2预先留出/2隔离，新增开发3个火焰区域；两批合计14开发图/4火焰区域。跨批次角色继承保护及174项本机测试通过；未预测或新训练，仍为v16 best演示/v18 last开发，独立厨房验收未完成。
-
-**最新数据推进（2026-10-03）：**[新厨房来源逐图审核与分组冻结](model_work/docs/KITCHEN_CONTEXT_QUEUE3_20261003.md)已完成13作品请求/10张取得、25文件实际查看及25,756路径重叠扫描。7张开发候选、2张预先留出、1张隔离，167项本机测试通过；未运行新预测或训练，当前仍为v16 best演示/v18 last开发。只有2张全厨房画面，仍需扩大正例与完整场景，不能算独立厨房验收。
-
-**最新电脑端进展v19（2026-10-03）：**[训练全场景与完整比较](model_work/docs/TRAIN_CONTEXT_V19_RESULTS_20261003.md)已完成12轮/3510次更新，七模型图片及9视频307同帧比较、26页实际复核、两份ONNX各80/80及last独立CPU视频27/27通过。last紧框10/15→11/15、补充FP5→3，但蓝焰分量漏检和挂件错误仍在、旧空标签来源预测18→25框；保留v16 best演示与v18 last开发候选，v19仅作取舍参照。没有独立厨房或板端验收。
-
-**最新电脑端进展v18（2026-10-03）：**[固定特征检测头训练与完整比较](model_work/docs/FROZEN_FLAME_HEAD_V18_20261003.md)已完成12轮/3198次实际更新，23个特征模块及BN缓冲、保存权重实际核对保持。紧火焰匹配较v16从6/15提高到10/15、蓝焰保持4/5；五模型9视频307同帧、20页实际复核、两份ONNX各80/80及last独立CPU视频27/27一致性通过。**v18 last作为下一定位开发候选，当前演示保留v16 best**；挂件误检、锅底漏检/大框、重复框与旧AP代价已记录。152项本机测试通过，未连接开发板或独立验收。
-
-**前一阶段v17（2026-10-03）：**[v17训练、图片/视频比较与独立CPU验证](model_work/docs/FLAME_EXTENSION_V17_20261003.md)已完成12轮/3198次实际更新。新增审核17图/44个物理火焰框、15张无可见火焰训练图提高权重；补充紧火焰匹配6/15→12/15，last保持4/5蓝焰。三模型9视频307同帧比较、28页实际复核、best/last ONNX各80/80及last独立CPU视频27/27一致性通过。**该阶段演示保留v16 best，v17 last作为定位开发候选**；新增彩色厨具误检、重叠框、一个采样蓝焰漏检和旧召回退化均已记录。没有独立厨房或板端验收，开发板未连接。
-
-面向厨房场景的大学生 SRTP 研究原型。基于 **K230 + RT-Thread Smart / Linux**，开展火焰目标检测、环境采集、事件判断与模拟联动研究。
-
-**前一阶段v16（2026-10-03）：**[v16训练、项目比较与CPU运行](model_work/docs/SCRATCH_SEMANTIC_V16_20261003.md) 已完成。best保持4/5蓝焰，补充物理火焰框匹配0→6处，锅底小蓝焰视频表现保持；动态ONNX80/80及独立CPU入口通过，作为下一电脑端开发候选。旧AP下降、无火误检及锅体大框仍记录，v14/v13回退保留；尚无独立厨房或板端验收。下文为此前阶段沿革。
-
-**历史阶段（2026-10-02）：v14从零训练和v15语义适配均完成，优先推进v14锅底蓝焰电脑端候选，开发板未连接。** 已有fire v13保留回退：它相比v3蓝焰主定位0/5→1/5、队友已审核火焰TP 3→5，旧火焰召回及室内无火FP保持，旧mAP50 .97324→.97128，静态/动态ONNX各80/80及独立CPU入口通过。v3也保留；跨厨房可靠性和事件验收仍未完成。见 [v13模型卡](docs/PC_FIRE_V13_MODEL_CARD.md)。
-
-此前 v12 来源采样训练的两份候选均未达到冻结门槛；本轮 v13 改用固定特征与教师约束后首次通过开发筛选。已对照新版计划书建立差距清单，烟雾/蒸汽语义和独立两类验收仍缺证据，原数据和旧权重保留。
-
-已完成 [v14随机初始化100轮与v15语义适配12轮、项目视频比较](model_work/docs/PROJECT_MODEL_ROUTES_20261002.md)：v14蓝焰主定位4/5，五模型在307个共享视频画面上比较，27个固定画面实际复核支持其锅底小蓝焰收益；旧无火来源误检18/19，锅体范围问题仍未解决。按项目用途综合判断，优先推进v14 last，保留v13回退。动态ONNX 80/80图一致性与独立CPU图片/视频入口通过。
-
-[可见火焰标签适配v15](model_work/docs/TRAIN_VISIBLE_FLAME_PILOT_20261002.md) 的last补充火焰匹配由1处升至5处，蓝焰1/5→3/5，但嵌套重复框增多，实际视频小蓝焰收益弱于v14；保留此路线继续修正物理框口径。旧AP变化作为代价记录，不再要求全部旧指标同时改善。
-
-已完成 [fire v13与smoke v4实际组合](model_work/docs/JOINT_FIRE_V13_SMOKE_V4_20261002.md)：116图保留两来源输出、61图静态ONNX一致性及14图独立CPU入口通过。矩形策略下开发smoke为2 TP/0 FP/1 FN，但正方形入口多1个smoke FP；组合仅供两类开发，其fire来源保持v13，不能直接移植到已改变特征的v14，没有独立厨房或板端验收。
-
-演示重点已按用户要求调整：采用无贴纸干扰的灶台，贴纸抑制作为可选改进，优先真实火焰定位和连续识别。见 [当前演示范围](docs/DEMO_SCOPE.md)。
-
-## 已有成果
-
-- 早期四类视觉模型已完成 KModel 转换与板端摄像头画框演示。
-- SHT31 温湿度、BMP280 温度/气压、SSD1306 OLED 有实机验证。
-- 副板 K1 控制视觉与实时面板，K2 控制传感器；底板矩阵 KEY1 控制面板显隐。
-- 小核通过 tmpfs 状态文件向大核传递传感器读数；已有 20 分钟内存历史缓存。
-- 电脑端具备数据来源审核、重复检查、训练、逐图与视频诊断脚本，以及可解释的融合状态机。
-
-## 当前限制
-
-- 2026-09-28 新厨房视频暴露锅下蓝焰漏检、蓝色贴纸误检；电脑端v16 best/v18 last分别保留作演示和定位开发，新权重尚未上板；v3保留为历史回退。
-- KEY2 全屏数据页的旧乱码已在 9 月 30 日短时实屏试验通过修复；新开机版本已写入并通过启动/哈希复测，长时稳定性未验收。KEY1 蓝框覆盖参数区仍未解决。
-- 烟雾/燃气输入、真实事件融合、自适应标定、执行反馈和 MQTT 闭环尚未验收。
-- 旧图片集和已反复分析的视频均属于开发诊断；其帧数、mAP 或有框比例不能替代独立事件验收。
-
-## 模型阶段收尾（2026-09-30）
-
-以下保留 9 月 30 日暂停时的决定；10 月 2 日用户重新授权模型工作，见 [最新电脑端推进](model_work/docs/PC_MODEL_PROGRESS_20261002.md)。当时保留 v3 开发基线及 v5–v11 失败结果，未完成素材审核暂存。见 [模型收尾](docs/PC_MODEL_STAGE_CLOSURE_20260930.md) 和 [板端交接](docs/BOARD_HANDOFF_20260930.md)。此后 KEY2 页面和矩阵切换获用户确认，见 [KEY2 修复与部署](model_work/docs/KEY2_CONNECTOR_CANDIDATE_20260930.md)。本轮没有连接或操作板子。
-
-### 已完成实验
-
-v5、v6 均已完成训练与对照。v6 减轻了旧图退化，但仍有贴纸误报，外部蓝焰定位未改善，继续保留 v3。v7 从 v3 开始、沿用 v6 参数，仅将两份审核过的既有蓝焰诊断原作加入训练，训练与按来源曝光分组的评测均已完成：last 在五张蓝焰诊断图上由 0/5 到 1/5，但旧图 mAP50 降至 0.906 且仍有误检，拒绝替换。详见 [v5 记录](model_work/docs/HARDCASE_V5_EXPERIMENT_20260930.md)、[v6 完整结果](model_work/docs/HARDCASE_V6_EXPERIMENT_20260930.md) 和 [v7 实验](model_work/docs/HARDCASE_V7_EXPERIMENT_20260930.md)。来源边界更正见 [原作对照](model_work/docs/COMMONS_SOURCE_SCOPE_CORRECTION_20260930.md)。
-
-v8 已完成：冻结 11 个主干模块确实保住旧图诊断，但蓝焰仍为 0/5，难例适配不足，拒绝替换。随后 v9 增补了审核后的蓝焰与食物难负例，见 [v8 实验](model_work/docs/HARDCASE_V8_FREEZE_EXPERIMENT_20260930.md)。
-
-v9 已完成：last 五图蓝焰定位提高到 3/5，但旧图 mAP50 降到 0.900 且仍有贴纸误检，拒绝替换。此次仅增补八张蓝焰照片与一个食物难负例，训练与完整对比身份已保存，见 [v9 实验](model_work/docs/HARDCASE_V9_SOURCE_DATA_EXPERIMENT_20260930.md)。
-
-
-原训练集颜色/标签抽查完成：所抽厨房图中蓝焰并不少见，但场景重复且部分框包含较大锅体；通用来源全部 4 个空标签图中 3 个实际有可见火焰，已追溯为上游漏标。尚未修改 v9 或原标签。见 [抽查证据](model_work/docs/TRAINING_COLOR_QUALITY_REVIEW_20260930.md)。
-
-v10 已完成：蓝焰仍为 3/5，食物误检重新出现，暂不采用整来源移除方案；按来源复查发现烟雾/反光误检增加，见 [来源消融](model_work/docs/HARDCASE_V10_SOURCE_ABLATION_20260930.md)。
-
-v11 已完成：回到 v9 数据，隔离五张问题图、加权三张原训练烟雾无可见火焰图。last 蓝焰仍 3/5，烟雾来源误检为 10 框且有食物/关火反光误检，不采用。贴纸不是否决理由，见 [完整结果](model_work/docs/HARDCASE_V11_NEGATIVE_CURATION_20260930.md)。[新来源短视频探查](model_work/docs/PUBLIC_VIDEO_PROBE_20260930.md) 已完成煮饭片段：36个无可见火焰采样帧四模型均0误检；船上灶台暂存，未完成火焰判读，不把短片结果当成完整事件验收。
+阀门默认气体关断门限为 **650 mV**、恢复门限为 **490 mV**；温度达到 **60℃** 或约 **30 s 升高 8℃**也触发关断。读数满足恢复条件后会自动重新开阀。配置见 [srtp_fireguard.conf](src/key_controls/srtp_fireguard.conf)，实际判断见 [fire_guard.sh](src/key_controls/fire_guard.sh)。这些是当前原型参数，尚无标准气体浓度标定。
 
 ## 从这里开始
 
+```sh
+git clone https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian.git
+cd SRTP-K230-Fire-Guardian
+git switch main
+```
+
+已有克隆可执行 `git fetch origin`，确认工作区改动后使用 `git switch main`、`git pull --ff-only origin main`。`codex/pc-model-20261002` 保留为开发分支。
+
 | 内容 | 入口 |
 |---|---|
-| 最新电脑端记录与可运行入口 | [完整开发分支状态](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/blob/codex/pc-model-20261002/docs/STATUS.md)、[v16运行记录](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/blob/codex/pc-model-20261002/model_work/docs/SCRATCH_SEMANTIC_V16_20261003.md)、[v18开发候选](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/blob/codex/pc-model-20261002/model_work/docs/FROZEN_FLAME_HEAD_V18_20261003.md)、[v21预演暂停](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/blob/codex/pc-model-20261002/model_work/docs/KITCHEN_PARTIAL_FEATURES_V21_20261003.md) |
-| 历史训练及未达计划要求（当前暂停） | [v12 完整结果](model_work/docs/HARDCASE_V12_SOURCE_CAP_20261002.md)、[新版计划书证据矩阵](docs/PLAN_REQUIREMENT_MATRIX_20261002.md)、[烟雾标签审核](model_work/docs/SMOKE_SOURCE_SEMANTICS_20261002.md) |
-| 当前板端交接 | [上板顺序与版本边界](docs/BOARD_HANDOFF_20260930.md)、[模型阶段收尾](docs/PC_MODEL_STAGE_CLOSURE_20260930.md) |
-| 报警、融合与联动方案 | [板端实施顺序与输入缺口](docs/BOARD_EVENT_FUSION_PLAN_20261001.md) |
-| 最新状态及历史 | [项目状态](docs/STATUS.md)、[路线与实验门槛](docs/ROADMAP.md) |
-| KEY1 蓝框问题 | [短时叠加试验与裁剪方案](model_work/docs/KEY1_BLUE_BOX_INVESTIGATION_20261001.md) |
-| 板端实时面板 | [实机记录](model_work/docs/BOARD_UI_LIVE_INTEGRATION_20260928.md) |
-| KEY2 数据页与部署 | [最新修复](model_work/docs/KEY2_CONNECTOR_CANDIDATE_20260930.md)、[历史失败](model_work/docs/BOARD_DATA_PAGE_KEY2_20260928.md) |
-| 新厨房视频失败 | [冻结模型测试](model_work/docs/TEAMMATE_NEW_VIDEO_TEST_20260928.md) |
-| 训练与数据沿革 | [模型总报告](model_work/docs/MODEL_TEST_AND_TRAINING_REPORT_20260927.md)、[视频适配](model_work/docs/USER_VIDEO_ADAPTATION_RUN_20260927.md) |
-| 电脑端运行方法 | [复现指南](docs/REPRODUCE_PC.md) |
-| 有用参考资料 | [参考入口](references/README.md)、[本地资料清单](references/LOCAL_MATERIALS.md) |
-| 源码与版本边界 | [板端版本身份](docs/BOARD_BASELINE.md)、[第三方说明](THIRD_PARTY_NOTICES.md) |
+| 最新板端整合、阈值与已知问题 | [2026-10-27 整合记录](docs/GAS_VALVE_WIFI_INTEGRATION_20261027.md) |
+| 传感器接法及构建 | [sensor_mvp](src/sensor_mvp/README.md) |
+| 按键、阀门、WiFi 与自启脚本 | [key_controls](src/key_controls/README.md) |
+| 面板与数据页 | [board_ui_overlay](src/board_ui_overlay/README.md) |
+| Windows 大核构建 | [Zig + LLD 构建说明](tools/rt_smart/README.md)；脚本仍需配置本机 SDK 路径 |
+| 历史板端基线与完整哈希 | [板端基线](docs/BOARD_BASELINE.md)、[9 月交接](docs/BOARD_HANDOFF_20260930.md) |
+| KEY2 修复与永久启动 | [实机记录](model_work/docs/KEY2_CONNECTOR_CANDIDATE_20260930.md) |
+| 模型进展与可运行入口 | [项目状态](docs/STATUS.md)、[电脑端复现](docs/REPRODUCE_PC.md) |
+| 当前电脑端候选 | [v16 演示](model_work/docs/SCRATCH_SEMANTIC_V16_20261003.md)、[v18 定位开发](model_work/docs/FROZEN_FLAME_HEAD_V18_20261003.md)、[v21 暂停记录](model_work/docs/KITCHEN_PARTIAL_FEATURES_V21_20261003.md) |
+| 融合方案与项目路线 | [事件融合计划](docs/BOARD_EVENT_FUSION_PLAN_20261001.md)、[路线](docs/ROADMAP.md) |
+| 数据、训练、失败实验 | [模型总报告](model_work/docs/MODEL_TEST_AND_TRAINING_REPORT_20260927.md)、[完整阶段状态](docs/STATUS.md) |
+| 第三方资料与许可 | [参考资料](references/README.md)、[第三方说明](THIRD_PARTY_NOTICES.md) |
 
-## 目录
+## 已知限制
 
-`src/` 保存板端代码与实验候选；`patches/` 保存历史 SDK 适配补丁；`model_work/src/` 保存电脑端数据、训练、诊断与回放脚本；`model_work/docs/` 保存实验记录；`docs/` 是公开导航与复现说明；`references/` 是参考资料索引与使用笔记。
+- 阀门判断尚未使用摄像头检测框，正常灶火与异常火情的完整事件融合未验收。
+- 火焰模块已接入 ADC，但当前配置注明其对火焰尚无可用响应；通道有电压不等于探火成功。
+- 当前守护仅在气体、火焰、温度三路全部无效时执行无数据策略；单路失效和状态桥接停止更新尚无完整保护。
+- MQ-2 大屏的 0～100% 为 250～500 mV 的相对刻度，OLED 报警门限为 500 mV，与阀门 650 mV 门限尚未统一；不是 ppm 或 %LEL。
+- 电脑端候选仍有蓝焰漏检、锅体大框和非火对象误检；未通过独立跨厨房、完整事件或新权重上板验收。板端 ROI 选区尚未实现。
+- KEY1 检测框覆盖面板的问题没有新的关闭证据；长时稳定性、执行器位置反馈、MQTT 闭环仍待补测。
 
-本地大文件、原视频、私有数据、权重、固件备份和个人申报材料保留在原路径，不加入普通 Git。数据与固件的身份由各实验清单和 SHA-256 记录。部分旧脚本含历史机器路径，请按复现指南配置；新实验脚本提供路径参数。
+## 源码与运行产物
+
+`src/` 保存板端代码；`model_work/src/` 保存电脑端数据处理、训练、诊断与回放脚本；`model_work/docs/` 和 `docs/` 保存实验与交接记录；`tools/` 保存检查及构建工具。
+
+**仓库不包含权重、KModel、ELF、固件备份和原视频。** 新克隆需按对应记录准备产物。历史视觉 ELF 缺少同源源码，`src/kitchen_fire_yolov8/` 不是已经复现摄像兼容性的正式视觉源码；编译成功不等于可直接替换已验收程序。接手设备先读回现有产物并核对哈希，历史身份见板端基线。
 
 ## 验证
 
 ```sh
-python -B -m unittest discover -s model_work/src -p 'test_*.py' -v
 python -B tools/check_public_repo.py
+python -B tools/check_key1_draw_path.py --self-test
+python -B -m unittest discover -s model_work/src -p 'test_*.py' -v
 ```
 
-该仓库公开研究过程与失败记录。第三方代码、数据及资料遵守各自许可，见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+阀门逻辑另附 [19 例判据测试](src/key_controls/test_fire_guard.sh) 和 [5 例温升计算测试](src/key_controls/test_temp_rise.sh)。两者使用模拟输入，不能替代实机验收；测试脚本的路径适配方法见整合记录。
+
+## Contributors
+
+| 贡献者 | 工作 |
+|---|---|
+| [@1nuoiscute](https://github.com/1nuoiscute) | 项目维护、视觉模型实验、板端整合与研究记录 |
+| [@rqw1425](https://github.com/rqw1425) | [PR #2](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/pull/2)：ADS1115 气体/火焰采集、阀门联动、WiFi、自启与 Windows RT-Smart 构建工具 |
+
+完整提交贡献见 [GitHub Contributors](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/graphs/contributors)。

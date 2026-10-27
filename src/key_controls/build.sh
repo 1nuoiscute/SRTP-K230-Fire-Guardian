@@ -21,7 +21,7 @@ mkdir -p "$OUTPUT"
   -o "$OUTPUT/sensor_key_dynamic" "$SOURCE/sensor_key.c" "$SOURCE/key_input.c"
 "$LINUX_CC" -O2 -Wall -Wextra -std=c11 -D_POSIX_C_SOURCE=200809L \
   -o "$OUTPUT/sensor_mvp_oled_dynamic" \
-  "$SENSOR_SOURCE/main.c" "$SENSOR_SOURCE/gpio_i2c.c" \
+  "$SENSOR_SOURCE/main.c" "$SENSOR_SOURCE/gpio_i2c.c" "$SENSOR_SOURCE/ads1115.c" \
   "$SENSOR_SOURCE/sht31.c" "$SENSOR_SOURCE/bmp280.c" \
   "$SENSOR_SOURCE/ssd1306.c"
 

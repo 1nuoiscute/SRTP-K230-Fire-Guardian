@@ -1,4 +1,4 @@
-> **2026-10-27 最新：** 数据页与 KEY1 面板均接入**气体与火焰**。`status_bridge.c` 状态格式升到 **v2**（尾部追加 `mq2 flame`，`-1` 表示数据过期），刷新率提到 **2 Hz**（原先 2 s 一轮，导致守护读到的值最多滞后 2~3 秒）；`data_page.c` / `overlay_live.c` 同时兼容 v1/v2；面板背景改用 PIL 直接修补现成 `.bgra`（headless Edge 在受限环境起不来，退出码 0x80000003）。见 [执行器与联网整合实录](../../../reports/13-srtp-demo/执行器与联网整合实录.md)。
+> **2026-10-27 最新：** 数据页与 KEY1 面板均接入**气体与火焰**。`status_bridge.c` 状态格式升到 **v2**（尾部追加 `mq2 flame`，`-1` 表示数据过期），刷新率提到 **2 Hz**（原先 2 s 一轮，导致守护读到的值最多滞后 2~3 秒）；`data_page.c` / `overlay_live.c` 同时兼容 v1/v2；面板背景改用 PIL 直接修补现成 `.bgra`（headless Edge 在受限环境起不来，退出码 0x80000003）。见 [仓库整合记录与验证边界](../../docs/GAS_VALVE_WIFI_INTEGRATION_20261027.md)。
 > **2026-09-30 最新：** KEY2 新 connector 页和矩阵切换已获用户实屏确认；新启动镜像已写入并实际重启，启动与读回一致；用户确认重启后两轮实体切换正常。历史 v4b 回退与旧失败候选继续保留。见 [修复与部署记录](../../model_work/docs/KEY2_CONNECTOR_CANDIDATE_20260930.md) 和 [版本身份](../../docs/key2_release_identity_20260930.json)。以下旧“未验收”段落保留为历史边界。
 
 # 独立 OSD 探针（2026-09-28 板端短测）
