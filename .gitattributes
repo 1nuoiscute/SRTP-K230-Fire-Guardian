@@ -9,3 +9,11 @@
 *.json text eol=lf
 *.yml text eol=lf
 Makefile text eol=lf
+*.conf text eol=lf
+*.example text eol=lf
+*.lds text eol=lf
+
+# BusyBox init scripts and launchers have no extension: force LF or they
+# will not run on the board ("line 1: ﻿#!/bin/sh: not found").
+src/key_controls/S9* text eol=lf
+src/key_controls/srtp_fire_guard_launch text eol=lf

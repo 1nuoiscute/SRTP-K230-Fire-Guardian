@@ -1,0 +1,93 @@
+#!/bin/sh
+#
+# S95srtp_wifi - bring up the RTL8188FU WiFi link at boot.
+#
+# Why an init script: wlan0 comes up as DOWN with no supplicant, so a reboot
+# loses the link. This starts wpa_supplicant against /etc/srtp_wifi.conf and
+# pulls a DHCP lease.
+#
+# Deliberate choices:
+#   * never run "ifconfig wlan0 down/up" - on this board that makes the
+#     RTL8188FU driver re-enumerate the USB device and the netdev vanishes for
+#     a few seconds, which drops wpa_supplicant's grip on it.
+#   * wait briefly for the netdev instead, because it appears a few seconds
+#     after the USB layer probes.
+
+DAEMON=wpa_supplicant
+CONF=/etc/wpa_supplicant.conf
+CREDS=/etc/srtp_wifi.conf
+PIDFILE=/var/run/wpa_supplicant.pid
+
+wait_for_wlan() {
+    i=0
+    while [ "$i" -lt 30 ]; do
+        if ifconfig wlan0 >/dev/null 2>&1; then return 0; fi
+        sleep 1
+        i=$((i + 1))
+    done
+    return 1
+}
+
+write_conf() {
+    . "$CREDS"
+    cat >"$CONF" <<EOF
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=0
+ap_scan=1
+update_config=1
+
+network={
+    ssid="$WIFI_SSID"
+    psk="$WIFI_PSK"
+    key_mgmt=WPA-PSK
+    priority=1
+}
+EOF
+}
+
+case "$1" in
+    start)
+        [ -f "$CREDS" ] || { echo "S95srtp_wifi: $CREDS missing, skip"; exit 0; }
+        wait_for_wlan || { echo "S95srtp_wifi: wlan0 never appeared"; exit 1; }
+
+        write_conf
+        mkdir -p /var/run/wpa_supplicant
+        pidof wpa_supplicant >/dev/null 2>&1 && killall wpa_supplicant 2>/dev/null
+        sleep 1
+        wpa_supplicant -B -i wlan0 -c "$CONF" -P "$PIDFILE" >/dev/null 2>&1
+
+        i=0
+        while [ "$i" -lt 30 ]; do
+            ST=$(wpa_cli -i wlan0 status 2>/dev/null | grep '^wpa_state=' | cut -d= -f2)
+            [ "$ST" = "COMPLETED" ] && break
+            sleep 1
+            i=$((i + 1))
+        done
+
+        if [ "$ST" = "COMPLETED" ]; then
+            echo "S95srtp_wifi: associated with $(wpa_cli -i wlan0 status 2>/dev/null | grep '^ssid=' | cut -d= -f2)"
+            udhcpc -i wlan0 -n -q -t 8 -T 3 >/dev/null 2>&1
+            echo "S95srtp_wifi: $(ifconfig wlan0 2>/dev/null | grep 'inet addr' | tr -s ' ')"
+        else
+            echo "S95srtp_wifi: association failed (state=$ST)"
+        fi
+        ;;
+    stop)
+        udhcpc -i wlan0 -n -q -t 1 -T 1 >/dev/null 2>&1
+        pidof wpa_supplicant >/dev/null 2>&1 && killall wpa_supplicant 2>/dev/null
+        echo "S95srtp_wifi: stopped"
+        ;;
+    restart)
+        "$0" stop
+        sleep 2
+        "$0" start
+        ;;
+    status)
+        ifconfig wlan0 2>/dev/null | head -3
+        wpa_cli -i wlan0 status 2>/dev/null | grep -E '^(ssid|wpa_state|ip_address)='
+        ;;
+    *)
+        echo "usage: $0 {start|stop|restart|status}"
+        exit 2
+        ;;
+esac

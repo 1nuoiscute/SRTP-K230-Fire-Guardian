@@ -1,5 +1,12 @@
 /* Linux small-core bridge: I2C sensor log -> one atomic /sharefs status record.
  * No network transport and no second process touches the sensor I2C bus.
+ *
+ * Format history:
+ *   v1  seq sht temp humidity bmp pressure wifi
+ *   v2  seq sht temp humidity bmp pressure wifi mq2 flame     <- this build
+ *
+ * The gas channels are appended, so a reader that stops after `wifi` still
+ * works. data_page.c accepts both versions.
  */
 #define _POSIX_C_SOURCE 200809L
 #include <arpa/inet.h>
@@ -36,8 +43,11 @@ typedef struct {
     ino_t inode;
     double sht_time;
     double bmp_time;
+    double mq2_time;
+    double flame_time;
     double temp, humidity, pressure;
-    int sht_ok, bmp_ok;
+    int mq2_mv, flame_mv;
+    int sht_ok, bmp_ok, mq2_ok, flame_ok;
 } SensorLog;
 
 static void consume_new_log(const char *path, SensorLog *s)
@@ -46,13 +56,13 @@ static void consume_new_log(const char *path, SensorLog *s)
     if (stat(path, &st) != 0) {
         s->offset = 0;
         s->inode = 0;
-        s->sht_ok = s->bmp_ok = 0;
+        s->sht_ok = s->bmp_ok = s->mq2_ok = s->flame_ok = 0;
         return;
     }
     if (st.st_ino != s->inode || st.st_size < s->offset) {
         s->inode = st.st_ino;
         s->offset = 0;
-        s->sht_ok = s->bmp_ok = 0;
+        s->sht_ok = s->bmp_ok = s->mq2_ok = s->flame_ok = 0;
     }
     if (st.st_size == s->offset) return;
     FILE *f = fopen(path, "r");
@@ -67,6 +77,7 @@ static void consume_new_log(const char *path, SensorLog *s)
     char line[256];
     while (fgets(line, sizeof(line), f)) {
         double a, b;
+        int mv;
         if (sscanf(line, "SHT31: %lf C, %lf %%RH (CRC OK)", &a, &b) == 2) {
             if (a >= -40 && a <= 125 && b >= 0 && b <= 100) {
                 s->temp = a; s->humidity = b; s->sht_ok = 1;
@@ -81,6 +92,21 @@ static void consume_new_log(const char *path, SensorLog *s)
             }
         } else if (strstr(line, "BMP280 read failed")) {
             s->bmp_ok = 0;
+        } else if (sscanf(line, "MQ2: %d mV", &mv) == 1) {
+            /* sane window at the +/-4.096 V PGA */
+            if (mv >= -50 && mv <= 5000) {
+                s->mq2_mv = mv; s->mq2_ok = 1;
+                s->mq2_time = monotonic_seconds();
+            }
+        } else if (strstr(line, "MQ2 read failed")) {
+            s->mq2_ok = 0;
+        } else if (sscanf(line, "FLAME: %d mV", &mv) == 1) {
+            if (mv >= -50 && mv <= 5000) {
+                s->flame_mv = mv; s->flame_ok = 1;
+                s->flame_time = monotonic_seconds();
+            }
+        } else if (strstr(line, "FLAME read failed")) {
+            s->flame_ok = 0;
         }
     }
     off_t end = ftello(f);
@@ -116,8 +142,13 @@ static int write_status(const char *path, unsigned long sequence,
     double now = monotonic_seconds();
     int sht = s->sht_ok && now - s->sht_time <= 5.0;
     int bmp = s->bmp_ok && now - s->bmp_time <= 5.0;
-    int result = fprintf(f, "v1 %lu %d %.1f %.1f %d %.1f %d\n", sequence,
-                         sht, s->temp, s->humidity, bmp, s->pressure, wifi);
+    int mq2 = s->mq2_ok && now - s->mq2_time <= 5.0;
+    int flame = s->flame_ok && now - s->flame_time <= 5.0;
+    /* -1 tells the reader the value is stale, so it prints "--" */
+    int result = fprintf(f, "v2 %lu %d %.1f %.1f %d %.1f %d %d %d\n", sequence,
+                         sht, s->temp, s->humidity, bmp, s->pressure, wifi,
+                         mq2 ? s->mq2_mv : -1,
+                         flame ? s->flame_mv : -1);
     if (fclose(f) != 0 || result <= 0) return -1;
     return rename(next, path);
 }
@@ -142,7 +173,8 @@ static int write_history(const char *status_path, unsigned long sequence,
     char path[512], next[520];
     int prefix = (int)(slash - status_path + 1);
     if (snprintf(path, sizeof(path), "%.*shistory.txt", prefix, status_path) >= (int)sizeof(path) ||
-        snprintf(next, sizeof(next), "%s.next", path) >= (int)sizeof(next)) return -1;
+        snprintf(next, sizeof(next), "%s.next", path) >= (int)sizeof(next))
+        return -1;
     FILE *f = fopen(next, "w");
     if (!f) return -1;
     int bad = fprintf(f, "v1 %zu\n", history_count) <= 0;
@@ -164,14 +196,19 @@ int main(int argc, char **argv)
     SensorLog sensor = {0};
     unsigned long sequence = 0;
     int cycles = 0;
+    /* The status file is refreshed at 2 Hz so the guard sees a reading that is at
+     * most ~0.5 s old. At 0.5 Hz it was up to 2 s stale, which is 20-30 mV of
+     * error on a decaying gas reading - enough to make the valve appear to act on
+     * the wrong number. The history stays at 0.5 Hz so the 600-point buffer still
+     * covers 20 minutes. */
     while (running && (max_cycles <= 0 || cycles < max_cycles)) {
         consume_new_log(log_path, &sensor);
         if (write_status(status_path, ++sequence, &sensor, wlan0_has_ipv4()) != 0)
             fprintf(stderr, "status write failed: %s (%d)\n", status_path, errno);
-        if (write_history(status_path, sequence, &sensor) != 0)
+        if ((cycles % 4) == 0 && write_history(status_path, sequence, &sensor) != 0)
             fprintf(stderr, "history write failed: %s (%d)\n", status_path, errno);
         ++cycles;
-        if (running && (max_cycles <= 0 || cycles < max_cycles)) sleep_ms(2000);
+        if (running && (max_cycles <= 0 || cycles < max_cycles)) sleep_ms(500);
     }
     return 0;
 }

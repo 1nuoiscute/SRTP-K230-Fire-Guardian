@@ -28,7 +28,20 @@
 #define HISTORY_CAP 600
 #define GLYPHS "0123456789.-"
 
-typedef struct { unsigned long seq; int sht, bmp, wifi; double temp, humidity, pressure; } Status;
+/* Relative gas concentration shown on screen.
+ *
+ * MQ-2 is a semiconductor sensor: its output is a resistance change, and a real
+ * ppm / %LEL figure needs a per-sensor R0 from a 24-48 h clean-air burn-in plus
+ * a known gas concentration for the curve. Until that calibration exists, the
+ * page shows a relative figure anchored on bench measurements:
+ *   0 %   = clean-air baseline
+ *   100 % = the alarm threshold
+ * It is labelled "相对空载" so it is never mistaken for an absolute reading.
+ * Raw millivolts stay available in the log and on the OLED. */
+#define MQ2_BASE_MV  250
+#define MQ2_ALARM_MV 500
+typedef struct { unsigned long seq; int sht, bmp, wifi; double temp, humidity, pressure;
+                 int mq2, flame; } Status;
 typedef struct { unsigned long seq; int valid; double temp, humidity; } Point;
 static const int large_widths[12] = {16,16,16,16,16,16,16,16,16,16,8,11};
 static const int small_widths[12] = {7,7,7,7,7,7,7,7,7,7,4,5};
@@ -56,9 +69,21 @@ static int read_status(Status *out)
     int got = fgets(line, sizeof(line), f) != NULL;
     fclose(f);
     Status s = {0};
-    if (!got || sscanf(line, "v1 %lu %d %lf %lf %d %lf %d", &s.seq, &s.sht,
-                       &s.temp, &s.humidity, &s.bmp, &s.pressure, &s.wifi) != 7 ||
-        !isfinite(s.temp) || !isfinite(s.humidity) || !isfinite(s.pressure) ||
+    s.mq2 = -1;
+    s.flame = -1;
+    if (!got) return -1;
+    /* v2 carries the gas channels; fall back to v1 so an older bridge still
+     * drives the page (gas simply shows as "--"). */
+    if (sscanf(line, "v2 %lu %d %lf %lf %d %lf %d %d %d", &s.seq, &s.sht,
+               &s.temp, &s.humidity, &s.bmp, &s.pressure, &s.wifi,
+               &s.mq2, &s.flame) != 9) {
+        s.mq2 = -1;
+        s.flame = -1;
+        if (sscanf(line, "v1 %lu %d %lf %lf %d %lf %d", &s.seq, &s.sht,
+                   &s.temp, &s.humidity, &s.bmp, &s.pressure, &s.wifi) != 7)
+            return -1;
+    }
+    if (!isfinite(s.temp) || !isfinite(s.humidity) || !isfinite(s.pressure) ||
         s.sht < 0 || s.sht > 1 || s.bmp < 0 || s.bmp > 1 ||
         s.wifi < 0 || s.wifi > 1) return -1;
     *out = s;
@@ -287,6 +312,27 @@ int main(int argc, char **argv)
             end = draw_num(virt, 27, 253, value, small, 14, 20, small_widths);
             if (fresh && status.bmp) blit(virt, end + 3, 253, unit_pressure, 28, 0, 28, 20);
             blit(virt, 278, 252, wifi[fresh ? status.wifi : 2], 110, 0, 110, 29);
+
+            /* Gas channels, drawn into the bottom block.
+             * MQ-2 shows a relative percentage (0 % = clean-air baseline,
+             * 100 % = alarm threshold); the flame channel stays in mV.
+             * -- is drawn when the value is stale or the bridge is still v1. */
+            if (fresh && status.mq2 >= 0 && status.mq2 <= 5000) {
+                int pct = (status.mq2 - MQ2_BASE_MV) * 100 / (MQ2_ALARM_MV - MQ2_BASE_MV);
+                if (pct < 0) pct = 0;
+                if (pct > 100) pct = 100;
+                snprintf(value, sizeof(value), "%d", pct);
+            } else {
+                snprintf(value, sizeof(value), "--");
+            }
+            draw_num(virt, 100, 818, value, small, 14, 20, small_widths);
+
+            if (fresh && status.flame >= 0 && status.flame <= 5000)
+                snprintf(value, sizeof(value), "%d", status.flame);
+            else
+                snprintf(value, sizeof(value), "--");
+            draw_num(virt, 100, 848, value, small, 14, 20, small_widths);
+
             plot(virt, points, count, 0, small);
             plot(virt, points, count, 1, small);
             if (!inserted) {
@@ -301,8 +347,8 @@ int main(int argc, char **argv)
                 }
                 inserted = 1;
             }
-            printf("DATA: seq=%lu temp=%.1f humidity=%.1f history=%d fresh=%d\n",
-                   last_seq, status.temp, status.humidity, count, fresh);
+            printf("DATA: seq=%lu temp=%.1f humidity=%.1f mq2=%d flame=%d history=%d fresh=%d\n",
+                   last_seq, status.temp, status.humidity, status.mq2, status.flame, count, fresh);
         }
         if (quit_requested(40)) break;
         ++ticks;
