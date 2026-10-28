@@ -1,0 +1,369 @@
+{
+  "role": "One exposed development video, no exhaustive event truth",
+  "date": "2026-10-28",
+  "frames": 734,
+  "cached_frames": 253,
+  "newly_inferred_frames": 481,
+  "prior_exact_predictions_per_comparison": 162,
+  "models": {
+    "v16_best": {
+      "empty_frames": 41,
+      "longest_empty_runs": [
+        {
+          "start": 134,
+          "end": 160,
+          "frames": 27,
+          "seconds": 0.9635967302452315
+        },
+        {
+          "start": 715,
+          "end": 720,
+          "frames": 6,
+          "seconds": 0.21413260672116258
+        },
+        {
+          "start": 710,
+          "end": 713,
+          "frames": 4,
+          "seconds": 0.1427550711474417
+        },
+        {
+          "start": 452,
+          "end": 452,
+          "frames": 1,
+          "seconds": 0.03568876778686043
+        },
+        {
+          "start": 484,
+          "end": 484,
+          "frames": 1,
+          "seconds": 0.03568876778686043
+        }
+      ]
+    },
+    "v18_last": {
+      "empty_frames": 63,
+      "longest_empty_runs": [
+        {
+          "start": 134,
+          "end": 161,
+          "frames": 28,
+          "seconds": 0.999285498032092
+        },
+        {
+          "start": 708,
+          "end": 719,
+          "frames": 12,
+          "seconds": 0.42826521344232515
+        },
+        {
+          "start": 559,
+          "end": 562,
+          "frames": 4,
+          "seconds": 0.1427550711474417
+        },
+        {
+          "start": 451,
+          "end": 453,
+          "frames": 3,
+          "seconds": 0.10706630336058129
+        },
+        {
+          "start": 484,
+          "end": 486,
+          "frames": 3,
+          "seconds": 0.10706630336058129
+        }
+      ]
+    },
+    "v21_last": {
+      "empty_frames": 58,
+      "longest_empty_runs": [
+        {
+          "start": 134,
+          "end": 161,
+          "frames": 28,
+          "seconds": 0.999285498032092
+        },
+        {
+          "start": 704,
+          "end": 719,
+          "frames": 16,
+          "seconds": 0.5710202845897668
+        },
+        {
+          "start": 559,
+          "end": 562,
+          "frames": 4,
+          "seconds": 0.1427550711474417
+        },
+        {
+          "start": 611,
+          "end": 612,
+          "frames": 2,
+          "seconds": 0.07137753557372085
+        },
+        {
+          "start": 617,
+          "end": 618,
+          "frames": 2,
+          "seconds": 0.07137753557372085
+        }
+      ]
+    },
+    "v22_last": {
+      "empty_frames": 68,
+      "longest_empty_runs": [
+        {
+          "start": 134,
+          "end": 161,
+          "frames": 28,
+          "seconds": 0.999285498032092
+        },
+        {
+          "start": 709,
+          "end": 719,
+          "frames": 11,
+          "seconds": 0.39257644565546473
+        },
+        {
+          "start": 366,
+          "end": 369,
+          "frames": 4,
+          "seconds": 0.1427550711474417
+        },
+        {
+          "start": 621,
+          "end": 624,
+          "frames": 4,
+          "seconds": 0.1427550711474417
+        },
+        {
+          "start": 59,
+          "end": 61,
+          "frames": 3,
+          "seconds": 0.10706630336058129
+        }
+      ]
+    },
+    "v24_best": {
+      "empty_frames": 52,
+      "longest_empty_runs": [
+        {
+          "start": 134,
+          "end": 161,
+          "frames": 28,
+          "seconds": 0.999285498032092
+        },
+        {
+          "start": 709,
+          "end": 720,
+          "frames": 12,
+          "seconds": 0.42826521344232515
+        },
+        {
+          "start": 559,
+          "end": 560,
+          "frames": 2,
+          "seconds": 0.07137753557372085
+        },
+        {
+          "start": 624,
+          "end": 625,
+          "frames": 2,
+          "seconds": 0.07137753557372085
+        },
+        {
+          "start": 725,
+          "end": 726,
+          "frames": 2,
+          "seconds": 0.07137753557372085
+        }
+      ]
+    },
+    "v24_last": {
+      "empty_frames": 66,
+      "longest_empty_runs": [
+        {
+          "start": 134,
+          "end": 161,
+          "frames": 28,
+          "seconds": 0.999285498032092
+        },
+        {
+          "start": 708,
+          "end": 719,
+          "frames": 12,
+          "seconds": 0.42826521344232515
+        },
+        {
+          "start": 59,
+          "end": 61,
+          "frames": 3,
+          "seconds": 0.10706630336058129
+        },
+        {
+          "start": 559,
+          "end": 561,
+          "frames": 3,
+          "seconds": 0.10706630336058129
+        },
+        {
+          "start": 621,
+          "end": 623,
+          "frames": 3,
+          "seconds": 0.10706630336058129
+        }
+      ]
+    }
+  },
+  "early_dense_windows": [
+    {
+      "start": 0.5,
+      "end": 1.5,
+      "frames": 28,
+      "empty_by_model": {
+        "v16_best": 0,
+        "v18_last": 0,
+        "v21_last": 0,
+        "v22_last": 2,
+        "v24_best": 0,
+        "v24_last": 1
+      },
+      "v24_last_empty_indices": [
+        28
+      ]
+    },
+    {
+      "start": 8.5,
+      "end": 9.5,
+      "frames": 28,
+      "empty_by_model": {
+        "v16_best": 0,
+        "v18_last": 0,
+        "v21_last": 0,
+        "v22_last": 0,
+        "v24_best": 0,
+        "v24_last": 1
+      },
+      "v24_last_empty_indices": [
+        252
+      ]
+    }
+  ],
+  "later_dense_windows": [
+    {
+      "start": 19.5,
+      "end": 20.5,
+      "frames": 28,
+      "empty_by_model": {
+        "v16_best": 1,
+        "v18_last": 6,
+        "v21_last": 5,
+        "v22_last": 3,
+        "v24_best": 3,
+        "v24_last": 4
+      },
+      "v24_last_empty_indices": [
+        555,
+        559,
+        560,
+        561
+      ]
+    },
+    {
+      "start": 21.5,
+      "end": 22.5,
+      "frames": 28,
+      "empty_by_model": {
+        "v16_best": 1,
+        "v18_last": 1,
+        "v21_last": 7,
+        "v22_last": 7,
+        "v24_best": 3,
+        "v24_last": 7
+      },
+      "v24_last_empty_indices": [
+        612,
+        617,
+        618,
+        621,
+        622,
+        623,
+        626
+      ]
+    },
+    {
+      "start": 25.0,
+      "end": 26.0,
+      "frames": 28,
+      "empty_by_model": {
+        "v16_best": 10,
+        "v18_last": 16,
+        "v21_last": 17,
+        "v22_last": 12,
+        "v24_best": 15,
+        "v24_last": 13
+      },
+      "v24_last_empty_indices": [
+        705,
+        708,
+        709,
+        710,
+        711,
+        712,
+        713,
+        714,
+        715,
+        716,
+        717,
+        718,
+        719
+      ]
+    }
+  ],
+  "visible_observations": [
+    "Frame 560 around 19.99s: visible blue flames, all six models output no boxes.",
+    "Frames 708-719 around 25.27-25.66s: v24_last outputs no boxes continuously; representative frames 712 and 717 show visible blue flames.",
+    "Frames 28 and 252: visible blue flame with v24_last empty; each has output on adjacent frames."
+  ],
+  "visual_review_pages": [
+    {
+      "path": "model_work\\out\\fire_video7_dense_v24_20261028\\fixed_window_review.jpg",
+      "sha256": "0eb8afae1d2bad18207d9848301b12e8aa71ed0b83a405f63b0c50a94cf45782"
+    },
+    {
+      "path": "model_work\\out\\fire_video7_late_v24_20261028\\fixed_window_review.jpg",
+      "sha256": "ba30dc2e73779d609333d640c3c9cdfadceed8ec32a982ad01d1b29b5b40b836"
+    },
+    {
+      "path": "model_work\\out\\fire_video7_dense_empty_review_20261028\\sheet_01.jpg",
+      "sha256": "595d71fd01b69b9a0203764e88171e4c55bfb32e7bccec0a79ae994516613f49"
+    },
+    {
+      "path": "model_work\\out\\fire_video7_dense_empty_review_20261028\\sheet_02.jpg",
+      "sha256": "e15aa659ed240bec515e5206ebf96414652a7a5ec1969c8d05f8b78ae30967d1"
+    },
+    {
+      "path": "model_work\\out\\fire_video7_dense_empty_review_20261028\\sheet_03.jpg",
+      "sha256": "341fc68f8638052b663867dd9f339e8880ac2540672e63966c945902baf043ac"
+    },
+    {
+      "path": "model_work\\out\\fire_video7_dense_empty_review_20261028\\sheet_04.jpg",
+      "sha256": "b229df227fb5cbd47310a667092ed061b91cabfc9f2ad0e7108f5a7987166e34"
+    }
+  ],
+  "source_artifacts": {
+    "fire_video7_dense_v24_20261028": "d43caf8a3c3cd70a91324e02dc6d24911302efc52bcfbd4507ce65b2c32448a5",
+    "fire_video7_late_v24_20261028": "97e8821c90597bafed2ff73e3b98a22082e8af960ce72bb5dfeb6720f8f79006",
+    "fire_video7_full_v24_20261028": "e562ca05ddeaba3314e4fc13a376753317a23928118c2a281310633ebaa82809"
+  },
+  "limits": [
+    "Counts describe no-box frames; no per-frame truth or event false-negative rate.",
+    "All frames belong to one previously exposed video; not independent evidence.",
+    "No on-board or end-to-end timing evaluation."
+  ],
+  "independent_test": false,
+  "on_board": false,
+  "reserved_sources_used": false
+}
