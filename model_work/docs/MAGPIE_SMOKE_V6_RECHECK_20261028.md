@@ -1,0 +1,1 @@
+请对附带烟雾v6训练脚本进行窄范围代码交叉复核。GLM原代码fixed_keys误把10-22卷积权重固定，现已修正为prefix0-9全部状态+feature0-22 BN running_mean/var/counter+DFL。只报告会使实际训练失败、冻结策略不符或伪报更新的具体问题；不作假设型风险清单。features10-22卷积与BN affine可训练、head23普通训练，全部feature BN统计固定；v5数据和初始化日程一致。你不能执行代码。

@@ -1,0 +1,368 @@
+{
+  "date": "2026-10-28",
+  "role": "Visible smoke development only; unknown cooking plumes have no class truth",
+  "training": {
+    "v5": {
+      "actual_optimizer_steps": 432,
+      "actual_batches": 440,
+      "epochs": 40,
+      "start_sha256": "e5c4466356459dbfeccdf951f075685206d7d1afb232c5a41f972b1ceebf15af",
+      "manifest_sha256": "5505603b88ea79037f54bb46844080eab40d6d9e0937e82b4b042612444a8cbb",
+      "best_sha256": "0b061873138ec380cb65297cb34ae4da0f17018b2a230132d2a9834e9c709b30",
+      "last_sha256": "39afe227439c4997a8960f50a14d7aa3d663d461a5f3aa3874b7a0abca721718",
+      "environment": {
+        "python": "3.13.13",
+        "torch": "2.12.0+cu132",
+        "ultralytics": "8.4.70",
+        "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU"
+      }
+    },
+    "v6": {
+      "actual_optimizer_steps": 432,
+      "actual_batches": 440,
+      "epochs": 40,
+      "start_sha256": "e5c4466356459dbfeccdf951f075685206d7d1afb232c5a41f972b1ceebf15af",
+      "manifest_sha256": "5505603b88ea79037f54bb46844080eab40d6d9e0937e82b4b042612444a8cbb",
+      "best_sha256": "c8a0c3492a3ad1cc17a40b8a724973f726eaafc7c8891fa00cd255e2ebdf6d3d",
+      "last_sha256": "d4b69cf86ae86d5f6397aebb2e7060f675af02f96b5a97c55b363d334ac66638",
+      "environment": {
+        "python": "3.13.13",
+        "torch": "2.12.0+cu132",
+        "ultralytics": "8.4.70",
+        "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU"
+      }
+    }
+  },
+  "models": {
+    "smoke_start": {
+      "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\independent_smoke_start_v4_20261002\\start.pt",
+      "weights_sha256": "e5c4466356459dbfeccdf951f075685206d7d1afb232c5a41f972b1ceebf15af",
+      "val_dev": {
+        "images": 9,
+        "images_with_fp": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 3
+      },
+      "extension_train": {
+        "images": 16,
+        "images_with_fp": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 4
+      },
+      "unknown_cooking_plume": {
+        "images": 19,
+        "images_with_predictions": 0,
+        "box_count": 0
+      },
+      "per_image_files": [
+        "val_dev.json",
+        "extension_train.json",
+        "unknown_cooking_plume.json"
+      ],
+      "contact_sheets": [
+        "contact_val_dev_smoke_start_p00.jpg",
+        "contact_val_dev_smoke_start_p01.jpg",
+        "contact_val_dev_smoke_start_p02.jpg",
+        "contact_ext_train_smoke_start_p00.jpg",
+        "contact_ext_train_smoke_start_p01.jpg",
+        "contact_ext_train_smoke_start_p02.jpg",
+        "contact_ext_train_smoke_start_p03.jpg",
+        "contact_unknown_cooking_smoke_start_p00.jpg",
+        "contact_unknown_cooking_smoke_start_p01.jpg",
+        "contact_unknown_cooking_smoke_start_p02.jpg",
+        "contact_unknown_cooking_smoke_start_p03.jpg",
+        "contact_unknown_cooking_smoke_start_p04.jpg"
+      ]
+    },
+    "v4_best": {
+      "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\independent-smoke-head-v4-20261002\\weights\\best.pt",
+      "weights_sha256": "2cf84267553c3f7da10bbc0e88d71b03323c2279a6b4eb24aa61c4171809b6da",
+      "val_dev": {
+        "images": 9,
+        "images_with_fp": 0,
+        "tp": 2,
+        "fp": 0,
+        "fn": 1
+      },
+      "extension_train": {
+        "images": 16,
+        "images_with_fp": 1,
+        "tp": 0,
+        "fp": 1,
+        "fn": 4
+      },
+      "unknown_cooking_plume": {
+        "images": 19,
+        "images_with_predictions": 0,
+        "box_count": 0
+      },
+      "per_image_files": [
+        "val_dev.json",
+        "extension_train.json",
+        "unknown_cooking_plume.json"
+      ],
+      "contact_sheets": [
+        "contact_val_dev_v4_best_p00.jpg",
+        "contact_val_dev_v4_best_p01.jpg",
+        "contact_val_dev_v4_best_p02.jpg",
+        "contact_ext_train_v4_best_p00.jpg",
+        "contact_ext_train_v4_best_p01.jpg",
+        "contact_ext_train_v4_best_p02.jpg",
+        "contact_ext_train_v4_best_p03.jpg",
+        "contact_unknown_cooking_v4_best_p00.jpg",
+        "contact_unknown_cooking_v4_best_p01.jpg",
+        "contact_unknown_cooking_v4_best_p02.jpg",
+        "contact_unknown_cooking_v4_best_p03.jpg",
+        "contact_unknown_cooking_v4_best_p04.jpg"
+      ]
+    },
+    "v4_last": {
+      "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\independent-smoke-head-v4-20261002\\weights\\last.pt",
+      "weights_sha256": "576916ca04a651fdf9f33e6007893427b9c92fd7430d368afa68326c26de5b33",
+      "val_dev": {
+        "images": 9,
+        "images_with_fp": 0,
+        "tp": 2,
+        "fp": 0,
+        "fn": 1
+      },
+      "extension_train": {
+        "images": 16,
+        "images_with_fp": 1,
+        "tp": 1,
+        "fp": 1,
+        "fn": 3
+      },
+      "unknown_cooking_plume": {
+        "images": 19,
+        "images_with_predictions": 0,
+        "box_count": 0
+      },
+      "per_image_files": [
+        "val_dev.json",
+        "extension_train.json",
+        "unknown_cooking_plume.json"
+      ],
+      "contact_sheets": [
+        "contact_val_dev_v4_last_p00.jpg",
+        "contact_val_dev_v4_last_p01.jpg",
+        "contact_val_dev_v4_last_p02.jpg",
+        "contact_ext_train_v4_last_p00.jpg",
+        "contact_ext_train_v4_last_p01.jpg",
+        "contact_ext_train_v4_last_p02.jpg",
+        "contact_ext_train_v4_last_p03.jpg",
+        "contact_unknown_cooking_v4_last_p00.jpg",
+        "contact_unknown_cooking_v4_last_p01.jpg",
+        "contact_unknown_cooking_v4_last_p02.jpg",
+        "contact_unknown_cooking_v4_last_p03.jpg",
+        "contact_unknown_cooking_v4_last_p04.jpg"
+      ]
+    },
+    "v5_best": {
+      "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\smoke-extension-v5-20261028\\weights\\best.pt",
+      "weights_sha256": "0b061873138ec380cb65297cb34ae4da0f17018b2a230132d2a9834e9c709b30",
+      "val_dev": {
+        "images": 9,
+        "images_with_fp": 1,
+        "tp": 2,
+        "fp": 1,
+        "fn": 1
+      },
+      "extension_train": {
+        "images": 16,
+        "images_with_fp": 0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 3
+      },
+      "unknown_cooking_plume": {
+        "images": 19,
+        "images_with_predictions": 0,
+        "box_count": 0
+      },
+      "per_image_files": [
+        "val_dev.json",
+        "extension_train.json",
+        "unknown_cooking_plume.json"
+      ],
+      "contact_sheets": [
+        "contact_val_dev_v5_best_p00.jpg",
+        "contact_val_dev_v5_best_p01.jpg",
+        "contact_val_dev_v5_best_p02.jpg",
+        "contact_ext_train_v5_best_p00.jpg",
+        "contact_ext_train_v5_best_p01.jpg",
+        "contact_ext_train_v5_best_p02.jpg",
+        "contact_ext_train_v5_best_p03.jpg",
+        "contact_unknown_cooking_v5_best_p00.jpg",
+        "contact_unknown_cooking_v5_best_p01.jpg",
+        "contact_unknown_cooking_v5_best_p02.jpg",
+        "contact_unknown_cooking_v5_best_p03.jpg",
+        "contact_unknown_cooking_v5_best_p04.jpg"
+      ]
+    },
+    "v5_last": {
+      "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\smoke-extension-v5-20261028\\weights\\last.pt",
+      "weights_sha256": "39afe227439c4997a8960f50a14d7aa3d663d461a5f3aa3874b7a0abca721718",
+      "val_dev": {
+        "images": 9,
+        "images_with_fp": 1,
+        "tp": 2,
+        "fp": 1,
+        "fn": 1
+      },
+      "extension_train": {
+        "images": 16,
+        "images_with_fp": 0,
+        "tp": 1,
+        "fp": 0,
+        "fn": 3
+      },
+      "unknown_cooking_plume": {
+        "images": 19,
+        "images_with_predictions": 0,
+        "box_count": 0
+      },
+      "per_image_files": [
+        "val_dev.json",
+        "extension_train.json",
+        "unknown_cooking_plume.json"
+      ],
+      "contact_sheets": [
+        "contact_val_dev_v5_last_p00.jpg",
+        "contact_val_dev_v5_last_p01.jpg",
+        "contact_val_dev_v5_last_p02.jpg",
+        "contact_ext_train_v5_last_p00.jpg",
+        "contact_ext_train_v5_last_p01.jpg",
+        "contact_ext_train_v5_last_p02.jpg",
+        "contact_ext_train_v5_last_p03.jpg",
+        "contact_unknown_cooking_v5_last_p00.jpg",
+        "contact_unknown_cooking_v5_last_p01.jpg",
+        "contact_unknown_cooking_v5_last_p02.jpg",
+        "contact_unknown_cooking_v5_last_p03.jpg",
+        "contact_unknown_cooking_v5_last_p04.jpg"
+      ]
+    },
+    "v6_best": {
+      "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\smoke-partial-features-v6-20261028\\weights\\best.pt",
+      "weights_sha256": "c8a0c3492a3ad1cc17a40b8a724973f726eaafc7c8891fa00cd255e2ebdf6d3d",
+      "val_dev": {
+        "images": 9,
+        "images_with_fp": 1,
+        "tp": 3,
+        "fp": 1,
+        "fn": 0
+      },
+      "extension_train": {
+        "images": 16,
+        "images_with_fp": 0,
+        "tp": 4,
+        "fp": 0,
+        "fn": 0
+      },
+      "unknown_cooking_plume": {
+        "images": 19,
+        "images_with_predictions": 5,
+        "box_count": 5
+      },
+      "per_image_files": [
+        "val_dev.json",
+        "extension_train.json",
+        "unknown_cooking_plume.json"
+      ],
+      "contact_sheets": [
+        "contact_val_dev_v6_best_p00.jpg",
+        "contact_val_dev_v6_best_p01.jpg",
+        "contact_val_dev_v6_best_p02.jpg",
+        "contact_ext_train_v6_best_p00.jpg",
+        "contact_ext_train_v6_best_p01.jpg",
+        "contact_ext_train_v6_best_p02.jpg",
+        "contact_ext_train_v6_best_p03.jpg",
+        "contact_unknown_cooking_v6_best_p00.jpg",
+        "contact_unknown_cooking_v6_best_p01.jpg",
+        "contact_unknown_cooking_v6_best_p02.jpg",
+        "contact_unknown_cooking_v6_best_p03.jpg",
+        "contact_unknown_cooking_v6_best_p04.jpg"
+      ]
+    },
+    "v6_last": {
+      "weights": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\smoke-partial-features-v6-20261028\\weights\\last.pt",
+      "weights_sha256": "d4b69cf86ae86d5f6397aebb2e7060f675af02f96b5a97c55b363d334ac66638",
+      "val_dev": {
+        "images": 9,
+        "images_with_fp": 0,
+        "tp": 2,
+        "fp": 0,
+        "fn": 1
+      },
+      "extension_train": {
+        "images": 16,
+        "images_with_fp": 0,
+        "tp": 4,
+        "fp": 0,
+        "fn": 0
+      },
+      "unknown_cooking_plume": {
+        "images": 19,
+        "images_with_predictions": 1,
+        "box_count": 1
+      },
+      "per_image_files": [
+        "val_dev.json",
+        "extension_train.json",
+        "unknown_cooking_plume.json"
+      ],
+      "contact_sheets": [
+        "contact_val_dev_v6_last_p00.jpg",
+        "contact_val_dev_v6_last_p01.jpg",
+        "contact_val_dev_v6_last_p02.jpg",
+        "contact_ext_train_v6_last_p00.jpg",
+        "contact_ext_train_v6_last_p01.jpg",
+        "contact_ext_train_v6_last_p02.jpg",
+        "contact_ext_train_v6_last_p03.jpg",
+        "contact_unknown_cooking_v6_last_p00.jpg",
+        "contact_unknown_cooking_v6_last_p01.jpg",
+        "contact_unknown_cooking_v6_last_p02.jpg",
+        "contact_unknown_cooking_v6_last_p03.jpg",
+        "contact_unknown_cooking_v6_last_p04.jpg"
+      ]
+    }
+  },
+  "data": {
+    "images": 52,
+    "train": 43,
+    "val": 9,
+    "new_positive": 4,
+    "new_no_visible_smoke": 12,
+    "held": 8,
+    "original_val_unchanged": true
+  },
+  "decision": {
+    "old_dual_head": "v4 retained",
+    "v5": "not promoted",
+    "v6_last": "additional independent smoke-network development candidate",
+    "v6_best": "recall-oriented comparison candidate only",
+    "shared_fire_backbone_compatible": false
+  },
+  "comparison_sha256": "106df299a948cac77e1a985a75fe67aece4699ead37cc01afb6ccd26db52b3b3",
+  "independent_test": false,
+  "on_board": false,
+  "onnx_export_this_round": false,
+  "visual_review": {
+    "reviewer": "Codex main, local actual viewing",
+    "pages": [
+      "v5_last val pages0-2",
+      "v6_best val pages1-2",
+      "v6_best extension page0",
+      "v6_last extension page0",
+      "v6_last unknown page1",
+      "v6_best unknown pages2-3"
+    ],
+    "unknown_scope": "These three unknown pages cover all five best responses and one last response; no class truth assigned",
+    "limitations": [
+      "Not all zero-response val/negative pages reopened; original source six-sheet review retained",
+      "External vision outputs require cross-check; incorrect GLM color/box claims rejected"
+    ]
+  }
+}

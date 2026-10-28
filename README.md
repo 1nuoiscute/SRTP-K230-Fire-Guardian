@@ -1,5 +1,7 @@
 # SRTP K230 Fire Guardian｜边缘视觉火情检测与多传感器融合
 
+**2026-10-28 模型推进：**完成火焰 v21（12 轮）及烟雾扩充 v5、后段特征 v6（各 40 轮）的训练与固定对照。v21 紧框收益伴随误检代价，保留 v16 演示/v18 开发；新增 v6 last 独立烟雾网络开发候选，旧双头仍保留 v4。均为已曝光开发反馈，未完成独立测试或上板。[本轮记录](docs/VISION_RESUME_20261028.md)｜[交接](model_work/docs/VISION_HANDOFF_20261028.md)。
+
 基于 **K230 + RT-Thread Smart / Linux** 的厨房火情检测研究原型，结合摄像头火焰检测、环境传感器、板端显示与阀门联动。项目公开源码、实验记录和已知问题。
 
 **2026-10-27 更新：** 整合 [PR #2](https://github.com/1nuoiscute/SRTP-K230-Fire-Guardian/pull/2) 的 ADS1115 气体/火焰采集、OLED 与大屏显示、阀门联锁、WiFi 及开机启动脚本。电脑端模型记录与本次板端代码统一收录到 `main`，接手时从默认分支开始。
@@ -14,7 +16,7 @@
 | 实时面板与数据页 | KEY1 面板、KEY2 数据页读取 v1/v2 状态；桥接每 0.5 s 刷新，历史保留约 20 分钟 | 旧 KEY2 有重启及切换确认；新增显示见队友 PR 记录，未在此次整合中复验 |
 | 阀门联动 | 气体、火焰、温度阈值及温升判断；迟滞；D2/pad 63 继电器控制 | 队友报告约 12 s 阀门行程、断电自关和温度联动；未完成系统故障验收 |
 | WiFi | 2.4 GHz 连接、扫描、诊断与开机启动 | 队友报告可 ping 公网；MQTT 与远程告警尚未实现闭环 |
-| 电脑端模型 | v16 best 保留作演示，v18 last 作定位开发；v21 仅完成 CPU 预演 | 2026-10-03 起暂停模型推进；这些新权重尚未上板 |
+| 电脑端模型 | v16 best 演示、v18 last 定位开发；v21 正式对照完成；烟雾新增 v6 last 独立网络开发候选 | 2026-10-28 恢复推进；均为开发反馈，新权重尚未上板 |
 
 本次进展与数据来源见 [气体、阀门与联网整合记录](docs/GAS_VALVE_WIFI_INTEGRATION_20261027.md)。历史结果按记录日期理解，不代表当前设备已重新验收。
 
@@ -50,7 +52,7 @@ git switch main
 | 历史板端基线与完整哈希 | [板端基线](docs/BOARD_BASELINE.md)、[9 月交接](docs/BOARD_HANDOFF_20260930.md) |
 | KEY2 修复与永久启动 | [实机记录](model_work/docs/KEY2_CONNECTOR_CANDIDATE_20260930.md) |
 | 模型进展与可运行入口 | [项目状态](docs/STATUS.md)、[电脑端复现](docs/REPRODUCE_PC.md) |
-| 当前电脑端候选 | [v16 演示](model_work/docs/SCRATCH_SEMANTIC_V16_20261003.md)、[v18 定位开发](model_work/docs/FROZEN_FLAME_HEAD_V18_20261003.md)、[v21 暂停记录](model_work/docs/KITCHEN_PARTIAL_FEATURES_V21_20261003.md) |
+| 当前电脑端候选 | [v16 演示](model_work/docs/SCRATCH_SEMANTIC_V16_20261003.md)、[v18 定位开发](model_work/docs/FROZEN_FLAME_HEAD_V18_20261003.md)、[v21 正式结果](model_work/docs/KITCHEN_PARTIAL_FEATURES_V21_RESULTS_20261028.md)、[烟雾 v5/v6](model_work/docs/SMOKE_EXTENSION_V5_V6_RESULTS_20261028.md) |
 | 融合方案与项目路线 | [事件融合计划](docs/BOARD_EVENT_FUSION_PLAN_20261001.md)、[路线](docs/ROADMAP.md) |
 | 数据、训练、失败实验 | [模型总报告](model_work/docs/MODEL_TEST_AND_TRAINING_REPORT_20260927.md)、[完整阶段状态](docs/STATUS.md) |
 | 第三方资料与许可 | [参考资料](references/README.md)、[第三方说明](THIRD_PARTY_NOTICES.md) |
