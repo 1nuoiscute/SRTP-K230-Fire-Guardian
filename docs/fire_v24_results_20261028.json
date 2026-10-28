@@ -1,0 +1,264 @@
+{
+  "date": "2026-10-28",
+  "role": "PC development feedback; not independent test or board acceptance",
+  "training": {
+    "run": "model_work\\runs\\fire-proximal-last-v24-r3-20261028",
+    "epochs": 12,
+    "batches": 3624,
+    "optimizer_steps": 3616,
+    "checkpoints": {
+      "best.pt": "92768d9aee1baa842083422010809d393b2af3d90bdb105ae02d62ceeaffba9f",
+      "last.pt": "d7d0c0e1823e48dbcc5b57c29bc418500e12cf6639ef82d84ece2804b1f2f68d"
+    },
+    "meta_sha256": "9d13a5de8feee327a32a68e362dee5510a8d96fea612c757f5abce08f0bc0982",
+    "calibration_target_ratio": 0.2,
+    "anchor_lambda": 1.28066030719,
+    "actual_gradient_ratio_samples": 3616,
+    "actual_gradient_ratio_median": 0.30010017885591367,
+    "actual_gradient_ratio_p95": 0.43403619741381383,
+    "actual_gradient_ratio_max": 49.08647343971274,
+    "actual_gradient_ratio_above_one": 10
+  },
+  "image_comparison_sha256": "2ec24b855e668b8c5e66a2e0ce8283d3b51d74a0959e3558ca5e78aa40c17e88",
+  "video_comparison_sha256": "3e9eddd3b4bc306e618ab91791b327e9606a8e0e7eff0e670d20fc32a43416c7",
+  "models": {
+    "v21_best": {
+      "blue": 4,
+      "tight": {
+        "tp": 8,
+        "fp": 11,
+        "fn": 7,
+        "micro_f1": 0.47058823529411764
+      },
+      "indoor_images": 15,
+      "indoor_boxes": 17,
+      "new_source": {
+        "tp": 0,
+        "fp": 7,
+        "fn": 4
+      },
+      "legacy_map50": 0.5469313958292573,
+      "video_samples_with_any_box": 271,
+      "video_total_boxes": 287,
+      "weights_sha256": "28ad3c18777556affba12cb0bd5e173427f7af65ccf89a368cef528d9d6efd8d"
+    },
+    "v21_last": {
+      "blue": 4,
+      "tight": {
+        "tp": 12,
+        "fp": 7,
+        "fn": 3,
+        "micro_f1": 0.7058823529411765
+      },
+      "indoor_images": 16,
+      "indoor_boxes": 19,
+      "new_source": {
+        "tp": 1,
+        "fp": 5,
+        "fn": 3
+      },
+      "legacy_map50": 0.31040816910508434,
+      "video_samples_with_any_box": 271,
+      "video_total_boxes": 293,
+      "weights_sha256": "185a906e277b603e949a1f8b6b0d3693a32d62b87aeedb7b6de736a46248d48c"
+    },
+    "v24_best": {
+      "blue": 4,
+      "tight": {
+        "tp": 7,
+        "fp": 8,
+        "fn": 8,
+        "micro_f1": 0.4666666666666667
+      },
+      "indoor_images": 12,
+      "indoor_boxes": 14,
+      "new_source": {
+        "tp": 3,
+        "fp": 1,
+        "fn": 1
+      },
+      "legacy_map50": 0.27723296220624305,
+      "video_samples_with_any_box": 271,
+      "video_total_boxes": 288,
+      "weights_sha256": "92768d9aee1baa842083422010809d393b2af3d90bdb105ae02d62ceeaffba9f"
+    },
+    "v24_last": {
+      "blue": 4,
+      "tight": {
+        "tp": 12,
+        "fp": 5,
+        "fn": 3,
+        "micro_f1": 0.75
+      },
+      "indoor_images": 15,
+      "indoor_boxes": 19,
+      "new_source": {
+        "tp": 4,
+        "fp": 1,
+        "fn": 0
+      },
+      "legacy_map50": 0.21680792628760553,
+      "video_samples_with_any_box": 269,
+      "video_total_boxes": 299,
+      "weights_sha256": "d7d0c0e1823e48dbcc5b57c29bc418500e12cf6639ef82d84ece2804b1f2f68d"
+    }
+  },
+  "experiment_gates": {
+    "v24_best": {
+      "reference": "v21_best",
+      "tests": {
+        "new_source_tp_at_least_3": true,
+        "new_source_fn_at_most_1": true,
+        "new_source_fp_at_most_5": true,
+        "tight_f1_not_below_v21": false,
+        "blue_localized_at_least_4": true,
+        "indoor_images_not_above_v21": true,
+        "indoor_boxes_not_above_v21": true,
+        "legacy_map50_not_below_v21": false
+      },
+      "passed": false,
+      "training_audits_passed": true,
+      "independent_test": false,
+      "on_board": false,
+      "automatic_adoption": false
+    },
+    "v24_last": {
+      "reference": "v21_last",
+      "tests": {
+        "new_source_tp_at_least_3": true,
+        "new_source_fn_at_most_1": true,
+        "new_source_fp_at_most_5": true,
+        "tight_f1_not_below_v21": true,
+        "blue_localized_at_least_4": true,
+        "indoor_images_not_above_v21": true,
+        "indoor_boxes_not_above_v21": true,
+        "legacy_map50_not_below_v21": false
+      },
+      "passed": false,
+      "training_audits_passed": true,
+      "independent_test": false,
+      "on_board": false,
+      "automatic_adoption": false
+    }
+  },
+  "reference_identity": {
+    "video_samples": 307,
+    "shared_old_models": 7,
+    "matching_reference_predictions": 2149,
+    "pixel_identity_matches": 307
+  },
+  "video7_v24_last_empty_samples": [
+    1,
+    9
+  ],
+  "visual_review": {
+    "pages_reviewed": 18,
+    "files": [
+      {
+        "path": "model_work\\out\\project_v24_videos_20261028\\video_01_comparison.jpg",
+        "sha256": "2d1df05c2e6c41d6e221f9a36d800fa61d0e80c197a237f0fd83e3af8e5799ae"
+      },
+      {
+        "path": "model_work\\out\\project_v24_videos_20261028\\video_02_comparison.jpg",
+        "sha256": "ccab7ce759ad7e852f901893b25029d485a4ee2f244b19508a96c01d0951b01e"
+      },
+      {
+        "path": "model_work\\out\\project_v24_videos_20261028\\video_03_comparison.jpg",
+        "sha256": "83ec644560493ff49ff2017b7aa37edceae7b685a1af2c4460ea461c28755ebe"
+      },
+      {
+        "path": "model_work\\out\\project_v24_videos_20261028\\video_04_comparison.jpg",
+        "sha256": "86a47b157075c1e942c6da833ee4e01c909c8db3738ed66a0bcadf98c4870c64"
+      },
+      {
+        "path": "model_work\\out\\project_v24_videos_20261028\\video_05_comparison.jpg",
+        "sha256": "adec95052ccb4996f715ebad643cc9414dccd3b48faddbc6052d2a6093e35856"
+      },
+      {
+        "path": "model_work\\out\\project_v24_videos_20261028\\video_06_comparison.jpg",
+        "sha256": "dc2eeabf717ce4bfc452002b0a49243b09dbbc23db042875fc91098025156687"
+      },
+      {
+        "path": "model_work\\out\\project_v24_videos_20261028\\video_07_comparison.jpg",
+        "sha256": "3fb903b8a66c5ca3501e8dfd6bbd12cb225832925d2c2c29dc237d95dfcb3218"
+      },
+      {
+        "path": "model_work\\out\\project_v24_videos_20261028\\video_08_comparison.jpg",
+        "sha256": "73940a32870809a195fb6b78e13f4dfd3a40bbe33678a1fc1e687978200d4576"
+      },
+      {
+        "path": "model_work\\out\\project_v24_videos_20261028\\video_09_comparison.jpg",
+        "sha256": "c097e3af39edb7a28d40d496fbb56aaae1e923bc196233f256c08c9fa3c12e1e"
+      },
+      {
+        "path": "model_work\\out\\v24_video_difference_review_20261028\\sheet_01.jpg",
+        "sha256": "e06b3355b79aff8d227007d5c84aa5e1fd5a6fd6c65945a337fa5fecb5b5a7ec"
+      },
+      {
+        "path": "model_work\\out\\v24_video_difference_review_20261028\\sheet_02.jpg",
+        "sha256": "f5946fbd9c86f75d7520782b2791eded5596f7e2d6051eb62058885d6a6efa2d"
+      },
+      {
+        "path": "model_work\\out\\v24_video_difference_review_20261028\\sheet_03.jpg",
+        "sha256": "2d770ba30976e8c0d7ee67c0d65286c94af47729c140609ac135d690f075b4b4"
+      },
+      {
+        "path": "model_work\\out\\v24_video_difference_review_20261028\\sheet_04.jpg",
+        "sha256": "db00c1d6c0c728998f4b0d7d878fb803cd0b41e18bbbac8f314ad298a0d7e703"
+      },
+      {
+        "path": "model_work\\out\\v24_video_difference_review_20261028\\sheet_05.jpg",
+        "sha256": "53d505370c1f2f2fbf5b3ac75e6e7063a14a74e5a566b331785212ccba60ff16"
+      },
+      {
+        "path": "model_work\\out\\v24_video_difference_review_20261028\\sheet_06.jpg",
+        "sha256": "0b5a24f703a7283fa3227345d1bb7b2a3ce9e675cf5ed3c8e51d93810ec8696b"
+      },
+      {
+        "path": "model_work\\out\\v24_video_difference_review_20261028\\sheet_07.jpg",
+        "sha256": "7abeeec615c1a1e3d09d73e25a27697f56ac534d95514218766decda1b5057d9"
+      },
+      {
+        "path": "model_work\\out\\v24_video_difference_review_20261028\\sheet_08.jpg",
+        "sha256": "ea956999446a4e0d998765e655f4eddecdf3157dad9d4a7400bdf90d3c55b8fc"
+      },
+      {
+        "path": "model_work\\out\\v24_video7_missing_review_20261028\\selected_samples.jpg",
+        "sha256": "c675d59709b643e3d4882f5178d693d524206f3f10f2436af14fbf61273ada61"
+      }
+    ],
+    "limits": "Fixed first/middle/last and count-different samples; equal counts can still hide localization errors; no dense event labels"
+  },
+  "v23_screens": [
+    {
+      "path": "model_work\\out\\fire_soup_v23_20261028\\comparison_complete.json",
+      "sha256": "334877ef71b2928cc5583d1198823087bca538c530b960cf28109bbeaa161b21",
+      "count": 6,
+      "passed": 0
+    },
+    {
+      "path": "model_work\\out\\fire_partial_soup_v23_20261028\\comparison_complete.json",
+      "sha256": "c57aa3986559d851cf67f5e0ff1a9c6a522ba8a46dbf52e3cc14477939c0baeb",
+      "count": 6,
+      "passed": 0
+    },
+    {
+      "path": "model_work\\out\\fire_early_soup_v23_20261028\\comparison_complete.json",
+      "sha256": "7d532a0401d7aa801ab5855d7914f8ab0c40f69aeb05e73e0cf11b3ed6cf4ce9",
+      "count": 4,
+      "passed": 0
+    }
+  ],
+  "decision": {
+    "v16_best": "demo retained",
+    "v18_last": "localization development retained",
+    "v24_best": "reference only",
+    "v24_last": "retain for further development comparison; no promotion",
+    "reason": "tight-frame F1 improved but two v7 samples became empty and extra background/duplicate boxes occur; full video and independent event evaluation remain"
+  },
+  "reserved_sources_predicted": false,
+  "reserved_status_basis": "protocol and evaluation declarations; global historical prediction leakage audit not performed",
+  "independent_test": false,
+  "on_board": false,
+  "onnx_export_this_round": false
+}

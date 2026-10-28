@@ -1,0 +1,1477 @@
+{
+  "date": "2026-10-28",
+  "role": "V22 controlled train-sampler-only intervention on the v21 partial-feature route",
+  "training": {
+    "run": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\runs\\fire-source-sampling-v22-20261028",
+    "source_sha256": "e770cf68d12cd43b4494a1439dc9c65f14d1d5fc570b2e2e379cc084384418fd",
+    "epochs": 12,
+    "draws_per_epoch": 2409,
+    "actual_batches": 3624,
+    "actual_optimizer_steps": 3616,
+    "checkpoints": {
+      "best.pt": "851ec1e7f0258b1c2677ad2abc7ca495fabf689e7fcf0d91e5fe6888d36cebb0",
+      "last.pt": "fbd3da6de957a0b3233be281a8305aeda2cf42f093e8da53a661ef373ccf8bb8"
+    },
+    "serialized_frozen_state_equal": true,
+    "serialized_adaptation": {
+      "best.pt": {
+        "feature_weight_tensors": 60,
+        "head_weight_tensors": 42
+      },
+      "last.pt": {
+        "feature_weight_tensors": 60,
+        "head_weight_tensors": 42
+      }
+    },
+    "completed_audits": {
+      "source_sampling_actual.json": "4c3768a0cc4d6f9eeec040d5cdb1fba5f38e3780747012c6be4fcc89ecc9af54",
+      "actual_initialization_audit.json": "b9f4f85f016db1dbad6172f3ab944862f57537a5f4271784ecdff7cf0a7583e9",
+      "frozen_prefix_audit.json": "8fdef61cbfd75b91778a199b211889df8ebbc93a2721d494b135b8e4a45ce6ac",
+      "partial_feature_update_audit.json": "ba37b555ef269747267a0d0ab573f597bb4394e7dc652e0b27c16dca6fd1b4ed",
+      "optimizer_cadence_audit.json": "9beee476ef2f23ca0af98c09c38faf5f15944d9b77d28c65e13abdb67b8cc48d"
+    },
+    "environment": {
+      "python": "3.13.13",
+      "torch": "2.12.0+cu132",
+      "ultralytics": "8.4.70"
+    }
+  },
+  "source_sampling": {
+    "masses": {
+      "new4_positives": 0.2,
+      "new10_negatives": 0.2,
+      "remaining": 0.6
+    },
+    "plan_sha256": "504fc0a88c8feb59c9276265ede9cbf4be6394128a3f45f64e652d731949c5ef",
+    "actual_sha256": "4c3768a0cc4d6f9eeec040d5cdb1fba5f38e3780747012c6be4fcc89ecc9af54",
+    "epochs": [
+      {
+        "epoch": 1,
+        "draws": 2409,
+        "actual_consumed_im_files": 2409,
+        "actual_batches": 302,
+        "actual_optimizer_steps": 296,
+        "draw_index_sequence_sha256": "a8b2246b84639c4f74def2d0df7f3e7f143ee949aa28b7a043e40df1c4b1e2ff",
+        "draw_im_file_sequence_sha256": "46ffbd8c783e63bed277d1440b0512ff68703837f19f16903c1d45ea4bcd1e65",
+        "consumed_im_file_sequence_sha256": "46ffbd8c783e63bed277d1440b0512ff68703837f19f16903c1d45ea4bcd1e65",
+        "per_stratum_counts": {
+          "new4_positives": 487,
+          "new10_negatives": 522,
+          "remaining": 1400
+        }
+      },
+      {
+        "epoch": 2,
+        "draws": 2409,
+        "actual_consumed_im_files": 2409,
+        "actual_batches": 302,
+        "actual_optimizer_steps": 302,
+        "draw_index_sequence_sha256": "ccddd252c4c6894452d50bb38f25000b7d505760bab6c16e13d1418d5f728f06",
+        "draw_im_file_sequence_sha256": "429415433e77b0faa30b25256f87811665e46be902da858ce968cdc10fd104c8",
+        "consumed_im_file_sequence_sha256": "429415433e77b0faa30b25256f87811665e46be902da858ce968cdc10fd104c8",
+        "per_stratum_counts": {
+          "new4_positives": 507,
+          "new10_negatives": 461,
+          "remaining": 1441
+        }
+      },
+      {
+        "epoch": 3,
+        "draws": 2409,
+        "actual_consumed_im_files": 2409,
+        "actual_batches": 302,
+        "actual_optimizer_steps": 301,
+        "draw_index_sequence_sha256": "7a842359549e6cff02d07b8a59c1bf0bb0ffe517ac0be98cbc22352f7220e106",
+        "draw_im_file_sequence_sha256": "7aa0aeb6374c6c659ed8ff4f9bb3b88f5601b748cb7f671981bcaf53ec1ef893",
+        "consumed_im_file_sequence_sha256": "7aa0aeb6374c6c659ed8ff4f9bb3b88f5601b748cb7f671981bcaf53ec1ef893",
+        "per_stratum_counts": {
+          "new4_positives": 472,
+          "new10_negatives": 496,
+          "remaining": 1441
+        }
+      },
+      {
+        "epoch": 4,
+        "draws": 2409,
+        "actual_consumed_im_files": 2409,
+        "actual_batches": 302,
+        "actual_optimizer_steps": 302,
+        "draw_index_sequence_sha256": "097ff6380b0e37d4d1cbbd2782b3d72f1336a0aaae4ab9c37032df1260907b1c",
+        "draw_im_file_sequence_sha256": "c41c6e1d331bdd65dd98566d58d577562c0d435038622188e9ea6f84ea5037e9",
+        "consumed_im_file_sequence_sha256": "c41c6e1d331bdd65dd98566d58d577562c0d435038622188e9ea6f84ea5037e9",
+        "per_stratum_counts": {
+          "new4_positives": 463,
+          "new10_negatives": 536,
+          "remaining": 1410
+        }
+      },
+      {
+        "epoch": 5,
+        "draws": 2409,
+        "actual_consumed_im_files": 2409,
+        "actual_batches": 302,
+        "actual_optimizer_steps": 302,
+        "draw_index_sequence_sha256": "3b4c76e3d44f1055d01903736baca71b95e3ccd655f6f9a101011723761b519d",
+        "draw_im_file_sequence_sha256": "33f47d70dd171e67535ec6210fca21c4fdeeb7fc1f802ff9f1c04a505749de81",
+        "consumed_im_file_sequence_sha256": "33f47d70dd171e67535ec6210fca21c4fdeeb7fc1f802ff9f1c04a505749de81",
+        "per_stratum_counts": {
+          "new4_positives": 482,
+          "new10_negatives": 456,
+          "remaining": 1471
+        }
+      },
+      {
+        "epoch": 6,
+        "draws": 2409,
+        "actual_consumed_im_files": 2409,
+        "actual_batches": 302,
+        "actual_optimizer_steps": 302,
+        "draw_index_sequence_sha256": "ede259a2cd49a011a1d3abce48f9bfceb7fcb92502a36c14eda128674de5611e",
+        "draw_im_file_sequence_sha256": "2be70e3c1590b60ff6fb8e90a0d08de8d21ed992e7f81728ea6d0a9917b60183",
+        "consumed_im_file_sequence_sha256": "2be70e3c1590b60ff6fb8e90a0d08de8d21ed992e7f81728ea6d0a9917b60183",
+        "per_stratum_counts": {
+          "new4_positives": 456,
+          "new10_negatives": 464,
+          "remaining": 1489
+        }
+      },
+      {
+        "epoch": 7,
+        "draws": 2409,
+        "actual_consumed_im_files": 2409,
+        "actual_batches": 302,
+        "actual_optimizer_steps": 302,
+        "draw_index_sequence_sha256": "1c8e5e3d961386abbe4d5f83da3f0655d21197168e88ad269add4eb04ce7d76b",
+        "draw_im_file_sequence_sha256": "90cad7a2d374369846ce74e03cf0e379b31a96f603c36ecc98bba7b16cf7f20a",
+        "consumed_im_file_sequence_sha256": "90cad7a2d374369846ce74e03cf0e379b31a96f603c36ecc98bba7b16cf7f20a",
+        "per_stratum_counts": {
+          "new4_positives": 476,
+          "new10_negatives": 507,
+          "remaining": 1426
+        }
+      },
+      {
+        "epoch": 8,
+        "draws": 2409,
+        "actual_consumed_im_files": 2409,
+        "actual_batches": 302,
+        "actual_optimizer_steps": 301,
+        "draw_index_sequence_sha256": "288da90f28caa79b61759026123153454484f2fda880d9d04665feeb949c9f17",
+        "draw_im_file_sequence_sha256": "a6cb61c0196efac61bf0ff1d1517b0c9db1c1785fc2049bce2fa43cd897ccf86",
+        "consumed_im_file_sequence_sha256": "a6cb61c0196efac61bf0ff1d1517b0c9db1c1785fc2049bce2fa43cd897ccf86",
+        "per_stratum_counts": {
+          "new4_positives": 508,
+          "new10_negatives": 454,
+          "remaining": 1447
+        }
+      },
+      {
+        "epoch": 9,
+        "draws": 2409,
+        "actual_consumed_im_files": 2409,
+        "actual_batches": 302,
+        "actual_optimizer_steps": 302,
+        "draw_index_sequence_sha256": "35637b0d6c08485fb4b0906b3b0fb0132b84f34f6f6dd94b65da9b0068353f45",
+        "draw_im_file_sequence_sha256": "0396102291f251322260c261d62f1c61112714f6c9291baa5233348fabdcc637",
+        "consumed_im_file_sequence_sha256": "0396102291f251322260c261d62f1c61112714f6c9291baa5233348fabdcc637",
+        "per_stratum_counts": {
+          "new4_positives": 456,
+          "new10_negatives": 503,
+          "remaining": 1450
+        }
+      },
+      {
+        "epoch": 10,
+        "draws": 2409,
+        "actual_consumed_im_files": 2409,
+        "actual_batches": 302,
+        "actual_optimizer_steps": 302,
+        "draw_index_sequence_sha256": "2915439e8d622d821b176b08dcc00a32d90a22a83dd38b954d85f80e91293c46",
+        "draw_im_file_sequence_sha256": "43a152ec1c563854912a16c163cbe97540e42329ac5a1e8dcd8f47bea3af4c78",
+        "consumed_im_file_sequence_sha256": "43a152ec1c563854912a16c163cbe97540e42329ac5a1e8dcd8f47bea3af4c78",
+        "per_stratum_counts": {
+          "new4_positives": 472,
+          "new10_negatives": 487,
+          "remaining": 1450
+        }
+      },
+      {
+        "epoch": 11,
+        "draws": 2409,
+        "actual_consumed_im_files": 2409,
+        "actual_batches": 302,
+        "actual_optimizer_steps": 302,
+        "draw_index_sequence_sha256": "989f2c515fc2596e754fb372f048d85fad300dec089e4996edfe91224db4afbe",
+        "draw_im_file_sequence_sha256": "d37db56a3a7a006c8b6f7b0f18fd4ea7b1c7c0db702b44403b7dc1a63bd43d11",
+        "consumed_im_file_sequence_sha256": "d37db56a3a7a006c8b6f7b0f18fd4ea7b1c7c0db702b44403b7dc1a63bd43d11",
+        "per_stratum_counts": {
+          "new4_positives": 461,
+          "new10_negatives": 482,
+          "remaining": 1466
+        }
+      },
+      {
+        "epoch": 12,
+        "draws": 2409,
+        "actual_consumed_im_files": 2409,
+        "actual_batches": 302,
+        "actual_optimizer_steps": 302,
+        "draw_index_sequence_sha256": "a4358e1412d8e671ce04ec45ba2e83ab3c2eadae7b0e10bf4c3eb1f38c118de1",
+        "draw_im_file_sequence_sha256": "12ada034657aa0c2a1e1fdd1c83a09643cfdecc85739d2c7de6d9d7818c19c9f",
+        "consumed_im_file_sequence_sha256": "12ada034657aa0c2a1e1fdd1c83a09643cfdecc85739d2c7de6d9d7818c19c9f",
+        "per_stratum_counts": {
+          "new4_positives": 489,
+          "new10_negatives": 496,
+          "remaining": 1424
+        }
+      }
+    ]
+  },
+  "models": {
+    "v16_best": {
+      "weights_sha256": "e770cf68d12cd43b4494a1439dc9c65f14d1d5fc570b2e2e379cc084384418fd",
+      "blue_localized_iou50": 4,
+      "tight_flame": {
+        "tp": 6,
+        "fp": 11,
+        "fn": 9,
+        "micro_f1": 0.375
+      },
+      "indoor_nofire": {
+        "images": 100,
+        "images_with_fp": 15,
+        "fp": 17
+      },
+      "new_training_sources": {
+        "tp": 0,
+        "fp": 6,
+        "fn": 4,
+        "images": 14
+      },
+      "legacy_map50": 0.6829617468783579,
+      "video_307": {
+        "frames_with_any_box": 271,
+        "boxes": 288,
+        "longest_empty_sample_run": 32
+      }
+    },
+    "v18_last": {
+      "weights_sha256": "2534a8c727157d0333bf7e0b785cd09e950f5e6e0192831947ba26cfe865b3ce",
+      "blue_localized_iou50": 4,
+      "tight_flame": {
+        "tp": 10,
+        "fp": 5,
+        "fn": 5,
+        "micro_f1": 0.6666666666666666
+      },
+      "indoor_nofire": {
+        "images": 100,
+        "images_with_fp": 15,
+        "fp": 18
+      },
+      "new_training_sources": {
+        "tp": 0,
+        "fp": 7,
+        "fn": 4,
+        "images": 14
+      },
+      "legacy_map50": 0.5475500375871118,
+      "video_307": {
+        "frames_with_any_box": 271,
+        "boxes": 291,
+        "longest_empty_sample_run": 32
+      }
+    },
+    "v19_last": {
+      "weights_sha256": "9a13523c8f66f8a9b60e8bcafda9b1cdc270cf71e0269b4019708b7beabd80af",
+      "blue_localized_iou50": 4,
+      "tight_flame": {
+        "tp": 11,
+        "fp": 3,
+        "fn": 4,
+        "micro_f1": 0.7586206896551724
+      },
+      "indoor_nofire": {
+        "images": 100,
+        "images_with_fp": 20,
+        "fp": 25
+      },
+      "new_training_sources": {
+        "tp": 0,
+        "fp": 6,
+        "fn": 4,
+        "images": 14
+      },
+      "legacy_map50": 0.4615255157018551,
+      "video_307": {
+        "frames_with_any_box": 271,
+        "boxes": 290,
+        "longest_empty_sample_run": 32
+      }
+    },
+    "v20_best": {
+      "weights_sha256": "a8186bc227207e9daedb4fe7a59f8e967c9acc225fc1b205ccb2b0bbe1ebe24c",
+      "blue_localized_iou50": 4,
+      "tight_flame": {
+        "tp": 7,
+        "fp": 12,
+        "fn": 8,
+        "micro_f1": 0.4117647058823529
+      },
+      "indoor_nofire": {
+        "images": 100,
+        "images_with_fp": 15,
+        "fp": 18
+      },
+      "new_training_sources": {
+        "tp": 0,
+        "fp": 7,
+        "fn": 4,
+        "images": 14
+      },
+      "legacy_map50": 0.587048751457557,
+      "video_307": {
+        "frames_with_any_box": 271,
+        "boxes": 285,
+        "longest_empty_sample_run": 32
+      }
+    },
+    "v20_last": {
+      "weights_sha256": "37d18ca746cf83fb9e19fd07c0faaaaa6e04f96916f9864b12d415a3acdf55c0",
+      "blue_localized_iou50": 4,
+      "tight_flame": {
+        "tp": 10,
+        "fp": 3,
+        "fn": 5,
+        "micro_f1": 0.7142857142857143
+      },
+      "indoor_nofire": {
+        "images": 100,
+        "images_with_fp": 19,
+        "fp": 22
+      },
+      "new_training_sources": {
+        "tp": 0,
+        "fp": 6,
+        "fn": 4,
+        "images": 14
+      },
+      "legacy_map50": 0.4161499678865998,
+      "video_307": {
+        "frames_with_any_box": 271,
+        "boxes": 291,
+        "longest_empty_sample_run": 32
+      }
+    },
+    "v21_best": {
+      "weights_sha256": "28ad3c18777556affba12cb0bd5e173427f7af65ccf89a368cef528d9d6efd8d",
+      "blue_localized_iou50": 4,
+      "tight_flame": {
+        "tp": 8,
+        "fp": 11,
+        "fn": 7,
+        "micro_f1": 0.47058823529411764
+      },
+      "indoor_nofire": {
+        "images": 100,
+        "images_with_fp": 15,
+        "fp": 17
+      },
+      "new_training_sources": {
+        "tp": 0,
+        "fp": 7,
+        "fn": 4,
+        "images": 14
+      },
+      "legacy_map50": 0.5469313958292573,
+      "video_307": {
+        "frames_with_any_box": 271,
+        "boxes": 287,
+        "longest_empty_sample_run": 32
+      }
+    },
+    "v21_last": {
+      "weights_sha256": "185a906e277b603e949a1f8b6b0d3693a32d62b87aeedb7b6de736a46248d48c",
+      "blue_localized_iou50": 4,
+      "tight_flame": {
+        "tp": 12,
+        "fp": 7,
+        "fn": 3,
+        "micro_f1": 0.7058823529411765
+      },
+      "indoor_nofire": {
+        "images": 100,
+        "images_with_fp": 16,
+        "fp": 19
+      },
+      "new_training_sources": {
+        "tp": 1,
+        "fp": 5,
+        "fn": 3,
+        "images": 14
+      },
+      "legacy_map50": 0.31040816910508434,
+      "video_307": {
+        "frames_with_any_box": 271,
+        "boxes": 293,
+        "longest_empty_sample_run": 32
+      }
+    },
+    "v22_best": {
+      "weights_sha256": "851ec1e7f0258b1c2677ad2abc7ca495fabf689e7fcf0d91e5fe6888d36cebb0",
+      "blue_localized_iou50": 4,
+      "tight_flame": {
+        "tp": 5,
+        "fp": 11,
+        "fn": 10,
+        "micro_f1": 0.3225806451612903
+      },
+      "indoor_nofire": {
+        "images": 100,
+        "images_with_fp": 6,
+        "fp": 6
+      },
+      "new_training_sources": {
+        "tp": 3,
+        "fp": 1,
+        "fn": 1,
+        "images": 14
+      },
+      "legacy_map50": 0.4417424137898153,
+      "video_307": {
+        "frames_with_any_box": 271,
+        "boxes": 289,
+        "longest_empty_sample_run": 32
+      }
+    },
+    "v22_last": {
+      "weights_sha256": "fbd3da6de957a0b3233be281a8305aeda2cf42f093e8da53a661ef373ccf8bb8",
+      "blue_localized_iou50": 4,
+      "tight_flame": {
+        "tp": 11,
+        "fp": 7,
+        "fn": 4,
+        "micro_f1": 0.6666666666666666
+      },
+      "indoor_nofire": {
+        "images": 100,
+        "images_with_fp": 13,
+        "fp": 16
+      },
+      "new_training_sources": {
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "images": 14
+      },
+      "legacy_map50": 0.20250416140970165,
+      "video_307": {
+        "frames_with_any_box": 270,
+        "boxes": 301,
+        "longest_empty_sample_run": 32
+      }
+    }
+  },
+  "acceptance": {
+    "v22_best": {
+      "reference": "v21_best",
+      "tests": {
+        "new_source_tp_at_least_3": true,
+        "new_source_fn_at_most_1": true,
+        "new_source_fp_at_most_5": true,
+        "tight_f1_not_below_v21": false,
+        "blue_localized_at_least_4": true,
+        "indoor_images_not_above_v21": true,
+        "indoor_boxes_not_above_v21": true,
+        "legacy_map50_not_below_v21": false
+      },
+      "passed": false,
+      "training_audits_passed": true,
+      "independent_test": false,
+      "on_board": false,
+      "automatic_adoption": false
+    },
+    "v22_last": {
+      "reference": "v21_last",
+      "tests": {
+        "new_source_tp_at_least_3": true,
+        "new_source_fn_at_most_1": true,
+        "new_source_fp_at_most_5": true,
+        "tight_f1_not_below_v21": false,
+        "blue_localized_at_least_4": true,
+        "indoor_images_not_above_v21": true,
+        "indoor_boxes_not_above_v21": true,
+        "legacy_map50_not_below_v21": false
+      },
+      "passed": false,
+      "training_audits_passed": true,
+      "independent_test": false,
+      "on_board": false,
+      "automatic_adoption": false
+    }
+  },
+  "videos": {
+    "path": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\project_v22_videos_20261028",
+    "shared_samples": 307,
+    "model_inferences": 2763,
+    "reference_predictions_exact": 2149,
+    "comparison_sha256": "dca292055029dba564414c5e8cc36f923130f63cdf5bddc77e8db0cf74b4fb7b",
+    "per_clip": [
+      {
+        "video_index": 1,
+        "source_sha256": "65ce47ff76f64e8d28f290279f4de970929f203aa8cdbace7c63720260753df6",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 931,
+        "sampled_frames": 32,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v21_best": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v21_last": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v22_best": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          },
+          "v22_last": {
+            "frames_with_any_box": 0,
+            "boxes": 0,
+            "longest_empty_sample_run": 32,
+            "box_count_histogram": {
+              "0": 32
+            }
+          }
+        }
+      },
+      {
+        "video_index": 2,
+        "source_sha256": "ea5b23e704eb4f7b1a54335f5d0c9b9cd0f6309603b23d59625ad2a633dc7bca",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 940,
+        "sampled_frames": 32,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v21_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v21_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v22_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v22_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          }
+        }
+      },
+      {
+        "video_index": 3,
+        "source_sha256": "9f9183be2cf13b2b65ca89543bb451f4cb2b3515836a449b012e6daa1c071a16",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 956,
+        "sampled_frames": 32,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v21_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v21_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v22_best": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          },
+          "v22_last": {
+            "frames_with_any_box": 32,
+            "boxes": 32,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 32
+            }
+          }
+        }
+      },
+      {
+        "video_index": 4,
+        "source_sha256": "dafac36724a2a7a60e23d88cb9781e70814775b28176b672ba38e1aaa5b2c245",
+        "fps": 30.0,
+        "step": 30,
+        "decoded_frames": 992,
+        "sampled_frames": 34,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v21_best": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v21_last": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v22_best": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          },
+          "v22_last": {
+            "frames_with_any_box": 34,
+            "boxes": 34,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 34
+            }
+          }
+        }
+      },
+      {
+        "video_index": 5,
+        "source_sha256": "ac34d7617a55c42d67d385e92d83f3255c6b93a54789c52cea746dc6a0028eba",
+        "fps": 30.004173042147727,
+        "step": 30,
+        "decoded_frames": 719,
+        "sampled_frames": 24,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v21_best": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v21_last": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v22_best": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          },
+          "v22_last": {
+            "frames_with_any_box": 24,
+            "boxes": 24,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 24
+            }
+          }
+        }
+      },
+      {
+        "video_index": 6,
+        "source_sha256": "dbd18d5fb2587b4dafc224d12bc47984ce6e97abbdfacf0e33a7b83520b02cb1",
+        "fps": 30.00447828034035,
+        "step": 30,
+        "decoded_frames": 670,
+        "sampled_frames": 23,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 21,
+            "boxes": 22,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 20,
+              "2": 1
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 21,
+            "boxes": 21,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 21
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 21,
+            "boxes": 21,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 21
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 21,
+            "boxes": 21,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 21
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 21,
+            "boxes": 21,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 21
+            }
+          },
+          "v21_best": {
+            "frames_with_any_box": 21,
+            "boxes": 21,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 21
+            }
+          },
+          "v21_last": {
+            "frames_with_any_box": 21,
+            "boxes": 22,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 20,
+              "2": 1
+            }
+          },
+          "v22_best": {
+            "frames_with_any_box": 21,
+            "boxes": 23,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 19,
+              "2": 2
+            }
+          },
+          "v22_last": {
+            "frames_with_any_box": 21,
+            "boxes": 23,
+            "longest_empty_sample_run": 2,
+            "box_count_histogram": {
+              "0": 2,
+              "1": 20,
+              "3": 1
+            }
+          }
+        }
+      },
+      {
+        "video_index": 7,
+        "source_sha256": "f768e372ec81704a31e5bad7834b523b93be05a9b9c88f7040f2178261fe99fc",
+        "fps": 28.02002035968782,
+        "step": 28,
+        "decoded_frames": 734,
+        "sampled_frames": 27,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 25,
+            "boxes": 37,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "3": 3,
+              "1": 16,
+              "2": 6,
+              "0": 2
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 25,
+            "boxes": 35,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "1": 17,
+              "2": 6,
+              "0": 2,
+              "3": 2
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 25,
+            "boxes": 33,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "1": 19,
+              "2": 4,
+              "0": 2,
+              "3": 2
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 25,
+            "boxes": 35,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "2": 6,
+              "1": 17,
+              "0": 2,
+              "3": 2
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 25,
+            "boxes": 36,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "2": 7,
+              "1": 16,
+              "0": 2,
+              "3": 2
+            }
+          },
+          "v21_best": {
+            "frames_with_any_box": 25,
+            "boxes": 35,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "2": 6,
+              "1": 17,
+              "0": 2,
+              "3": 2
+            }
+          },
+          "v21_last": {
+            "frames_with_any_box": 25,
+            "boxes": 35,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "2": 6,
+              "1": 17,
+              "0": 2,
+              "3": 2
+            }
+          },
+          "v22_best": {
+            "frames_with_any_box": 25,
+            "boxes": 36,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "2": 6,
+              "1": 17,
+              "0": 2,
+              "4": 1,
+              "3": 1
+            }
+          },
+          "v22_last": {
+            "frames_with_any_box": 24,
+            "boxes": 39,
+            "longest_empty_sample_run": 1,
+            "box_count_histogram": {
+              "2": 7,
+              "0": 3,
+              "1": 14,
+              "4": 2,
+              "3": 1
+            }
+          }
+        }
+      },
+      {
+        "video_index": 8,
+        "source_sha256": "ab9d1d7e493979dc39395e9933bc1adfe3f1c78ba479759146426ada47af601e",
+        "fps": 30.0046699875467,
+        "step": 30,
+        "decoded_frames": 1285,
+        "sampled_frames": 43,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v21_best": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v21_last": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v22_best": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          },
+          "v22_last": {
+            "frames_with_any_box": 43,
+            "boxes": 43,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 43
+            }
+          }
+        }
+      },
+      {
+        "video_index": 9,
+        "source_sha256": "fe87820c64636d5362a35fa98e6d969de892ddebf9a4dc0b326aa6896a97fa6a",
+        "fps": 30.004214075010534,
+        "step": 30,
+        "decoded_frames": 1780,
+        "sampled_frames": 60,
+        "model_counts": {
+          "v16_best": {
+            "frames_with_any_box": 60,
+            "boxes": 64,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 56,
+              "2": 4
+            }
+          },
+          "v18_last": {
+            "frames_with_any_box": 60,
+            "boxes": 70,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 51,
+              "2": 8,
+              "3": 1
+            }
+          },
+          "v19_last": {
+            "frames_with_any_box": 60,
+            "boxes": 71,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 51,
+              "2": 7,
+              "3": 2
+            }
+          },
+          "v20_best": {
+            "frames_with_any_box": 60,
+            "boxes": 64,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 56,
+              "2": 4
+            }
+          },
+          "v20_last": {
+            "frames_with_any_box": 60,
+            "boxes": 69,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 52,
+              "2": 7,
+              "3": 1
+            }
+          },
+          "v21_best": {
+            "frames_with_any_box": 60,
+            "boxes": 66,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 54,
+              "2": 6
+            }
+          },
+          "v21_last": {
+            "frames_with_any_box": 60,
+            "boxes": 71,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 50,
+              "2": 9,
+              "3": 1
+            }
+          },
+          "v22_best": {
+            "frames_with_any_box": 60,
+            "boxes": 65,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 55,
+              "2": 5
+            }
+          },
+          "v22_last": {
+            "frames_with_any_box": 60,
+            "boxes": 74,
+            "longest_empty_sample_run": 0,
+            "box_count_histogram": {
+              "1": 48,
+              "2": 10,
+              "3": 2
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visual_review": {
+    "reviewed_by": "Codex main",
+    "fixed_pages": 13,
+    "count_difference_pages": 7,
+    "visible_flame_sheets": 6,
+    "total_pages_reviewed": 26,
+    "count_different_samples": 19,
+    "pages": [
+      {
+        "kind": "fixed",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_visual_review_20261028\\new_sources_01.jpg",
+        "sha256": "8005164c917006f645aaae53599aaa036d2d50911852f2c9a1793260b94c0347"
+      },
+      {
+        "kind": "fixed",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_visual_review_20261028\\new_sources_02.jpg",
+        "sha256": "26012838cf24fa1222fdfc4e1e0436f93e8d045b72715db71ccc6a1d81e4075e"
+      },
+      {
+        "kind": "fixed",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_visual_review_20261028\\new_sources_03.jpg",
+        "sha256": "983524ef5a79c30220a119d1ac073369ac671e14423dccbc067b330a4701fb0b"
+      },
+      {
+        "kind": "fixed",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_visual_review_20261028\\new_sources_04.jpg",
+        "sha256": "4b6973219d81bac321525f0b3892d16fb81a9888d34d9b6aba0ce0b1f0c3dd3d"
+      },
+      {
+        "kind": "fixed",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_visual_review_20261028\\video_01_selected_models.jpg",
+        "sha256": "f109dc0990b647b7b57c397fe684878a524dd1706cd8572c5457927d6f73edf4"
+      },
+      {
+        "kind": "fixed",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_visual_review_20261028\\video_02_selected_models.jpg",
+        "sha256": "2c19c979e2816754dd072fa433e7623d2ba4499921bf93598d20855ee9fa34c5"
+      },
+      {
+        "kind": "fixed",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_visual_review_20261028\\video_03_selected_models.jpg",
+        "sha256": "adb4674428ba62f6fd6e38bc45b22339c685d555918899b09a05953210920388"
+      },
+      {
+        "kind": "fixed",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_visual_review_20261028\\video_04_selected_models.jpg",
+        "sha256": "bbcbc853662f171e915f958aea59fcf2f126218bfae3eb6571383bac1ef8219e"
+      },
+      {
+        "kind": "fixed",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_visual_review_20261028\\video_05_selected_models.jpg",
+        "sha256": "8e543454d48d48aaef2322275ea514dc1cd6a0ec5c60838e724d21b2e725e345"
+      },
+      {
+        "kind": "fixed",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_visual_review_20261028\\video_06_selected_models.jpg",
+        "sha256": "b18de8eac0128e57c486a1de056da229b7f091069965465658fdcbc04e0b7a99"
+      },
+      {
+        "kind": "fixed",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_visual_review_20261028\\video_07_selected_models.jpg",
+        "sha256": "102afe3dc870edfdab315811d3bfe972e5e44b4e5d6401d7883c822897d20b99"
+      },
+      {
+        "kind": "fixed",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_visual_review_20261028\\video_08_selected_models.jpg",
+        "sha256": "2c3082dbd37c67cd956160e97ec3fb92911c26fc866c1923a1d23b3514502016"
+      },
+      {
+        "kind": "fixed",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_visual_review_20261028\\video_09_selected_models.jpg",
+        "sha256": "0d713df0401a10e9a209e45d0bb74f4d78e22060a464dc1f0cd4582a028308e0"
+      },
+      {
+        "kind": "count_difference",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_video_difference_review_20261028\\sheet_01.jpg",
+        "sha256": "bf6f8c7a6f70ee8679c57aaaa4f05158ca09cc3d5c28888f5ed6c0ede981f371"
+      },
+      {
+        "kind": "count_difference",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_video_difference_review_20261028\\sheet_02.jpg",
+        "sha256": "508b4a073550238c57441c53fba04a47d17d0713499b127917d95702571abd33"
+      },
+      {
+        "kind": "count_difference",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_video_difference_review_20261028\\sheet_03.jpg",
+        "sha256": "ea834a27a1c3eaa622729f89734e7bfde47ee26cc88cd45ac549e5ef627a1bc9"
+      },
+      {
+        "kind": "count_difference",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_video_difference_review_20261028\\sheet_04.jpg",
+        "sha256": "21c60b56e42079d7736538f13215a56d14723ed306e49784469bfd637a2cac6d"
+      },
+      {
+        "kind": "count_difference",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_video_difference_review_20261028\\sheet_05.jpg",
+        "sha256": "7fa33c5866b9d3bb6f3ef7d50583d21887bc7c50e94329965fdc637a6f303c73"
+      },
+      {
+        "kind": "count_difference",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_video_difference_review_20261028\\sheet_06.jpg",
+        "sha256": "e85198e15f1bd071e76e1ba912d4617a8d906251cc46ef30fd9c548eae72e4e8"
+      },
+      {
+        "kind": "count_difference",
+        "file": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\v22_video_difference_review_20261028\\sheet_07.jpg",
+        "sha256": "924cbe785590aedd8f596176967f3852977568d35aab62554170be7c58f0ab69"
+      }
+    ],
+    "visible_flame_inputs": [
+      {
+        "path": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\kitchen_source_sampling_v22_comparison_20261028\\visible_flame\\v22_best_sheet_01.jpg",
+        "sha256": "3156df775dcf1a4318f7687dd7c239dfffa7102de25dae17539f9927b856ee34"
+      },
+      {
+        "path": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\kitchen_source_sampling_v22_comparison_20261028\\visible_flame\\v22_best_sheet_02.jpg",
+        "sha256": "e4e95f3a9b9794008960ea730d3eb3c098b108c34fce2da763bb656970d87453"
+      },
+      {
+        "path": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\kitchen_source_sampling_v22_comparison_20261028\\visible_flame\\v22_best_sheet_03.jpg",
+        "sha256": "dacee5d40f0202352aeb34fac6d3ceadc2a53323248c3cc535ed0e918ffa8573"
+      },
+      {
+        "path": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\kitchen_source_sampling_v22_comparison_20261028\\visible_flame\\v22_last_sheet_01.jpg",
+        "sha256": "ad2d56ad3dd3494cb34dfc5d3a91130a103360a26bddf27bf83b1d1d18a830e3"
+      },
+      {
+        "path": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\kitchen_source_sampling_v22_comparison_20261028\\visible_flame\\v22_last_sheet_02.jpg",
+        "sha256": "6b920f5ecb5a188b3412ab3e2ecf228c0bed67055778dddae75cd883f1556366"
+      },
+      {
+        "path": "C:\\Users\\ASUS\\Documents\\ChatGPT\\SRTP\\model_work\\out\\kitchen_source_sampling_v22_comparison_20261028\\visible_flame\\v22_last_sheet_03.jpg",
+        "sha256": "a09c8eaccb4a501dcc35b7cac1670ce9773fe25e5e30366c33e0f70ca651350a"
+      }
+    ],
+    "observations": [
+      "context4_11 now produces a broad blue-burner box that covers the labelled blue ring, explaining a new-source true positive while remaining looser than the tight target.",
+      "The 14-source set removes most earlier red-tray, sticker and utensil false positives: v22_best=3/1/0 and v22_last=4/0/0 TP/FP/FN, but these are training-exposed images.",
+      "Visible-flame sheets still contain large whole-pot boxes and metal/blue-reflection fragments; v22_best=5/11/10 and v22_last=11/7/4 tight TP/FP/FN.",
+      "Video 7 sample 1 has a visible blue flame but v22_last returns no box while both v21 roles return one.",
+      "Several v22_last additions in videos 6, 7 and 9 are duplicate, burner-edge or towel/sticker boxes rather than new flame components; v22_best removes some towel boxes at video 9 samples 34/35/40 but also adds duplicate flame boxes."
+    ]
+  },
+  "decision": {
+    "demo": "v16 best retained",
+    "localization_development": "v18 last retained",
+    "v22_best": "not promoted; misses tight-F1 and legacy-mAP gates",
+    "v22_last": "not promoted; misses tight-F1 and legacy-mAP gates",
+    "reason": "Source recall and indoor false positives improve, but tight boxes and legacy mAP regress; video review finds a blue-flame miss and duplicate/false boxes",
+    "automatic_default_replacement": false
+  },
+  "reserved_sources_predicted": false,
+  "independent_test": false,
+  "on_board": false,
+  "onnx_export_this_round": false,
+  "limits": [
+    "All 14 new sources are training-exposed development images.",
+    "All videos and old regression images have been exposed repeatedly.",
+    "Sampled video box counts are not accuracy or event truth.",
+    "No ONNX export, quantization, independent kitchen test or board acceptance was performed."
+  ]
+}

@@ -14,10 +14,11 @@
 |实验|训练|对照|验收报告|
 |---|---|---|---|
 |火焰v21|`model_work/runs/fire-kitchen-partial-features-v21-20261028/`，12轮、3618次实际更新、3624 batches|图片：`model_work/out/kitchen_partial_features_v21_comparison_20261028/`；九视频307同帧：`model_work/out/project_v21_videos_20261028/`|`model_work/docs/KITCHEN_PARTIAL_FEATURES_V21_RESULTS_20261028.md`；`docs/fire_v21_results_20261028.json`，已完成，主控实际查看19页|
+|火焰v22|`model_work/runs/fire-source-sampling-v22-20261028/`，12轮、3616次实际更新、3624 batches|图片：`model_work/out/kitchen_source_sampling_v22_comparison_20261028/`；九视频307同帧：`model_work/out/project_v22_videos_20261028/`|`model_work/docs/KITCHEN_SOURCE_SAMPLING_V22_RESULTS_20261028.md`；`docs/fire_v22_results_20261028.json`，已完成，主控实际查看26页|
 |烟雾扩充v5|`model_work/runs/smoke-extension-v5-20261028/`，40轮、432次实际更新、440 batches|`model_work/out/smoke_extension_v5_comparison_20261028/`|与v6一并见 `model_work/docs/SMOKE_EXTENSION_V5_V6_RESULTS_20261028.md` 和 `docs/smoke_extension_v5_v6_results_20261028.json`|
 |烟雾部分特征v6|已完成40轮、432次实际更新、440 batches，目录 `model_work/runs/smoke-partial-features-v6-20261028/`|七模型对照 `model_work/out/smoke_extension_v6_comparison_20261028/`|训练与固定对照已完成，候选决定见报告|
 
-v21 两份权重均须比较蓝焰定位、15个物理紧框、旧图非火误检、14张训练来源及九视频同帧。结果计数与取舍以火焰报告为准：v21不晋升，演示v16/开发v18保持。
+v21/v22 两份权重均比较蓝焰定位、15个物理紧框、旧图非火误检、14张训练来源及九视频同帧。结果计数与取舍以火焰报告为准：v21/v22均不晋升，演示v16/开发v18保持。v22 new-source召回和室内误检显著改善，但紧框F1与旧mAP50低于对应v21角色，且看图仍有整锅大框、重复框和视频蓝焰漏检。
 
 烟雾新集为 `model_work/data/smoke_extension_v5_20261028/`：保留旧36图，加入实际审核批准的16图，合计43 train/9 val；原9图val的图片和标签身份不变。审核24候选的6页原图/框对照后，批准4张可见羽流外观、12张无可见烟雾图，8张暂缓。相似加油站画面合并为保守开发组，不称独立事件。原始审核见 `model_work/out/smoke_extension_review_20261028/`。
 
@@ -37,10 +38,14 @@ v21 两份权重均须比较蓝焰定位、15个物理紧框、旧图非火误�
 
 本聊天的每6小时成果跟进已建立，automation id 为 `srtp`，目标聊天为 `01a18170-3e36-7101-a039-f13815edfb8c`。自动跟进应读取最新报告和进程状态，工作正在进行时不重复训练；用户要求暂停或整个目标完成后停止跟进。
 
-本轮候选决定：火焰v21仅作参照；旧双头smoke v4保留，v6 last作为额外独立烟雾网络开发候选，v6 best作为召回对照。新权重未ONNX导出、量化或上板。
+本轮候选决定：火焰v21/v22仅作参照；旧双头smoke v4保留，v6 last作为额外独立烟雾网络开发候选，v6 best作为召回对照。新权重未ONNX导出、量化或上板。
 
-用户明确不使用Codex内置加密子agent，已停止；后续仅直接通过Magpie发送明文任务给Copilot/WorkBuddy。代码与实验图片外发均已授权，不重复请求。两种视觉模型在context3_01空预测页都误称存在蓝框，已驳回该意见；以实际预测JSON和主控看图为准。
+协作要求以用户最新指令为准：使用原生V1子代理，优先Copilot、WorkBuddy；代码与项目图片外发已获授权。模型路由不等于实际服务身份的独立证明，失败调用不得记作成功。历史两种视觉模型在context3_01空预测页都误称存在蓝框，已驳回该意见；以实际预测JSON和主控看图为准。
 
 下一轮优先：冻结新来源/事件开发与测试角色，补正常烹饪蒸汽/油烟与真实燃烧烟雾的采集说明；对商业厨房小蓝焰漏检与贴纸/红餐具错误做有依据的定向实验，不仅增加轮数。四张历史预留源继续隔离，不用来循环调参。
 
 Git提交/推送由主控在报告、调用账本与源码检查完成后统一执行；接手使用本分支最新提交，避免重复训练。
+
+## 2026-10-28 后续 v23 / v24 接续
+
+最新进度见 `FIRE_PROXIMAL_V24_RESULTS_20261028.md` 和 `docs/fire_v24_results_20261028.json`。v23 三组共16个插值未通过各自全部实验筛选项；v24 已完成12轮训练、固定图片和九视频307同帧开发对照。v24 last 紧框有收益，但视频7两个采样点无框且有额外背景/重复框，继续作为开发对照，不替换v16演示或v18定位候选。实验旧mAP硬门槛与项目综合采用判断分开记录。四张预留源未在本轮使用；无新增独立测试或上板。
