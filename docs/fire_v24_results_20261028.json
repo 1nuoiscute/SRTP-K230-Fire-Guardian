@@ -13,11 +13,17 @@
     "meta_sha256": "9d13a5de8feee327a32a68e362dee5510a8d96fea612c757f5abce08f0bc0982",
     "calibration_target_ratio": 0.2,
     "anchor_lambda": 1.28066030719,
-    "actual_gradient_ratio_samples": 3616,
-    "actual_gradient_ratio_median": 0.30010017885591367,
-    "actual_gradient_ratio_p95": 0.43403619741381383,
-    "actual_gradient_ratio_max": 49.08647343971274,
-    "actual_gradient_ratio_above_one": 10
+    "gradient_audit_correction": {
+      "effective_steps": 3616,
+      "actual_preclip_ratio_median": 0.04994787704689296,
+      "actual_preclip_ratio_p95_nearest_lower": 0.09431175662816825,
+      "actual_preclip_ratio_max": 7.704142138542139,
+      "actual_preclip_ratio_below_target": 3571,
+      "historical_initial_distance_ratio_median": 0.30010017885591367,
+      "steps_with_combined_preclip_norm_above_10": 3605,
+      "limits": "Norm ratios before global clipping; optimizer updates and postclip component vectors are not reconstructed.",
+      "method": "fixed lambda * current parameter-to-anchor L2 norm / detection gradient L2 norm, before global clip"
+    }
   },
   "image_comparison_sha256": "2ec24b855e668b8c5e66a2e0ce8283d3b51d74a0959e3558ca5e78aa40c17e88",
   "video_comparison_sha256": "3e9eddd3b4bc306e618ab91791b327e9606a8e0e7eff0e670d20fc32a43416c7",
