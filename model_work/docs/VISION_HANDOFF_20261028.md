@@ -67,3 +67,11 @@ Git提交/推送由主控在报告、调用账本与源码检查完成后统一�
 新隔离烹饪视频（CC0）与来源和原画初审见 `FIRE_COOKING_VLOG_INTAKE_20261029.md`：约169–171秒三帧可见蓝焰，视频有剪辑，不能作为完整关火事件；三帧与v24已知清单1445图无像素完全匹配，完整来源和历史曝光仍待审。未做模型预测或训练，原件留本机。
 
 候选曝光精确匹配排查与 vlog 三帧人工蓝焰框草案见 `FIRE_CANDIDATE_EXPOSURE_AND_BOX_DRAFT_20261029.md`；未批准定位真值、未做预测或训练。
+
+## 2026-10-29 跨事件采集执行单
+
+新增 `FIRE_CROSS_EVENT_CAPTURE_PROTOCOL_20261029.md`：规定原始连续事件登记、按厨房/事件冻结角色、物理阀门状态与画面可见性分开盲标、ROI 内外和移动后标定、预先冻结评测配置及事件级结果记录。该文件是待执行的采集与验收准备，不是新数据、结果或通过证明。
+
+历史 `USER_VIDEO_ADAPTATION_RUN_20260927.md` 记录 `viedos/0.mp4` 六个关火空灶样本进入 v3 训练；其与 1–3.mp4 的开放或锅下蓝焰属于分段素材。复看原有标签总览可见第 0 段六张样本无明显可见火焰，但这不是逐帧核验，不能把不同视频拼成连续关火事件或独立测试。当前仍缺真实设备固定机位 ROI 内外、移动和完整关火事件，无新训练、预测或 K230 验收。
+
+本轮原生子代理尝试 `copilot/claude-haiku-5.5` 与 `copilot/claude-sonnet-5.5` 均返回 requested model is not supported；`bailian-token-plan/qwen3.8-flash` 返回 401 Invalid API-key，均无交付。Qwen 路由此前已有同类失败，此次重复尝试不应发生；这些结果不等于 Copilot 网关不可用，后续避免重复失败路由。此次未使用 WorkBuddy 积分。进程列表见到四个 Python 可执行路径为 Stellaris Wiki 环境和 Miniconda，命令行访问被拒，故不能仅据此证明所有进程用途；没有主动启动视觉任务。
