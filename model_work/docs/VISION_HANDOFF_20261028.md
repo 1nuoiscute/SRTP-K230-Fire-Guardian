@@ -75,3 +75,11 @@ Git提交/推送由主控在报告、调用账本与源码检查完成后统一�
 历史 `USER_VIDEO_ADAPTATION_RUN_20260927.md` 记录 `viedos/0.mp4` 六个关火空灶样本进入 v3 训练；其与 1–3.mp4 的开放或锅下蓝焰属于分段素材。复看原有标签总览可见第 0 段六张样本无明显可见火焰，但这不是逐帧核验，不能把不同视频拼成连续关火事件或独立测试。当前仍缺真实设备固定机位 ROI 内外、移动和完整关火事件，无新训练、预测或 K230 验收。
 
 本轮原生子代理尝试 `copilot/claude-haiku-5.5` 与 `copilot/claude-sonnet-5.5` 均返回 requested model is not supported；`bailian-token-plan/qwen3.8-flash` 返回 401 Invalid API-key，均无交付。Qwen 路由此前已有同类失败，此次重复尝试不应发生；这些结果不等于 Copilot 网关不可用，后续避免重复失败路由。此次未使用 WorkBuddy 积分。进程列表见到四个 Python 可执行路径为 Stellaris Wiki 环境和 Miniconda，命令行访问被拒，故不能仅据此证明所有进程用途；没有主动启动视觉任务。
+
+## 2026-10-29 蓝焰框模型复核与事件清单校验
+
+三帧烹饪短镜头草案已由另一原生模型基于原画网格和叠框做只读复核；其中第 4275 帧锅体遮挡，不能判断遮挡后的火焰范围。模型辅助复核不是独立人工审核，定位框仍未批准、来源及角色仍隔离待定。详见 `FIRE_BLUE_FLAME_BOX_MODEL_REVIEW_20261029.md`。
+
+新增 `model_work/src/fire_event_manifest.py` 和同目录测试；用 `python -B model_work/src/fire_event_manifest.py <清单.json>` 执行结构校验，测试中有合成结构示例，不是实际事件数据。区间和采样帧分开，框绑定帧号和时间；对无火负例要求引用物理及视觉证据，校验 ROI 几何、区间、同源身份和用途，并对空采样、未知及缺口等给警告。输出始终不认定验收准备完成：文件哈希仅查清单所填身份，无法识别转码、证明来源独立、复核证据或判断标注真实，也无法证明未采样帧的状态。使用前仍需人工来源审计与盲标复核。完整测试 `python -B -m unittest discover -s model_work/src -p test_*.py` 本机 217 项通过；未启动训练或模型预测，四张预留源未用。
+
+本会话原生 Copilot `copilot/gpt-5.6-terra` 返回 model_not_supported，尝试的 `workbuddy/glm-5.3-flash` 被原生工具拒绝为 Unknown model；这两次均无交付，不代表供应商网关不可用。本轮使用 `gpt-6-luna` 和 `gpt-5.6-luna` 完成有限只读复核与编码，未调用 WorkBuddy 服务。
