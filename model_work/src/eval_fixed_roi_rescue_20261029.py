@@ -6,8 +6,6 @@ This is a development diagnostic, not alarm logic or independent testing.
 """
 import argparse, hashlib, json, math
 from pathlib import Path
-import cv2, numpy as np, torch
-from ultralytics import YOLO
 
 NAMES=("v16_best","v18_last","v24_last")
 FRACTIONS=(0.10,0.25,0.90,0.90)
@@ -28,13 +26,19 @@ def roi_xyxy(width,height):
  if not 0<=x1<x2<=width or not 0<=y1<y2<=height: raise ValueError("Invalid ROI")
  return x1,y1,x2,y2
 def map_boxes(boxes,roi):
- x1,y1,x2,y2=roi; width=x2-x1; height=y2-y1; result=[]
+ x1,y1,x2,y2=roi
+ if not all(math.isfinite(x) for x in roi) or x1<0 or y1<0 or x1>=x2 or y1>=y2: raise ValueError("Invalid ROI")
+ width=x2-x1; height=y2-y1; result=[]
  for b in boxes:
   a,c,d,e=map(float,b.xyxy[0].tolist()); conf=float(b.conf.item())
   if not all(math.isfinite(x) for x in (a,c,d,e,conf)) or a<-.1 or c<-.1 or d>width+.1 or e>height+.1 or a>=d or c>=e: raise ValueError("Invalid crop coordinates")
-  result.append(dict(confidence=conf,xyxy=[max(0,a)+x1,max(0,c)+y1,min(width,d)+x1,min(height,e)+y1]))
+  a,c,d,e=max(0,a),max(0,c),min(width,d),min(height,e)
+  if a>=d or c>=e: raise ValueError("Crop box has zero area after clipping")
+  result.append(dict(confidence=conf,xyxy=[a+x1,c+y1,d+x1,e+y1]))
  return result
 def main():
+ import cv2, numpy as np, torch
+ from ultralytics import YOLO
  p=argparse.ArgumentParser(description=__doc__); p.add_argument("--samples",type=Path,required=True); p.add_argument("--full",type=Path,required=True); p.add_argument("--out",type=Path,required=True); a=p.parse_args()
  if a.out.exists(): raise ValueError("Existing output")
  sample_plan,sample_done=validate(a.samples); full_plan,full_done=validate(a.full)
