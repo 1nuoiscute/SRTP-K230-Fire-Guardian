@@ -7,7 +7,6 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-import cv2
 
 ROOT = Path(__file__).resolve().parents[2]
 REVIEW = ROOT / "model_work/out/pexels_9685496_source_review_20261029"
@@ -53,6 +52,8 @@ def validate_sampling_manifest(manifest, manifest_sha256, validated_source_sha25
 
 def fingerprint_bgr(bgr):
     """Match the repository pHash: OpenCV BGR -> gray -> 32x32 DCT -> 8x8 median bits."""
+    import cv2
+
     gray = cv2.cvtColor(bgr, cv2.COLOR_BGR2GRAY)
     coeff = cv2.dct(cv2.resize(gray, (32, 32)).astype("float32"))[:8, :8].flatten()
     bits = coeff > __import__("numpy").median(coeff[1:])
@@ -111,6 +112,9 @@ def main():
         by_index = {row["frame_index_zero_based"]: row for row in sample_manifest["frames"]}
         if any(index not in by_index for index in FRAME_INDICES):
             raise ValueError("Required frame absent from sampling_manifest")
+        # Visual dependencies are needed only after pure manifest identity checks pass.
+        import cv2
+
         source_frames = {}
         frame_inputs = []
         for index in FRAME_INDICES:
