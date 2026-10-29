@@ -23,3 +23,9 @@
 ## 原生子代理路由尝试
 
 网关 `/v1/models` 列出多个 Copilot、通义千问和 WorkBuddy 路由，列表不等于可成功调用。原生接口 `copilot/auto`、`qwen` 返回 Unknown model；`copilot/gpt-5.6-luna` 返回 model_not_supported；`bailian-token-plan/qwen3.8-flash` 返回 401 Invalid API-key；`workbuddy/deepseek-v4.1-flash` 返回 429。均未交付，不记为成功。`workbuddy/glm-5.3` ROI 边界任务派发后等待数分钟仍未返回，主控为节省额度主动关闭，关闭前状态为 running；未交付，不当作成功或已修复。用户已补充 WorkBuddy 额度并要求节省，继续优先有界任务且避免重复失败调用。实际结果以任务最终状态为准。
+
+## 2026-10-29 用户更正与 Copilot 复核
+
+用户指出 Copilot 在 Magpie 可用，并提供模型选择界面。主控通过 `http://127.0.0.1:3425/v1/chat/completions` 对 `copilot/auto` 做一次最小文本探针，返回 `copilot/gpt-4.1`、内容 `OK`，响应报告 13 tokens；因此 Copilot 网关可用，不能把原生子代理路由失败表述为 Copilot 整体不可用。该探针没有运行项目任务，也不是原生子代理交付。
+
+同轮以原生 V1 子代理尝试 `copilot/gemini-3.8-flash`、`copilot/gpt-5.6-sol`、`copilot/claude-haiku-4.5`，均返回 `model_not_supported`，未交付；随后尝试 `copilot/gpt-4.1` 时被原生接口以 Unknown model 拒绝。图形界面中可选、网关聊天可调用与当前会话的原生子代理可运行是不同证据。原生工具列出的可用模型与网关目录不一致；原因尚未确定，不推断账号不可用。此次没有修复代码或启动实验。
