@@ -281,7 +281,7 @@ int main(int argc, char **argv)
     attr.pixel_format = PIXEL_FORMAT_ARGB_8888;
     attr.stride = W * 4 / 8;
     attr.global_alptha = 255;
-    kd_mpi_vo_osd_disable(K_VO_OSD0);
+    /* No owned frame has been submitted yet; do not release stale VO state. */
     if (kd_mpi_vo_set_video_osd_attr(K_VO_OSD0, &attr) != 0 ||
         kd_mpi_vo_osd_enable(K_VO_OSD0) != 0) {
         fprintf(stderr, "UI OSD0 setup failed\n"); goto cleanup_vb;
@@ -293,7 +293,7 @@ int main(int argc, char **argv)
     const char *status_path = "/sharefs/srtp_clean/ui_overlay/status_ram/status.txt";
     unsigned long previous_seq = 0;
     int stale_cycles = 3, shown = -1, ticks = 0, panel_visible = 1;
-    Display displayed = {{0}};
+    Display displayed = {0};
     Status status = {0};
     rc = 0;
     for (;;) {
@@ -330,7 +330,7 @@ int main(int argc, char **argv)
                 frame.v_frame.stride[0] = W;
                 frame.v_frame.phys_addr[0] = buffers[0].phys;
                 frame.v_frame.pixel_format = PIXEL_FORMAT_ARGB_8888;
-                frame.v_frame.priv_data = K_VO_ONLY_CHANGE_PHYADDR;
+                frame.v_frame.priv_data = 0; /* Submit a complete first frame. */
                 if (kd_mpi_vo_chn_insert_frame(K_VO_OSD0 + 3, &frame) != 0) {
                     fprintf(stderr, "UI frame insert failed\n"); rc = 5; break;
                 }
