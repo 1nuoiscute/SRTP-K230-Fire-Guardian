@@ -48,6 +48,7 @@ git switch main
 | 传感器接法及构建 | [sensor_mvp](src/sensor_mvp/README.md) |
 | 按键、阀门、WiFi 与自启脚本 | [key_controls](src/key_controls/README.md) |
 | 面板与数据页 | [board_ui_overlay](src/board_ui_overlay/README.md) |
+| Windows 上位机 | [K230 调试台](tools/board_monitor/README.md)，USB 状态监测、视觉调试与会话回放 |
 | Windows 大核构建 | [Zig + LLD 构建说明](tools/rt_smart/README.md)；脚本仍需配置本机 SDK 路径 |
 | 历史板端基线与完整哈希 | [板端基线](docs/BOARD_BASELINE.md)、[9 月交接](docs/BOARD_HANDOFF_20260930.md) |
 | KEY2 修复与永久启动 | [实机记录](model_work/docs/KEY2_CONNECTOR_CANDIDATE_20260930.md) |
